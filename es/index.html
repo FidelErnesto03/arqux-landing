@@ -105,23 +105,43 @@
 
     <section class="local-story" id="local">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">El modelo de archivos locales</p><h2>Un proyecto gobernado. Instrucciones donde los agentes pueden leerlas.</h2><p class="section-copy">Hoy, <code>arqux init</code> crea un directorio de proyecto gobernado con instrucciones y artefactos locales. Los agentes que pueden acceder al mismo proyecto pueden leer sus archivos de gobernanza. Un servicio que propague y reconcilie políticas entre espacios de trabajo independientes es una dirección de producto, no una capacidad de v0.9.0rc3.</p></div>
-        <div class="architecture" aria-label="Relación entre una política gobernada, los archivos locales por harness y el uso del agente">
-          <div class="architecture-col">
-            <article class="architecture-card standard-card active">
-              <p class="eyebrow">01 · Fuente gobernada</p><h3>Definir la regla común</h3><p>Propietario, alcance, versión y conocimiento aprobado son explícitos.</p>
+        <div class="section-head"><p class="eyebrow">El modelo de archivos locales</p><h2>Un proyecto gobernado. Instrucciones donde los agentes pueden leerlas.</h2><p class="section-copy">Hoy, <code>arqux init</code> crea un directorio de proyecto gobernado con instrucciones y artefactos locales. Los agentes que pueden acceder al mismo proyecto pueden leer sus archivos de gobernanza. Un servicio que propague y reconcilie políticas entre espacios de trabajo independientes es una dirección de producto, no una capacidad de v0.9.0rc3.</p><p class="section-copy" style="margin-top:10px">Abajo: el mismo equipo de cuatro agentes, sin y con el proyecto gobernado.</p></div>
+        <div class="ba" id="ba-compare">
+          <div class="ba-top">
+            <div class="segmented" role="group" aria-label="Compara el mismo equipo de agentes sin y con ArqUX">
+              <button type="button" aria-pressed="false" data-ba="without">Sin ArqUX</button>
+              <button type="button" aria-pressed="true" data-ba="with">Con ArqUX</button>
+            </div>
+            <p class="ba-live" aria-live="polite" data-label-with="Mostrando: Con ArqUX" data-label-without="Mostrando: Sin ArqUX">Mostrando: Con ArqUX</p>
+          </div>
+          <div class="ba-source">
+            <span class="src-without">Instrucciones dispersas por agente — sin estándar compartido</span>
+            <span class="src-with">Un estándar gobernado · AGENTS.md, skills y contexto quedan en el proyecto</span>
+          </div>
+          <div class="ba-grid">
+            <article class="ba-card">
+              <div class="ba-name"><b>Codex CLI</b><span>entorno</span></div>
+              <div class="ba-state only-without"><p>Reglas pegadas en cada sesión; la memoria es la transcripción.</p><span class="ba-chip warn">reglas distintas por corrida</span></div>
+              <div class="ba-state only-with"><div class="file-list"><span class="file-chip primary">AGENTS.md</span><span class="file-chip">skills/</span></div><span class="ba-chip ok">lee el proyecto gobernado</span></div>
+            </article>
+            <article class="ba-card">
+              <div class="ba-name"><b>OpenCode</b><span>entorno</span></div>
+              <div class="ba-state only-without"><p>Instrucciones pasadas al lanzar; nada sobrevive a la sesión.</p><span class="ba-chip warn">contexto perdido</span></div>
+              <div class="ba-state only-with"><div class="file-list"><span class="file-chip primary">AGENTS.md</span><span class="file-chip">skills/</span></div><span class="ba-chip ok">lee el proyecto gobernado</span></div>
+            </article>
+            <article class="ba-card">
+              <div class="ba-name"><b>Claude Code</b><span>entorno</span></div>
+              <div class="ba-state only-without"><p>Sigue sus propias convenciones; las reglas del equipo viven en otro lado.</p><span class="ba-chip warn">solo convenciones locales</span></div>
+              <div class="ba-state only-with"><div class="file-list"><span class="file-chip primary">AGENTS.md</span><span class="file-chip">skills/</span></div><span class="ba-chip ok">lee el proyecto gobernado</span></div>
+            </article>
+            <article class="ba-card">
+              <div class="ba-name"><b>Gemini CLI</b><span>entorno</span></div>
+              <div class="ba-state only-without"><p>Lee los documentos que encuentra en el espacio; versiones desconocidas.</p><span class="ba-chip warn">contexto sin verificar</span></div>
+              <div class="ba-state only-with"><div class="file-list"><span class="file-chip primary">AGENTS.md</span><span class="file-chip">skills/</span></div><span class="ba-chip ok">lee el proyecto gobernado</span></div>
             </article>
           </div>
-          <div class="architecture-arrows" aria-hidden="true"><span>RENDERIZAR / REVISAR POR ENTORNO</span><span class="arrow-line">→</span></div>
-          <div class="architecture-col workstation-list">
-            <article class="workstation"><span class="machine-icon" aria-hidden="true">A</span><div><b>Espacio A · local</b><small>AGENTS.md + skills del proyecto · v1.4</small></div><span class="status-dot" aria-label="Estado alineado de ejemplo"></span></article>
-            <article class="workstation"><span class="machine-icon" aria-hidden="true">B</span><div><b>Espacio B · local</b><small>AGENTS.md + reglas del entorno del agente · v1.3</small></div><span class="status-dot warn" aria-label="Estado de revisión de versión de ejemplo"></span></article>
-            <article class="architecture-card">
-              <p class="eyebrow">02 · Consumo local</p><h3>El entorno del agente lee sus propios archivos</h3><p>El comportamiento del agente también depende del entorno del agente, las herramientas y los controles habilitados en ese entorno.</p>
-            </article>
-          </div>
+          <div class="caption">El mismo equipo de cuatro agentes, dos mundos: sin estándar compartido cada entorno construye su propio contexto; con ArqUX los cuatro leen los mismos archivos gobernados. Cambia la vista para comparar — cada entorno sigue leyendo su copia local.</div>
         </div>
-        <div class="caption">Estados solo ilustrativos · ArqUX no realiza sincronización ni chequeo de deriva en esta versión.</div>
       </div>
     </section>
 

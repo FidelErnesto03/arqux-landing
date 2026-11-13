@@ -78,6 +78,21 @@
     })
   );
 
+  /* local-story: without/with ArqUX comparator */
+  const ba = $("#ba-compare");
+  const baBtns = $$("[data-ba]");
+  if (ba && baBtns.length) {
+    baBtns.forEach((btn) =>
+      btn.addEventListener("click", () => {
+        const v = btn.dataset.ba;
+        baBtns.forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+        ba.classList.toggle("ba--without", v === "without");
+        const live = $(".ba-live", ba);
+        if (live) live.textContent = (v === "without" ? live.dataset.labelWithout : live.dataset.labelWith) || live.textContent;
+      })
+    );
+  }
+
   /* hero: today vs future-direction views */
   const hvBtns = $$("[data-hv]");
   hvBtns.forEach((btn) =>

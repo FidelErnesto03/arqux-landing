@@ -105,23 +105,43 @@
 
     <section class="local-story" id="local">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">The local-file model</p><h2>One governed project. Instructions where agents can read them.</h2><p class="section-copy">Today, <code>arqux init</code> creates a governed project directory with local instructions and artifacts. Agents that can access the same project can read its governance files. A service that propagates and reconciles policy across independent workspaces is a product direction, not a capability of v0.9.0rc3.</p></div>
-        <div class="architecture" aria-label="Relationship between a governed policy, harness-specific local files and agent use">
-          <div class="architecture-col">
-            <article class="architecture-card standard-card active">
-              <p class="eyebrow">01 · Governed source</p><h3>Define the common rule</h3><p>Owner, scope, version and approved knowledge are explicit.</p>
+        <div class="section-head"><p class="eyebrow">The local-file model</p><h2>One governed project. Instructions where agents can read them.</h2><p class="section-copy">Today, <code>arqux init</code> creates a governed project directory with local instructions and artifacts. Agents that can access the same project can read its governance files. A service that propagates and reconciles policy across independent workspaces is a product direction, not a capability of v0.9.0rc3.</p><p class="section-copy" style="margin-top:10px">Below: the same four-agent team, with and without the governed project.</p></div>
+        <div class="ba" id="ba-compare">
+          <div class="ba-top">
+            <div class="segmented" role="group" aria-label="Compare the same agent team without and with ArqUX">
+              <button type="button" aria-pressed="false" data-ba="without">Without ArqUX</button>
+              <button type="button" aria-pressed="true" data-ba="with">With ArqUX</button>
+            </div>
+            <p class="ba-live" aria-live="polite" data-label-with="Showing: With ArqUX" data-label-without="Showing: Without ArqUX">Showing: With ArqUX</p>
+          </div>
+          <div class="ba-source">
+            <span class="src-without">Scattered per-agent instructions — no shared standard</span>
+            <span class="src-with">One governed standard · AGENTS.md, skills and context stay in the project</span>
+          </div>
+          <div class="ba-grid">
+            <article class="ba-card">
+              <div class="ba-name"><b>Codex CLI</b><span>harness</span></div>
+              <div class="ba-state only-without"><p>Rules pasted into each session; the transcript is the memory.</p><span class="ba-chip warn">different rules per run</span></div>
+              <div class="ba-state only-with"><div class="file-list"><span class="file-chip primary">AGENTS.md</span><span class="file-chip">skills/</span></div><span class="ba-chip ok">reads the governed project</span></div>
+            </article>
+            <article class="ba-card">
+              <div class="ba-name"><b>OpenCode</b><span>harness</span></div>
+              <div class="ba-state only-without"><p>Instructions passed inline at launch; nothing survives the session.</p><span class="ba-chip warn">context lost</span></div>
+              <div class="ba-state only-with"><div class="file-list"><span class="file-chip primary">AGENTS.md</span><span class="file-chip">skills/</span></div><span class="ba-chip ok">reads the governed project</span></div>
+            </article>
+            <article class="ba-card">
+              <div class="ba-name"><b>Claude Code</b><span>harness</span></div>
+              <div class="ba-state only-without"><p>Follows its own project conventions; the team's rules live elsewhere.</p><span class="ba-chip warn">local conventions only</span></div>
+              <div class="ba-state only-with"><div class="file-list"><span class="file-chip primary">AGENTS.md</span><span class="file-chip">skills/</span></div><span class="ba-chip ok">reads the governed project</span></div>
+            </article>
+            <article class="ba-card">
+              <div class="ba-name"><b>Gemini CLI</b><span>harness</span></div>
+              <div class="ba-state only-without"><p>Reads whichever workspace docs it finds; versions unknown.</p><span class="ba-chip warn">unverified context</span></div>
+              <div class="ba-state only-with"><div class="file-list"><span class="file-chip primary">AGENTS.md</span><span class="file-chip">skills/</span></div><span class="ba-chip ok">reads the governed project</span></div>
             </article>
           </div>
-          <div class="architecture-arrows" aria-hidden="true"><span>RENDER / REVIEW PER ENVIRONMENT</span><span class="arrow-line">→</span></div>
-          <div class="architecture-col workstation-list">
-            <article class="workstation"><span class="machine-icon" aria-hidden="true">A</span><div><b>Workspace A · local</b><small>AGENTS.md + project skills · v1.4</small></div><span class="status-dot" aria-label="Example aligned state"></span></article>
-            <article class="workstation"><span class="machine-icon" aria-hidden="true">B</span><div><b>Workspace B · local</b><small>AGENTS.md + harness rules · v1.3</small></div><span class="status-dot warn" aria-label="Example version review state"></span></article>
-            <article class="architecture-card">
-              <p class="eyebrow">02 · Local consumption</p><h3>The harness reads its own files</h3><p>The agent's behavior also depends on the harness, tools and controls enabled in that environment.</p>
-            </article>
-          </div>
+          <div class="caption">Same four-agent team, two worlds: without a shared standard each harness builds its own context; with ArqUX all four read the same governed files. Toggle to compare — each harness still reads its own local copy.</div>
         </div>
-        <div class="caption">Illustrative states only · ArqUX does not perform a sync or drift check in this release.</div>
       </div>
     </section>
 

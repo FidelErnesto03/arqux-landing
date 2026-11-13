@@ -231,3 +231,28 @@ footer{background:var(--ink-950);color:var(--mist-500);border-top:1px solid rgba
 
 .hv-view[hidden]{display:none}
 .hero-visual .segmented{margin-left:auto}
+
+/* ——— comparador Sin/Con ArqUX (ajuste del Arquitecto) ——— */
+.ba-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:6px 0 20px;flex-wrap:wrap}
+.ba-live{font:500 11px/1.4 var(--mono);color:#a3b2ba}
+.ba-source{border:1px solid rgba(220,226,227,.16);border-radius:12px;padding:12px 16px;font:600 12px/1.45 var(--mono);letter-spacing:.02em;margin-bottom:14px;background:rgba(255,255,255,.03)}
+.ba-source .src-without,.ba-source .src-with{display:block}
+.ba:not(.ba--without) .src-without{display:none}
+.ba.ba--without .src-with{display:none}
+.ba-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
+@media(max-width:980px){.ba-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.ba-grid{grid-template-columns:1fr}}
+.ba-card{border:1px solid rgba(220,226,227,.14);border-radius:13px;background:rgba(255,255,255,.035);padding:14px;min-height:158px}
+.ba-name{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:10px}
+.ba-name b{font-size:13.5px}
+.ba-name span{font:500 9.5px/1 var(--mono);color:#8fa2ad;text-transform:uppercase;letter-spacing:.08em}
+.ba-state p{font-size:12px;color:#aab7bf;margin:0 0 10px;line-height:1.5}
+.ba-state .file-list{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.ba-chip{display:inline-block;border-radius:999px;padding:4px 9px;font:600 9.5px/1.3 var(--mono)}
+.ba-chip.warn{background:rgba(255,181,71,.14);color:#ffbf82}
+.ba-chip.ok{background:rgba(97,217,198,.14);color:#81e4d5}
+.ba:not(.ba--without) .only-without{display:none}
+.ba.ba--without .only-with{display:none}
+.ba-state{animation:ba-fade .3s ease}
+@keyframes ba-fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.ba-state{animation:none}}
