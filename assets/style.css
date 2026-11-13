@@ -23,8 +23,11 @@ img{max-width:100%}
 /* ——— nav ——— */
 .nav{position:sticky;top:0;z-index:50;background:rgba(250,249,245,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--mist)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.brand img{height:34px;width:auto;display:block}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand .symbol{height:38px;width:auto;display:block}
+.brandname{font-family:var(--sans);font-size:21px;font-weight:700;letter-spacing:.2px;color:var(--ink)}
+.brandname em{font-style:normal;color:var(--amber)}
+@media(max-width:640px){.brand .symbol{height:32px}.brandname{font-size:18px}}
 .nav nav{display:flex;gap:24px;align-items:center}
 .nav nav a{font-family:var(--sans);font-size:14.5px;color:var(--slate);text-decoration:none}
 .nav nav a:hover,.nav nav a.here{color:var(--ink)}
@@ -67,8 +70,7 @@ details.mnav .mpanel a:hover{background:var(--paper2)}
 .btn.on-dark:hover{border-color:var(--mist2)}
 .hero-dark .evlink{margin-top:18px;font-family:var(--mono);font-size:13px}
 .hero-dark .evlink a{color:var(--teal);text-decoration:none;border-bottom:1px dotted var(--teal)}
-.hero-visual{background:var(--ink2);border:1px solid var(--ink4);border-radius:14px;padding:18px}
-.hero-visual svg{width:100%;height:auto;display:block}
+.hero-visual img{display:block;width:100%;height:auto}
 .hero-visual .cap{font-family:var(--mono);font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--mist2);margin-top:10px;text-align:center}
 
 /* ——— sections ——— */

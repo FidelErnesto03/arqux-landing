@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 316" role="img" aria-labelledby="t d">
+<title id="t">Cómo llega una política gobernada a cada entorno</title>
+<desc id="d">Un estándar gobernado, versión 3, se adapta por harness en archivos locales de dos entornos. El entorno A está al día; el entorno B está dos reglas atrás. Una persona revisa estado y diferencias.</desc>
+<rect x="80" y="6" width="280" height="52" rx="10" fill="#101F2C" stroke="#D77A00" stroke-width="1.2"/>
+<text x="220" y="28" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="700" fill="#FAF9F5">ESTÁNDAR GOBERNADO</text>
+<text x="220" y="45" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="10.5" fill="#B6C0C5">política · v3 · propietario: el equipo</text>
+<line x1="220" y1="58" x2="220" y2="84" stroke="#596772" stroke-width="1.4"/>
+<line x1="220" y1="84" x2="120" y2="112" stroke="#596772" stroke-width="1.4"/>
+<line x1="220" y1="84" x2="320" y2="112" stroke="#596772" stroke-width="1.4"/>
+<text x="220" y="78" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="10" fill="#7C8A99">adaptadores</text>
+<rect x="30" y="116" width="180" height="92" rx="9" fill="#101F2C" stroke="#22394A" stroke-width="1.2"/>
+<circle cx="48" cy="134" r="4" fill="#61D9C6"/>
+<text x="58" y="138" font-family="IBM Plex Mono,monospace" font-size="10.5" font-weight="700" fill="#FAF9F5">ENTORNO A</text>
+<text x="46" y="160" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#B6C0C5">AGENTS.md ✓ · skill ✓</text>
+<rect x="46" y="174" width="88" height="20" rx="10" fill="#167A55"/>
+<text x="90" y="188" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" font-weight="700" fill="#FAF9F5">al día</text>
+<rect x="230" y="116" width="180" height="92" rx="9" fill="#101F2C" stroke="#22394A" stroke-width="1.2"/>
+<circle cx="248" cy="134" r="4" fill="#FFB547"/>
+<text x="258" y="138" font-family="IBM Plex Mono,monospace" font-size="10.5" font-weight="700" fill="#FAF9F5">ENTORNO B</text>
+<text x="246" y="160" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#FFB547">AGENTS.md v2 ⚠ · skill ✓</text>
+<rect x="246" y="174" width="102" height="20" rx="10" fill="#D77A00"/>
+<text x="297" y="188" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" font-weight="700" fill="#0A1420">2 reglas atrás</text>
+<line x1="120" y1="208" x2="120" y2="240" stroke="#596772" stroke-width="1.4"/>
+<line x1="320" y1="208" x2="320" y2="240" stroke="#596772" stroke-width="1.4"/>
+<text x="220" y="230" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="10" fill="#7C8A99">cada harness lee sus archivos locales</text>
+<rect x="30" y="244" width="380" height="48" rx="9" fill="#192B38" stroke="#22394A" stroke-width="1.2"/>
+<text x="220" y="264" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10.5" font-weight="700" fill="#FAF9F5">REVISIÓN HUMANA</text>
+<text x="220" y="281" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="10" fill="#B6C0C5">estado · diferencias · procedencia</text>
+</svg>
