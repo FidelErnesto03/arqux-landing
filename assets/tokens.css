@@ -1,0 +1,13 @@
+/* ArqUX Brand System v1.0 | candidate tokens. Test against actual components before deployment. */
+:root {
+  color-scheme: light dark;
+  --arq-ink-950:#0A1420; --arq-ink-900:#101F2C; --arq-ink-800:#192B38; --arq-ink-700:#22394A;
+  --arq-paper-100:#FAF9F5; --arq-paper-200:#F3F1EA; --arq-mist-300:#DCE2E3; --arq-mist-500:#B6C0C5; --arq-slate-600:#596772;
+  --arq-amber-500:#FFB547; --arq-amber-700:#D77A00; --arq-teal-400:#61D9C6;
+  --arq-success-600:#167A55; --arq-warning-500:#E8B94F; --arq-error-500:#D95757;
+  --arq-font-sans: "IBM Plex Sans", Inter, "Segoe UI", sans-serif;
+  --arq-font-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
+}
+[data-theme="light"] { color-scheme:light; --arq-bg:var(--arq-paper-100); --arq-surface:var(--arq-paper-200); --arq-surface-raised:#FFFFFF; --arq-text:var(--arq-ink-950); --arq-text-muted:var(--arq-slate-600); --arq-border:var(--arq-mist-500); --arq-action:var(--arq-amber-700); --arq-action-text:var(--arq-ink-950); --arq-context:#006B61; --arq-success:var(--arq-success-600); --arq-warning:#8A5A00; --arq-error:#A93232; }
+[data-theme="dark"] { color-scheme:dark; --arq-bg:var(--arq-ink-950); --arq-surface:var(--arq-ink-900); --arq-surface-raised:var(--arq-ink-800); --arq-text:var(--arq-paper-100); --arq-text-muted:var(--arq-mist-500); --arq-border:var(--arq-slate-600); --arq-action:var(--arq-amber-500); --arq-action-text:var(--arq-ink-950); --arq-context:var(--arq-teal-400); --arq-success:var(--arq-teal-400); --arq-warning:var(--arq-warning-500); --arq-error:#FF8A8A; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } }

@@ -3,15 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ArqUX — Audit. Replay. Query.</title>
-<meta name="description" content="ArqUX is governance infrastructure underneath your agent stack. Deterministic memory, certified byte-exact across five runtimes, with signed evidence your auditor can verify.">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<title>ArqUX — Coordinate people and AI agents around shared policies and knowledge</title>
+<meta name="description" content="ArqUX organizes identities, responsibilities and work around persistent context and reviewable artifacts. Open-source framework, beta. Platform in development.">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/brand/favicon-180.png">
 <link rel="alternate" hreflang="es" href="https://arqux.ai/es/">
-<meta property="og:title" content="ArqUX — Audit. Replay. Query.">
-<meta property="og:description" content="Governance infrastructure underneath your agent stack. Deterministic memory. Signed evidence.">
+<meta property="og:title" content="ArqUX — Coordinate people and AI agents">
+<meta property="og:description" content="Shared policies and knowledge for human–AI teams. Open-source framework (beta). Platform in development.">
 <meta property="og:url" content="https://arqux.ai/">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#F8F8F5">
+<meta name="theme-color" content="#0A1420">
 <link rel="stylesheet" href="/assets/style.css">
 <script src="/assets/app.js" defer></script>
 </head>
@@ -19,106 +21,269 @@
 
 <div class="nav">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/assets/mark.svg" alt="" width="26" style="display:block">Ar<span class="q">q</span>UX</a>
+    <a class="brand" href="/"><img src="/assets/brand/logo-light.svg" alt="ArqUX" height="30"></a>
     <nav>
-      <a href="/framework.html">Framework</a>
-      <a href="/evidence.html">Proof</a>
-      <a href="/platform.html">Platform</a>
+      <a href="https://github.com/FidelErnesto03/arqux/blob/master/README.md">Docs</a>
+      <a href="https://github.com/FidelErnesto03/arqux/releases">Releases</a>
       <a href="https://github.com/FidelErnesto03/arqux">GitHub</a>
       <a class="lang" href="/es/">ES</a>
+      <a class="cta-mini" href="https://github.com/FidelErnesto03/arqux#quickstart">Try ArqUX</a>
     </nav>
   </div>
 </div>
 
-<header class="wrap hero">
-  <div class="kicker"><span class="dot"></span><span>Open source · governance infrastructure · MCP-first</span></div>
-  <h1><span class="a">Audit.</span> <span class="r">Replay.</span> <span class="q">Query.</span></h1>
-  <p class="lede"><strong>ArqUX</strong> is governance infrastructure underneath your agent stack.
-    A deterministic memory format — <strong>certified byte-exact across Python, Go, Node, Rust and Bash</strong> —
-    with a hash-chained journal, total write order, and signed evidence your auditor can verify
-    without touching your data.</p>
-  <div class="cta">
-    <a class="btn primary" href="/framework.html">Read the Framework</a>
-    <a class="btn" href="/evidence.html">See the proof →</a>
+<div class="hero-dark">
+  <div class="wrap inner">
+    <div class="kicker"><span class="dot"></span><span>Governance for human–AI teams</span></div>
+    <h1>Coordinate people and AI agents around shared policies and knowledge.</h1>
+    <p class="lede">ArqUX organizes identities, responsibilities and work, and standardizes the local directives
+      each harness consumes. <strong>Your team defines the rules</strong>; agents operate within the framework
+      and environment you configure.</p>
+    <div class="statusline">
+      <a class="chip beta" href="https://github.com/FidelErnesto03/arqux/releases">Open-source framework · Beta 0.9.0rc3</a>
+      <a class="chip dev" href="#platform">Platform · In development</a>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/FidelErnesto03/arqux#quickstart">Install the Framework</a>
+      <a class="btn on-dark" href="#workflow">Explore a team workflow</a>
+    </div>
+    <p class="evlink"><a href="https://github.com/FidelErnesto03/arqux">View code, release and tests →</a></p>
   </div>
-  <div class="badges">
-    <span class="badge"><b>141/141</b> conformance vectors</span>
-    <span class="badge"><b>5</b> runtimes, byte-exact</span>
-    <span class="badge"><b>364/364</b> corpus documents</span>
-    <span class="badge"><b>Apache-2.0</b> spirit · open</span>
-  </div>
-</header>
+</div>
 
 <section class="wrap reveal">
   <div class="sec-head">
-    <div class="kicker"><span>THE CLAIM, DEMONSTRATED</span></div>
-    <h2>Memory that cannot be silently rewritten.</h2>
-    <p class="sub">This is not a screenshot. Your browser computes SHA-256 over the journal right now.
-      Sign it, then try to tamper — the chain catches it, byte by byte.</p>
+    <div class="kicker"><span class="dot"></span><span>The problem</span></div>
+    <h2>Work shouldn't restart with every session.</h2>
+    <p class="sub">Decisions, rules and knowledge scatter across conversations, repositories, files and people.
+      Every agent or session can receive a different context. The team re-explains the work — and later can't
+      tell what was decided, what changed, and what should be reviewed.</p>
   </div>
+  <div class="tablewrap">
+    <table>
+      <tr><th>Without a common structure</th><th>With ArqUX <span style="font-weight:400;text-transform:none;letter-spacing:0">— what the flow seeks to structure</span></th></tr>
+      <tr><td>Instructions spread across chats and files</td><td>Working rules locatable in the governed workspace</td></tr>
+      <tr><td>Agents with ambiguous context and responsibilities</td><td>Explicit identities and contracts the agent consults</td></tr>
+      <tr><td>Tasks born in conversation, no shared closure criteria</td><td>Work expressed in units with scope and acceptance</td></tr>
+      <tr><td>State dependent on one session's history</td><td>Persisted artifacts you can inspect and resume</td></tr>
+      <tr><td>Review focused only on the final answer</td><td>Changes and available evidence can be reviewed</td></tr>
+    </table>
+  </div>
+  <p class="note">The right column describes the model the flow is designed to provide — per capability, the Framework page states what is enforced by code and what is a contract read by the agent.</p>
+</section>
 
-  <div class="demo" id="chain-demo">
-    <div class="demo-top"><span class="t">hash-chain journal · <b>live in your browser</b></span></div>
-    <label for="live-entry">Write a memory entry (block 1)</label>
-    <input type="text" id="live-entry" placeholder='FCS:current{what:"ship the Platform", priority:"high"}'>
-    <div class="chain" aria-live="polite">
-      <div class="cblock good"><span class="n">01</span><span class="c">FCS:current{what:"ship the Platform", priority:"high"}</span><span class="h">computing…</span></div>
-      <div class="cblock good"><span class="n">02</span><span class="c">LNG:layers{lesson:"separate layers before naming products"}</span><span class="h">computing…</span></div>
-      <div class="cblock good"><span class="n">03</span><span class="c">AUD:init{event:"project.init", result:"governed"}</span><span class="h">computing…</span></div>
-    </div>
-    <span class="cstatus ok">verifying…</span>
-    <div class="cbtns">
-      <button class="btn primary" id="btn-sign" type="button">Canonicalize &amp; sign</button>
-      <button class="btn" id="btn-tamper" type="button">Tamper block 2</button>
-      <button class="btn" id="btn-restore" type="button">Restore</button>
-    </div>
-    <p class="note">Real SHA-256 via the Web Crypto API. Block 2 doesn't just “change” — it stops matching its parent, and every block after it goes red. That is what tamper-evident means.</p>
+<section class="wrap reveal" id="workflow">
+  <div class="sec-head">
+    <div class="kicker"><span class="dot"></span><span>Follow the work</span></div>
+    <h2>Define → Assign → Execute → Review and continue.</h2>
+    <p class="sub">Each step states who participates, what goes in, which rule applies, what changes, what gets
+      stored — and what another person can verify. Expand a step to read it. No animation required.</p>
+  </div>
+  <div class="steps">
+    <details class="step" open>
+      <summary><span class="n">01</span> Define <span class="status st-available" style="margin-left:auto">Team practice</span></summary>
+      <div class="body">
+        <dl>
+          <dt>Who participates</dt><dd>The responsible person (architect, tech lead, founder).</dd>
+          <dt>Input</dt><dd>Objective, scope, working rules, authorized knowledge, acceptance condition.</dd>
+          <dt>Rule applied</dt><dd>Policies and identity contracts agreed for the project.</dd>
+          <dt>What changes</dt><dd>The project/cycle takes explicit form: goal, constraints, closure criteria.</dd>
+          <dt>What is stored</dt><dd>Artifacts in the governed workspace (files the tooling reads).</dd>
+          <dt>What can be verified</dt><dd>That the rules and scope are written down and versioned.</dd>
+        </dl>
+      </div>
+    </details>
+    <details class="step">
+      <summary><span class="n">02</span> Assign <span class="status st-available" style="margin-left:auto">Contract in code</span></summary>
+      <div class="body">
+        <dl>
+          <dt>Who participates</dt><dd>The person assigning work and each agent identity involved.</dd>
+          <dt>Input</dt><dd>Task unit with scope, constraints and acceptance criteria.</dd>
+          <dt>Rule applied</dt><dd>Role and permissions of the identity that receives the work.</dd>
+          <dt>What changes</dt><dd>Work has an explicit owner; the agent has an explicit contract.</dd>
+          <dt>What is stored</dt><dd>Identity contract, assignment, and the task's recorded state.</dd>
+          <dt>What can be verified</dt><dd>Who was assigned what, under which role and limits.</dd>
+        </dl>
+      </div>
+    </details>
+    <details class="step">
+      <summary><span class="n">03</span> Execute <span class="status st-pending" style="margin-left:auto">Depends on harness</span></summary>
+      <div class="body">
+        <dl>
+          <dt>Who participates</dt><dd>The agent — within what its harness and configured tools permit.</dd>
+          <dt>Input</dt><dd>The local directives its harness reads and the artifacts in the workspace.</dd>
+          <dt>Rule applied</dt><dd>The common policy, projected into the local files each harness consumes.</dd>
+          <dt>What changes</dt><dd>Code, files or state — per the operations actually demonstrated by the release.</dd>
+          <dt>What is stored</dt><dd>Outputs and change trail according to the version's evidence capabilities.</dd>
+          <dt>What can be verified</dt><dd>That a rule was present in the local file; whether it was enforced depends on the harness.</dd>
+        </dl>
+      </div>
+    </details>
+    <details class="step">
+      <summary><span class="n">04</span> Review and continue <span class="status st-available" style="margin-left:auto">Team practice</span></summary>
+      <div class="body">
+        <dl>
+          <dt>Who participates</dt><dd>A person reviewing; possibly a second agent re-delegated.</dd>
+          <dt>Input</dt><dd>Outputs, available validation results and evidence trail.</dd>
+          <dt>Rule applied</dt><dd>The acceptance condition defined in step 1.</dd>
+          <dt>What changes</dt><dd>Accept, return, re-delegate or correct — per the version's capabilities.</dd>
+          <dt>What is stored</dt><dd>The review outcome and next state of the work unit.</dd>
+          <dt>What can be verified</dt><dd>A new session can inspect the shared state and resume; synchronization follows the mechanism your team uses.</dd>
+        </dl>
+      </div>
+    </details>
   </div>
 </section>
 
 <section class="wrap reveal">
   <div class="sec-head">
-    <div class="kicker"><span>THREE VERBS, ONE SUBSTRATE</span></div>
-    <h2>The verbs are the product.</h2>
+    <div class="kicker"><span class="dot"></span><span>Six dimensions</span></div>
+    <h2>What "governed" means, dimension by dimension.</h2>
+    <p class="sub">The hexagonal symbol as explanatory navigation — not a security argument. Each dimension answers one question and points to a real artifact.</p>
+  </div>
+  <div class="hexwrap">
+    <div class="hexmap" aria-hidden="true">
+      <svg viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="170,28 293,99 293,241 170,312 47,241 47,99" fill="none" stroke="#B6C0C5" stroke-width="1.5"/>
+        <polygon points="170,62 261,114 261,226 170,278 79,226 79,114" fill="none" stroke="#DCE2E3" stroke-width="1"/>
+        <circle cx="170" cy="28" r="13" fill="#D77A00"/><text x="170" y="33" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="700" fill="#0A1420">1</text>
+        <circle cx="293" cy="99" r="13" fill="#006B61"/><text x="293" y="104" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="700" fill="#FAF9F5">2</text>
+        <circle cx="293" cy="241" r="13" fill="#006B61"/><text x="293" y="246" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="700" fill="#FAF9F5">3</text>
+        <circle cx="170" cy="312" r="13" fill="#D77A00"/><text x="170" y="317" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="700" fill="#0A1420">4</text>
+        <circle cx="47" cy="241" r="13" fill="#006B61"/><text x="47" y="246" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="700" fill="#FAF9F5">5</text>
+        <circle cx="47" cy="99" r="13" fill="#006B61"/><text x="47" y="104" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="700" fill="#FAF9F5">6</text>
+        <text x="170" y="176" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="12" fill="#596772">governed</text>
+        <text x="170" y="193" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="12" fill="#596772">workspace</text>
+      </svg>
+    </div>
+    <div class="dims">
+      <div class="dim"><span class="k">1 · Identity</span><div class="q">Who is acting?</div><div class="a">Agent identity contract.</div></div>
+      <div class="dim"><span class="k">2 · Contract</span><div class="q">What limits and responsibility?</div><div class="a">AXM/LIM/FCS or the current contract.</div></div>
+      <div class="dim"><span class="k">3 · Context</span><div class="q">What knowledge and state does it receive?</div><div class="a">brain.cortex, AGENTS.md or another context file.</div></div>
+      <div class="dim"><span class="k">4 · Decision</span><div class="q">What must it decide, by which criterion?</div><div class="a">Blueprint, rule or recorded decision.</div></div>
+      <div class="dim"><span class="k">5 · Execution</span><div class="q">What task changes, and how?</div><div class="a">Task, handler or file change.</div></div>
+      <div class="dim"><span class="k">6 · Evidence</span><div class="q">What lets someone review what happened?</div><div class="a">Test result, diff, event or available record.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band-dark reveal">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker"><span class="dot"></span><span>Codec‑CORTEX</span></div>
+      <h2>Shared knowledge needs structure — not just a folder.</h2>
+      <p class="sub">Codec‑CORTEX organizes context documents into a form that can be validated and transformed
+        between AI surfaces and human reading. ArqUX uses that substrate to preserve work state and knowledge,
+        according to the integration in the release.</p>
+    </div>
+    <div class="grid g2">
+      <div class="code"><label class="cap">CORTEX — machine source</label>$0
+<span class="c"># -- $0: WORKSPACE GLOSSARY --</span>
+FCS:current{what:<span class="y">"align the release"</span>,
+  priority:<span class="y">"high"</span>, status:<span class="y">"current"</span>}
+OBJ:governance{goal:<span class="y">"shared rules"</span>,
+  success:<span class="y">"reviewable"</span>}</div>
+      <div class="code"><label class="cap">HCORTEX — human reading</label><span class="c">## §2 · FOCUS</span>
+
+<span class="g">### Focus: current</span>
+| key | value |
+|---|---|
+| what | align the release |
+| priority | high |
+| status | current |</div>
+    </div>
+    <p class="note"><span class="status st-example">Example · Codec‑CORTEX v1.0</span> &nbsp; A static sample, not a live conversion. Codec conformance is proven by its own suite — <a href="https://github.com/FidelErnesto03/codec-cortex" style="color:var(--teal)">inspect the format, tests and limits →</a></p>
+  </div>
+</section>
+
+<section class="band-dark reveal">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker"><span class="dot"></span><span>Evidence</span></div>
+      <h2>Visible evidence, labeled by lane.</h2>
+      <p class="sub">Every card states component, version, status and limit. Where no evidence exists yet, the card shows the verification plan — not a promotional number.</p>
+    </div>
+    <div class="ev">
+      <div class="evcard">
+        <h3>Codec‑CORTEX suite</h3>
+        <div class="row"><span>Status</span><b><span class="status st-available">Available</span></b></div>
+        <div class="row"><span>Subject</span><b>Format · parse · canonicalize · roundtrip</b></div>
+        <div class="row"><span>Evidence</span><b><a href="https://github.com/FidelErnesto03/codec-cortex">Repo, suite &amp; certificate</a></b></div>
+        <div class="row"><span>Limit</span><b>Does not certify the Framework or agent security</b></div>
+      </div>
+      <div class="evcard">
+        <h3>Framework tests</h3>
+        <div class="row"><span>Status</span><b><span class="status st-pending">Verification plan</span></b></div>
+        <div class="row"><span>Subject</span><b>Governance artifacts, CLI, MCP</b></div>
+        <div class="row"><span>Evidence</span><b>To be linked per release</b></div>
+        <div class="row"><span>Limit</span><b>Not claimed until published</b></div>
+      </div>
+      <div class="evcard">
+        <h3>MCP integration</h3>
+        <div class="row"><span>Status</span><b><span class="status st-pending">Verification plan</span></b></div>
+        <div class="row"><span>Subject</span><b>Handlers exercised from a real client</b></div>
+        <div class="row"><span>Evidence</span><b>To be linked per release</b></div>
+        <div class="row"><span>Limit</span><b>No count-based claims until reconciled</b></div>
+      </div>
+      <div class="evcard">
+        <h3>Multi-actor flow</h3>
+        <div class="row"><span>Status</span><b><span class="status st-pending">Verification plan</span></b></div>
+        <div class="row"><span>Subject</span><b>Two people, two agents, one workspace</b></div>
+        <div class="row"><span>Evidence</span><b>Demo in preparation</b></div>
+        <div class="row"><span>Limit</span><b>Sync mechanism must be named per case</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap reveal">
+  <div class="sec-head">
+    <div class="kicker"><span class="dot"></span><span>Security and limits</span></div>
+    <h2>Governance is only useful if you know what it enforces — and what depends on the agent.</h2>
+    <div class="callout">
+      <b>What ArqUX does not guarantee:</b> it does not replace human review; it does not guarantee that an
+      agent obeys instructions in every environment; and it does not turn a hash or a log into an independent
+      audit. Review the permissions, security and evidence model for the scope of each mechanism.
+    </div>
+    <p class="note" style="margin-top:18px">Mechanism details: <a href="https://github.com/FidelErnesto03/arqux/blob/master/SECURITY.md">SECURITY.md</a> · <a href="https://github.com/FidelErnesto03/arqux/blob/master/THREAT_MODEL.md">THREAT_MODEL.md</a> · <a href="https://github.com/FidelErnesto03/arqux/blob/master/EVIDENCE.md">EVIDENCE.md</a></p>
+  </div>
+</section>
+
+<section class="wrap reveal" id="platform">
+  <div class="sec-head">
+    <div class="kicker"><span class="dot"></span><span>Platform · <span class="status st-dev">In development</span></span></div>
+    <h2>The direction: a central memory service — not available yet.</h2>
+    <p class="sub">The Platform investigates what a governed team needs beyond local files: one service where memory
+      writes are validated and chained, context is served ready-made, and evidence can be exported. Hypotheses under study:</p>
   </div>
   <div class="grid g3">
-    <div class="card"><span class="sig" style="color:var(--ack)">§</span><h3>Audit</h3><p>Every entry canonicalized, hashed, chained and signed. State you can prove — to a regulator, a counterparty, or your own team at 3am.</p></div>
-    <div class="card"><span class="sig" style="color:var(--ink)">§</span><h3>Replay</h3><p>Deterministic roundtrip: the same document rebuilt byte-exact on five independent runtimes. Two engines, one truth. Point-in-time state, reconstructable.</p></div>
-    <div class="card"><span class="sig" style="color:var(--amber)">§</span><h3>Query</h3><p>Addressable memory — sections, sigils, attributes — selected deterministically. Recall by address, not by similarity. No statistical guessing about what your agent knew.</p></div>
+    <div class="card"><span class="tag">Hypothesis 1</span><h3>Central, ordered writes</h3><p>Whether a single authoritative journal removes the concurrency and drift problems of file-based governance.</p></div>
+    <div class="card"><span class="tag">Hypothesis 2</span><h3>Evidence as an export</h3><p>Whether auditors can verify integrity from hashes alone — without reading memory content.</p></div>
+    <div class="card"><span class="tag">Hypothesis 3</span><h3>Permissions at scale</h3><p>Which role × base × operation model teams actually need before it becomes bureaucracy.</p></div>
   </div>
+  <p class="note">No dashboard, no dates, no pricing until decisions and verification exist. Pilots are the way in.</p>
 </section>
 
 <section class="wrap reveal">
   <div class="sec-head">
-    <div class="kicker"><span>WHAT ARQUX IS NOT</span></div>
-    <p class="quote">"ArqUX <span class="dim">is not a platform. It's</span> governance infrastructure <span class="dim">for your platform."</span></p>
-    <p class="byline">— the ArqUX Framework README</p>
+    <div class="kicker"><span class="dot"></span><span>Pilot</span></div>
+    <h2>Does your team already coordinate several agents across sessions?</h2>
+    <p class="sub">We are looking for a small group of technical teams to evaluate ArqUX against real workloads —
+      with a repeatable case, a fixed release, and a named workspace. Learning, not a deployment promise.</p>
+    <div class="cta"><a class="btn primary" href="https://github.com/FidelErnesto03/arqux/issues">Evaluate a pilot — open an issue</a></div>
+    <p class="note">Share: team profile, harnesses/agents used, the problem you're solving, current deployment mode. Do not share secrets, private repositories or sensitive data.</p>
   </div>
-</section>
-
-<section class="wrap reveal">
-  <div class="sec-head">
-    <div class="kicker"><span>EDITIONS</span></div>
-    <h2>The method is free. The Platform is where it runs.</h2>
-    <p class="sub">Community is the complete method for the individual — not a crippled demo. Paid tiers add organizational scale: permissions, evidence packs, support.</p>
-  </div>
-  <div class="grid g4">
-    <div class="card"><h3>Community</h3><p>Full memory engine + constitution kernel + MCP surface. Free, self-hosted, forever.</p></div>
-    <div class="card"><h3>Team</h3><p>Multi-base permissions, federated search, retention. Self-serve.</p></div>
-    <div class="card"><h3>Enterprise</h3><p>SSO, signed evidence packs mapped to EU AI Act and OWASP, SLA, certified deployments.</p></div>
-    <div class="card"><h3>Cloud</h3><p>The same Platform, hosted. Your data stays on your terms.</p></div>
-  </div>
-  <div class="cta"><a class="btn" href="/platform.html">See the architecture →</a><a class="btn primary" href="https://github.com/FidelErnesto03/arqux/issues">Join the pilot list</a></div>
 </section>
 
 <footer>
   <div class="wrap">
     <div class="cols">
-      <div><h4>Product</h4><a href="/framework.html">Framework</a><a href="/platform.html">Platform</a><a href="/evidence.html">Proof</a><a href="/brand/">Brand</a></div>
+      <div><h4>Product</h4><a href="https://github.com/FidelErnesto03/arqux">Framework</a><a href="https://github.com/FidelErnesto03/codec-cortex">Codec‑CORTEX</a><a href="#platform">Platform (in development)</a></div>
+      <div><h4>Learn</h4><a href="https://github.com/FidelErnesto03/arqux/blob/master/README.md">Docs</a><a href="https://github.com/FidelErnesto03/arqux/releases">Releases</a><a href="/brand/">Brand</a></div>
+      <div><h4>Trust</h4><a href="https://github.com/FidelErnesto03/arqux/blob/master/SECURITY.md">Security</a><a href="https://github.com/FidelErnesto03/arqux/blob/master/THREAT_MODEL.md">Threat model</a><a href="https://github.com/FidelErnesto03/arqux/issues">Responsible report</a></div>
       <div><h4>Project</h4><a href="https://github.com/FidelErnesto03/arqux">GitHub</a><a href="https://pypi.org/project/arqux/">PyPI</a><a href="/es/">Español</a></div>
-      <div><h4>Contact</h4><a href="https://github.com/FidelErnesto03/arqux/issues">Open an issue</a><a href="https://github.com/FidelErnesto03/arqux/issues">Pilot list</a></div>
     </div>
-    <div class="fine"><span>© 2026 ArqUX · CORTEX engine inside</span><span>Protocol-grade integrity for the agent experience.</span></div>
+    <div class="fine"><span class="beta-line">Framework beta 0.9.0rc3 · updated 2026-11-13</span><span>© 2026 ArqUX · the architecture behind human–AI work</span></div>
   </div>
 </footer>
 

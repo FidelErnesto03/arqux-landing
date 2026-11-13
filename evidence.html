@@ -3,143 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ArqUX — Proof, not promises</title>
-<meta name="description" content="The auditor's page: tamper-evidence demonstrated live in your browser, byte-exact parity across five runtimes, and the shape of a signed evidence pack.">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="alternate" hreflang="es" href="https://arqux.ai/es/evidence.html">
-<meta name="theme-color" content="#F8F8F5">
+<title>ArqUX — section under reconstruction</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="any">
+<meta name="theme-color" content="#0A1420">
 <link rel="stylesheet" href="/assets/style.css">
-<script src="/assets/app.js" defer></script>
 </head>
 <body>
-
 <div class="nav">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/assets/mark.svg" alt="" width="26" style="display:block">Ar<span class="q">q</span>UX</a>
-    <nav>
-      <a href="/framework.html">Framework</a>
-      <a class="here" href="/evidence.html">Proof</a>
-      <a href="/platform.html">Platform</a>
-      <a href="https://github.com/FidelErnesto03/arqux">GitHub</a>
-      <a class="lang" href="/es/evidence.html">ES</a>
-    </nav>
+    <a class="brand" href="/"><img src="/assets/brand/logo-light.svg" alt="ArqUX" height="30"></a>
+    <nav><a href="https://github.com/FidelErnesto03/arqux/blob/master/README.md">Docs</a><a href="https://github.com/FidelErnesto03/arqux/releases">Releases</a><a class="lang" href="/es/">ES</a></nav>
   </div>
 </div>
-
-<header class="wrap hero">
-  <div class="kicker"><span class="dot"></span><span>The auditor's page</span></div>
-  <h1>Proof,<br>not promises.</h1>
-  <p class="lede">Most memory systems ask you to trust a screenshot. ArqUX hands your auditor the hashes.
-    Everything on this page is either computed in your browser right now, or a number from the project's
-    published certification.</p>
-</header>
-
-<section class="wrap reveal">
-  <div class="sec-head">
-    <div class="kicker"><span>1 · TAMPER-EVIDENCE, LIVE</span></div>
-    <h2>Break the chain yourself.</h2>
-    <p class="sub">Three journal entries. Each block's hash covers its parent — change one byte and the chain
-      stops verifying, visibly.</p>
-  </div>
-
-  <div class="demo" id="chain-demo">
-    <div class="demo-top"><span class="t">hash-chain journal · <b>real SHA-256 in your browser</b></span></div>
-    <label for="live-entry">Your entry (block 1)</label>
-    <input type="text" id="live-entry" placeholder='FCS:current{what:"ship the Platform", priority:"high"}'>
-    <div class="chain" aria-live="polite">
-      <div class="cblock good"><span class="n">01</span><span class="c">FCS:current{what:"ship the Platform", priority:"high"}</span><span class="h">computing…</span></div>
-      <div class="cblock good"><span class="n">02</span><span class="c">LNG:layers{lesson:"separate layers before naming products"}</span><span class="h">computing…</span></div>
-      <div class="cblock good"><span class="n">03</span><span class="c">AUD:init{event:"project.init", result:"governed"}</span><span class="h">computing…</span></div>
+<div class="hero-dark">
+  <div class="wrap inner">
+    <div class="kicker"><span class="dot"></span><span>Portal under reconstruction</span></div>
+    <h1>This section is being rebuilt.</h1>
+    <p class="lede">We are restructuring the portal under a new content contract: every claim needs version,
+      evidence, limit and owner before it is published. This page returns with that standard — until then,
+      the source of truth is the repository.</p>
+    <div class="statusline">
+      <a class="chip beta" href="https://github.com/FidelErnesto03/arqux/releases">Framework beta 0.9.0rc3</a>
+      <a class="chip dev" href="#"><span class="status st-dev">Rebuild in progress</span></a>
     </div>
-    <span class="cstatus ok">verifying…</span>
-    <div class="cbtns">
-      <button class="btn primary" id="btn-sign" type="button">Canonicalize &amp; sign</button>
-      <button class="btn" id="btn-tamper" type="button">Tamper block 2</button>
-      <button class="btn" id="btn-restore" type="button">Restore</button>
+    <div class="cta">
+      <a class="btn primary" href="/">Back to the front</a>
+      <a class="btn on-dark" href="https://github.com/FidelErnesto03/arqux">Repository</a>
     </div>
   </div>
-</section>
-
-<section class="wrap reveal" id="parity">
-  <div class="sec-head">
-    <div class="kicker"><span>2 · BYTE-EXACT PARITY ACROSS RUNTIMES</span></div>
-    <h2>Five engines. One truth.</h2>
-    <p class="sub">The CORTEX format is deterministic: the same entry canonicalizes to the same bytes everywhere.
-      Below, one sample entry hashed once in your browser — the point is that <b>it does not matter who computes it</b>.</p>
-  </div>
-  <div class="runtimes">
-    <div class="rt"><div class="name">Python</div><div class="hash" data-parity-hash>…</div><div class="tick">✓</div></div>
-    <div class="rt"><div class="name">Go</div><div class="hash" data-parity-hash>…</div><div class="tick">✓</div></div>
-    <div class="rt"><div class="name">Node</div><div class="hash" data-parity-hash>…</div><div class="tick">✓</div></div>
-    <div class="rt"><div class="name">Rust</div><div class="hash" data-parity-hash>…</div><div class="tick">✓</div></div>
-    <div class="rt"><div class="name">Bash</div><div class="hash" data-parity-hash>…</div><div class="tick">✓</div></div>
-  </div>
-  <div class="stats" style="margin-top:22px">
-    <div class="stat"><div class="n"><span data-count="141">0</span><span class="of">/141</span></div><div class="l">conformance vectors</div></div>
-    <div class="stat"><div class="n"><span data-count="364">0</span><span class="of">/364</span></div><div class="l">corpus documents</div></div>
-    <div class="stat"><div class="n"><span data-count="68">0</span><span class="of">/68</span></div><div class="l">slot vectors</div></div>
-    <div class="stat"><div class="n"><span data-count="5">0</span></div><div class="l">independent runtimes</div></div>
-  </div>
-  <p class="note">Certification figures come from the project's published test suite and certificate files. The parity panel above is a live demonstration of determinism — the real proof runs in CI across five runtimes.</p>
-</section>
-
-<section class="wrap reveal">
-  <div class="sec-head">
-    <div class="kicker"><span>3 · THE SHAPE OF AN EVIDENCE PACK</span></div>
-    <h2>What your auditor actually reads.</h2>
-    <p class="sub">A signed export — hashes and provenance, not your content. Illustrative structure:</p>
-  </div>
-  <div class="code"><span class="c">// evidence-pack.json — illustrative</span>
-{
-  <span class="g">"scope"</span>:      <span class="y">"base:governance · 2026-Q4"</span>,
-  <span class="g">"entries"</span>:    <span class="y">1843</span>,
-  <span class="g">"chain_head"</span>: <span class="y">"sha256:9f2c…c41d"</span>,
-  <span class="g">"verified"</span>:   { <span class="g">"python"</span>: <span class="y">true</span>, <span class="g">"go"</span>: <span class="y">true</span>, <span class="g">"node"</span>: <span class="y">true</span>, <span class="g">"rust"</span>: <span class="y">true</span>, <span class="g">"bash"</span>: <span class="y">true</span> },
-  <span class="g">"window"</span>:     { <span class="g">"from"</span>: <span class="y">"2026-10-01T00:00:00Z"</span>, <span class="g">"to"</span>: <span class="y">"2026-12-31T23:59:59Z"</span> },
-  <span class="g">"signature"</span>:  <span class="y">"ed25519:…"</span>,
-  <span class="g">"verify"</span>:     <span class="y">"arqux evidence verify evidence-pack.json"</span>
-}</div>
-  <p class="note">The auditor checks the chain head against entry hashes and the signature — without ever seeing raw memory. Integrity and confidentiality, decoupled by design.</p>
-</section>
-
-<section class="wrap reveal">
-  <div class="sec-head">
-    <div class="kicker"><span>4 · COMPLIANCE MAPPING</span></div>
-    <h2>Built for audit conversations.</h2>
-    <p class="sub">A mapping, not a certification — the artifacts an auditor can be pointed to.</p>
-  </div>
-  <div class="tablewrap">
-    <table>
-      <tr><th>Requirement</th><th>ArqUX artifact</th></tr>
-      <tr><td>Reconstruct what the agent knew at time T</td><td><b>Journal replay</b> — point-in-time state, byte-exact</td></tr>
-      <tr><td>Prove records were not altered</td><td><b>Hash-chain head</b> + per-entry hashes + signature</td></tr>
-      <tr><td>Identify which agent wrote what, under which role</td><td><b>Attributed entries</b> — constrained by constitution roles</td></tr>
-      <tr><td>Demonstrate retained operational rules</td><td><b>Constitution kernel</b> — axioms as load-bearing structure</td></tr>
-      <tr><td>Data minimization in audits</td><td><b>Evidence packs</b> — hashes and provenance, not content</td></tr>
-    </table>
-  </div>
-  <p class="note">Maps to obligations discussed in EU AI Act auditability provisions and OWASP agentic risk categories. Engineering artifacts; legal interpretation is your counsel's.</p>
-</section>
-
-<section class="wrap reveal">
-  <div class="sec-head">
-    <div class="kicker"><span>5 · HONESTY NOTES</span></div>
-    <p class="sub">· The 17% figure cited in our pitch comes from a 2026 industry survey reported by third parties — attributed, not independently rerun.<br>
-      · The parity panel demonstrates determinism live; the authoritative proof is the published conformance suite.<br>
-      · The evidence pack above is illustrative; the format ships with the Platform.</p>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="cols">
-      <div><h4>Product</h4><a href="/framework.html">Framework</a><a href="/platform.html">Platform</a><a href="/evidence.html">Proof</a><a href="/brand/">Brand</a></div>
-      <div><h4>Project</h4><a href="https://github.com/FidelErnesto03/arqux">GitHub</a><a href="https://pypi.org/project/arqux/">PyPI</a><a href="/es/evidence.html">Español</a></div>
-      <div><h4>Contact</h4><a href="https://github.com/FidelErnesto03/arqux/issues">Open an issue</a></div>
-    </div>
-    <div class="fine"><span>© 2026 ArqUX · CORTEX engine inside</span><span>Protocol-grade integrity for the agent experience.</span></div>
-  </div>
-</footer>
-
+</div>
+<footer><div class="wrap"><div class="fine"><span class="beta-line">Framework beta 0.9.0rc3 · updated 2026-11-13</span><span>© 2026 ArqUX</span></div></div></footer>
 </body>
 </html>
