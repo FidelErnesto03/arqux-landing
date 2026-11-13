@@ -67,7 +67,7 @@
               <p>Los archivos locales quedan inspeccionables y versionados.</p>
             </article>
           </div>
-          <div class="visual-bottom"><span>Ilustración del prototipo · no es un sync ni un chequeo de estado en vivo</span><button class="mini-link" type="button" id="cycle-environments" data-label-a="Workspace B seleccionado" data-label-b="Workspace A seleccionado">Comparar workspaces</button></div>
+          <div class="visual-bottom"><span>Estados ilustrativos</span><button class="mini-link" type="button" id="cycle-environments" data-label-a="Workspace B seleccionado" data-label-b="Workspace A seleccionado">Comparar workspaces</button></div>
         </div>
       </div>
     </section>
@@ -107,7 +107,29 @@
             </article>
           </div>
         </div>
-        <div class="caption">Estados solo ilustrativos · ArqUX no realiza sync ni chequeo de deriva en este prototipo.</div>
+        <div class="caption">Estados solo ilustrativos · ArqUX no realiza sync ni chequeo de deriva en esta release.</div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="quickstart">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Quickstart</p><h2>Empieza en tres comandos.</h2><p class="section-copy">Instala, inicializa un workspace gobernado y apunta un agente hacia él. Sin servidor, sin API key — un directorio.</p></div>
+        <div class="codec-grid">
+          <article class="code-panel"><div class="code-head"><span>Terminal</span><span>del README del repositorio</span></div><pre>$ pip install arqux
+$ arqux init
+
+<span class="code-muted"># apunta cualquier agente al workspace, p. ej. OpenCode:</span>
+$ opencode --instructions "$(cat .arqux/AGENTS.md)"</pre></article>
+          <article class="code-panel"><div class="code-head"><span>Qué crea</span><span>estructura de ARCHITECTURE.md · verificar por release</span></div><pre>proyecto/
+├── AGENTS.md
+└── .arqux/
+    ├── meta-brain.cortex
+    ├── brain.cortex
+    ├── identities/
+    ├── skills/
+    └── cycles/</pre></article>
+        </div>
+        <p class="note">Guía completa: <a href="https://github.com/FidelErnesto03/arqux/blob/master/docs/guides/GETTING_STARTED.md" style="color:var(--teal-ink)">GETTING_STARTED.md</a> · el inventario exacto de archivos se confirma contra la release instalada.</p>
       </div>
     </section>
 
@@ -187,6 +209,12 @@ OBJ:gate{goal:<span class="code-amber">"Escribir documentacion"</span>,status:pl
         </div>
         <div class="proof-strip" aria-label="Resultados publicados del certificado de Codec-CORTEX"><div class="proof-stat"><b>140/140</b><span>casos de canonicalización y round-trip</span></div><div class="proof-stat"><b>5/5</b><span>paridad de runtimes sobre el vector semilla</span></div><div class="proof-stat"><b>Alcance</b><span>comportamiento del formato; no calidad de razonamiento del agente</span></div></div>
         <div class="codec-foot"><span>Los resultados del certificado cubren el alcance determinista del codec; las afirmaciones exploratorias sobre comprensión por LLM no están establecidas.</span><a class="source-link" href="https://github.com/FidelErnesto03/codec-cortex" target="_blank" rel="noreferrer">Inspecciona el formato, las pruebas y los límites →</a></div>
+        <div class="architecture" style="grid-template-columns:repeat(3,1fr);margin-top:28px">
+          <article class="architecture-card"><p class="eyebrow">Validado, no solo parseado</p><h3>Estructura con reglas</h3><p>Sigilos, secciones y atributos se comprueban contra el glosario del propio documento — el estado inválido falla con códigos, no se acepta en silencio.</p></article>
+          <article class="architecture-card"><p class="eyebrow">Canónico y reversible</p><h3>Los mismos bytes en todos lados</h3><p>La misma entrada produce los mismos bytes canónicos entre runtimes soportados; el round-trip está certificado dentro del alcance del codec.</p></article>
+          <article class="architecture-card"><p class="eyebrow">Una fuente, dos superficies</p><h3>Máquina y persona</h3><p>CORTEX para procesar, HCORTEX para leer — pareados por construcción, no por un conversor que mantienes tú.</p></article>
+        </div>
+        <p class="note" style="margin-top:18px">¿Por qué no solo YAML/JSON/Markdown? Son formatos de configuración y prosa; CORTEX es estado gobernado que debe <b>validarse, canonicalizarse, renderizarse y verificarse</b>. Los límites del codec siguen aplicando: comportamiento del formato, no calidad de razonamiento.</p>
       </div>
     </section>
 

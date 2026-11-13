@@ -67,7 +67,7 @@
               <p>Local files remain inspectable and versioned.</p>
             </article>
           </div>
-          <div class="visual-bottom"><span>Prototype illustration · not a live sync or status check</span><button class="mini-link" type="button" id="cycle-environments" data-label-a="Workspace B selected" data-label-b="Workspace A selected">Compare workspaces</button></div>
+          <div class="visual-bottom"><span>Illustrative states</span><button class="mini-link" type="button" id="cycle-environments" data-label-a="Workspace B selected" data-label-b="Workspace A selected">Compare workspaces</button></div>
         </div>
       </div>
     </section>
@@ -107,7 +107,29 @@
             </article>
           </div>
         </div>
-        <div class="caption">Illustrative states only · ArqUX does not perform a sync or drift check in this prototype.</div>
+        <div class="caption">Illustrative states only · ArqUX does not perform a sync or drift check in this release.</div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="quickstart">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Quickstart</p><h2>Start in three commands.</h2><p class="section-copy">Install, initialize a governed workspace, and point an agent at it. No server, no API key — a directory.</p></div>
+        <div class="codec-grid">
+          <article class="code-panel"><div class="code-head"><span>Terminal</span><span>from the repository README</span></div><pre>$ pip install arqux
+$ arqux init
+
+<span class="code-muted"># point any agent at the workspace, e.g. OpenCode:</span>
+$ opencode --instructions "$(cat .arqux/AGENTS.md)"</pre></article>
+          <article class="code-panel"><div class="code-head"><span>What it creates</span><span>ARCHITECTURE.md layout · verify per release</span></div><pre>project/
+├── AGENTS.md
+└── .arqux/
+    ├── meta-brain.cortex
+    ├── brain.cortex
+    ├── identities/
+    ├── skills/
+    └── cycles/</pre></article>
+        </div>
+        <p class="note">Full guided setup: <a href="https://github.com/FidelErnesto03/arqux/blob/master/docs/guides/GETTING_STARTED.md" style="color:var(--teal-ink)">GETTING_STARTED.md</a> · the exact file inventory is confirmed against the installed release.</p>
       </div>
     </section>
 
@@ -187,6 +209,12 @@ OBJ:gate{goal:<span class="code-amber">"Escribir documentacion"</span>,status:pl
         </div>
         <div class="proof-strip" aria-label="Published Codec-CORTEX certificate results"><div class="proof-stat"><b>140/140</b><span>canonicalization and round-trip cases</span></div><div class="proof-stat"><b>5/5</b><span>runtime parity on the seed vector</span></div><div class="proof-stat"><b>Scope</b><span>format behavior; not agent reasoning quality</span></div></div>
         <div class="codec-foot"><span>Certificate results cover the codec's deterministic test scope; exploratory claims about LLM comprehension are not established.</span><a class="source-link" href="https://github.com/FidelErnesto03/codec-cortex" target="_blank" rel="noreferrer">Inspect format, tests and limits →</a></div>
+        <div class="architecture" style="grid-template-columns:repeat(3,1fr);margin-top:28px">
+          <article class="architecture-card"><p class="eyebrow">Validated, not just parsed</p><h3>Structure with rules</h3><p>Sigils, sections and attributes are checked against the document's own glossary — invalid state fails with codes, not silent acceptance.</p></article>
+          <article class="architecture-card"><p class="eyebrow">Canonical and reversible</p><h3>Same bytes everywhere</h3><p>The same entry produces the same canonical bytes across supported runtimes; round-trip is certified within the codec's scope.</p></article>
+          <article class="architecture-card"><p class="eyebrow">One source, two surfaces</p><h3>Machine and human</h3><p>CORTEX for processing, HCORTEX for reading — paired by construction, not by a converter you maintain.</p></article>
+        </div>
+        <p class="note" style="margin-top:18px">Why not just YAML/JSON/Markdown? They are configuration and prose formats; CORTEX is governed state that must be <b>validated, canonicalized, rendered and verified</b>. The codec's limits still apply: format behavior, not reasoning quality.</p>
       </div>
     </section>
 
