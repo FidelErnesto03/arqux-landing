@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArqUX — Auditar. Reponer. Consultar.</title>
+<meta name="description" content="ArqUX es infraestructura de gobernanza por debajo de tu stack de agentes. Un formato de memoria determinista — certificado byte-exacto en 5 runtimes — y gobernanza constitucional probada en operación real.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B1220'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='20' font-weight='bold' fill='%23D97706' text-anchor='middle'%3EQ%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#0B1220; --paper:#F8F8F5; --ack:#16A34A; --amber:#D97706; --chain:#94A3B8;
+    --ink-soft:#1A2332; --paper-dim:#B9C2CC;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:var(--ink); color:var(--paper);
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+  header{display:flex;justify-content:space-between;align-items:center;padding:28px 0}
+  .wordmark{font-size:20px;font-weight:700;letter-spacing:.5px;color:var(--paper);text-decoration:none}
+  .wordmark .q{color:var(--amber)}
+  nav a{color:var(--chain);text-decoration:none;font-size:13px;margin-left:22px}
+  nav a:hover{color:var(--paper)}
+  nav a.lang{color:var(--amber)}
+  .hero{padding:72px 0 56px;border-bottom:1px solid var(--ink-soft)}
+  .verbs{font-size:clamp(34px,7vw,58px);font-weight:700;letter-spacing:-1px;line-height:1.1}
+  .verbs .a{color:var(--ack)} .verbs .r{color:var(--paper)} .verbs .q{color:var(--amber)}
+  .hero p.sub{margin-top:22px;font-size:16px;color:var(--paper-dim);max-width:660px}
+  .hero p.sub strong{color:var(--paper);font-weight:600}
+  .cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{padding:12px 22px;border-radius:6px;font-family:inherit;font-size:14px;font-weight:700;
+       text-decoration:none;border:1px solid var(--ink-soft);display:inline-block}
+  .btn.primary{background:var(--ack);color:var(--ink);border-color:var(--ack)}
+  .btn.primary:hover{filter:brightness(1.1)}
+  .btn.ghost{color:var(--paper)}
+  .btn.ghost:hover{border-color:var(--chain)}
+  section{padding:56px 0;border-bottom:1px solid var(--ink-soft)}
+  h2{font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--chain);margin-bottom:26px}
+  .quote{font-size:clamp(20px,4vw,28px);font-weight:600;line-height:1.4;max-width:720px}
+  .quote .dim{color:var(--paper-dim)}
+  .quote-by{margin-top:16px;font-size:12px;color:var(--chain)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .card{background:var(--ink-soft);border:1px solid #232d3f;border-radius:8px;padding:22px}
+  .card h3{font-size:15px;margin-bottom:10px}
+  .card h3 span{margin-right:8px}
+  .card p{font-size:13px;color:var(--paper-dim)}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+  .grid2 h3{font-size:16px;margin-bottom:10px;color:var(--paper)}
+  .grid2 p{font-size:13px;color:var(--paper-dim);margin-bottom:12px}
+  .grid2 ul{list-style:none;font-size:13px;color:var(--paper-dim)}
+  .grid2 li{padding:5px 0;border-bottom:1px dashed #232d3f}
+  .grid2 li b{color:var(--paper);font-weight:600}
+  .pill{display:inline-block;font-size:11px;letter-spacing:1px;text-transform:uppercase;
+        padding:3px 10px;border-radius:99px;border:1px solid var(--amber);color:var(--amber);margin-bottom:14px}
+  footer{padding:40px 0 60px;font-size:12px;color:var(--chain)}
+  footer .en{margin-top:10px;font-style:italic}
+  footer a{color:var(--paper-dim);text-decoration:none;border-bottom:1px dotted var(--chain)}
+  footer a:hover{color:var(--paper)}
+  .note{font-size:11px;color:var(--chain);margin-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <a class="wordmark" href="/es/">Ar<span class="q">q</span>UX</a>
+  <nav>
+    <a href="#framework">Framework</a>
+    <a href="#plataforma">Platform</a>
+    <a href="https://github.com/FidelErnesto03/arqux">GitHub</a>
+    <a href="/" class="lang">EN</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="verbs"><span class="a">Auditar.</span> <span class="r">Reponer.</span> <span class="q">Consultar.</span></div>
+  <p class="sub"><strong>ArqUX</strong> es infraestructura de gobernanza por debajo de tu stack de agentes.
+  Un formato de memoria determinista — <strong>certificado byte-exacto en Python, Go, Node, Rust y Bash</strong> —
+  y una capa de gobernanza constitucional probada corriendo un workspace real multi-agente.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/FidelErnesto03/arqux">Leer el Framework</a>
+    <a class="btn ghost" href="#plataforma">Sumate a la lista de pilotos</a>
+  </div>
+</div>
+
+<section id="no-es">
+  <h2>Lo que ArqUX no es</h2>
+  <p class="quote">"ArqUX <span class="dim">no es una plataforma. Es</span> infraestructura de gobernanza
+  <span class="dim">para tu plataforma."</span></p>
+  <p class="quote-by">— el README del ArqUX Framework</p>
+</section>
+
+<section id="framework">
+  <h2>El Framework — libre, abierto, certificado</h2>
+  <div class="cards">
+    <div class="card"><h3><span style="color:var(--ack)">§</span>Auditar</h3>
+      <p>Cada entrada canonicalizada, hasheada y firmada. Estado que podés probar — sin tener que creerle al que lo cuenta.</p></div>
+    <div class="card"><h3><span style="color:var(--amber)">§</span>Reponer</h3>
+      <p>Roundtrip determinista: el mismo documento reconstruido byte-exacto en cinco runtimes independientes. Dos motores, una verdad.</p></div>
+    <div class="card"><h3><span style="color:var(--paper)">§</span>Consultar</h3>
+      <p>Memoria direccionable — secciones, sigilos, atributos — seleccionada de forma determinista. El recuerdo por dirección, no por similitud.</p></div>
+  </div>
+</section>
+
+<section id="plataforma">
+  <h2>La Platform — donde corre</h2>
+  <div class="grid2">
+    <div>
+      <span class="pill">en desarrollo</span>
+      <h3>ArqUX Platform</h3>
+      <p>El servicio central de memoria para tu stack de agentes: un journal con hash-chain y orden total de escritura,
+      context packs servidos listos, permisos entre bases, y <b>paquetes de evidencia firmada</b> mapeados a
+      EU AI Act y a los riesgos agénticos de OWASP.</p>
+      <ul>
+        <li><b>context.load</b> — tu contexto de trabajo, armado por política</li>
+        <li><b>memory.write</b> — validado, canónico, firmado</li>
+        <li><b>Self-hosted o cloud</b> — tu memoria, tu terreno</li>
+      </ul>
+    </div>
+    <div>
+      <span class="pill">lista de pilotos abierta</span>
+      <h3>Moldealo con tu stack</h3>
+      <p>Estamos incorporando un grupo chico de equipos que corren agentes en producción, para probar la Platform
+      contra cargas reales — y para escuchar qué evidencia les piden de verdad a sus auditores.</p>
+      <p style="margin-top:12px">Abrí un issue o contactanos directo:</p>
+      <p style="margin-top:8px"><a style="color:var(--amber);text-decoration:none" href="https://github.com/FidelErnesto03/arqux/issues">github.com/FidelErnesto03/arqux/issues</a></p>
+      <!-- TODO(Arquitecto): reemplazar por hola@arqux.ai cuando el buzon exista -->
+      <p class="note">El piloto es gratis. Tus datos quedan en tu terreno.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 ArqUX · <a href="https://github.com/FidelErnesto03/arqux">Framework en GitHub</a> ·
+  <a href="https://pypi.org/project/arqux/">arqux en PyPI</a> ·
+  motor CORTEX adentro</p>
+  <p class="en">Protocol-grade integrity for the agent experience.</p>
+</footer>
+
+</div>
+</body>
+</html>
