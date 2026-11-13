@@ -115,21 +115,23 @@
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">Quickstart</p><h2>Empieza en tres comandos.</h2><p class="section-copy">Instala, inicializa un workspace gobernado y apunta un agente hacia él. Sin servidor, sin API key — un directorio.</p></div>
         <div class="codec-grid">
-          <article class="code-panel"><div class="code-head"><span>Terminal</span><span>del README del repositorio</span></div><pre>$ pip install arqux
+          <article class="code-panel"><div class="code-head"><span>Terminal</span><span>comandos del README del repositorio</span></div><pre>$ pip install arqux
 $ arqux init
 
 <span class="code-muted"># apunta cualquier agente al workspace, p. ej. OpenCode:</span>
-$ opencode --instructions "$(cat .arqux/AGENTS.md)"</pre></article>
-          <article class="code-panel"><div class="code-head"><span>Qué crea</span><span>estructura de ARCHITECTURE.md · verificar por release</span></div><pre>proyecto/
+$ opencode --instructions "$(cat AGENTS.md)"</pre></article>
+          <article class="code-panel"><div class="code-head"><span>Qué crea</span><span>verificado en v0.9.0rc3</span></div><pre>proyecto/
 ├── AGENTS.md
 └── .arqux/
     ├── meta-brain.cortex
-    ├── brain.cortex
-    ├── identities/
-    ├── skills/
-    └── cycles/</pre></article>
+    ├── projects.cortex
+    ├── learn-policies.cortex
+    ├── identities/   <span class="code-muted">7 contratos</span>
+    ├── skills/       <span class="code-muted">8 skills · workflows/</span>
+    ├── templates/
+    └── packages/</pre></article>
         </div>
-        <p class="note">Guía completa: <a href="https://github.com/FidelErnesto03/arqux/blob/master/docs/guides/GETTING_STARTED.md" style="color:var(--teal-ink)">GETTING_STARTED.md</a> · el inventario exacto de archivos se confirma contra la release instalada.</p>
+        <p class="note">Guía completa: <a href="https://github.com/FidelErnesto03/arqux/blob/master/docs/guides/GETTING_STARTED.md" style="color:var(--teal-ink)">GETTING_STARTED.md</a> · estructura confirmada instalando <b>arqux v0.9.0rc3</b> y ejecutando <code>arqux init</code> (2026-11-13).</p>
       </div>
     </section>
 
