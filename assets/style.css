@@ -271,3 +271,5 @@ footer{background:var(--ink-950);color:var(--mist-500);border-top:1px solid rgba
 .why[open] summary{border-bottom:1px solid rgba(220,226,227,.12)}
 .why .why-body{padding:13px 16px 15px;font-size:13px;color:#b6c0c5;line-height:1.65}
 .why .why-body a{color:var(--teal-400);text-decoration:none;border-bottom:1px dotted var(--teal-400)}
+
+.ext{display:inline-block;margin-left:6px;vertical-align:-1px}
