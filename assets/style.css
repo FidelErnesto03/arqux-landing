@@ -262,3 +262,12 @@ footer{background:var(--ink-950);color:var(--mist-500);border-top:1px solid rgba
 .scope-strip .now{color:var(--ink-950)}
 .scope-strip .arr{color:var(--amber-700)}
 .scope-strip .next{color:#70521c}
+
+/* ——— "por qué no..." como accionable desplegable ——— */
+.why{border:1px solid rgba(220,226,227,.14);border-radius:12px;margin-top:18px;background:rgba(255,255,255,.03);overflow:hidden}
+.why summary{cursor:pointer;list-style:none;padding:13px 16px;font:600 12.5px/1.45 var(--mono);color:#d4dce0;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.why summary::-webkit-details-marker{display:none}
+.why summary:focus-visible{outline:3px solid var(--amber-500);outline-offset:-3px}
+.why[open] summary{border-bottom:1px solid rgba(220,226,227,.12)}
+.why .why-body{padding:13px 16px 15px;font-size:13px;color:#b6c0c5;line-height:1.65}
+.why .why-body a{color:var(--teal-400);text-decoration:none;border-bottom:1px dotted var(--teal-400)}
