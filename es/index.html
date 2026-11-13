@@ -223,7 +223,7 @@ $ opencode --instructions "$(cat AGENTS.md)"</pre></article>
     <section class="section codec-section" id="cortex">
       <div class="wrap">
         <div class="codec-top">
-          <div class="section-head"><p class="eyebrow">Codec‑CORTEX</p><h2>No es un formato de almacenamiento — es un protocolo ideático determinista.</h2><p class="section-copy">CORTEX existe para que el contexto de trabajo y la memoria del agente sean <b>ultra-densos</b>: el modelo gasta tokens en ideas completas — no en el pegamento lingüístico que no necesita. La unidad es la <b>idea</b>: una línea regular por idea, <code>SIGIL:nombre</code> más un payload bajo el glosario del propio documento. Una fuente, dos superficies — CORTEX para máquinas, HCORTEX como su representación humana canónica — reversible por construcción, canónica por regla. La densidad es una propiedad de la <b>representación</b> (bytes, tokens, repetición), nunca una afirmación de comprensión. Esta página muestra un ejemplo estático, no una conversión en vivo.</p></div>
+          <div class="section-head"><p class="eyebrow">Codec‑CORTEX</p><h2>Cada línea es una idea.</h2><p class="section-copy">CORTEX mantiene la memoria del agente <b>ultra-densa</b>: cada línea lleva una idea — un sigilo, un nombre y un payload — para que el modelo gaste tokens en señal, no en relleno. El mismo documento se renderiza para humanos (HCORTEX) y se canonicaliza para máquinas, de forma determinista.</p></div>
           <div class="segmented" role="group" aria-label="Selecciona una representación"><button type="button" aria-pressed="true" data-code-view="both">Comparar</button><button type="button" aria-pressed="false" data-code-view="source">CORTEX</button><button type="button" aria-pressed="false" data-code-view="human">HCORTEX</button></div>
         </div>
         <div class="codec-grid">
@@ -251,7 +251,10 @@ OBJ:gate{goal:<span class="code-amber">"Escribir documentacion"</span>,status:pl
           <article class="architecture-card"><p class="eyebrow">Microtokens</p><h3>Compresión de sintaxis</h3><p>Todo átomo repetido tres veces o más se vuelve un alias de un token, expandido solo en forma canónica — la fuente pesa menos, el hash no cambia. El único compresor de sintaxis que Markdown no puede ofrecer.</p></article>
           <article class="architecture-card"><p class="eyebrow">Canónico y reversible</p><h3>Los mismos bytes en todos lados</h3><p>La misma entrada produce los mismos bytes canónicos entre runtimes; HCORTEX es representación canónica, no una segunda fuente. Certificado: 141/141 · 101/101 · 5/5.</p></article>
         </div>
-        <p class="note" style="margin-top:18px">¿Por qué no solo YAML/JSON/Markdown? Pueden guardar datos, pero no tienen unidad de idea, ni capa de glosario local, ni expansión canónica — la densidad y la reversibilidad son accidentes de cómo escribes, no propiedades del formato. CORTEX las convierte en <b>contrato</b>. Los límites siguen aplicando: la densidad es una propiedad de la representación (bytes · tokens · repetición), no una afirmación de comprensión; las ventajas de tokens se publican con corpus neutral y limitaciones declaradas, según el charter del proyecto.</p>
+        <details class="why">
+          <summary>¿Por qué no solo YAML/JSON/Markdown? <span aria-hidden="true">›</span></summary>
+          <div class="why-body">Pueden guardar datos, pero no tienen unidad de idea, ni capa de glosario local, ni expansión canónica — la densidad y la reversibilidad se vuelven accidentes de cómo escribes, no propiedades del formato. CORTEX las convierte en contrato. Los límites siguen aplicando: la densidad es una propiedad de la representación (bytes · tokens · repetición), no una afirmación de comprensión; las ventajas de tokens se publican con corpus neutral y límites declarados, según el charter del proyecto. <a href="https://github.com/FidelErnesto03/codec-cortex" target="_blank" rel="noreferrer">Investigar la documentación del codec →</a></div>
+        </details>
       </div>
     </section>
 

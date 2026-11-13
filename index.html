@@ -223,25 +223,25 @@ $ opencode --instructions "$(cat AGENTS.md)"</pre></article>
     <section class="section codec-section" id="cortex">
       <div class="wrap">
         <div class="codec-top">
-          <div class="section-head"><p class="eyebrow">Codec‑CORTEX</p><h2>Not a storage format — a deterministic ideatic protocol.</h2><p class="section-copy">CORTEX exists to keep an agent's work context and memory <b>ultra-dense</b>: the model spends tokens on complete ideas — not on linguistic glue it does not need. The unit is the <b>idea</b>: one regular line per idea, <code>SIGIL:name</code> plus a payload under the document's own glossary. Same source, two surfaces — CORTEX for machines, HCORTEX as its canonical human rendering — reversible by construction, canonical by rule. Density is a property of the <b>representation</b> (bytes, tokens, repetition), never a claim about comprehension. This page shows a static example, not a live conversion.</p></div>
+          <div class="section-head"><p class="eyebrow">Codec‑CORTEX</p><h2>Every line is one idea.</h2><p class="section-copy">CORTEX keeps an agent's memory <b>ultra-dense</b>: each line carries one idea — a sigil, a name and a payload — so the model spends tokens on signal, not on filler. The same document renders for humans (HCORTEX) and canonicalizes for machines, deterministically.</p></div>
           <div class="segmented" role="group" aria-label="Select a representation"><button type="button" aria-pressed="true" data-code-view="both">Compare</button><button type="button" aria-pressed="false" data-code-view="source">CORTEX</button><button type="button" aria-pressed="false" data-code-view="human">HCORTEX</button></div>
         </div>
         <div class="codec-grid">
           <article class="code-panel" data-code-panel="source"><div class="code-head"><span>CORTEX · machine source</span><span>repository sample · envelope 1.0</span></div><pre><span class="code-muted">$0:KERNEL</span>
-$0:format{cortex:1.0,encoding:UTF-8,language:es}
+$0:format{cortex:1.0,encoding:UTF-8,language:en}
 OBJ:task{type:attrs,weight:H,
  fields:<span class="code-amber">"goal:text|status:%state"</span>,
- focus:goal,schema:table,desc:<span class="code-teal">"Tarea"</span>}
+ focus:goal,schema:table,desc:<span class="code-teal">"Task"</span>}
 <span class="code-muted">$1:CORE</span>
-OBJ:meta{goal:<span class="code-amber">"Aprender HCORTEX"</span>,status:current}
-OBJ:gate{goal:<span class="code-amber">"Escribir documentacion"</span>,status:planned}</pre></article>
+OBJ:meta{goal:<span class="code-amber">"Learn HCORTEX"</span>,status:current}
+OBJ:gate{goal:<span class="code-amber">"Write documentation"</span>,status:planned}</pre></article>
           <article class="code-panel" data-code-panel="human"><div class="code-head"><span>HCORTEX · human reading</span><span>paired repository example</span></div><pre><span class="code-muted">&lt;!-- HCORTEX v=0.1 t=canonical k=corpus --&gt;</span>
 
-<span class="code-teal">## §1: TAREAS</span>
+<span class="code-teal">## §1: TASKS</span>
 
 <span class="code-muted">&lt;!-- table:1 --&gt;</span>
-| Aprender HCORTEX | current |
-| Escribir documentacion | planned |
+| Learn HCORTEX | current |
+| Write documentation | planned |
 <span class="code-muted">&lt;!-- /table:1 --&gt;</span></pre></article>
         </div>
         <div class="proof-strip" aria-label="Published Codec-CORTEX certificate results (codec_cortex 1.0.0)"><div class="proof-stat"><b>141/141</b><span>idempotence · round-trip · lossless</span></div><div class="proof-stat"><b>101/101</b><span>HCORTEX render parity cases</span></div><div class="proof-stat"><b>5/5</b><span>runtime parity · codec_cortex 1.0.0</span></div></div>
@@ -251,7 +251,10 @@ OBJ:gate{goal:<span class="code-amber">"Escribir documentacion"</span>,status:pl
           <article class="architecture-card"><p class="eyebrow">Microtokens</p><h3>Syntax compression</h3><p>Any atom repeated three times or more becomes a one-token alias, expanded only in canonical form — the source weighs less, the hash does not change. The one compressor Markdown cannot offer.</p></article>
           <article class="architecture-card"><p class="eyebrow">Canonical and reversible</p><h3>Same bytes everywhere</h3><p>The same entry produces the same canonical bytes across runtimes; HCORTEX is a canonical rendering, not a second source. Certified: 141/141 · 101/101 · 5/5.</p></article>
         </div>
-        <p class="note" style="margin-top:18px">Why not YAML/JSON/Markdown? They can hold data, but they have no idea-level unit, no local-glossary layer and no canonical expansion — density and reversibility are accidents of how you write them, not properties of the format. CORTEX makes them <b>contract</b>. The limits still apply: density is a representation property (bytes · tokens · repetition), not a comprehension claim; token advantages are published with a neutral corpus and declared limitations, per the project charter.</p>
+        <details class="why">
+          <summary>Why not just YAML/JSON/Markdown? <span aria-hidden="true">›</span></summary>
+          <div class="why-body">They can hold data, but they have no idea-level unit, no local-glossary layer and no canonical expansion — density and reversibility become accidents of how you write them, not properties of the format. CORTEX makes them contract. Limits still apply: density is a representation property (bytes · tokens · repetition), not a comprehension claim; token advantages publish with a neutral corpus and declared limits, per the project charter. <a href="https://github.com/FidelErnesto03/codec-cortex" target="_blank" rel="noreferrer">Investigate the codec docs →</a></div>
+        </details>
       </div>
     </section>
 
