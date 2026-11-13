@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArqUX — Prueba, no promesas</title>
+<meta name="description" content="La página del auditor: tamper-evidence demostrado en vivo en tu browser, paridad byte-exacta en cinco runtimes, y la forma de un paquete de evidencia firmada.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="https://arqux.ai/evidence.html">
+<meta name="theme-color" content="#F8F8F5">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/app.js" defer></script>
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap">
+    <a class="brand" href="/es/"><img src="/assets/mark.svg" alt="" width="26" style="display:block">Ar<span class="q">q</span>UX</a>
+    <nav>
+      <a href="/es/framework.html">Framework</a>
+      <a class="here" href="/es/evidence.html">Prueba</a>
+      <a href="/es/platform.html">Platform</a>
+      <a href="https://github.com/FidelErnesto03/arqux">GitHub</a>
+      <a class="lang" href="/evidence.html">EN</a>
+    </nav>
+  </div>
+</div>
+
+<header class="wrap hero">
+  <div class="kicker"><span class="dot"></span><span>La página del auditor</span></div>
+  <h1>Prueba,<br>no promesas.</h1>
+  <p class="lede">La mayoría de los sistemas de memoria te piden que confíes en una captura de pantalla.
+    ArqUX le entrega los hashes a tu auditor. Todo en esta página o se calcula en tu browser ahora mismo,
+    o es un número de la certificación publicada del proyecto.</p>
+</header>
+
+<section class="wrap reveal">
+  <div class="sec-head">
+    <div class="kicker"><span>1 · TAMPER-EVIDENCE, EN VIVO</span></div>
+    <h2>Rompé la cadena vos mismo.</h2>
+    <p class="sub">Tres entradas del journal. El hash de cada bloque cubre a su padre — cambiá un byte y la cadena
+      deja de verificar, visiblemente.</p>
+  </div>
+
+  <div class="demo" id="chain-demo">
+    <div class="demo-top"><span class="t">journal con hash-chain · <b>SHA-256 real en tu browser</b></span></div>
+    <label for="live-entry">Tu entrada (bloque 1)</label>
+    <input type="text" id="live-entry" placeholder='FCS:current{what:"ship the Platform", priority:"high"}'>
+    <div class="chain" aria-live="polite">
+      <div class="cblock good"><span class="n">01</span><span class="c">FCS:current{what:"ship the Platform", priority:"high"}</span><span class="h">calculando…</span></div>
+      <div class="cblock good"><span class="n">02</span><span class="c">LNG:layers{lesson:"separate layers before naming products"}</span><span class="h">calculando…</span></div>
+      <div class="cblock good"><span class="n">03</span><span class="c">AUD:init{event:"project.init", result:"governed"}</span><span class="h">calculando…</span></div>
+    </div>
+    <span class="cstatus ok">verificando…</span>
+    <div class="cbtns">
+      <button class="btn primary" id="btn-sign" type="button">Canonicalizar y firmar</button>
+      <button class="btn" id="btn-tamper" type="button">Manipular bloque 2</button>
+      <button class="btn" id="btn-restore" type="button">Restaurar</button>
+    </div>
+  </div>
+</section>
+
+<section class="wrap reveal" id="parity">
+  <div class="sec-head">
+    <div class="kicker"><span>2 · PARIDAD BYTE-EXACTA ENTRE RUNTIMES</span></div>
+    <h2>Cinco motores. Una verdad.</h2>
+    <p class="sub">El formato CORTEX es determinista: la misma entrada canonicaliza a los mismos bytes en todos lados.
+      Abajo, una entrada de muestra hasheada una sola vez en tu browser — el punto es que <b>no importa quién la compute</b>.</p>
+  </div>
+  <div class="runtimes">
+    <div class="rt"><div class="name">Python</div><div class="hash" data-parity-hash>…</div><div class="tick">✓</div></div>
+    <div class="rt"><div class="name">Go</div><div class="hash" data-parity-hash>…</div><div class="tick">✓</div></div>
+    <div class="rt"><div class="name">Node</div><div class="hash" data-parity-hash>…</div><div class="tick">✓</div></div>
+    <div class="rt"><div class="name">Rust</div><div class="hash" data-parity-hash>…</div><div class="tick">✓</div></div>
+    <div class="rt"><div class="name">Bash</div><div class="hash" data-parity-hash>…</div><div class="tick">✓</div></div>
+  </div>
+  <div class="stats" style="margin-top:22px">
+    <div class="stat"><div class="n"><span data-count="141">0</span><span class="of">/141</span></div><div class="l">vectores de conformidad</div></div>
+    <div class="stat"><div class="n"><span data-count="364">0</span><span class="of">/364</span></div><div class="l">documentos de corpus</div></div>
+    <div class="stat"><div class="n"><span data-count="68">0</span><span class="of">/68</span></div><div class="l">vectores de slots</div></div>
+    <div class="stat"><div class="n"><span data-count="5">0</span></div><div class="l">runtimes independientes</div></div>
+  </div>
+  <p class="note">Las cifras de certificación vienen de la suite de tests publicada y los archivos de certificado del proyecto. El panel de paridad es una demostración en vivo del determinismo — la prueba real corre en CI sobre cinco runtimes.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="sec-head">
+    <div class="kicker"><span>3 · LA FORMA DE UN PAQUETE DE EVIDENCIA</span></div>
+    <h2>Lo que tu auditor lee de verdad.</h2>
+    <p class="sub">Un export firmado — hashes y procedencia, no tu contenido. Estructura ilustrativa:</p>
+  </div>
+  <div class="code"><span class="c">// paquete-evidencia.json — ilustrativo</span>
+{
+  <span class="g">"alcance"</span>:     <span class="y">"base:gobernanza · 2026-Q4"</span>,
+  <span class="g">"entradas"</span>:    <span class="y">1843</span>,
+  <span class="g">"chain_head"</span>: <span class="y">"sha256:9f2c…c41d"</span>,
+  <span class="g">"verificado"</span>:  { <span class="g">"python"</span>: <span class="y">true</span>, <span class="g">"go"</span>: <span class="y">true</span>, <span class="g">"node"</span>: <span class="y">true</span>, <span class="g">"rust"</span>: <span class="y">true</span>, <span class="g">"bash"</span>: <span class="y">true</span> },
+  <span class="g">"ventana"</span>:     { <span class="g">"desde"</span>: <span class="y">"2026-10-01T00:00:00Z"</span>, <span class="g">"hasta"</span>: <span class="y">"2026-12-31T23:59:59Z"</span> },
+  <span class="g">"firma"</span>:       <span class="y">"ed25519:…"</span>,
+  <span class="g">"verificar"</span>:   <span class="y">"arqux evidence verify paquete-evidencia.json"</span>
+}</div>
+  <p class="note">El auditor contrasta el chain head contra los hashes de entrada y la firma — sin ver jamás la memoria cruda. Integridad y confidencialidad, desacopladas por diseño.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="sec-head">
+    <div class="kicker"><span>4 · MAPEO DE CUMPLIMIENTO</span></div>
+    <h2>Construido para conversaciones de auditoría.</h2>
+    <p class="sub">Un mapeo, no una certificación — los artefactos a los que un auditor puede apuntarse.</p>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <tr><th>Requisito</th><th>Artefacto ArqUX</th></tr>
+      <tr><td>Reconstruir qué sabía el agente en el instante T</td><td><b>Replay del journal</b> — estado point-in-time, byte-exacto</td></tr>
+      <tr><td>Probar que los registros no fueron alterados</td><td><b>Chain head</b> + hashes por entrada + firma</td></tr>
+      <tr><td>Identificar qué agente escribió qué, bajo qué rol</td><td><b>Entradas atribuidas</b> — restringidas por los roles de la constitución</td></tr>
+      <tr><td>Demostrar que se retuvieron las reglas operativas</td><td><b>Kernel de constitución</b> — axiomas como estructura de carga</td></tr>
+      <tr><td>Minimización de datos en auditorías</td><td><b>Paquetes de evidencia</b> — hashes y procedencia, no contenido</td></tr>
+    </table>
+  </div>
+  <p class="note">Mapea a obligaciones discutidas en las provisiones de auditabilidad del EU AI Act y a categorías de riesgo agéntico de OWASP. Artefactos de ingeniería; la interpretación legal es de tu abogado.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="sec-head">
+    <div class="kicker"><span>5 · NOTAS DE HONESTIDAD</span></div>
+    <p class="sub">· La cifra del 17% citada en nuestro pitch proviene de una encuesta industrial 2026 reportada por terceros — atribuida, no re-ejecutada independientemente.<br>
+      · El panel de paridad demuestra determinismo en vivo; la prueba autoritativa es la suite de conformidad publicada.<br>
+      · El paquete de evidencia de arriba es ilustrativo; el formato llega con la Platform.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><h4>Producto</h4><a href="/es/framework.html">Framework</a><a href="/es/platform.html">Platform</a><a href="/es/evidence.html">Prueba</a><a href="/brand/">Marca</a></div>
+      <div><h4>Proyecto</h4><a href="https://github.com/FidelErnesto03/arqux">GitHub</a><a href="https://pypi.org/project/arqux/">PyPI</a><a href="/evidence.html">English</a></div>
+      <div><h4>Contacto</h4><a href="https://github.com/FidelErnesto03/arqux/issues">Abrí un issue</a></div>
+    </div>
+    <div class="fine"><span>© 2026 ArqUX · motor CORTEX adentro</span><span>La integridad de protocolo para la experiencia de tus agentes.</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

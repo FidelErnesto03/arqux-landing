@@ -4,144 +4,123 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ArqUX — Audit. Replay. Query.</title>
-<meta name="description" content="ArqUX is governance infrastructure underneath your agent stack. Protocol-grade integrity for the agent experience — a deterministic memory format certified across 5 runtimes.">
-<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MTYgNzE2IiB3aWR0aD0iNzE2IiBoZWlnaHQ9IjcxNiI+PHJlY3Qgd2lkdGg9IjcxNiIgaGVpZ2h0PSI3MTYiIHJ4PSIxMjAiIGZpbGw9IiMwQjEyMjAiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNTggMzU4KSBzY2FsZSgwLjYyKSB0cmFuc2xhdGUoLTc2OCAtNDk2KSI+PGRlZnM+PHBhdGggaWQ9Im91dHNpZGUiIGQ9Ik0gNDI1LDI3OSBDIDM5OCwyODcgMzgxLDMwOSAzODEsMzM5IEwgMzgxLDY3MCBRIDM4MSw3MTEgNDE2LDczMyBMIDcyOCw5MjEgUSA3NjgsOTQ2IDgwOCw5MjEgTCAxMTIxLDczNCBRIDExNTYsNzEzIDExNTYsNjcxIEwgMTE1NiwzMzIgUSAxMTU2LDMwOCAxMTM4LDI5NSBRIDExMzAsMjkwIDExMjQsMzA2IEwgMTA2MywzNTUgTCAxMDYzLDY0OSBRIDEwNjMsNjc2IDEwNDAsNjkwIEwgNzkwLDgzOSBRIDc2OCw4NTIgNzQ2LDgzOSBMIDQ5NSw2OTAgUSA0NzIsNjc2IDQ3Miw2NTAgTCA0NzIsMzI2IFoiLz48cGF0aCBpZD0iaW5zaWRlIiBkPSJNIDU0MSwzNTIgTCA3MzgsMjM0IFEgNzY4LDIxNiA3OTQsMjMzIEwgOTE4LDMwOSBRIDkyMywzMTMgOTE0LDMxOSBMIDg1NywzNTcgUSA4NDksMzYzIDg0MSwzNTcgTCA3ODMsMzE5IFEgNzY4LDMwOSA3NTIsMzE5IEwgNjI3LDM5NCBRIDYxMiw0MDMgNjEyLDQyMCBMIDYxMiw1NjcgUSA2MTIsNTgyIDYyNyw1OTEgTCA3NTEsNjYzIFEgNzY4LDY3MyA3ODQsNjYzIEwgOTA3LDU5MSBRIDkyMiw1ODIgOTIyLDU2NiBMIDkyMiw0NTggUSA5MjIsNDQ5IDkzMSw0NDMgTCA5OTAsNDA1IFEgOTk5LDM5OSA5OTksNDEwIEwgOTk5LDU5MiBRIDk5OSw2MjIgOTc0LDYzNyBMIDc5NCw3NDkgUSA3NjgsNzY1IDc0Miw3NDkgTCA1NTksNjM4IFEgNTM1LDYyMiA1MzUsNTkyIEwgNTM1LDM4MCBRIDUzNSwzNjIgNTQxLDM1MiBaIi8+PHBhdGggaWQ9ImFtYmVyIiBkPSJNIDQzMCwyNTIgTCA2NzYsMTAwIFEgNzY3LDQ3IDg1OCw5OSBMIDEwNzAsMjI4IFEgMTEwMSwyNDYgMTEwMCwyNzggUSAxMDk5LDMwMiAxMDc0LDMxOSBMIDg3NSw0NDYgUSA4NjEsNDU0IDg2MSw0NjkgTCA4NjEsNTM0IFEgODYxLDU0NyA4NDksNTU1IEwgNzg0LDU5NCBRIDc2OCw2MDMgNzUyLDU5NCBMIDY4Nyw1NTUgUSA2NzMsNTQ3IDY3Myw1MzEgTCA2NzMsNDQ5IFEgNjczLDQzOCA2ODUsNDMwIEwgNzQ5LDM5MCBRIDc2NiwzODAgNzgxLDM4OSBMIDgxMSw0MDYgUSA4MjAsNDEyIDgyOSw0MDYgTCA5OTAsMzAzIFEgMTAwMywyOTMgOTkxLDI4MCBMIDg0NywxOTEgUSA3NjgsMTM5IDY4OSwxOTAgTCA0ODUsMzE3IFEgNDc2LDMyMyA0NzIsMzMzIFEgNDUxLDMxNSA0MzIsMzEwIFEgMzk5LDI5MyA0MzAsMjUyIFoiLz48L2RlZnM+PGcgZmlsbD0iI0Y4RjhGNSI+PHVzZSBocmVmPSIjb3V0c2lkZSIvPjx1c2UgaHJlZj0iI2luc2lkZSIvPjwvZz48dXNlIGhyZWY9IiNhbWJlciIgZmlsbD0iI0Q5NzcwNiIvPjwvZz48L3N2Zz4=">
-<style>
-  :root{
-    --ink:#F8F8F5; --paper:#0B1220; --ack:#16A34A; --amber:#D97706; --chain:#5F6B7A;
-    --ink-soft:#ECEAE2; --paper-dim:#5F6B7A;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{
-    background:var(--ink); color:var(--paper);
-    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
-    line-height:1.6; -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
-  header{display:flex;justify-content:space-between;align-items:center;padding:28px 0}
-  .wordmark{font-size:20px;font-weight:700;letter-spacing:.5px;color:var(--paper);text-decoration:none}
-  .wordmark .q{color:var(--amber)}
-  nav a{color:var(--chain);text-decoration:none;font-size:13px;margin-left:22px}
-  nav a:hover{color:var(--paper)}
-  .brandmark{margin-bottom:30px}
-  .brandmark svg{width:130px;height:auto}
-  .wordmark svg{width:22px;height:auto;vertical-align:-5px;margin-right:9px}
-  .hero{padding:72px 0 56px;border-bottom:1px solid var(--ink-soft)}
-  .verbs{font-size:clamp(34px,7vw,58px);font-weight:700;letter-spacing:-1px;line-height:1.1}
-  .verbs .a{color:var(--ack)} .verbs .r{color:var(--paper)} .verbs .q{color:var(--amber)}
-  .hero p.sub{margin-top:22px;font-size:16px;color:var(--paper-dim);max-width:640px}
-  .hero p.sub strong{color:var(--paper);font-weight:600}
-  .cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
-  .btn{padding:12px 22px;border-radius:6px;font-family:inherit;font-size:14px;font-weight:700;
-       text-decoration:none;border:1px solid var(--ink-soft);display:inline-block}
-  .btn.primary{background:var(--ack);color:var(--ink);border-color:var(--ack)}
-  .btn.primary:hover{filter:brightness(1.1)}
-  .btn.ghost{color:var(--paper)}
-  .btn.ghost:hover{border-color:var(--chain)}
-  section{padding:56px 0;border-bottom:1px solid var(--ink-soft)}
-  h2{font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--chain);margin-bottom:26px}
-  .quote{font-size:clamp(20px,4vw,28px);font-weight:600;line-height:1.4;max-width:720px}
-  .quote .dim{color:var(--paper-dim)}
-  .quote-by{margin-top:16px;font-size:12px;color:var(--chain)}
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-  .card{background:var(--ink-soft);border:1px solid #DEDACE;border-radius:8px;padding:22px}
-  .card h3{font-size:15px;margin-bottom:10px}
-  .card h3 span{margin-right:8px}
-  .card p{font-size:13px;color:var(--paper-dim)}
-  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
-  .grid2 h3{font-size:16px;margin-bottom:10px;color:var(--paper)}
-  .grid2 p{font-size:13px;color:var(--paper-dim);margin-bottom:12px}
-  .grid2 ul{list-style:none;font-size:13px;color:var(--paper-dim)}
-  .grid2 li{padding:5px 0;border-bottom:1px dashed #DEDACE}
-  .grid2 li b{color:var(--paper);font-weight:600}
-  .pill{display:inline-block;font-size:11px;letter-spacing:1px;text-transform:uppercase;
-        padding:3px 10px;border-radius:99px;border:1px solid var(--amber);color:var(--amber);margin-bottom:14px}
-  footer{padding:40px 0 60px;font-size:12px;color:var(--chain)}
-  footer .es{margin-top:10px;font-style:italic}
-  footer a{color:var(--paper-dim);text-decoration:none;border-bottom:1px dotted var(--chain)}
-  footer a:hover{color:var(--paper)}
-  .note{font-size:11px;color:var(--chain);margin-top:10px}
-</style>
+<meta name="description" content="ArqUX is governance infrastructure underneath your agent stack. Deterministic memory, certified byte-exact across five runtimes, with signed evidence your auditor can verify.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="es" href="https://arqux.ai/es/">
+<meta property="og:title" content="ArqUX — Audit. Replay. Query.">
+<meta property="og:description" content="Governance infrastructure underneath your agent stack. Deterministic memory. Signed evidence.">
+<meta property="og:url" content="https://arqux.ai/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F8F8F5">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/app.js" defer></script>
 </head>
 <body>
-<div class="wrap">
 
-<header>
-  <a class="wordmark" href="/">Ar<span class="q">q</span>UX</a>
-  <nav>
-    <a href="#framework">Framework</a>
-    <a href="#platform">Platform</a>
-    <a href="https://github.com/FidelErnesto03/arqux">GitHub</a>
-    <a href="/es/" style="color:var(--amber)">ES</a>
-  </nav>
-</header>
-
-<div class="hero">
-  <div class="brandmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="381 47 775 899" width="130" height="150"><defs><path id="outside" d="M 425,279 C 398,287 381,309 381,339 L 381,670 Q 381,711 416,733 L 728,921 Q 768,946 808,921 L 1121,734 Q 1156,713 1156,671 L 1156,332 Q 1156,308 1138,295 Q 1130,290 1124,306 L 1063,355 L 1063,649 Q 1063,676 1040,690 L 790,839 Q 768,852 746,839 L 495,690 Q 472,676 472,650 L 472,326 Z"/><path id="inside" d="M 541,352 L 738,234 Q 768,216 794,233 L 918,309 Q 923,313 914,319 L 857,357 Q 849,363 841,357 L 783,319 Q 768,309 752,319 L 627,394 Q 612,403 612,420 L 612,567 Q 612,582 627,591 L 751,663 Q 768,673 784,663 L 907,591 Q 922,582 922,566 L 922,458 Q 922,449 931,443 L 990,405 Q 999,399 999,410 L 999,592 Q 999,622 974,637 L 794,749 Q 768,765 742,749 L 559,638 Q 535,622 535,592 L 535,380 Q 535,362 541,352 Z"/><path id="amber" d="M 430,252 L 676,100 Q 767,47 858,99 L 1070,228 Q 1101,246 1100,278 Q 1099,302 1074,319 L 875,446 Q 861,454 861,469 L 861,534 Q 861,547 849,555 L 784,594 Q 768,603 752,594 L 687,555 Q 673,547 673,531 L 673,449 Q 673,438 685,430 L 749,390 Q 766,380 781,389 L 811,406 Q 820,412 829,406 L 990,303 Q 1003,293 991,280 L 847,191 Q 768,139 689,190 L 485,317 Q 476,323 472,333 Q 451,315 432,310 Q 399,293 430,252 Z"/></defs><g fill="#0B1220"><use href="#outside"/><use href="#inside"/></g><use href="#amber" fill="#D97706"/></svg></div>
-  <div class="verbs"><span class="a">Audit.</span> <span class="r">Replay.</span> <span class="q">Query.</span></div>
-  <p class="sub"><strong>ArqUX</strong> is governance infrastructure underneath your agent stack.
-  A deterministic memory format — <strong>certified byte-exact across Python, Go, Node, Rust and Bash</strong> —
-  and a constitutional governance layer proven running a real multi-agent workspace.</p>
-  <div class="cta">
-    <a class="btn primary" href="https://github.com/FidelErnesto03/arqux">Read the Framework</a>
-    <a class="btn ghost" href="#platform">Join the pilot list</a>
+<div class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/mark.svg" alt="" width="26" style="display:block">Ar<span class="q">q</span>UX</a>
+    <nav>
+      <a href="/framework.html">Framework</a>
+      <a href="/evidence.html">Proof</a>
+      <a href="/platform.html">Platform</a>
+      <a href="https://github.com/FidelErnesto03/arqux">GitHub</a>
+      <a class="lang" href="/es/">ES</a>
+    </nav>
   </div>
 </div>
 
-<section id="not">
-  <h2>What ArqUX is not</h2>
-  <p class="quote">"ArqUX <span class="dim">is not a platform. It's</span> governance infrastructure
-  <span class="dim">for your platform."</span></p>
-  <p class="quote-by">— the ArqUX Framework README</p>
-</section>
+<header class="wrap hero">
+  <div class="kicker"><span class="dot"></span><span>Open source · governance infrastructure · MCP-first</span></div>
+  <h1><span class="a">Audit.</span> <span class="r">Replay.</span> <span class="q">Query.</span></h1>
+  <p class="lede"><strong>ArqUX</strong> is governance infrastructure underneath your agent stack.
+    A deterministic memory format — <strong>certified byte-exact across Python, Go, Node, Rust and Bash</strong> —
+    with a hash-chained journal, total write order, and signed evidence your auditor can verify
+    without touching your data.</p>
+  <div class="cta">
+    <a class="btn primary" href="/framework.html">Read the Framework</a>
+    <a class="btn" href="/evidence.html">See the proof →</a>
+  </div>
+  <div class="badges">
+    <span class="badge"><b>141/141</b> conformance vectors</span>
+    <span class="badge"><b>5</b> runtimes, byte-exact</span>
+    <span class="badge"><b>364/364</b> corpus documents</span>
+    <span class="badge"><b>Apache-2.0</b> spirit · open</span>
+  </div>
+</header>
 
-<section id="framework">
-  <h2>The Framework — free, open, certified</h2>
-  <div class="cards">
-    <div class="card"><h3><span style="color:var(--ack)">§</span>Audit</h3>
-      <p>Every entry canonicalized, hashed and signed. State you can prove — without trusting the storyteller.</p></div>
-    <div class="card"><h3><span style="color:var(--amber)">§</span>Replay</h3>
-      <p>Deterministic roundtrip: the same document rebuilt byte-exact on five independent runtimes. Two engines, one truth.</p></div>
-    <div class="card"><h3><span style="color:var(--paper)">§</span>Query</h3>
-      <p>Addressable memory — sections, sigils, attributes — selected deterministically. Recall by address, not by similarity.</p></div>
+<section class="wrap reveal">
+  <div class="sec-head">
+    <div class="kicker"><span>THE CLAIM, DEMONSTRATED</span></div>
+    <h2>Memory that cannot be silently rewritten.</h2>
+    <p class="sub">This is not a screenshot. Your browser computes SHA-256 over the journal right now.
+      Sign it, then try to tamper — the chain catches it, byte by byte.</p>
+  </div>
+
+  <div class="demo" id="chain-demo">
+    <div class="demo-top"><span class="t">hash-chain journal · <b>live in your browser</b></span></div>
+    <label for="live-entry">Write a memory entry (block 1)</label>
+    <input type="text" id="live-entry" placeholder='FCS:current{what:"ship the Platform", priority:"high"}'>
+    <div class="chain" aria-live="polite">
+      <div class="cblock good"><span class="n">01</span><span class="c">FCS:current{what:"ship the Platform", priority:"high"}</span><span class="h">computing…</span></div>
+      <div class="cblock good"><span class="n">02</span><span class="c">LNG:layers{lesson:"separate layers before naming products"}</span><span class="h">computing…</span></div>
+      <div class="cblock good"><span class="n">03</span><span class="c">AUD:init{event:"project.init", result:"governed"}</span><span class="h">computing…</span></div>
+    </div>
+    <span class="cstatus ok">verifying…</span>
+    <div class="cbtns">
+      <button class="btn primary" id="btn-sign" type="button">Canonicalize &amp; sign</button>
+      <button class="btn" id="btn-tamper" type="button">Tamper block 2</button>
+      <button class="btn" id="btn-restore" type="button">Restore</button>
+    </div>
+    <p class="note">Real SHA-256 via the Web Crypto API. Block 2 doesn't just “change” — it stops matching its parent, and every block after it goes red. That is what tamper-evident means.</p>
   </div>
 </section>
 
-<section id="platform">
-  <h2>The Platform — where it runs</h2>
-  <div class="grid2">
-    <div>
-      <span class="pill">in development</span>
-      <h3>ArqUX Platform</h3>
-      <p>The central memory service for your agent stack: a hash-chained journal with total write order,
-      context packs served ready-made, permissions across bases, and <b>signed evidence packs</b> mapped to
-      EU AI Act and OWASP agentic requirements.</p>
-      <ul>
-        <li><b>context.load</b> — your working context, assembled by policy</li>
-        <li><b>memory.write</b> — validated, canonical, signed</li>
-        <li><b>Self-hosted or cloud</b> — your memory, your ground</li>
-      </ul>
-    </div>
-    <div>
-      <span class="pill">pilot list open</span>
-      <h3>Shape it with your stack</h3>
-      <p>We are onboarding a small group of teams running agents in production to test the Platform
-      against real workloads — and to hear what evidence their auditors actually ask for.</p>
-      <p style="margin-top:12px">Open an issue or reach us directly:</p>
-      <p style="margin-top:8px"><a style="color:var(--amber);text-decoration:none" href="https://github.com/FidelErnesto03/arqux/issues">github.com/FidelErnesto03/arqux/issues</a></p>
-      <!-- TODO(Arquitecto): reemplazar por hello@arqux.ai cuando el buzón exista -->
-      <p class="note">The pilot is free. Your data stays on your ground.</p>
-    </div>
+<section class="wrap reveal">
+  <div class="sec-head">
+    <div class="kicker"><span>THREE VERBS, ONE SUBSTRATE</span></div>
+    <h2>The verbs are the product.</h2>
   </div>
+  <div class="grid g3">
+    <div class="card"><span class="sig" style="color:var(--ack)">§</span><h3>Audit</h3><p>Every entry canonicalized, hashed, chained and signed. State you can prove — to a regulator, a counterparty, or your own team at 3am.</p></div>
+    <div class="card"><span class="sig" style="color:var(--ink)">§</span><h3>Replay</h3><p>Deterministic roundtrip: the same document rebuilt byte-exact on five independent runtimes. Two engines, one truth. Point-in-time state, reconstructable.</p></div>
+    <div class="card"><span class="sig" style="color:var(--amber)">§</span><h3>Query</h3><p>Addressable memory — sections, sigils, attributes — selected deterministically. Recall by address, not by similarity. No statistical guessing about what your agent knew.</p></div>
+  </div>
+</section>
+
+<section class="wrap reveal">
+  <div class="sec-head">
+    <div class="kicker"><span>WHAT ARQUX IS NOT</span></div>
+    <p class="quote">"ArqUX <span class="dim">is not a platform. It's</span> governance infrastructure <span class="dim">for your platform."</span></p>
+    <p class="byline">— the ArqUX Framework README</p>
+  </div>
+</section>
+
+<section class="wrap reveal">
+  <div class="sec-head">
+    <div class="kicker"><span>EDITIONS</span></div>
+    <h2>The method is free. The Platform is where it runs.</h2>
+    <p class="sub">Community is the complete method for the individual — not a crippled demo. Paid tiers add organizational scale: permissions, evidence packs, support.</p>
+  </div>
+  <div class="grid g4">
+    <div class="card"><h3>Community</h3><p>Full memory engine + constitution kernel + MCP surface. Free, self-hosted, forever.</p></div>
+    <div class="card"><h3>Team</h3><p>Multi-base permissions, federated search, retention. Self-serve.</p></div>
+    <div class="card"><h3>Enterprise</h3><p>SSO, signed evidence packs mapped to EU AI Act and OWASP, SLA, certified deployments.</p></div>
+    <div class="card"><h3>Cloud</h3><p>The same Platform, hosted. Your data stays on your terms.</p></div>
+  </div>
+  <div class="cta"><a class="btn" href="/platform.html">See the architecture →</a><a class="btn primary" href="https://github.com/FidelErnesto03/arqux/issues">Join the pilot list</a></div>
 </section>
 
 <footer>
-  <p>© 2026 ArqUX · <a href="https://github.com/FidelErnesto03/arqux">Framework on GitHub</a> ·
-  <a href="https://pypi.org/project/arqux/">arqux on PyPI</a> ·
-  CORTEX engine inside</p>
-  <p class="es">La integridad de protocolo para la experiencia de tus agentes.</p>
+  <div class="wrap">
+    <div class="cols">
+      <div><h4>Product</h4><a href="/framework.html">Framework</a><a href="/platform.html">Platform</a><a href="/evidence.html">Proof</a><a href="/brand/">Brand</a></div>
+      <div><h4>Project</h4><a href="https://github.com/FidelErnesto03/arqux">GitHub</a><a href="https://pypi.org/project/arqux/">PyPI</a><a href="/es/">Español</a></div>
+      <div><h4>Contact</h4><a href="https://github.com/FidelErnesto03/arqux/issues">Open an issue</a><a href="https://github.com/FidelErnesto03/arqux/issues">Pilot list</a></div>
+    </div>
+    <div class="fine"><span>© 2026 ArqUX · CORTEX engine inside</span><span>Protocol-grade integrity for the agent experience.</span></div>
+  </div>
 </footer>
 
-</div>
 </body>
 </html>

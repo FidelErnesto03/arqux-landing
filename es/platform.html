@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArqUX Platform — donde corre la constitución</title>
+<meta name="description" content="ArqUX Platform: el servicio central de memoria — journal encadenado por hash, context packs, permisos y evidencia firmada — donde el Framework abierto se vuelve sistema operativo de gobernanza.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="https://arqux.ai/platform.html">
+<meta name="theme-color" content="#F8F8F5">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/app.js" defer></script>
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap">
+    <a class="brand" href="/es/"><img src="/assets/mark.svg" alt="" width="26" style="display:block">Ar<span class="q">q</span>UX</a>
+    <nav>
+      <a href="/es/framework.html">Framework</a>
+      <a href="/es/evidence.html">Prueba</a>
+      <a class="here" href="/es/platform.html">Platform</a>
+      <a href="https://github.com/FidelErnesto03/arqux">GitHub</a>
+      <a class="lang" href="/platform.html">EN</a>
+    </nav>
+  </div>
+</div>
+
+<header class="wrap hero">
+  <div class="kicker"><span class="dot"></span><span>ArqUX Platform · en desarrollo · lista de pilotos abierta</span></div>
+  <h1>Donde corre<br><span class="q">la constitución.</span></h1>
+  <p class="lede">La Platform convierte el Framework abierto en servicio: una memoria central donde cada escritura
+    de cada agente se valida, se encadena y se firma; contexto servido listo; permisos entre bases;
+    y evidencia que tu auditor puede verificar sin tocar tus datos.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/FidelErnesto03/arqux/issues">Sumate a la lista de pilotos</a>
+    <a class="btn" href="/es/evidence.html">Ver la prueba →</a>
+  </div>
+</header>
+
+<section class="wrap reveal">
+  <div class="sec-head">
+    <div class="kicker"><span>ARQUITECTURA</span></div>
+    <h2>Cinco capas, un sustrato.</h2>
+  </div>
+  <svg viewBox="0 0 900 560" width="100%" role="img" aria-label="Diagrama de arquitectura de ArqUX Platform" style="max-width:900px">
+    <defs>
+      <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0B1220"/></marker>
+    </defs>
+    <rect x="200" y="20" width="500" height="56" rx="10" fill="#FFFFFF" stroke="#DEDACE" stroke-width="1.5"/>
+    <text x="450" y="43" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="13" font-weight="700" fill="#0B1220">TUS AGENTES</text>
+    <text x="450" y="61" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#5F6B7A">cualquier modelo · cualquier framework · cualquier runtime</text>
+    <line x1="450" y1="76" x2="450" y2="112" stroke="#0B1220" stroke-width="1.5" marker-end="url(#arr)"/>
+
+    <rect x="200" y="116" width="500" height="56" rx="10" fill="#FFFFFF" stroke="#DEDACE" stroke-width="1.5"/>
+    <text x="450" y="139" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="13" font-weight="700" fill="#0B1220">SUPERFICIE MCP</text>
+    <text x="450" y="157" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#5F6B7A">sesiones · memoria · tareas · evidencia — el protocolo que los agentes ya hablan</text>
+    <line x1="450" y1="172" x2="450" y2="208" stroke="#0B1220" stroke-width="1.5" marker-end="url(#arr)"/>
+
+    <rect x="200" y="212" width="500" height="56" rx="10" fill="#FFFFFF" stroke="#DEDACE" stroke-width="1.5"/>
+    <text x="450" y="235" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="13" font-weight="700" fill="#0B1220">KERNEL DE CONSTITUCIÓN</text>
+    <text x="450" y="253" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#5F6B7A">axiomas · roles · workflows — estructura de carga, verificada por hash</text>
+    <line x1="450" y1="268" x2="450" y2="304" stroke="#0B1220" stroke-width="1.5" marker-end="url(#arr)"/>
+
+    <rect x="200" y="308" width="500" height="72" rx="10" fill="#FFFFFF" stroke="#D97706" stroke-width="2"/>
+    <text x="450" y="333" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="13" font-weight="700" fill="#0B1220">SERVICIO DE MEMORIA</text>
+    <text x="450" y="351" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#5F6B7A">journal encadenado · orden total · catálogo · context packs · permisos</text>
+    <text x="450" y="368" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#5F6B7A">context.load · memory.write — dos llamadas gobernadas</text>
+    <line x1="450" y1="380" x2="450" y2="416" stroke="#0B1220" stroke-width="1.5" marker-end="url(#arr)"/>
+
+    <rect x="200" y="420" width="500" height="56" rx="10" fill="#ECEAE2" stroke="#DEDACE" stroke-width="1.5"/>
+    <text x="450" y="443" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="13" font-weight="700" fill="#0B1220">MOTOR CORTEX</text>
+    <text x="450" y="461" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#5F6B7A">formato determinista · certificado byte-exacto en 5 runtimes</text>
+
+    <line x1="700" y1="344" x2="736" y2="344" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+    <rect x="740" y="308" width="140" height="72" rx="10" fill="#FFFFFF" stroke="#DEDACE" stroke-width="1.5"/>
+    <text x="810" y="333" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="12" font-weight="700" fill="#0B1220">EVIDENCIA</text>
+    <text x="810" y="350" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10.5" fill="#5F6B7A">exports firmados</text>
+    <text x="810" y="364" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10.5" fill="#5F6B7A">hashes, no contenido</text>
+
+    <text x="450" y="520" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#5F6B7A">Self-hosted (Server) o gestionado (Cloud) — tu memoria, tu terreno.</text>
+  </svg>
+</section>
+
+<section class="wrap reveal">
+  <div class="sec-head">
+    <div class="kicker"><span>FRAMEWORK vs PLATFORM</span></div>
+    <h2>La constitución y la ciudad.</h2>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <tr><th></th><th>ArqUX Framework</th><th>ArqUX Platform</th></tr>
+      <tr><td><b>Memoria</b></td><td>Archivos deterministas, uno por vez</td><td><b>Servicio central</b> — journal, catálogo, context packs</td></tr>
+      <tr><td><b>Concurrencia</b></td><td>Por disciplina</td><td><b>Orden total de escritura</b> — un secuenciador autoritativo</td></tr>
+      <tr><td><b>Evidencia</b></td><td>Rastro interno</td><td><b>Exports firmados</b> para auditores</td></tr>
+      <tr><td><b>Acceso</b></td><td>Permisos de archivo</td><td><b>Roles × bases × operaciones</b></td></tr>
+      <tr><td><b>Entrega</b></td><td>pip install, tus archivos</td><td><b>Server o Cloud</b>, self-serve</td></tr>
+      <tr><td><b>Precio</b></td><td class="ok">Gratis para siempre</td><td>Community gratis · Team · Enterprise</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="wrap reveal">
+  <div class="sec-head">
+    <div class="kicker"><span>LAS PRIMITIVAS</span></div>
+    <h2>Dos llamadas gobernadas.</h2>
+  </div>
+  <div class="code"><span class="c">// la superficie diaria — todo lo demás es escala</span>
+<span class="g">await</span> arqux.<span class="y">context</span>.load({ scope: <span class="y">"base:ops"</span> });
+<span class="c">// → foco, objetivos, lecciones, riesgos — armados por política</span>
+
+<span class="g">await</span> arqux.<span class="y">memory</span>.write({
+  entry: <span class="y">'FCS:current{what:"ship the pilot", status:"current"}'</span>,
+  validate: <span class="g">true</span>,   <span class="c">// contra el modelo declarado</span>
+  sign: <span class="g">true</span>        <span class="c">// y encadenado en el journal</span>
+});
+<span class="c">// → { hash: "sha256:…", chained: true, evidence: true }</span></div>
+</section>
+
+<section class="wrap reveal">
+  <div class="sec-head">
+    <div class="kicker"><span>EDICIONES</span></div>
+    <h2>Escala cuando la necesites.</h2>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <tr><th>Edición</th><th>Para</th><th>Incluye</th><th>Forma</th></tr>
+      <tr><td><b>Community</b></td><td>El individuo</td><td>El método completo, un operador</td><td class="ok">Gratis · self-hosted</td></tr>
+      <tr><td><b>Team</b></td><td>Equipos corriendo agentes juntos</td><td>Permisos, búsqueda federada, retención</td><td>Self-serve</td></tr>
+      <tr><td><b>Enterprise</b></td><td>Organizaciones reguladas</td><td>SSO, paquetes de evidencia, SLA, despliegues certificados</td><td>Contrato</td></tr>
+      <tr><td><b>Cloud</b></td><td>Quien prefiera no operarla</td><td>La misma Platform, hosteada</td><td>Hosted</td></tr>
+    </table>
+  </div>
+  <p class="note">La Platform está en desarrollo. Los pilotos son gratis, y tus datos quedan en tu terreno.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="sec-head">
+    <div class="kicker"><span>PILOTO</span></div>
+    <h2>Moldeala con tu stack.</h2>
+    <p class="sub">Estamos incorporando un grupo chico de equipos que corren agentes en producción — para probar
+      la Platform contra cargas reales, y para escuchar qué evidencia les piden de verdad a sus auditores.</p>
+    <div class="cta"><a class="btn primary" href="https://github.com/FidelErnesto03/arqux/issues">Abrí un issue — decí hola</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><h4>Producto</h4><a href="/es/framework.html">Framework</a><a href="/es/platform.html">Platform</a><a href="/es/evidence.html">Prueba</a><a href="/brand/">Marca</a></div>
+      <div><h4>Proyecto</h4><a href="https://github.com/FidelErnesto03/arqux">GitHub</a><a href="https://pypi.org/project/arqux/">PyPI</a><a href="/platform.html">English</a></div>
+      <div><h4>Contacto</h4><a href="https://github.com/FidelErnesto03/arqux/issues">Abrí un issue</a></div>
+    </div>
+    <div class="fine"><span>© 2026 ArqUX · motor CORTEX adentro</span><span>La integridad de protocolo para la experiencia de tus agentes.</span></div>
+  </div>
+</footer>
+
+</body>
+</html>
