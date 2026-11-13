@@ -78,6 +78,16 @@
     })
   );
 
+  /* hero: today vs future-direction views */
+  const hvBtns = $$("[data-hv]");
+  hvBtns.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const v = btn.dataset.hv;
+      hvBtns.forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+      $$("[data-hvpanel]").forEach((p) => { p.hidden = p.dataset.hvpanel !== v; });
+    })
+  );
+
   /* workspace compare toggle */
   const cyc = $("#cycle-environments");
   if (cyc) {

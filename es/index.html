@@ -26,7 +26,7 @@
       </nav>
       <div class="nav-actions">
         <a class="nav-language" href="/" aria-label="View in English">EN</a>
-        <a class="button button-primary" href="https://github.com/FidelErnesto03/arqux/releases" target="_blank" rel="noreferrer">Estado de la release</a>
+        <a class="button button-primary" href="https://github.com/FidelErnesto03/arqux/releases" target="_blank" rel="noreferrer">Estado de la versión</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Abrir navegación" data-label-open="Abrir navegación" data-label-close="Cerrar navegación">
           <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 4.5h14M2 9h14M2 13.5h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
         </button>
@@ -39,35 +39,49 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Gobernanza para equipos humano‑IA</p>
-          <h1>Gobierna el trabajo humano–IA desde los archivos de proyecto que los agentes leen.</h1>
-          <p class="lead">ArqUX es un framework open-source en pre-release para organizar identidades de agentes, contexto de proyecto, trabajo con alcance y evidencia revisable en un workspace gobernado. Los agentes que pueden acceder a ese workspace pueden compartir sus archivos locales de gobernanza. <strong>La sincronización entre workspaces no está incluida en esta release.</strong></p>
-          <div class="status-row"><a class="status status-beta" href="https://github.com/FidelErnesto03/arqux/releases">Framework · v0.9.0rc3 pre-release</a><span class="status status-future">Platform · En desarrollo</span></div>
-          <div class="hero-ctas"><a class="button button-primary" href="https://github.com/FidelErnesto03/arqux/releases" target="_blank" rel="noreferrer">Leer release y límites <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="#local">Ver el modelo de archivos locales</a></div>
-          <a class="source-link" href="https://github.com/FidelErnesto03/arqux" target="_blank" rel="noreferrer">Ver código, release y evidencia →</a>
+          <h1>Gobierna el trabajo humano–IA desde los archivos que tus agentes leen.</h1>
+          <p class="lead">Un framework open-source en versión candidata para identidades de agentes, contexto de proyecto, trabajo con alcance y evidencia revisable en un espacio de trabajo gobernado. <strong>La sincronización entre espacios de trabajo no está incluida en esta versión.</strong></p>
+          <div class="status-row"><a class="status status-beta" href="https://github.com/FidelErnesto03/arqux/releases">Framework · v0.9.0rc3 versión candidata</a><span class="status status-future">Platform · En desarrollo</span></div>
+          <div class="hero-ctas"><a class="button button-primary" href="https://github.com/FidelErnesto03/arqux/releases" target="_blank" rel="noreferrer">Leer versión y límites <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" style="vertical-align:-1px"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="button button-secondary" href="#local">Ver el modelo de archivos locales</a></div>
+          <a class="source-link" href="https://github.com/FidelErnesto03/arqux" target="_blank" rel="noreferrer">Ver código, versión y evidencia →</a>
         </div>
 
         <div class="hero-visual" aria-label="Ilustración conceptual de políticas gobernadas proyectadas en archivos locales de instrucciones para agentes">
-          <div class="visual-top"><strong>Dirección de producto · una política, archivos locales</strong><span class="concept-label">Modelo conceptual</span></div>
+          <div class="visual-top"><strong>Qué hace ArqUX</strong><div class="segmented" role="group" aria-label="Selecciona una vista: disponible hoy o dirección futura"><button type="button" aria-pressed="true" data-hv="today">Hoy</button><button type="button" aria-pressed="false" data-hv="future">Dirección futura</button></div></div>
+          <div class="hv-view" data-hvpanel="today">
+            <div class="local-grid" style="grid-template-columns:1fr">
+              <article class="local-card active">
+                <span class="state">Disponible hoy</span>
+                <div class="local-card-head"><span class="machine-icon" aria-hidden="true">A</span><div><b>Proyecto gobernado · un espacio de trabajo</b><small>local · versionado con tu repositorio</small></div></div>
+                <div class="file-list"><span class="file-chip primary">AGENTS.md</span><span class="file-chip">skills/</span><span class="file-chip">identities/</span></div>
+                <p>Una persona — o varios agentes — acceden a este mismo proyecto. Cada entorno del agente lee estos archivos en su lugar.</p>
+              </article>
+            </div>
+            <div class="caption">Lo que existe en v0.9.0rc3.</div>
+          </div>
+          <div class="hv-view" data-hvpanel="future" hidden>
+          <div class="connector">PROYECCIONES LOCALES · DIRECCIÓN FUTURA</div>
           <div class="policy-source">
             <span class="policy-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18"><path d="M3.2 3.2h7.4l4.2 4.2v7.4H3.2z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.4 3.4v4.2h4.2M5.6 10h6.8M5.6 12.5h5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-            <div><b>Estándar gobernado</b><small>política · propietario · alcance · versión</small></div>
+            <div><b>Estándar gobernado</b><small>política · propietario · alcance · versión — propagación futura</small></div>
           </div>
           <div class="connector">PROYECCIONES LOCALES · LOS ARCHIVOS QUEDAN EN SU WORKSPACE</div>
           <div class="local-grid">
             <article class="local-card active">
               <span class="state">Alineado · v1.4</span>
-              <div class="local-card-head"><span class="machine-icon" aria-hidden="true">A</span><div><b>Workspace A</b><small>Harness soportado · local</small></div></div>
+              <div class="local-card-head"><span class="machine-icon" aria-hidden="true">A</span><div><b>Espacio A</b><small>Entorno del agente soportado · local</small></div></div>
               <div class="file-list"><span class="file-chip primary">AGENTS.md</span><span class="file-chip">skills/</span></div>
-              <p>Instrucciones que el harness lee desde este workspace.</p>
+              <p>Instrucciones que el entorno del agente lee desde este espacio de trabajo.</p>
             </article>
             <article class="local-card">
-              <span class="state stale">Revisión · v1.3</span>
-              <div class="local-card-head"><span class="machine-icon" aria-hidden="true">B</span><div><b>Workspace B</b><small>Harness soportado · local</small></div></div>
+              <span class="state stale">Conceptual · v1.3</span>
+              <div class="local-card-head"><span class="machine-icon" aria-hidden="true">B</span><div><b>Espacio B</b><small>Entorno del agente soportado · local</small></div></div>
               <div class="file-list"><span class="file-chip primary">AGENTS.md</span><span class="file-chip">skills/</span></div>
               <p>Los archivos locales quedan inspeccionables y versionados.</p>
             </article>
           </div>
-          <div class="visual-bottom"><span>Estados ilustrativos</span><button class="mini-link" type="button" id="cycle-environments" data-label-a="Workspace B seleccionado" data-label-b="Workspace A seleccionado">Comparar workspaces</button></div>
+          <div class="caption">Dirección futura · ilustración conceptual — no es una capacidad de esta versión.</div>
+          </div>
         </div>
       </div>
     </section>
@@ -77,21 +91,21 @@
         <div class="problem-intro"><p class="eyebrow">El problema de coordinación</p><h2>El trabajo no debería reiniciarse con cada sesión.</h2><p class="section-copy">Las instrucciones, decisiones y contexto se dispersan entre chats, repositorios, herramientas y personas. Un agente o estación de trabajo nuevo puede comenzar desde una vista local distinta del mismo proyecto.</p></div>
         <div>
           <div class="comparison" role="table" aria-label="Comparación entre trabajo fragmentado y trabajo gobernado">
-            <div class="comparison-head" role="row"><div role="columnheader">Sin un estándar compartido</div><div role="columnheader">Con el modelo gobernado de ArqUX</div></div>
+            <div class="comparison-head" role="row"><div role="columnheader">Sin un estándar compartido</div><div role="columnheader">Objetivo del modelo gobernado</div></div>
             <div class="comparison-row" role="row"><div role="cell">Las reglas se reparten entre conversaciones y archivos.</div><div role="cell">Las reglas de trabajo tienen una fuente gobernada y una proyección local visible.</div></div>
-            <div class="comparison-row" role="row"><div role="cell">Los agentes reciben instrucciones distintas.</div><div role="cell">El equipo puede inspeccionar la versión prevista para cada workspace.</div></div>
+            <div class="comparison-row" role="row"><div role="cell">Los agentes reciben instrucciones distintas.</div><div role="cell">El equipo puede inspeccionar la versión prevista para cada espacio de trabajo.</div></div>
             <div class="comparison-row" role="row"><div role="cell">Las tareas carecen de alcance y criterio de cierre compartidos.</div><div role="cell">El trabajo se organiza en unidades explícitas y revisables.</div></div>
             <div class="comparison-row" role="row"><div role="cell">El estado depende del historial de una sesión.</div><div role="cell">Los artefactos persistentes ayudan a que la próxima sesión continúe.</div></div>
             <div class="comparison-row" role="row"><div role="cell">La revisión ve principalmente la respuesta final.</div><div role="cell">Se pueden inspeccionar los cambios y la evidencia disponible.</div></div>
           </div>
-          <p class="note">La aplicación real, la propagación y el manejo de conflictos dependen de la versión del Framework y del mecanismo de workspace. Este concepto no implica sincronización automática.</p>
+          <p class="note">La aplicación real, la propagación y el manejo de conflictos dependen de la versión del Framework y del mecanismo de espacio de trabajo. Este concepto no implica sincronización automática.</p>
         </div>
       </div>
     </section>
 
     <section class="local-story" id="local">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">El modelo de archivos locales</p><h2>Un proyecto gobernado. Instrucciones donde los agentes pueden leerlas.</h2><p class="section-copy">Hoy, <code>arqux init</code> crea un directorio de proyecto gobernado con instrucciones y artefactos locales. Los agentes que pueden acceder al mismo proyecto pueden leer sus archivos de gobernanza. Un servicio que propague y reconcilie políticas entre workspaces independientes es una dirección de producto, no una capacidad de v0.9.0rc3.</p></div>
+        <div class="section-head"><p class="eyebrow">El modelo de archivos locales</p><h2>Un proyecto gobernado. Instrucciones donde los agentes pueden leerlas.</h2><p class="section-copy">Hoy, <code>arqux init</code> crea un directorio de proyecto gobernado con instrucciones y artefactos locales. Los agentes que pueden acceder al mismo proyecto pueden leer sus archivos de gobernanza. Un servicio que propague y reconcilie políticas entre espacios de trabajo independientes es una dirección de producto, no una capacidad de v0.9.0rc3.</p></div>
         <div class="architecture" aria-label="Relación entre una política gobernada, los archivos locales por harness y el uso del agente">
           <div class="architecture-col">
             <article class="architecture-card standard-card active">
@@ -100,25 +114,25 @@
           </div>
           <div class="architecture-arrows" aria-hidden="true"><span>RENDERIZAR / REVISAR POR ENTORNO</span><span class="arrow-line">→</span></div>
           <div class="architecture-col workstation-list">
-            <article class="workstation"><span class="machine-icon" aria-hidden="true">A</span><div><b>Workspace A · local</b><small>AGENTS.md + skills del proyecto · v1.4</small></div><span class="status-dot" aria-label="Estado alineado de ejemplo"></span></article>
-            <article class="workstation"><span class="machine-icon" aria-hidden="true">B</span><div><b>Workspace B · local</b><small>AGENTS.md + reglas del harness · v1.3</small></div><span class="status-dot warn" aria-label="Estado de revisión de versión de ejemplo"></span></article>
+            <article class="workstation"><span class="machine-icon" aria-hidden="true">A</span><div><b>Espacio A · local</b><small>AGENTS.md + skills del proyecto · v1.4</small></div><span class="status-dot" aria-label="Estado alineado de ejemplo"></span></article>
+            <article class="workstation"><span class="machine-icon" aria-hidden="true">B</span><div><b>Espacio B · local</b><small>AGENTS.md + reglas del entorno del agente · v1.3</small></div><span class="status-dot warn" aria-label="Estado de revisión de versión de ejemplo"></span></article>
             <article class="architecture-card">
-              <p class="eyebrow">02 · Consumo local</p><h3>El harness lee sus propios archivos</h3><p>El comportamiento del agente también depende del harness, las herramientas y los controles habilitados en ese entorno.</p>
+              <p class="eyebrow">02 · Consumo local</p><h3>El entorno del agente lee sus propios archivos</h3><p>El comportamiento del agente también depende del entorno del agente, las herramientas y los controles habilitados en ese entorno.</p>
             </article>
           </div>
         </div>
-        <div class="caption">Estados solo ilustrativos · ArqUX no realiza sync ni chequeo de deriva en esta release.</div>
+        <div class="caption">Estados solo ilustrativos · ArqUX no realiza sincronización ni chequeo de deriva en esta versión.</div>
       </div>
     </section>
 
     <section class="section section-soft" id="quickstart">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Quickstart</p><h2>Empieza en tres comandos.</h2><p class="section-copy">Instala, inicializa un workspace gobernado y apunta un agente hacia él. Sin servidor, sin API key — un directorio.</p></div>
+        <div class="section-head"><p class="eyebrow">Quickstart</p><h2>Empieza en tres comandos.</h2><p class="section-copy">Instala, inicializa un espacio de trabajo gobernado y apunta un agente hacia él. Sin servidor, sin API key — un directorio.</p></div>
         <div class="codec-grid">
           <article class="code-panel"><div class="code-head"><span>Terminal</span><span>comandos del README del repositorio</span></div><pre>$ pip install arqux
 $ arqux init
 
-<span class="code-muted"># apunta cualquier agente al workspace, p. ej. OpenCode:</span>
+<span class="code-muted"># apunta cualquier agente al espacio de trabajo, p. ej. OpenCode:</span>
 $ opencode --instructions "$(cat AGENTS.md)"</pre></article>
           <article class="code-panel"><div class="code-head"><span>Qué crea</span><span>verificado en v0.9.0rc3</span></div><pre>proyecto/
 ├── AGENTS.md
@@ -131,7 +145,7 @@ $ opencode --instructions "$(cat AGENTS.md)"</pre></article>
     ├── templates/
     └── packages/</pre></article>
         </div>
-        <p class="note">Guía completa: <a href="https://github.com/FidelErnesto03/arqux/blob/master/docs/guides/GETTING_STARTED.md" style="color:var(--teal-ink)">GETTING_STARTED.md</a> · estructura confirmada instalando <b>arqux v0.9.0rc3</b> y ejecutando <code>arqux init</code> (2026-11-13).</p>
+        <p class="note">Guía completa: <a href="https://github.com/FidelErnesto03/arqux/blob/master/docs/guides/GETTING_STARTED.md" style="color:var(--teal-ink)">GETTING_STARTED.md</a> · estructura confirmada instalando <b>arqux v0.9.0rc3</b> y ejecutando <code>arqux init</code>. Onboarding interactivo: <code>arqux quickstart</code>.</p>
       </div>
     </section>
 
@@ -142,12 +156,12 @@ $ opencode --instructions "$(cat AGENTS.md)"</pre></article>
           <div class="step-list" role="group" aria-label="Selecciona una etapa del flujo gobernado">
             <button class="step" type="button" aria-pressed="true" data-step="0"><span class="step-number">01</span><span class="step-title">Definir</span><span class="step-tag">Práctica del equipo</span></button>
             <button class="step" type="button" aria-pressed="false" data-step="1"><span class="step-number">02</span><span class="step-title">Asignar una identidad</span><span class="step-tag code">Contrato en código</span></button>
-            <button class="step" type="button" aria-pressed="false" data-step="2"><span class="step-number">03</span><span class="step-title">Ejecutar una tarea</span><span class="step-tag harness">Brecha de ejecución · release</span></button>
+            <button class="step" type="button" aria-pressed="false" data-step="2"><span class="step-number">03</span><span class="step-title">Ejecutar una tarea</span><span class="step-tag harness">Brecha de ejecución · versión</span></button>
             <button class="step" type="button" aria-pressed="false" data-step="3"><span class="step-number">04</span><span class="step-title">Revisar y continuar</span><span class="step-tag">Práctica del equipo</span></button>
           </div>
           <article class="step-detail" aria-live="polite" aria-atomic="true">
             <p class="eyebrow" id="step-kicker">Etapa 01 · Práctica del equipo</p><h3 id="step-heading">Definir el trabajo en conjunto.</h3>
-            <div class="detail-grid"><div class="detail-item"><b>Quién participa</b><span id="step-who">Una persona responsable fija objetivo, alcance y aceptación.</span></div><div class="detail-item"><b>Qué entra</b><span id="step-input">Política, conocimiento autorizado y restricciones.</span></div><div class="detail-item"><b>Qué cambia</b><span id="step-change">El proyecto y el ciclo obtienen meta y condición de cierre explícitas.</span></div><div class="detail-item"><b>Qué se puede revisar</b><span id="step-evidence">Reglas y alcance escritos en el workspace gobernado.</span></div></div>
+            <div class="detail-grid"><div class="detail-item"><b>Quién participa</b><span id="step-who">Una persona responsable fija objetivo, alcance y aceptación.</span></div><div class="detail-item"><b>Qué entra</b><span id="step-input">Política, conocimiento autorizado y restricciones.</span></div><div class="detail-item"><b>Qué cambia</b><span id="step-change">El proyecto y el ciclo obtienen meta y condición de cierre explícitas.</span></div><div class="detail-item"><b>Qué se puede revisar</b><span id="step-evidence">Reglas y alcance escritos en el espacio de trabajo gobernado.</span></div></div>
           </article>
         </div>
       </div>
@@ -192,7 +206,7 @@ $ opencode --instructions "$(cat AGENTS.md)"</pre></article>
           <div class="segmented" role="group" aria-label="Selecciona una representación"><button type="button" aria-pressed="true" data-code-view="both">Comparar</button><button type="button" aria-pressed="false" data-code-view="source">CORTEX</button><button type="button" aria-pressed="false" data-code-view="human">HCORTEX</button></div>
         </div>
         <div class="codec-grid">
-          <article class="code-panel" data-code-panel="source"><div class="code-head"><span>CORTEX · fuente máquina</span><span>ejemplo del repositorio · 0.1</span></div><pre><span class="code-muted">$0:KERNEL</span>
+          <article class="code-panel" data-code-panel="source"><div class="code-head"><span>CORTEX · fuente máquina</span><span>muestra del repositorio · envelope 1.0</span></div><pre><span class="code-muted">$0:KERNEL</span>
 $0:format{cortex:1.0,encoding:UTF-8,language:es}
 OBJ:task{type:attrs,weight:H,
  fields:<span class="code-amber">"goal:text|status:%state"</span>,
@@ -209,11 +223,11 @@ OBJ:gate{goal:<span class="code-amber">"Escribir documentacion"</span>,status:pl
 | Escribir documentacion | planned |
 <span class="code-muted">&lt;!-- /table:1 --&gt;</span></pre></article>
         </div>
-        <div class="proof-strip" aria-label="Resultados publicados del certificado de Codec-CORTEX"><div class="proof-stat"><b>140/140</b><span>casos de canonicalización y round-trip</span></div><div class="proof-stat"><b>5/5</b><span>paridad de runtimes sobre el vector semilla</span></div><div class="proof-stat"><b>Alcance</b><span>comportamiento del formato; no calidad de razonamiento del agente</span></div></div>
+        <div class="proof-strip" aria-label="Resultados publicados del certificado de Codec-CORTEX (codec_cortex 1.0.0)"><div class="proof-stat"><b>141/141</b><span>idempotencia · ida y vuelta · sin pérdida</span></div><div class="proof-stat"><b>101/101</b><span>casos de paridad de render HCORTEX</span></div><div class="proof-stat"><b>5/5</b><span>paridad de runtimes · codec_cortex 1.0.0</span></div></div>
         <div class="codec-foot"><span>Los resultados del certificado cubren el alcance determinista del codec; las afirmaciones exploratorias sobre comprensión por LLM no están establecidas.</span><a class="source-link" href="https://github.com/FidelErnesto03/codec-cortex" target="_blank" rel="noreferrer">Inspecciona el formato, las pruebas y los límites →</a></div>
         <div class="architecture" style="grid-template-columns:repeat(3,1fr);margin-top:28px">
           <article class="architecture-card"><p class="eyebrow">Validado, no solo parseado</p><h3>Estructura con reglas</h3><p>Sigilos, secciones y atributos se comprueban contra el glosario del propio documento — el estado inválido falla con códigos, no se acepta en silencio.</p></article>
-          <article class="architecture-card"><p class="eyebrow">Canónico y reversible</p><h3>Los mismos bytes en todos lados</h3><p>La misma entrada produce los mismos bytes canónicos entre runtimes soportados; el round-trip está certificado dentro del alcance del codec.</p></article>
+          <article class="architecture-card"><p class="eyebrow">Canónico y reversible</p><h3>Los mismos bytes en todos lados</h3><p>La misma entrada produce los mismos bytes canónicos entre runtimes soportados; el ida y vuelta está certificado dentro del alcance del codec.</p></article>
           <article class="architecture-card"><p class="eyebrow">Una fuente, dos superficies</p><h3>Máquina y persona</h3><p>CORTEX para procesar, HCORTEX para leer — pareados por construcción, no por un conversor que mantienes tú.</p></article>
         </div>
         <p class="note" style="margin-top:18px">¿Por qué no solo YAML/JSON/Markdown? Son formatos de configuración y prosa; CORTEX es estado gobernado que debe <b>validarse, canonicalizarse, renderizarse y verificarse</b>. Los límites del codec siguen aplicando: comportamiento del formato, no calidad de razonamiento.</p>
@@ -224,12 +238,12 @@ OBJ:gate{goal:<span class="code-amber">"Escribir documentacion"</span>,status:pl
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">Evidencia, con alcance</p><h2>Separa lo probado de lo que se está comprobando.</h2><p class="section-copy">Una prueba de Codec‑CORTEX no certifica el comportamiento del Framework ni la seguridad de agentes. Cada afirmación pertenece a un componente y una versión.</p></div>
         <div class="evidence-groups">
-          <article class="evidence-feature"><p class="eyebrow">Evidencia disponible · Codec‑CORTEX</p><h3>Formato reversible, medido dentro de su alcance.</h3><p class="section-copy">El certificado publicado reporta 140/140 casos de canonicalización y round-trip, más paridad entre cinco implementaciones sobre el vector semilla. Estos resultados no certifican el comportamiento del Framework ArqUX ni prueban que un LLM entienda mejor el formato.</p><a class="button button-dark" href="https://github.com/FidelErnesto03/codec-cortex" target="_blank" rel="noreferrer">Abrir evidencia del codec ↗</a></article>
+          <article class="evidence-feature"><p class="eyebrow">Evidencia disponible · Codec‑CORTEX</p><h3>Formato reversible, medido dentro de su alcance.</h3><p class="section-copy">El certificado publicado (codec_cortex 1.0.0) reporta 141/141 en idempotencia, ida y vuelta y sin pérdida; 101/101 casos de paridad de render HCORTEX; y 5/5 de paridad de runtimes. Estos resultados no certifican el comportamiento del Framework ArqUX ni prueban que un LLM entienda mejor el formato.</p><a class="button button-dark" href="https://github.com/FidelErnesto03/codec-cortex/blob/master/bench/results/certificate.json" target="_blank" rel="noreferrer">Abrir certificado del codec <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" style="vertical-align:-1px"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
           <div class="evidence-list" aria-label="Trabajo de verificación en curso">
-            <div class="evidence-row"><div><b>Framework v0.9.0rc3</b><small>Candidato pre-release; quedan cinco pruebas fallidas conocidas en la línea base publicada.</small></div><span class="pill">Limitación conocida</span></div>
-            <div class="evidence-row"><div><b>Ejecución de tareas</b><small><code>task.run</code> no ejecuta trabajo en esta release; un estado completado no es prueba de ejecución.</small></div><span class="pill">Limitación conocida</span></div>
+            <div class="evidence-row"><div><b>Framework v0.9.0rc3</b><small>Versión candidata; 5 fallos conocidos en una línea base de 2.061 pruebas de CI (notas de la versión).</small></div><span class="pill">Limitación conocida</span></div>
+            <div class="evidence-row"><div><b>Ejecución de tareas</b><small><code>task.run</code> no ejecuta trabajo en esta versión; un estado completado no es prueba de ejecución.</small></div><span class="pill">Limitación conocida</span></div>
             <div class="evidence-row"><div><b>Integración MCP</b><small>Handlers ejercidos desde clientes nombrados</small></div><span class="pill">Plan de verificación</span></div>
-            <div class="evidence-row"><div><b>Coordinación multi-persona y multi-workspace</b><small>Política compartida, archivos locales, propagación y manejo de conflictos requieren una demostración end-to-end respaldada por la release.</small></div><span class="pill">Plan de verificación</span></div>
+            <div class="evidence-row"><div><b>Coordinación multi-persona y multi-espacio de trabajo</b><small>Política compartida, archivos locales, propagación y manejo de conflictos requieren una demostración end-to-end respaldada por la versión.</small></div><span class="pill">Plan de verificación</span></div>
           </div>
         </div>
       </div>
@@ -239,8 +253,8 @@ OBJ:gate{goal:<span class="code-amber">"Escribir documentacion"</span>,status:pl
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">Confianza y límites</p><h2>Conoce qué se aplica y qué depende del agente.</h2><p class="section-copy">Una regla escrita, un chequeo de permisos y una práctica humana son controles distintos. ArqUX debe hacer visible esa diferencia.</p></div>
         <div class="trust-grid">
-          <article class="trust-card"><span class="trust-mark" aria-hidden="true">01</span><h3>Aplicado por código</h3><p>Permisos de handlers, validación y cambios de estado solo donde la release los implementa y los prueba.</p></article>
-          <article class="trust-card"><span class="trust-mark" aria-hidden="true">02</span><h3>Leído por el harness</h3><p>Los archivos locales de instrucción y contexto moldean el trabajo del agente; no garantizan automáticamente obediencia.</p></article>
+          <article class="trust-card"><span class="trust-mark" aria-hidden="true">01</span><h3>Aplicado por código</h3><p>Permisos de handlers, validación y cambios de estado solo donde la versión los implementa y los prueba.</p></article>
+          <article class="trust-card"><span class="trust-mark" aria-hidden="true">02</span><h3>Leído por el entorno del agente</h3><p>Los archivos locales de instrucción y contexto moldean el trabajo del agente; no garantizan automáticamente obediencia.</p></article>
           <article class="trust-card"><span class="trust-mark" aria-hidden="true">03</span><h3>Propiedad del equipo</h3><p>Aprobación, revisión, sincronización y manejo de claves dependen del flujo documentado y de sus controles reales.</p></article>
         </div>
         <p class="note">Un hash puede detectar una discrepancia contra una referencia confiable. No es por sí mismo una firma ni una auditoría independiente.</p>
@@ -250,24 +264,24 @@ OBJ:gate{goal:<span class="code-amber">"Escribir documentacion"</span>,status:pl
     <section class="section platform-section" id="platform">
       <div class="wrap">
         <div class="platform-head"><div class="section-head"><p class="eyebrow">ArqUX Platform</p><h2>Investigando qué necesitan los equipos más allá de los archivos locales.</h2><p class="section-copy">La Platform hosteada está en desarrollo. Estas son preguntas en evaluación, no funciones disponibles para uso.</p></div><span class="platform-tag">EN DESARROLLO · SIN FECHA DE ENTREGA</span></div>
-        <div class="hypothesis-grid"><article class="hypothesis"><p class="eyebrow">Hipótesis 01</p><h3>Escrituras compartidas y ordenadas</h3><p>¿Puede un journal autoritativo único reducir los problemas de concurrencia y deriva?</p></article><article class="hypothesis"><p class="eyebrow">Hipótesis 02</p><h3>Exports de evidencia</h3><p>¿Qué evidencia puede inspeccionar un equipo sin exponer memoria privada?</p></article><article class="hypothesis"><p class="eyebrow">Hipótesis 03</p><h3>Permisos a escala</h3><p>¿Qué controles de rol, workspace y operación resultan útiles en equipos reales?</p></article></div>
+        <div class="hypothesis-grid"><article class="hypothesis"><p class="eyebrow">Hipótesis 01</p><h3>Escrituras compartidas y ordenadas</h3><p>¿Puede un journal autoritativo único reducir los problemas de concurrencia y deriva?</p></article><article class="hypothesis"><p class="eyebrow">Hipótesis 02</p><h3>Exports de evidencia</h3><p>¿Qué evidencia puede inspeccionar un equipo sin exponer memoria privada?</p></article><article class="hypothesis"><p class="eyebrow">Hipótesis 03</p><h3>Permisos a escala</h3><p>¿Qué controles de rol, espacio de trabajo y operación resultan útiles en equipos reales?</p></article></div>
       </div>
     </section>
 
     <section class="final-cta">
-      <div class="wrap final-cta-grid"><div><p class="eyebrow">Evalúa la release candidata</p><h2>Inspecciona qué está implementado, probado y qué falta todavía.</h2><p>Lee las notas de la release candidata, las limitaciones conocidas y la evidencia del repositorio antes de adoptarla en un flujo real.</p></div><a class="button button-primary" href="https://github.com/FidelErnesto03/arqux/releases" target="_blank" rel="noreferrer">Leer notas de la release ↗</a></div>
+      <div class="wrap final-cta-grid"><div><p class="eyebrow">Evalúa la versión candidata</p><h2>Inspecciona qué está implementado, probado y qué falta todavía.</h2><p>Lee las notas de la versión candidata, las limitaciones conocidas y la evidencia del repositorio antes de adoptarla en un flujo real.</p></div><a class="button button-primary" href="https://github.com/FidelErnesto03/arqux/releases" target="_blank" rel="noreferrer">Leer notas de la versión <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" style="vertical-align:-1px"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </section>
   </main>
 
-  <footer><div class="wrap footer-row"><span>ArqUX · La arquitectura detrás del trabajo humano–IA.</span><nav class="footer-links" aria-label="Pie de página"><a href="https://github.com/FidelErnesto03/arqux" target="_blank" rel="noreferrer">Framework</a><a href="https://github.com/FidelErnesto03/codec-cortex" target="_blank" rel="noreferrer">Codec‑CORTEX</a><a href="https://github.com/FidelErnesto03/arqux/releases" target="_blank" rel="noreferrer">Releases</a><a href="/brand/">Marca</a><a href="/">English</a></nav><span>Framework v0.9.0rc3 · pre-release</span></div></footer>
+  <footer><div class="wrap footer-row"><span>ArqUX · La arquitectura detrás del trabajo humano–IA.</span><nav class="footer-links" aria-label="Pie de página"><a href="https://github.com/FidelErnesto03/arqux" target="_blank" rel="noreferrer">Framework</a><a href="https://github.com/FidelErnesto03/codec-cortex" target="_blank" rel="noreferrer">Codec‑CORTEX</a><a href="https://github.com/FidelErnesto03/arqux/releases" target="_blank" rel="noreferrer">Versións</a><a href="/brand/">Marca</a><a href="/">English</a></nav><span>Framework v0.9.0rc3 · versión candidata</span></div><p class="note" style="color:#93a5ae;margin-top:12px">ArqUX es un nombre acuñado: “Arq” por arquitectura — la estructura que da forma a cómo se hace el trabajo; “UX” por la experiencia compartida entre personas y agentes de IA.</p><p class="note" style="color:#7e929c">Glosario: espacio de trabajo (espacio de trabajo) · entorno del agente (entorno del agente) · versión (versión) · ida y vuelta (ida y vuelta).</p></footer>
 
 <script type="application/json" id="app-data">
 {"artifactLabel":"Artefacto de ejemplo · ","steps":[
-{"kicker":"Etapa 01 · Práctica del equipo","title":"Definir el trabajo en conjunto.","who":"Una persona responsable fija objetivo, alcance y aceptación.","input":"Política, conocimiento autorizado y restricciones.","change":"El proyecto y el ciclo obtienen meta y condición de cierre explícitas.","evidence":"Reglas y alcance escritos en el workspace gobernado."},
-{"kicker":"Etapa 02 · Contrato en código","title":"Asignar identidad y responsabilidad.","who":"El equipo define qué identidad de agente es dueña de la tarea.","input":"Rol, alcance, operaciones permitidas y contexto local.","change":"El agente recibe un contrato operativo explícito.","evidence":"Definición de identidad y comportamiento de permisos para la release elegida."},
-{"kicker":"Etapa 03 · Limitación conocida de la release","title":"La ejecución de tareas todavía no está implementada.","who":"El harness puede iniciar un agente desde instrucciones locales y herramientas.","input":"Tarea, archivos de política, skills y estado del proyecto.","change":"En v0.9.0rc3, task.run no ejecuta el trabajo.","evidence":"No trates un estado completado como prueba de ejecución."},
+{"kicker":"Etapa 01 · Práctica del equipo","title":"Definir el trabajo en conjunto.","who":"Una persona responsable fija objetivo, alcance y aceptación.","input":"Política, conocimiento autorizado y restricciones.","change":"El proyecto y el ciclo obtienen meta y condición de cierre explícitas.","evidence":"Reglas y alcance escritos en el espacio de trabajo gobernado."},
+{"kicker":"Etapa 02 · Contrato en código","title":"Asignar identidad y responsabilidad.","who":"El equipo define qué identidad de agente es dueña de la tarea.","input":"Rol, alcance, operaciones permitidas y contexto local.","change":"El agente recibe un contrato operativo explícito.","evidence":"Definición de identidad y comportamiento de permisos para la versión elegida."},
+{"kicker":"Etapa 03 · Limitación conocida de la versión","title":"La ejecución de tareas todavía no está implementada.","who":"El entorno del agente puede iniciar un agente desde instrucciones locales y herramientas.","input":"Tarea, archivos de política, skills y estado del proyecto.","change":"En v0.9.0rc3, task.run no ejecuta el trabajo.","evidence":"No trates un estado completado como prueba de ejecución."},
 {"kicker":"Etapa 04 · Práctica del equipo","title":"Revisar, aceptar y continuar.","who":"Una persona o revisor autorizado comprueba el resultado.","input":"Diff, criterios de aceptación, salida de pruebas y riesgos abiertos.","change":"El trabajo se acepta, se devuelve o se re-delega.","evidence":"Decisión de revisión y estado persistido disponible para la próxima sesión."}],
-"dims":[["Identidad","Contrato de identidad del agente","$1:IDENTITY{role:\"executor\", scope:\"project:alpha\"}"],["Contrato","Rol y límites operativos","$2:CONTRACT{allowed:[\"task.claim\",\"evidence.record\"]}"],["Contexto","Estado del proyecto e instrucciones locales","$0:CONTEXT{source:\"workspace\", version:\"v1.4\"}"],["Decisión","Blueprint o decisión registrada","BLP-012 · acceptance: all checks pass"],["Ejecución","Tarea, handler o archivo cambiado","task.claim → src/module.py · status: review"],["Evidencia","Resultado de prueba, diff o registro disponible","evidence: test-output · commit: <release-linked>"]]}
+"dims":[["Identidad","Contrato de identidad del agente","$1:IDENTITY{role:\"executor\", scope:\"project:alpha\"}"],["Contrato","Rol y límites operativos","$2:CONTRACT{allowed:[\"task.claim\",\"evidence.record\"]}"],["Contexto","Estado del proyecto e instrucciones locales","$0:CONTEXT{source:\"espacio de trabajo\", version:\"v1.4\"}"],["Decisión","Blueprint o decisión registrada","BLP-012 · acceptance: all checks pass"],["Ejecución","Tarea, handler o archivo cambiado","task.claim → src/module.py · status: review"],["Evidencia","Resultado de prueba, diff o registro disponible","evidence: test-output · commit: <release-linked>"]]}
 </script>
 </body>
 </html>
