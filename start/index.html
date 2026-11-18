@@ -69,6 +69,25 @@ git checkout 390333913e0f071a89241187f36cc90289e7e043
 python -m pip install -e .</code></pre><div class="copy-row"><button type="button" class="copy-btn" hidden data-copy="git clone https://github.com/FidelErnesto03/arqux&#10;cd arqux&#10;git checkout 390333913e0f071a89241187f36cc90289e7e043&#10;python -m pip install -e ." data-done="Copied" data-fail="Select the commands and copy them">Copy commands</button><span class="copy-status" role="status" aria-live="polite"></span></div><p class="copy-note">Python ≥3.10, per pyproject.toml. Verified 2026-11-18 · Linux · Python 3.11.12 · full clone → checkout <code>3903339</code> → editable install · output: <code>arqux 1.0.0</code>.</p></article>
     </div></div></section>
     <section class="section section-light" id="first"><span id="route-init" aria-hidden="true"></span><span id="route-quickstart" aria-hidden="true"></span><div class="wrap"><div class="section-head"><p class="eyebrow">First run</p><h2>First governed workspace</h2><p class="section-copy">Repository 1.0.0 path. These commands are listed by <code>arqux --help</code> in 1.0.0; they are documented here, not executed in this release. The 0.9.0 package may differ.</p></div><div class="trust-grid"><article class="trust-card"><span class="trust-mark">01</span><h3>Create a folder</h3><p><code>mkdir demo && cd demo</code></p></article><article class="trust-card"><span class="trust-mark">02</span><h3>Initialize the workspace</h3><p><code>arqux init</code></p></article><article class="trust-card"><span class="trust-mark">03</span><h3>Guided onboarding</h3><p><code>arqux quickstart</code></p></article><article class="trust-card"><span class="trust-mark">04</span><h3>Render harness projections</h3><p><code>arqux sync-harnesses</code></p></article><article class="trust-card"><span class="trust-mark">05</span><h3>Check for drift</h3><p><code>arqux drift-check</code></p></article></div><p class="note">No server and no API key. Installing does not configure every client or create learning automatically; behaviour belongs to each app.</p></div></section>
+    <section class="section section-soft" id="first-task">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Verified end to end</p><h2>A first governed task, from an empty folder.</h2><p class="section-copy">Linux · Python 3.11.12 · ArqUX 1.0.0 at <code>3903339</code> · 2026-11-18. CLI path only; no model call.</p></div>
+        <div class="first-task-grid">
+          <article class="first-task-card"><p class="eyebrow">Result</p><ul class="first-task-list"><li><b>Artifact</b><span><code>first-task.txt</code> contains <code>hello-from-arqux</code>.</span></li><li><b>Evidence</b><span><code>sha256:4340d832667bc0d34c6f232e7858cdf0ae070ac942e6c53e755f224b8ee9c594</code></span></li><li><b>Task</b><span><code>T-001</code> closed as <code>done</code>; PULSE event <code>SES001-E0002</code>.</span></li></ul></article>
+          <article class="first-task-card"><p class="eyebrow">Conditions</p><ul class="first-task-list"><li><b>Execution key</b><span><code>ARQUX_EXECUTION_KEY</code> kept stable across commands.</span></li><li><b>Order</b><span>Create → run → complete, with the session bound.</span></li><li><b>Observed warning</b><span>The timelog lifecycle stayed <code>pending</code>: the operation was not recorded in this timelog.</span></li></ul></article>
+        </div>
+        <details class="first-task-cmds"><summary>Full command sequence</summary><pre><code>export ARQUX_EXECUTION_KEY=first-task-demo
+arqux init
+arqux project init name=Demo
+arqux cycle create name=CYCLE-01 description="First governed task"
+arqux call session.context_set project=Demo scope=CYCLE-01
+arqux call task.create content='$1:{obj:"Create a first governed artifact",proc:["Write first-task.txt [exec:write_file path=first-task.txt content=hello-from-arqux]"],ac:["first-task.txt contains hello-from-arqux"],complexity:"simple"}'
+arqux call task.run task_id=T-001
+arqux call task.complete task_id=T-001 evidence="first-task.txt sha256=$(sha256sum first-task.txt | cut -d' ' -f1)"
+cat first-task.txt</code></pre></details>
+        <p class="note">This proves the governed CLI path in a clean workspace. It does not test a model's reasoning or guarantee that every client reproduces the same timelog lifecycle.</p>
+      </div>
+    </section>
   </main>
 <footer>
   <div class="footer-accent" aria-hidden="true"></div>

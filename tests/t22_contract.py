@@ -18,13 +18,15 @@ with sync_playwright() as pw:
     p.on("pageerror", lambda e: errs.append(str(e)))
 
     p.goto(BASE + "/", wait_until="networkidle")
-    ok("EN hero projection unit", "one per harness" in p.locator(".hero-facts").text_content())
+    ok("EN hero projection unit", "one per compatible app" in p.locator(".hero-facts").text_content())
+    ok("EN hero note explains projections", "one native file per compatible app" in p.locator(".hero-note").text_content())
     ok("EN learning limit is policy-aware", "some routes can be automated" in p.locator("#arch-data").text_content())
 
     p.goto(BASE + "/es/", wait_until="networkidle")
-    ok("ES hero projection unit", "una por harness" in p.locator(".hero-facts").text_content())
+    ok("ES hero projection unit", "una por app compatible" in p.locator(".hero-facts").text_content())
     ok("ES nav label", p.locator(".nav-links").get_attribute("aria-label") == "Navegación principal")
     ok("ES footer source label", "(fuente)" in p.locator("footer").text_content() and "(source)" not in p.locator("footer").text_content())
+    ok("ES hero note explains projections", "un archivo nativo por app compatible" in p.locator(".hero-note").text_content())
     ok("ES learning limit is policy-aware", "algunas rutas pueden automatizarse" in p.locator("#arch-data").text_content())
 
     for lang, path in (("EN", "/start/"), ("ES", "/es/empezar/")):
@@ -48,6 +50,17 @@ with sync_playwright() as pw:
 
     p.goto(BASE + "/explore/", wait_until="networkidle")
     ok("explore key terms", "Governance context" in p.locator(".artifact-vocab").text_content())
+
+    p.goto(BASE + "/es/", wait_until="networkidle")
+    ok("architecture project is container", "El proyecto contiene seis piezas" in p.locator("#architecture").text_content())
+    ok("architecture count note", "seis piezas están dentro" in p.locator(".arch-count-note").text_content())
+
+    p.goto(BASE + "/es/como-funciona/", wait_until="networkidle")
+    ok("learning transformation visible", "Criterio disponible" in p.locator("#learning").text_content())
+
+    p.goto(BASE + "/es/empezar/", wait_until="networkidle")
+    ok("first task result", "first-task.txt" in p.locator("#first-task").text_content())
+    ok("first task conditions", "timelog" in p.locator("#first-task").text_content())
 
     ctx.close(); b.close()
 
