@@ -48,6 +48,19 @@ with sync_playwright() as pw:
     ok("community participation label", "Participate today" in txt)
     ok("community future label", "Future direction" in txt)
 
+    p.goto(BASE + "/", wait_until="networkidle")
+    ok("verified first task linked from case", p.locator('.task-link a[href="/start/#first-task"]').count() == 1)
+    ok("hero compatibility legend", "Native file" in p.locator(".ws-compat").text_content())
+
+    p.goto(BASE + "/how-it-works/", wait_until="networkidle")
+    ok("compatibility matrix", "No dedicated projection" in p.locator("#compatibility").text_content())
+
+    p.goto(BASE + "/trust/", wait_until="networkidle")
+    ok("trust sources pinned", p.locator('.ev-src[href*="3903339"]').count() >= 4)
+
+    p.goto(BASE + "/community/", wait_until="networkidle")
+    ok("contribution requirements", "minimal reproduction" in p.locator("#channels").text_content())
+
     p.goto(BASE + "/explore/", wait_until="networkidle")
     ok("explore key terms", "Governance context" in p.locator(".artifact-vocab").text_content())
 
