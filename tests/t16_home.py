@@ -19,7 +19,7 @@ with sync_playwright() as pw:
         ok("six svg dimensions",svgs[0].locator(".arqx-stage").count()==6)
         ok("no visible subtitles",svgs[0].locator(".stage-desc").count()==0)
         svgs[0].locator("#arqx-stage-identidad").hover(); p.wait_for_timeout(120)
-        ok("stage tooltip",svgs[0].locator("#stage-tooltip").get_attribute("opacity")=="1")
+        ok("lifted card",svgs[0].locator(".lift-card.is-on").count()==1)
     ok("no board/palette/rail",p.locator("#wsboard,.palette,.progress-rail").count()==0)
     ok("case four stages",p.locator("#task .flow li").count()==4)
     ok("case links verified task",p.locator('.task-link a[href="/start/#first-task"]').count()==1)

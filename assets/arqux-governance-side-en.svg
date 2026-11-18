@@ -14,62 +14,65 @@
 :root{color-scheme:dark}text{font-family:Inter,'IBM Plex Sans','Segoe UI',Arial,sans-serif;fill:#F3F7F7}.muted{fill:#B7CAD1}.mono{font-family:'IBM Plex Mono',Consolas,monospace}.stage-title{font-size:18px;font-weight:760}.stage-frame{fill:url(#surface);stroke:#427E86;stroke-width:1.5;transition:stroke .35s,filter .35s}.stage-icon{fill:none;stroke:#7EF3EA;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.arqx-stage{transform-box:fill-box;transform-origin:center;outline:none;cursor:pointer;opacity:0;animation:gov-in .55s ease forwards}
 #arqx-stage-identidad{animation-delay:.78s}#arqx-stage-contrato{animation-delay:.9s}#arqx-stage-contexto{animation-delay:1.02s}#arqx-stage-decision{animation-delay:.84s}#arqx-stage-ejecucion{animation-delay:.96s}#arqx-stage-evidencia{animation-delay:1.08s}
 .arqx-stage:focus .stage-frame,.arqx-stage:hover .stage-frame{stroke:#FFE4A2;filter:url(#glow)}.arqx-stage:focus .stage-title,.arqx-stage:hover .stage-title{fill:#FFE6A8}.arqx-stage:focus-visible{outline:3px solid #FFB547;outline-offset:6px}
-.orbit-dash{transform-origin:500px 330px;animation:orbit 18s linear infinite}.arqx-stage .pulse{opacity:0;animation:stage-glow 18s linear infinite}#arqx-stage-ejecucion .pulse{animation-delay:0s}#arqx-stage-evidencia .pulse{animation-delay:1.405s}#arqx-stage-contexto .pulse{animation-delay:7.595s}#arqx-stage-contrato .pulse{animation-delay:9s}#arqx-stage-identidad .pulse{animation-delay:10.405s}#arqx-stage-decision .pulse{animation-delay:16.595s}
-#stage-tooltip{opacity:0;transition:opacity .15s ease;pointer-events:none}#stage-tooltip[opacity="1"]{opacity:1}.tooltip-title{font-size:16px;font-weight:760;fill:#FFE4A2}.tooltip-desc{font-size:13.5px;fill:#D7E5E7}
-.rail-title{font-size:22px;font-weight:780;fill:#EAF6F4}.rail-sub{font-size:13px;fill:#B7CAD1}.rail-arrow{font-size:22px;fill:#FFC05B;font-weight:700}
+.orbit-dash{transform-origin:500px 290px;animation:orbit 18s linear infinite}.arqx-stage .pulse{opacity:0;animation:stage-glow 18s linear infinite}#arqx-stage-ejecucion .pulse{animation-delay:0s}#arqx-stage-evidencia .pulse{animation-delay:1.405s}#arqx-stage-contexto .pulse{animation-delay:7.595s}#arqx-stage-contrato .pulse{animation-delay:9s}#arqx-stage-identidad .pulse{animation-delay:10.405s}#arqx-stage-decision .pulse{animation-delay:16.595s}
+.rail-title{font-size:22px;font-weight:780;fill:#EAF6F4}.rail-icon{pointer-events:none}.triad-flow{animation:triad-flow 9s linear infinite}@keyframes triad-flow{0%{transform:translateX(0);opacity:0}8%,88%{opacity:1}100%{transform:translateX(760px);opacity:0}}.rail-sub{font-size:13px;fill:#B7CAD1}.rail-arrow{font-size:22px;fill:#FFC05B;font-weight:700}
+
+#lift-layer{pointer-events:none}.lift-card{opacity:0;visibility:hidden;pointer-events:none}.lift-inner{transform-box:fill-box;transform-origin:center;transform:scale(.84) translateY(10px);opacity:0;transition:opacity .16s ease,transform .22s cubic-bezier(.2,.7,.2,1),visibility .16s}.lift-card.is-on{opacity:1;visibility:visible}.lift-card.is-on .lift-inner{opacity:1;transform:scale(1) translateY(-6px)}.lift-frame{fill:#0E2630;stroke:#FFC05B;stroke-width:2;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}.lift-title{font-size:18px;font-weight:780;fill:#FFE4A2}.lift-desc{font-size:13.5px;fill:#D7E5E7}.lift-card .stage-icon{fill:none;stroke:#7EF3EA;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 @keyframes gov-in{from{opacity:0}to{opacity:1}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes stage-glow{0%,1%,6%,100%{opacity:0}2%,4.5%{opacity:.60}}
-@media(prefers-reduced-motion:reduce){.orbit-dash,.arqx-stage .pulse,.arqx-stage{animation:none!important;opacity:1!important}.arqx-stage .pulse{opacity:0!important}.stage-frame{transition:none!important}#stage-tooltip{transition:none!important}}
-]]></style>
+@media(prefers-reduced-motion:reduce){.orbit-dash,.arqx-stage .pulse,.arqx-stage{animation:none!important;opacity:1!important}.arqx-stage .pulse{opacity:0!important}.stage-frame{transition:none!important}.lift-inner{transition:none!important}.triad-flow{animation:none!important;opacity:0!important}]]></style>
 <rect width="1000" height="618" fill="url(#bg)"/><rect width="1000" height="618" fill="url(#grid)"/>
-<ellipse cx="500" cy="330" rx="430" ry="300" fill="url(#ambient)"/>
+<ellipse cx="500" cy="290" rx="430" ry="300" fill="url(#ambient)"/>
 <g id="ecosystem-rail" aria-label="HARNESS to ArqUX to PROJECT">
 <line x1="40" y1="520" x2="960" y2="520" stroke="#6B4A1E" stroke-width="1.5" opacity=".8"/>
+<g class="rail-icon" aria-hidden="true" transform="translate(64 488) scale(.5)" fill="none" stroke="#70F8EB" stroke-width="3"><rect x="-35" y="-21" width="70" height="57" rx="23" fill="#12313E"/><path d="M0 -33 V-21 M-48 0 H-36 M36 0 H48"/><circle cx="-13" cy="3" r="5" fill="#70F8EB" stroke="none"/><circle cx="13" cy="3" r="5" fill="#70F8EB" stroke="none"/><path d="M-12 19 Q0 26 12 19"/></g>
+<g class="rail-icon" aria-hidden="true" transform="translate(936 488) scale(.5)" fill="none" stroke="#7EF3EA" stroke-width="3"><path d="M0 -22 L29 -8 V18 L0 34 L-29 18 V-8 Z M0 -22 V6 M-29 -8 L0 6 L29 -8 M0 6 V34"/></g>
+<g class="triad-flow" aria-hidden="true"><circle cx="120" cy="520" r="4.5" fill="#FFC05B" filter="url(#glow)"/></g>
 <text class="rail-title" x="40" y="552">HARNESS</text><text class="rail-sub" x="40" y="574">AI agents</text>
 <text class="rail-arrow" x="196" y="555">→</text>
 <text class="rail-title" x="500" y="552" text-anchor="middle">ArqUX</text><text class="rail-sub" x="500" y="574" text-anchor="middle">governed work</text>
 <text class="rail-arrow" x="790" y="555">→</text>
 <text class="rail-title" x="960" y="552" text-anchor="end">PROJECT</text><text class="rail-sub" x="960" y="574" text-anchor="end">code · data · results</text>
 </g>
-<circle cx="500" cy="330" r="160" fill="none" stroke="#5B3F16" stroke-width="16" opacity=".58"/>
-<circle cx="500" cy="330" r="160" fill="none" stroke="#B8791C" stroke-width="3.5"/>
-<circle cx="500" cy="330" r="149" fill="none" stroke="#E7AE4B" stroke-width="1" stroke-dasharray="3 7" opacity=".50"/>
-<g class="orbit-dash" id="arqx-learning-orbit" aria-hidden="true"><circle cx="500" cy="330" r="160" fill="none" stroke="#FFC05B" stroke-width="10" stroke-linecap="round" stroke-dasharray="36 970" opacity=".82" filter="url(#glow)"/><circle cx="500" cy="330" r="160" fill="none" stroke="#FFF0C0" stroke-width="3" stroke-linecap="round" stroke-dasharray="36 970"/></g>
-<g id="arqx-stage-identidad" class="arqx-stage" role="button" tabindex="0" transform="translate(289,220)" data-stage="identidad" aria-label="Identity: Who acts" aria-describedby="desc-identidad">
+<circle cx="500" cy="290" r="160" fill="none" stroke="#5B3F16" stroke-width="16" opacity=".58"/>
+<circle cx="500" cy="290" r="160" fill="none" stroke="#B8791C" stroke-width="3.5"/>
+<circle cx="500" cy="290" r="149" fill="none" stroke="#E7AE4B" stroke-width="1" stroke-dasharray="3 7" opacity=".50"/>
+<g class="orbit-dash" id="arqx-learning-orbit" aria-hidden="true"><circle cx="500" cy="290" r="160" fill="none" stroke="#FFC05B" stroke-width="10" stroke-linecap="round" stroke-dasharray="36 970" opacity=".82" filter="url(#glow)"/><circle cx="500" cy="290" r="160" fill="none" stroke="#FFF0C0" stroke-width="3" stroke-linecap="round" stroke-dasharray="36 970"/></g>
+<g id="arqx-stage-identidad" class="arqx-stage" role="button" tabindex="0" transform="translate(289,180)" data-stage="identidad" aria-label="Identity: Who acts" aria-describedby="desc-identidad">
 <desc id="desc-identidad">Who acts: agent, role and permissions it works with.</desc>
 <rect class="pulse" x="-104" y="-42" width="208" height="84" rx="24" fill="#FFC05B" filter="url(#glow)"/>
 <rect class="stage-frame" x="-95" y="-32" width="190" height="64" rx="18"/>
 <g class="stage-icon" transform="translate(-58 0) scale(.5)"><rect x="-26" y="-23" width="52" height="46" rx="5"/><path d="M-15 -7 a7 7 0 1 0 14 0 a7 7 0 1 0 -14 0 M-20 11 Q-8 0 4 11 M10 -9 H19 M10 0 H19 M10 9 H19"/></g>
 <text class="stage-title" x="-30" y="6" text-anchor="start">Identity</text>
 </g>
-<g id="arqx-stage-contrato" class="arqx-stage" role="button" tabindex="0" transform="translate(245,330)" data-stage="contrato" aria-label="Contract: What it can do" aria-describedby="desc-contrato">
+<g id="arqx-stage-contrato" class="arqx-stage" role="button" tabindex="0" transform="translate(245,290)" data-stage="contrato" aria-label="Contract: What it can do" aria-describedby="desc-contrato">
 <desc id="desc-contrato">What it can do: scope, limits and rules it accepts.</desc>
 <rect class="pulse" x="-104" y="-42" width="208" height="84" rx="24" fill="#FFC05B" filter="url(#glow)"/>
 <rect class="stage-frame" x="-95" y="-32" width="190" height="64" rx="18"/>
 <g class="stage-icon" transform="translate(-58 0) scale(.5)"><path d="M-20 -26 H9 L22 -13 V25 H-20 Z M9 -26 V-13 H22 M-11 -3 H11 M-11 6 H8 M-10 16 H-2"/><circle cx="18" cy="17" r="12" fill="#0C2530"/><path d="M12 17 L16 21 L24 12"/></g>
 <text class="stage-title" x="-30" y="6" text-anchor="start">Contract</text>
 </g>
-<g id="arqx-stage-contexto" class="arqx-stage" role="button" tabindex="0" transform="translate(289,440)" data-stage="contexto" aria-label="Context: What it works with" aria-describedby="desc-contexto">
+<g id="arqx-stage-contexto" class="arqx-stage" role="button" tabindex="0" transform="translate(289,400)" data-stage="contexto" aria-label="Context: What it works with" aria-describedby="desc-contexto">
 <desc id="desc-contexto">What it works with: project, files and prior decisions.</desc>
 <rect class="pulse" x="-104" y="-42" width="208" height="84" rx="24" fill="#FFC05B" filter="url(#glow)"/>
 <rect class="stage-frame" x="-95" y="-32" width="190" height="64" rx="18"/>
 <g class="stage-icon" transform="translate(-58 0) scale(.5)"><path d="M0 -25 L29 -10 L0 5 L-29 -10 Z M-29 1 L0 16 L29 1 M-29 13 L0 28 L29 13"/></g>
 <text class="stage-title" x="-30" y="6" text-anchor="start">Context</text>
 </g>
-<g id="arqx-stage-decision" class="arqx-stage" role="button" tabindex="0" transform="translate(711,220)" data-stage="decision" aria-label="Decision: What is agreed" aria-describedby="desc-decision">
+<g id="arqx-stage-decision" class="arqx-stage" role="button" tabindex="0" transform="translate(711,180)" data-stage="decision" aria-label="Decision: What is agreed" aria-describedby="desc-decision">
 <desc id="desc-decision">What is agreed: chosen criterion and discarded alternatives.</desc>
 <rect class="pulse" x="-104" y="-42" width="208" height="84" rx="24" fill="#FFC05B" filter="url(#glow)"/>
 <rect class="stage-frame" x="-95" y="-32" width="190" height="64" rx="18"/>
 <g class="stage-icon" transform="translate(-58 0) scale(.5)"><circle cx="0" cy="-24" r="5"/><circle cx="-24" cy="21" r="5"/><circle cx="24" cy="21" r="5"/><path d="M0 -19 V-6 L-24 12 M0 -6 L24 12"/></g>
 <text class="stage-title" x="-30" y="6" text-anchor="start">Decision</text>
 </g>
-<g id="arqx-stage-ejecucion" class="arqx-stage" role="button" tabindex="0" transform="translate(755,330)" data-stage="ejecucion" aria-label="Execution: How it is done" aria-describedby="desc-ejecucion">
+<g id="arqx-stage-ejecucion" class="arqx-stage" role="button" tabindex="0" transform="translate(755,290)" data-stage="ejecucion" aria-label="Execution: How it is done" aria-describedby="desc-ejecucion">
 <desc id="desc-ejecucion">How it is done: tasks, order and state.</desc>
 <rect class="pulse" x="-104" y="-42" width="208" height="84" rx="24" fill="#FFC05B" filter="url(#glow)"/>
 <rect class="stage-frame" x="-95" y="-32" width="190" height="64" rx="18"/>
 <g class="stage-icon" transform="translate(-58 0) scale(.5)"><circle cx="0" cy="0" r="15"/><path d="M-5 -28 H5 L8 -20 L17 -15 L25 -18 L31 -8 L25 -1 L25 8 L31 16 L24 25 L15 22 L7 27 L5 34 H-5 L-8 26 L-17 21 L-25 24 L-31 15 L-25 8 L-25 -1 L-31 -9 L-25 -18 L-16 -15 L-8 -20 Z" transform="scale(.86)"/></g>
 <text class="stage-title" x="-30" y="6" text-anchor="start">Execution</text>
 </g>
-<g id="arqx-stage-evidencia" class="arqx-stage" role="button" tabindex="0" transform="translate(711,440)" data-stage="evidencia" aria-label="Evidence: What is checked" aria-describedby="desc-evidencia">
+<g id="arqx-stage-evidencia" class="arqx-stage" role="button" tabindex="0" transform="translate(711,400)" data-stage="evidencia" aria-label="Evidence: What is checked" aria-describedby="desc-evidencia">
 <desc id="desc-evidencia">What is checked: results, tests and trace.</desc>
 <rect class="pulse" x="-104" y="-42" width="208" height="84" rx="24" fill="#FFC05B" filter="url(#glow)"/>
 <rect class="stage-frame" x="-95" y="-32" width="190" height="64" rx="18"/>
@@ -77,27 +80,70 @@
 <text class="stage-title" x="-30" y="6" text-anchor="start">Evidence</text>
 </g>
 <g id="arqx-core">
-<ellipse cx="500" cy="330" rx="116" ry="116" fill="url(#core-backlight)"/>
-<g transform="translate(500 330) scale(0.1606) translate(-768 -496)">
+<ellipse cx="500" cy="290" rx="116" ry="116" fill="url(#core-backlight)"/>
+<g transform="translate(500 290) scale(0.1606) translate(-768 -496)">
 <path d="M 425,279 C 398,287 381,309 381,339 L 381,670 Q 381,711 416,733 L 728,921 Q 768,946 808,921 L 1121,734 Q 1156,713 1156,671 L 1156,332 Q 1156,308 1138,295 Q 1130,290 1124,306 L 1063,355 L 1063,649 Q 1063,676 1040,690 L 790,839 Q 768,852 746,839 L 495,690 Q 472,676 472,650 L 472,326 Z" fill="#091926"/>
 <path d="M 541,352 L 738,234 Q 768,216 794,233 L 918,309 Q 923,313 914,319 L 857,357 Q 849,363 841,357 L 783,319 Q 768,309 752,319 L 627,394 Q 612,403 612,420 L 612,567 Q 612,582 627,591 L 751,663 Q 768,673 784,663 L 907,591 Q 922,582 922,566 L 922,458 Q 922,449 931,443 L 990,405 Q 999,399 999,410 L 999,592 Q 999,622 974,637 L 794,749 Q 768,765 742,749 L 559,638 Q 535,622 535,592 L 535,380 Q 535,362 541,352 Z" fill="#091926"/>
 <path d="M 430,252 L 676,100 Q 767,47 858,99 L 1070,228 Q 1101,246 1100,278 Q 1099,302 1074,319 L 875,446 Q 861,454 861,469 L 861,534 Q 861,547 849,555 L 784,594 Q 768,603 752,594 L 687,555 Q 673,547 673,531 L 673,449 Q 673,438 685,430 L 749,390 Q 766,380 781,389 L 811,406 Q 820,412 829,406 L 990,303 Q 1003,293 991,280 L 847,191 Q 768,139 689,190 L 485,317 Q 476,323 472,333 Q 451,315 432,310 Q 399,293 430,252 Z" fill="#D77A00"/>
 </g>
 </g>
-<g id="stage-tooltip" role="tooltip" aria-hidden="true">
-<rect x="200" y="24" width="600" height="70" rx="16" fill="#0E2630" stroke="#FFC05B" stroke-width="1.5"/>
-<text id="stage-tooltip-title" class="tooltip-title" x="220" y="49"></text>
-<text id="stage-tooltip-desc" class="tooltip-desc" x="220" y="75"></text>
+<g id="lift-layer" aria-hidden="true" pointer-events="none">
+<g class="lift-card" data-stage="identidad" transform="translate(289,180)" aria-hidden="true">
+<g class="lift-inner">
+<rect class="lift-frame" x="-160" y="-60" width="320" height="120" rx="24"/>
+<g class="stage-icon" transform="translate(-120 -14) scale(.55)"><rect x="-26" y="-23" width="52" height="46" rx="5"/><path d="M-15 -7 a7 7 0 1 0 14 0 a7 7 0 1 0 -14 0 M-20 11 Q-8 0 4 11 M10 -9 H19 M10 0 H19 M10 9 H19"/></g>
+<text class="lift-title" x="-84" y="-6">Identity</text>
+<text class="lift-desc" x="-84" y="20"><tspan x="-84" dy="0">Who acts: agent, role and permissions</tspan><tspan x="-84" dy="18">it works with.</tspan></text>
+</g>
+</g>
+<g class="lift-card" data-stage="contrato" transform="translate(245,290)" aria-hidden="true">
+<g class="lift-inner">
+<rect class="lift-frame" x="-160" y="-60" width="320" height="120" rx="24"/>
+<g class="stage-icon" transform="translate(-120 -14) scale(.55)"><path d="M-20 -26 H9 L22 -13 V25 H-20 Z M9 -26 V-13 H22 M-11 -3 H11 M-11 6 H8 M-10 16 H-2"/><circle cx="18" cy="17" r="12" fill="#0C2530"/><path d="M12 17 L16 21 L24 12"/></g>
+<text class="lift-title" x="-84" y="-6">Contract</text>
+<text class="lift-desc" x="-84" y="20"><tspan x="-84" dy="0">What it can do: scope, limits and</tspan><tspan x="-84" dy="18">rules it accepts.</tspan></text>
+</g>
+</g>
+<g class="lift-card" data-stage="contexto" transform="translate(289,400)" aria-hidden="true">
+<g class="lift-inner">
+<rect class="lift-frame" x="-160" y="-60" width="320" height="120" rx="24"/>
+<g class="stage-icon" transform="translate(-120 -14) scale(.55)"><path d="M0 -25 L29 -10 L0 5 L-29 -10 Z M-29 1 L0 16 L29 1 M-29 13 L0 28 L29 13"/></g>
+<text class="lift-title" x="-84" y="-6">Context</text>
+<text class="lift-desc" x="-84" y="20"><tspan x="-84" dy="0">What it works with: project, files</tspan><tspan x="-84" dy="18">and prior decisions.</tspan></text>
+</g>
+</g>
+<g class="lift-card" data-stage="decision" transform="translate(711,180)" aria-hidden="true">
+<g class="lift-inner">
+<rect class="lift-frame" x="-160" y="-60" width="320" height="120" rx="24"/>
+<g class="stage-icon" transform="translate(-120 -14) scale(.55)"><circle cx="0" cy="-24" r="5"/><circle cx="-24" cy="21" r="5"/><circle cx="24" cy="21" r="5"/><path d="M0 -19 V-6 L-24 12 M0 -6 L24 12"/></g>
+<text class="lift-title" x="-84" y="-6">Decision</text>
+<text class="lift-desc" x="-84" y="20"><tspan x="-84" dy="0">What is agreed: chosen criterion</tspan><tspan x="-84" dy="18">and discarded alternatives.</tspan></text>
+</g>
+</g>
+<g class="lift-card" data-stage="ejecucion" transform="translate(755,290)" aria-hidden="true">
+<g class="lift-inner">
+<rect class="lift-frame" x="-160" y="-60" width="320" height="120" rx="24"/>
+<g class="stage-icon" transform="translate(-120 -14) scale(.55)"><circle cx="0" cy="0" r="15"/><path d="M-5 -28 H5 L8 -20 L17 -15 L25 -18 L31 -8 L25 -1 L25 8 L31 16 L24 25 L15 22 L7 27 L5 34 H-5 L-8 26 L-17 21 L-25 24 L-31 15 L-25 8 L-25 -1 L-31 -9 L-25 -18 L-16 -15 L-8 -20 Z" transform="scale(.86)"/></g>
+<text class="lift-title" x="-84" y="-6">Execution</text>
+<text class="lift-desc" x="-84" y="20"><tspan x="-84" dy="0">How it is done: tasks, order</tspan><tspan x="-84" dy="18">and state.</tspan></text>
+</g>
+</g>
+<g class="lift-card" data-stage="evidencia" transform="translate(711,400)" aria-hidden="true">
+<g class="lift-inner">
+<rect class="lift-frame" x="-160" y="-60" width="320" height="120" rx="24"/>
+<g class="stage-icon" transform="translate(-120 -14) scale(.55)"><path d="M-19 -26 H9 L22 -13 V26 H-19 Z M9 -26 V-13 H22 M-10 -5 H9 M-10 4 H4"/><circle cx="15" cy="16" r="12" fill="#0D2731"/><path d="M8 16 L13 21 L22 11"/></g>
+<text class="lift-title" x="-84" y="-6">Evidence</text>
+<text class="lift-desc" x="-84" y="20"><tspan x="-84" dy="0">What is checked: results, tests</tspan><tspan x="-84" dy="18">and trace.</tspan></text>
+</g>
+</g>
 </g>
 <script><![CDATA[
 (function(){
   var target='/reference/#dimensions';
-  var tip=document.getElementById('stage-tooltip');
-  var tipTitle=document.getElementById('stage-tooltip-title');
-  var tipDesc=document.getElementById('stage-tooltip-desc');
+  var cards=Array.prototype.slice.call(document.querySelectorAll('.lift-card'));
+  function hide(){ cards.forEach(function(c){c.classList.remove('is-on');}); }
+  function show(g){ hide(); var k=g.getAttribute('data-stage'); var c=document.querySelector('.lift-card[data-stage="'+k+'"]'); if(c)c.classList.add('is-on'); }
   function go(){ if(!target) return; try{ window.top.location.href=target; }catch(e){ window.location.href=target; } }
-  function show(g){ var label=g.getAttribute('aria-label')||''; var d=g.querySelector('desc'); tipTitle.textContent=label.split(':')[0]; tipDesc.textContent=d?d.textContent:''; tip.setAttribute('opacity','1'); tip.setAttribute('aria-hidden','false'); }
-  function hide(){ tip.setAttribute('opacity','0'); tip.setAttribute('aria-hidden','true'); }
   document.querySelectorAll('.arqx-stage').forEach(function(g){
     g.addEventListener('mouseenter',function(){show(g);});
     g.addEventListener('mouseleave',hide);
