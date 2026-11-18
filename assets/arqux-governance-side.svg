@@ -11,16 +11,17 @@
 <filter id="softglow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="17"/></filter>
 </defs>
 <style><![CDATA[
-:root{color-scheme:dark}text{font-family:Inter,'IBM Plex Sans','Segoe UI',Arial,sans-serif;fill:#F3F7F7}.muted{fill:#B7CAD1}.mono{font-family:'IBM Plex Mono',Consolas,monospace}.stage-title{font-size:20px;font-weight:760}.stage-frame{fill:url(#surface);stroke:#427E86;stroke-width:1.5;transition:stroke .35s,filter .35s}.stage-icon{fill:none;stroke:#7EF3EA;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.arqx-stage{transform-box:fill-box;transform-origin:center;outline:none;cursor:pointer;opacity:0;animation:gov-in .55s ease forwards}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/ibm-plex-sans-400.woff2") format("woff2")}@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:500;font-display:swap;src:url("/assets/fonts/ibm-plex-sans-500.woff2") format("woff2")}@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url("/assets/fonts/ibm-plex-sans-600.woff2") format("woff2")}@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:700;font-display:swap;src:url("/assets/fonts/ibm-plex-sans-700.woff2") format("woff2")}
+:root{color-scheme:dark}text{font-family:'IBM Plex Sans','Segoe UI',Arial,sans-serif;fill:#F3F7F7}.muted{fill:#B7CAD1}.mono{font-family:'IBM Plex Mono',Consolas,monospace}.stage-title{font-size:20px;font-weight:760}.stage-frame{fill:url(#surface);stroke:#427E86;stroke-width:1.5;transition:stroke .35s,filter .35s}.stage-icon{fill:none;stroke:#7EF3EA;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.arqx-stage{transform-box:fill-box;transform-origin:center;outline:none;cursor:pointer;opacity:0;animation:gov-in .55s ease forwards}
 #arqx-stage-identidad{animation-delay:.78s}#arqx-stage-contrato{animation-delay:.9s}#arqx-stage-contexto{animation-delay:1.02s}#arqx-stage-decision{animation-delay:.84s}#arqx-stage-ejecucion{animation-delay:.96s}#arqx-stage-evidencia{animation-delay:1.08s}
 .arqx-stage:focus .stage-frame,.arqx-stage:hover .stage-frame{stroke:#FFE4A2;filter:url(#glow)}.arqx-stage:focus .stage-title,.arqx-stage:hover .stage-title{fill:#FFE6A8}.arqx-stage:focus-visible{outline:3px solid #FFB547;outline-offset:6px}
-.orbit-dash{transform-origin:500px 290px;animation:orbit 18s linear infinite}.arqx-stage .pulse{opacity:0;animation:stage-glow 18s linear infinite}#arqx-stage-ejecucion .pulse{animation-delay:0s}#arqx-stage-evidencia .pulse{animation-delay:1.405s}#arqx-stage-contexto .pulse{animation-delay:7.595s}#arqx-stage-contrato .pulse{animation-delay:9s}#arqx-stage-identidad .pulse{animation-delay:10.405s}#arqx-stage-decision .pulse{animation-delay:16.595s}
+.orbit-dash{transform-origin:500px 290px}.arqx-stage .pulse{opacity:0;transition:opacity .12s linear}.arqx-stage.is-synced .pulse{opacity:.72}
 .rail-title{font-size:23px;font-weight:780;fill:#EAF6F4}.rail-icon{pointer-events:none}.triad-flow{animation:triad-flow 9s linear infinite}@keyframes triad-flow{0%{transform:translateX(0);opacity:0}8%,88%{opacity:1}100%{transform:translateX(760px);opacity:0}}.rail-sub{font-size:16px;fill:#B7CAD1}.rail-arrow{font-size:22px;fill:#FFC05B;font-weight:700}
 
 #lift-layer{pointer-events:none}.lift-card{opacity:0;visibility:hidden;pointer-events:none}.lift-inner{transform-box:fill-box;transform-origin:center;transform:scale(.84) translateY(10px);opacity:0;transition:opacity .16s ease,transform .22s cubic-bezier(.2,.7,.2,1),visibility .16s}.lift-card.is-on{opacity:1;visibility:visible}.lift-card.is-on .lift-inner{opacity:1;transform:scale(1) translateY(-6px)}.lift-frame{fill:#0E2630;stroke:#FFC05B;stroke-width:2;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}.lift-title{font-size:21px;font-weight:780;fill:#FFE4A2}.lift-desc{font-size:19px;font-weight:500;fill:#E8F2F3}.lift-card .stage-icon{fill:none;stroke:#7EF3EA;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 
 .map-kicker{font-size:22px;font-weight:780;letter-spacing:.12em;fill:#FFC05B}.map-sub{font-size:18px;fill:#B7CAD1}.triad-node{cursor:pointer;outline:none}.triad-hit{fill:transparent;pointer-events:all}.triad-node:hover .rail-title,.triad-node:focus .rail-title{fill:#FFE4A2}.triad-node:hover .rail-icon,.triad-node:focus .rail-icon{filter:url(#glow)}.triad-node:focus-visible .triad-hit{stroke:#FFB547;stroke-width:2}.triad-detail{opacity:0;visibility:hidden;pointer-events:none}#triad-lift-layer{pointer-events:none}.triad-inner{transform-box:fill-box;transform-origin:center;transform:scale(.88) translateY(10px);opacity:0;transition:opacity .16s ease,transform .22s cubic-bezier(.2,.7,.2,1),visibility .16s}.triad-detail.is-on{opacity:1;visibility:visible}.triad-detail.is-on .triad-inner{opacity:1;transform:scale(1) translateY(-6px)}.triad-frame{fill:#0E2630;stroke:#FFC05B;stroke-width:2;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}.triad-title{font-size:21px;font-weight:780;fill:#FFE4A2}.triad-desc{font-size:19px;font-weight:500;fill:#E8F2F3}.triad-detail .rail-icon{fill:none;stroke:#7EF3EA;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-@keyframes gov-in{from{opacity:0}to{opacity:1}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes stage-glow{0%,1%,6%,100%{opacity:0}2%,4.5%{opacity:.60}}
+@keyframes gov-in{from{opacity:0}to{opacity:1}}@keyframes orbit{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.orbit-dash,.arqx-stage .pulse,.arqx-stage{animation:none!important;opacity:1!important}.arqx-stage .pulse{opacity:0!important}.stage-frame{transition:none!important}.lift-inner{transition:none!important}.triad-inner{transition:none!important}.triad-flow{animation:none!important;opacity:0!important}]]></style>
 <rect width="1000" height="618" fill="url(#bg)"/><rect width="1000" height="618" fill="url(#grid)"/>
 <ellipse cx="500" cy="290" rx="430" ry="300" fill="url(#ambient)"/>
@@ -50,9 +51,9 @@
 <g class="triad-flow" aria-hidden="true"><circle cx="120" cy="520" r="4.5" fill="#FFC05B" filter="url(#glow)"/></g>
 </g>
 <circle cx="500" cy="290" r="160" fill="none" stroke="#5B3F16" stroke-width="16" opacity=".58"/>
-<circle cx="500" cy="290" r="160" fill="none" stroke="#B8791C" stroke-width="3.5"/>
-<circle cx="500" cy="290" r="149" fill="none" stroke="#E7AE4B" stroke-width="1" stroke-dasharray="3 7" opacity=".50"/>
-<g class="orbit-dash" id="arqx-learning-orbit" aria-hidden="true"><circle cx="500" cy="290" r="160" fill="none" stroke="#FFC05B" stroke-width="10" stroke-linecap="round" stroke-dasharray="36 970" opacity=".82" filter="url(#glow)"/><circle cx="500" cy="290" r="160" fill="none" stroke="#FFF0C0" stroke-width="3" stroke-linecap="round" stroke-dasharray="36 970"/></g>
+<circle cx="500" cy="290" r="160" fill="none" stroke="#8A5D16" stroke-width="3.5"/>
+<circle cx="500" cy="290" r="149" fill="none" stroke="#D99B30" stroke-width="1" stroke-dasharray="3 7" opacity=".55"/>
+<g class="orbit-dash" id="arqx-learning-orbit" aria-hidden="true"><circle cx="660" cy="290" r="7" fill="#FFE7A8" filter="url(#glow)"/><circle cx="500" cy="290" r="160" fill="none" stroke="#FFC05B" stroke-width="10" stroke-linecap="round" stroke-dasharray="36 970" opacity=".82" filter="url(#glow)"/><circle cx="500" cy="290" r="160" fill="none" stroke="#FFF0C0" stroke-width="3" stroke-linecap="round" stroke-dasharray="36 970"/></g>
 <g id="arqx-stage-identidad" class="arqx-stage" role="button" tabindex="0" transform="translate(289,180)" data-stage="identidad" aria-label="Identidad: Quién actúa" aria-describedby="desc-identidad">
 <desc id="desc-identidad">Quién actúa: agente, rol y permisos con los que trabaja.</desc>
 <rect class="pulse" x="-104" y="-42" width="208" height="84" rx="24" fill="#FFC05B" filter="url(#glow)"/>
@@ -108,48 +109,48 @@
 <g class="lift-inner">
 <rect class="lift-frame" x="-205" y="-65" width="410" height="130" rx="24"/>
 <g class="stage-icon" transform="translate(-174 0) scale(.5)"><rect x="-26" y="-23" width="52" height="46" rx="5"/><path d="M-15 -7 a7 7 0 1 0 14 0 a7 7 0 1 0 -14 0 M-20 11 Q-8 0 4 11 M10 -9 H19 M10 0 H19 M10 9 H19"/></g>
-<text class="lift-title" x="-130" y="-18">Identidad</text>
-<text class="lift-desc" x="-130" y="10"><tspan x="-130" dy="0">Quién actúa: agente, rol y permisos</tspan><tspan x="-130" dy="21">con los que trabaja.</tspan></text>
+<text class="lift-title" x="-132" y="-18">Identidad</text>
+<text class="lift-desc" x="-132" y="10"><tspan x="-132" dy="0">Quién actúa: agente, rol y permisos</tspan><tspan x="-132" dy="28.5">con los que trabaja.</tspan></text>
 </g>
 </g>
 <g class="lift-card" data-stage="contrato" transform="translate(245,290)" aria-hidden="true">
 <g class="lift-inner">
 <rect class="lift-frame" x="-205" y="-65" width="410" height="130" rx="24"/>
 <g class="stage-icon" transform="translate(-174 0) scale(.5)"><path d="M-20 -26 H9 L22 -13 V25 H-20 Z M9 -26 V-13 H22 M-11 -3 H11 M-11 6 H8 M-10 16 H-2"/><circle cx="18" cy="17" r="12" fill="#0C2530"/><path d="M12 17 L16 21 L24 12"/></g>
-<text class="lift-title" x="-130" y="-18">Contrato</text>
-<text class="lift-desc" x="-130" y="10"><tspan x="-130" dy="0">Qué puede hacer: alcance, límites</tspan><tspan x="-130" dy="21">y reglas que acepta.</tspan></text>
+<text class="lift-title" x="-132" y="-18">Contrato</text>
+<text class="lift-desc" x="-132" y="10"><tspan x="-132" dy="0">Qué puede hacer: alcance, límites</tspan><tspan x="-132" dy="28.5">y reglas que acepta.</tspan></text>
 </g>
 </g>
 <g class="lift-card" data-stage="contexto" transform="translate(289,400)" aria-hidden="true">
 <g class="lift-inner">
 <rect class="lift-frame" x="-205" y="-65" width="410" height="130" rx="24"/>
 <g class="stage-icon" transform="translate(-174 0) scale(.5)"><path d="M0 -25 L29 -10 L0 5 L-29 -10 Z M-29 1 L0 16 L29 1 M-29 13 L0 28 L29 13"/></g>
-<text class="lift-title" x="-130" y="-18">Contexto</text>
-<text class="lift-desc" x="-130" y="10"><tspan x="-130" dy="0">Con qué trabaja: proyecto, archivos</tspan><tspan x="-130" dy="21">y decisiones previas.</tspan></text>
+<text class="lift-title" x="-132" y="-18">Contexto</text>
+<text class="lift-desc" x="-132" y="10"><tspan x="-132" dy="0">Con qué trabaja: proyecto, archivos</tspan><tspan x="-132" dy="28.5">y decisiones previas.</tspan></text>
 </g>
 </g>
 <g class="lift-card" data-stage="decision" transform="translate(711,180)" aria-hidden="true">
 <g class="lift-inner">
 <rect class="lift-frame" x="-205" y="-65" width="410" height="130" rx="24"/>
 <g class="stage-icon" transform="translate(-174 0) scale(.5)"><circle cx="0" cy="-24" r="5"/><circle cx="-24" cy="21" r="5"/><circle cx="24" cy="21" r="5"/><path d="M0 -19 V-6 L-24 12 M0 -6 L24 12"/></g>
-<text class="lift-title" x="-130" y="-18">Decisión</text>
-<text class="lift-desc" x="-130" y="10"><tspan x="-130" dy="0">Qué se acuerda: criterio elegido</tspan><tspan x="-130" dy="21">y alternativas descartadas.</tspan></text>
+<text class="lift-title" x="-132" y="-18">Decisión</text>
+<text class="lift-desc" x="-132" y="10"><tspan x="-132" dy="0">Qué se acuerda: criterio elegido</tspan><tspan x="-132" dy="28.5">y alternativas descartadas.</tspan></text>
 </g>
 </g>
 <g class="lift-card" data-stage="ejecucion" transform="translate(755,290)" aria-hidden="true">
 <g class="lift-inner">
 <rect class="lift-frame" x="-205" y="-65" width="410" height="130" rx="24"/>
 <g class="stage-icon" transform="translate(-174 0) scale(.5)"><circle cx="0" cy="0" r="15"/><path d="M-5 -28 H5 L8 -20 L17 -15 L25 -18 L31 -8 L25 -1 L25 8 L31 16 L24 25 L15 22 L7 27 L5 34 H-5 L-8 26 L-17 21 L-25 24 L-31 15 L-25 8 L-25 -1 L-31 -9 L-25 -18 L-16 -15 L-8 -20 Z" transform="scale(.86)"/></g>
-<text class="lift-title" x="-130" y="-18">Ejecución</text>
-<text class="lift-desc" x="-130" y="10"><tspan x="-130" dy="0">Cómo se realiza: tareas, orden</tspan><tspan x="-130" dy="21">y estado.</tspan></text>
+<text class="lift-title" x="-132" y="-18">Ejecución</text>
+<text class="lift-desc" x="-132" y="10"><tspan x="-132" dy="0">Cómo se realiza: tareas, orden</tspan><tspan x="-132" dy="28.5">y estado.</tspan></text>
 </g>
 </g>
 <g class="lift-card" data-stage="evidencia" transform="translate(711,400)" aria-hidden="true">
 <g class="lift-inner">
 <rect class="lift-frame" x="-205" y="-65" width="410" height="130" rx="24"/>
 <g class="stage-icon" transform="translate(-174 0) scale(.5)"><path d="M-19 -26 H9 L22 -13 V26 H-19 Z M9 -26 V-13 H22 M-10 -5 H9 M-10 4 H4"/><circle cx="15" cy="16" r="12" fill="#0D2731"/><path d="M8 16 L13 21 L22 11"/></g>
-<text class="lift-title" x="-130" y="-18">Evidencia</text>
-<text class="lift-desc" x="-130" y="10"><tspan x="-130" dy="0">Qué se comprueba: resultados,</tspan><tspan x="-130" dy="21">pruebas y rastro.</tspan></text>
+<text class="lift-title" x="-132" y="-18">Evidencia</text>
+<text class="lift-desc" x="-132" y="10"><tspan x="-132" dy="0">Qué se comprueba: resultados,</tspan><tspan x="-132" dy="28.5">pruebas y rastro.</tspan></text>
 </g>
 </g>
 </g>
@@ -158,24 +159,24 @@
 <g class="triad-inner">
 <rect class="triad-frame" x="-215" y="-75" width="430" height="150" rx="24"/>
 <g class="rail-icon" transform="translate(-183 0) scale(.5)" fill="none" stroke="#70F8EB" stroke-width="3"><rect x="-35" y="-21" width="70" height="57" rx="23" fill="#12313E"/><path d="M0 -33 V-21 M-48 0 H-36 M36 0 H48"/><circle cx="-13" cy="3" r="5" fill="#70F8EB" stroke="none"/><circle cx="13" cy="3" r="5" fill="#70F8EB" stroke="none"/><path d="M-12 19 Q0 26 12 19"/></g>
-<text class="triad-title" x="-140" y="-42">HARNESS · Continuidad</text>
-<text class="triad-desc" x="-140" y="-16"><tspan x="-140" dy="0">Agentes de IA que ejecutan, orquestan</tspan><tspan x="-140" dy="21">y extienden el trabajo. El contexto</tspan><tspan x="-140" dy="21">sobrevive: no empiezas de cero.</tspan></text>
+<text class="triad-title" x="-146" y="-42">HARNESS · Continuidad</text>
+<text class="triad-desc" x="-146" y="-16"><tspan x="-146" dy="0">Agentes de IA que ejecutan, orquestan</tspan><tspan x="-146" dy="28.5">y extienden el trabajo. El contexto</tspan><tspan x="-146" dy="28.5">sobrevive: no empiezas de cero.</tspan></text>
 </g>
 </g>
 <g class="triad-detail" data-triad="arqx" transform="translate(500,350)" aria-hidden="true">
 <g class="triad-inner">
 <rect class="triad-frame" x="-215" y="-75" width="430" height="150" rx="24"/>
 <path d="M-183 -12 L-172 -6 V6 L-183 12 L-194 6 V-6 Z" fill="none" stroke="#FFC05B" stroke-width="2"/>
-<text class="triad-title" x="-140" y="-42">ArqUX · Trazabilidad y evolución</text>
-<text class="triad-desc" x="-140" y="-16"><tspan x="-140" dy="0">Seis dimensiones de gobierno: identidad,</tspan><tspan x="-140" dy="21">contrato, contexto, decisión, ejecución</tspan><tspan x="-140" dy="21">y evidencia. El aprendizaje se revisa.</tspan></text>
+<text class="triad-title" x="-146" y="-42">ArqUX · Trazabilidad y evolución</text>
+<text class="triad-desc" x="-146" y="-16"><tspan x="-146" dy="0">Seis dimensiones de gobierno: identidad,</tspan><tspan x="-146" dy="28.5">contrato, contexto, decisión, ejecución</tspan><tspan x="-146" dy="28.5">y evidencia. El aprendizaje se revisa.</tspan></text>
 </g>
 </g>
 <g class="triad-detail" data-triad="project" transform="translate(780,360)" aria-hidden="true">
 <g class="triad-inner">
 <rect class="triad-frame" x="-215" y="-75" width="430" height="150" rx="24"/>
 <g class="rail-icon" transform="translate(-183 0) scale(.5)" fill="none" stroke="#7EF3EA" stroke-width="3"><path d="M0 -22 L29 -8 V18 L0 34 L-29 18 V-8 Z M0 -22 V6 M-29 -8 L0 6 L29 -8 M0 6 V34"/></g>
-<text class="triad-title" x="-140" y="-42">PROYECTO · Portabilidad</text>
-<text class="triad-desc" x="-140" y="-16"><tspan x="-140" dy="0">Tu entorno real: código, datos y</tspan><tspan x="-140" dy="21">resultados. El contexto puede viajar</tspan><tspan x="-140" dy="21">entre apps compatibles.</tspan></text>
+<text class="triad-title" x="-146" y="-42">PROYECTO · Portabilidad</text>
+<text class="triad-desc" x="-146" y="-16"><tspan x="-146" dy="0">Tu entorno real: código, datos y</tspan><tspan x="-146" dy="28.5">resultados. El contexto puede viajar</tspan><tspan x="-146" dy="28.5">entre apps compatibles.</tspan></text>
 </g>
 </g>
 </g>
@@ -200,6 +201,25 @@
     g.addEventListener('click',function(){go(g.getAttribute('data-target'));});
     g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go(g.getAttribute('data-target'));}});
   });
+
+  var ring=document.getElementById('arqx-learning-orbit');
+  var stageList=Array.prototype.slice.call(document.querySelectorAll('.arqx-stage'));
+  var syncAngles={ejecucion:0,evidencia:27.5,contexto:152.5,contrato:180,identidad:207.5,decision:332.5};
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(ring && !reduce){
+    var start=performance.now();
+    var tick=function(now){
+      var angle=((now-start)/18000*360)%360;
+      ring.style.transform='rotate('+angle+'deg)';
+      stageList.forEach(function(g){
+        var k=g.getAttribute('data-stage');
+        var d=Math.abs(((angle-syncAngles[k]+540)%360)-180);
+        g.classList.toggle('is-synced',d<7);
+      });
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
 })();
 ]]></script>
 </svg>
