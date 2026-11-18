@@ -169,7 +169,7 @@
 
 
   /* ---------- local task: one-shot reveal (no loops) ---------- */
-  const localStory = $("#local");
+  const localStory = $("#task");
   if (localStory && "IntersectionObserver" in window && !REDUCED) {
     const revealItems = [
       ...$$(".flow li", localStory),
