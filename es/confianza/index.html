@@ -35,7 +35,7 @@
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://arqux.ai/#org","name":"ArqUX","url":"https://arqux.ai/","logo":"https://arqux.ai/assets/brand/og-image.png"},
 {"@type":"WebSite","@id":"https://arqux.ai/#website","url":"https://arqux.ai/","name":"ArqUX","publisher":{"@id":"https://arqux.ai/#org"},"inLanguage":["en","es"]},
-{"@type":"SoftwareApplication","name":"ArqUX Framework","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"1.0.0","license":"https://www.apache.org/licenses/LICENSE-2.0","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://arqux.ai/es/","codeRepository":"https://github.com/FidelErnesto03/arqux","description":"Framework open-source para trabajo humano-IA gobernado: identidades de agentes, contexto de proyecto, trabajo con alcance y evidencia revisable, local-first.","inLanguage":"es","publisher":{"@id":"https://arqux.ai/#org"}}
+{"@type":"SoftwareApplication","name":"ArqUX Framework","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"1.0.0","license":"https://www.apache.org/licenses/LICENSE-2.0","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://arqux.ai/es/","codeRepository":"https://github.com/FidelErnesto03/arqux","description":"Framework de código abierto para trabajo humano-IA gobernado: identidades de agentes, contexto de proyecto, trabajo con alcance y evidencia revisable, prioridad local.","inLanguage":"es","publisher":{"@id":"https://arqux.ai/#org"}}
 ]}
 </script>
 </head>
@@ -59,7 +59,18 @@
     </div>
   </header>
   <main id="main-content">
-<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Confianza</p><h1>¿Qué puedo comprobar y qué depende de mí o de mi herramienta?</h1><p class="section-copy">Tres tipos de control: aplicado por código, interpretado por el agente y responsabilidad del equipo. Cada afirmación lleva su alcance y su límite.</p><p class="section-copy"><a href="/es/">← Volver al inicio</a></p></div></section>
+<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Confianza</p><h1>¿Qué puedo comprobar y qué depende de mí o de mi herramienta?</h1><p class="section-copy">Qué impone el código, qué interpreta el agente y qué asume tu equipo. Cada afirmación lleva su alcance y su límite.</p><p class="section-copy"><a href="/es/">← Volver al inicio</a></p></div></section><section class="section trust-section" id="trust">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Confianza y límites</p><h2>Tres responsabilidades, tres límites.</h2><p class="section-copy">Un control es tan fuerte como la capa que lo aplica.</p></div>
+        <div class="trust-grid">
+          <article class="trust-card"><span class="trust-mark" aria-hidden="true">01</span><h3>Aplicado por código</h3><p>Permisos de handlers y validación, solo donde la versión los implementa y prueba.</p></article>
+          <article class="trust-card"><span class="trust-mark" aria-hidden="true">02</span><h3>Leído por el agente</h3><p>Los archivos de instrucciones moldean el trabajo del agente. No garantizan obediencia.</p></article>
+          <article class="trust-card"><span class="trust-mark" aria-hidden="true">03</span><h3>Responsabilidad del equipo</h3><p>Revisión, aprobación y gestión de claves siguen el flujo que tu equipo documenta.</p></article>
+        </div>
+        <p class="note">Un hash puede detectar una discrepancia frente a una referencia confiable. No es una firma ni una auditoría independiente.</p>
+        <p class="note">Las copias no se sincronizan en segundo plano. Los archivos generados por <code>sync-harnesses</code> son proyecciones; las copias independientes pueden quedar desactualizadas o divergir hasta volver a generarse.</p>
+      </div>
+    </section>
 <section class="section evidence-section" id="evidence">
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">Evidencia, con alcance</p><h2>Qué está probado y qué no cubre.</h2><p class="section-copy">Cada cifra indica su componente y versión.</p></div>
@@ -79,7 +90,10 @@
             <div class="evidence-row"><div><b>Coordinación multiusuario alojada</b><small>El CLI de diario ordena push y pull entre workspaces. El servicio multi-tenant es Platform.</small></div><span class="pill">Dirección de Platform</span></div>
           </div>
         </div>
-        <article class="limits-card" aria-labelledby="limits-title">
+        
+      </div>
+    </section>
+<section class="section section-light" id="limits"><div class="wrap"><article class="limits-card" aria-labelledby="limits-title">
           <div class="limits-head">
             <p class="eyebrow">Límites conocidos · Framework v1.0.0</p>
             <span class="limits-tag">Leer antes de adoptar</span>
@@ -94,21 +108,7 @@
             <div class="limit-item"><b>El comportamiento del harness es externo.</b><p>ArqUX genera cada archivo nativo desde un kernel, pero cómo lo lee una aplicación es asunto de esa aplicación. Las proyecciones llevan el mismo <code>source_hash</code>; no controlan la app.</p></div>
           </div>
           <p class="limits-foot">Los límites se registran por versión en el changelog; esta tarjeta refleja la entrada de v1.0.0. <a href="https://github.com/FidelErnesto03/arqux/blob/master/CHANGELOG.md" target="_blank" rel="noreferrer">Leer el changelog ↗</a></p>
-        </article>
-      </div>
-    </section>
-<section class="section trust-section" id="trust">
-      <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Confianza y límites</p><h2>Lo que impone el código, y lo que depende del agente.</h2><p class="section-copy">Tres tipos de control. ArqUX debe hacer visible la diferencia.</p></div>
-        <div class="trust-grid">
-          <article class="trust-card"><span class="trust-mark" aria-hidden="true">01</span><h3>Aplicado por código</h3><p>Permisos de handlers y validación, solo donde la versión los implementa y prueba.</p></article>
-          <article class="trust-card"><span class="trust-mark" aria-hidden="true">02</span><h3>Leído por el agente</h3><p>Los archivos de instrucciones moldean el trabajo del agente. No garantizan obediencia.</p></article>
-          <article class="trust-card"><span class="trust-mark" aria-hidden="true">03</span><h3>Responsabilidad del equipo</h3><p>Revisión, aprobación y gestión de claves siguen el flujo que tu equipo documenta.</p></article>
-        </div>
-        <p class="note">Un hash puede detectar una discrepancia frente a una referencia confiable. No es una firma ni una auditoría independiente.</p>
-        <p class="note">Las copias no se sincronizan en segundo plano. Los archivos generados por <code>sync-harnesses</code> son proyecciones; las copias independientes pueden quedar desactualizadas o divergir hasta volver a generarse.</p>
-      </div>
-    </section>
+        </article></div></section>
 <section class="section section-soft" id="continue"><div class="wrap"><p class="eyebrow">Sigue</p><p class="section-copy"><a href="/es/explorar/">Artefactos y contexto</a> · <a href="/es/empezar/">Primeros pasos</a> · <a href="/es/como-funciona/">Cómo funciona</a></p></div></section>
   </main>
 <footer>
@@ -117,7 +117,7 @@
     <div class="footer-main">
       <div>
         <div class="fbrand"><img src="/assets/brand/symbol-dark.svg" alt=""><b>ArqUX</b></div>
-        <p class="f-tagline">La arquitectura detrás del trabajo humano–IA. Framework open-source para trabajo de agentes gobernado — v1.0.0.</p>
+        <p class="f-tagline">La arquitectura detrás del trabajo humano–IA. Framework de código abierto para trabajo de agentes gobernado — v1.0.0.</p>
         <p class="f-origin">Nombre acuñado: “Arq” por arquitectura — la estructura que da forma a cómo se hace el trabajo; “UX” por la experiencia compartida entre personas y agentes de IA.</p>
       </div>
       <nav class="fcol" aria-label="Producto"><h3>Producto</h3><a href="https://github.com/FidelErnesto03/arqux">Framework</a><a href="https://github.com/FidelErnesto03/codec-cortex">Codec‑CORTEX</a><a href="https://github.com/FidelErnesto03/arqux/tree/master/docs">Documentación</a><a href="https://github.com/FidelErnesto03/arqux/blob/master/CONTRIBUTING.md">Contribuir</a><a href="/es/comunidad/">Comunidad</a><a href="/es/comunidad/#platform">Platform · en desarrollo</a></nav>

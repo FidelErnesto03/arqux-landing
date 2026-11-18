@@ -35,7 +35,7 @@
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://arqux.ai/#org","name":"ArqUX","url":"https://arqux.ai/","logo":"https://arqux.ai/assets/brand/og-image.png"},
 {"@type":"WebSite","@id":"https://arqux.ai/#website","url":"https://arqux.ai/","name":"ArqUX","publisher":{"@id":"https://arqux.ai/#org"},"inLanguage":["en","es"]},
-{"@type":"SoftwareApplication","name":"ArqUX Framework","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"1.0.0","license":"https://www.apache.org/licenses/LICENSE-2.0","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://arqux.ai/es/","codeRepository":"https://github.com/FidelErnesto03/arqux","description":"Framework open-source para trabajo humano-IA gobernado: identidades de agentes, contexto de proyecto, trabajo con alcance y evidencia revisable, local-first.","inLanguage":"es","publisher":{"@id":"https://arqux.ai/#org"}}
+{"@type":"SoftwareApplication","name":"ArqUX Framework","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"1.0.0","license":"https://www.apache.org/licenses/LICENSE-2.0","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://arqux.ai/es/","codeRepository":"https://github.com/FidelErnesto03/arqux","description":"Framework de código abierto para trabajo humano-IA gobernado: identidades de agentes, contexto de proyecto, trabajo con alcance y evidencia revisable, prioridad local.","inLanguage":"es","publisher":{"@id":"https://arqux.ai/#org"}}
 ]}
 </script>
 </head>
@@ -62,7 +62,16 @@
 <section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Explorar</p><h1>Dónde vive la información y cómo se relaciona.</h1><p class="section-copy">Un proyecto conserva su contexto en archivos. Selecciona uno para ver su propósito, ámbito, fuente y límites.</p><p class="section-copy"><a href="/es/">← Volver al inicio</a></p></div></section>
 <section class="section section-light" id="artifacts">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Dentro del espacio local</p><h2>Explora los artefactos que dan continuidad al proyecto.</h2><p class="section-copy">Selecciona una ruta para conocer su función en la estructura que escribe <code>arqux init</code>. El panel describe el artefacto; no lee tu espacio de trabajo ni muestra bytes reales.</p></div>
+        <h2 class="visually-hidden">Artefactos y sus funciones</h2>
+        <p class="eyebrow artifact-vocab-label">Términos clave</p>
+        <div class="artifact-vocab">
+          <div><b>Proyecto</b><span>Objetivo, decisiones y estado que continúan.</span></div>
+          <div><b>Workspace</b><span>Contenedor local donde vive <code>.arqux/</code>.</span></div>
+          <div><b>Gobierno</b><span>Reglas, roles y revisión que acotan el trabajo.</span></div>
+          <div><b>Contexto de gobierno</b><span>Referencia compartida que ArqUX devuelve al agente.</span></div>
+          <div><b>Identidad</b><span>Contrato que delimita el rol de un agente.</span></div>
+          <div><b>Plantilla</b><span>Archivo base que copia <code>arqux init</code>.</span></div>
+        </div>
         <div class="artifact-layout">
           <div class="artifact-tree" role="group" aria-label="Artefactos del espacio gobernado">
             <span class="artifact-group">proyecto /</span>
@@ -98,7 +107,7 @@
     <div class="footer-main">
       <div>
         <div class="fbrand"><img src="/assets/brand/symbol-dark.svg" alt=""><b>ArqUX</b></div>
-        <p class="f-tagline">La arquitectura detrás del trabajo humano–IA. Framework open-source para trabajo de agentes gobernado — v1.0.0.</p>
+        <p class="f-tagline">La arquitectura detrás del trabajo humano–IA. Framework de código abierto para trabajo de agentes gobernado — v1.0.0.</p>
         <p class="f-origin">Nombre acuñado: “Arq” por arquitectura — la estructura que da forma a cómo se hace el trabajo; “UX” por la experiencia compartida entre personas y agentes de IA.</p>
       </div>
       <nav class="fcol" aria-label="Producto"><h3>Producto</h3><a href="https://github.com/FidelErnesto03/arqux">Framework</a><a href="https://github.com/FidelErnesto03/codec-cortex">Codec‑CORTEX</a><a href="https://github.com/FidelErnesto03/arqux/tree/390333913e0f071a89241187f36cc90289e7e043/docs">Documentación</a><a href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/CONTRIBUTING.md">Contribuir</a><a href="/es/comunidad/">Comunidad</a><a href="/es/comunidad/#platform">Platform · en desarrollo</a></nav>

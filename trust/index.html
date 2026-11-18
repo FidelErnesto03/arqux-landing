@@ -59,7 +59,18 @@
     </div>
   </header>
   <main id="main-content">
-<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Trust</p><h1>What can I check, and what depends on me or my tool?</h1><p class="section-copy">Three kinds of control: applied by code, read by the agent, owned by the team. Each claim carries its scope and its limit.</p><p class="section-copy"><a href="/">← Back to home</a></p></div></section>
+<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Trust</p><h1>What can I check, and what depends on me or my tool?</h1><p class="section-copy">What is enforced by code, what the agent interprets, and what your team owns. Each claim carries its scope and its limit.</p><p class="section-copy"><a href="/">← Back to home</a></p></div></section><section class="section trust-section" id="trust">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Trust and limits</p><h2>Three responsibilities, three limits.</h2><p class="section-copy">A control is only as strong as the layer that applies it.</p></div>
+        <div class="trust-grid">
+          <article class="trust-card"><span class="trust-mark" aria-hidden="true">01</span><h3>Applied by code</h3><p>Handler permissions and validation, only where the release implements and tests them.</p></article>
+          <article class="trust-card"><span class="trust-mark" aria-hidden="true">02</span><h3>Read by the agent</h3><p>Instruction files shape an agent's work. They do not guarantee obedience.</p></article>
+          <article class="trust-card"><span class="trust-mark" aria-hidden="true">03</span><h3>Owned by the team</h3><p>Review, approval and key handling follow the workflow your team documents.</p></article>
+        </div>
+        <p class="note">A hash can detect a mismatch against a trusted reference. It is not a signature or an independent audit.</p>
+        <p class="note">Copies are not kept in sync in the background. Files rendered by <code>sync-harnesses</code> are projections; independent copies can become outdated or diverge until re-rendered.</p>
+      </div>
+    </section>
 <section class="section evidence-section" id="evidence">
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">Evidence, with scope</p><h2>What is proven, and what it does not cover.</h2><p class="section-copy">Each figure names its component and version.</p></div>
@@ -79,7 +90,10 @@
             <div class="evidence-row"><div><b>Hosted multi-user coordination</b><small>The journal CLI orders push and pull between workspaces. The multi-tenant service is Platform.</small></div><span class="pill">Platform direction</span></div>
           </div>
         </div>
-        <article class="limits-card" aria-labelledby="limits-title">
+        
+      </div>
+    </section>
+<section class="section section-light" id="limits"><div class="wrap"><article class="limits-card" aria-labelledby="limits-title">
           <div class="limits-head">
             <p class="eyebrow">Known limits · Framework v1.0.0</p>
             <span class="limits-tag">Read before adoption</span>
@@ -94,21 +108,7 @@
             <div class="limit-item"><b>Harness behaviour is external.</b><p>ArqUX renders each native file from one kernel, but how an application reads it belongs to that application. The projections carry the same <code>source_hash</code>; they do not control the app.</p></div>
           </div>
           <p class="limits-foot">Limits are recorded per version in the changelog; this card reflects the v1.0.0 entry. <a href="https://github.com/FidelErnesto03/arqux/blob/master/CHANGELOG.md" target="_blank" rel="noreferrer">Read the changelog ↗</a></p>
-        </article>
-      </div>
-    </section>
-<section class="section trust-section" id="trust">
-      <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Trust and limits</p><h2>Enforced by code, or dependent on the agent.</h2><p class="section-copy">Three kinds of control. ArqUX should make the difference visible.</p></div>
-        <div class="trust-grid">
-          <article class="trust-card"><span class="trust-mark" aria-hidden="true">01</span><h3>Applied by code</h3><p>Handler permissions and validation, only where the release implements and tests them.</p></article>
-          <article class="trust-card"><span class="trust-mark" aria-hidden="true">02</span><h3>Read by the agent</h3><p>Instruction files shape an agent's work. They do not guarantee obedience.</p></article>
-          <article class="trust-card"><span class="trust-mark" aria-hidden="true">03</span><h3>Owned by the team</h3><p>Review, approval and key handling follow the workflow your team documents.</p></article>
-        </div>
-        <p class="note">A hash can detect a mismatch against a trusted reference. It is not a signature or an independent audit.</p>
-        <p class="note">Copies are not kept in sync in the background. Files rendered by <code>sync-harnesses</code> are projections; independent copies can become outdated or diverge until re-rendered.</p>
-      </div>
-    </section>
+        </article></div></section>
 <section class="section section-soft" id="continue"><div class="wrap"><p class="eyebrow">Continue</p><p class="section-copy"><a href="/explore/">Artifacts and context</a> · <a href="/start/">Get started</a> · <a href="/how-it-works/">How it works</a></p></div></section>
   </main>
 <footer>

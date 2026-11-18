@@ -35,7 +35,7 @@
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://arqux.ai/#org","name":"ArqUX","url":"https://arqux.ai/","logo":"https://arqux.ai/assets/brand/og-image.png"},
 {"@type":"WebSite","@id":"https://arqux.ai/#website","url":"https://arqux.ai/","name":"ArqUX","publisher":{"@id":"https://arqux.ai/#org"},"inLanguage":["en","es"]},
-{"@type":"SoftwareApplication","name":"ArqUX Framework","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"1.0.0","license":"https://www.apache.org/licenses/LICENSE-2.0","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://arqux.ai/es/","codeRepository":"https://github.com/FidelErnesto03/arqux","description":"Framework open-source para trabajo humano-IA gobernado: identidades de agentes, contexto de proyecto, trabajo con alcance y evidencia revisable, local-first.","inLanguage":"es","publisher":{"@id":"https://arqux.ai/#org"}}
+{"@type":"SoftwareApplication","name":"ArqUX Framework","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"1.0.0","license":"https://www.apache.org/licenses/LICENSE-2.0","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://arqux.ai/es/","codeRepository":"https://github.com/FidelErnesto03/arqux","description":"Framework de código abierto para trabajo humano-IA gobernado: identidades de agentes, contexto de proyecto, trabajo con alcance y evidencia revisable, prioridad local.","inLanguage":"es","publisher":{"@id":"https://arqux.ai/#org"}}
 ]}
 </script>
 </head>
@@ -59,10 +59,11 @@
     </div>
   </header>
   <main id="main-content">
-<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Codec-CORTEX</p><h1>Cómo se representa y conserva la información.</h1><p class="section-copy">CORTEX es el formato máquina; HCORTEX su proyección humana. La demo es ilustrativa salvo que ejecute el codec real.</p><p class="section-copy"><a href="/es/">← Volver al inicio</a></p></div></section>
+<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Codec-CORTEX</p><h1>Cómo se representa y conserva la información.</h1><p class="section-copy">CORTEX es el formato de memoria obligatorio de ArqUX v1.0.0: denso para máquinas, legible como HCORTEX para personas y validado con <code>loss==0</code> antes de cada escritura. La demo siguiente es una simulación y no ejecuta el codec.</p><p class="section-copy"><a href="/es/">← Volver al inicio</a></p></div></section>
 <section class="section codec-section" id="cortex">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Codec‑CORTEX</p><h2>Cada línea es una idea.</h2><p class="section-copy">CORTEX es el <b>formato de memoria obligatorio</b> de ArqUX v1.0.0: denso para máquinas, legible como HCORTEX para personas, y validado con <code>loss==0</code> antes de cada escritura.</p></div>
+        <h2 class="visually-hidden">CORTEX y HCORTEX</h2>
+        
         <div class="codec-bar">
           <p class="codec-bar-label">Representación</p>
           <div class="segmented" role="group" hidden aria-label="Selecciona una representación"><button type="button" aria-pressed="true" data-code-view="both">Comparar</button><button type="button" aria-pressed="false" data-code-view="source">CORTEX</button><button type="button" aria-pressed="false" data-code-view="human">HCORTEX</button></div>
@@ -101,7 +102,7 @@ OBJ:gate{goal:<span class="code-amber">"Escribir documentacion"</span>,status:pl
         </div>
         <div class="architecture architecture--3 codec-cards">
           <article class="architecture-card"><p class="eyebrow">Señal, no relleno</p><h3>Una idea por línea</h3><p>Las normas viven en ideas tipadas, no en prosa. La densidad es una propiedad del formato, no una promesa de comprensión.</p></article>
-          <article class="architecture-card"><p class="eyebrow">Microtokens</p><h3>Las repeticiones se vuelven alias</h3><p>Un átomo repetido tres veces o más se convierte en un alias de un token. La forma canónica, y su hash, no cambian.</p></article>
+          <article class="architecture-card"><p class="eyebrow">Tokens mínimos</p><h3>Las repeticiones se vuelven alias</h3><p>Un átomo repetido tres veces o más se convierte en un alias de un token. La forma canónica, y su hash, no cambian.</p></article>
           <article class="architecture-card"><p class="eyebrow">Canónico y reversible</p><h3>Mismos bytes en todas partes</h3><p>La misma entrada produce los mismos bytes canónicos en todos los runtimes. HCORTEX es una representación, no una segunda fuente.</p></article>
         </div>
         <div class="section-head" style="margin-top:44px"><p class="eyebrow">Herramientas de editor</p><h3>arqux-cortex-viewer — el formato como superficie de trabajo.</h3><p class="section-copy">Extensión para VS Code · v0.4.2 · Apache‑2.0 · VSIX desde el repositorio. Primero offline: cero telemetría, cero llamadas de red.</p></div>
@@ -125,7 +126,7 @@ OBJ:gate{goal:<span class="code-amber">"Escribir documentacion"</span>,status:pl
     <div class="footer-main">
       <div>
         <div class="fbrand"><img src="/assets/brand/symbol-dark.svg" alt=""><b>ArqUX</b></div>
-        <p class="f-tagline">La arquitectura detrás del trabajo humano–IA. Framework open-source para trabajo de agentes gobernado — v1.0.0.</p>
+        <p class="f-tagline">La arquitectura detrás del trabajo humano–IA. Framework de código abierto para trabajo de agentes gobernado — v1.0.0.</p>
         <p class="f-origin">Nombre acuñado: “Arq” por arquitectura — la estructura que da forma a cómo se hace el trabajo; “UX” por la experiencia compartida entre personas y agentes de IA.</p>
       </div>
       <nav class="fcol" aria-label="Producto"><h3>Producto</h3><a href="https://github.com/FidelErnesto03/arqux">Framework</a><a href="https://github.com/FidelErnesto03/codec-cortex">Codec‑CORTEX</a><a href="https://github.com/FidelErnesto03/arqux/tree/master/docs">Documentación</a><a href="https://github.com/FidelErnesto03/arqux/blob/master/CONTRIBUTING.md">Contribuir</a><a href="/es/comunidad/">Comunidad</a><a href="/es/comunidad/#platform">Platform · en desarrollo</a></nav>
