@@ -108,6 +108,17 @@ with sync_playwright() as pw:
     p.goto(BASE + "/community/", wait_until="networkidle")
     ok("community signals", p.locator(".community-signals a").count() >= 3 and "CHANGELOG" in p.locator(".community-signals").inner_html())
 
+
+    p.goto(BASE + "/", wait_until="networkidle")
+    ok("palette title honest", p.locator(".palette-btn").get_attribute("title") == "Jump to · ⌘K")
+    p.goto(BASE + "/start/", wait_until="networkidle")
+    ok("verification freshness", "HEAD may be newer" in p.locator("#first-task").text_content())
+    ok("MCP source pinned", "docs/en/guias/despliegue.md" in p.locator("#connect a").last.get_attribute("href"))
+    r = p.goto(BASE + "/assets/tokens.css", wait_until="domcontentloaded")
+    ok("tokens candidate retired", r.status == 404)
+    p.goto(BASE + "/404.html", wait_until="networkidle")
+    ok("404 install CTA", p.locator('a.button-primary[href="/start/#channels"]').inner_text() == "Install")
+
     ctx.close(); b.close()
 
 ok("no page errors", len(errs) == 0)

@@ -181,6 +181,7 @@
       $(".source-panel", localStory)
     ].filter(Boolean);
     revealItems.forEach((el) => el.classList.add("reveal"));
+    window.setTimeout(() => revealItems.forEach((el) => el.classList.add("in")), 1800);
     const storyObserver = new IntersectionObserver((entries) => {
       if (!entries[0].isIntersecting) return;
       revealItems.forEach((el, i) => {
