@@ -139,7 +139,31 @@
     </div>
 
     <section class="section section-light" id="local">
-      <div class="wrap"><div class="section-head"><p class="eyebrow">The problem</p><h2>Your project evolves. Its context should too.</h2><p class="section-copy">Every task leaves decisions, criteria and lessons. If they stay scattered across conversations, a new session can start without the knowledge the project already built.</p></div></div>
+      <div class="wrap">
+        <div class="problem-grid">
+          <div class="problem-copy">
+            <p class="eyebrow">The problem</p>
+            <h2>Your project evolves. Its context should too.</h2>
+            <p class="section-copy">Every task leaves decisions, criteria and lessons. If they stay scattered across conversations, a new session can start without the knowledge the project already built.</p>
+            <ul class="problem-signals">
+              <li><span class="pnum">01</span><div><b>Each agent starts from a different version.</b><p>Instructions and context are copied into each app or conversation.</p></div></li>
+              <li><span class="pnum">02</span><div><b>Decisions stay in the thread.</b><p>A criterion agreed in one session is not available in the next.</p></div></li>
+              <li><span class="pnum">03</span><div><b>Review starts from scratch.</b><p>Without a shared reference, review depends on memory.</p></div></li>
+            </ul>
+            <p class="problem-close">The cost is not one lost message: it is re-deciding what the project had already decided.</p>
+          </div>
+          <figure class="frag" aria-label="Three sessions without a shared reference">
+            <div class="frag-head"><span>Three sessions · no shared reference</span><span class="frag-tag">Illustrative</span></div>
+            <div class="frag-sessions">
+              <article class="frag-session"><div class="frag-who"><span>Session 1 · Agent A</span><span>decision</span></div><p class="frag-quote">“Agreed: do not expose sensitive data in error messages.”</p><p class="frag-foot">recorded in the thread</p></article>
+              <div class="frag-break"><span>context lost</span></div>
+              <article class="frag-session"><div class="frag-who"><span>Session 2 · Agent B</span><span>reconstruct</span></div><p class="frag-quote">“What was the criterion for error messages?”</p><p class="frag-foot">rebuilt from memory</p></article>
+              <article class="frag-session is-last"><div class="frag-who"><span>Session 3 · Agent C</span><span>start over</span></div><p class="frag-quote">Starts without the previous decision.</p><p class="frag-foot">no common reference</p></article>
+            </div>
+            <p class="frag-note">Each conversation keeps its own notes. The project does not keep a shared reference.</p>
+          </figure>
+        </div>
+      </div>
     </section>
 
     <section class="section section-soft" id="task">
