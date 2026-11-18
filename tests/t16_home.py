@@ -12,6 +12,7 @@ with sync_playwright() as pw:
     ok("home 200",r.status==200); ok("home H1","more than a result" in p.locator("h1").text_content())
     ok("hero governance map",p.locator("object.hero-map").count()==1)
     ok("mobile governance map",p.locator(".hero-mobile-map a").count()==6)
+    ok("outcomes strip",p.locator(".outcome").count()==4)
     svgs=[f for f in p.frames if "arqux-governance" in f.url]
     ok("svg map loaded",len(svgs)==1)
     if svgs:
