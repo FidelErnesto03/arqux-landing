@@ -12,6 +12,13 @@ with sync_playwright() as pw:
     ok("home 200",r.status==200); ok("home H1","more than a result" in p.locator("h1").text_content())
     ok("hero governance map",p.locator("object.hero-map").count()==1)
     ok("mobile governance map",p.locator(".hero-mobile-map a").count()==6)
+    svgs=[f for f in p.frames if "arqux-governance" in f.url]
+    ok("svg map loaded",len(svgs)==1)
+    if svgs:
+        ok("six svg dimensions",svgs[0].locator(".arqx-stage").count()==6)
+        ok("no visible subtitles",svgs[0].locator(".stage-desc").count()==0)
+        svgs[0].locator("#arqx-stage-identidad").hover(); p.wait_for_timeout(120)
+        ok("stage tooltip",svgs[0].locator("#stage-tooltip").get_attribute("opacity")=="1")
     ok("no board/palette/rail",p.locator("#wsboard,.palette,.progress-rail").count()==0)
     ok("case four stages",p.locator("#task .flow li").count()==4)
     ok("case links verified task",p.locator('.task-link a[href="/start/#first-task"]').count()==1)
