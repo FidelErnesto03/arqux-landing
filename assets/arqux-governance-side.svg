@@ -17,9 +17,9 @@
 .orbit-dash{transform-origin:500px 290px;animation:orbit 18s linear infinite}.arqx-stage .pulse{opacity:0;animation:stage-glow 18s linear infinite}#arqx-stage-ejecucion .pulse{animation-delay:0s}#arqx-stage-evidencia .pulse{animation-delay:1.405s}#arqx-stage-contexto .pulse{animation-delay:7.595s}#arqx-stage-contrato .pulse{animation-delay:9s}#arqx-stage-identidad .pulse{animation-delay:10.405s}#arqx-stage-decision .pulse{animation-delay:16.595s}
 .rail-title{font-size:23px;font-weight:780;fill:#EAF6F4}.rail-icon{pointer-events:none}.triad-flow{animation:triad-flow 9s linear infinite}@keyframes triad-flow{0%{transform:translateX(0);opacity:0}8%,88%{opacity:1}100%{transform:translateX(760px);opacity:0}}.rail-sub{font-size:16px;fill:#B7CAD1}.rail-arrow{font-size:22px;fill:#FFC05B;font-weight:700}
 
-#lift-layer{pointer-events:none}.lift-card{opacity:0;visibility:hidden;pointer-events:none}.lift-inner{transform-box:fill-box;transform-origin:center;transform:scale(.84) translateY(10px);opacity:0;transition:opacity .16s ease,transform .22s cubic-bezier(.2,.7,.2,1),visibility .16s}.lift-card.is-on{opacity:1;visibility:visible}.lift-card.is-on .lift-inner{opacity:1;transform:scale(1) translateY(-6px)}.lift-frame{fill:#0E2630;stroke:#FFC05B;stroke-width:2;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}.lift-title{font-size:20px;font-weight:780;fill:#FFE4A2}.lift-desc{font-size:14.2px;fill:#D7E5E7}.lift-card .stage-icon{fill:none;stroke:#7EF3EA;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+#lift-layer{pointer-events:none}.lift-card{opacity:0;visibility:hidden;pointer-events:none}.lift-inner{transform-box:fill-box;transform-origin:center;transform:scale(.84) translateY(10px);opacity:0;transition:opacity .16s ease,transform .22s cubic-bezier(.2,.7,.2,1),visibility .16s}.lift-card.is-on{opacity:1;visibility:visible}.lift-card.is-on .lift-inner{opacity:1;transform:scale(1) translateY(-6px)}.lift-frame{fill:#0E2630;stroke:#FFC05B;stroke-width:2;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}.lift-title{font-size:21px;font-weight:780;fill:#FFE4A2}.lift-desc{font-size:15.5px;fill:#D7E5E7}.lift-card .stage-icon{fill:none;stroke:#7EF3EA;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 
-.map-kicker{font-size:22px;font-weight:780;letter-spacing:.12em;fill:#FFC05B}.map-sub{font-size:18px;fill:#B7CAD1}.triad-node{cursor:pointer;outline:none}.triad-hit{fill:transparent;pointer-events:all}.triad-node:hover .rail-title,.triad-node:focus .rail-title{fill:#FFE4A2}.triad-node:hover .rail-icon,.triad-node:focus .rail-icon{filter:url(#glow)}.triad-node:focus-visible .triad-hit{stroke:#FFB547;stroke-width:2}.triad-detail{opacity:0;visibility:hidden;pointer-events:none}#triad-lift-layer{pointer-events:none}.triad-inner{transform-box:fill-box;transform-origin:center;transform:scale(.88) translateY(10px);opacity:0;transition:opacity .16s ease,transform .22s cubic-bezier(.2,.7,.2,1),visibility .16s}.triad-detail.is-on{opacity:1;visibility:visible}.triad-detail.is-on .triad-inner{opacity:1;transform:scale(1) translateY(-6px)}.triad-frame{fill:#0E2630;stroke:#FFC05B;stroke-width:2;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}.triad-title{font-size:18px;font-weight:780;fill:#FFE4A2}.triad-desc{font-size:14px;fill:#D7E5E7}.triad-detail .rail-icon{fill:none;stroke:#7EF3EA;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.map-kicker{font-size:22px;font-weight:780;letter-spacing:.12em;fill:#FFC05B}.map-sub{font-size:18px;fill:#B7CAD1}.triad-node{cursor:pointer;outline:none}.triad-hit{fill:transparent;pointer-events:all}.triad-node:hover .rail-title,.triad-node:focus .rail-title{fill:#FFE4A2}.triad-node:hover .rail-icon,.triad-node:focus .rail-icon{filter:url(#glow)}.triad-node:focus-visible .triad-hit{stroke:#FFB547;stroke-width:2}.triad-detail{opacity:0;visibility:hidden;pointer-events:none}#triad-lift-layer{pointer-events:none}.triad-inner{transform-box:fill-box;transform-origin:center;transform:scale(.88) translateY(10px);opacity:0;transition:opacity .16s ease,transform .22s cubic-bezier(.2,.7,.2,1),visibility .16s}.triad-detail.is-on{opacity:1;visibility:visible}.triad-detail.is-on .triad-inner{opacity:1;transform:scale(1) translateY(-6px)}.triad-frame{fill:#0E2630;stroke:#FFC05B;stroke-width:2;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}.triad-title{font-size:19px;font-weight:780;fill:#FFE4A2}.triad-desc{font-size:15px;fill:#D7E5E7}.triad-detail .rail-icon{fill:none;stroke:#7EF3EA;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 @keyframes gov-in{from{opacity:0}to{opacity:1}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes stage-glow{0%,1%,6%,100%{opacity:0}2%,4.5%{opacity:.60}}
 @media(prefers-reduced-motion:reduce){.orbit-dash,.arqx-stage .pulse,.arqx-stage{animation:none!important;opacity:1!important}.arqx-stage .pulse{opacity:0!important}.stage-frame{transition:none!important}.lift-inner{transition:none!important}.triad-inner{transition:none!important}.triad-flow{animation:none!important;opacity:0!important}]]></style>
 <rect width="1000" height="618" fill="url(#bg)"/><rect width="1000" height="618" fill="url(#grid)"/>
@@ -106,76 +106,76 @@
 <g id="lift-layer" aria-hidden="true" pointer-events="none">
 <g class="lift-card" data-stage="identidad" transform="translate(289,180)" aria-hidden="true">
 <g class="lift-inner">
-<rect class="lift-frame" x="-160" y="-60" width="320" height="120" rx="24"/>
-<g class="stage-icon" transform="translate(-120 -14) scale(.55)"><rect x="-26" y="-23" width="52" height="46" rx="5"/><path d="M-15 -7 a7 7 0 1 0 14 0 a7 7 0 1 0 -14 0 M-20 11 Q-8 0 4 11 M10 -9 H19 M10 0 H19 M10 9 H19"/></g>
-<text class="lift-title" x="-84" y="-6">Identidad</text>
-<text class="lift-desc" x="-84" y="20"><tspan x="-84" dy="0">Quién actúa: agente, rol y permisos</tspan><tspan x="-84" dy="18">con los que trabaja.</tspan></text>
+<rect class="lift-frame" x="-180" y="-65" width="360" height="130" rx="24"/>
+<g class="stage-icon" transform="translate(-150 -22) scale(.55)"><rect x="-26" y="-23" width="52" height="46" rx="5"/><path d="M-15 -7 a7 7 0 1 0 14 0 a7 7 0 1 0 -14 0 M-20 11 Q-8 0 4 11 M10 -9 H19 M10 0 H19 M10 9 H19"/></g>
+<text class="lift-title" x="-112" y="-16">Identidad</text>
+<text class="lift-desc" x="-155" y="12"><tspan x="-155" dy="0">Quién actúa: agente, rol y permisos</tspan><tspan x="-155" dy="19">con los que trabaja.</tspan></text>
 </g>
 </g>
 <g class="lift-card" data-stage="contrato" transform="translate(245,290)" aria-hidden="true">
 <g class="lift-inner">
-<rect class="lift-frame" x="-160" y="-60" width="320" height="120" rx="24"/>
-<g class="stage-icon" transform="translate(-120 -14) scale(.55)"><path d="M-20 -26 H9 L22 -13 V25 H-20 Z M9 -26 V-13 H22 M-11 -3 H11 M-11 6 H8 M-10 16 H-2"/><circle cx="18" cy="17" r="12" fill="#0C2530"/><path d="M12 17 L16 21 L24 12"/></g>
-<text class="lift-title" x="-84" y="-6">Contrato</text>
-<text class="lift-desc" x="-84" y="20"><tspan x="-84" dy="0">Qué puede hacer: alcance, límites</tspan><tspan x="-84" dy="18">y reglas que acepta.</tspan></text>
+<rect class="lift-frame" x="-180" y="-65" width="360" height="130" rx="24"/>
+<g class="stage-icon" transform="translate(-150 -22) scale(.55)"><path d="M-20 -26 H9 L22 -13 V25 H-20 Z M9 -26 V-13 H22 M-11 -3 H11 M-11 6 H8 M-10 16 H-2"/><circle cx="18" cy="17" r="12" fill="#0C2530"/><path d="M12 17 L16 21 L24 12"/></g>
+<text class="lift-title" x="-112" y="-16">Contrato</text>
+<text class="lift-desc" x="-155" y="12"><tspan x="-155" dy="0">Qué puede hacer: alcance, límites</tspan><tspan x="-155" dy="19">y reglas que acepta.</tspan></text>
 </g>
 </g>
 <g class="lift-card" data-stage="contexto" transform="translate(289,400)" aria-hidden="true">
 <g class="lift-inner">
-<rect class="lift-frame" x="-160" y="-60" width="320" height="120" rx="24"/>
-<g class="stage-icon" transform="translate(-120 -14) scale(.55)"><path d="M0 -25 L29 -10 L0 5 L-29 -10 Z M-29 1 L0 16 L29 1 M-29 13 L0 28 L29 13"/></g>
-<text class="lift-title" x="-84" y="-6">Contexto</text>
-<text class="lift-desc" x="-84" y="20"><tspan x="-84" dy="0">Con qué trabaja: proyecto, archivos</tspan><tspan x="-84" dy="18">y decisiones previas.</tspan></text>
+<rect class="lift-frame" x="-180" y="-65" width="360" height="130" rx="24"/>
+<g class="stage-icon" transform="translate(-150 -22) scale(.55)"><path d="M0 -25 L29 -10 L0 5 L-29 -10 Z M-29 1 L0 16 L29 1 M-29 13 L0 28 L29 13"/></g>
+<text class="lift-title" x="-112" y="-16">Contexto</text>
+<text class="lift-desc" x="-155" y="12"><tspan x="-155" dy="0">Con qué trabaja: proyecto, archivos</tspan><tspan x="-155" dy="19">y decisiones previas.</tspan></text>
 </g>
 </g>
 <g class="lift-card" data-stage="decision" transform="translate(711,180)" aria-hidden="true">
 <g class="lift-inner">
-<rect class="lift-frame" x="-160" y="-60" width="320" height="120" rx="24"/>
-<g class="stage-icon" transform="translate(-120 -14) scale(.55)"><circle cx="0" cy="-24" r="5"/><circle cx="-24" cy="21" r="5"/><circle cx="24" cy="21" r="5"/><path d="M0 -19 V-6 L-24 12 M0 -6 L24 12"/></g>
-<text class="lift-title" x="-84" y="-6">Decisión</text>
-<text class="lift-desc" x="-84" y="20"><tspan x="-84" dy="0">Qué se acuerda: criterio elegido</tspan><tspan x="-84" dy="18">y alternativas descartadas.</tspan></text>
+<rect class="lift-frame" x="-180" y="-65" width="360" height="130" rx="24"/>
+<g class="stage-icon" transform="translate(-150 -22) scale(.55)"><circle cx="0" cy="-24" r="5"/><circle cx="-24" cy="21" r="5"/><circle cx="24" cy="21" r="5"/><path d="M0 -19 V-6 L-24 12 M0 -6 L24 12"/></g>
+<text class="lift-title" x="-112" y="-16">Decisión</text>
+<text class="lift-desc" x="-155" y="12"><tspan x="-155" dy="0">Qué se acuerda: criterio elegido</tspan><tspan x="-155" dy="19">y alternativas descartadas.</tspan></text>
 </g>
 </g>
 <g class="lift-card" data-stage="ejecucion" transform="translate(755,290)" aria-hidden="true">
 <g class="lift-inner">
-<rect class="lift-frame" x="-160" y="-60" width="320" height="120" rx="24"/>
-<g class="stage-icon" transform="translate(-120 -14) scale(.55)"><circle cx="0" cy="0" r="15"/><path d="M-5 -28 H5 L8 -20 L17 -15 L25 -18 L31 -8 L25 -1 L25 8 L31 16 L24 25 L15 22 L7 27 L5 34 H-5 L-8 26 L-17 21 L-25 24 L-31 15 L-25 8 L-25 -1 L-31 -9 L-25 -18 L-16 -15 L-8 -20 Z" transform="scale(.86)"/></g>
-<text class="lift-title" x="-84" y="-6">Ejecución</text>
-<text class="lift-desc" x="-84" y="20"><tspan x="-84" dy="0">Cómo se realiza: tareas, orden</tspan><tspan x="-84" dy="18">y estado.</tspan></text>
+<rect class="lift-frame" x="-180" y="-65" width="360" height="130" rx="24"/>
+<g class="stage-icon" transform="translate(-150 -22) scale(.55)"><circle cx="0" cy="0" r="15"/><path d="M-5 -28 H5 L8 -20 L17 -15 L25 -18 L31 -8 L25 -1 L25 8 L31 16 L24 25 L15 22 L7 27 L5 34 H-5 L-8 26 L-17 21 L-25 24 L-31 15 L-25 8 L-25 -1 L-31 -9 L-25 -18 L-16 -15 L-8 -20 Z" transform="scale(.86)"/></g>
+<text class="lift-title" x="-112" y="-16">Ejecución</text>
+<text class="lift-desc" x="-155" y="12"><tspan x="-155" dy="0">Cómo se realiza: tareas, orden</tspan><tspan x="-155" dy="19">y estado.</tspan></text>
 </g>
 </g>
 <g class="lift-card" data-stage="evidencia" transform="translate(711,400)" aria-hidden="true">
 <g class="lift-inner">
-<rect class="lift-frame" x="-160" y="-60" width="320" height="120" rx="24"/>
-<g class="stage-icon" transform="translate(-120 -14) scale(.55)"><path d="M-19 -26 H9 L22 -13 V26 H-19 Z M9 -26 V-13 H22 M-10 -5 H9 M-10 4 H4"/><circle cx="15" cy="16" r="12" fill="#0D2731"/><path d="M8 16 L13 21 L22 11"/></g>
-<text class="lift-title" x="-84" y="-6">Evidencia</text>
-<text class="lift-desc" x="-84" y="20"><tspan x="-84" dy="0">Qué se comprueba: resultados,</tspan><tspan x="-84" dy="18">pruebas y rastro.</tspan></text>
+<rect class="lift-frame" x="-180" y="-65" width="360" height="130" rx="24"/>
+<g class="stage-icon" transform="translate(-150 -22) scale(.55)"><path d="M-19 -26 H9 L22 -13 V26 H-19 Z M9 -26 V-13 H22 M-10 -5 H9 M-10 4 H4"/><circle cx="15" cy="16" r="12" fill="#0D2731"/><path d="M8 16 L13 21 L22 11"/></g>
+<text class="lift-title" x="-112" y="-16">Evidencia</text>
+<text class="lift-desc" x="-155" y="12"><tspan x="-155" dy="0">Qué se comprueba: resultados,</tspan><tspan x="-155" dy="19">pruebas y rastro.</tspan></text>
 </g>
 </g>
 </g>
 <g id="triad-lift-layer" aria-hidden="true" pointer-events="none">
-<g class="triad-detail" data-triad="harness" transform="translate(200,360)" aria-hidden="true">
+<g class="triad-detail" data-triad="harness" transform="translate(210,360)" aria-hidden="true">
 <g class="triad-inner">
-<rect class="triad-frame" x="-195" y="-75" width="390" height="150" rx="24"/>
-<g class="rail-icon" transform="translate(-155 -35) scale(.5)" fill="none" stroke="#70F8EB" stroke-width="3"><rect x="-35" y="-21" width="70" height="57" rx="23" fill="#12313E"/><path d="M0 -33 V-21 M-48 0 H-36 M36 0 H48"/><circle cx="-13" cy="3" r="5" fill="#70F8EB" stroke="none"/><circle cx="13" cy="3" r="5" fill="#70F8EB" stroke="none"/><path d="M-12 19 Q0 26 12 19"/></g>
-<text class="triad-title" x="-108" y="-42">HARNESS · Continuidad</text>
-<text class="triad-desc" x="-108" y="-16"><tspan x="-108" dy="0">Agentes de IA que ejecutan, orquestan</tspan><tspan x="-108" dy="18">y extienden el trabajo. El contexto</tspan><tspan x="-108" dy="18">sobrevive: no empiezas de cero.</tspan></text>
+<rect class="triad-frame" x="-205" y="-75" width="410" height="150" rx="24"/>
+<g class="rail-icon" transform="translate(-165 -38) scale(.5)" fill="none" stroke="#70F8EB" stroke-width="3"><rect x="-35" y="-21" width="70" height="57" rx="23" fill="#12313E"/><path d="M0 -33 V-21 M-48 0 H-36 M36 0 H48"/><circle cx="-13" cy="3" r="5" fill="#70F8EB" stroke="none"/><circle cx="13" cy="3" r="5" fill="#70F8EB" stroke="none"/><path d="M-12 19 Q0 26 12 19"/></g>
+<text class="triad-title" x="-130" y="-42">HARNESS · Continuidad</text>
+<text class="triad-desc" x="-180" y="-16"><tspan x="-180" dy="0">Agentes de IA que ejecutan, orquestan</tspan><tspan x="-180" dy="19">y extienden el trabajo. El contexto</tspan><tspan x="-180" dy="19">sobrevive: no empiezas de cero.</tspan></text>
 </g>
 </g>
 <g class="triad-detail" data-triad="arqx" transform="translate(500,350)" aria-hidden="true">
 <g class="triad-inner">
-<rect class="triad-frame" x="-195" y="-75" width="390" height="150" rx="24"/>
-<path d="M-150 -50 L-139 -44 V-32 L-150 -26 L-161 -32 V-44 Z" fill="none" stroke="#FFC05B" stroke-width="2"/>
-<text class="triad-title" x="-108" y="-42">ArqUX · Trazabilidad y evolución</text>
-<text class="triad-desc" x="-108" y="-16"><tspan x="-108" dy="0">Seis dimensiones de gobierno: identidad,</tspan><tspan x="-108" dy="18">contrato, contexto, decisión, ejecución</tspan><tspan x="-108" dy="18">y evidencia. El aprendizaje se revisa.</tspan></text>
+<rect class="triad-frame" x="-205" y="-75" width="410" height="150" rx="24"/>
+<path d="M-160 -50 L-149 -44 V-32 L-160 -26 L-171 -32 V-44 Z" fill="none" stroke="#FFC05B" stroke-width="2"/>
+<text class="triad-title" x="-130" y="-42">ArqUX · Trazabilidad y evolución</text>
+<text class="triad-desc" x="-180" y="-16"><tspan x="-180" dy="0">Seis dimensiones de gobierno: identidad,</tspan><tspan x="-180" dy="19">contrato, contexto, decisión, ejecución</tspan><tspan x="-180" dy="19">y evidencia. El aprendizaje se revisa.</tspan></text>
 </g>
 </g>
-<g class="triad-detail" data-triad="project" transform="translate(800,360)" aria-hidden="true">
+<g class="triad-detail" data-triad="project" transform="translate(790,360)" aria-hidden="true">
 <g class="triad-inner">
-<rect class="triad-frame" x="-195" y="-75" width="390" height="150" rx="24"/>
-<g class="rail-icon" transform="translate(-155 -35) scale(.5)" fill="none" stroke="#7EF3EA" stroke-width="3"><path d="M0 -22 L29 -8 V18 L0 34 L-29 18 V-8 Z M0 -22 V6 M-29 -8 L0 6 L29 -8 M0 6 V34"/></g>
-<text class="triad-title" x="-108" y="-42">PROYECTO · Portabilidad</text>
-<text class="triad-desc" x="-108" y="-16"><tspan x="-108" dy="0">Tu entorno real: código, datos y</tspan><tspan x="-108" dy="18">resultados. El contexto puede viajar</tspan><tspan x="-108" dy="18">entre apps compatibles.</tspan></text>
+<rect class="triad-frame" x="-205" y="-75" width="410" height="150" rx="24"/>
+<g class="rail-icon" transform="translate(-165 -38) scale(.5)" fill="none" stroke="#7EF3EA" stroke-width="3"><path d="M0 -22 L29 -8 V18 L0 34 L-29 18 V-8 Z M0 -22 V6 M-29 -8 L0 6 L29 -8 M0 6 V34"/></g>
+<text class="triad-title" x="-130" y="-42">PROYECTO · Portabilidad</text>
+<text class="triad-desc" x="-180" y="-16"><tspan x="-180" dy="0">Tu entorno real: código, datos y</tspan><tspan x="-180" dy="19">resultados. El contexto puede viajar</tspan><tspan x="-180" dy="19">entre apps compatibles.</tspan></text>
 </g>
 </g>
 </g>
