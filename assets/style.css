@@ -877,3 +877,4 @@ pre{font-size:13px;line-height:1.75}
 .ev-src:hover{color:#8A4B00}
 .ev-src+.ev-src{margin-top:3px}
 .channel-needs{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--line-light);font-size:12px;line-height:1.5;color:var(--slate-600)}
+.compat-wrap:focus-visible{outline:3px solid var(--ink-950);outline-offset:3px;box-shadow:0 0 0 7px var(--amber-500)}

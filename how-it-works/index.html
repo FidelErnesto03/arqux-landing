@@ -186,15 +186,15 @@
     </section>
 <section class="section section-light" id="compatibility">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Compatibility scope</p><h2>Four native files, five example apps.</h2><p class="section-copy">The framework renders four native instruction files from one kernel. The board also names two MCP-compatible clients with no dedicated projection in 1.0.0. Client integration was not tested in this release.</p></div>
-        <div class="compat-wrap"><table class="compat-table"><thead><tr><th>App</th><th>Native projection</th><th>MCP</th><th>Tested here</th></tr></thead><tbody>
+        <div class="section-head"><p class="eyebrow">Compatibility scope</p><h2>Four native files for four harnesses; five apps on the board.</h2><p class="section-copy">The framework renders four native instruction files from one kernel. The board also names two MCP-compatible clients with no dedicated projection in 1.0.0. Client integration was not tested in this release.</p></div>
+        <div class="compat-wrap" tabindex="0" role="region" aria-label="Compatibility matrix"><table class="compat-table"><thead><tr><th>App</th><th>Native projection</th><th>MCP</th><th>Tested here</th></tr></thead><tbody>
           <tr><td>Codex CLI</td><td><code>AGENTS.md</code> (shared kernel)</td><td>Manual client config</td><td>No</td></tr>
           <tr><td>Claude Code</td><td><code>CLAUDE.md</code></td><td>Manual client config</td><td>No</td></tr>
           <tr><td>OpenCode</td><td><code>.opencode/instructions.md</code></td><td>Manual client config</td><td>No</td></tr>
           <tr><td>Cursor</td><td>No dedicated projection</td><td>MCP example</td><td>No</td></tr>
-          <tr><td>Antigravity</td><td>No dedicated projection</td><td>MCP example</td><td>No</td></tr>
+          <tr><td>Antigravity</td><td>No dedicated projection</td><td>Not referenced by framework docs</td><td>No</td></tr>
         </tbody></table></div>
-        <p class="note">The framework also targets <code>GEMINI.md</code> for legacy Gemini CLI. Source: <a href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/adapters/harness.py" target="_blank" rel="noreferrer">harness.py · _TARGETS</a> at <code>3903339</code>. MCP setup belongs to each client; ArqUX does not configure clients automatically.</p>
+        <p class="note">The framework also targets <code>GEMINI.md</code> for Gemini CLI. Source: <a href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/adapters/harness.py" target="_blank" rel="noreferrer">harness.py · _TARGETS</a> at <code>3903339</code>. MCP setup belongs to each client; Cursor is documented as an MCP client and Antigravity is not referenced in the pinned framework docs. ArqUX does not configure clients automatically.</p>
       </div>
     </section>
 <section class="section section-light" id="continue">

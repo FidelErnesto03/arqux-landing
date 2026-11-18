@@ -54,12 +54,17 @@ with sync_playwright() as pw:
 
     p.goto(BASE + "/how-it-works/", wait_until="networkidle")
     ok("compatibility matrix", "No dedicated projection" in p.locator("#compatibility").text_content())
+    ok("compatibility keyboard region", p.locator(".compat-wrap").get_attribute("tabindex") == "0")
+    ok("Antigravity not overclaimed", "Not referenced by framework docs" in p.locator("#compatibility").text_content())
 
     p.goto(BASE + "/trust/", wait_until="networkidle")
     ok("trust sources pinned", p.locator('.ev-src[href*="3903339"]').count() >= 4)
+    ok("journal source path", p.locator('.ev-src[href$="/src/arqux/journal.py"]').count() == 1)
+    ok("evidence export source", p.locator('.ev-src[href$="/src/arqux/evidence_export.py"]').count() == 1)
 
     p.goto(BASE + "/community/", wait_until="networkidle")
     ok("contribution requirements", "minimal reproduction" in p.locator("#channels").text_content())
+    ok("compatibility contribution path", "compatibility reports" in p.locator("#channels").text_content())
 
     p.goto(BASE + "/explore/", wait_until="networkidle")
     ok("explore key terms", "Governance context" in p.locator(".artifact-vocab").text_content())
