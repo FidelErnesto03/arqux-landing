@@ -759,3 +759,10 @@ pre{font-size:13px;line-height:1.75}
 .arch-foot a{color:var(--ink-950);text-decoration:none;border-bottom:1px solid var(--amber-500);padding-bottom:2px}
 .arch-foot a:hover{color:#8A4B00}
 .arch-foot span{color:var(--amber-700)}
+.arch-scope{max-width:840px;margin:24px 0 0;font-size:13.5px;line-height:1.65;color:var(--slate-600)}
+.arch-scope a{color:var(--ink-950);text-decoration:none;border-bottom:1px solid var(--amber-500)}
+.arch-scope a:hover{color:#8A4B00}
+.dimensions-scope{max-width:820px;margin:16px 0 0;font-size:13.5px;line-height:1.65;color:var(--slate-600)}
+.dimensions-scope strong{color:var(--ink-950);font-weight:650}
+.dimensions-scope a{color:var(--ink-950);text-decoration:none;border-bottom:1px solid var(--amber-500);white-space:nowrap}
+.dimensions-scope a:hover{color:#8A4B00}

@@ -154,13 +154,13 @@
               <article class="frag-session"><div class="frag-who"><span>Sesión 2 · Agente B</span><span>reconstruir</span></div><p class="frag-quote">«¿Cuál era el criterio para los mensajes de error?»</p><p class="frag-foot">reconstruido de memoria</p></article>
               <article class="frag-session is-last"><div class="frag-who"><span>Sesión 3 · Agente C</span><span>empezar</span></div><p class="frag-quote">Empieza sin la decisión anterior.</p><p class="frag-foot">sin referencia común</p></article>
             </div>
-            <p class="frag-note">Cada conversación conserva sus notas. El proyecto no conserva una referencia compartida.</p>
+            <p class="frag-note">Sin una referencia compartida, cada conversación conserva solo sus notas.</p>
           </figure>
           <div class="problem-detail">
             <ul class="problem-signals">
-              <li><span class="pnum">01</span><div><b>Cada agente llega con otra versión.</b><p>Las instrucciones y el contexto se copian en cada app o conversación.</p></div></li>
-              <li><span class="pnum">02</span><div><b>Las decisiones se quedan en el hilo.</b><p>Un criterio acordado en una sesión no está disponible en la siguiente.</p></div></li>
-              <li><span class="pnum">03</span><div><b>La revisión empieza de cero.</b><p>Sin una referencia compartida, revisar depende de la memoria.</p></div></li>
+              <li><span class="pnum">01</span><div><b>Cada agente puede llegar con otra versión.</b><p>Las instrucciones y el contexto se copian en cada app o conversación.</p></div></li>
+              <li><span class="pnum">02</span><div><b>Las decisiones pueden quedarse en el hilo.</b><p>Un criterio acordado en una sesión puede no estar disponible en la siguiente; depende de la herramienta y de cómo se conserve el contexto.</p></div></li>
+              <li><span class="pnum">03</span><div><b>La revisión puede empezar de cero.</b><p>Sin una referencia compartida, revisar depende de la memoria.</p></div></li>
             </ul>
             <p class="problem-close">El coste no es un mensaje perdido: es volver a decidir lo que el proyecto ya había decidido.</p>
           </div>
@@ -201,6 +201,7 @@
             <div class="arch-detail-foot"><a href="/es/codec-cortex/">Cómo se representa y conserva la información <span aria-hidden="true">→</span></a></div>
           </aside>
         </div>
+        <p class="arch-scope">Estas seis piezas describen de qué se compone la base. Las seis dimensiones de <a href="/es/como-funciona/#dimensions">Cómo funciona</a> siguen una tarea: identidad → contrato → contexto → decisión → ejecución → evidencia. Dos lecturas, no dos modelos.</p>
         <script type="application/json" id="arch-data">[{"id":"project","name":"Proyecto","desc":"El workspace donde viven el objetivo, las decisiones y el estado del trabajo.","q":"¿Dónde continúa el trabajo?","limit":"No decide por las personas ni sustituye su criterio.","href":"/es/como-funciona/","rel":"Identidad, contexto, sesión y evidencia."},{"id":"identity","name":"Identidad","desc":"El contrato del agente: rol, principios y límites que orientan cómo actúa.","q":"¿Quién actúa y con qué límites?","limit":"El agente lo interpreta; no garantiza obediencia.","href":"/es/explorar/","rel":"Contexto y procesos."},{"id":"context","name":"Contexto","desc":"Objetivo, decisiones, estado y lecciones que el proyecto conserva.","q":"¿Qué sabe y qué decidió el proyecto?","limit":"No es la memoria del modelo; las copias no se sincronizan solas.","href":"/es/explorar/","rel":"Proyecto, sesión y aprendizaje."},{"id":"processes","name":"Procesos","desc":"Skills y flujos que describen cómo se hace el trabajo.","q":"¿Cómo se hace el trabajo?","limit":"No sustituyen la revisión ni la evidencia.","href":"/es/como-funciona/#dimensions","rel":"Identidad y evidencia."},{"id":"session","name":"Sesión","desc":"El registro de la sesión y su último checkpoint.","q":"¿Dónde se retoma el trabajo?","limit":"Restaura el registro del proyecto, no el estado del modelo.","href":"/es/como-funciona/","rel":"Contexto y evidencia."},{"id":"evidence","name":"Evidencia","desc":"Registro revisable de lo que ocurrió y de lo que se afirma.","q":"¿Qué se puede comprobar?","limit":"Un hash detecta diferencias; no es firma ni auditoría independiente.","href":"/es/confianza/#evidence","rel":"Sesión y contexto."},{"id":"learning","name":"Aprendizaje","desc":"Lecciones y decisiones que pueden incorporarse al contexto tras revisión.","q":"¿Qué se conserva y cómo se revisa?","limit":"Gobernado, no automático; depende de la política y la revisión.","href":"/es/como-funciona/#learning","rel":"Contexto y evidencia."}]</script>
       </div>
     </section>
