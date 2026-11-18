@@ -629,4 +629,34 @@
   );
 
   /* ---------- I-12: dev easter egg removed with the old demo (the workspace board has no timeline) ---------- */
+
+  /* ---------- architecture: select a component and reveal its role ---------- */
+  const archDataEl = $("#arch-data");
+  if (archDataEl) {
+    let archItems = [];
+    try { archItems = JSON.parse(archDataEl.textContent) || []; } catch (e) { archItems = []; }
+    const archNodes = $$("[data-arch]");
+    const archLines = $$(".arch-lines line");
+    const archLink = $("#arch-link");
+    const putArch = (sel, value) => { const el = $(sel); if (el && value != null) el.textContent = value; };
+    const selectArch = (id) => {
+      const item = archItems.find((x) => x.id === id);
+      if (!item) return;
+      archNodes.forEach((node) => {
+        const on = node.dataset.arch === id;
+        node.classList.toggle("is-on", on);
+        node.setAttribute("aria-pressed", String(on));
+      });
+      archLines.forEach((line) => line.classList.toggle("is-on", line.dataset.line === id));
+      putArch("#arch-title", item.name);
+      putArch("#arch-desc", item.desc);
+      putArch("#arch-q", item.q);
+      putArch("#arch-rel", item.rel);
+      putArch("#arch-limit", item.limit);
+      if (archLink && item.href) archLink.setAttribute("href", item.href);
+    };
+    archNodes.forEach((node) => node.addEventListener("click", () => selectArch(node.dataset.arch)));
+    selectArch("project");
+  }
+
 })();
