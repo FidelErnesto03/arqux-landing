@@ -40,16 +40,12 @@
 </script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Saltar al contenido</a>
 <header class="topbar">
     <div class="wrap nav">
       <a class="brand" href="/es/" aria-label="Inicio de ArqUX"><img src="/assets/brand/symbol.svg" alt=""><span>ArqUX</span></a>
-      <nav class="nav-links" id="primary-navigation" aria-label="Navegación principal"><details class="nav-group"><summary><span>Cómo funciona</span><svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></summary><div class="nav-submenu"><a href="/es/como-funciona/">Visión general</a><a href="/es/#architecture">Arquitectura</a><a href="/es/como-funciona/#dimensions">Dimensiones de tarea</a><a href="/es/como-funciona/#learning">Aprendizaje gobernado</a></div></details><details class="nav-group"><summary><span>Explorar</span><svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></summary><div class="nav-submenu"><a href="/es/explorar/">Artefactos y contexto</a><a href="/es/codec-cortex/">Codec-CORTEX</a></div></details><details class="nav-group"><summary><span>Confianza</span><svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></summary><div class="nav-submenu"><a href="/es/confianza/">Confianza y límites</a><a href="/es/confianza/#evidence">Evidencia</a></div></details><details class="nav-group"><summary><span>Comunidad</span><svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></summary><div class="nav-submenu"><a href="/es/comunidad/">Comunidad</a><a href="/es/comunidad/#platform">Platform</a><a href="https://github.com/FidelErnesto03/arqux/blob/master/CONTRIBUTING.md">Contribuir</a></div></details><details class="nav-group"><summary><span>Primeros pasos</span><svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></summary><div class="nav-submenu"><a href="/es/empezar/">Visión general</a><a href="/es/empezar/#channels">Versiones</a><a href="/es/empezar/#first">Primer workspace</a><a href="/es/empezar/#connect">Conectar una app</a></div></details></nav>
+      <nav class="nav-links" id="primary-navigation" aria-label="Navegación principal"><a href="/es/referencia/">Referencia</a><a href="/es/empezar/">Primeros pasos</a><a href="/es/confianza/">Confianza</a></nav>
       <div class="nav-actions">
-        <button type="button" class="palette-btn" data-palette-open hidden aria-label="Ir a ⌘K — secciones e idioma" title="Ir a · ⌘K">
-          <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          <span class="palette-btn-label">Ir a</span><kbd>⌘K</kbd>
-        </button>
+        
         <a class="nav-language lang-link" href="/" >EN<span class="visually-hidden"> · English</span></a>
         <a class="button button-dark" href="/es/empezar/#channels">Instalar</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Abrir navegación" data-label-open="Abrir navegación" data-label-close="Cerrar navegación">
@@ -57,90 +53,9 @@
         </button>
       </div>
     </div>
-  </header>
-<main id="main-content">
-    <nav class="progress-rail" hidden aria-label="Progreso de la sección">
-      <a href="#top"><span class="rail-dot" aria-hidden="true"></span><span class="rail-label">Inicio</span></a><a href="#local"><span class="rail-dot" aria-hidden="true"></span><span class="rail-label">El problema</span></a><a href="#task"><span class="rail-dot" aria-hidden="true"></span><span class="rail-label">Caso ilustrativo</span></a><a href="#architecture"><span class="rail-dot" aria-hidden="true"></span><span class="rail-label">Arquitectura</span></a><a href="#next"><span class="rail-dot" aria-hidden="true"></span><span class="rail-label">Primeros pasos</span></a>
-      <span class="rail-count" aria-hidden="true">1/5</span>
-    </nav>
-    <section class="hero" id="top">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Para quien trabaja con agentes de IA en proyectos duraderos</p>
-          <h1>Cada tarea deja<br>algo más que un resultado.</h1>
-          <p class="lead">ArqUX organiza el contexto, las decisiones y las reglas de tu proyecto para dar continuidad al trabajo con agentes de IA. Ese contexto puede evolucionar con cada tarea.</p>
-          <p class="hero-portable">Un proyecto que conserva su rumbo y puede aprender de su trabajo.</p>
-          <div class="hero-ctas"><a class="button button-primary" href="/es/como-funciona/">Ver cómo funciona</a><a class="button button-secondary" href="/es/empezar/">Primeros pasos</a></div>
-          <p class="hero-facts"><span><i aria-hidden="true">✓</i><a href="https://github.com/FidelErnesto03/arqux/blob/master/LICENSE" target="_blank" rel="noreferrer">Apache-2.0</a></span><span><i aria-hidden="true">✓</i><a href="/es/confianza/">Primero local</a></span><span><i aria-hidden="true">✓</i><a href="/es/explorar/">4 proyecciones, una por app compatible</a></span></p>
-          <p class="hero-note">Un kernel → un archivo nativo por app compatible.</p>
-        </div>
-        <figure class="wsboard" id="wsboard" aria-label="Cómo una aplicación compatible recibe la misma gobernanza por MCP">
-          <div class="ws-apps">
-            <span class="ws-zone-label">Aplicaciones de agente · fuera</span>
-            <div class="ws-harness" role="group" aria-label="Elige una aplicación de agente para recorrer sus peticiones">
-              <button type="button" class="h-tab is-on" data-ws-harness="codex" data-say="Abres tu aplicación." data-hint="un cliente compatible" aria-pressed="true" disabled>Codex CLI</button>
-              <button type="button" class="h-tab" data-ws-harness="claude" data-say="Abres tu aplicación." data-hint="un cliente compatible" aria-pressed="false" disabled>Claude Code</button>
-              <button type="button" class="h-tab" data-ws-harness="opencode" data-say="Abres tu aplicación." data-hint="un cliente compatible" aria-pressed="false" disabled>OpenCode</button>
-              <button type="button" class="h-tab" data-ws-harness="cursor" data-say="Abres tu aplicación." data-hint="un cliente compatible" aria-pressed="false" disabled>Cursor</button>
-              <button type="button" class="h-tab" data-ws-harness="antigravity" data-say="Abres tu aplicación." data-hint="un cliente compatible" aria-pressed="false" disabled>Antigravity</button>
-            </div>
-            <p class="ws-compat">Archivo nativo: Codex CLI · Claude Code · OpenCode. Cursor: ejemplo MCP. Antigravity: ejemplo del tablero. <a href="/es/como-funciona/#compatibility">Scope →</a></p>
-          </div>
-          <div class="ws-channel">
-            <div class="ws-channel-head" role="button" tabindex="0"><span class="ws-channel-name"><span class="ws-chan-default">canal</span><span class="ws-tech-only">MCP</span></span><span class="ws-channel-sub">retornos declarados<span class="ws-tech-only"> · Model Context Protocol</span></span></div>
-            <div class="ws-axis" id="ws-axis" data-say="Se conecta a ArqUX." data-hint="el canal" aria-hidden="true"></div>
-            <div class="ws-requests">
-              <div class="ws-req" data-ws-req="identity" data-say="Recuerda su identidad." data-hint="el contrato de identidad, con sus límites" role="button" tabindex="0"><span class="req-return">→ identidad</span><code>identity.get</code></div>
-              <div class="ws-req" data-ws-req="context" data-say="Recuerda el contexto." data-hint="la mente del proyecto" role="button" tabindex="0"><span class="req-return">→ contexto</span><code>context.full</code></div>
-              <div class="ws-req" data-ws-req="procedures" data-say="Recuerda cómo trabajas." data-hint="los procedimientos del rol" role="button" tabindex="0"><span class="req-return">→ procedimientos</span><code>skill.list</code></div>
-              <div class="ws-req" data-ws-req="session" data-say="Retoma la sesión." data-hint="el último checkpoint" role="button" tabindex="0"><span class="req-return">→ sesión</span><code>session.resume</code></div>
-            </div>
-          </div>
-          <div class="ws-gov">
-            <div class="ws-gov-head"><b>ArqUX</b><span>gobierno · una respuesta</span></div>
-            <div class="ws-gov-chips"><span data-ws-gov="identity">identidad</span><span data-ws-gov="context">contexto</span><span data-ws-gov="procedures">procedimientos</span><span data-ws-gov="session">sesión</span><span data-ws-gov="evidence">evidencia</span></div>
-          </div>
-          <div class="ws-project" id="ws-project" role="button" tabindex="0" data-say="Tu proyecto continúa." data-hint="el proyecto conserva su contexto">
-            <div class="ws-project-main"><b class="ws-project-name">PROYECTO</b><span class="ws-project-sub">tu proyecto</span></div>
-            <div class="ws-project-art">
-              <div class="ws-mind" id="ws-mind"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3a2 2 0 0 0-2 2 2 2 0 0 0-1 3.7A2 2 0 0 0 6 11V3Z"/><path d="M10 3a2 2 0 0 1 2 2 2 2 0 0 1 1 3.7A2 2 0 0 1 10 11V3Z"/><path d="M6 6h4M6 9h4"/></svg><span>Mente ArqUX</span></div>
-              <div class="ws-files" role="img" aria-label="código, documentos, datos, pruebas, recursos, configuración">
-                <svg class="fi-code" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 4 2 8l3 4M11 4l3 4-3 4"/></svg>
-                <svg class="fi-doc" viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="2" width="10" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>
-                <svg class="fi-data" viewBox="0 0 16 16" aria-hidden="true"><ellipse cx="8" cy="4" rx="5" ry="2"/><path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4"/></svg>
-                <svg class="fi-test" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="M5.5 8l1.8 1.8L10.8 6"/></svg>
-                <svg class="fi-media" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="3" width="11" height="10" rx="1"/><circle cx="6" cy="6.5" r="1.2"/><path d="M3.5 12l3-3 2 2 2-2 2.5 3"/></svg>
-                <svg class="fi-config" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2"/><path d="M8 2v2M8 12v2M2 8h2M12 8h2M4 4l1.4 1.4M10.6 10.6 12 12M12 4l-1.4 1.4M5.4 10.6 4 12"/></svg>
-              </div>
-            </div>
-            <p class="ws-project-line">El proyecto conserva su contexto.</p>
-            <p class="ws-project-note">fuente de contexto · donde el trabajo continúa</p>
-          </div>
-          <div class="ws-say">
-            <span class="ws-say-count"><span class="ws-say-word">Paso</span> <span id="ws-say-count">7/7</span></span>
-            <div class="ws-say-body">
-              <p class="ws-say-text" id="ws-say-text" aria-live="polite" aria-atomic="true">Tu proyecto continúa.</p>
-              <p class="ws-say-hint" id="ws-say-hint">el proyecto conserva su contexto</p>
-            </div>
-          </div>
-          <div class="ws-foot"><span>Workspace de ejemplo · se entregan cuatro archivos nativos de instrucciones, uno por app compatible; otros clientes son ilustrativos.</span><button type="button" class="ws-tech-btn" id="ws-tech-btn" hidden aria-expanded="false" aria-controls="wsboard" data-show="Detalles técnicos" data-hide="Ocultar detalles">Detalles técnicos</button></div>
-        </figure>
-      </div>
-    </section>
-    <div class="standards-strip" role="region" aria-label="Formatos y protocolos abiertos">
-      <div class="wrap strip-row">
-        <span class="strip-label">Formatos y protocolos abiertos</span>
-        <ul class="strip-items">
-          <li><a href="https://modelcontextprotocol.io" target="_blank" rel="noreferrer">MCP</a></li>
-          <li><a href="https://github.com/FidelErnesto03/codec-cortex" target="_blank" rel="noreferrer">CORTEX 1.0</a></li>
-          <li>AGENTS.md</li>
-          <li>SKILL.md</li>
-          <li><a href="https://github.com/FidelErnesto03/arqux/blob/master/LICENSE" target="_blank" rel="noreferrer">licencia Apache-2.0</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <section class="section section-light" id="local">
+  </header><main id="main-content">
+    <section class="hero" id="top"><div class="wrap hero-grid"><div class="hero-copy"><p class="eyebrow">Para quien trabaja con agentes de IA en proyectos duraderos</p><h1>Cada tarea deja<br>algo más que un resultado.</h1><p class="lead">ArqUX organiza el contexto, las decisiones y las reglas de tu proyecto para dar continuidad al trabajo con agentes de IA. Ese contexto puede evolucionar con cada tarea.</p><p class="hero-portable">Un proyecto que conserva su rumbo y puede aprender de su trabajo.</p><div class="hero-ctas"><a class="button button-primary" href="/es/referencia/#workflow">Ver el modelo</a><a class="button button-secondary" href="/es/empezar/">Primeros pasos</a></div><p class="hero-facts"><span><i aria-hidden="true">✓</i><a href="https://github.com/FidelErnesto03/arqux/blob/master/LICENSE" target="_blank" rel="noreferrer">Apache-2.0</a></span><span><i aria-hidden="true">✓</i><a href="/es/confianza/">Primero local</a></span><span><i aria-hidden="true">✓</i><a href="/es/referencia/#artifacts">4 proyecciones, una por app compatible</a></span></p><p class="hero-note">Un kernel → un archivo nativo por app compatible.</p></div><div class="hero-flow" aria-label="Agent app to MCP to project"><div><span>Agent app</span><b>Harness</b></div><i aria-hidden="true">→</i><div><span>Channel</span><b>MCP</b></div><i aria-hidden="true">→</i><div><span>Source</span><b>Project</b></div></div></div></section>
+<section class="section section-light" id="local">
       <div class="wrap">
         <div class="problem-grid">
           <div class="problem-copy">
@@ -169,8 +84,7 @@
         </div>
       </div>
     </section>
-
-    <section class="section section-soft" id="task">
+<section class="section section-soft" id="task">
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">Caso ilustrativo</p><h2>El trabajo termina. El criterio permanece.</h2><p class="section-copy">En una integración se acuerda no exponer datos sensibles en los mensajes de error.</p></div>
         <div class="flow-block">
@@ -185,44 +99,10 @@
         </div>
       </div>
     </section>
-
-    <section class="section section-light" id="architecture">
-      <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Arquitectura</p><h2>Una base para trabajar con continuidad y criterio.</h2><p class="section-copy">El proyecto contiene seis piezas. Selecciona el proyecto o una pieza para ver qué aporta y qué no garantiza.</p></div>
-        <div class="arch-grid">
-          <div class="arch-map" role="group" aria-label="Componentes de ArqUX">
-            <svg class="arch-lines" viewBox="0 0 100 100" aria-hidden="true"><line data-line="identity" x1="50" y1="50" x2="50" y2="9"/><line data-line="context" x1="50" y1="50" x2="87" y2="29"/><line data-line="processes" x1="50" y1="50" x2="87" y2="71"/><line data-line="session" x1="50" y1="50" x2="50" y2="91"/><line data-line="evidence" x1="50" y1="50" x2="13" y2="71"/><line data-line="learning" x1="50" y1="50" x2="13" y2="29"/></svg>
-            <button class="arch-center is-on" type="button" data-arch="project" aria-pressed="true" aria-controls="arch-detail"><img src="/assets/brand/symbol-dark.svg" alt="" width="30" height="30"><b>Proyecto</b><span>contenedor · 6 piezas</span></button>
-            <button class="arch-node" type="button" data-arch="identity" aria-pressed="false" aria-controls="arch-detail"><span class="arch-node-label">Identidad</span><span class="arch-node-sub">quién actúa</span></button><button class="arch-node" type="button" data-arch="context" aria-pressed="false" aria-controls="arch-detail"><span class="arch-node-label">Contexto</span><span class="arch-node-sub">qué sabe</span></button><button class="arch-node" type="button" data-arch="processes" aria-pressed="false" aria-controls="arch-detail"><span class="arch-node-label">Procesos</span><span class="arch-node-sub">cómo se ejecuta</span></button><button class="arch-node" type="button" data-arch="session" aria-pressed="false" aria-controls="arch-detail"><span class="arch-node-label">Sesión</span><span class="arch-node-sub">dónde se retoma</span></button><button class="arch-node" type="button" data-arch="evidence" aria-pressed="false" aria-controls="arch-detail"><span class="arch-node-label">Evidencia</span><span class="arch-node-sub">qué se comprueba</span></button><button class="arch-node" type="button" data-arch="learning" aria-pressed="false" aria-controls="arch-detail"><span class="arch-node-label">Aprendizaje</span><span class="arch-node-sub">qué se conserva</span></button>
-          </div>
-          <aside class="arch-detail" id="arch-detail" aria-live="polite" aria-atomic="true">
-            <p class="eyebrow">Componente</p>
-            <h3 id="arch-title">Proyecto</h3>
-            <p class="arch-desc" id="arch-desc">El workspace donde viven el objetivo, las decisiones y el estado del trabajo.</p>
-            <dl class="arch-detail-list"><div><dt>Responde a</dt><dd id="arch-q">¿Dónde continúa el trabajo?</dd></div><div><dt>Se relaciona con</dt><dd id="arch-rel">Identidad, contexto, sesión y evidencia.</dd></div><div><dt>Límite</dt><dd id="arch-limit">No decide por las personas ni sustituye su criterio.</dd></div></dl>
-            <a class="arch-link" id="arch-link" href="/es/como-funciona/">Ver en profundidad <span aria-hidden="true">→</span></a>
-            <div class="arch-detail-foot"><a href="/es/codec-cortex/">Cómo se representa y conserva la información <span aria-hidden="true">→</span></a></div>
-          </aside>
-        </div>
-        <p class="arch-count-note">El proyecto es el contenedor; las seis piezas están dentro.</p>
-        <div class="arch-compare">
-          <div class="arch-compare-card"><span>Seis piezas del proyecto</span><b>¿Con qué cuenta el proyecto?</b><p>Identidad · Contexto · Procesos · Sesión · Evidencia · Aprendizaje</p></div>
-          <div class="arch-compare-card"><span>Seis dimensiones de una tarea</span><b>¿Qué considerar al ejecutar y revisar?</b><p>Identidad · Contrato · Contexto · Decisión · Ejecución · Evidencia</p><a href="/es/como-funciona/#dimensions">Ver las seis dimensiones →</a></div>
-        </div>
-        <p class="arch-scope">Dos lecturas, no dos modelos.</p>
-        <script type="application/json" id="arch-data">[{"id":"project","name":"Proyecto · contenedor","desc":"El workspace donde viven el objetivo, las decisiones y el estado del trabajo.","q":"¿Dónde continúa el trabajo?","limit":"No decide por las personas ni sustituye su criterio.","href":"/es/como-funciona/","rel":"Identidad, contexto, sesión y evidencia."},{"id":"identity","name":"Identidad","desc":"El contrato del agente: rol, principios y límites que orientan cómo actúa.","q":"¿Quién actúa y con qué límites?","limit":"El agente lo interpreta; no garantiza obediencia.","href":"/es/explorar/","rel":"Contexto y procesos."},{"id":"context","name":"Contexto","desc":"Objetivo, decisiones, estado y lecciones que el proyecto conserva.","q":"¿Qué sabe y qué decidió el proyecto?","limit":"No es la memoria del modelo; las copias no se sincronizan solas.","href":"/es/explorar/","rel":"Proyecto, sesión y aprendizaje."},{"id":"processes","name":"Procesos","desc":"Skills y flujos que describen cómo se hace el trabajo.","q":"¿Cómo se hace el trabajo?","limit":"No sustituyen la revisión ni la evidencia.","href":"/es/como-funciona/#dimensions","rel":"Identidad y evidencia."},{"id":"session","name":"Sesión","desc":"El registro de la sesión y su último checkpoint.","q":"¿Dónde se retoma el trabajo?","limit":"Restaura el registro del proyecto, no el estado del modelo.","href":"/es/como-funciona/","rel":"Contexto y evidencia."},{"id":"evidence","name":"Evidencia","desc":"Registro revisable de lo que ocurrió y de lo que se afirma.","q":"¿Qué se puede comprobar?","limit":"Un hash detecta diferencias; no es firma ni auditoría independiente.","href":"/es/confianza/#evidence","rel":"Sesión y contexto."},{"id":"learning","name":"Aprendizaje","desc":"Lecciones y decisiones que pueden incorporarse al contexto tras revisión.","q":"¿Qué se conserva y cómo se revisa?","limit":"Gobernado: algunas rutas pueden automatizarse bajo política; otras requieren revisión y confirmación.","href":"/es/como-funciona/#learning","rel":"Contexto y evidencia."}]</script>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="next">
-      <div class="wrap"><div class="section-head"><p class="eyebrow">Primeros pasos</p><h2>Empieza por una tarea. Conoce sus límites.</h2><p class="section-copy">Revisa la versión, sus requisitos y cómo se distribuyen las responsabilidades entre el código, el agente y tu equipo.</p></div><p class="hero-ctas"><a class="button button-primary" href="/es/empezar/">Primeros pasos</a><a class="button button-dark" href="/es/confianza/">Confianza y límites</a></p></div>
-    </section>
-
-    <section class="section section-light" id="anchors">
-      <div class="wrap"><p class="eyebrow">Continuar en profundidad</p><h2>Explora las partes</h2><p class="section-copy"><a id="quickstart" href="/es/empezar/">Primeros pasos</a> · <a id="workflow" href="/es/como-funciona/">Cómo funciona</a> · <a id="dimensions" href="/es/como-funciona/#dimensions">Dimensiones de tarea</a> · <a id="artifacts" href="/es/explorar/">Artefactos</a> · <a id="cortex" href="/es/codec-cortex/">Codec-CORTEX</a> · <a id="evidence" href="/es/confianza/#evidence">Evidencia</a> · <a id="trust" href="/es/confianza/">Confianza y límites</a> · <a id="platform" href="/es/comunidad/#platform">Comunidad y futuro</a></p></div>
-    </section>
+    <section class="section section-light" id="next"><span id="architecture" aria-hidden="true"></span><div class="wrap"><div class="section-head"><p class="eyebrow">Continue</p><h2>Referencia, Primeros pasos, Confianza.</h2><p class="section-copy">Tres puertas: entender el modelo, ejecutar una primera tarea y comprobar los límites.</p></div><div class="trust-grid"><article class="trust-card"><h3><a href="/es/referencia/">Referencia</a></h3><p>Flujo, dimensiones de tarea, artefactos y formato CORTEX.</p></article><article class="trust-card"><h3><a href="/es/empezar/">Primeros pasos</a></h3><p>Instalar, completar una primera tarea gobernada y conectar tu app.</p></article><article class="trust-card"><h3><a href="/es/confianza/">Confianza</a></h3><p>Responsabilidades, evidencia, alcance y límites.</p></article></div></div></section>
+    <section class="section section-soft" id="anchors"><div class="wrap"><p class="eyebrow">Bookmarks</p><p class="section-copy">Enlaces antiguos conservados para marcadores: <a id="quickstart" href="/es/empezar/">Inicio rápido</a> · <a id="workflow" href="/es/referencia/#workflow">Flujo</a> · <a id="dimensions" href="/es/referencia/#dimensions">Dimensiones de tarea</a> · <a id="artifacts" href="/es/referencia/#artifacts">Artefactos</a> · <a id="cortex" href="/es/referencia/#format">Formato CORTEX</a> · <a id="evidence" href="/es/confianza/#evidence">Evidencia</a> · <a id="trust" href="/es/confianza/">Confianza y límites</a> · <a id="platform" href="/es/#community">Comunidad</a></p></div></section>
   </main>
-<footer>
+<footer id="community">
   <div class="footer-accent" aria-hidden="true"></div>
   <div class="wrap">
     <div class="footer-main">
@@ -231,7 +111,7 @@
         <p class="f-tagline">La arquitectura detrás del trabajo humano–IA. Framework de código abierto para trabajo de agentes gobernado — v1.0.0.</p>
         <p class="f-origin">Nombre acuñado: “Arq” por arquitectura — la estructura que da forma a cómo se hace el trabajo; “UX” por la experiencia compartida entre personas y agentes de IA.</p>
       </div>
-      <nav class="fcol" aria-label="Producto"><h3>Producto</h3><a href="https://github.com/FidelErnesto03/arqux">Framework</a><a href="https://github.com/FidelErnesto03/codec-cortex">Codec‑CORTEX</a><a href="https://github.com/FidelErnesto03/arqux/tree/master/docs">Documentación</a><a href="https://github.com/FidelErnesto03/arqux/blob/master/CONTRIBUTING.md">Contribuir</a><a href="/es/comunidad/">Comunidad</a><a href="/es/comunidad/#platform">Platform · en desarrollo</a></nav>
+      <nav class="fcol" aria-label="Producto"><h3>Producto</h3><a href="https://github.com/FidelErnesto03/arqux">Framework</a><a href="https://github.com/FidelErnesto03/codec-cortex">Codec‑CORTEX</a><a href="https://github.com/FidelErnesto03/arqux/tree/master/docs">Documentación</a><a href="https://github.com/FidelErnesto03/arqux/blob/master/CONTRIBUTING.md">Contribuir</a><a href="/es/#community">Comunidad</a></nav>
       <nav class="fcol" aria-label="Confianza"><h3>Confianza</h3><a href="https://github.com/FidelErnesto03/arqux/blob/master/SECURITY.md">Seguridad</a><a href="https://github.com/FidelErnesto03/arqux/blob/master/THREAT_MODEL.md">Modelo de amenazas</a><a href="https://github.com/FidelErnesto03/arqux/issues">Reporte responsable</a></nav>
       <nav class="fcol" aria-label="Proyecto"><h3>Proyecto</h3><a href="https://github.com/FidelErnesto03/arqux">GitHub</a><a href="https://pypi.org/project/arqux/">PyPI</a><a href="/es/empezar/#channels">Versiones</a><a href="https://github.com/FidelErnesto03/arqux/blob/master/LICENSE">Licencia · Apache-2.0</a></nav>
     </div>
@@ -239,15 +119,5 @@
     <p class="footer-glossary">Glosario: espacio de trabajo (workspace) · entorno del agente (harness) · versión (release) · ida y vuelta (round-trip).</p>
   </div>
 </footer>
-<div class="palette" id="palette" hidden data-tag-go="Ir" data-tag-action="Acción" data-tag-lang="Idioma" data-label-lang="Cambiar a inglés" data-empty="Sin comandos coincidentes">
-  <div class="palette-backdrop" data-palette-close></div>
-  <div class="palette-panel" role="dialog" aria-modal="true" aria-labelledby="palette-title">
-    <h2 class="visually-hidden" id="palette-title">Paleta de comandos</h2>
-    <label class="visually-hidden" for="palette-input">Escribe un comando</label>
-    <input class="palette-input" id="palette-input" type="text" autocomplete="off" spellcheck="false" aria-controls="palette-list" aria-activedescendant="" placeholder="Salta a una sección o cambia de idioma" />
-    <ul class="palette-list" id="palette-list" role="listbox" aria-label="Comandos"></ul>
-    <p class="palette-hint" aria-hidden="true">↑↓ mover · Enter ejecutar · Esc cerrar</p>
-  </div>
-</div>
 </body>
 </html>

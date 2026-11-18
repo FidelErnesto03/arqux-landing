@@ -44,12 +44,9 @@
 <header class="topbar">
     <div class="wrap nav">
       <a class="brand" href="/es/" aria-label="Inicio de ArqUX"><img src="/assets/brand/symbol.svg" alt=""><span>ArqUX</span></a>
-      <nav class="nav-links" id="primary-navigation" aria-label="Navegación principal"><details class="nav-group"><summary><span>Cómo funciona</span><svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></summary><div class="nav-submenu"><a href="/es/como-funciona/">Visión general</a><a href="/es/#architecture">Arquitectura</a><a href="/es/como-funciona/#dimensions">Dimensiones de tarea</a><a href="/es/como-funciona/#learning">Aprendizaje gobernado</a></div></details><details class="nav-group"><summary><span>Explorar</span><svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></summary><div class="nav-submenu"><a href="/es/explorar/">Artefactos y contexto</a><a href="/es/codec-cortex/">Codec-CORTEX</a></div></details><details class="nav-group"><summary><span>Confianza</span><svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></summary><div class="nav-submenu"><a href="/es/confianza/">Confianza y límites</a><a href="/es/confianza/#evidence">Evidencia</a></div></details><details class="nav-group"><summary><span>Comunidad</span><svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></summary><div class="nav-submenu"><a href="/es/comunidad/">Comunidad</a><a href="/es/comunidad/#platform">Platform</a><a href="https://github.com/FidelErnesto03/arqux/blob/master/CONTRIBUTING.md">Contribuir</a></div></details><details class="nav-group is-section"><summary><span>Primeros pasos</span><svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></summary><div class="nav-submenu"><a href="/es/empezar/" aria-current="page">Visión general</a><a href="/es/empezar/#channels">Versiones</a><a href="/es/empezar/#first">Primer workspace</a><a href="/es/empezar/#connect">Conectar una app</a></div></details></nav>
+      <nav class="nav-links" id="primary-navigation" aria-label="Navegación principal"><a href="/es/referencia/">Referencia</a><a href="/es/empezar/" aria-current="page">Primeros pasos</a><a href="/es/confianza/">Confianza</a></nav>
       <div class="nav-actions">
-        <button type="button" class="palette-btn" data-palette-open hidden aria-label="Ir a ⌘K — secciones e idioma" title="Ir a · ⌘K">
-          <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          <span class="palette-btn-label">Ir a</span><kbd>⌘K</kbd>
-        </button>
+        
         <a class="nav-language lang-link" href="/start/" >EN<span class="visually-hidden"> · English</span></a>
         <a class="button button-dark" href="/es/empezar/#channels">Instalar</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Abrir navegación" data-label-open="Abrir navegación" data-label-close="Cerrar navegación">
@@ -68,7 +65,7 @@ cd arqux
 git checkout 390333913e0f071a89241187f36cc90289e7e043
 python -m pip install -e .</code></pre><div class="copy-row"><button type="button" class="copy-btn" hidden data-copy="git clone https://github.com/FidelErnesto03/arqux&#10;cd arqux&#10;git checkout 390333913e0f071a89241187f36cc90289e7e043&#10;python -m pip install -e ." data-done="Copiado" data-fail="Selecciona los comandos y cópialos">Copiar comandos</button><span class="copy-status" role="status" aria-live="polite"></span></div><p class="copy-note">Python ≥3.10, según pyproject.toml. Verificado 2026-11-18 · Linux · Python 3.11.12 · clonar → checkout <code>3903339</code> → instalar en editable · salida: <code>arqux 1.0.0</code>.</p></article>
     </div></div></section>
-    <section class="section section-light" id="first"><span id="route-init" aria-hidden="true"></span><span id="route-quickstart" aria-hidden="true"></span><div class="wrap"><div class="section-head"><p class="eyebrow">Primer recorrido</p><h2>Primer workspace gobernado</h2><p class="section-copy">Ruta del repositorio 1.0.0. Estos cinco comandos aparecen en <code>arqux --help</code>; la secuencia verificada de primera tarea es un flujo CLI aparte. El paquete 0.9.0 puede diferir.</p></div><div class="trust-grid"><article class="trust-card"><span class="trust-mark">01</span><h3>Crea una carpeta</h3><p><code>mkdir demo && cd demo</code></p></article><article class="trust-card"><span class="trust-mark">02</span><h3>Inicializa el workspace</h3><p><code>arqux init</code></p></article><article class="trust-card"><span class="trust-mark">03</span><h3>Incorporación guiada</h3><p><code>arqux quickstart</code></p></article><article class="trust-card"><span class="trust-mark">04</span><h3>Genera las proyecciones</h3><p><code>arqux sync-harnesses</code></p></article><article class="trust-card"><span class="trust-mark">05</span><h3>Comprueba la deriva</h3><p><code>arqux drift-check</code></p></article></div><p class="note">Sin servidor y sin clave de API. Instalar no configura todos los clientes ni crea aprendizaje automáticamente; el comportamiento es de cada aplicación.</p></div></section>
+    
     <section class="section section-soft" id="first-task">
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">Verificado de extremo a extremo</p><h2>Una primera tarea gobernada, desde una carpeta vacía.</h2><p class="section-copy">Linux · Python 3.11.12 · ArqUX 1.0.0 en <code>3903339</code> · 2026-11-18. Solo la ruta CLI; sin llamada a un modelo.</p></div>
@@ -112,7 +109,7 @@ arqux serve</pre><p class="note">Un workspace por proceso.</p></article>
       </div>
     </section>
   </main>
-<footer>
+<footer id="community">
   <div class="footer-accent" aria-hidden="true"></div>
   <div class="wrap">
     <div class="footer-main">
@@ -121,7 +118,7 @@ arqux serve</pre><p class="note">Un workspace por proceso.</p></article>
         <p class="f-tagline">La arquitectura detrás del trabajo humano–IA. Framework de código abierto para trabajo de agentes gobernado — v1.0.0.</p>
         <p class="f-origin">Nombre acuñado: “Arq” por arquitectura — la estructura que da forma a cómo se hace el trabajo; “UX” por la experiencia compartida entre personas y agentes de IA.</p>
       </div>
-      <nav class="fcol" aria-label="Producto"><h3>Producto</h3><a href="https://github.com/FidelErnesto03/arqux">Framework</a><a href="https://github.com/FidelErnesto03/codec-cortex">Codec‑CORTEX</a><a href="https://github.com/FidelErnesto03/arqux/tree/master/docs">Documentación</a><a href="https://github.com/FidelErnesto03/arqux/blob/master/CONTRIBUTING.md">Contribuir</a><a href="/es/comunidad/">Comunidad</a><a href="/es/comunidad/#platform">Platform · en desarrollo</a></nav>
+      <nav class="fcol" aria-label="Producto"><h3>Producto</h3><a href="https://github.com/FidelErnesto03/arqux">Framework</a><a href="https://github.com/FidelErnesto03/codec-cortex">Codec‑CORTEX</a><a href="https://github.com/FidelErnesto03/arqux/tree/master/docs">Documentación</a><a href="https://github.com/FidelErnesto03/arqux/blob/master/CONTRIBUTING.md">Contribuir</a><a href="/es/#community">Comunidad</a></nav>
       <nav class="fcol" aria-label="Confianza"><h3>Confianza</h3><a href="https://github.com/FidelErnesto03/arqux/blob/master/SECURITY.md">Seguridad</a><a href="https://github.com/FidelErnesto03/arqux/blob/master/THREAT_MODEL.md">Modelo de amenazas</a><a href="https://github.com/FidelErnesto03/arqux/issues">Reporte responsable</a></nav>
       <nav class="fcol" aria-label="Proyecto"><h3>Proyecto</h3><a href="https://github.com/FidelErnesto03/arqux">GitHub</a><a href="https://pypi.org/project/arqux/">PyPI</a><a href="/es/empezar/#channels">Versiones</a><a href="https://github.com/FidelErnesto03/arqux/blob/master/LICENSE">Licencia · Apache-2.0</a></nav>
     </div>
@@ -129,15 +126,6 @@ arqux serve</pre><p class="note">Un workspace por proceso.</p></article>
     <p class="footer-glossary">Glosario: espacio de trabajo (workspace) · entorno del agente (harness) · versión (release) · ida y vuelta (round-trip).</p>
   </div>
 </footer>
-<div class="palette" id="palette" hidden data-tag-go="Ir" data-tag-action="Acción" data-tag-lang="Idioma" data-label-lang="Cambiar a inglés" data-empty="Sin comandos coincidentes">
-  <div class="palette-backdrop" data-palette-close></div>
-  <div class="palette-panel" role="dialog" aria-modal="true" aria-labelledby="palette-title">
-    <h2 class="visually-hidden" id="palette-title">Paleta de comandos</h2>
-    <label class="visually-hidden" for="palette-input">Escribe un comando</label>
-    <input class="palette-input" id="palette-input" type="text" autocomplete="off" spellcheck="false" aria-controls="palette-list" aria-activedescendant="" placeholder="Salta a una sección o cambia de idioma" />
-    <ul class="palette-list" id="palette-list" role="listbox" aria-label="Comandos"></ul>
-    <p class="palette-hint" aria-hidden="true">↑↓ mover · Enter ejecutar · Esc cerrar</p>
-  </div>
-</div>
+
 </body>
 </html>

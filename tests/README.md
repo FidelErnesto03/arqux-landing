@@ -1,22 +1,20 @@
-# Portal regression checks
+# Portal regression checks (simplified portal)
 
-These scripts exercise the built portal over HTTP; they do not read the workspace.
+The portal now has four primary pages plus 404: Home, Reference, Start and Trust. Community lives in the footer. Old routes redirect.
 
-Requirements: Python 3.11, Playwright for Python, and Google Chrome (the scripts use `channel="chrome"`).
+Requirements: Python 3.11, Playwright for Python, Google Chrome.
 
 ```bash
 # from the landing repository root
 python3 -m http.server 8137
 # in another terminal
-python3 tests/t16_verify.py
-python3 tests/t18_verify.py
-python3 tests/t20_verify.py
-python3 tests/t21_verify.py
-python3 tests/t22_contract.py
-# or run everything
 ./tests/run.sh
 ```
 
-`t16` covers the home hero, case, palette and Spanish parity. `t18` covers the artifact explorer and start route. `t20` covers the short home, architecture map and all EN routes. `t21` covers the How-it-works mechanism map and dimensions. `t22` guards the editorial contract: projection unit, ES labels, pinned checkout, demo wording and section order.
+- `t16_home` — Home: static flow, problem, case, three doors, no dead layers.
+- `t18_reference` — Reference: workflow, learning, dimensions, artifact explorer, format and certificate.
+- `t20_routes` — 8 primary routes, redirects, sitemap, mobile.
+- `t21_start_trust` — channels, first task, connect, Trust order and sources.
+- `t22_contract` — parity, flat nav, no palette/rail/submenus, CSS+JS budget.
 
 Each script exits non-zero on failure and prints `TOTAL n FAILURES m`.

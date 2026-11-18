@@ -13,39 +13,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://arqux.ai/"/>
   </url>
   <url>
-    <loc>https://arqux.ai/how-it-works/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://arqux.ai/how-it-works/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://arqux.ai/es/como-funciona/"/>
+    <loc>https://arqux.ai/reference/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arqux.ai/reference/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://arqux.ai/es/referencia/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://arqux.ai/"/>
   </url>
   <url>
-    <loc>https://arqux.ai/es/como-funciona/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://arqux.ai/how-it-works/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://arqux.ai/es/como-funciona/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://arqux.ai/"/>
-  </url>
-  <url>
-    <loc>https://arqux.ai/explore/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://arqux.ai/explore/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://arqux.ai/es/explorar/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://arqux.ai/"/>
-  </url>
-  <url>
-    <loc>https://arqux.ai/es/explorar/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://arqux.ai/explore/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://arqux.ai/es/explorar/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://arqux.ai/"/>
-  </url>
-  <url>
-    <loc>https://arqux.ai/codec-cortex/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://arqux.ai/codec-cortex/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://arqux.ai/es/codec-cortex/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://arqux.ai/"/>
-  </url>
-  <url>
-    <loc>https://arqux.ai/es/codec-cortex/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://arqux.ai/codec-cortex/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://arqux.ai/es/codec-cortex/"/>
+    <loc>https://arqux.ai/es/referencia/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arqux.ai/reference/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://arqux.ai/es/referencia/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://arqux.ai/"/>
   </url>
   <url>
@@ -70,18 +46,6 @@
     <loc>https://arqux.ai/es/confianza/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://arqux.ai/trust/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://arqux.ai/es/confianza/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://arqux.ai/"/>
-  </url>
-  <url>
-    <loc>https://arqux.ai/community/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://arqux.ai/community/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://arqux.ai/es/comunidad/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://arqux.ai/"/>
-  </url>
-  <url>
-    <loc>https://arqux.ai/es/comunidad/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://arqux.ai/community/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://arqux.ai/es/comunidad/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://arqux.ai/"/>
   </url>
 </urlset>
