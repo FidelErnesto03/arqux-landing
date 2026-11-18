@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0A1420">
+<meta name="description" content="How ArqUX represents and preserves information: CORTEX and HCORTEX, with a clearly labelled illustrative demo.">
+<title>Codec-CORTEX — ArqUX</title>
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/brand/favicon-180.png">
+<link rel="canonical" href="https://arqux.ai/codec-cortex/">
+<link rel="alternate" hreflang="en" href="https://arqux.ai/codec-cortex/">
+<link rel="alternate" hreflang="es" href="https://arqux.ai/es/codec-cortex/">
+<link rel="alternate" hreflang="x-default" href="https://arqux.ai/">
+<meta property="og:title" content="Codec-CORTEX — ArqUX">
+<meta property="og:description" content="How ArqUX represents and preserves information: CORTEX and HCORTEX, with a clearly labelled illustrative demo.">
+<meta property="og:url" content="https://arqux.ai/codec-cortex/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://arqux.ai/assets/brand/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://arqux.ai/assets/brand/og-image.png">
+<link rel="preload" href="/assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-sans-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-mono-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-mono-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<script>document.documentElement.classList.remove("no-js"); if (location.hash.length > 1) document.documentElement.classList.add("resolve-cv");</script>
+<script src="/assets/app.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://arqux.ai/#org","name":"ArqUX","url":"https://arqux.ai/","logo":"https://arqux.ai/assets/brand/og-image.png"},
+{"@type":"WebSite","@id":"https://arqux.ai/#website","url":"https://arqux.ai/","name":"ArqUX","publisher":{"@id":"https://arqux.ai/#org"},"inLanguage":["en","es"]},
+{"@type":"SoftwareApplication","name":"ArqUX Framework","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"1.0.0","license":"https://www.apache.org/licenses/LICENSE-2.0","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://arqux.ai/","codeRepository":"https://github.com/FidelErnesto03/arqux","description":"Open-source framework for governed human-AI work: agent identities, project context, scoped work and reviewable evidence, local-first.","inLanguage":"en","publisher":{"@id":"https://arqux.ai/#org"}}
+]}
+</script>
+</head>
+<body class="page-depth">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+<header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="ArqUX home"><img src="/assets/brand/symbol.svg" alt=""><span>ArqUX</span></a>
+      <nav class="nav-links" id="primary-navigation" aria-label="Main navigation"><a href="/how-it-works/">How it works</a><a href="/explore/">Explore</a><a href="/trust/">Trust</a><a href="/start/">Start</a></nav>
+      <div class="nav-actions">
+        <button type="button" class="palette-btn" data-palette-open hidden aria-label="Search — open command palette" title="Search · ⌘K">
+          <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span class="palette-btn-label">Search</span><kbd>⌘K</kbd>
+        </button>
+        <a class="nav-language lang-link" href="/es/codec-cortex/" aria-label="Ver en español">ES</a>
+        <a class="button button-dark" href="https://github.com/FidelErnesto03/arqux/releases" target="_blank" rel="noreferrer">Release status</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation" data-label-open="Open navigation" data-label-close="Close navigation">
+          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 4.5h14M2 9h14M2 13.5h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main-content">
+<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Codec-CORTEX</p><h1>How information is represented and preserved.</h1><p class="section-copy">CORTEX is the machine format; HCORTEX is its human projection. The demo below is illustrative unless it runs the real codec.</p><p class="section-copy"><a href="/">← Back to home</a></p></div></section>
+<section class="section codec-section" id="cortex">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Codec‑CORTEX</p><h2>Every line is one idea.</h2><p class="section-copy">CORTEX is the <b>mandatory memory format</b> of ArqUX v1.0.0: dense for machines, readable as HCORTEX for people, and validated with <code>loss==0</code> before every write.</p></div>
+        <div class="codec-bar">
+          <p class="codec-bar-label">Representation</p>
+          <div class="segmented" role="group" hidden aria-label="Select a representation"><button type="button" aria-pressed="true" data-code-view="both">Compare</button><button type="button" aria-pressed="false" data-code-view="source">CORTEX</button><button type="button" aria-pressed="false" data-code-view="human">HCORTEX</button></div>
+        </div>
+        <div class="codec-grid">
+          <article class="code-panel" data-code-panel="source"><div class="code-head"><span>CORTEX · machine source</span><span>repository sample · envelope 1.0</span></div><pre><span class="code-muted">$0:KERNEL</span>
+$0:format{cortex:1.0,encoding:UTF-8,language:en}
+OBJ:task{type:attrs,weight:H,
+ fields:<span class="code-amber">"goal:text|status:%state"</span>,
+ focus:goal,schema:table,desc:<span class="code-teal">"Task"</span>}
+<span class="code-muted">$1:CORE</span>
+OBJ:meta{goal:<span class="code-amber">"Learn HCORTEX"</span>,status:current}
+OBJ:gate{goal:<span class="code-amber">"Write documentation"</span>,status:planned}</pre></article>
+          <article class="code-panel" data-code-panel="human"><div class="code-head"><span>HCORTEX · human reading</span><span>paired repository example</span></div><pre><span class="code-muted">&lt;!-- HCORTEX v=0.1 t=canonical k=corpus --&gt;</span>
+
+<span class="code-teal">## §1: TASKS</span>
+
+<span class="code-muted">&lt;!-- table:1 --&gt;</span>
+| Learn HCORTEX | current |
+| Write documentation | planned |
+<span class="code-muted">&lt;!-- /table:1 --&gt;</span></pre></article>
+        </div>
+        <div class="codec-play">
+          <div class="codec-play-head"><p class="eyebrow">Try the round-trip</p><span class="demo-tag">Illustrative · simplified render</span></div>
+          <label class="visually-hidden" for="idea-input">Type one idea and watch both representations update</label>
+          <input class="idea-input" id="idea-input" type="text" maxlength="64" value="Ship the release" placeholder="Type one idea — e.g. Ship the release" />
+          <div class="codec-grid">
+            <article class="code-panel" data-code-panel="source"><div class="code-head"><span>CORTEX · machine source</span><span>live</span></div><pre><code id="play-cortex">KNW:idea{content:"Ship the release",status:current}</code></pre></article>
+            <article class="code-panel" data-code-panel="human"><div class="code-head"><span>HCORTEX · human reading</span><span>live</span></div><pre><span class="code-teal">## §1: NOTES</span>
+
+<span class="code-muted">&lt;!-- table:1 --&gt;</span>
+| <span id="play-human">Ship the release</span> | current |
+<span class="code-muted">&lt;!-- /table:1 --&gt;</span></pre></article>
+          </div>
+          <p class="note">One idea, two surfaces, one source — type and both renderings update. The real codec validates with <code>loss==0</code>; this demo shows the pairing only.</p>
+        </div>
+        <div class="architecture architecture--3 codec-cards">
+          <article class="architecture-card"><p class="eyebrow">Signal, not filler</p><h3>One idea per line</h3><p>Norms live in typed ideas, not in prose. Density is a property of the format, not a promise about comprehension.</p></article>
+          <article class="architecture-card"><p class="eyebrow">Microtokens</p><h3>Repeats become aliases</h3><p>An atom repeated three times or more becomes a one-token alias. The canonical form, and its hash, do not change.</p></article>
+          <article class="architecture-card"><p class="eyebrow">Canonical and reversible</p><h3>Same bytes everywhere</h3><p>The same entry yields the same canonical bytes across runtimes. HCORTEX is a rendering, not a second source.</p></article>
+        </div>
+        <div class="section-head" style="margin-top:44px"><p class="eyebrow">Editor tooling</p><h3>arqux-cortex-viewer — the format as a working surface.</h3><p class="section-copy">VS Code extension · v0.4.2 · Apache‑2.0 · VSIX from the repository. Offline-first: zero telemetry, zero network calls.</p></div>
+        <div class="architecture architecture--3 codec-cards codec-cards--tools">
+          <article class="architecture-card"><p class="eyebrow">See the document</p><h3>Live HCORTEX preview</h3><p>Sections, tables and the glossary render as you type, with the canonical <code>sha256</code> and a loss counter. PlantUML and Mermaid render locally as SVG.</p></article>
+          <article class="architecture-card"><p class="eyebrow">Edit with guardrails</p><h3>Loss-guarded editing</h3><p>Table edits round-trip through the codec and abort on any loss. Errors carry codec codes at the exact line and column.</p></article>
+          <article class="architecture-card"><p class="eyebrow">Beyond one editor</p><h3>cortex-ls</h3><p>One stdio language server for diagnostics, completion, rename and corpus validation. VS Code connects today; other editors can attach.</p></article>
+        </div>
+        <p class="note" style="margin-top:18px">Requires <code>codec-cortex ≥ 1.0.1</code>; the toolchain resolves Rust → Go → Python → Node. Minimal install: <code>pip install codec-cortex</code>. <a class="source-link" href="https://github.com/FidelErnesto03/arqux/tree/master/extensions/cortex-viewer" target="_blank" rel="noreferrer">Extension source, changelog and security notes →</a></p>
+        <details class="why">
+          <summary>Why not just YAML/JSON/Markdown? <span aria-hidden="true">›</span></summary>
+          <div class="why-body">They can hold data, but they have no idea-level unit, no local-glossary layer and no canonical expansion — density and reversibility become accidents of how you write them, not properties of the format. CORTEX makes them contract. Limits still apply: density is a representation property (bytes · tokens · repetition), not a comprehension claim; token advantages publish with a neutral corpus and declared limits, per the project charter. <a href="https://github.com/FidelErnesto03/codec-cortex" target="_blank" rel="noreferrer">Investigate the codec docs →</a></div>
+        </details>
+      </div>
+    </section>
+<section class="section section-soft" id="continue"><div class="wrap"><p class="eyebrow">Continue</p><p class="section-copy"><a href="/explore/">Artifacts and context</a> · <a href="/how-it-works/">How it works</a> · <a href="/trust/">Trust and limits</a></p></div></section>
+  </main>
+<footer>
+  <div class="footer-accent" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="footer-main">
+      <div>
+        <div class="fbrand"><img src="/assets/brand/symbol-dark.svg" alt=""><b>ArqUX</b></div>
+        <p class="f-tagline">The architecture behind human–AI work. Open-source framework for governed agent work — v1.0.0.</p>
+        <p class="f-origin">A coined name: “Arq” for architecture — the structure that shapes how work gets done; “UX” for the shared experience of people and AI agents.</p>
+      </div>
+      <nav class="fcol" aria-label="Product"><h4>Product</h4><a href="https://github.com/FidelErnesto03/arqux">Framework</a><a href="https://github.com/FidelErnesto03/codec-cortex">Codec‑CORTEX</a><a href="/community/#platform">Platform · in development</a></nav>
+      <nav class="fcol" aria-label="Trust"><h4>Trust</h4><a href="https://github.com/FidelErnesto03/arqux/blob/master/SECURITY.md">Security</a><a href="https://github.com/FidelErnesto03/arqux/blob/master/THREAT_MODEL.md">Threat model</a><a href="https://github.com/FidelErnesto03/arqux/issues">Responsible report</a></nav>
+      <nav class="fcol" aria-label="Project"><h4>Project</h4><a href="https://github.com/FidelErnesto03/arqux">GitHub</a><a href="https://pypi.org/project/arqux/">PyPI</a><a href="https://github.com/FidelErnesto03/arqux/releases">Releases</a><a href="/brand/">Brand</a></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 ArqUX · Framework 1.0.0 (source) · PyPI 0.9.0</span><span><a class="lang-link" href="/es/codec-cortex/">Español</a></span></div>
+  </div>
+</footer>
+<div class="palette" id="palette" hidden data-tag-go="Go" data-tag-action="Action" data-tag-lang="Language" data-label-copy="Copy install command" data-label-lang="Switch to Spanish" data-empty="No matching commands">
+  <div class="palette-backdrop" data-palette-close></div>
+  <div class="palette-panel" role="dialog" aria-modal="true" aria-labelledby="palette-title">
+    <h2 class="visually-hidden" id="palette-title">Command palette</h2>
+    <label class="visually-hidden" for="palette-input">Type a command</label>
+    <input class="palette-input" id="palette-input" type="text" autocomplete="off" spellcheck="false" aria-controls="palette-list" aria-activedescendant="" placeholder="Jump to a section, copy the command, move the demo…" />
+    <ul class="palette-list" id="palette-list" role="listbox" aria-label="Commands"></ul>
+    <p class="palette-hint" aria-hidden="true">↑↓ move · Enter run · Esc close</p>
+  </div>
+</div>
+</body>
+</html>
