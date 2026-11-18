@@ -46,10 +46,11 @@ with sync_playwright() as pw:
         ok(f"EN {label} no overflow", p.evaluate("document.documentElement.scrollWidth <= window.innerWidth + 1"))
     all_errors.extend(errs); errs = []
 
-    # codec demo on depth page
+    # codec comparator + certificate (no end-to-end demo)
     p.goto(BASE + "/codec-cortex/", wait_until="networkidle")
-    p.locator("#idea-input").fill("Ship the release")
-    ok("codec demo round-trip", "Ship the release" in p.locator("#play-cortex").text_content() and "Ship the release" in p.locator("#play-human").text_content())
+    ok("codec comparator", p.locator('.code-panel[data-code-panel="source"]').count() == 1 and p.locator('.code-panel[data-code-panel="human"]').count() == 1)
+    ok("codec certificate link", p.locator('.codec-certificate a[href*="certificate.json"]').count() == 1)
+    ok("codec demo removed", p.locator("#idea-input").count() == 0)
 
     # anchor deep link
     p.goto(BASE + "/trust/#evidence", wait_until="networkidle"); p.wait_for_timeout(700)

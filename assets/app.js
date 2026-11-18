@@ -554,21 +554,6 @@
     })
   );
 
-  /* ---------- I-05: codec round-trip playground (local transform, no backend) ---------- */
-  const idea = $("#idea-input");
-  if (idea) {
-    const outCortex = $("#play-cortex");
-    const outHuman = $("#play-human");
-    const clean = (v) => v.replace(/["\\]/g, "").replace(/\s+/g, " ").trim();
-    const update = () => {
-      const v = clean(idea.value).slice(0, 64) || "…";
-      if (outCortex) outCortex.textContent = 'KNW:idea{content:"' + v + '",status:current}';
-      if (outHuman) outHuman.textContent = v;
-    };
-    idea.addEventListener("input", update);
-    update();
-  }
-
   /* ---------- I-04: evidence numbers live (one-shot count-up; static text is the no-JS state) ---------- */
   const nums = $$(".bar-top b");
   if (nums.length && "IntersectionObserver" in window && !REDUCED) {

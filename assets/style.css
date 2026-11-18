@@ -335,14 +335,6 @@ pre{font-size:13px;line-height:1.75}
 @media (max-width:1320px){.progress-rail{display:none}}
 
 /* I-05 · codec round-trip playground */
-.codec-play{margin-top:26px;padding:20px;border-radius:18px;border:1px solid rgba(220,226,227,.16);background:rgba(10,20,32,.35)}
-.codec-play-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
-.codec-play-head .eyebrow{margin:0}
-.idea-input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(220,226,227,.28);background:rgba(10,20,32,.55);color:var(--paper-100);font:500 14.5px/1.4 var(--mono);transition:border-color .16s ease}
-.idea-input:focus-visible{outline:none;border-color:var(--teal-400);box-shadow:0 0 0 3px rgba(97,217,198,.18)}
-.idea-input::placeholder{color:#7e929c}
-.codec-play .codec-grid{margin-top:12px}
-.codec-play .note{margin-top:12px;color:#aab7bf}
 
 /* I-08 · codec view transition (one-shot, state change) */
 @keyframes panel-in{from{opacity:0;transform:translateY(6px)}}
@@ -897,3 +889,6 @@ pre{font-size:13px;line-height:1.75}
 .connect-grid>*{min-width:0}
 .connect-card{min-width:0}
 .connect-code{max-width:100%}
+.codec-certificate{margin:18px 0 0}
+.codec-certificate a{font:600 12px/1.5 var(--mono);color:#ffc266;text-decoration:none;border-bottom:1px solid rgba(255,181,71,.55);padding-bottom:2px}
+.codec-certificate a:hover{color:#fff}

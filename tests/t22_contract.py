@@ -37,7 +37,9 @@ with sync_playwright() as pw:
         ok(f"{lang} source copy checkout", "git checkout " + SHA in payload)
 
     p.goto(BASE + "/codec-cortex/", wait_until="networkidle")
-    ok("codec demo is direct", "simulation" in p.locator("#intro").text_content())
+    ok("codec is representation, not e2e", "Agents consume the format" in p.locator("#intro").text_content())
+    ok("codec comparator", p.locator('.code-panel[data-code-panel="source"]').count() == 1 and p.locator('.code-panel[data-code-panel="human"]').count() == 1)
+    ok("codec certificate visible", p.locator('.codec-certificate a[href*="certificate.json"]').count() == 1)
     ok("codec editor source pinned", SHA in p.locator('a[href*="cortex-viewer"]').first.get_attribute("href"))
 
     p.goto(BASE + "/trust/", wait_until="networkidle")

@@ -59,7 +59,7 @@
     </div>
   </header>
   <main id="main-content">
-<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Codec-CORTEX</p><h1>Cómo se representa y conserva la información.</h1><p class="section-copy">CORTEX es el formato de memoria obligatorio de ArqUX v1.0.0: denso para máquinas, legible como HCORTEX para personas y validado con <code>loss==0</code> antes de cada escritura. La demo siguiente es una simulación y no ejecuta el codec.</p><p class="section-copy"><a href="/es/">← Volver al inicio</a></p></div></section>
+<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Codec-CORTEX</p><h1>Cómo se representa y conserva la información.</h1><p class="section-copy">CORTEX es el formato de memoria obligatorio de ArqUX v1.0.0: denso para máquinas, legible como HCORTEX para personas y validado con <code>loss==0</code> antes de cada escritura. Los agentes consumen el formato; la persona lee la proyección y comprueba el certificado.</p><p class="section-copy"><a href="/es/">← Volver al inicio</a></p></div></section>
 <section class="section codec-section" id="cortex">
       <div class="wrap">
         <h2 class="visually-hidden">CORTEX y HCORTEX</h2>
@@ -86,20 +86,8 @@ OBJ:gate{goal:<span class="code-amber">"Escribir documentacion"</span>,status:pl
 | Escribir documentacion | planned |
 <span class="code-muted">&lt;!-- /table:1 --&gt;</span></pre></article>
         </div>
-        <div class="codec-play">
-          <div class="codec-play-head"><p class="eyebrow">Prueba la ida y vuelta</p><span class="demo-tag">Ilustrativo · render simplificado</span></div>
-          <label class="visually-hidden" for="idea-input">Escribe una idea y mira actualizarse las dos representaciones</label>
-          <input class="idea-input" id="idea-input" type="text" maxlength="64" value="Publicar la versión" placeholder="Escribe una idea — p. ej. Publicar la versión" />
-          <div class="codec-grid">
-            <article class="code-panel" data-code-panel="source"><div class="code-head"><span>CORTEX · fuente de máquina</span><span>en vivo</span></div><pre><code id="play-cortex">KNW:idea{content:"Publicar la versión",status:current}</code></pre></article>
-            <article class="code-panel" data-code-panel="human"><div class="code-head"><span>HCORTEX · lectura humana</span><span>en vivo</span></div><pre><span class="code-teal">## §1: NOTAS</span>
-
-<span class="code-muted">&lt;!-- table:1 --&gt;</span>
-| <span id="play-human">Publicar la versión</span> | current |
-<span class="code-muted">&lt;!-- /table:1 --&gt;</span></pre></article>
-          </div>
-          <p class="note">Una idea, dos superficies, una fuente — escribe y las dos representaciones se actualizan. El codec real valida con <code>loss==0</code>; esta demo muestra solo el emparejamiento.</p>
-        </div>
+        
+<p class="codec-certificate"><a href="https://github.com/FidelErnesto03/codec-cortex/blob/f64a8af95d5ae0868d822b645015e347e79b278a/bench/results/certificate.json" target="_blank" rel="noreferrer">Abrir certificado del codec · codec_cortex 1.0.2-rc.1 →</a></p>
         <div class="architecture architecture--3 codec-cards">
           <article class="architecture-card"><p class="eyebrow">Señal, no relleno</p><h3>Una idea por línea</h3><p>Las normas viven en ideas tipadas, no en prosa. La densidad es una propiedad del formato, no una promesa de comprensión.</p></article>
           <article class="architecture-card"><p class="eyebrow">Tokens mínimos</p><h3>Las repeticiones se vuelven alias</h3><p>Un átomo repetido tres veces o más se convierte en un alias de un token. La forma canónica, y su hash, no cambian.</p></article>
