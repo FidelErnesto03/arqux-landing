@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 980" width="1600" height="980" role="group" aria-labelledby="arqx-title arqx-desc">
+<title id="arqx-title">ArqUX: governance of work between agents and projects</title>
+<desc id="arqx-desc">HARNESS connects to ArqUX, the governance center that organizes Identity, Contract, Context, Decision, Execution and Evidence. The project stays outside the circle. A clockwise halo represents governed learning, subject to review, with each dimension lighting up as it passes.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0B1721"/><stop offset="1" stop-color="#08121B"/></linearGradient>
+<pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0 H0 V48" fill="none" stroke="#2C4653" stroke-width=".8" opacity=".24"/></pattern>
+<radialGradient id="ambient"><stop stop-color="#165C63" stop-opacity=".22"/><stop offset="1" stop-color="#165C63" stop-opacity="0"/></radialGradient>
+<linearGradient id="ring" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#2CEAD6"/><stop offset=".47" stop-color="#62EED4"/><stop offset=".68" stop-color="#FFD467"/><stop offset="1" stop-color="#F8A123"/></linearGradient>
+<linearGradient id="surface" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#17303B" stop-opacity=".95"/><stop offset="1" stop-color="#0A1923" stop-opacity=".98"/></linearGradient>
+<linearGradient id="tealBorder" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4CEEDF"/><stop offset="1" stop-color="#23748C"/></linearGradient>
+<linearGradient id="amberBorder" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFE09A"/><stop offset="1" stop-color="#C67B14"/></linearGradient>
+<filter id="glow" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="9"/></filter>
+<filter id="softglow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="17"/></filter>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity=".50"/></filter>
+<marker id="arrow-teal" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 L6 4 L1 7" fill="none" stroke="#56EADD" stroke-width="1.2"/></marker>
+<marker id="arrow-amber" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 L6 4 L1 7" fill="none" stroke="#FFC05B" stroke-width="1.2"/></marker>
+<path id="orbit-text" d="M 492,238 A 355,355 0 0 1 1108,238"/>
+</defs>
+<style><![CDATA[
+:root{color-scheme:dark}text{font-family:Inter,'IBM Plex Sans','Segoe UI',Arial,sans-serif;fill:#F3F7F7}.muted{fill:#B7CAD1}.mono{font-family:'IBM Plex Mono',Consolas,monospace}.tiny{font-size:13px}.title{font-weight:750;font-size:25px}.desc{font-size:16px}.stage-title{font-size:22px;font-weight:760}.stage-desc{font-size:14px;fill:#CFDFE2}.stage-frame{fill:url(#surface);stroke:#427E86;stroke-width:1.5;transition:stroke .35s,filter .35s}.stage-icon{fill:none;stroke:#7EF3EA;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.arqx-stage{transform-box:fill-box;transform-origin:center;outline:none;cursor:pointer;opacity:0;animation:gov-in .55s ease forwards}
+#arqx-stage-identidad{animation-delay:.78s}#arqx-stage-contrato{animation-delay:.9s}#arqx-stage-contexto{animation-delay:1.02s}#arqx-stage-decision{animation-delay:.84s}#arqx-stage-ejecucion{animation-delay:.96s}#arqx-stage-evidencia{animation-delay:1.08s}
+.gov-outcome{opacity:0;animation:gov-in .55s ease 1.25s forwards}
+#external-harness{opacity:0;animation:gov-in .55s ease .45s forwards}#external-project{opacity:0;animation:gov-in .55s ease .55s forwards}#connections{opacity:0;animation:gov-in .45s ease .7s forwards}.arqx-stage:focus .stage-frame,.arqx-stage:hover .stage-frame{stroke:#FFE4A2;filter:url(#glow)}.arqx-stage:focus .stage-title,.arqx-stage:hover .stage-title{fill:#FFE6A8}.arqx-stage:focus-visible{outline:3px solid #FFB547;outline-offset:6px}
+.orbit-dash{transform-origin:800px 420px;animation:orbit 22s linear infinite}.learning-dot{transform-origin:800px 420px;animation:orbit 22s linear infinite}.arqx-stage .pulse{opacity:0;animation:brighten 22s ease-in-out infinite}#arqx-stage-identidad .pulse{animation-delay:0s}#arqx-stage-contrato .pulse{animation-delay:-18.3s}#arqx-stage-contexto .pulse{animation-delay:-14.6s}#arqx-stage-decision .pulse{animation-delay:-11s}#arqx-stage-ejecucion .pulse{animation-delay:-7.3s}#arqx-stage-evidencia .pulse{animation-delay:-3.6s}
+@keyframes gov-in{from{opacity:0}to{opacity:1}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes brighten{0%,12%,100%{opacity:0}5%{opacity:.62}}
+@media(prefers-reduced-motion:reduce){.orbit-dash,.learning-dot,.arqx-stage .pulse,.arqx-stage,.gov-outcome,#external-harness,#external-project,#connections{animation:none!important;opacity:1!important}.stage-frame{transition:none!important}}
+]]></style>
+<rect width="1600" height="980" fill="url(#bg)"/><rect width="1600" height="980" fill="url(#grid)"/>
+<ellipse cx="795" cy="430" rx="620" ry="470" fill="url(#ambient)"/>
+<!-- Learning ring: outer border, clockwise running highlight, event positions. -->
+<circle cx="800" cy="420" r="335" fill="none" stroke="#16464D" stroke-width="22" opacity=".42"/>
+<circle cx="800" cy="420" r="335" fill="none" stroke="url(#ring)" stroke-width="4"/>
+<circle cx="800" cy="420" r="319" fill="none" stroke="#5CE6DB" stroke-width="1" stroke-dasharray="3 7" opacity=".65"/>
+<g class="orbit-dash" id="arqx-learning-orbit" aria-hidden="true"><circle cx="800" cy="420" r="335" fill="none" stroke="#FFE195" stroke-width="15" stroke-linecap="round" stroke-dasharray="42 2063" opacity=".80" filter="url(#glow)"/><circle cx="800" cy="420" r="335" fill="none" stroke="#FFF0C0" stroke-width="4" stroke-linecap="round" stroke-dasharray="42 2063"/></g>
+<g class="learning-dot" aria-hidden="true"><circle cx="800" cy="85" r="12" fill="#FFCF6F" opacity=".8" filter="url(#glow)"/><circle cx="800" cy="85" r="6" fill="#FFF3CE"/></g>
+<text class="mono" font-size="21" font-weight="700" letter-spacing="4" fill="#E6F7F3"><textPath xlink:href="#orbit-text" startOffset="50%" text-anchor="middle">GOVERNED LEARNING</textPath></text>
+
+<g id="connections" fill="none" stroke-width="3" stroke-linecap="round">
+<path d="M294 420 H442" stroke="#57EBDD" marker-end="url(#arrow-teal)"/><path d="M442 440 H294" stroke="#57EBDD" marker-end="url(#arrow-teal)"/>
+<path d="M1158 420 H1306" stroke="#57EBDD" marker-end="url(#arrow-teal)"/><path d="M1306 440 H1158" stroke="#57EBDD" marker-end="url(#arrow-teal)"/>
+</g>
+<g id="arqx-stage-identidad" class="arqx-stage" role="button" tabindex="0" transform="translate(520,214)" data-stage="identidad" aria-label="Identity: Who acts">
+<rect class="pulse" x="-104.0" y="-76.5" width="208" height="153" rx="24" fill="#59FCE2" filter="url(#glow)"/>
+<rect class="stage-frame" x="-95.0" y="-67.5" width="190" height="135" rx="21"/>
+<g class="stage-icon" transform="translate(0,-27) scale(.72)"><rect x="-26" y="-23" width="52" height="46" rx="5"/><path d="M-15 -7 a7 7 0 1 0 14 0 a7 7 0 1 0 -14 0 M-20 11 Q-8 0 4 11 M10 -9 H19 M10 0 H19 M10 9 H19"/></g>
+<text class="stage-title" x="0" y="20" text-anchor="middle">Identity</text>
+<text class="stage-desc" x="0" y="45" text-anchor="middle">Who acts</text>
+</g>
+<g id="arqx-stage-contrato" class="arqx-stage" role="button" tabindex="0" transform="translate(520,384)" data-stage="contrato" aria-label="Contract: What it can do">
+<rect class="pulse" x="-104.0" y="-76.5" width="208" height="153" rx="24" fill="#59FCE2" filter="url(#glow)"/>
+<rect class="stage-frame" x="-95.0" y="-67.5" width="190" height="135" rx="21"/>
+<g class="stage-icon" transform="translate(0,-27) scale(.72)"><path d="M-20 -26 H9 L22 -13 V25 H-20 Z M9 -26 V-13 H22 M-11 -3 H11 M-11 6 H8 M-10 16 H-2"/><circle cx="18" cy="17" r="12" fill="#0C2530"/><path d="M12 17 L16 21 L24 12"/></g>
+<text class="stage-title" x="0" y="20" text-anchor="middle">Contract</text>
+<text class="stage-desc" x="0" y="45" text-anchor="middle">What it can do</text>
+</g>
+<g id="arqx-stage-contexto" class="arqx-stage" role="button" tabindex="0" transform="translate(520,554)" data-stage="contexto" aria-label="Context: What it works with">
+<rect class="pulse" x="-104.0" y="-76.5" width="208" height="153" rx="24" fill="#59FCE2" filter="url(#glow)"/>
+<rect class="stage-frame" x="-95.0" y="-67.5" width="190" height="135" rx="21"/>
+<g class="stage-icon" transform="translate(0,-27) scale(.72)"><path d="M0 -25 L29 -10 L0 5 L-29 -10 Z M-29 1 L0 16 L29 1 M-29 13 L0 28 L29 13"/></g>
+<text class="stage-title" x="0" y="20" text-anchor="middle">Context</text>
+<text class="stage-desc" x="0" y="45" text-anchor="middle">What it works with</text>
+</g>
+
+<g id="arqx-stage-decision" class="arqx-stage" role="button" tabindex="0" transform="translate(1080,214)" data-stage="decision" aria-label="Decision: What is agreed">
+<rect class="pulse" x="-104.0" y="-76.5" width="208" height="153" rx="24" fill="#59FCE2" filter="url(#glow)"/>
+<rect class="stage-frame" x="-95.0" y="-67.5" width="190" height="135" rx="21"/>
+<g class="stage-icon" transform="translate(0,-27) scale(.72)"><circle cx="0" cy="-24" r="5"/><circle cx="-24" cy="21" r="5"/><circle cx="24" cy="21" r="5"/><path d="M0 -19 V-6 L-24 12 M0 -6 L24 12"/></g>
+<text class="stage-title" x="0" y="20" text-anchor="middle">Decision</text>
+<text class="stage-desc" x="0" y="45" text-anchor="middle">What is agreed</text>
+</g>
+<g id="arqx-stage-ejecucion" class="arqx-stage" role="button" tabindex="0" transform="translate(1080,384)" data-stage="ejecucion" aria-label="Execution: How it is done">
+<rect class="pulse" x="-104.0" y="-76.5" width="208" height="153" rx="24" fill="#59FCE2" filter="url(#glow)"/>
+<rect class="stage-frame" x="-95.0" y="-67.5" width="190" height="135" rx="21"/>
+<g class="stage-icon" transform="translate(0,-27) scale(.72)"><circle cx="0" cy="0" r="15"/><path d="M-5 -28 H5 L8 -20 L17 -15 L25 -18 L31 -8 L25 -1 L25 8 L31 16 L24 25 L15 22 L7 27 L5 34 H-5 L-8 26 L-17 21 L-25 24 L-31 15 L-25 8 L-25 -1 L-31 -9 L-25 -18 L-16 -15 L-8 -20 Z" transform="scale(.86)"/></g>
+<text class="stage-title" x="0" y="20" text-anchor="middle">Execution</text>
+<text class="stage-desc" x="0" y="45" text-anchor="middle">How it is done</text>
+</g>
+<g id="arqx-stage-evidencia" class="arqx-stage" role="button" tabindex="0" transform="translate(1080,554)" data-stage="evidencia" aria-label="Evidence: What is checked">
+<rect class="pulse" x="-104.0" y="-76.5" width="208" height="153" rx="24" fill="#59FCE2" filter="url(#glow)"/>
+<rect class="stage-frame" x="-95.0" y="-67.5" width="190" height="135" rx="21"/>
+<g class="stage-icon" transform="translate(0,-27) scale(.72)"><path d="M-19 -26 H9 L22 -13 V26 H-19 Z M9 -26 V-13 H22 M-10 -5 H9 M-10 4 H4"/><circle cx="15" cy="16" r="12" fill="#0D2731"/><path d="M8 16 L13 21 L22 11"/></g>
+<text class="stage-title" x="0" y="20" text-anchor="middle">Evidence</text>
+<text class="stage-desc" x="0" y="45" text-anchor="middle">What is checked</text>
+</g>
+<g id="arqx-core">
+<circle cx="800" cy="420" r="124" fill="#020E17" stroke="#F4AA39" stroke-width="2.5"/>
+<circle cx="800" cy="420" r="124" fill="none" stroke="#F6B03C" stroke-width="14" filter="url(#softglow)" opacity=".30"/>
+<circle cx="800" cy="420" r="116" fill="none" stroke="#387C82" stroke-width="1" opacity=".7"/>
+<g transform="translate(800 375) scale(.105) translate(-768 -500)">
+<path d="M 425,279 C 398,287 381,309 381,339 L 381,670 Q 381,711 416,733 L 728,921 Q 768,946 808,921 L 1121,734 Q 1156,713 1156,671 L 1156,332 Q 1156,308 1138,295 Q 1130,290 1124,306 L 1063,355 L 1063,649 Q 1063,676 1040,690 L 790,839 Q 768,852 746,839 L 495,690 Q 472,676 472,650 L 472,326 Z" fill="#DCE7EC"/><path d="M 541,352 L 738,234 Q 768,216 794,233 L 918,309 Q 923,313 914,319 L 857,357 Q 849,363 841,357 L 783,319 Q 768,309 752,319 L 627,394 Q 612,403 612,420 L 612,567 Q 612,582 627,591 L 751,663 Q 768,673 784,663 L 907,591 Q 922,582 922,566 L 922,458 Q 922,449 931,443 L 990,405 Q 999,399 999,410 L 999,592 Q 999,622 974,637 L 794,749 Q 768,765 742,749 L 559,638 Q 535,622 535,592 L 535,380 Q 535,362 541,352 Z" fill="#AABFC8"/><path d="M 430,252 L 676,100 Q 767,47 858,99 L 1070,228 Q 1101,246 1100,278 Q 1099,302 1074,319 L 875,446 Q 861,454 861,469 L 861,534 Q 861,547 849,555 L 784,594 Q 768,603 752,594 L 687,555 Q 673,547 673,531 L 673,449 Q 673,438 685,430 L 749,390 Q 766,380 781,389 L 811,406 Q 820,412 829,406 L 990,303 Q 1003,293 991,280 L 847,191 Q 768,139 689,190 L 485,317 Q 476,323 472,333 Q 451,315 432,310 Q 399,293 430,252 Z" fill="#FFA72E"/>
+</g>
+<text x="800" y="458" text-anchor="middle" font-size="32" font-weight="800">ArqUX</text>
+<text x="800" y="483" text-anchor="middle" class="mono" font-size="11" fill="#C6D9DE" letter-spacing="1.2">AGENT GOVERNANCE</text>
+</g>
+<g id="external-harness" transform="translate(65 290)" filter="url(#shadow)">
+<rect width="228" height="285" rx="28" fill="url(#surface)" stroke="#3BDCD3" stroke-width="2"/>
+<g transform="translate(114 12)" fill="none" stroke="#70F8EB" stroke-width="3"><rect x="-35" y="-21" width="70" height="57" rx="23" fill="#12313E"/><path d="M0 -33 V-21 M-48 0 H-36 M36 0 H48"/><circle cx="-13" cy="3" r="5" fill="#70F8EB" stroke="none"/><circle cx="13" cy="3" r="5" fill="#70F8EB" stroke="none"/><path d="M-12 19 Q0 26 12 19"/></g>
+<text x="114" y="91" text-anchor="middle" class="title">HARNESS</text><text x="114" y="118" text-anchor="middle" class="muted desc">AI agents</text>
+<g class="mono" font-size="16"><rect x="23" y="140" width="182" height="40" rx="20" fill="#102933" stroke="#316A72"/><text x="114" y="165" text-anchor="middle">Executes</text><rect x="23" y="187" width="182" height="40" rx="20" fill="#102933" stroke="#316A72"/><text x="114" y="212" text-anchor="middle">Orchestrates</text><rect x="23" y="234" width="182" height="40" rx="20" fill="#102933" stroke="#316A72"/><text x="114" y="259" text-anchor="middle">Extends</text></g></g>
+<g id="external-project" transform="translate(1307 290)" filter="url(#shadow)">
+<rect width="228" height="285" rx="28" fill="url(#surface)" stroke="#3BDCD3" stroke-width="2"/>
+<g transform="translate(114 8)" fill="none" stroke="#7EF3EA" stroke-width="3"><path d="M0 -22 L29 -8 V18 L0 34 L-29 18 V-8 Z M0 -22 V6 M-29 -8 L0 6 L29 -8 M0 6 V34"/></g>
+<text x="114" y="91" text-anchor="middle" class="title">PROJECT</text><text x="114" y="118" text-anchor="middle" class="muted desc">Your real environment</text>
+<g class="mono" font-size="16"><rect x="23" y="140" width="182" height="40" rx="20" fill="#102933" stroke="#316A72"/><text x="114" y="165" text-anchor="middle">Code</text><rect x="23" y="187" width="182" height="40" rx="20" fill="#102933" stroke="#316A72"/><text x="114" y="212" text-anchor="middle">Data</text><rect x="23" y="234" width="182" height="40" rx="20" fill="#102933" stroke="#316A72"/><text x="114" y="259" text-anchor="middle">Results</text></g></g>
+
+<g transform="translate(205,829) scale(.7)" fill="none" stroke="#FFBA45" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 -13 A24 24 0 1 1 -17 -18 M-17 -18 V-3 M-17 -18 H-2"/></g><text x="205" y="881" text-anchor="middle" font-size="22" font-weight="750">Continuity</text><text x="205" y="910" text-anchor="middle" font-size="16" class="muted">Without starting over</text>
+<line x1="405" x2="405" y1="808" y2="929" stroke="#385A66"/>
+<g transform="translate(605,829) scale(.7)" fill="none" stroke="#FFBA45" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"><path d="M0 -29 L27 -15 L0 0 L-27 -15 Z M-27 -3 L0 12 L27 -3 M-27 10 L0 25 L27 10"/></g><text x="605" y="881" text-anchor="middle" font-size="22" font-weight="750">Traceability</text><text x="605" y="910" text-anchor="middle" font-size="16" class="muted">Decisions and evidence</text>
+<line x1="805" x2="805" y1="808" y2="929" stroke="#385A66"/>
+<g transform="translate(1005,829) scale(.7)" fill="none" stroke="#FFBA45" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"><path d="M-28 21 V5 H-15 V21 Z M-7 21 V-10 H6 V21 Z M14 21 V-23 H27 V21 Z M-22 -12 L-9 -24 L1 -14 L21 -33 M13 -33 H21 V-25"/></g><text x="1005" y="881" text-anchor="middle" font-size="22" font-weight="750">Evolution</text><text x="1005" y="910" text-anchor="middle" font-size="16" class="muted">Improves with review</text>
+<line x1="1205" x2="1205" y1="808" y2="929" stroke="#385A66"/>
+<g transform="translate(1405,829) scale(.7)" fill="none" stroke="#FFBA45" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"><path d="M0 -32 L27 -21 V-2 C27 17 16 28 0 34 C-16 28 -27 17 -27 -2 V-21 Z M-12 0 L-3 9 L15 -11"/></g><text x="1405" y="881" text-anchor="middle" font-size="22" font-weight="750">Portability</text><text x="1405" y="910" text-anchor="middle" font-size="16" class="muted">Different agents</text>
+
+<script><![CDATA[
+(function(){
+  var target='/reference/#dimensions';
+  document.querySelectorAll('.arqx-stage').forEach(function(g){
+    function go(){ if(!target) return; try{ window.top.location.href=target; }catch(e){ window.location.href=target; } }
+    g.addEventListener('click',go);
+    g.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();go();} });
+  });
+})();
+]]></script>
+</svg>
