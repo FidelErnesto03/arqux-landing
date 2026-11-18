@@ -272,7 +272,7 @@
       const line = window.innerHeight * 0.45;
       let idx = 0;
       sections.forEach((sec, i) => { if (sec.getBoundingClientRect().top <= line) idx = i; });
-      links.forEach((a, i) => a.classList.toggle("is-active", i === idx));
+      links.forEach((a, i) => { a.classList.toggle("is-active", i === idx); if (i === idx) a.setAttribute("aria-current", "location"); else a.removeAttribute("aria-current"); });
       if (count) count.textContent = (idx + 1) + "/" + sections.length;
     }
     window.addEventListener("scroll", () => {
