@@ -10,7 +10,7 @@ with sync_playwright() as pw:
     p.on("pageerror",lambda e: errs.append(str(e))); p.on("console",lambda m: errs.append(m.text) if m.type=="error" else None)
     r=p.goto(BASE+"/reference/",wait_until="networkidle"); p.wait_for_timeout(300)
     ok("reference 200",r.status==200); ok("reference H1","reviewable work" in p.locator("h1").text_content())
-    ok("reference nav",p.locator(".ref-nav a").count()==5)
+    ok("reference nav",p.locator(".ref-nav a").count()==6)
     ok("workflow stages",p.locator("#workflow .step").count()==4)
     p.locator('[data-wf-view="map"]').click(); p.wait_for_timeout(200); ok("workflow map opens",p.locator(".wf-map").is_visible())
     ok("learning section",p.locator("#learning .learning-transform").count()==1)

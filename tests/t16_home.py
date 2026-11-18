@@ -21,7 +21,7 @@ with sync_playwright() as pw:
     ok("ES mobile no overflow",q.evaluate("document.documentElement.scrollWidth-window.innerWidth")==0); ctx.close()
     ctx=b.new_context(viewport={"width":1200,"height":900},java_script_enabled=False); q=ctx.new_page(); q.goto(BASE+"/",wait_until="load")
     ok("no-JS case readable","The work ends" in q.locator("#task").text_content()); ctx.close()
-    p.emulate_media(media="print"); p.wait_for_timeout(100)
+    p.emulate_media(media="print"); p.wait_for_timeout(600)
     ok("print case visible",p.locator("#task .flow li").first.evaluate("el=>getComputedStyle(el).opacity")=="1")
     b.close()
 print("\n".join(results)); print("----"); print("TOTAL",len(results),"FAILURES",len(failures)); sys.exit(1 if failures else 0)

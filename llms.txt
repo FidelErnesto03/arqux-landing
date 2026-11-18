@@ -9,7 +9,6 @@
 - Task execution: `task.run` runs governed [exec:action] steps under a bound session (UNBOUND_SESSION otherwise); never arbitrary shell.
 - Workspaces: deterministic journal CLI (push-delta / pull-policy, ERR_CONFLICT_VERSION on divergence). Hosted multi-user coordination is a Platform direction.
 - Memory format: Codec-CORTEX certified — 141/141 idempotence, round-trip, lossless; 101/101 HCORTEX render parity; 5/5 runtime parity.
-- Editor tooling: arqux-cortex-viewer (VS Code extension v0.4.2) — live HCORTEX preview, loss-guarded bidirectional editing, cortex-ls language server; ships as VSIX from the repository. Offline-first, zero telemetry.
 - Agent bootstrap: `arqux wake --identity <role>` returns a governed payload under 1,500 tokens.
 
 PyPI publishes 0.9.0; the repository declares 1.0.0.
