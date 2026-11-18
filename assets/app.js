@@ -659,4 +659,16 @@
     selectArch("project");
   }
 
+
+  /* ---------- section submenus: one open, hover on fine pointers, Escape/outside close ---------- */
+  const navGroups = $$(".nav-group");
+  if (navGroups.length) {
+    const closeGroups = (keep) => navGroups.forEach((g) => { if (g !== keep) g.open = false; });
+    navGroups.forEach((g) => {
+      g.addEventListener("toggle", () => { if (g.open) closeGroups(g); });
+    });
+    document.addEventListener("click", (e) => { if (!e.target.closest(".nav-group")) navGroups.forEach((g) => { g.open = false; }); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") navGroups.forEach((g) => { g.open = false; }); });
+  }
+
 })();
