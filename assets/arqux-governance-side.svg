@@ -18,20 +18,36 @@
 .rail-title{font-size:22px;font-weight:780;fill:#EAF6F4}.rail-icon{pointer-events:none}.triad-flow{animation:triad-flow 9s linear infinite}@keyframes triad-flow{0%{transform:translateX(0);opacity:0}8%,88%{opacity:1}100%{transform:translateX(760px);opacity:0}}.rail-sub{font-size:13px;fill:#B7CAD1}.rail-arrow{font-size:22px;fill:#FFC05B;font-weight:700}
 
 #lift-layer{pointer-events:none}.lift-card{opacity:0;visibility:hidden;pointer-events:none}.lift-inner{transform-box:fill-box;transform-origin:center;transform:scale(.84) translateY(10px);opacity:0;transition:opacity .16s ease,transform .22s cubic-bezier(.2,.7,.2,1),visibility .16s}.lift-card.is-on{opacity:1;visibility:visible}.lift-card.is-on .lift-inner{opacity:1;transform:scale(1) translateY(-6px)}.lift-frame{fill:#0E2630;stroke:#FFC05B;stroke-width:2;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}.lift-title{font-size:18px;font-weight:780;fill:#FFE4A2}.lift-desc{font-size:13.5px;fill:#D7E5E7}.lift-card .stage-icon{fill:none;stroke:#7EF3EA;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+
+.map-kicker{font-size:12px;font-weight:760;letter-spacing:.16em;fill:#FFC05B}.map-sub{font-size:14px;fill:#B7CAD1}.triad-node{cursor:pointer;outline:none}.triad-hit{fill:transparent;pointer-events:all}.triad-node:hover .rail-title,.triad-node:focus .rail-title{fill:#FFE4A2}.triad-node:hover .rail-icon,.triad-node:focus .rail-icon{filter:url(#glow)}.triad-node:focus-visible .triad-hit{stroke:#FFB547;stroke-width:2}.triad-detail{opacity:0;visibility:hidden;pointer-events:none}#triad-lift-layer{pointer-events:none}.triad-inner{transform-box:fill-box;transform-origin:center;transform:scale(.88) translateY(10px);opacity:0;transition:opacity .16s ease,transform .22s cubic-bezier(.2,.7,.2,1),visibility .16s}.triad-detail.is-on{opacity:1;visibility:visible}.triad-detail.is-on .triad-inner{opacity:1;transform:scale(1) translateY(-6px)}.triad-frame{fill:#0E2630;stroke:#FFC05B;stroke-width:2;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}.triad-title{font-size:17px;font-weight:780;fill:#FFE4A2}.triad-desc{font-size:13px;fill:#D7E5E7}.triad-detail .rail-icon{fill:none;stroke:#7EF3EA;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 @keyframes gov-in{from{opacity:0}to{opacity:1}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes stage-glow{0%,1%,6%,100%{opacity:0}2%,4.5%{opacity:.60}}
-@media(prefers-reduced-motion:reduce){.orbit-dash,.arqx-stage .pulse,.arqx-stage{animation:none!important;opacity:1!important}.arqx-stage .pulse{opacity:0!important}.stage-frame{transition:none!important}.lift-inner{transition:none!important}.triad-flow{animation:none!important;opacity:0!important}]]></style>
+@media(prefers-reduced-motion:reduce){.orbit-dash,.arqx-stage .pulse,.arqx-stage{animation:none!important;opacity:1!important}.arqx-stage .pulse{opacity:0!important}.stage-frame{transition:none!important}.lift-inner{transition:none!important}.triad-inner{transition:none!important}.triad-flow{animation:none!important;opacity:0!important}]]></style>
 <rect width="1000" height="618" fill="url(#bg)"/><rect width="1000" height="618" fill="url(#grid)"/>
 <ellipse cx="500" cy="290" rx="430" ry="300" fill="url(#ambient)"/>
+<g id="map-title"><text class="map-kicker" x="40" y="42">GOBIERNO Y APRENDIZAJE</text><text class="map-sub" x="40" y="64">Un contexto que evoluciona</text></g>
 <g id="ecosystem-rail" aria-label="HARNESS to ArqUX to PROYECTO">
 <line x1="40" y1="520" x2="960" y2="520" stroke="#6B4A1E" stroke-width="1.5" opacity=".8"/>
+<g class="triad-node" data-triad="harness" data-target="/es/referencia/#workflow" role="link" tabindex="0" aria-label="Harness: continuidad. Abrir el flujo de trabajo." aria-describedby="triad-desc-harness">
+<desc id="triad-desc-harness">Agentes de IA que ejecutan, orquestan y extienden el trabajo. El contexto sobrevive: no empiezas de cero.</desc>
+<rect class="triad-hit" x="20" y="468" width="300" height="132" rx="18" fill="transparent"/>
 <g class="rail-icon" aria-hidden="true" transform="translate(64 488) scale(.5)" fill="none" stroke="#70F8EB" stroke-width="3"><rect x="-35" y="-21" width="70" height="57" rx="23" fill="#12313E"/><path d="M0 -33 V-21 M-48 0 H-36 M36 0 H48"/><circle cx="-13" cy="3" r="5" fill="#70F8EB" stroke="none"/><circle cx="13" cy="3" r="5" fill="#70F8EB" stroke="none"/><path d="M-12 19 Q0 26 12 19"/></g>
+<text class="rail-title" x="40" y="552">HARNESS</text><text class="rail-sub" x="40" y="574">Agentes de IA · continuidad</text>
+</g>
+<text class="rail-arrow" x="330" y="555">→</text>
+<g class="triad-node" data-triad="arqx" data-target="/es/referencia/#dimensions" role="link" tabindex="0" aria-label="ArqUX: gobierno y trazabilidad. Abrir las dimensiones." aria-describedby="triad-desc-arqx">
+<desc id="triad-desc-arqx">Seis dimensiones de gobierno: identidad, contrato, contexto, decisión, ejecución y evidencia. El aprendizaje se revisa.</desc>
+<rect class="triad-hit" x="340" y="468" width="300" height="132" rx="18" fill="transparent"/>
+<path d="M500 476 L511 482.5 V495.5 L500 502 L489 495.5 V482.5 Z" fill="none" stroke="#FFC05B" stroke-width="2" aria-hidden="true"/>
+<text class="rail-title" x="500" y="552" text-anchor="middle">ArqUX</text><text class="rail-sub" x="500" y="574" text-anchor="middle">Gobierno · trazabilidad</text>
+</g>
+<text class="rail-arrow" x="670" y="555">→</text>
+<g class="triad-node" data-triad="project" data-target="/es/referencia/#artifacts" role="link" tabindex="0" aria-label="Proyecto: portabilidad. Abrir los artefactos." aria-describedby="triad-desc-project">
+<desc id="triad-desc-project">Tu entorno real: código, datos y resultados. El contexto puede viajar entre apps compatibles.</desc>
+<rect class="triad-hit" x="680" y="468" width="300" height="132" rx="18" fill="transparent"/>
 <g class="rail-icon" aria-hidden="true" transform="translate(936 488) scale(.5)" fill="none" stroke="#7EF3EA" stroke-width="3"><path d="M0 -22 L29 -8 V18 L0 34 L-29 18 V-8 Z M0 -22 V6 M-29 -8 L0 6 L29 -8 M0 6 V34"/></g>
+<text class="rail-title" x="960" y="552" text-anchor="end">PROYECTO</text><text class="rail-sub" x="960" y="574" text-anchor="end">Entorno · portabilidad</text>
+</g>
 <g class="triad-flow" aria-hidden="true"><circle cx="120" cy="520" r="4.5" fill="#FFC05B" filter="url(#glow)"/></g>
-<text class="rail-title" x="40" y="552">HARNESS</text><text class="rail-sub" x="40" y="574">Agentes de IA</text>
-<text class="rail-arrow" x="196" y="555">→</text>
-<text class="rail-title" x="500" y="552" text-anchor="middle">ArqUX</text><text class="rail-sub" x="500" y="574" text-anchor="middle">trabajo gobernado</text>
-<text class="rail-arrow" x="790" y="555">→</text>
-<text class="rail-title" x="960" y="552" text-anchor="end">PROYECTO</text><text class="rail-sub" x="960" y="574" text-anchor="end">código · datos · resultados</text>
 </g>
 <circle cx="500" cy="290" r="160" fill="none" stroke="#5B3F16" stroke-width="16" opacity=".58"/>
 <circle cx="500" cy="290" r="160" fill="none" stroke="#B8791C" stroke-width="3.5"/>
@@ -137,20 +153,52 @@
 </g>
 </g>
 </g>
+<g id="triad-lift-layer" aria-hidden="true" pointer-events="none">
+<g class="triad-detail" data-triad="harness" transform="translate(200,360)" aria-hidden="true">
+<g class="triad-inner">
+<rect class="triad-frame" x="-190" y="-75" width="380" height="150" rx="24"/>
+<g class="rail-icon" transform="translate(-155 -35) scale(.5)" fill="none" stroke="#70F8EB" stroke-width="3"><rect x="-35" y="-21" width="70" height="57" rx="23" fill="#12313E"/><path d="M0 -33 V-21 M-48 0 H-36 M36 0 H48"/><circle cx="-13" cy="3" r="5" fill="#70F8EB" stroke="none"/><circle cx="13" cy="3" r="5" fill="#70F8EB" stroke="none"/><path d="M-12 19 Q0 26 12 19"/></g>
+<text class="triad-title" x="-108" y="-42">HARNESS · Continuidad</text>
+<text class="triad-desc" x="-108" y="-16"><tspan x="-108" dy="0">Agentes de IA que ejecutan, orquestan</tspan><tspan x="-108" dy="18">y extienden el trabajo. El contexto</tspan><tspan x="-108" dy="18">sobrevive: no empiezas de cero.</tspan></text>
+</g>
+</g>
+<g class="triad-detail" data-triad="arqx" transform="translate(500,350)" aria-hidden="true">
+<g class="triad-inner">
+<rect class="triad-frame" x="-190" y="-75" width="380" height="150" rx="24"/>
+<path d="M-150 -50 L-139 -44 V-32 L-150 -26 L-161 -32 V-44 Z" fill="none" stroke="#FFC05B" stroke-width="2"/>
+<text class="triad-title" x="-108" y="-42">ArqUX · Trazabilidad y evolución</text>
+<text class="triad-desc" x="-108" y="-16"><tspan x="-108" dy="0">Seis dimensiones de gobierno: identidad,</tspan><tspan x="-108" dy="18">contrato, contexto, decisión, ejecución</tspan><tspan x="-108" dy="18">y evidencia. El aprendizaje se revisa.</tspan></text>
+</g>
+</g>
+<g class="triad-detail" data-triad="project" transform="translate(800,360)" aria-hidden="true">
+<g class="triad-inner">
+<rect class="triad-frame" x="-190" y="-75" width="380" height="150" rx="24"/>
+<g class="rail-icon" transform="translate(-155 -35) scale(.5)" fill="none" stroke="#7EF3EA" stroke-width="3"><path d="M0 -22 L29 -8 V18 L0 34 L-29 18 V-8 Z M0 -22 V6 M-29 -8 L0 6 L29 -8 M0 6 V34"/></g>
+<text class="triad-title" x="-108" y="-42">PROYECTO · Portabilidad</text>
+<text class="triad-desc" x="-108" y="-16"><tspan x="-108" dy="0">Tu entorno real: código, datos y</tspan><tspan x="-108" dy="18">resultados. El contexto puede viajar</tspan><tspan x="-108" dy="18">entre apps compatibles.</tspan></text>
+</g>
+</g>
+</g>
 <script><![CDATA[
 (function(){
-  var target='/es/referencia/#dimensions';
-  var cards=Array.prototype.slice.call(document.querySelectorAll('.lift-card'));
-  function hide(){ cards.forEach(function(c){c.classList.remove('is-on');}); }
-  function show(g){ hide(); var k=g.getAttribute('data-stage'); var c=document.querySelector('.lift-card[data-stage="'+k+'"]'); if(c)c.classList.add('is-on'); }
-  function go(){ if(!target) return; try{ window.top.location.href=target; }catch(e){ window.location.href=target; } }
+  var base='/es/referencia/#dimensions';
+  var dimCards=Array.prototype.slice.call(document.querySelectorAll('.lift-card'));
+  var triadCards=Array.prototype.slice.call(document.querySelectorAll('.triad-detail'));
+  function hideAll(){dimCards.forEach(function(c){c.classList.remove('is-on');});triadCards.forEach(function(c){c.classList.remove('is-on');});}
+  function showDim(g){hideAll();var k=g.getAttribute('data-stage');var c=document.querySelector('.lift-card[data-stage="'+k+'"]');if(c)c.classList.add('is-on');}
+  function showTriad(g){hideAll();var k=g.getAttribute('data-triad');var c=document.querySelector('.triad-detail[data-triad="'+k+'"]');if(c)c.classList.add('is-on');}
+  function go(t){if(!t)return;try{window.top.location.href=t;}catch(e){window.location.href=t;}}
   document.querySelectorAll('.arqx-stage').forEach(function(g){
-    g.addEventListener('mouseenter',function(){show(g);});
-    g.addEventListener('mouseleave',hide);
-    g.addEventListener('focus',function(){show(g);});
-    g.addEventListener('blur',hide);
-    g.addEventListener('click',go);
-    g.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();go();} });
+    g.addEventListener('mouseenter',function(){showDim(g);});g.addEventListener('mouseleave',hideAll);
+    g.addEventListener('focus',function(){showDim(g);});g.addEventListener('blur',hideAll);
+    g.addEventListener('click',function(){go(base);});
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go(base);}});
+  });
+  document.querySelectorAll('.triad-node').forEach(function(g){
+    g.addEventListener('mouseenter',function(){showTriad(g);});g.addEventListener('mouseleave',hideAll);
+    g.addEventListener('focus',function(){showTriad(g);});g.addEventListener('blur',hideAll);
+    g.addEventListener('click',function(){go(g.getAttribute('data-target'));});
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go(g.getAttribute('data-target'));}});
   });
 })();
 ]]></script>
