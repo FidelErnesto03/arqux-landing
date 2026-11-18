@@ -89,6 +89,25 @@ with sync_playwright() as pw:
     ok("first task result", "first-task.txt" in p.locator("#first-task").text_content())
     ok("first task conditions", "timelog" in p.locator("#first-task").text_content())
 
+
+    p.goto(BASE + "/", wait_until="networkidle")
+    ok("install CTA", p.locator('header .nav-actions a[href="/start/#channels"]').inner_text().strip() == "Install")
+    ok("palette placeholder honest", p.locator("#palette-input").get_attribute("placeholder") == "Jump to a section or switch language")
+    ok("palette button honest", p.locator(".palette-btn").get_attribute("aria-label") == "Jump to ⌘K — sections and language")
+    ok("H4 view names", "Six project pieces" in p.locator("#architecture").text_content() and "Six task dimensions" in p.locator("#architecture").text_content())
+    p.emulate_media(media="print"); p.wait_for_timeout(100)
+    ok("print reveals case", p.locator("#task .flow li").first.evaluate("el=>getComputedStyle(el).opacity") == "1")
+    p.emulate_media(media="screen")
+
+    p.goto(BASE + "/start/", wait_until="networkidle")
+    ok("install profiles", "Recommended for a first look" in p.locator("#channels").text_content() and "For developing" in p.locator("#channels").text_content())
+    ok("step grid has no hole", len(p.locator("#first .trust-grid").evaluate("el=>getComputedStyle(el).gridTemplateColumns").split()) == 1)
+    ok("connect section", "claude_desktop_config.json" in p.locator("#connect").text_content() and "opencode --instructions" in p.locator("#connect").text_content())
+    ok("connect nav link", p.locator('a[href="/start/#connect"]').count() >= 1)
+
+    p.goto(BASE + "/community/", wait_until="networkidle")
+    ok("community signals", p.locator(".community-signals a").count() >= 3 and "CHANGELOG" in p.locator(".community-signals").inner_html())
+
     ctx.close(); b.close()
 
 ok("no page errors", len(errs) == 0)
