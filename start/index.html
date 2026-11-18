@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0A1420">
+<meta name="description" content="Install the published package or the repository, then run the first governed workspace.">
+<title>Start — ArqUX</title>
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/brand/favicon-180.png">
+<link rel="canonical" href="https://arqux.ai/start/">
+<link rel="alternate" hreflang="en" href="https://arqux.ai/start/">
+<link rel="alternate" hreflang="es" href="https://arqux.ai/es/empezar/">
+<link rel="alternate" hreflang="x-default" href="https://arqux.ai/">
+<meta property="og:title" content="Start — ArqUX">
+<meta property="og:description" content="Install the published package or the repository, then run the first governed workspace.">
+<meta property="og:url" content="https://arqux.ai/start/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://arqux.ai/assets/brand/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://arqux.ai/assets/brand/og-image.png">
+<link rel="preload" href="/assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-sans-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-mono-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-mono-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<script>document.documentElement.classList.remove("no-js"); if (location.hash.length > 1) document.documentElement.classList.add("resolve-cv");</script>
+<script src="/assets/app.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://arqux.ai/#org","name":"ArqUX","url":"https://arqux.ai/","logo":"https://arqux.ai/assets/brand/og-image.png"},
+{"@type":"WebSite","@id":"https://arqux.ai/#website","url":"https://arqux.ai/","name":"ArqUX","publisher":{"@id":"https://arqux.ai/#org"},"inLanguage":["en","es"]},
+{"@type":"SoftwareApplication","name":"ArqUX Framework","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"1.0.0","license":"https://www.apache.org/licenses/LICENSE-2.0","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://arqux.ai/","codeRepository":"https://github.com/FidelErnesto03/arqux","description":"Open-source framework for governed human-AI work: agent identities, project context, scoped work and reviewable evidence, local-first.","inLanguage":"en","publisher":{"@id":"https://arqux.ai/#org"}}
+]}
+</script>
+</head>
+<body class="page-depth">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+<header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="ArqUX home"><img src="/assets/brand/symbol.svg" alt=""><span>ArqUX</span></a>
+      <nav class="nav-links" id="primary-navigation" aria-label="Main navigation"><a href="/how-it-works/">How it works</a><a href="/explore/">Explore</a><a href="/trust/">Trust</a><a href="/start/" aria-current="page">Start</a></nav>
+      <div class="nav-actions">
+        <button type="button" class="palette-btn" data-palette-open hidden aria-label="Search — open command palette" title="Search · ⌘K">
+          <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span class="palette-btn-label">Search</span><kbd>⌘K</kbd>
+        </button>
+        <a class="nav-language lang-link" href="/es/empezar/" aria-label="Ver en español">ES</a>
+        <a class="button button-dark" href="https://github.com/FidelErnesto03/arqux/releases" target="_blank" rel="noreferrer">Release status</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation" data-label-open="Open navigation" data-label-close="Close navigation">
+          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 4.5h14M2 9h14M2 13.5h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Start</p><h1>How do I try it without guessing?</h1><p class="section-copy">Two channels: the published package (0.9.0) and the repository (1.0.0). Pick one and follow its exact commands.</p><p class="section-copy"><a href="/">← Back to home</a></p></div></section>
+    <section class="section section-soft" id="channels"><div class="wrap"><div class="section-head"><p class="eyebrow">Versions</p><h2>Two channels, exact commands.</h2><p class="section-copy">The published package and the repository are not the same release. Pick one and check the version before running.</p></div><div class="trust-grid">
+      <article class="trust-card"><span class="trust-mark">A</span><h3>Published package</h3><p><b>PyPI · 0.9.0</b></p><p><code>pip install arqux==0.9.0</code><br><code>arqux --version</code></p><p class="copy-note">What `pip install arqux` currently resolves to. Check the package page before running.</p></article>
+      <article class="trust-card"><span class="trust-mark">B</span><h3>Source repository</h3><p><b>GitHub · 1.0.0</b></p><p><code>git clone https://github.com/FidelErnesto03/arqux</code><br><code>python -m pip install -e .</code></p><p class="copy-note">Python ≥3.10, per pyproject.toml.</p></article>
+    </div></div></section>
+    <section class="section section-light" id="first"><div class="wrap"><div class="section-head"><p class="eyebrow">First run</p><h2>First governed workspace</h2><p class="section-copy">Repository 1.0.0 path. Commands are documented in the repository; the 0.9.0 package may differ.</p></div><div class="trust-grid"><article class="trust-card"><span class="trust-mark">01</span><h3>Create a folder</h3><p><code>mkdir demo && cd demo</code></p></article><article class="trust-card"><span class="trust-mark">02</span><h3>Initialize the workspace</h3><p><code>arqux init</code></p></article><article class="trust-card"><span class="trust-mark">03</span><h3>Guided onboarding</h3><p><code>arqux quickstart</code></p></article><article class="trust-card"><span class="trust-mark">04</span><h3>Render harness projections</h3><p><code>arqux sync-harnesses</code></p></article><article class="trust-card"><span class="trust-mark">05</span><h3>Check for drift</h3><p><code>arqux drift-check</code></p></article></div><p class="note">No server and no API key. Installing does not configure every client or create learning automatically; behaviour belongs to each app.</p></div></section>
+  </main>
+<footer>
+  <div class="footer-accent" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="footer-main">
+      <div>
+        <div class="fbrand"><img src="/assets/brand/symbol-dark.svg" alt=""><b>ArqUX</b></div>
+        <p class="f-tagline">The architecture behind human–AI work. Open-source framework for governed agent work — v1.0.0.</p>
+        <p class="f-origin">A coined name: “Arq” for architecture — the structure that shapes how work gets done; “UX” for the shared experience of people and AI agents.</p>
+      </div>
+      <nav class="fcol" aria-label="Product"><h4>Product</h4><a href="https://github.com/FidelErnesto03/arqux">Framework</a><a href="https://github.com/FidelErnesto03/codec-cortex">Codec‑CORTEX</a><a href="/community/#platform">Platform · in development</a></nav>
+      <nav class="fcol" aria-label="Trust"><h4>Trust</h4><a href="https://github.com/FidelErnesto03/arqux/blob/master/SECURITY.md">Security</a><a href="https://github.com/FidelErnesto03/arqux/blob/master/THREAT_MODEL.md">Threat model</a><a href="https://github.com/FidelErnesto03/arqux/issues">Responsible report</a></nav>
+      <nav class="fcol" aria-label="Project"><h4>Project</h4><a href="https://github.com/FidelErnesto03/arqux">GitHub</a><a href="https://pypi.org/project/arqux/">PyPI</a><a href="https://github.com/FidelErnesto03/arqux/releases">Releases</a><a href="/brand/">Brand</a></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 ArqUX · Framework 1.0.0 (source) · PyPI 0.9.0</span><span><a class="lang-link" href="/es/empezar/">Español</a></span></div>
+  </div>
+</footer>
+<div class="palette" id="palette" hidden data-tag-go="Go" data-tag-action="Action" data-tag-lang="Language" data-label-copy="Copy install command" data-label-lang="Switch to Spanish" data-empty="No matching commands">
+  <div class="palette-backdrop" data-palette-close></div>
+  <div class="palette-panel" role="dialog" aria-modal="true" aria-labelledby="palette-title">
+    <h2 class="visually-hidden" id="palette-title">Command palette</h2>
+    <label class="visually-hidden" for="palette-input">Type a command</label>
+    <input class="palette-input" id="palette-input" type="text" autocomplete="off" spellcheck="false" aria-controls="palette-list" aria-activedescendant="" placeholder="Jump to a section, copy the command, move the demo…" />
+    <ul class="palette-list" id="palette-list" role="listbox" aria-label="Commands"></ul>
+    <p class="palette-hint" aria-hidden="true">↑↓ move · Enter run · Esc close</p>
+  </div>
+</div>
+</body>
+</html>
