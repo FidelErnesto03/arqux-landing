@@ -118,6 +118,7 @@ with sync_playwright() as pw:
     ok("tokens candidate retired", r.status == 404)
     p.goto(BASE + "/404.html", wait_until="networkidle")
     ok("404 install CTA", p.locator('a.button-primary[href="/start/#channels"]').inner_text() == "Install")
+    ok("404 internal links stay in tab", p.locator('a[href^="/"][target="_blank"]').count() == 0)
 
     ctx.close(); b.close()
 
