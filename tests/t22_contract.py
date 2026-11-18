@@ -51,6 +51,15 @@ with sync_playwright() as pw:
     p.goto(BASE + "/explore/", wait_until="networkidle")
     ok("explore key terms", "Governance context" in p.locator(".artifact-vocab").text_content())
 
+    p.goto(BASE + "/", wait_until="networkidle")
+    ok("EN architecture project is container", "The project contains six pieces" in p.locator("#architecture").text_content())
+    ok("EN architecture count note", "six pieces are inside" in p.locator(".arch-count-note").text_content())
+    p.goto(BASE + "/how-it-works/", wait_until="networkidle")
+    ok("EN learning transformation visible", "Criterion available" in p.locator("#learning").text_content())
+    p.goto(BASE + "/start/", wait_until="networkidle")
+    ok("EN first task result", "first-task.txt" in p.locator("#first-task").text_content())
+    ok("EN first task conditions", "timelog" in p.locator("#first-task").text_content())
+
     p.goto(BASE + "/es/", wait_until="networkidle")
     ok("architecture project is container", "El proyecto contiene seis piezas" in p.locator("#architecture").text_content())
     ok("architecture count note", "seis piezas están dentro" in p.locator(".arch-count-note").text_content())
