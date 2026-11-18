@@ -122,6 +122,25 @@ with sync_playwright() as pw:
     ok("404 install CTA", p.locator('a.button-primary[href="/start/#channels"]').inner_text() == "Install")
     ok("404 internal links stay in tab", p.locator('a[href^="/"][target="_blank"]').count() == 0)
 
+
+    p.goto(BASE + "/", wait_until="networkidle")
+    p.keyboard.press("Control+k"); p.wait_for_timeout(150); p.locator("#palette-input").focus()
+    ok("palette focus ring", p.locator("#palette-input").evaluate("el=>getComputedStyle(el).outlineStyle+' '+getComputedStyle(el).outlineWidth") == "solid 2px")
+    p.keyboard.press("Escape")
+    p.locator(".source-chips button").first.focus(); p.wait_for_timeout(80)
+    ok("source chip focus ring", p.locator(".source-chips button").first.evaluate("el=>getComputedStyle(el).outlineStyle+' '+getComputedStyle(el).outlineWidth") == "solid 2px")
+
+    p.goto(BASE + "/how-it-works/", wait_until="networkidle")
+    dims = p.locator(".hex-node")
+    dims.first.focus(); p.keyboard.press("ArrowRight"); p.wait_for_timeout(150)
+    ok("hex arrow navigation", p.evaluate("document.activeElement.dataset.dimension") == "1")
+
+    p.goto(BASE + "/start/", wait_until="networkidle")
+    ok("timelog warning explained", "timelog coverage" in p.locator("#first-task").text_content())
+
+    p.goto(BASE + "/404.html", wait_until="networkidle")
+    ok("404 useful exits", p.locator('a[href="/how-it-works/"]').count() == 1 and p.locator('a[href="/explore/"]').count() == 1)
+
     ctx.close(); b.close()
 
 ok("no page errors", len(errs) == 0)

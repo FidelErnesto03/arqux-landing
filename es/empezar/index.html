@@ -87,6 +87,7 @@ arqux call task.run task_id=T-001
 arqux call task.complete task_id=T-001 evidence="first-task.txt sha256=$(sha256sum first-task.txt | cut -d' ' -f1)"
 cat first-task.txt</code></pre></details>
         <p class="note">Esto prueba la ruta CLI gobernada en un workspace limpio. No prueba el razonamiento de un modelo ni garantiza que cada cliente reproduzca el mismo lifecycle del timelog.</p>
+        <p class="note">El artefacto y la evidencia están completos. El aviso se refiere a la cobertura del timelog, no al estado de la tarea: revisa <code>.arqux/timelog/SES001_*.cortex</code> para inspeccionar el registro. Esta entrega no declara un comando de cierre.</p>
         <p class="note">La verificación está fijada a <code>3903339</code>. El HEAD del repositorio puede ser más nuevo; repite la secuencia al actualizar el pin.</p>
       </div>
     </section>

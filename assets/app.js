@@ -525,12 +525,21 @@
       if (a && d.src) { a.href = d.src; a.textContent = (d.srcLabel || d.src) + " ↗"; }
     }
   }
-  $$("[data-dimension]").forEach((el) => {
+  const dimNodes = $$("[data-dimension]");
+  dimNodes.forEach((el, idx) => {
     el.addEventListener("click", () => selectDimension(Number(el.dataset.dimension)));
     el.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         selectDimension(Number(el.dataset.dimension));
+        return;
+      }
+      if (["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp"].includes(e.key)) {
+        e.preventDefault();
+        const dir = (e.key === "ArrowRight" || e.key === "ArrowDown") ? 1 : -1;
+        const next = dimNodes[(idx + dir + dimNodes.length) % dimNodes.length];
+        next.focus();
+        selectDimension(Number(next.dataset.dimension));
       }
     });
   });
