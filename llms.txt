@@ -1,0 +1,30 @@
+# ArqUX
+
+> Open-source framework (v1.0.0) for governed human-AI work — agent identities, project context, scoped work and reviewable evidence in a local-first workspace. One governed source projects native instruction files to every agent harness (AGENTS.md, CLAUDE.md, GEMINI.md, .opencode). ArqUX Platform, the hosted multi-user product, is in development.
+
+## Key facts
+
+- Framework v1.0.0: 115 governance handlers (documented), release suite report in CHANGELOG, codec_cortex 1.0 mandatory (loss==0 fail-closed), seal.cortex SHA-256 manifest, evidence export with privacy gate.
+- Multi-harness projection: `arqux sync-harnesses` renders AGENTS.md / CLAUDE.md / GEMINI.md / .opencode from .arqux/; `arqux drift-check` reports manual edits.
+- Task execution: `task.run` runs governed [exec:action] steps under a bound session (UNBOUND_SESSION otherwise); never arbitrary shell.
+- Workspaces: deterministic journal CLI (push-delta / pull-policy, ERR_CONFLICT_VERSION on divergence). Hosted multi-user coordination is a Platform direction.
+- Memory format: Codec-CORTEX certified — 141/141 idempotence, round-trip, lossless; 101/101 HCORTEX render parity; 5/5 runtime parity.
+- Editor tooling: arqux-cortex-viewer (VS Code extension v0.4.2) — live HCORTEX preview, loss-guarded bidirectional editing, cortex-ls language server; ships as VSIX from the repository. Offline-first, zero telemetry.
+- Agent bootstrap: `arqux wake --identity <role>` returns a governed payload under 1,500 tokens.
+
+PyPI publishes 0.9.0; the repository declares 1.0.0.
+
+## Links
+
+- [Portal (EN)](https://arqux.ai/)
+- [Portal (ES)](https://arqux.ai/es/)
+- [ArqUX repository](https://github.com/FidelErnesto03/arqux)
+- [Getting started](https://github.com/FidelErnesto03/arqux/tree/master/docs)
+- [Codec-CORTEX repository](https://github.com/FidelErnesto03/codec-cortex)
+- [Codec certificate](https://github.com/FidelErnesto03/codec-cortex/blob/f64a8af95d5ae0868d822b645015e347e79b278a/bench/results/certificate.json)
+- [VS Code extension source](https://github.com/FidelErnesto03/arqux/tree/master/extensions/cortex-viewer)
+- [PyPI](https://pypi.org/project/arqux/)
+- [Versions](https://arqux.ai/start/#channels)
+- [Security policy](https://github.com/FidelErnesto03/arqux/blob/master/SECURITY.md)
+- [Threat model](https://github.com/FidelErnesto03/arqux/blob/master/THREAT_MODEL.md)
+- [Sitemap](https://arqux.ai/sitemap.xml)

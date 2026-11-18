@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arqux.ai/sitemap.xml

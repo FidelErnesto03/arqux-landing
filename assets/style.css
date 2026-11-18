@@ -643,3 +643,13 @@ pre{font-size:13px;line-height:1.75}
 
 /* 12px floor additions */
 .rail-label,.rail-count,.tally-cap{font-size:12px}
+
+/* preliminar-B P0 fixes: card reflow + no-JS mobile navigation */
+.trust-grid>*{min-width:0}
+.trust-card code{overflow-wrap:anywhere;word-break:break-word}
+@media(max-width:760px){
+  .no-js .topbar .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px}
+  .no-js .nav-links{display:grid;position:static;width:100%;margin-top:8px;padding:0;border:0;background:transparent;box-shadow:none}
+  .no-js .menu-toggle{display:none}
+}
+.copy-row{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:9px}

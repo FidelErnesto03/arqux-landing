@@ -23,13 +23,18 @@
       menu.setAttribute("aria-label", open ? menu.dataset.labelClose : menu.dataset.labelOpen);
       nav.classList.toggle("open", open);
     });
-    nav.querySelectorAll("a").forEach((a) =>
-      a.addEventListener("click", () => {
-        nav.classList.remove("open");
-        menu.setAttribute("aria-expanded", "false");
-        menu.setAttribute("aria-label", menu.dataset.labelOpen);
-      })
-    );
+    const closeMenu = () => {
+      nav.classList.remove("open");
+      menu.setAttribute("aria-expanded", "false");
+      menu.setAttribute("aria-label", menu.dataset.labelOpen);
+    };
+    nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && nav.classList.contains("open")) { closeMenu(); menu.focus(); }
+    });
+    document.addEventListener("click", (e) => {
+      if (nav.classList.contains("open") && !nav.contains(e.target) && !menu.contains(e.target)) closeMenu();
+    });
   }
 
   /* ---------- hero: channel board (apps outside · MCP requests · one governance) ---------- */
@@ -293,24 +298,12 @@
     let pActive = 0;
     let pLastFocus = null;
 
-    const copyInstall = async () => {
-      const btn = $(".hero-install .copy-btn");
-      const status = $(".hero-install .copy-status");
-      try {
-        await navigator.clipboard.writeText("pip install arqux");
-        if (status && btn) status.textContent = btn.dataset.done;
-      } catch (e) {
-        if (status && btn) status.textContent = btn.dataset.fail;
-      }
-    };
-
     const buildPaletteItems = () => {
       const out = [];
       $$(".progress-rail a").forEach((a) => {
         const label = ($(".rail-label", a) || a).textContent.trim();
         out.push({ label, tag: pTags.go, run: () => scrollToSection(a.getAttribute("href")) });
       });
-      out.push({ label: palette.dataset.labelCopy, tag: pTags.action, run: copyInstall });
       const langLink = $(".lang-link");
       if (langLink) out.push({ label: palette.dataset.labelLang, tag: pTags.lang, run: () => { window.location.href = langLink.getAttribute("href"); } });
       return out;
