@@ -24,6 +24,13 @@ with sync_playwright() as pw:
         ok("six svg dimensions",svgs[0].locator(".arqx-stage").count()==6)
         ok("even ring arcs",svgs[0].locator("#arqx-stage-identidad").get_attribute("transform")=="translate(321,112.5)" and svgs[0].locator("#arqx-stage-contexto").get_attribute("transform")=="translate(321,467.5)")
         ok("lift follows stage",svgs[0].locator(".lift-card[data-stage=identidad]").get_attribute("transform")=="translate(321,112.5)")
+        import re
+        svgs[0].wait_for_function("()=>document.querySelector('.arqx-stage.is-synced')",timeout=20000)
+        rot=float(re.sub(r"[^0-9.\-]","",svgs[0].locator("#arqx-learning-orbit").evaluate("e=>e.style.transform") or "0"))
+        synced=svgs[0].evaluate("()=>document.querySelector('.arqx-stage.is-synced').dataset.stage")
+        ea={"ejecucion":0,"evidencia":60,"contexto":120,"contrato":180,"identidad":240,"decision":300}[synced]
+        ok("orbit syncs card",abs(((rot-ea+540)%360)-180)<13)
+        ok("core beats on sync",svgs[0].locator("#arqx-core.is-beat").count()==1)
         ok("map title",svgs[0].locator("#map-title").count()==1)
         ok("triad nodes",svgs[0].locator(".triad-node").count()==3)
         ok("no visible subtitles",svgs[0].locator(".stage-desc").count()==0)
