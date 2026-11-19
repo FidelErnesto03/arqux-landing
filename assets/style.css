@@ -28,7 +28,7 @@ button{font:inherit}
 h1,h2,h3,p{margin-top:0}
 h1,h2,h3{font-family:var(--sans);letter-spacing:-.035em;line-height:1.08}
 h1{font-size:clamp(2.25rem,3.9vw,3.5rem);font-weight:650;line-height:1.04;letter-spacing:-.03em;max-width:720px;margin-bottom:20px}
-html[lang="es"] .hero h1{font-size:clamp(2.25rem,3.6vw,3.25rem)}
+html[lang="es"] .hero h1{font-size:clamp(2rem,2.78vw,2.5rem)}
 h2{font-size:clamp(2rem,3.4vw,3.1rem);font-weight:620;line-height:1.08;letter-spacing:-.03em;margin-bottom:14px}
 h3{font-size:1.1rem;font-weight:650;letter-spacing:-.02em;margin-bottom:8px}
 .lead{font-size:1.22rem;line-height:1.65;color:var(--mist-500);max-width:660px;margin-bottom:24px}
@@ -526,49 +526,6 @@ pre{font-size:13px;line-height:1.75}
 .copy-row{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:9px}
 
 
-/* problem section: signals + fragmented-session figure */
-.problem-grid{display:grid;grid-template-columns:1.02fr .98fr;grid-template-areas:"copy frag" "detail frag";gap:24px 44px;align-items:start}
-.problem-copy{grid-area:copy}
-.problem-detail{grid-area:detail}
-.problem-grid .frag{grid-area:frag;margin-top:34px;align-self:start}
-.problem-signals{list-style:none;margin:0;padding:0}
-.problem-signals li{display:grid;grid-template-columns:32px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--line-light);align-items:start}
-.problem-signals li:last-child{border-bottom:1px solid var(--line-light)}
-.problem-signals .pnum{font:600 10.5px/1.4 var(--mono);color:#8A4B00;letter-spacing:.08em;padding-top:4px}
-.problem-signals b{display:block;font-size:16px;line-height:1.35;color:var(--ink-950);margin-bottom:4px}
-.problem-signals p{margin:0;font-size:14px;line-height:1.6;color:var(--slate-600)}
-.problem-signals li:hover .pnum,.problem-signals li:focus-within .pnum{color:var(--ink-950)}
-.frag{background:var(--ink-950);border:1px solid rgba(220,226,227,.14);border-radius:18px;padding:24px;color:var(--paper-100);box-shadow:0 24px 50px rgba(10,20,32,.14)}
-.frag-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:18px;flex-wrap:wrap}
-.frag-head-copy{display:grid;gap:3px}
-.frag-kicker{font:600 10.5px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#dce2e3}
-.frag-sub{font:500 12.5px/1.35 var(--sans);color:#aebbc2}
-.frag-tag{padding:6px 9px;border-radius:999px;background:rgba(255,181,71,.16);color:#ffc266;font:600 10px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.frag-sessions{display:grid;gap:12px}
-.frag-session{margin:0;padding:15px 16px;border:1px solid rgba(220,226,227,.2);border-radius:12px;background:rgba(255,255,255,.035);transition:border-color .16s ease,transform .16s ease,background .16s ease}
-.frag-session:hover,.frag-session:focus-within{border-color:var(--amber-500);background:rgba(255,181,71,.06);transform:translateX(2px)}
-.frag-session.is-last{border-style:dashed;background:rgba(255,181,71,.04)}
-.frag-who{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;font:600 10px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--amber-500)}
-.frag-who span:last-child{color:#aebbc2;font-weight:500}
-.frag-quote{margin:0;font-size:15px;line-height:1.55;color:#f2f5f6}
-.frag-foot{margin:9px 0 0;font:500 11px/1.4 var(--mono);color:#aebbc2}
-.frag-break{display:flex;align-items:center;gap:10px;padding:0 2px;color:#ffc266;font:500 11px/1.2 var(--mono);letter-spacing:.07em;text-transform:uppercase}
-.frag-break::before,.frag-break::after{content:"";flex:1;height:1px;background:repeating-linear-gradient(90deg,rgba(220,226,227,.55) 0 4px,transparent 4px 8px)}
-.frag-break span::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--amber-500);margin-right:7px;vertical-align:1px}
-.frag-note{margin:16px 0 0;padding-top:13px;border-top:1px solid rgba(220,226,227,.14);font-size:13px;line-height:1.6;color:#c3ced3}
-.problem-close{margin:20px 0 0;padding-left:12px;border-left:2px solid var(--amber-500);font-size:15px;line-height:1.55;color:var(--ink-950);max-width:540px}
-@media(max-width:980px){
-  .problem-grid{grid-template-columns:1fr;grid-template-areas:"copy" "frag" "detail";gap:26px}
-  .problem-grid .frag{margin-top:0;max-width:660px}
-}
-@media(max-width:460px){
-  .frag{padding:17px}
-  .frag-head{gap:8px}
-  .frag-who{flex-direction:column;align-items:flex-start;gap:3px}
-  .frag-session{padding:12px 13px}
-  .problem-close{font-size:14.5px}
-}
-.problem-copy h2{font-size:clamp(2rem,3vw,2.8rem)}
 
 /* architecture: interactive components around the project */
 @media(max-width:980px){
@@ -745,3 +702,29 @@ pre{font-size:13px;line-height:1.75}
 @media(max-width:900px){.loss-sessions{grid-template-columns:1fr}.loss-thread{display:none}.loss-session{min-height:0}.loss-session:nth-child(2) .loss-quote{font-size:18px}.loss-consequences{grid-template-columns:1fr}.loss-consequences li{border-right:0;border-bottom:1px solid var(--line-light);padding:14px 0}.loss-consequences li:last-child{border-bottom:0}.loss-verdict{font-size:clamp(2rem,7vw,2.8rem)}}
 @media(max-width:560px){.loss-scene{padding:18px;border-radius:16px}.loss-session{padding:17px}.loss-scene-head{display:grid}.loss-cut{justify-self:start}.loss-lead{font-size:18px}}
 .loss-session-head{margin:0}.loss-section{scroll-margin-top:92px}
+/* problem section: five fractures, one-shot reveal (no loops) */
+.failure-section{position:relative;overflow:hidden;background:var(--ink-950);color:var(--paper-100);border-top:1px solid rgba(255,181,71,.4);scroll-margin-top:92px}
+.failure-section::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 380px at 50% -8%,rgba(255,181,71,.11),transparent 70%);pointer-events:none}
+.failure-section .wrap{position:relative}
+.failure-head{max-width:900px}
+.failure-head .eyebrow{color:#dce2e3}
+.failure-head .eyebrow::before{background:var(--amber-500)}
+.failure-head h2{font-size:clamp(2.1rem,3.6vw,3.2rem);line-height:1.04;letter-spacing:-.04em;margin:0 0 16px;color:var(--paper-100)}
+.failure-lead{margin:0;font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.5;color:#c3ced3;max-width:680px}
+.failure-rail{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:38px 0 18px}
+.failure-rail i{height:2px;border-radius:2px;background:linear-gradient(90deg,var(--amber-500),rgba(255,181,71,.24));transform-origin:left;transform:scaleX(1)}
+.failure-rail i:nth-child(even){opacity:.45}
+.failure-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.failure-grid li{position:relative;min-width:0;padding:20px 16px 22px;border:1px solid rgba(220,226,227,.18);border-radius:14px;background:rgba(255,255,255,.035);display:grid;gap:10px;align-content:start}
+.failure-grid li::after{content:"";position:absolute;top:-1px;right:-1px;width:12px;height:12px;border-top:1px solid var(--amber-500);transform:rotate(45deg);transform-origin:top right}
+.failure-num{font:600 11px/1 var(--mono);letter-spacing:.1em;color:var(--amber-500)}
+.failure-grid b{font:650 16px/1.25 var(--sans);color:var(--paper-100);letter-spacing:-.02em}
+.failure-grid p{margin:0;font:500 13px/1.55 var(--sans);color:#aebbc2}
+.failure-close{margin:30px 0 0;max-width:900px;font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1.12;letter-spacing:-.035em;font-weight:700;color:var(--paper-100)}
+.failure-close em{font-style:normal;color:var(--amber-500)}
+.failure-rail i.reveal,.failure-grid li.reveal,.failure-close.reveal{opacity:0;transform:translateY(10px)}
+.failure-rail i.reveal{transform:scaleX(0)}
+.failure-rail i.reveal.in,.failure-grid li.reveal.in,.failure-close.reveal.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.failure-rail i.reveal.in{transform:scaleX(1)}
+@media(max-width:980px){.failure-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.failure-rail{grid-template-columns:repeat(2,1fr)}.failure-rail i:nth-child(n+3){display:none}}
+@media(max-width:560px){.failure-grid{grid-template-columns:1fr}.failure-grid li{padding:16px}.failure-close{font-size:clamp(1.4rem,6vw,1.8rem)}}

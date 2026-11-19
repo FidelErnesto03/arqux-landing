@@ -45,7 +45,6 @@
       $(".source-panel", localStory)
     ].filter(Boolean);
     revealItems.forEach((el) => el.classList.add("reveal"));
-    window.setTimeout(() => revealItems.forEach((el) => el.classList.add("in")), 1800);
     const storyObserver = new IntersectionObserver((entries) => {
       if (!entries[0].isIntersecting) return;
       revealItems.forEach((el, i) => {
@@ -54,6 +53,23 @@
       storyObserver.disconnect();
     }, { threshold: 0.1, rootMargin: "0px 0px -35% 0px" });
     storyObserver.observe(localStory);
+  }
+
+  /* ---------- problem section: five fractures, one-shot reveal (no loops) ---------- */
+  const failureSection = $("#failures");
+  if (failureSection && "IntersectionObserver" in window && !REDUCED) {
+    const parts = [
+      ...$$(".failure-rail i", failureSection),
+      ...$$(".failure-grid li", failureSection),
+      $(".failure-close", failureSection)
+    ].filter(Boolean);
+    parts.forEach((el) => el.classList.add("reveal"));
+    const failureObserver = new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) return;
+      parts.forEach((el, i) => window.setTimeout(() => el.classList.add("in"), 90 + i * 110));
+      failureObserver.disconnect();
+    }, { threshold: 0.12, rootMargin: "0px 0px -30% 0px" });
+    failureObserver.observe(failureSection);
   }
 
 

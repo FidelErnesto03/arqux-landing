@@ -16,7 +16,7 @@ with sync_playwright() as pw:
     for path,target in old:
         p=b.new_page(); p.goto(BASE+path,wait_until="networkidle"); p.wait_for_timeout(150)
         ok("redirect "+path,target in p.url); p.close()
-    p=b.new_page(); r=p.goto(BASE+"/404.html",wait_until="networkidle"); ok("404",r.status==200); p.close()
+    p=b.new_page(); r=p.goto(BASE+"/404.html",wait_until="networkidle"); ok("404",r.status==200); ok("404 branded","governed workspace" in p.locator("h1").text_content()); p.close()
     for w in (320,375):
         for r in primary:
             p=b.new_page(viewport={"width":w,"height":844}); p.goto(BASE+r,wait_until="networkidle")
