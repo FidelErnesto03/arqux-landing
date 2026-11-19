@@ -108,27 +108,26 @@
     </div>
     <div class="loss-scene" role="group" aria-label="Ejemplo ilustrativo: una decisión tomada en una sesión no está disponible para la siguiente">
       <div class="loss-track">
-        <article class="loss-session loss-session--decided" data-loss-step="1">
+        <article class="loss-session loss-session--decided">
           <p class="loss-kicker">Ayer · Sesión 1 — se decidió</p>
-          <p class="loss-quote">“No exponer datos sensibles en los mensajes de error.”</p>
+          <div class="loss-ref">
+            <p class="loss-ref-label">Criterio del proyecto</p>
+            <p class="loss-quote">“No exponer datos sensibles en los mensajes de error.”</p>
+            <p class="loss-status">Decisión establecida</p>
+          </div>
           <p class="loss-foot">Registrada en el hilo</p>
         </article>
-        <article class="loss-session loss-session--next" data-loss-step="4">
+        <article class="loss-session loss-session--next">
           <p class="loss-kicker">Hoy · Sesión 2 — se preguntó</p>
-          <div class="loss-ghost">
-            <i class="loss-ghost-bar"></i>
-            <i class="loss-ghost-bar"></i>
-            <span class="loss-ghost-tag">Sesión 1 · decisión — no llegó</span>
+          <div class="loss-ref loss-ref--empty">
+            <p class="loss-ref-label">Criterio del proyecto</p>
+            <p class="loss-ref-miss"><svg class="loss-ref-plug" width="15" height="15" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M4.3 6.3 A5.4 5.4 0 1 1 4.3 11.7"/><path d="M1 9h2.6"/></svg>Referencia no disponible</p>
           </div>
           <p class="loss-question">“¿Cuál era el criterio para los mensajes de error?”</p>
-          <p class="loss-absent">Sin acceso a la decisión anterior.</p>
         </article>
-        <span class="loss-tick" aria-hidden="true"></span>
-        <div class="loss-rail" data-loss-step="2" aria-hidden="true"><i class="loss-rail-dot"></i><i class="loss-rail-break"></i></div>
-        <span class="loss-socket" aria-hidden="true"></span>
-        <p class="loss-rail-caption" data-loss-step="3">El contexto no se traslada</p>
+        <div class="loss-link" role="img" aria-label="El contexto no se traslada"><i class="loss-link-dot"></i><i class="loss-link-break"></i></div>
       </div>
-      <p class="loss-stakes" data-loss-step="5">Ayer avanzaste. Hoy tienes que volver a explicarlo.</p>
+      <p class="loss-stakes">Ayer avanzaste. Hoy tienes que volver a explicarlo.</p>
       <p class="loss-scope">Ejemplo ilustrativo. El comportamiento depende de la herramienta y de cómo se conserve el contexto.</p>
     </div>
   </div>

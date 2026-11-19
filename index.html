@@ -108,27 +108,26 @@
     </div>
     <div class="loss-scene" role="group" aria-label="Illustrative example: a decision made in one session is not available to the next agent">
       <div class="loss-track">
-        <article class="loss-session loss-session--decided" data-loss-step="1">
+        <article class="loss-session loss-session--decided">
           <p class="loss-kicker">Yesterday · Session 1 — decided</p>
-          <p class="loss-quote">“Do not expose sensitive data in error messages.”</p>
+          <div class="loss-ref">
+            <p class="loss-ref-label">Project criterion</p>
+            <p class="loss-quote">“Do not expose sensitive data in error messages.”</p>
+            <p class="loss-status">Decision established</p>
+          </div>
           <p class="loss-foot">Recorded in the thread</p>
         </article>
-        <article class="loss-session loss-session--next" data-loss-step="4">
+        <article class="loss-session loss-session--next">
           <p class="loss-kicker">Today · Session 2 — asked</p>
-          <div class="loss-ghost">
-            <i class="loss-ghost-bar"></i>
-            <i class="loss-ghost-bar"></i>
-            <span class="loss-ghost-tag">Session 1 · decision — never arrived</span>
+          <div class="loss-ref loss-ref--empty">
+            <p class="loss-ref-label">Project criterion</p>
+            <p class="loss-ref-miss"><svg class="loss-ref-plug" width="15" height="15" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M4.3 6.3 A5.4 5.4 0 1 1 4.3 11.7"/><path d="M1 9h2.6"/></svg>Reference unavailable</p>
           </div>
           <p class="loss-question">“What was the criterion for error messages?”</p>
-          <p class="loss-absent">No access to the previous decision.</p>
         </article>
-        <span class="loss-tick" aria-hidden="true"></span>
-        <div class="loss-rail" data-loss-step="2" aria-hidden="true"><i class="loss-rail-dot"></i><i class="loss-rail-break"></i></div>
-        <span class="loss-socket" aria-hidden="true"></span>
-        <p class="loss-rail-caption" data-loss-step="3">Context does not carry over</p>
+        <div class="loss-link" role="img" aria-label="Context does not carry over"><i class="loss-link-dot"></i><i class="loss-link-break"></i></div>
       </div>
-      <p class="loss-stakes" data-loss-step="5">You made progress yesterday. Today you have to explain it again.</p>
+      <p class="loss-stakes">You made progress yesterday. Today you have to explain it again.</p>
       <p class="loss-scope">Illustrative example. Behavior depends on the tool and how context is preserved.</p>
     </div>
   </div>
