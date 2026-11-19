@@ -72,6 +72,18 @@
     failureObserver.observe(failureSection);
   }
 
+  /* ---------- problem scene: one-shot continuity break (no loops) ---------- */
+  const lossScene = $(".loss-scene");
+  if (lossScene && "IntersectionObserver" in window && !REDUCED) {
+    const lossObserver = new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) return;
+      lossScene.classList.add("is-live");
+      lossObserver.disconnect();
+    }, { threshold: 0.15, rootMargin: "0px 0px -25% 0px" });
+    lossObserver.observe(lossScene);
+  }
+
+
   /* ---------- project reference: which steps read or write a component ---------- */
   const refBar = $(".source-panel");
   if (refBar) {

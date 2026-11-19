@@ -667,42 +667,56 @@ pre{font-size:13px;line-height:1.75}
 @media(max-width:760px){.hero .hero-visual{display:none}.hero-mobile-map{display:grid}}
 /* The problem as a scene of loss */
 /* problem scene: one interrupted continuity, editorial and light */
-.loss-section{background:var(--paper-100)}
+.loss-section{background:linear-gradient(180deg,var(--paper-100),var(--paper-200));scroll-margin-top:92px}
 .loss-head{max-width:900px}
 .loss-head .eyebrow{margin-bottom:16px}
 .loss-head h2{font-size:clamp(2rem,3.3vw,3rem);line-height:1.05;letter-spacing:-.035em;margin:0 0 18px;color:var(--ink-950)}
 .loss-lead{margin:0;font-size:20px;line-height:1.5;color:var(--slate-600);max-width:680px}
-.loss-scene{margin-top:34px;padding:26px;border-radius:20px;background:var(--ink-950);color:var(--paper-100);box-shadow:0 24px 60px rgba(10,20,32,.16)}
-.loss-scene-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:16px;flex-wrap:wrap}
-.loss-scene-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.loss-scene-kicker{font:600 11px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#dce2e3}
-.loss-scene-tag{padding:6px 9px;border-radius:999px;background:rgba(255,181,71,.16);color:#ffc266;font:600 10px/1.2 var(--mono);letter-spacing:.05em;text-transform:uppercase}
-.loss-cut{font:600 10.5px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#ffc266}
-.loss-thread{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:12px}
-.loss-thread i{height:2px;background:var(--amber-500)}
-.loss-thread i.cut{background:repeating-linear-gradient(90deg,rgba(255,181,71,.7) 0 5px,transparent 5px 10px)}
-.loss-sessions{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
-.loss-session{margin:0;padding:22px;border:1px solid rgba(220,226,227,.2);border-radius:14px;background:rgba(255,255,255,.035);min-height:230px;display:flex;flex-direction:column}
-.loss-session-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:18px;font:600 10px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--amber-500)}
-.loss-session-head span:last-child{color:#aebbc2;text-align:right}
-.loss-quote{margin:0;font-size:clamp(18px,1.45vw,22px);line-height:1.45;letter-spacing:-.015em;color:#f2f5f6}
-.loss-session:nth-child(2) .loss-quote{font-size:clamp(17px,1.25vw,19px);color:#dbe5e8}
-.loss-foot{margin:auto 0 0;padding-top:20px;font:500 11px/1.4 var(--mono);color:#aebbc2}
-.loss-session.is-empty{border-style:dashed;background:rgba(255,181,71,.045);justify-content:flex-start}
-.loss-absent{margin:0;font-size:clamp(18px,1.3vw,20px);line-height:1.45;color:#ffc266}
-.loss-scope{margin:16px 0 0;font-size:12px;line-height:1.5;color:#aebbc2;max-width:720px}
-.loss-consequences{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin:34px 0 0;padding:0;border-top:1px solid var(--line-light);border-bottom:1px solid var(--line-light)}
-.loss-consequences li{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:18px 18px 18px 0;border-right:1px solid var(--line-light)}
-.loss-consequences li:last-child{border-right:0;padding-right:0}
-.loss-consequences span{font:600 10.5px/1.4 var(--mono);color:#8A4B00;padding-top:3px}
-.loss-consequences strong{font-size:16px;line-height:1.35;color:var(--ink-950)}
-.loss-verdict{margin:34px 0 0;max-width:1000px;font-size:clamp(2rem,4vw,3.5rem);line-height:1.04;letter-spacing:-.04em;font-weight:750;color:var(--ink-950)}
+.loss-stakes{margin:18px 0 0;max-width:640px;font:600 clamp(1rem,1.4vw,1.2rem)/1.4 var(--sans);letter-spacing:-.01em;color:var(--ink-950)}
+.loss-scene{position:relative;margin-top:36px}
+.loss-kicker{margin:0 0 12px;font:600 11px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--slate-600)}
+.loss-decision{max-width:780px}
+.loss-quote{margin:0;font-size:clamp(1.7rem,2.8vw,2.6rem);line-height:1.18;letter-spacing:-.035em;font-weight:650;color:var(--ink-950)}
+.loss-foot{margin:12px 0 0;font:500 11.5px/1.5 var(--mono);color:var(--slate-600)}
+.loss-trace{position:relative;display:grid;grid-template-columns:1fr 14px 1fr;align-items:center;height:44px;margin:26px 0 0 14px}
+.loss-trace-segment{height:1px;background:var(--ink-950);opacity:.32}
+.loss-trace-segment.is-faded{background:repeating-linear-gradient(90deg,var(--mist-500) 0 4px,transparent 4px 10px);opacity:1}
+.loss-break-mark{width:11px;height:11px;border-radius:50%;background:var(--amber-500);box-shadow:0 0 0 4px var(--paper-100),0 0 0 5px var(--amber-500)}
+.loss-signal{position:absolute;left:0;top:50%;width:8px;height:8px;border-radius:50%;background:var(--amber-500);transform:translate(-50%,-50%);opacity:0}
+.loss-break-label{margin:-6px 0 0 14px;text-align:center;font:600 10.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#9A5300}
+.loss-next{max-width:640px;margin:44px 0 0 clamp(0px,17vw,250px);padding:0 0 0 22px;border-left:1px dashed var(--mist-500)}
+.loss-question{margin:0;font-size:clamp(1.15rem,1.8vw,1.5rem);line-height:1.35;letter-spacing:-.02em;color:var(--ink-950)}
+.loss-absent{margin:14px 0 0;font:500 12.5px/1.5 var(--mono);color:var(--slate-600)}
+.loss-verdict{margin:60px 0 0;max-width:1000px;font-size:clamp(1.9rem,3.6vw,3.1rem);line-height:1.08;letter-spacing:-.04em;font-weight:750;color:var(--ink-950)}
 .loss-verdict em{font-style:normal;color:#9A5300}
-.loss-bridge{margin:24px 0 0;font:500 12px/1.4 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:#6B4A1E}
-.loss-bridge::before{content:"";display:inline-block;width:28px;height:1px;background:var(--amber-500);margin-right:10px;vertical-align:middle}
-@media(max-width:900px){.loss-sessions{grid-template-columns:1fr}.loss-thread{display:none}.loss-session{min-height:0}.loss-session:nth-child(2) .loss-quote{font-size:18px}.loss-consequences{grid-template-columns:1fr}.loss-consequences li{border-right:0;border-bottom:1px solid var(--line-light);padding:14px 0}.loss-consequences li:last-child{border-bottom:0}.loss-verdict{font-size:clamp(2rem,7vw,2.8rem)}}
-@media(max-width:560px){.loss-scene{padding:18px;border-radius:16px}.loss-session{padding:17px}.loss-scene-head{display:grid}.loss-cut{justify-self:start}.loss-lead{font-size:18px}}
-.loss-session-head{margin:0}.loss-section{scroll-margin-top:92px}
+.loss-cost{margin:14px 0 0;max-width:760px;font-size:clamp(1rem,1.5vw,1.25rem);line-height:1.5;color:var(--slate-600)}
+.loss-scope{margin:20px 0 0;font-size:12px;line-height:1.5;color:var(--slate-600);max-width:720px}
+/* one-shot: decision -> signal -> break -> question -> verdict */
+@keyframes loss-step-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes loss-signal-run{0%{left:0;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:calc(50% - 4px);opacity:0}}
+@keyframes loss-signal-run-v{0%{top:0;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:calc(100% - 4px);opacity:0}}
+@keyframes loss-break-in{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+.loss-scene.is-live [data-loss-step]{animation:loss-step-in .65s ease both}
+.loss-scene.is-live [data-loss-step="1"]{animation-delay:.1s}
+.loss-scene.is-live [data-loss-step="2"]{animation-delay:.6s}
+.loss-scene.is-live [data-loss-step="3"]{animation-delay:2.2s}
+.loss-scene.is-live [data-loss-step="4"]{animation-delay:2.9s}
+.loss-scene.is-live [data-loss-step="5"]{animation-delay:3.6s}
+.loss-scene.is-live [data-loss-step="6"]{animation-delay:4.2s}
+.loss-scene.is-live .loss-signal{animation:loss-signal-run 1.2s ease-in 1.1s both}
+.loss-scene.is-live .loss-break-mark{animation:loss-break-in .55s cubic-bezier(.2,.8,.3,1) 2.2s both}
+@media(max-width:760px){
+  .loss-trace{grid-template-columns:14px;grid-template-rows:40px 14px 40px;height:auto;margin:24px 0 0 6px;justify-content:start}
+  .loss-trace-segment{width:1px;height:40px}
+  .loss-trace-segment.is-faded{background:repeating-linear-gradient(180deg,var(--mist-500) 0 4px,transparent 4px 10px)}
+  .loss-break-mark{grid-row:2}
+  .loss-signal{left:0;top:0;transform:translate(-50%,0)}
+  .loss-scene.is-live .loss-signal{animation:loss-signal-run-v 1.2s ease-in 1.1s both}
+  .loss-break-label{text-align:left;margin:10px 0 0 28px}
+  .loss-next{margin:26px 0 0 6px;padding-left:20px}
+}
+@media(max-width:560px){.loss-lead{font-size:18px}.loss-verdict{font-size:clamp(1.7rem,7vw,2.2rem)}}
+@media(prefers-reduced-motion:reduce){.loss-scene.is-live [data-loss-step],.loss-scene.is-live .loss-signal,.loss-scene.is-live .loss-break-mark{animation:none}}
 /* problem section: drift field — cold, misaligned, then one coherent stroke */
 .failure-section{position:relative;overflow:hidden;background:#12171A;color:var(--mist-300);border-top:1px solid rgba(220,226,227,.2);scroll-margin-top:92px}
 .failure-section::before{content:"";position:absolute;inset:0;background:radial-gradient(820px 340px at 78% -12%,rgba(138,75,0,.12),transparent 70%);pointer-events:none}

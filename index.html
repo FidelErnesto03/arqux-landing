@@ -74,45 +74,36 @@
     <div class="coherence-line" aria-hidden="true"><span></span></div>
   </div>
 </section>
-<section class="section section-light loss-section" id="local" aria-labelledby="loss-title">
+<section class="section loss-section" id="local" aria-labelledby="loss-title">
   <div class="wrap">
     <div class="loss-head">
       <p class="eyebrow">The cost of no shared reference</p>
       <h2 id="loss-title">The decision was made. The next agent didn’t know it.</h2>
-      <p class="loss-lead">Three sessions. One decision. No shared reference.</p>
+      <p class="loss-lead">Two sessions. One decision. No shared reference.</p>
+      <p class="loss-stakes" data-loss-step="1">You made progress yesterday. Today you have to explain it again.</p>
     </div>
-    <div class="loss-scene">
-      <div class="loss-scene-head">
-        <div class="loss-scene-meta"><span class="loss-scene-kicker">Three sessions</span><span class="loss-scene-tag">Illustrative reconstruction</span></div>
-        <span class="loss-cut">no shared reference</span>
+    <div class="loss-scene" role="group" aria-label="Illustrative example: a decision made in one session is not available to the next agent">
+      <div class="loss-decision" data-loss-step="1">
+        <p class="loss-kicker">01 · Session 1 — decided</p>
+        <p class="loss-quote">“Do not expose sensitive data in error messages.”</p>
+        <p class="loss-foot">recorded in the thread</p>
       </div>
-      <div class="loss-thread" aria-hidden="true"><i></i><i></i><i class="cut"></i></div>
-      <div class="loss-sessions">
-        <article class="loss-session">
-          <h3 class="loss-session-head"><span>01 · Session 1</span><span>Agent A · decided</span></h3>
-          <p class="loss-quote">“Do not expose sensitive data in error messages.”</p>
-          <p class="loss-foot">recorded in the thread</p>
-        </article>
-        <article class="loss-session">
-          <h3 class="loss-session-head"><span>02 · Session 2</span><span>Agent B · asked</span></h3>
-          <p class="loss-quote">“What was the criterion for error messages?”</p>
-          <p class="loss-foot">rebuilt from memory</p>
-        </article>
-        <article class="loss-session is-empty">
-          <h3 class="loss-session-head"><span>03 · Session 3</span><span>Agent C · started over</span></h3>
-          <p class="loss-absent">No access to the previous decision.</p>
-          <p class="loss-foot">no shared reference</p>
-        </article>
+      <div class="loss-trace" data-loss-step="2" aria-hidden="true">
+        <span class="loss-trace-segment"></span>
+        <span class="loss-break-mark"></span>
+        <span class="loss-trace-segment is-faded"></span>
+        <span class="loss-signal"></span>
       </div>
-      <p class="loss-scope">Illustrative reconstruction. Behavior depends on the tool and how context is preserved.</p>
+      <p class="loss-break-label" data-loss-step="3">no shared reference</p>
+      <div class="loss-next" data-loss-step="4">
+        <p class="loss-kicker">02 · Session 2 — asked</p>
+        <p class="loss-question">“What was the criterion for error messages?”</p>
+        <p class="loss-absent">No access to the previous decision.</p>
+      </div>
+      <p class="loss-verdict" data-loss-step="5">The project didn’t lose a message. <em>It lost access to the decision.</em></p>
+      <p class="loss-cost" data-loss-step="6">Someone will have to ask, and you will have to explain it again.</p>
+      <p class="loss-scope">Illustrative example. Behavior depends on the tool and how context is preserved.</p>
     </div>
-    <ol class="loss-consequences">
-      <li><span>01</span><strong>The decision is not carried forward.</strong></li>
-      <li><span>02</span><strong>The next agent asks again.</strong></li>
-      <li><span>03</span><strong>The next session starts from memory.</strong></li>
-    </ol>
-    <p class="loss-verdict">The project didn’t lose a message. <em>It lost access to the decision.</em></p>
-    <p class="loss-bridge">A shared reference changes the scene.</p>
   </div>
 </section>
 <section class="section section-soft" id="task">
