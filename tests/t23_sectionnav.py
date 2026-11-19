@@ -80,7 +80,7 @@ with sync_playwright() as pw:
     c=b.new_context(java_script_enabled=False,viewport={"width":1440,"height":900})
     p=c.new_page(); p.goto(BASE+"/",wait_until="load")
     ok("no-JS nav hidden",not p.locator(".section-nav").is_visible())
-    ok("no-JS content present",p.locator("#local .loss-verdict").is_visible())
+    ok("no-JS content present",p.locator("#local .loss-stakes").is_visible())
     c.close()
     b.close()
 

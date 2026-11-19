@@ -102,39 +102,35 @@
 <section class="section loss-section" id="local" aria-labelledby="loss-title" data-section-name="La decisión interrumpida">
   <div class="wrap">
     <div class="loss-head">
-      <div class="loss-head__copy">
-        <p class="eyebrow">El costo de trabajar sin contexto compartido</p>
-        <h2 id="loss-title">La decisión se tomó. El siguiente agente no la conocía.</h2>
-        <p class="loss-lead">Dos sesiones. Una decisión. Sin contexto compartido.</p>
-      </div>
-      <p class="loss-stakes" data-loss-step="1">Ayer avanzaste. Hoy vuelves a explicarlo.</p>
+      <p class="eyebrow">El costo de trabajar sin contexto compartido</p>
+      <h2 id="loss-title">La decisión se tomó. El siguiente agente no la conocía.</h2>
+      <p class="loss-lead">Dos sesiones. Una decisión. Sin contexto compartido.</p>
     </div>
     <div class="loss-scene" role="group" aria-label="Ejemplo ilustrativo: una decisión tomada en una sesión no está disponible para la siguiente">
-      <div class="loss-sessions">
-        <article class="loss-session" data-loss-step="1">
-          <p class="loss-kicker">01 · Sesión 1 — se decidió</p>
+      <div class="loss-track">
+        <article class="loss-session loss-session--decided" data-loss-step="1">
+          <p class="loss-kicker">Ayer · Sesión 1 — se decidió</p>
           <p class="loss-quote">“No exponer datos sensibles en los mensajes de error.”</p>
           <p class="loss-foot">Registrada en el hilo</p>
         </article>
-        <div class="loss-seam" data-loss-step="2" aria-hidden="true">
-          <span class="loss-seam-line"></span>
-          <span class="loss-seam-dot"></span>
-          <span class="loss-seam-caption">El contexto no se traslada</span>
-          <span class="loss-seam-line is-faded"></span>
-        </div>
-        <article class="loss-session loss-session--next" data-loss-step="3">
-          <p class="loss-kicker">02 · Sesión 2 — se preguntó</p>
+        <article class="loss-session loss-session--next" data-loss-step="4">
+          <p class="loss-kicker">Hoy · Sesión 2 — se preguntó</p>
+          <div class="loss-ghost">
+            <i class="loss-ghost-bar"></i>
+            <i class="loss-ghost-bar"></i>
+            <span class="loss-ghost-tag">Sesión 1 · decisión — no llegó</span>
+          </div>
           <p class="loss-question">“¿Cuál era el criterio para los mensajes de error?”</p>
           <p class="loss-absent">Sin acceso a la decisión anterior.</p>
         </article>
+        <span class="loss-tick" aria-hidden="true"></span>
+        <div class="loss-rail" data-loss-step="2" aria-hidden="true"><i class="loss-rail-dot"></i><i class="loss-rail-break"></i></div>
+        <span class="loss-socket" aria-hidden="true"></span>
+        <p class="loss-rail-caption" data-loss-step="3">El contexto no se traslada</p>
       </div>
-      <div class="loss-close">
-        <p class="loss-verdict" data-loss-step="4">El proyecto no perdió un mensaje. <em>Perdió acceso a la decisión.</em></p>
-        <p class="loss-cost" data-loss-step="5">Alguien tendrá que preguntar, y tú tendrás que volver a explicarlo.</p>
-      </div>
+      <p class="loss-stakes" data-loss-step="5">Ayer avanzaste. Hoy tienes que volver a explicarlo.</p>
       <p class="loss-scope">Ejemplo ilustrativo. El comportamiento depende de la herramienta y de cómo se conserve el contexto.</p>
     </div>
-    <p class="loss-bridge">Conservar el resultado no basta. Hay que conservar <em>el criterio</em> que lo hizo posible.</p>
   </div>
 </section>
 <section class="section home-closure" id="next" data-section-name="Cierre" aria-labelledby="home-closure-title">
