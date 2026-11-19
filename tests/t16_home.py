@@ -15,6 +15,7 @@ with sync_playwright() as pw:
     ok("hero mesh layer","hero-mesh.svg" in p.locator(".hero").evaluate("e=>getComputedStyle(e,'::before').backgroundImage"))
     ok("hero ink text",p.locator(".hero h1").evaluate("e=>getComputedStyle(e).color")=="rgb(10, 20, 32)")
     ok("hero map untouched",p.locator("object.hero-map").get_attribute("data")=="/assets/arqux-governance-side-en.svg")
+    ok("hero map feathered","linear-gradient" in p.locator(".hero-visual").evaluate("e=>getComputedStyle(e).maskImage"))
     ok("mobile governance map",p.locator(".hero-mobile-map a").count()==6)
     svgs=[f for f in p.frames if "arqux-governance" in f.url]
     ok("svg map loaded",len(svgs)==1)
