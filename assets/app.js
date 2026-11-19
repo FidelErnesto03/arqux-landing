@@ -59,6 +59,64 @@
     lossObserver.observe(lossScene);
   }
 
+  /* ---------- the cost scene: try-resume machine (initial → blocked → manual-restored) ---------- */
+  if (lossScene) {
+    const $l = (s) => lossScene.querySelector(s);
+    const act = $l(".loss-act"), give = $l(".loss-give"), again = $l(".loss-again"),
+      gotoRef = $l(".loss-goto"), question = $l(".loss-question"), brief = $l(".loss-brief"),
+      miss = $l(".loss-ref-miss"), restored = $l(".loss-restored"), reused = $l(".loss-reused"),
+      link = $l(".loss-link"), manual = $l(".loss-link-manual"), mtag = $l(".loss-link-tag"),
+      confirm = $l(".loss-confirm"), announce = $l(".loss-announce");
+    if (act && give && again) {
+      let state = "initial", busy = false;
+      const say = (b) => { if (announce) announce.textContent = b.dataset.msg || ""; };
+      const show = (e, on) => { if (e) e.hidden = !on; };
+      const T = (ms, fn) => { REDUCED ? fn() : setTimeout(fn, ms); };
+      const toInitial = (focus) => {
+        state = "initial"; busy = false;
+        [act].forEach((e) => show(e, true));
+        [question, brief, gotoRef, give, restored, reused, manual, mtag, confirm, again].forEach((e) => show(e, false));
+        show(miss, true);
+        link.classList.remove("is-restoring");
+        if (focus) act.focus({ preventScroll: true });
+      };
+      toInitial(false);
+      act.addEventListener("click", () => {
+        if (state !== "initial" || busy) return;
+        state = "blocked"; busy = true;
+        show(act, false);
+        [question, brief, gotoRef, give].forEach((e) => show(e, true));
+        say(act);
+        if (!REDUCED) lossScene.classList.add("is-blocking");
+        give.focus({ preventScroll: true });
+        T(1000, () => { lossScene.classList.remove("is-blocking"); busy = false; });
+      });
+      give.addEventListener("click", () => {
+        if (state !== "blocked" || busy) return;
+        state = "manual-restored"; busy = true;
+        [give, gotoRef, brief].forEach((e) => show(e, false));
+        show(manual, true);
+        if (!REDUCED) link.classList.add("is-restoring");
+        say(give);
+        T(600, () => {
+          show(miss, false);
+          [restored, reused, mtag, confirm, again].forEach((e) => show(e, true));
+          busy = false;
+          again.focus({ preventScroll: true });
+        });
+      });
+      again.addEventListener("click", () => {
+        if (state !== "manual-restored" || busy) return;
+        say(again); toInitial(true);
+      });
+      if (gotoRef) gotoRef.addEventListener("click", (e) => {
+        e.preventDefault();
+        const t = document.getElementById("loss-ref-ayer");
+        if (t) { t.tabIndex = -1; t.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "nearest" }); t.focus({ preventScroll: true }); }
+      });
+    }
+  }
+
 
   /* ---------- anchor jumps: render off-screen sections for the flight, then glide (exact target, native smooth) ---------- */
   function scrollToSection(target) {

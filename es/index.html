@@ -110,25 +110,39 @@
       <div class="loss-track">
         <article class="loss-session loss-session--decided">
           <p class="loss-kicker">Ayer · Sesión 1 — se decidió</p>
-          <div class="loss-ref">
+          <div class="loss-ref" id="loss-ref-ayer">
             <p class="loss-ref-label">Criterio del proyecto</p>
             <p class="loss-quote">“No exponer datos sensibles en los mensajes de error.”</p>
             <p class="loss-status">Decisión establecida</p>
+            <p class="loss-reused" hidden>Reutilizada · aporte manual</p>
           </div>
           <p class="loss-foot">Registrada en el hilo</p>
+          <button class="loss-give" type="button" hidden data-msg="La nueva sesión vuelve a disponer del criterio.">Volver a aportar este criterio →</button>
         </article>
         <article class="loss-session loss-session--next">
           <p class="loss-kicker">Hoy · Sesión 2 — se preguntó</p>
           <div class="loss-ref loss-ref--empty">
             <p class="loss-ref-label">Criterio del proyecto</p>
             <p class="loss-ref-miss"><svg class="loss-ref-plug" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M4.3 6.3 A5.4 5.4 0 1 1 4.3 11.7"/><path d="M1 9h2.6"/></svg>Referencia no disponible</p>
+            <div class="loss-restored" hidden>
+              <p class="loss-quote">“No exponer datos sensibles en los mensajes de error.”</p>
+              <p class="loss-status">Criterio aportado manualmente</p>
+            </div>
           </div>
-          <p class="loss-question">“¿Cuál era el criterio para los mensajes de error?”</p>
+          <div class="loss-next">
+            <button class="loss-act" type="button" hidden data-msg="La sesión necesita que recuperes el criterio anterior.">Intentar retomar el trabajo →</button>
+            <p class="loss-question">“¿Cuál era el criterio para los mensajes de error?”</p>
+            <p class="loss-brief">Esta sesión no dispone de la decisión anterior.</p>
+            <a class="loss-goto" href="#loss-ref-ayer" hidden>Ir al criterio de ayer</a>
+          </div>
         </article>
-        <div class="loss-link" role="img" aria-label="El contexto no se traslada"><i class="loss-link-dot"></i><i class="loss-link-break"></i></div>
+        <div class="loss-link" role="img" aria-label="El contexto no se traslada"><i class="loss-link-dot"></i><i class="loss-link-break"></i><i class="loss-link-manual" hidden></i><span class="loss-link-tag" hidden>Aporte manual</span></div>
       </div>
       <p class="loss-stakes"><span>Ayer avanzaste. Hoy tienes que volver a explicarlo.</span></p>
+      <p class="loss-confirm" hidden>La tarea puede continuar, pero tuviste que aportar otra vez la decisión.</p>
       <p class="loss-scope">Ejemplo ilustrativo. El comportamiento depende de la herramienta y de cómo se conserve el contexto.</p>
+      <button class="loss-again" type="button" hidden data-msg="Experiencia restablecida.">Repetir experiencia</button>
+      <p class="loss-announce visually-hidden" aria-live="polite"></p>
     </div>
   </div>
 </section>

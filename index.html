@@ -110,25 +110,39 @@
       <div class="loss-track">
         <article class="loss-session loss-session--decided">
           <p class="loss-kicker">Yesterday · Session 1 — decided</p>
-          <div class="loss-ref">
+          <div class="loss-ref" id="loss-ref-ayer">
             <p class="loss-ref-label">Project criterion</p>
             <p class="loss-quote">“Do not expose sensitive data in error messages.”</p>
             <p class="loss-status">Decision established</p>
+            <p class="loss-reused" hidden>Reused · manual handoff</p>
           </div>
           <p class="loss-foot">Recorded in the thread</p>
+          <button class="loss-give" type="button" hidden data-msg="The new session has the criterion again.">Offer this criterion again →</button>
         </article>
         <article class="loss-session loss-session--next">
           <p class="loss-kicker">Today · Session 2 — asked</p>
           <div class="loss-ref loss-ref--empty">
             <p class="loss-ref-label">Project criterion</p>
             <p class="loss-ref-miss"><svg class="loss-ref-plug" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M4.3 6.3 A5.4 5.4 0 1 1 4.3 11.7"/><path d="M1 9h2.6"/></svg>Reference unavailable</p>
+            <div class="loss-restored" hidden>
+              <p class="loss-quote">“Do not expose sensitive data in error messages.”</p>
+              <p class="loss-status">Criterion added manually</p>
+            </div>
           </div>
-          <p class="loss-question">“What was the criterion for error messages?”</p>
+          <div class="loss-next">
+            <button class="loss-act" type="button" hidden data-msg="The session needs you to bring back the previous criterion.">Try resuming the work →</button>
+            <p class="loss-question">“What was the criterion for error messages?”</p>
+            <p class="loss-brief">This session does not have the previous decision.</p>
+            <a class="loss-goto" href="#loss-ref-ayer" hidden>Jump to yesterday’s criterion</a>
+          </div>
         </article>
-        <div class="loss-link" role="img" aria-label="Context does not carry over"><i class="loss-link-dot"></i><i class="loss-link-break"></i></div>
+        <div class="loss-link" role="img" aria-label="Context does not carry over"><i class="loss-link-dot"></i><i class="loss-link-break"></i><i class="loss-link-manual" hidden></i><span class="loss-link-tag" hidden>Manual handoff</span></div>
       </div>
       <p class="loss-stakes"><span>You made progress yesterday. Today you have to explain it again.</span></p>
+      <p class="loss-confirm" hidden>The task can continue, but you had to supply the decision again.</p>
       <p class="loss-scope">Illustrative example. Behavior depends on the tool and how context is preserved.</p>
+      <button class="loss-again" type="button" hidden data-msg="Experience reset.">Replay the experience</button>
+      <p class="loss-announce visually-hidden" aria-live="polite"></p>
     </div>
   </div>
 </section>
