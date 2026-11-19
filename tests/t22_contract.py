@@ -19,6 +19,11 @@ with sync_playwright() as pw:
     p.goto(BASE+"/reference/",wait_until="networkidle")
     ok("print case",p.locator("#task").count()==0)  # reference has no case
     b.close()
+es_ref=open("es/referencia/index.html",encoding="utf-8").read()
+ok("ES reference lang",'<html lang="es"' in es_ref)
+ok("ES reference canonical",'https://arqux.ai/es/referencia/' in es_ref)
+ok("ES reference no English copy",all(x not in es_ref for x in ("From policy to a result","Lessons are recorded","The kernel every compatible agent","Artifacts and their roles")))
+ok("ES reference nav",'href="/es/empezar/"' in es_ref and 'href="/es/confianza/"' in es_ref and 'href="/reference/"' in es_ref)
 size=os.path.getsize("assets/style.css")+os.path.getsize("assets/app.js")
 ok("css+js budget",size<=84000)  # raised for section navigation, edge reveal and case detail modal
 ok("sitemap 8",len(re.findall(r"<loc>",open("sitemap.xml").read()))==8)
