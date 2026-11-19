@@ -20,7 +20,7 @@ with sync_playwright() as pw:
     ok("print case",p.locator("#task").count()==0)  # reference has no case
     b.close()
 size=os.path.getsize("assets/style.css")+os.path.getsize("assets/app.js")
-ok("css+js budget",size<=79000)  # raised for floating section navigation + edge reveal
+ok("css+js budget",size<=84000)  # raised for section navigation, edge reveal and case detail modal
 ok("sitemap 8",len(re.findall(r"<loc>",open("sitemap.xml").read()))==8)
 ok("community footer ES",'id="community"' in open("es/index.html").read())
 print("\n".join(results)); print("----"); print("TOTAL",len(results),"FAILURES",len(failures)); sys.exit(1 if failures else 0)

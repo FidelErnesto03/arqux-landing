@@ -55,20 +55,14 @@
     storyObserver.observe(localStory);
   }
 
-  /* ---------- problem section: five fractures, one-shot reveal (no loops) ---------- */
+  /* ---------- problem section: only the reference motif moves, text never hides ---------- */
   const failureSection = $("#failures");
   if (failureSection && "IntersectionObserver" in window && !REDUCED) {
-    const parts = [
-      ...$$(".drift-item", failureSection),
-      $(".failure-close", failureSection),
-      $(".coherence-line span", failureSection)
-    ].filter(Boolean);
-    parts.forEach((el) => el.classList.add("reveal"));
     const failureObserver = new IntersectionObserver((entries) => {
       if (!entries[0].isIntersecting) return;
-      parts.forEach((el, i) => window.setTimeout(() => el.classList.add("in"), 90 + i * 110));
+      failureSection.classList.add("is-live");
       failureObserver.disconnect();
-    }, { threshold: 0.12, rootMargin: "0px 0px -30% 0px" });
+    }, { threshold: 0.15, rootMargin: "0px 0px -25% 0px" });
     failureObserver.observe(failureSection);
   }
 
@@ -361,6 +355,31 @@
       setTimeout(() => { window.location.href = href; }, 180);
     })
   );
+
+  /* ---------- case detail modal: click anywhere on the item ---------- */
+  const caseDialog = $("#case-dialog");
+  if (caseDialog && typeof caseDialog.showModal === "function") {
+    let lastTrigger = null;
+    const setText = (sel, v) => { const el = $(sel, caseDialog); if (el) el.textContent = v || ""; };
+    $$(".failure-case").forEach((item, idx) => {
+      const btn = $(".case-open", item);
+      if (!btn) return;
+      const title = $(".case-title b", item);
+      const desc = $(".case-desc", item);
+      btn.setAttribute("aria-label", (item.dataset.more || "Details") + ": " + (title ? title.textContent : ""));
+      btn.addEventListener("click", () => {
+        if (caseDialog.open) return;
+        lastTrigger = btn;
+        setText("#case-dialog-kicker", String(idx + 1).padStart(2, "0") + " · " + (item.dataset.ask || ""));
+        setText("#case-dialog-title", title ? title.textContent : "");
+        setText("#case-dialog-desc", desc ? desc.textContent : "");
+        setText("#case-dialog-extra", item.dataset.extra || "");
+        caseDialog.showModal();
+      });
+    });
+    caseDialog.addEventListener("click", (e) => { if (e.target === caseDialog) caseDialog.close(); });
+    caseDialog.addEventListener("close", () => { if (lastTrigger) lastTrigger.focus(); });
+  }
 
   /* ---------- section navigation: floating arrows, passive scroll, no hijack ---------- */
   const sectionNav = $(".section-nav");
