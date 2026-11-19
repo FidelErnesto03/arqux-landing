@@ -56,35 +56,47 @@
     </div>
   </header><main id="main-content">
     <section class="hero" id="top"><div class="wrap hero-grid hero-wide"><div class="hero-copy"><p class="eyebrow">Para quien trabaja con agentes de IA en proyectos duraderos</p><h1>Cada tarea deja<br>algo más que un resultado.</h1><p class="lead">ArqUX organiza el contexto, las decisiones y las reglas de tu proyecto para dar continuidad al trabajo con agentes de IA. Ese contexto puede evolucionar con cada tarea.</p><p class="hero-portable">Un proyecto que conserva su rumbo y puede aprender de su trabajo.</p><div class="hero-ctas"><a class="button button-primary" href="/es/referencia/#workflow">Ver el modelo</a><a class="button button-secondary" href="/es/empezar/">Primeros pasos</a></div><p class="hero-facts"><span><i aria-hidden="true">✓</i><a href="https://github.com/FidelErnesto03/arqux/blob/master/LICENSE" target="_blank" rel="noreferrer">Apache-2.0</a></span><span><i aria-hidden="true">✓</i><a href="/es/confianza/">Primero local</a></span><span><i aria-hidden="true">✓</i><a href="/es/referencia/#artifacts">4 proyecciones, una por app compatible</a></span></p><p class="hero-note">Un kernel → un archivo nativo por app compatible.</p></div><div class="hero-visual"><object class="hero-map" data="/assets/arqux-governance-side.svg" type="image/svg+xml" aria-label="Mapa lateral ArqUX: Harness, seis dimensiones de tarea, proyecto"><p>Mapa de gobierno: <a href="/es/referencia/#dimensions">seis dimensiones de tarea</a>.</p></object></div><div class="hero-mobile-map" role="group" aria-label="Seis dimensiones de tarea"><a href="/es/referencia/#dimensions">Identidad <span>quién actúa</span></a><a href="/es/referencia/#dimensions">Contrato <span>qué puede hacer</span></a><a href="/es/referencia/#dimensions">Contexto <span>con qué trabaja</span></a><a href="/es/referencia/#dimensions">Decisión <span>qué se acuerda</span></a><a href="/es/referencia/#dimensions">Ejecución <span>cómo se realiza</span></a><a href="/es/referencia/#dimensions">Evidencia <span>qué se comprueba</span></a></div></div></section>
-<section class="section section-light" id="local">
-      <div class="wrap">
-        <div class="problem-grid">
-          <div class="problem-copy">
-            <p class="eyebrow">El problema</p>
-            <h2>Tu proyecto evoluciona. Su&nbsp;contexto también debería.</h2>
-            <p class="section-copy">Cada tarea deja decisiones, criterios y aprendizajes. Si quedan dispersos entre conversaciones, una nueva sesión puede empezar sin el conocimiento que el proyecto ya construyó.</p>
-          </div>
-          <figure class="frag" aria-label="Tres sesiones sin una referencia común">
-            <div class="frag-head"><div class="frag-head-copy"><span class="frag-kicker">Tres sesiones</span><span class="frag-sub">sin referencia común</span></div><span class="frag-tag">Ilustrativo</span></div>
-            <div class="frag-sessions">
-              <article class="frag-session"><div class="frag-who"><span>Sesión 1 · Agente A</span><span>decisión</span></div><p class="frag-quote">«Acordado: no exponer datos sensibles en los mensajes de&nbsp;error».</p><p class="frag-foot">registrado en el hilo</p></article>
-              <div class="frag-break"><span>se pierde el contexto</span></div>
-              <article class="frag-session"><div class="frag-who"><span>Sesión 2 · Agente B</span><span>reconstruir</span></div><p class="frag-quote">«¿Cuál era el criterio para los mensajes de error?»</p><p class="frag-foot">reconstruido de memoria</p></article>
-              <article class="frag-session is-last"><div class="frag-who"><span>Sesión 3 · Agente C</span><span>empezar</span></div><p class="frag-quote">Empieza sin la decisión anterior.</p><p class="frag-foot">sin referencia común</p></article>
-            </div>
-            <p class="frag-note">Sin una referencia compartida, cada conversación conserva solo sus notas.</p>
-          </figure>
-          <div class="problem-detail">
-            <ul class="problem-signals">
-              <li><span class="pnum">01</span><div><b>Cada agente puede llegar con otra versión.</b><p>Las instrucciones y el contexto se copian en cada app o conversación.</p></div></li>
-              <li><span class="pnum">02</span><div><b>Las decisiones pueden quedarse en el hilo.</b><p>Un criterio acordado en una sesión puede no estar disponible en la siguiente; depende de la herramienta y de cómo se conserve el contexto.</p></div></li>
-              <li><span class="pnum">03</span><div><b>La revisión puede empezar de cero.</b><p>Sin una referencia compartida, revisar depende de la memoria.</p></div></li>
-            </ul>
-            <p class="problem-close">El coste no es un mensaje perdido: es volver a decidir lo que el proyecto ya había decidido.</p>
-          </div>
-        </div>
+<section class="section section-light loss-section" id="local" aria-labelledby="loss-title">
+  <div class="wrap">
+    <div class="loss-head">
+      <p class="eyebrow">El costo de no tener una referencia compartida</p>
+      <h2 id="loss-title">Se decidió. Luego se volvió a decidir.</h2>
+      <p class="loss-lead">Tres sesiones. Una decisión. Ninguna referencia compartida.</p>
+    </div>
+    <div class="loss-scene">
+      <div class="loss-scene-head">
+        <div class="loss-scene-meta"><span class="loss-scene-kicker">Tres sesiones</span><span class="loss-scene-tag">Reconstrucción ilustrativa</span></div>
+        <span class="loss-cut">sin referencia compartida</span>
       </div>
-    </section>
+      <div class="loss-thread" aria-hidden="true"><i></i><i></i><i class="cut"></i></div>
+      <div class="loss-sessions">
+        <article class="loss-session">
+          <h3 class="loss-session-head"><span>01 · Sesión 1</span><span>Agente A · se decidió</span></h3>
+          <p class="loss-quote">“No exponer datos sensibles en los mensajes de error.”</p>
+          <p class="loss-foot">registrado en el hilo</p>
+        </article>
+        <article class="loss-session">
+          <h3 class="loss-session-head"><span>02 · Sesión 2</span><span>Agente B · se preguntó</span></h3>
+          <p class="loss-quote">“¿Cuál era el criterio para los mensajes de error?”</p>
+          <p class="loss-foot">reconstruido de memoria</p>
+        </article>
+        <article class="loss-session is-empty">
+          <h3 class="loss-session-head"><span>03 · Sesión 3</span><span>Agente C · se empezó de nuevo</span></h3>
+          <p class="loss-absent">Sin decisión previa.</p>
+          <p class="loss-foot">sin referencia compartida</p>
+        </article>
+      </div>
+      <p class="loss-scope">Reconstrucción ilustrativa. El comportamiento depende de la herramienta y de cómo se conserve el contexto.</p>
+    </div>
+    <ol class="loss-consequences">
+      <li><span>01</span><strong>La decisión se abre otra vez.</strong></li>
+      <li><span>02</span><strong>La respuesta cambia según el agente.</strong></li>
+      <li><span>03</span><strong>La revisión empieza sin evidencia.</strong></li>
+    </ol>
+    <p class="loss-verdict">El proyecto no perdió un mensaje. <em>Perdió una decisión.</em></p>
+    <p class="loss-bridge">Una referencia compartida cambia la escena.</p>
+  </div>
+</section>
 <section class="section section-soft" id="task">
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">Caso ilustrativo</p><h2>El trabajo termina. El criterio permanece.</h2><p class="section-copy">En una integración se acuerda no exponer datos sensibles en los mensajes de error.</p></div>
