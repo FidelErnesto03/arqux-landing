@@ -59,9 +59,9 @@
   const failureSection = $("#failures");
   if (failureSection && "IntersectionObserver" in window && !REDUCED) {
     const parts = [
-      ...$$(".failure-rail i", failureSection),
-      ...$$(".failure-grid li", failureSection),
-      $(".failure-close", failureSection)
+      ...$$(".drift-item", failureSection),
+      $(".failure-close", failureSection),
+      $(".coherence-line span", failureSection)
     ].filter(Boolean);
     parts.forEach((el) => el.classList.add("reveal"));
     const failureObserver = new IntersectionObserver((entries) => {
@@ -71,7 +71,6 @@
     }, { threshold: 0.12, rootMargin: "0px 0px -30% 0px" });
     failureObserver.observe(failureSection);
   }
-
 
   /* ---------- project reference: which steps read or write a component ---------- */
   const refBar = $(".source-panel");
