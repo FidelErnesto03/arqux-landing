@@ -315,14 +315,16 @@
       const btn = $(".case-open", item);
       if (!btn) return;
       const title = $(".case-title b", item);
+      const mech = $(".case-mech", item);
       const desc = $(".case-desc", item);
       btn.setAttribute("aria-label", (item.dataset.more || "Details") + ": " + (title ? title.textContent : ""));
       btn.addEventListener("click", () => {
         if (caseDialog.open) return;
         lastTrigger = btn;
-        setText("#case-dialog-kicker", String(idx + 1).padStart(2, "0") + " · " + (item.dataset.ask || ""));
+        setText("#case-dialog-kicker", String(idx + 1).padStart(2, "0") + " · " + (mech ? mech.textContent.trim() : (item.dataset.ask || "")));
         setText("#case-dialog-title", title ? title.textContent : "");
         setText("#case-dialog-desc", desc ? desc.textContent : "");
+        setText("#case-dialog-ask", item.dataset.ask || "");
         setText("#case-dialog-extra", item.dataset.extra || "");
         caseDialog.showModal();
       });

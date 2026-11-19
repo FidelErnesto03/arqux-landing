@@ -62,7 +62,7 @@
       <p class="eyebrow">The problem</p>
       <h2 id="failures-title">Context breaks in five ordinary ways.</h2>
       <p class="failure-lead">Long-term work requires supervision and multiple iterations. We cannot lose the context we have gained.</p>
-      <p class="failure-close">The output can survive a change of agent, tool or session. <em>The criterion behind it</em> may no longer be available, intact or verifiable.</p>
+      <p class="failure-close">The output can survive. <em>The criterion behind it</em>, not always.</p>
       <div class="coherence-line" aria-hidden="true"><span></span></div>
     </div>
     <ol class="failure-cases">
@@ -102,31 +102,36 @@
 <section class="section loss-section" id="local" aria-labelledby="loss-title" data-section-name="The interrupted decision">
   <div class="wrap">
     <div class="loss-head">
-      <p class="eyebrow">The cost of working without shared context</p>
-      <h2 id="loss-title">The decision was made. The next agent didn’t know it.</h2>
-      <p class="loss-lead">Two sessions. One decision. No shared context.</p>
+      <div class="loss-head__copy">
+        <p class="eyebrow">The cost of working without shared context</p>
+        <h2 id="loss-title">The decision was made. The next agent didn’t know it.</h2>
+        <p class="loss-lead">Two sessions. One decision. No shared context.</p>
+      </div>
       <p class="loss-stakes" data-loss-step="1">You made progress yesterday. Today you have to explain it again.</p>
     </div>
     <div class="loss-scene" role="group" aria-label="Illustrative example: a decision made in one session is not available to the next agent">
-      <div class="loss-decision" data-loss-step="1">
-        <p class="loss-kicker">01 · Session 1 — decided</p>
-        <p class="loss-quote">“Do not expose sensitive data in error messages.”</p>
-        <p class="loss-foot">recorded in the thread</p>
+      <div class="loss-sessions">
+        <article class="loss-session" data-loss-step="1">
+          <p class="loss-kicker">01 · Session 1 — decided</p>
+          <p class="loss-quote">“Do not expose sensitive data in error messages.”</p>
+          <p class="loss-foot">Recorded in the thread</p>
+        </article>
+        <div class="loss-seam" data-loss-step="2" aria-hidden="true">
+          <span class="loss-seam-line"></span>
+          <span class="loss-seam-dot"></span>
+          <span class="loss-seam-caption">Context does not carry over</span>
+          <span class="loss-seam-line is-faded"></span>
+        </div>
+        <article class="loss-session loss-session--next" data-loss-step="3">
+          <p class="loss-kicker">02 · Session 2 — asked</p>
+          <p class="loss-question">“What was the criterion for error messages?”</p>
+          <p class="loss-absent">No access to the previous decision.</p>
+        </article>
       </div>
-      <div class="loss-trace" data-loss-step="2" aria-hidden="true">
-        <span class="loss-trace-segment"></span>
-        <span class="loss-break-mark"></span>
-        <span class="loss-trace-segment is-faded"></span>
-        <span class="loss-signal"></span>
+      <div class="loss-close">
+        <p class="loss-verdict" data-loss-step="4">The project didn’t lose a message. <em>It lost access to the decision.</em></p>
+        <p class="loss-cost" data-loss-step="5">Someone will have to ask, and you will have to explain it again.</p>
       </div>
-      <p class="loss-break-label" data-loss-step="3">context does not carry over</p>
-      <div class="loss-next" data-loss-step="4">
-        <p class="loss-kicker">02 · Session 2 — asked</p>
-        <p class="loss-question">“What was the criterion for error messages?”</p>
-        <p class="loss-absent">No access to the previous decision.</p>
-      </div>
-      <p class="loss-verdict" data-loss-step="5">The project didn’t lose a message. <em>It lost access to the decision.</em></p>
-      <p class="loss-cost" data-loss-step="6">Someone will have to ask, and you will have to explain it again.</p>
       <p class="loss-scope">Illustrative example. Behavior depends on the tool and how context is preserved.</p>
     </div>
     <p class="loss-bridge">Keeping the output is not enough. <em>The criterion</em> that made it possible has to survive.</p>
@@ -193,7 +198,7 @@
   <button class="section-nav-btn" type="button" data-nav-dir="next" aria-label="Go to next section" title="Next section">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
   </button>
-  <span class="section-nav-count" aria-live="polite">01 / 05</span>
+  <span class="section-nav-count" aria-live="polite">01 / 04</span>
 </nav>
 <dialog class="case-dialog" id="case-dialog" aria-labelledby="case-dialog-title">
   <form method="dialog"><button class="case-dialog-close" type="submit" aria-label="Close detail">×</button></form>

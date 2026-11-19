@@ -10,7 +10,7 @@ with sync_playwright() as pw:
     try: b=pw.chromium.launch(channel="chrome")
     except Exception: b=pw.chromium.launch()
 
-    for lang,url,ask in (("EN","/","WHY IT MATTERS"),("ES","/es/","POR QUÉ IMPORTA")):
+    for lang,url,mech in (("EN","/","INTERPRETATION"),("ES","/es/","INTERPRETACIÓN")):
         p=b.new_page(viewport={"width":1440,"height":900})
         errs=[]; p.on("pageerror",lambda e: errs.append(str(e)))
         p.goto(BASE+url,wait_until="networkidle")
@@ -26,7 +26,9 @@ with sync_playwright() as pw:
         p.keyboard.press("Escape"); p.wait_for_timeout(150)
         p.locator(".case-open").first.click(); p.wait_for_timeout(260)
         ok(lang+" dialog opens",p.locator("#case-dialog").evaluate("el=>el.open"))
-        ok(lang+" kicker",ask in p.locator("#case-dialog-kicker").text_content().upper())
+        ok(lang+" kicker names mechanism",mech in p.locator("#case-dialog-kicker").text_content().upper())
+        ok(lang+" kicker numbered",p.locator("#case-dialog-kicker").text_content().strip().startswith("01"))
+        ok(lang+" why label kept",len(p.locator("#case-dialog-ask").text_content())>8)
         ok(lang+" title",len(p.locator("#case-dialog-title").text_content())>8)
         ok(lang+" original description kept",len(p.locator("#case-dialog-desc").text_content())>40)
         ok(lang+" complementary info",len(p.locator("#case-dialog-extra").text_content())>40)
