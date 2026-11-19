@@ -33,6 +33,7 @@ with sync_playwright() as pw:
         ok("core beats on sync",svgs[0].locator("#arqx-core.is-beat").count()==1)
         ok("map title",svgs[0].locator("#map-title").count()==1)
         ok("triad nodes",svgs[0].locator(".triad-node").count()==3)
+        ok("triad cards clear feather",svgs[0].locator(".triad-detail[data-triad=harness]").get_attribute("transform")=="translate(250,360)" and svgs[0].locator(".triad-detail[data-triad=project]").get_attribute("transform")=="translate(750,360)")
         ok("no visible subtitles",svgs[0].locator(".stage-desc").count()==0)
         svgs[0].locator("#arqx-stage-identidad").hover(); p.wait_for_timeout(120)
         ok("lifted card",svgs[0].locator(".lift-card.is-on").count()==1)

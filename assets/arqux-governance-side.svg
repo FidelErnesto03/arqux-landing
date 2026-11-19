@@ -155,7 +155,7 @@
 </g>
 </g>
 <g id="triad-lift-layer" aria-hidden="true" pointer-events="none">
-<g class="triad-detail" data-triad="harness" transform="translate(220,360)" aria-hidden="true">
+<g class="triad-detail" data-triad="harness" transform="translate(250,360)" aria-hidden="true">
 <g class="triad-inner">
 <rect class="triad-frame" x="-215" y="-75" width="430" height="150" rx="24"/>
 <g class="rail-icon" transform="translate(-183 0) scale(.5)" fill="none" stroke="#70F8EB" stroke-width="3"><rect x="-35" y="-21" width="70" height="57" rx="23" fill="#12313E"/><path d="M0 -33 V-21 M-48 0 H-36 M36 0 H48"/><circle cx="-13" cy="3" r="5" fill="#70F8EB" stroke="none"/><circle cx="13" cy="3" r="5" fill="#70F8EB" stroke="none"/><path d="M-12 19 Q0 26 12 19"/></g>
@@ -171,7 +171,7 @@
 <text class="triad-desc" x="-146" y="-16"><tspan x="-146" dy="0">Seis dimensiones de gobierno: identidad,</tspan><tspan x="-146" dy="28.5">contrato, contexto, decisión, ejecución</tspan><tspan x="-146" dy="28.5">y evidencia. El aprendizaje se revisa.</tspan></text>
 </g>
 </g>
-<g class="triad-detail" data-triad="project" transform="translate(780,360)" aria-hidden="true">
+<g class="triad-detail" data-triad="project" transform="translate(750,360)" aria-hidden="true">
 <g class="triad-inner">
 <rect class="triad-frame" x="-215" y="-75" width="430" height="150" rx="24"/>
 <g class="rail-icon" transform="translate(-183 0) scale(.5)" fill="none" stroke="#7EF3EA" stroke-width="3"><path d="M0 -22 L29 -8 V18 L0 34 L-29 18 V-8 Z M0 -22 V6 M-29 -8 L0 6 L29 -8 M0 6 V34"/></g>
