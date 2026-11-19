@@ -715,7 +715,7 @@ pre{font-size:13px;line-height:1.75}
 @media(max-width:760px){.failure-case{grid-template-columns:38px minmax(0,1fr);gap:10px 14px;padding:18px 0}.case-desc{grid-column:2;font-size:15.5px}.failures-message h2{margin-bottom:12px}.failure-close{margin-top:24px}}
 @media(prefers-reduced-motion:reduce){.failure-section.is-live .failure-case{animation:none}}
 /* section navigation: floating arrows, never hijacks the scroll */
-.section-nav{position:fixed;right:18px;top:50%;transform:translate(14px,-50%);z-index:40;display:grid;gap:12px;justify-items:center;max-width:240px;opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease}
+.section-nav{position:fixed;right:18px;top:50%;transform:translate(0,-50%);z-index:40;display:grid;gap:12px;justify-items:center;max-width:240px;opacity:.3;pointer-events:none;transition:opacity .22s ease}
 .section-nav.is-near,.section-nav:focus-within{opacity:1;transform:translate(0,-50%);pointer-events:auto}
 .section-nav[hidden]{display:none}
 .section-nav-btn{position:relative;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,181,71,.55);background:rgba(10,20,32,.9);color:var(--paper-100);cursor:pointer;transition:background .16s ease,border-color .16s ease,transform .16s ease,color .16s ease}

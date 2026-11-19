@@ -23,7 +23,7 @@ with sync_playwright() as pw:
         p.goto(BASE+url,wait_until="networkidle"); p.wait_for_timeout(300)
         ok(lang+" nav visible",p.locator(".section-nav").is_visible())
         p.mouse.move(720,450,steps=6); p.wait_for_timeout(300)
-        ok(lang+" arrows hidden away from edge",p.locator(".section-nav").evaluate("el=>getComputedStyle(el).opacity")=="0")
+        ok(lang+" arrows ghost away from edge",p.locator(".section-nav").evaluate("el=>getComputedStyle(el).opacity")=="0.3")
         p.mouse.move(1400,450,steps=6); p.wait_for_timeout(350)
         ok(lang+" arrows appear near right edge",p.locator(".section-nav").evaluate("el=>getComputedStyle(el).opacity")=="1")
         p.mouse.move(720,450,steps=6); p.wait_for_timeout(300)
