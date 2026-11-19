@@ -362,6 +362,81 @@
     })
   );
 
-  /* ---------- I-12: dev easter egg removed with the old demo (the workspace board has no timeline) ---------- */
+  /* ---------- section navigation: floating arrows, passive scroll, no hijack ---------- */
+  const sectionNav = $(".section-nav");
+  if (sectionNav) {
+    const navSections = $$('main > section[id][data-section-name]');
+    if (navSections.length > 1) {
+      sectionNav.hidden = false;
+      const prevBtn = $('[data-nav-dir="prev"]', sectionNav);
+      const nextBtn = $('[data-nav-dir="next"]', sectionNav);
+      const counter = $(".section-nav-count", sectionNav);
+      const es = document.documentElement.lang === "es";
+      const labels = es
+        ? { prev: "Ir a la sección anterior: ", next: "Ir a la sección siguiente: " }
+        : { prev: "Go to previous section: ", next: "Go to next section: " };
+      let current = 0;
+      let lockUntil = 0;
+      const render = () => {
+        const name = (i) => navSections[i].dataset.sectionName || "";
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === navSections.length - 1;
+        const pt = current > 0 ? labels.prev + name(current - 1) : labels.prev + name(0);
+        const nt = current < navSections.length - 1 ? labels.next + name(current + 1) : labels.next + name(current);
+        prevBtn.setAttribute("aria-label", pt);
+        nextBtn.setAttribute("aria-label", nt);
+        prevBtn.title = name(Math.max(0, current - 1));
+        nextBtn.title = name(Math.min(navSections.length - 1, current + 1));
+        prevBtn.dataset.tip = current > 0 ? name(current - 1) : "";
+        nextBtn.dataset.tip = current < navSections.length - 1 ? name(current + 1) : "";
+        counter.textContent = String(current + 1).padStart(2, "0") + " / " + String(navSections.length).padStart(2, "0");
+      };
+      const sync = () => {
+        if (performance.now() < lockUntil) return;
+        let idx = 0;
+        navSections.forEach((s, i) => {
+          if (s.getBoundingClientRect().top <= 120) idx = i;
+        });
+        if (idx !== current) { current = idx; render(); }
+      };
+      const go = (i) => {
+        if (i < 0 || i >= navSections.length) return;
+        navSections[i].scrollIntoView({ block: "start", behavior: REDUCED ? "auto" : "smooth" });
+        current = i;
+        render();
+        lockUntil = performance.now() + (REDUCED ? 150 : 1100);
+        window.setTimeout(() => { lockUntil = 0; sync(); }, REDUCED ? 180 : 1200);
+      };
+      prevBtn.addEventListener("click", () => go(current - 1));
+      nextBtn.addEventListener("click", () => go(current + 1));
+      let ticking = false;
+      window.addEventListener("scroll", () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => { sync(); ticking = false; });
+      }, { passive: true });
+      window.addEventListener("resize", sync, { passive: true });
+      if (window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        const near = (x, type) => {
+          if (type === "touch") return;
+          sectionNav.classList.toggle("is-near", window.innerWidth - x <= 110);
+        };
+        document.addEventListener("pointermove", (e) => near(e.clientX, e.pointerType), { passive: true });
+        $$("object").forEach((o) => {
+          const attach = () => {
+            try {
+              const d = o.contentDocument;
+              if (d) d.addEventListener("pointermove", (e) => near(e.clientX + o.getBoundingClientRect().left, e.pointerType), { passive: true });
+            } catch (err) { /* cross-origin object: ignore */ }
+          };
+          attach();
+          o.addEventListener("load", attach);
+        });
+        document.addEventListener("pointerleave", () => sectionNav.classList.remove("is-near"));
+      }
+      sync();
+      render();
+    }
+  }
 
 })();
