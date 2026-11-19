@@ -16,8 +16,8 @@ with sync_playwright() as pw:
     except Exception: b=pw.chromium.launch()
 
     for lang,url,names in (
-        ("EN","/",["ArqUX","Five ways context breaks","The interrupted decision","How work changes","Explore and continue"]),
-        ("ES","/es/",["ArqUX","Cinco formas de romper el contexto","La decisión interrumpida","Cómo cambia el trabajo","Explorar y continuar"]),
+        ("EN","/",["ArqUX","Five ways context breaks","The interrupted decision","Closure"]),
+        ("ES","/es/",["ArqUX","Cinco formas de romper el contexto","La decisión interrumpida","Cierre"]),
     ):
         p=b.new_page(viewport={"width":1440,"height":900})
         p.goto(BASE+url,wait_until="networkidle"); p.wait_for_timeout(300)
@@ -33,34 +33,34 @@ with sync_playwright() as pw:
         p.locator('[data-nav-dir="next"]').hover(); p.wait_for_timeout(220)
         after=p.locator('[data-nav-dir="next"]').evaluate("el=>getComputedStyle(el).backgroundColor")
         ok(lang+" hover visible",before!=after)
-        ok(lang+" five steps",p.locator("main > section[id][data-section-name]").count()==5)
-        ok(lang+" start count",p.locator(".section-nav-count").text_content().strip()=="01 / 05")
+        ok(lang+" four steps",p.locator("main > section[id][data-section-name]").count()==4)
+        ok(lang+" start count",p.locator(".section-nav-count").text_content().strip()=="01 / 04")
         ok(lang+" prev disabled at first",p.locator('[data-nav-dir="prev"]').is_disabled())
         ok(lang+" first title clear",p.locator("#top h1").bounding_box()["y"]>=70)
 
         navclick(p, "next"); p.wait_for_timeout(1400)
-        ok(lang+" next count",p.locator(".section-nav-count").text_content().strip()=="02 / 05")
+        ok(lang+" next count",p.locator(".section-nav-count").text_content().strip()=="02 / 04")
         ok(lang+" step 2 title clear",p.locator("#failures h2").bounding_box()["y"]>=70)
         ok(lang+" next label",names[2] in p.locator('[data-nav-dir="next"]').get_attribute("aria-label"))
         ok(lang+" url unchanged",p.url.rstrip("/").endswith(url.strip("/")) or p.url.rstrip("/").endswith("8137"))
 
         navclick(p, "prev"); p.wait_for_timeout(1400)
-        ok(lang+" prev count",p.locator(".section-nav-count").text_content().strip()=="01 / 05")
+        ok(lang+" prev count",p.locator(".section-nav-count").text_content().strip()=="01 / 04")
         ok(lang+" prev disabled again",p.locator('[data-nav-dir="prev"]').is_disabled())
 
-        for _ in range(4):
+        for _ in range(3):
             navclick(p, "next"); p.wait_for_timeout(1250)
-        ok(lang+" last count",p.locator(".section-nav-count").text_content().strip()=="05 / 05")
+        ok(lang+" last count",p.locator(".section-nav-count").text_content().strip()=="04 / 04")
         ok(lang+" next disabled at last",p.locator('[data-nav-dir="next"]').is_disabled())
 
-        p.evaluate("window.scrollTo(0, document.querySelector('#task').offsetTop - 80)")
+        p.evaluate("window.scrollTo(0, document.querySelector('#local').offsetTop - 80)")
         p.wait_for_timeout(500)
-        ok(lang+" manual scroll count",p.locator(".section-nav-count").text_content().strip()=="04 / 05")
+        ok(lang+" manual scroll count",p.locator(".section-nav-count").text_content().strip()=="03 / 04")
 
         p.evaluate("window.scrollTo(0,0)"); p.wait_for_timeout(400)
         p.locator('[data-nav-dir="next"]').focus()
         p.keyboard.press("Enter"); p.wait_for_timeout(1300)
-        ok(lang+" keyboard count",p.locator(".section-nav-count").text_content().strip()=="02 / 05")
+        ok(lang+" keyboard count",p.locator(".section-nav-count").text_content().strip()=="02 / 04")
         p.close()
 
     for w,h in ((1440,900),(1366,768),(1024,768),(390,844),(320,640)):
@@ -74,7 +74,7 @@ with sync_playwright() as pw:
     c=b.new_context(reduced_motion="reduce",viewport={"width":1440,"height":900})
     p=c.new_page(); p.goto(BASE+"/",wait_until="networkidle")
     navclick(p, "next"); p.wait_for_timeout(300)
-    ok("reduced motion immediate",p.locator(".section-nav-count").text_content().strip()=="02 / 05")
+    ok("reduced motion immediate",p.locator(".section-nav-count").text_content().strip()=="02 / 04")
     c.close()
 
     c=b.new_context(java_script_enabled=False,viewport={"width":1440,"height":900})

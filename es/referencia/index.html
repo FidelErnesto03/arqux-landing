@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0A1420">
-<meta name="description" content="Workflow, task dimensions, artifacts and CORTEX format in one reference.">
+<meta name="description" content="Workflow, task dimensions, artifacts and CORTEX format in one place.">
 <title>Reference — ArqUX</title>
 <link rel="icon" href="/assets/brand/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
@@ -14,7 +14,7 @@
 <link rel="alternate" hreflang="es" href="https://arqux.ai/es/referencia/">
 <link rel="alternate" hreflang="x-default" href="https://arqux.ai/">
 <meta property="og:title" content="Reference — ArqUX">
-<meta property="og:description" content="Workflow, task dimensions, artifacts and CORTEX format in one reference.">
+<meta property="og:description" content="Workflow, task dimensions, artifacts and CORTEX format in one place.">
 <meta property="og:url" content="https://arqux.ai/reference/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://arqux.ai/assets/brand/og-image.png">
@@ -56,7 +56,7 @@
     </div>
   </header>
 <main id="main-content">
-<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Referencia</p><h1>Un proyecto, una referencia, trabajo revisable.</h1><p class="section-copy">El modelo, los artefactos y el formato en un solo lugar. Empieza por el trabajo y después inspecciona dónde vive la información y cómo se conserva.</p><nav class="ref-nav" aria-label="Secciones de referencia"><a href="#workflow">Flujo</a><a href="#learning">Aprendizaje</a><a href="#dimensions">Dimensiones de tarea</a><a href="#artifacts">Artefactos</a><a href="#format">Formato</a><a href="#compatibility">Compatibilidad</a></nav></div></section>
+<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Referencia</p><h1>Un proyecto, un contexto gobernado, trabajo revisable.</h1><p class="section-copy">El modelo, los artefactos y el formato en un solo lugar. Empieza por el trabajo y después inspecciona dónde vive la información y cómo se conserva.</p><nav class="ref-nav" aria-label="Secciones de referencia"><a href="#workflow">Flujo</a><a href="#learning">Aprendizaje</a><a href="#dimensions">Dimensiones de tarea</a><a href="#artifacts">Artefactos</a><a href="#format">Formato</a><a href="#compatibility">Compatibilidad</a></nav></div></section>
 <section class="section section-light" id="workflow">
       <div class="wrap workflow-grid">
         <div class="section-head"><p class="eyebrow">Follow the work</p><h2>From policy to a result the team can review.</h2><p class="section-copy">Select a stage. See who participates, what changes and what can be inspected. Labels distinguish code controls from instructions and team practices.</p>
@@ -125,14 +125,25 @@
     </section>
 <section class="section section-soft" id="learning">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Learning</p><h2>Learning is governed; its routes differ.</h2><p class="section-copy">Lessons are recorded in the project brain. Elevating a lesson to an identity is a separate, explicit step: the inspected path requires a dry-run proposal and hash confirmation. Other promotion routes can run under a configured policy; they do not follow the same path.</p></div>
-        <div class="learning-transform"><span>Lesson recorded</span><i aria-hidden="true">→</i><span>Proposal reviewed</span><i aria-hidden="true">→</i><span>Criterion available</span></div>
+        <div class="section-head"><p class="eyebrow">Aprendizaje</p><h2>El aprendizaje está gobernado; sus rutas difieren.</h2><p class="section-copy">Las lecciones se registran en el cerebro del proyecto. Elevar una lección a identidad es un paso explícito y separado: la ruta inspeccionada exige una propuesta en seco y la confirmación de su hash. Otras rutas de promoción pueden ejecutarse bajo una política configurada; no siguen el mismo camino.</p></div>
+        <div class="learning-transform"><span>Lección registrada</span><i aria-hidden="true">→</i><span>Propuesta revisada</span><i aria-hidden="true">→</i><span>Criterio disponible</span></div>
         <ul class="flow">
-          <li><span>01</span><b>Record</b><small>A lesson is recorded in the project brain.</small></li>
-          <li><span>02</span><b>Review</b><small>A proposal is reviewed before any identity change.</small></li>
-          <li><span>03</span><b>Apply</b><small>On this route, applying requires the reviewed hash; policy may automate other routes.</small></li>
+          <li><span>01</span><b>Registrar</b><small>Una lección se registra en el cerebro del proyecto.</small></li>
+          <li><span>02</span><b>Revisar</b><small>Una propuesta se revisa antes de cualquier cambio de identidad.</small></li>
+          <li><span>03</span><b>Aplicar</b><small>En esta ruta, aplicar exige el hash revisado; la política puede automatizar otras rutas.</small></li>
         </ul>
-        <p class="case-bridge">In the home example, the error-message decision is the lesson recorded here; review decides whether it becomes a criterion.</p>
+        <p class="case-bridge">En el ejemplo de la portada, la decisión sobre los mensajes de error es la lección registrada aquí; la revisión decide si se convierte en criterio.</p>
+        <div class="learning-sequence" id="criterion-flow">
+          <p class="eyebrow">Del trabajo al criterio reutilizable</p>
+          <ol class="flow flow-sequence">
+            <li><span>01</span><b>Trabajar</b><small>El agente implementa; se acuerda no exponer datos sensibles en los mensajes de error.</small><p class="flow-meta">decisión · trabajo</p></li>
+            <li><span>02</span><b>Identificar</b><small>La decisión se registra como lección o propuesta, no como criterio vigente.</small><p class="flow-meta">criterio · registro</p></li>
+            <li><span>03</span><b>Revisar e incorporar</b><small>Una persona la revisa; si procede, el mecanismo disponible la incorpora al contexto.</small><p class="flow-meta">revisión · hash</p></li>
+            <li><span>04</span><b>Reutilizar y revisar</b><small>Otra tarea puede consultar el criterio, y el resultado se revisa.</small><p class="flow-meta">contexto · revisión</p></li>
+          </ol>
+          <p class="case-bridge">Una propuesta registrada no es aún un criterio vigente. La incorporación depende de la revisión y del mecanismo disponible en la versión instalada. La primera tarea verificada muestra la ruta CLI: <a href="/es/empezar/#first-task">Ver la primera tarea gobernada →</a></p>
+        </div>
+
       </div>
     </section>
 <section class="section hex-section" id="dimensions">
@@ -182,7 +193,7 @@
           <div><b>Project</b><span>Objective, decisions and state that continue.</span></div>
           <div><b>Workspace</b><span>Local container where <code>.arqux/</code> lives.</span></div>
           <div><b>Governance</b><span>Rules, roles and review that bound the work.</span></div>
-          <div><b>Governance context</b><span>Shared reference ArqUX returns to the agent.</span></div>
+          <div><b>Governance context</b><span>Governed context ArqUX returns to the agent.</span></div>
           <div><b>Identity</b><span>Contract that scopes an agent's role.</span></div>
           <div><b>Template</b><span>Base file that <code>arqux init</code> copies.</span></div>
         </div>

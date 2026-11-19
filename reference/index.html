@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0A1420">
-<meta name="description" content="Workflow, task dimensions, artifacts and CORTEX format in one reference.">
+<meta name="description" content="Workflow, task dimensions, artifacts and CORTEX format in one place.">
 <title>Reference — ArqUX</title>
 <link rel="icon" href="/assets/brand/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
@@ -14,7 +14,7 @@
 <link rel="alternate" hreflang="es" href="https://arqux.ai/es/referencia/">
 <link rel="alternate" hreflang="x-default" href="https://arqux.ai/">
 <meta property="og:title" content="Reference — ArqUX">
-<meta property="og:description" content="Workflow, task dimensions, artifacts and CORTEX format in one reference.">
+<meta property="og:description" content="Workflow, task dimensions, artifacts and CORTEX format in one place.">
 <meta property="og:url" content="https://arqux.ai/reference/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://arqux.ai/assets/brand/og-image.png">
@@ -56,7 +56,7 @@
     </div>
   </header>
 <main id="main-content">
-<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Reference</p><h1>One project, one reference, reviewable work.</h1><p class="section-copy">The model, the artifacts and the format in one place. Start with the work, then inspect where information lives and how it is preserved.</p><nav class="ref-nav" aria-label="Reference sections"><a href="#workflow">Workflow</a><a href="#learning">Learning</a><a href="#dimensions">Task dimensions</a><a href="#artifacts">Artifacts</a><a href="#format">Format</a><a href="#compatibility">Compatibility</a></nav></div></section>
+<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Reference</p><h1>One project, one governed context, reviewable work.</h1><p class="section-copy">The model, the artifacts and the format in one place. Start with the work, then inspect where information lives and how it is preserved.</p><nav class="ref-nav" aria-label="Reference sections"><a href="#workflow">Workflow</a><a href="#learning">Learning</a><a href="#dimensions">Task dimensions</a><a href="#artifacts">Artifacts</a><a href="#format">Format</a><a href="#compatibility">Compatibility</a></nav></div></section>
 <section class="section section-light" id="workflow">
       <div class="wrap workflow-grid">
         <div class="section-head"><p class="eyebrow">Follow the work</p><h2>From policy to a result the team can review.</h2><p class="section-copy">Select a stage. See who participates, what changes and what can be inspected. Labels distinguish code controls from instructions and team practices.</p>
@@ -133,6 +133,17 @@
           <li><span>03</span><b>Apply</b><small>On this route, applying requires the reviewed hash; policy may automate other routes.</small></li>
         </ul>
         <p class="case-bridge">In the home example, the error-message decision is the lesson recorded here; review decides whether it becomes a criterion.</p>
+        <div class="learning-sequence" id="criterion-flow">
+          <p class="eyebrow">From work to reusable criterion</p>
+          <ol class="flow flow-sequence">
+            <li><span>01</span><b>Work</b><small>The agent implements; the team agrees not to expose sensitive data in error messages.</small><p class="flow-meta">decision · work</p></li>
+            <li><span>02</span><b>Identify</b><small>The decision is recorded as a lesson or proposal, not as an active criterion.</small><p class="flow-meta">criterion · record</p></li>
+            <li><span>03</span><b>Review and incorporate</b><small>A person reviews it; if accepted, the available mechanism incorporates it into context.</small><p class="flow-meta">review · hash</p></li>
+            <li><span>04</span><b>Reuse and review</b><small>Another task may consult the criterion, and the result is reviewed.</small><p class="flow-meta">context · review</p></li>
+          </ol>
+          <p class="case-bridge">A recorded proposal is not yet an active criterion. Incorporation depends on review and on the mechanism available in the installed version. The verified first task shows the CLI path: <a href="/start/#first-task">See the first governed task →</a></p>
+        </div>
+
       </div>
     </section>
 <section class="section hex-section" id="dimensions">
@@ -182,7 +193,7 @@
           <div><b>Project</b><span>Objective, decisions and state that continue.</span></div>
           <div><b>Workspace</b><span>Local container where <code>.arqux/</code> lives.</span></div>
           <div><b>Governance</b><span>Rules, roles and review that bound the work.</span></div>
-          <div><b>Governance context</b><span>Shared reference ArqUX returns to the agent.</span></div>
+          <div><b>Governance context</b><span>Governed context ArqUX returns to the agent.</span></div>
           <div><b>Identity</b><span>Contract that scopes an agent's role.</span></div>
           <div><b>Template</b><span>Base file that <code>arqux init</code> copies.</span></div>
         </div>

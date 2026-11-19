@@ -37,24 +37,6 @@
     });
   }
 
-  /* ---------- local task: one-shot reveal (no loops) ---------- */
-  const localStory = $("#task");
-  if (localStory && "IntersectionObserver" in window && !REDUCED) {
-    const revealItems = [
-      ...$$(".flow li", localStory),
-      $(".source-panel", localStory)
-    ].filter(Boolean);
-    revealItems.forEach((el) => el.classList.add("reveal"));
-    const storyObserver = new IntersectionObserver((entries) => {
-      if (!entries[0].isIntersecting) return;
-      revealItems.forEach((el, i) => {
-        window.setTimeout(() => el.classList.add("in"), 120 + i * 200);
-      });
-      storyObserver.disconnect();
-    }, { threshold: 0.1, rootMargin: "0px 0px -35% 0px" });
-    storyObserver.observe(localStory);
-  }
-
   /* ---------- problem section: only the reference motif moves, text never hides ---------- */
   const failureSection = $("#failures");
   if (failureSection && "IntersectionObserver" in window && !REDUCED) {
@@ -77,38 +59,6 @@
     lossObserver.observe(lossScene);
   }
 
-
-  /* ---------- project reference: which steps read or write a component ---------- */
-  const refBar = $(".source-panel");
-  if (refBar) {
-    const refChips = $$(".source-chips button", refBar);
-    const refSteps = $$(".flow li");
-    const clearLinks = () => refSteps.forEach((li) => li.classList.remove("is-linked"));
-    const linkRef = (ref) => {
-      clearLinks();
-      refSteps.forEach((li) => {
-        if ((li.dataset.refs || "").split(" ").includes(ref)) li.classList.add("is-linked");
-      });
-    };
-    const restorePressed = () => {
-      clearLinks();
-      const pressed = refChips.find((c) => c.getAttribute("aria-pressed") === "true");
-      if (pressed) linkRef(pressed.dataset.ref);
-    };
-    refChips.forEach((chip) => {
-      chip.addEventListener("mouseenter", () => linkRef(chip.dataset.ref));
-      chip.addEventListener("focus", () => linkRef(chip.dataset.ref));
-      chip.addEventListener("mouseleave", restorePressed);
-      chip.addEventListener("blur", restorePressed);
-      chip.addEventListener("click", () => {
-        const active = chip.getAttribute("aria-pressed") === "true";
-        refChips.forEach((c) => c.setAttribute("aria-pressed", "false"));
-        if (active) return;
-        chip.setAttribute("aria-pressed", "true");
-        linkRef(chip.dataset.ref);
-      });
-    });
-  }
 
   /* ---------- anchor jumps: render off-screen sections for the flight, then glide (exact target, native smooth) ---------- */
   function scrollToSection(target) {
