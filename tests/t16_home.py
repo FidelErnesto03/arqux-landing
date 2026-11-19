@@ -22,6 +22,8 @@ with sync_playwright() as pw:
     ok("svg map loaded",len(svgs)==1)
     if svgs:
         ok("six svg dimensions",svgs[0].locator(".arqx-stage").count()==6)
+        ok("even ring arcs",svgs[0].locator("#arqx-stage-identidad").get_attribute("transform")=="translate(321,112.5)" and svgs[0].locator("#arqx-stage-contexto").get_attribute("transform")=="translate(321,467.5)")
+        ok("lift follows stage",svgs[0].locator(".lift-card[data-stage=identidad]").get_attribute("transform")=="translate(321,112.5)")
         ok("map title",svgs[0].locator("#map-title").count()==1)
         ok("triad nodes",svgs[0].locator(".triad-node").count()==3)
         ok("no visible subtitles",svgs[0].locator(".stage-desc").count()==0)

@@ -54,7 +54,7 @@
 <circle cx="500" cy="290" r="160" fill="none" stroke="#8A5D16" stroke-width="3.5"/>
 <circle cx="500" cy="290" r="149" fill="none" stroke="#D99B30" stroke-width="1" stroke-dasharray="3 7" opacity=".55"/>
 <g class="orbit-dash" id="arqx-learning-orbit" aria-hidden="true"><circle cx="660" cy="290" r="7" fill="#FFE7A8" filter="url(#glow)"/><circle cx="500" cy="290" r="160" fill="none" stroke="#FFC05B" stroke-width="10" stroke-linecap="round" stroke-dasharray="36 970" opacity=".82" filter="url(#glow)"/><circle cx="500" cy="290" r="160" fill="none" stroke="#FFF0C0" stroke-width="3" stroke-linecap="round" stroke-dasharray="36 970"/></g>
-<g id="arqx-stage-identidad" class="arqx-stage" role="button" tabindex="0" transform="translate(289,180)" data-stage="identidad" aria-label="Identity: Who acts" aria-describedby="desc-identidad">
+<g id="arqx-stage-identidad" class="arqx-stage" role="button" tabindex="0" transform="translate(321,112.5)" data-stage="identidad" aria-label="Identity: Who acts" aria-describedby="desc-identidad">
 <desc id="desc-identidad">Who acts: agent, role and permissions it works with.</desc>
 <rect class="pulse" x="-104" y="-42" width="208" height="84" rx="24" fill="#FFC05B" filter="url(#glow)"/>
 <rect class="stage-frame" x="-95" y="-32" width="190" height="64" rx="18"/>
@@ -68,14 +68,14 @@
 <g class="stage-icon" transform="translate(-58 0) scale(.5)"><path d="M-20 -26 H9 L22 -13 V25 H-20 Z M9 -26 V-13 H22 M-11 -3 H11 M-11 6 H8 M-10 16 H-2"/><circle cx="18" cy="17" r="12" fill="#0C2530"/><path d="M12 17 L16 21 L24 12"/></g>
 <text class="stage-title" x="-30" y="6" text-anchor="start">Contract</text>
 </g>
-<g id="arqx-stage-contexto" class="arqx-stage" role="button" tabindex="0" transform="translate(289,400)" data-stage="contexto" aria-label="Context: What it works with" aria-describedby="desc-contexto">
+<g id="arqx-stage-contexto" class="arqx-stage" role="button" tabindex="0" transform="translate(321,467.5)" data-stage="contexto" aria-label="Context: What it works with" aria-describedby="desc-contexto">
 <desc id="desc-contexto">What it works with: project, files and prior decisions.</desc>
 <rect class="pulse" x="-104" y="-42" width="208" height="84" rx="24" fill="#FFC05B" filter="url(#glow)"/>
 <rect class="stage-frame" x="-95" y="-32" width="190" height="64" rx="18"/>
 <g class="stage-icon" transform="translate(-58 0) scale(.5)"><path d="M0 -25 L29 -10 L0 5 L-29 -10 Z M-29 1 L0 16 L29 1 M-29 13 L0 28 L29 13"/></g>
 <text class="stage-title" x="-30" y="6" text-anchor="start">Context</text>
 </g>
-<g id="arqx-stage-decision" class="arqx-stage" role="button" tabindex="0" transform="translate(711,180)" data-stage="decision" aria-label="Decision: What is agreed" aria-describedby="desc-decision">
+<g id="arqx-stage-decision" class="arqx-stage" role="button" tabindex="0" transform="translate(679,112.5)" data-stage="decision" aria-label="Decision: What is agreed" aria-describedby="desc-decision">
 <desc id="desc-decision">What is agreed: chosen criterion and discarded alternatives.</desc>
 <rect class="pulse" x="-104" y="-42" width="208" height="84" rx="24" fill="#FFC05B" filter="url(#glow)"/>
 <rect class="stage-frame" x="-95" y="-32" width="190" height="64" rx="18"/>
@@ -89,7 +89,7 @@
 <g class="stage-icon" transform="translate(-58 0) scale(.5)"><circle cx="0" cy="0" r="15"/><path d="M-5 -28 H5 L8 -20 L17 -15 L25 -18 L31 -8 L25 -1 L25 8 L31 16 L24 25 L15 22 L7 27 L5 34 H-5 L-8 26 L-17 21 L-25 24 L-31 15 L-25 8 L-25 -1 L-31 -9 L-25 -18 L-16 -15 L-8 -20 Z" transform="scale(.86)"/></g>
 <text class="stage-title" x="-30" y="6" text-anchor="start">Execution</text>
 </g>
-<g id="arqx-stage-evidencia" class="arqx-stage" role="button" tabindex="0" transform="translate(711,400)" data-stage="evidencia" aria-label="Evidence: What is checked" aria-describedby="desc-evidencia">
+<g id="arqx-stage-evidencia" class="arqx-stage" role="button" tabindex="0" transform="translate(679,467.5)" data-stage="evidencia" aria-label="Evidence: What is checked" aria-describedby="desc-evidencia">
 <desc id="desc-evidencia">What is checked: results, tests and trace.</desc>
 <rect class="pulse" x="-104" y="-42" width="208" height="84" rx="24" fill="#FFC05B" filter="url(#glow)"/>
 <rect class="stage-frame" x="-95" y="-32" width="190" height="64" rx="18"/>
@@ -105,7 +105,7 @@
 </g>
 </g>
 <g id="lift-layer" aria-hidden="true" pointer-events="none">
-<g class="lift-card" data-stage="identidad" transform="translate(289,180)" aria-hidden="true">
+<g class="lift-card" data-stage="identidad" transform="translate(321,112.5)" aria-hidden="true">
 <g class="lift-inner">
 <rect class="lift-frame" x="-205" y="-65" width="410" height="130" rx="24"/>
 <g class="stage-icon" transform="translate(-174 0) scale(.5)"><rect x="-26" y="-23" width="52" height="46" rx="5"/><path d="M-15 -7 a7 7 0 1 0 14 0 a7 7 0 1 0 -14 0 M-20 11 Q-8 0 4 11 M10 -9 H19 M10 0 H19 M10 9 H19"/></g>
@@ -121,7 +121,7 @@
 <text class="lift-desc" x="-132" y="10"><tspan x="-132" dy="0">What it can do: scope, limits and</tspan><tspan x="-132" dy="28.5">rules it accepts.</tspan></text>
 </g>
 </g>
-<g class="lift-card" data-stage="contexto" transform="translate(289,400)" aria-hidden="true">
+<g class="lift-card" data-stage="contexto" transform="translate(321,467.5)" aria-hidden="true">
 <g class="lift-inner">
 <rect class="lift-frame" x="-205" y="-65" width="410" height="130" rx="24"/>
 <g class="stage-icon" transform="translate(-174 0) scale(.5)"><path d="M0 -25 L29 -10 L0 5 L-29 -10 Z M-29 1 L0 16 L29 1 M-29 13 L0 28 L29 13"/></g>
@@ -129,7 +129,7 @@
 <text class="lift-desc" x="-132" y="10"><tspan x="-132" dy="0">What it works with: project, files</tspan><tspan x="-132" dy="28.5">and prior decisions.</tspan></text>
 </g>
 </g>
-<g class="lift-card" data-stage="decision" transform="translate(711,180)" aria-hidden="true">
+<g class="lift-card" data-stage="decision" transform="translate(679,112.5)" aria-hidden="true">
 <g class="lift-inner">
 <rect class="lift-frame" x="-205" y="-65" width="410" height="130" rx="24"/>
 <g class="stage-icon" transform="translate(-174 0) scale(.5)"><circle cx="0" cy="-24" r="5"/><circle cx="-24" cy="21" r="5"/><circle cx="24" cy="21" r="5"/><path d="M0 -19 V-6 L-24 12 M0 -6 L24 12"/></g>
@@ -145,7 +145,7 @@
 <text class="lift-desc" x="-132" y="10"><tspan x="-132" dy="0">How it is done: tasks, order</tspan><tspan x="-132" dy="28.5">and state.</tspan></text>
 </g>
 </g>
-<g class="lift-card" data-stage="evidencia" transform="translate(711,400)" aria-hidden="true">
+<g class="lift-card" data-stage="evidencia" transform="translate(679,467.5)" aria-hidden="true">
 <g class="lift-inner">
 <rect class="lift-frame" x="-205" y="-65" width="410" height="130" rx="24"/>
 <g class="stage-icon" transform="translate(-174 0) scale(.5)"><path d="M-19 -26 H9 L22 -13 V26 H-19 Z M9 -26 V-13 H22 M-10 -5 H9 M-10 4 H4"/><circle cx="15" cy="16" r="12" fill="#0D2731"/><path d="M8 16 L13 21 L22 11"/></g>
