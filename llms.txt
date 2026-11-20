@@ -1,23 +1,25 @@
 # ArqUX
 
-> Open-source framework (v1.0.0) for governed human-AI work — agent identities, project context, scoped work and reviewable evidence in a local-first workspace. One governed source projects native instruction files to every agent harness (AGENTS.md, CLAUDE.md, GEMINI.md, .opencode). ArqUX Platform, the hosted multi-user product, is in development.
+> Open-source framework (v1.0.0) for governed human-AI work — agent identities, project context, scoped work and reviewable evidence in a local-first workspace. One governed source renders four implemented instruction-file conventions (AGENTS.md, CLAUDE.md, GEMINI.md, .opencode/instructions.md); nine further environments have project-reported adhesion tests pending individual records. MCP exposes governance operations to clients that support it. ArqUX Platform, the hosted multi-user product, is in development.
 
 ## Key facts
 
-- Framework v1.0.0: 115 governance handlers (documented), release suite report in CHANGELOG, codec_cortex 1.0 mandatory (loss==0 fail-closed), seal.cortex SHA-256 manifest, evidence export with privacy gate.
-- Multi-harness projection: `arqux sync-harnesses` renders AGENTS.md / CLAUDE.md / GEMINI.md / .opencode from .arqux/; `arqux drift-check` reports manual edits.
-- Task execution: `task.run` runs governed [exec:action] steps under a bound session (UNBOUND_SESSION otherwise); never arbitrary shell.
-- Workspaces: deterministic journal CLI (push-delta / pull-policy, ERR_CONFLICT_VERSION on divergence). Hosted multi-user coordination is a Platform direction.
-- Memory format: Codec-CORTEX certified — 141/141 idempotence, round-trip, lossless; 101/101 HCORTEX render parity; 5/5 runtime parity.
+- Framework v1.0.0: 115 governance handlers (documented in HANDLERS.md at the pinned commit), release suite report in CHANGELOG, codec_cortex 1.0.2-rc.1 pinned, seal.cortex SHA-256 manifest, evidence export with privacy gate.
+- Instruction-file projection: `arqux sync-harnesses` renders AGENTS.md / CLAUDE.md / GEMINI.md / .opencode/instructions.md from one source; `arqux drift-check` reports manual edits. Four conventions are not four admitted agents.
+- Task execution: `task.run` runs governed [exec:action] steps under a bound session (rejected with SESSION_UNBOUND otherwise); never arbitrary shell.
+- Optional document signing: `arqux policy keygen` / `sign` / `verify` apply Ed25519 (RFC 8032) signatures to .cortex documents the user chooses to sign; key custody stays with the user. Hash manifests detect changes but do not authenticate authors.
+- Workspaces: deterministic journal CLI (push-delta / pull-policy, ERR_CONFLICT_VERSION on divergence). Hosted multi-user coordination is a Platform direction, not a 1.0.0 feature.
+- Memory format: Codec-CORTEX — certificate documents 141/141 idempotence, 101/101 HCORTEX render parity, 5/5 runtime parity on its declared corpus; codec figures do not measure model comprehension or certify ArqUX.
 - Agent bootstrap: `arqux wake --identity <role>` returns a governed payload under 1,500 tokens.
 
-PyPI publishes 0.9.0; the repository declares 1.0.0.
+PyPI served 0.9.0 at the last documented check (2026-11-20); the repository declares 1.0.0 and the verified install path pins commit 390333913e0f071a89241187f36cc90289e7e043.
 
 ## Links
 
 - [Portal (EN)](https://arqux.ai/)
 - [Portal (ES)](https://arqux.ai/es/)
 - [ArqUX repository](https://github.com/FidelErnesto03/arqux)
+- [Pinned 1.0.0 source](https://github.com/FidelErnesto03/arqux/tree/390333913e0f071a89241187f36cc90289e7e043)
 - [Getting started](https://github.com/FidelErnesto03/arqux/tree/master/docs)
 - [Codec-CORTEX repository](https://github.com/FidelErnesto03/codec-cortex)
 - [Codec certificate](https://github.com/FidelErnesto03/codec-cortex/blob/f64a8af95d5ae0868d822b645015e347e79b278a/bench/results/certificate.json)

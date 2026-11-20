@@ -78,6 +78,18 @@ claims:
     status: project-reported
     surface: ["/es/referencia/#compatibility", "/es/confianza/#evidence"]
 
+  - claim_id: arqux_policy_signing_ed25519
+    component: arqux-framework
+    source_version: "1.0.0"
+    source_commit: 390333913e0f071a89241187f36cc90289e7e043
+    statement_es: "ArqUX 1.0.0 incluye firma Ed25519 (RFC 8032, Python puro) para documentos .cortex — políticas y bundles de evidencia — mediante arqux policy keygen/sign/verify con entrada SIG:signature."
+    statement_en: "ArqUX 1.0.0 includes Ed25519 signing (RFC 8032, pure Python) for .cortex documents — policies and evidence bundles — via arqux policy keygen/sign/verify with a SIG:signature entry."
+    evidence_type: verified-in-source
+    source_path: src/arqux/signing.py + src/arqux/cli.py (cmd_policy group)
+    scope: "La firma cubre solo los documentos que el usuario decide firmar; la custodia de la clave es del usuario. Los manifiestos sellados (seal.cortex) y las proyecciones siguen siendo hash SHA-256 — detectan cambio, no prueban identidad."
+    status: verified-in-source
+    surface: ["/es/confianza/#evidence", "/es/confianza/#limits", "/trust/#evidence", "/trust/#limits"]
+
   - claim_id: codec_cortex_certificate_scope
     component: codec-cortex
     statement_es: "El certificado de CODEC-CORTEX prueba integridad/paridad de codificación de sus propios artefactos, no comprensión de LLM ni seguridad general."

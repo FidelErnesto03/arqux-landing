@@ -44,33 +44,33 @@ PAGES = {
 # continue). Keep in sync with the DOM of both language files.
 SECTIONS = {
     "home": [
-        ("top", "Qué es ArqUX", "What ArqUX is"),
-        ("failures", "Dónde se pierde el contexto", "Where context gets lost"),
+        ("top", "Qué es ArqUX", "What ArqUX does"),
+        ("failures", "Dónde se pierde el contexto", "Where context breaks"),
         ("local", "El costo de repetir decisiones", "The cost of repeating decisions"),
-        ("next", "Qué hacer después", "What to do next"),
+        ("next", "Cómo seguir", "Where to go next"),
     ],
     "reference": [
-        ("intro", "Cómo funciona", "How it works"),
-        ("workflow", "Recorrido de una tarea", "A task, step by step"),
+        ("intro", "Comprender el modelo", "Understand the model"),
+        ("workflow", "De la decisión al resultado", "From decision to result"),
         ("dimensions", "Seis preguntas de gobierno", "Six governance questions"),
         ("artifacts", "Archivos del proyecto", "Project files"),
         ("learning", "Cómo aprende el proyecto", "How the project learns"),
-        ("format", "CORTEX / HCORTEX", "CORTEX / HCORTEX"),
+        ("format", "CORTEX y HCORTEX", "CORTEX and HCORTEX"),
         ("compatibility", "Integración con agentes", "Agent integration"),
         ("continue", "Ponerlo a prueba", "Put it to the test"),
     ],
     "start": [
-        ("intro", "Qué vas a conseguir", "What you'll get"),
+        ("intro", "Qué vas a conseguir", "What you will get"),
         ("channels", "Instalar 1.0.0", "Install 1.0.0"),
         ("first-task", "Tu primera tarea", "Your first task"),
         ("connect", "Conectar tu agente", "Connect your agent"),
     ],
     "trust": [
-        ("intro", "Qué puedes confiarle", "What to trust it with"),
-        ("trust", "Quién controla cada cosa", "Who controls what"),
-        ("evidence", "Pruebas disponibles", "What was tested"),
+        ("intro", "Decidir con evidencia", "Decide with evidence"),
+        ("trust", "Quién controla qué", "Who controls what"),
+        ("evidence", "Pruebas disponibles", "Available evidence"),
         ("limits", "Límites de adopción", "Adoption limits"),
-        ("continue", "Decidir el siguiente paso", "Decide the next step"),
+        ("continue", "Tomar una decisión", "Make a decision"),
     ],
 }
 

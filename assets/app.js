@@ -423,10 +423,10 @@
   if (idea) {
     const outCortex = $("#play-cortex");
     const outHuman = $("#play-human");
-    const clean = (v) => v.replace(/["\\]/g, "").replace(/\s+/g, " ").trim();
+    const esc = (v) => v.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
     const update = () => {
-      const v = clean(idea.value).slice(0, 64) || "…";
-      if (outCortex) outCortex.textContent = 'KNW:idea{content:"' + v + '",status:current}';
+      const v = idea.value.trim().slice(0, 64) || "…";
+      if (outCortex) outCortex.textContent = 'KNW:idea{content:"' + esc(v) + '",status:current}';
       if (outHuman) outHuman.textContent = v;
     };
     idea.addEventListener("input", update);
