@@ -469,7 +469,21 @@
   /* ---------- section navigation: floating arrows, passive scroll, no hijack ---------- */
   const sectionNav = $(".section-nav");
   if (sectionNav) {
-    const navSections = $$('main > section[id][data-section-name]');
+    const navSections = $$("main > section[id]");
+    /* section labels: data-section-name wins (home), else current page's
+       submenu label, else first heading, else the id itself */
+    const subNames = {};
+    $$(".nav-entry").forEach((entry) => {
+      const top = $(".nav-top", entry);
+      if (!top || top.getAttribute("aria-current") !== "page") return;
+      entry.querySelectorAll(".nav-sub a[href*='#']").forEach((a) => {
+        const h = a.getAttribute("href").split("#")[1];
+        if (h) subNames[h] = a.textContent.trim();
+      });
+    });
+    const secName = (s) =>
+      s.dataset.sectionName || subNames[s.id] ||
+      ((s.querySelector("h1,h2") || {}).textContent || "").trim() || s.id;
     if (navSections.length > 1) {
       sectionNav.hidden = false;
       const prevBtn = $('[data-nav-dir="prev"]', sectionNav);
@@ -482,7 +496,7 @@
       let current = 0;
       let lockUntil = 0;
       const render = () => {
-        const name = (i) => navSections[i].dataset.sectionName || "";
+        const name = (i) => secName(navSections[i]);
         prevBtn.disabled = current === 0;
         nextBtn.disabled = current === navSections.length - 1;
         const pt = current > 0 ? labels.prev + name(current - 1) : labels.prev + name(0);

@@ -74,6 +74,11 @@ for page_key, secs in nav_build.SECTIONS.items():
         for sid, *_ in secs:
             ok(f"21-map {page_key}/{lang} #{sid}", sid in ids)
 
+# 4b) floating section arrows present on every page (site-wide standard)
+for rel in nav_build.FILES:
+    html = (ROOT / rel).read_text(encoding="utf-8")
+    ok(f"section-nav markup {rel}", 'class="section-nav"' in html and 'data-nav-dir="prev"' in html and 'data-nav-dir="next"' in html)
+
 # 5) aria-current=page appears exactly once per page, on its own group
 for rel, (page_key, lang) in nav_build.FILES.items():
     block = nav_block(rel)
