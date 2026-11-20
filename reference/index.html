@@ -302,6 +302,20 @@ OBJ:gate{goal:<span class="code-amber">"Write documentation"</span>,status:plann
 <span class="code-muted">&lt;!-- /table:1 --&gt;</span></pre></article>
         </div>
         
+        <div class="codec-play">
+          <div class="codec-play-head"><p class="eyebrow">Try the round-trip</p><span class="demo-tag">Illustrative · simplified render</span></div>
+          <label class="visually-hidden" for="idea-input">Type one idea and watch both representations update</label>
+          <input class="idea-input" id="idea-input" type="text" maxlength="64" value="Ship the release" placeholder="Type one idea — e.g. Ship the release" />
+          <div class="codec-grid">
+            <article class="code-panel" data-code-panel="source"><div class="code-head"><span>CORTEX · machine source</span><span>live</span></div><pre><code id="play-cortex">KNW:idea{content:"Ship the release",status:current}</code></pre></article>
+            <article class="code-panel" data-code-panel="human"><div class="code-head"><span>HCORTEX · human reading</span><span>live</span></div><pre><span class="code-teal">## §1: NOTES</span>
+
+<span class="code-muted">&lt;!-- table:1 --&gt;</span>
+| <span id="play-human">Ship the release</span> | current |
+<span class="code-muted">&lt;!-- /table:1 --&gt;</span></pre></article>
+          </div>
+          <p class="note">One idea, two surfaces, one source — type and both renderings update. The real codec validates with <code>loss==0</code>; this demo shows the pairing only.</p>
+        </div>
 <p class="codec-certificate"><a href="https://github.com/FidelErnesto03/codec-cortex/blob/f64a8af95d5ae0868d822b645015e347e79b278a/bench/results/certificate.json" target="_blank" rel="noreferrer">Open codec certificate · codec_cortex 1.0.2-rc.1 →</a> · <a href="/trust/#evidence">What the certificate proves →</a></p>
         <div class="architecture architecture--3 codec-cards">
           <article class="architecture-card"><p class="eyebrow">Signal, not filler</p><h3>One idea per line</h3><p>Norms live in typed ideas, not in prose. Density is a property of the format, not a promise about comprehension.</p></article>
@@ -389,7 +403,7 @@ arqux sync-harnesses</code></pre>
   <button class="section-nav-btn" type="button" data-nav-dir="next" aria-label="Go to next section" title="Next section">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
   </button>
-  <span class="section-nav-count" aria-live="polite">01 / 08</span>
+  <button class="section-nav-count" type="button" aria-live="polite">01 / 08</button>
 </nav>
 
 </body>

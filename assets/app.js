@@ -11,7 +11,7 @@
   if (dataEl) { try { data = Object.assign(data, JSON.parse(dataEl.textContent)); } catch (e) { /* keep defaults */ } }
 
   /* progressive enhancement: controls that need the script become visible */
-  $$(".segmented[hidden], .copy-btn[hidden], .progress-rail[hidden], .palette-btn[hidden], .route-choice[hidden], .route-note[hidden], .wf-switch[hidden]").forEach((el) => { el.hidden = false; });
+  $$(".segmented[hidden], .copy-btn[hidden], .progress-rail[hidden], .route-choice[hidden], .route-note[hidden], .wf-switch[hidden]").forEach((el) => { el.hidden = false; });
 
   /* mobile menu */
   const menu = $(".menu-toggle");
@@ -54,11 +54,21 @@
     navGroups.forEach((g) => {
       const btn = $(".nav-sub-toggle", g);
       if (!btn) return;
-      /* transient open: hover on fine pointers, focus within */
+      /* transient open: hover on fine pointers, focus within. Closing is
+         delayed (~240ms) so diagonal cursor travel across the gap between
+         the top link and the submenu does not dismiss it mid-flight. */
+      let closeTimer = null;
       if (finePointer) {
-        g.addEventListener("mouseenter", () => setOpen(g, true));
+        g.addEventListener("mouseenter", () => {
+          clearTimeout(closeTimer);
+          closeSubs(g);
+          setOpen(g, true);
+        });
         g.addEventListener("mouseleave", () => {
-          if (!g.hasAttribute("data-pinned")) setOpen(g, false);
+          clearTimeout(closeTimer);
+          closeTimer = setTimeout(() => {
+            if (!g.hasAttribute("data-pinned") && !g.matches(":hover")) setOpen(g, false);
+          }, 240);
         });
       }
       g.addEventListener("focusin", () => setOpen(g, true));
@@ -408,6 +418,21 @@
     })
   );
 
+  /* ---------- codec round-trip playground (local transform, no backend) ---------- */
+  const idea = $("#idea-input");
+  if (idea) {
+    const outCortex = $("#play-cortex");
+    const outHuman = $("#play-human");
+    const clean = (v) => v.replace(/["\\]/g, "").replace(/\s+/g, " ").trim();
+    const update = () => {
+      const v = clean(idea.value).slice(0, 64) || "…";
+      if (outCortex) outCortex.textContent = 'KNW:idea{content:"' + v + '",status:current}';
+      if (outHuman) outHuman.textContent = v;
+    };
+    idea.addEventListener("input", update);
+    update();
+  }
+
   /* ---------- I-04: evidence numbers live (one-shot count-up; static text is the no-JS state) ---------- */
   const nums = $$(".bar-top b");
   if (nums.length && "IntersectionObserver" in window && !REDUCED) {
@@ -559,6 +584,26 @@
       };
       prevBtn.addEventListener("click", () => go(current - 1));
       nextBtn.addEventListener("click", () => go(current + 1));
+      /* the counter doubles as the section index: on collapsed nav widths it
+         opens the mobile menu and expands the current page's group; on desktop
+         it pins open the current page's submenu. Gives every section a
+         persistent granular entry point on long pages (audit N5). */
+      if (counter && navGroups.length) {
+        counter.setAttribute("aria-label", es ? "Índice de secciones" : "Section index");
+        counter.addEventListener("click", (e) => {
+          e.stopPropagation(); /* keep the doc-level outside-click closers from undoing this */
+          const entry = navGroups.find((g) => {
+            const t = $(".nav-top", g);
+            return t && t.getAttribute("aria-current") === "page";
+          });
+          const toggle = entry && $(".nav-sub-toggle", entry);
+          if (!entry || !toggle) return;
+          if (window.matchMedia && window.matchMedia("(max-width: 960px)").matches) {
+            if (menu && nav && !nav.classList.contains("open")) menu.click();
+          }
+          if (!entry.classList.contains("is-open")) toggle.click();
+        });
+      }
       let ticking = false;
       window.addEventListener("scroll", () => {
         if (ticking) return;
