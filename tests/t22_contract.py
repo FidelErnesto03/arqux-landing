@@ -25,7 +25,7 @@ ok("ES reference canonical",'https://arqux.ai/es/referencia/' in es_ref)
 ok("ES reference no English copy",all(x not in es_ref for x in ("From policy to a result","Lessons are recorded","The kernel every compatible agent","Artifacts and their roles")))
 ok("ES reference nav",'href="/es/empezar/"' in es_ref and 'href="/es/confianza/"' in es_ref and 'href="/reference/"' in es_ref)
 size=os.path.getsize("assets/style.css")+os.path.getsize("assets/app.js")
-ok("css+js budget",size<=84000)  # raised for section navigation, edge reveal and case detail modal
+ok("css+js budget",size<=94000)  # raised for global section nav, readability floor and audit-v2 content
 ok("sitemap 8",len(re.findall(r"<loc>",open("sitemap.xml").read()))==8)
 ok("community footer ES",'id="community"' in open("es/index.html").read())
 print("\n".join(results)); print("----"); print("TOTAL",len(results),"FAILURES",len(failures)); sys.exit(1 if failures else 0)

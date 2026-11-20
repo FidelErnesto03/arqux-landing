@@ -427,3 +427,11 @@ p,li{text-wrap:pretty}html.resolve-cv .codec-section,html.resolve-cv .evidence-s
 .no-js .nav-sub-toggle{display:none}
 .no-js .nav-sub{display:block;position:static;transform:none;min-width:0;max-width:none;max-height:none;overflow:visible;width:100%;margin:6px 0 12px;padding:2px 0 2px 16px;border:0;border-left:2px solid var(--line-light);border-radius:0;box-shadow:none;background:transparent}
 .no-js .nav-sub a{padding:10px 12px;display:flex;align-items:center;min-height:40px}
+
+/* ===== readability floor (audit T02): essential/meta text >= ~12.5px ===== */
+.eyebrow{font-size:12.5px}
+.nav-language{font-size:12px}
+.footer-bottom{font-size:12.5px}
+.status{font-size:11.5px}
+.step-tag,.dimension .eyebrow,.architecture-card .eyebrow,.hypothesis .eyebrow,.first-task-card .eyebrow,.artifact-label,.code-head,.code-head span:last-child,.pill,.segmented button,.detail-item b,.step-number,.first-task-list b,.artifact-vocab-label,.artifact-meta span,.ficha-rows dd,.dimension small,.evidence-row small,.artifact-preview,.artifact-vocab code,.artifact-vocab span,.first-task-list code,.compat-table code,.f-origin,.case-bridge,.ev-src,#anchors .section-copy{font-size:12.5px}
+@media(max-width:460px){.status{font-size:10.5px}}
