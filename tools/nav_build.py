@@ -50,7 +50,6 @@ SECTIONS = {
         ("next", "Cómo seguir", "Where to go next"),
     ],
     "reference": [
-        ("intro", "Comprender el modelo", "Understand the model"),
         ("workflow", "De la decisión al resultado", "From decision to result"),
         ("dimensions", "Seis preguntas de gobierno", "Six governance questions"),
         ("artifacts", "Archivos del proyecto", "Project files"),

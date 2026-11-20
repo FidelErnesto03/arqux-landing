@@ -98,7 +98,7 @@ with sync_playwright() as pw:
     ok("closure single",p.locator("main > section").count()==4)
     ok("closure three routes",p.locator("#next .home-closure__route").count()==3)
     ok("closure no old case",p.locator("#anchors").count()==1 and p.locator(".flow-block,.source-panel").count()==0)
-    ok("global nav 4+21",p.locator(".nav-top").count()==4 and p.locator(".nav-sub a").count()==21)
+    ok("global nav 4+20",p.locator(".nav-top").count()==4 and p.locator(".nav-sub a").count()==20)
     ok("no console errors",len(errs)==0)
     ctx=b.new_context(viewport={"width":320,"height":844}); q=ctx.new_page(); q.goto(BASE+"/es/",wait_until="networkidle")
     ok("ES mobile no overflow",q.evaluate("document.documentElement.scrollWidth-window.innerWidth")==0)

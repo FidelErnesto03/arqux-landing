@@ -59,7 +59,6 @@
     <a class="nav-top" href="/es/referencia/">Referencia</a>
     <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="nav-sub-reference" aria-label="Secciones de Referencia"><svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <ul class="nav-sub" id="nav-sub-reference">
-      <li><a href="/es/referencia/#intro">Comprender el modelo</a></li>
       <li><a href="/es/referencia/#workflow">De la decisión al resultado</a></li>
       <li><a href="/es/referencia/#dimensions">Seis preguntas de gobierno</a></li>
       <li><a href="/es/referencia/#artifacts">Archivos del proyecto</a></li>
@@ -200,7 +199,8 @@
       <p class="home-closure__footnote">Framework abierto · Contexto local del proyecto · Capacidades según versión e integración</p>
     </div>
     <nav class="home-closure__routes" aria-label="Explorar ArqUX">
-      <a class="home-closure__route" href="/es/referencia/">
+      <a class="home-closure__route home-closure__route--model" href="/es/referencia/">
+        <span class="home-closure__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l7.8 4.5v9L12 21l-7.8-4.5v-9L12 3z"/><path d="M12 12l7.8-4.5M12 12v9M12 12L4.2 7.5"/></svg></span>
         <span class="home-closure__alias" aria-hidden="true" id="anchors"></span>
         <span class="home-closure__alias" aria-hidden="true" id="architecture"></span>
         <span class="home-closure__alias" aria-hidden="true" id="workflow"></span>
@@ -211,14 +211,16 @@
         <span class="home-closure__desc">Identidad, reglas, contexto, decisiones, ejecución y evidencia.</span>
         <span class="home-closure__arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="home-closure__route" href="/es/empezar/">
+      <a class="home-closure__route home-closure__route--try" href="/es/empezar/">
+        <span class="home-closure__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M8 5.5v13l10.5-6.5L8 5.5z"/></svg></span>
         <span class="home-closure__alias" aria-hidden="true" id="quickstart"></span>
         <span class="home-closure__alias" aria-hidden="true" id="task"></span>
         <span class="home-closure__label">Probar ArqUX</span>
         <span class="home-closure__desc">Instalación y primera tarea guiada — instala 1.0.0 y comprueba una tarea real por CLI.</span>
         <span class="home-closure__arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="home-closure__route" href="/es/confianza/">
+      <a class="home-closure__route home-closure__route--evidence" href="/es/confianza/">
+        <span class="home-closure__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3l7 2.8v5.4c0 4.3-2.9 7.2-7 8.8-4.1-1.6-7-4.5-7-8.8V5.8L12 3z"/><path d="M9 11.8l2.1 2.1L15.2 10"/></svg></span>
         <span class="home-closure__alias" aria-hidden="true" id="evidence"></span>
         <span class="home-closure__alias" aria-hidden="true" id="trust"></span>
         <span class="home-closure__label">Examinar la evidencia</span>
@@ -229,6 +231,7 @@
     </nav>
   </div>
 </section>
+</main>
 <footer id="community"><span class="home-closure__alias" aria-hidden="true" id="platform"></span>
   <div class="footer-accent" aria-hidden="true"></div>
   <div class="wrap">
