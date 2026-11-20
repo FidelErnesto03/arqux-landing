@@ -37,49 +37,81 @@
     });
   }
 
-  /* ---------- global nav: page -> section submenus (audit contract 2.3) ---------- */
+  /* ---------- global nav: page -> section submenus (audit contract 2.3) ----------
+     Single coherent state: .is-open class <=> aria-expanded, driven by JS for
+     hover (fine pointers), keyboard focus and click-pin. CSS never opens a
+     submenu on its own, so visual state and ARIA state cannot diverge. */
   const navGroups = $$(".nav-entry");
   if (navGroups.length) {
-    const closeSubs = (except) => {
-      navGroups.forEach((g) => {
-        if (g === except) return;
-        g.classList.remove("is-open");
-        const b = $(".nav-sub-toggle", g);
-        if (b) b.setAttribute("aria-expanded", "false");
-      });
+    const finePointer = window.matchMedia &&
+      window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const setOpen = (g, open) => {
+      const btn = $(".nav-sub-toggle", g);
+      g.classList.toggle("is-open", open);
+      if (btn) btn.setAttribute("aria-expanded", String(open));
     };
+    const closeSubs = (except) => navGroups.forEach((g) => { if (g !== except) setOpen(g, false); });
     navGroups.forEach((g) => {
       const btn = $(".nav-sub-toggle", g);
       if (!btn) return;
+      /* transient open: hover on fine pointers, focus within */
+      if (finePointer) {
+        g.addEventListener("mouseenter", () => setOpen(g, true));
+        g.addEventListener("mouseleave", () => {
+          if (!g.hasAttribute("data-pinned")) setOpen(g, false);
+        });
+      }
+      g.addEventListener("focusin", () => setOpen(g, true));
+      g.addEventListener("focusout", (e) => {
+        if (!g.hasAttribute("data-pinned") && !g.contains(e.relatedTarget)) setOpen(g, false);
+      });
+      /* click toggles a pinned state that survives hover/blur. The pin flag —
+         not the current open state — is the toggle source, because focusin
+         may already have opened the submenu before the click lands. */
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
-        const open = !g.classList.contains("is-open");
         closeSubs(g);
-        g.classList.toggle("is-open", open);
-        btn.setAttribute("aria-expanded", String(open));
+        if (g.hasAttribute("data-pinned")) {
+          g.removeAttribute("data-pinned");
+          setOpen(g, false);
+        } else {
+          g.setAttribute("data-pinned", "");
+          setOpen(g, true);
+        }
       });
       g.querySelectorAll(".nav-sub a").forEach((a) =>
-        a.addEventListener("click", () => closeSubs(null))
+        a.addEventListener("click", () => {
+          navGroups.forEach((x) => x.removeAttribute("data-pinned"));
+          closeSubs(null);
+        })
       );
     });
     document.addEventListener("click", (e) => {
-      if (!e.target.closest || !e.target.closest(".nav-entry")) closeSubs(null);
+      if (!e.target.closest || !e.target.closest(".nav-entry")) {
+        navGroups.forEach((g) => g.removeAttribute("data-pinned"));
+        closeSubs(null);
+      }
     });
     document.addEventListener("keydown", (e) => {
       if (e.key !== "Escape") return;
       if (nav && nav.classList.contains("open")) return; /* mobile menu handler owns Escape */
-      const openGroup = navGroups.find((g) => g.classList.contains("is-open") || g.matches(":focus-within"));
+      const openGroup = navGroups.find((g) =>
+        g.classList.contains("is-open") || g.contains(document.activeElement));
       if (!openGroup) return;
+      navGroups.forEach((g) => g.removeAttribute("data-pinned"));
       closeSubs(null);
-      const main = $("#main-content");
-      if (main) {
-        if (!main.hasAttribute("tabindex")) main.setAttribute("tabindex", "-1");
-        main.focus({ preventScroll: true });
-      }
+      const b = $(".nav-sub-toggle", openGroup);
+      if (b) b.focus();
     });
 
-    /* scrollspy: mark the section currently in view inside its submenu */
-    const subLinks = $$(".nav-sub a[href*='#']");
+    /* scrollspy: mark the section currently in view inside its submenu.
+       Scoped to the current page's group so shared ids (#intro, #continue)
+       on other pages are never marked. */
+    const currentEntry = navGroups.find((g) => {
+      const t = $(".nav-top", g);
+      return t && t.getAttribute("aria-current") === "page";
+    });
+    const subLinks = currentEntry ? $$(".nav-sub a[href*='#']", currentEntry) : [];
     const sections = $$("main > section[id]");
     if (subLinks.length && sections.length && "IntersectionObserver" in window) {
       const byHash = {};

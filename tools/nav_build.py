@@ -139,8 +139,10 @@ def apply_file(rel: str, write: bool = True) -> bool:
         return True
     if write:
         path.write_text(new_html, encoding="utf-8")
-    print(f"{'WROTE' if write else 'WOULD WRITE'} {rel}")
-    return True
+        print(f"WROTE {rel}")
+        return True
+    print(f"DIFF {rel}: nav block differs from spec", file=sys.stderr)
+    return False
 
 
 def main() -> int:

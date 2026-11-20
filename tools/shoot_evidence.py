@@ -49,6 +49,20 @@ def main():
                 pg.screenshot(path=str(fn), full_page=False)
                 shots.append((label, name, resp.status if resp else 0, overflow, len(errs)))
                 pg.close()
+        # per-section captures: every editorial anchor, desktop + mobile
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import nav_build
+        for page_key, secs in nav_build.SECTIONS.items():
+            for lang, (base, _) in nav_build.PAGES[page_key].items():
+                for sid, *_ in secs:
+                    for name, w, h in (("desktop", 1440, 900), ("mobile", 390, 844)):
+                        pg = b.new_page(viewport={"width": w, "height": h})
+                        pg.goto(f"{BASE}{base}#{sid}", wait_until="networkidle")
+                        pg.wait_for_timeout(1400)  # let smooth scroll + reveal settle
+                        slug = f"{page_key}-{lang}-{sid}-{name}"
+                        pg.screenshot(path=str(OUT / f"sec-{slug}.png"))
+                        shots.append((f"sec:{slug}", name, 200, 0, 0))
+                        pg.close()
         # interaction states on reference (desktop + mobile menu open)
         pg = b.new_page(viewport={"width": 1440, "height": 900})
         pg.goto(BASE + "/es/referencia/", wait_until="networkidle")

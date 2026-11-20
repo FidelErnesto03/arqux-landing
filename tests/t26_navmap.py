@@ -52,18 +52,16 @@ for rel, (page_key, lang) in nav_build.FILES.items():
     ok(f"submenu ids {rel}", [l.split("#")[1] for l in links] == spec_ids)
 
 # 3) cross-page submenu hrefs point at real sections of the target file
+PATH_TO_FILE = {base: rel for rel, (k, l) in nav_build.FILES.items()
+                for base in [nav_build.PAGES[k][l][0]]}
 for rel, (page_key, lang) in nav_build.FILES.items():
     block = nav_block(rel)
     for m in re.finditer(r'<a href="([^"]*#([\w-]+))">', block):
         href, anchor = m.group(1), m.group(2)
         path = href.split("#")[0] or "/"
-        target = "/index.html" if path in ("/", "/es/") else path.strip("/") + "/index.html"
-        if lang == "es" and path.startswith("/es"):
-            target = path.strip("/") + "/index.html"
-        elif not path.startswith("/es"):
-            target = path.strip("/") + "/index.html"
-        tfile = ROOT / target
-        if tfile.exists():
+        target = PATH_TO_FILE.get(path)
+        ok(f"anchor route known {href}", target is not None)
+        if target:
             ok(f"anchor {href} -> {target}", anchor in section_ids(target))
 
 # 4) all 21 spec anchors exist in both languages of their page
