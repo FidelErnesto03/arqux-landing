@@ -1,0 +1,88 @@
+# Central claims registry — ArqUX portal (audit contract T07).
+# Every public claim about the framework must be traceable to one entry here.
+# evidence_type categories:
+#   verified-in-execution | verified-in-source | project-reported |
+#   documented | pending
+# source_commit pins the framework revision the claim was checked against.
+
+version: 1
+portal_commit_baseline: bd83f8aff6f78eb467737d98fae2bcee55b63c8e
+framework:
+  repo: https://github.com/FidelErnesto03/arqux
+  source_version: "1.0.0"
+  source_commit: 390333913e0f071a89241187f36cc90289e7e043
+  master_commit_audited: 99f05c6b0be50a6fce7201e471b3f91846c284ed
+  pypi_latest_observed: "0.9.0"   # 1.0.0 NOT published as of 2026-11-20
+
+claims:
+  - claim_id: arqux_public_version_1_0_0
+    component: arqux-framework
+    statement_es: "El sitio presenta ArqUX 1.0.0 como versión pública objetivo; la instalación declarada entrega esa versión desde la fuente fijada."
+    statement_en: "The site presents ArqUX 1.0.0 as the public target version; the declared install channel delivers that version from the pinned source."
+    evidence_type: verified-in-execution
+    evidence: "venv limpio + pip install -e @3903339 -> `arqux --version` = 1.0.0 (2026-11-20)"
+    scope: "Instalación desde código fuente; PyPI no publica 1.0.0 todavía."
+    status: verified-in-source
+    surface: ["/es/empezar/#channels", "/start/#channels", "footer"]
+
+  - claim_id: arqux_pypi_status
+    component: arqux-framework
+    statement_es: "PyPI ofrece hoy arqux 0.9.0; 1.0.0 aún no está publicada en el índice público."
+    statement_en: "PyPI currently serves arqux 0.9.0; 1.0.0 is not yet published to the public index."
+    evidence_type: verified-in-execution
+    evidence: "pypi.org/pypi/arqux/json -> releases hasta 0.9.0 (+rc1-3); sin 1.0.0 (2026-11-20)"
+    scope: "Estado del índice al momento de la auditoría; puede cambiar antes del lanzamiento."
+    status: verified-in-source
+    surface: ["/es/empezar/#channels", "/es/confianza/#limits", "/es/confianza/#evidence"]
+
+  - claim_id: arqux_native_projection_targets
+    component: arqux-framework
+    source_version: "1.0.0"
+    source_commit: 390333913e0f071a89241187f36cc90289e7e043
+    statement_es: "ArqUX genera/sincroniza proyecciones nativas del kernel: AGENTS.md, CLAUDE.md, GEMINI.md y .opencode/instructions.md."
+    statement_en: "ArqUX renders/syncs native kernel projections: AGENTS.md, CLAUDE.md, GEMINI.md and .opencode/instructions.md."
+    evidence_type: verified-in-source
+    source_path: src/arqux/adapters/harness.py
+    scope: "Cuatro targets implementados; no equivalen al total de harnesses que pueden adherirse."
+    status: verified-in-source
+    surface: ["/es/referencia/#compatibility", "/es/empezar/#connect"]
+
+  - claim_id: arqux_handler_count
+    component: arqux-framework
+    source_version: "1.0.0"
+    source_commit: 390333913e0f071a89241187f36cc90289e7e043
+    statement_es: "HANDLERS.md documenta 115 handlers MCP en 18 dominios en el commit fijado."
+    statement_en: "HANDLERS.md documents 115 MCP handlers across 18 domains at the pinned commit."
+    evidence_type: verified-in-source
+    source_path: HANDLERS.md
+    scope: "Recuento del documento de referencia; master posterior puede diferir."
+    status: verified-in-source
+    surface: ["/es/confianza/#evidence", "/es/referencia/#compatibility"]
+
+  - claim_id: arqux_first_task_reproduced
+    component: arqux-framework
+    statement_es: "La secuencia init→task crea first-task.txt con sha256 4340d832…c594, marca T-001 done, registra PULSE SES001-E0002 y deja aviso de timelog pendiente."
+    statement_en: "The init→task sequence creates first-task.txt with sha256 4340d832…c594, marks T-001 done, records PULSE SES001-E0002 and leaves a pending timelog notice."
+    evidence_type: verified-in-execution
+    evidence: "Ejecución real en /tmp/arqux-first con venv @3903339, 2026-11-20; salida idéntica a la publicada."
+    scope: "Alcance CLI sin identidad resuelta (agent=anonymous); el aviso de timelog es comportamiento real, no error."
+    status: verified-in-source
+    surface: ["/es/empezar/#first-task", "/start/#first-task"]
+
+  - claim_id: harness_adhesion_project_reported
+    component: harness-compatibility
+    statement_es: "La dirección declara adhesión probada en HermesAgent, OpenCode, Command Code, Codex, Devin, Antigravity, Claude Code, Qwen Coder y Kiro."
+    statement_en: "Project leadership reports verified adhesion with HermesAgent, OpenCode, Command Code, Codex, Devin, Antigravity, Claude Code, Qwen Coder and Kiro."
+    evidence_type: project-reported
+    scope: "Declaración de la dirección; fichas técnicas de prueba por harness pendientes de publicación. No equivale a proyección nativa ni a MCP automático."
+    status: project-reported
+    surface: ["/es/referencia/#compatibility", "/es/confianza/#evidence"]
+
+  - claim_id: codec_cortex_certificate_scope
+    component: codec-cortex
+    statement_es: "El certificado de CODEC-CORTEX prueba integridad/paridad de codificación de sus propios artefactos, no comprensión de LLM ni seguridad general."
+    statement_en: "The CODEC-CORTEX certificate proves encoding integrity/parity of its own artifacts, not LLM understanding or general security."
+    evidence_type: documented
+    scope: "Componente separado del framework; sus métricas no se extrapolan a ArqUX."
+    status: documented
+    surface: ["/es/confianza/#evidence", "/es/referencia/#format"]

@@ -12,7 +12,7 @@ with sync_playwright() as pw:
         p=b.new_page(viewport={"width":1440,"height":900}); errs=[]
         p.on("pageerror",lambda e: errs.append(str(e))); p.on("console",lambda m: errs.append(m.text) if m.type=="error" else None)
         resp=p.goto(BASE+r,wait_until="networkidle"); p.wait_for_timeout(100)
-        ok("200 "+r,resp.status==200); ok("clean "+r,len(errs)==0); ok("nav3 "+r,p.locator(".nav-links a").count()==3); p.close()
+        ok("200 "+r,resp.status==200); ok("clean "+r,len(errs)==0); ok("nav4+21 "+r,p.locator(".nav-top").count()==4 and p.locator(".nav-sub a").count()==21); p.close()
     for path,target in old:
         p=b.new_page(); p.goto(BASE+path,wait_until="networkidle"); p.wait_for_timeout(150)
         ok("redirect "+path,target in p.url); p.close()

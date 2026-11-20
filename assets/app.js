@@ -37,6 +37,81 @@
     });
   }
 
+  /* ---------- global nav: page -> section submenus (audit contract 2.3) ---------- */
+  const navGroups = $$(".nav-entry");
+  if (navGroups.length) {
+    const closeSubs = (except) => {
+      navGroups.forEach((g) => {
+        if (g === except) return;
+        g.classList.remove("is-open");
+        const b = $(".nav-sub-toggle", g);
+        if (b) b.setAttribute("aria-expanded", "false");
+      });
+    };
+    navGroups.forEach((g) => {
+      const btn = $(".nav-sub-toggle", g);
+      if (!btn) return;
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const open = !g.classList.contains("is-open");
+        closeSubs(g);
+        g.classList.toggle("is-open", open);
+        btn.setAttribute("aria-expanded", String(open));
+      });
+      g.querySelectorAll(".nav-sub a").forEach((a) =>
+        a.addEventListener("click", () => closeSubs(null))
+      );
+    });
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest || !e.target.closest(".nav-entry")) closeSubs(null);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      if (nav && nav.classList.contains("open")) return; /* mobile menu handler owns Escape */
+      const openGroup = navGroups.find((g) => g.classList.contains("is-open") || g.matches(":focus-within"));
+      if (!openGroup) return;
+      closeSubs(null);
+      const main = $("#main-content");
+      if (main) {
+        if (!main.hasAttribute("tabindex")) main.setAttribute("tabindex", "-1");
+        main.focus({ preventScroll: true });
+      }
+    });
+
+    /* scrollspy: mark the section currently in view inside its submenu */
+    const subLinks = $$(".nav-sub a[href*='#']");
+    const sections = $$("main > section[id]");
+    if (subLinks.length && sections.length && "IntersectionObserver" in window) {
+      const byHash = {};
+      subLinks.forEach((a) => {
+        const h = a.getAttribute("href").split("#")[1];
+        if (h) (byHash[h] = byHash[h] || []).push(a);
+      });
+      let current = null;
+      const mark = (id) => {
+        if (id === current) return;
+        current = id;
+        subLinks.forEach((a) => a.removeAttribute("aria-current"));
+        (byHash[id] || []).forEach((a) => a.setAttribute("aria-current", "location"));
+      };
+      const spy = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((en) => {
+            if (en.isIntersecting) mark(en.target.id);
+          });
+        },
+        { rootMargin: "-35% 0px -55% 0px", threshold: 0 }
+      );
+      sections.forEach((s) => spy.observe(s));
+      const onHash = () => {
+        const id = decodeURIComponent(location.hash.slice(1));
+        if (byHash[id]) mark(id);
+      };
+      window.addEventListener("hashchange", onHash);
+      onHash();
+    }
+  }
+
   /* ---------- problem section: only the reference motif moves, text never hides ---------- */
   const failureSection = $("#failures");
   if (failureSection && "IntersectionObserver" in window && !REDUCED) {
@@ -350,14 +425,17 @@
     });
   }
 
-  /* ---------- I-11: language switch with a short fade-out ---------- */
+  /* ---------- I-11: language switch with a short fade-out; preserves section anchor ---------- */
   $$(".lang-link").forEach((a) =>
     a.addEventListener("click", (e) => {
-      if (REDUCED) return;
-      e.preventDefault();
       const href = a.getAttribute("href");
+      let target = href;
+      const h = window.location.hash;
+      if (/^#[A-Za-z][\w-]*$/.test(h) && document.getElementById(h.slice(1))) target = href + h;
+      if (REDUCED) { window.location.href = target; return; }
+      e.preventDefault();
       document.body.classList.add("lang-out");
-      setTimeout(() => { window.location.href = href; }, 180);
+      setTimeout(() => { window.location.href = target; }, 180);
     })
   );
 
