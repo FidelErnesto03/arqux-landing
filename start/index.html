@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0A1420">
-<meta name="description" content="Install the published package or the repository, then run the first governed workspace.">
+<meta name="description" content="Install ArqUX 1.0.0 from the verified source, run a first governed task and check the recorded evidence.">
 <title>Get started — ArqUX</title>
 <link rel="icon" href="/assets/brand/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
@@ -14,7 +14,7 @@
 <link rel="alternate" hreflang="es" href="https://arqux.ai/es/empezar/">
 <link rel="alternate" hreflang="x-default" href="https://arqux.ai/">
 <meta property="og:title" content="Get started — ArqUX">
-<meta property="og:description" content="Install the published package or the repository, then run the first governed workspace.">
+<meta property="og:description" content="Install ArqUX 1.0.0 from the verified source, run a first governed task and check the recorded evidence.">
 <meta property="og:url" content="https://arqux.ai/start/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://arqux.ai/assets/brand/og-image.png">
@@ -102,24 +102,27 @@
     </div>
   </header>
   <main id="main-content">
-    <section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Get started</p><h1>How do I try it without guessing?</h1><p class="section-copy">Two channels: the published package (0.9.0) and the repository (1.0.0). Pick one and follow its exact commands.</p><p class="section-copy"><a href="/">← Back to home</a></p></div></section>
-    <section class="section section-soft" id="channels"><div class="wrap"><h2 class="visually-hidden">Installation channels</h2><div class="trust-grid">
-      <article class="trust-card"><span class="trust-mark">A</span><h3>Published package</h3><p class="channel-profile">Recommended for a first look at the published 0.9.0 experience; the verified first-task flow uses the pinned 1.0.0 source.</p><p><b>PyPI · 0.9.0</b></p><pre class="start-cmd"><code>pip install arqux==0.9.0
-arqux --version</code></pre><div class="copy-row"><button type="button" class="copy-btn" hidden data-copy="pip install arqux==0.9.0" data-done="Copied" data-fail="Select the command and copy it">Copy install</button><span class="copy-status" role="status" aria-live="polite"></span></div><p class="copy-note">What `pip install arqux` currently resolves to. Verified 2026-11-18 · Linux · Python 3.11.12 · output: <code>arqux 0.9.0</code>.</p></article>
-      <article class="trust-card"><span class="trust-mark">B</span><h3>Source repository</h3><p class="channel-profile">For developing, auditing or reproducing the pinned 1.0.0 source.</p><p><b>GitHub · 1.0.0</b></p><pre class="start-cmd"><code>git clone https://github.com/FidelErnesto03/arqux
+    <section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Get started</p><h1>Your first governed project, with ArqUX 1.0.0.</h1><p class="section-copy">Install, create a workspace, run a task and check what was recorded. The target version is 1.0.0 and today's verified channel is installing from the public repository, pinned to a specific commit.</p><p class="section-copy">You need Python 3.11 or newer, git, a POSIX shell and a writable working directory. By the end you will have a <code>first-task.txt</code> file, task <code>T-001</code> closed and hash evidence you can review.</p><p class="section-copy"><a href="/">← Back to home</a></p></div></section>
+    <section class="section section-soft" id="channels"><div class="wrap"><div class="section-head"><p class="eyebrow">Installation</p><h2>One verified channel: the pinned public source.</h2><p class="section-copy">PyPI does not publish ArqUX 1.0.0 yet, so the tested path is installing from the repository at the exact verified commit. Run the commands, activate the environment and check that <code>arqux --version</code> answers <code>arqux 1.0.0</code>.</p></div><div class="trust-grid">
+      <article class="trust-card"><span class="trust-mark">A</span><h3>Install from source · verified channel</h3><p>Clone the repository, check out the pinned commit, create a virtual environment and install editable. Requirements: Python 3.11 or newer, git, a POSIX shell and a directory you can write to.</p><pre class="start-cmd"><code>git clone https://github.com/FidelErnesto03/arqux
 cd arqux
 git checkout 390333913e0f071a89241187f36cc90289e7e043
-python -m pip install -e .</code></pre><div class="copy-row"><button type="button" class="copy-btn" hidden data-copy="git clone https://github.com/FidelErnesto03/arqux&#10;cd arqux&#10;git checkout 390333913e0f071a89241187f36cc90289e7e043&#10;python -m pip install -e ." data-done="Copied" data-fail="Select the commands and copy them">Copy commands</button><span class="copy-status" role="status" aria-live="polite"></span></div><p class="copy-note">Python ≥3.10, per pyproject.toml. Verified 2026-11-18 · Linux · Python 3.11.12 · full clone → checkout <code>3903339</code> → editable install · output: <code>arqux 1.0.0</code>.</p></article>
-    </div></div></section>
-    
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e .
+arqux --version</code></pre><div class="copy-row"><button type="button" class="copy-btn" hidden data-copy="git clone https://github.com/FidelErnesto03/arqux&#10;cd arqux&#10;git checkout 390333913e0f071a89241187f36cc90289e7e043&#10;python3 -m venv .venv&#10;source .venv/bin/activate&#10;python -m pip install -e .&#10;arqux --version" data-done="Copied" data-fail="Select the commands and copy them">Copy install</button><span class="copy-status" role="status" aria-live="polite"></span></div><p class="copy-note">Verified 2026-11-20 · Linux · Python 3.11.12 · <code>arqux --version</code> output: <code>arqux 1.0.0</code>. The pin reproduces the inspected 1.0.0 source; it is not a PyPI publication.</p></article>
+      <article class="trust-card"><span class="trust-mark">0.9</span><h3>What PyPI serves today</h3><p>The public index currently serves <b>0.9.0</b>. Running <code>pip install arqux</code> today does <b>not</b> install 1.0.0: it resolves to the latest published release, still 0.9.0. That is why this page does not offer it as a path to 1.0.0; when the 1.0.0 package is published and verified, this section will show that command.</p><small class="note">Observed 2026-11-20 via the <a href="https://pypi.org/pypi/arqux/json" target="_blank" rel="noreferrer">PyPI JSON API ↗</a>.</small></article>
+    </div><div class="learning-sequence"><p class="eyebrow">Technical detail</p><p>The commit <code>39033391<wbr>3e0f071a<wbr>89241187<wbr>f36cc902<wbr>89e7e043</code> corresponds to version 1.0.0 in the public repository's <code>pyproject.toml</code>. <code>git checkout</code> on that commit reproduces the inspected source; it is not a package publication and does not guarantee the repository HEAD is identical.</p><p><code>python3 -m venv .venv</code> creates a virtual environment inside the cloned folder and <code>source .venv/bin/activate</code> activates it in POSIX shells; on other shells use their own activator. Keep the environment active — or prefix commands with <code>.venv/bin/</code> — when running the first task.</p><p class="note">If PyPI publishes 1.0.0 and it is verified, this section will show that command as the primary channel.</p></div></div></section>
     <section class="section section-soft" id="first-task">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Verified end to end</p><h2>A first governed task, from an empty folder.</h2><p class="section-copy">Linux · Python 3.11.12 · ArqUX 1.0.0 at <code>3903339</code> · 2026-11-18. CLI path only; no model call.</p></div>
+        <div class="section-head"><p class="eyebrow">Verified end to end</p><h2>A first task, with results and limits you can check.</h2><p class="section-copy">The sequence runs the CLI path on an empty folder with ArqUX 1.0.0 installed from the pinned source; it invokes no model and no agent. Linux · Python 3.11.12 · commit <code>3903339</code> · verified 2026-11-20 · CLI only, no agent identity.</p></div>
         <div class="first-task-grid">
-          <article class="first-task-card"><p class="eyebrow">Result</p><ul class="first-task-list"><li><b>Artifact</b><span><code>first-task.txt</code> contains <code>hello-from-arqux</code>.</span></li><li><b>Evidence</b><span><code>sha256:4340d832667bc0d34c6f232e7858cdf0ae070ac942e6c53e755f224b8ee9c594</code></span></li><li><b>Task</b><span><code>T-001</code> closed as <code>done</code>; PULSE event <code>SES001-E0002</code>.</span></li></ul></article>
-          <article class="first-task-card"><p class="eyebrow">Conditions</p><ul class="first-task-list"><li><b>Execution key</b><span><code>ARQUX_EXECUTION_KEY</code> kept stable across commands.</span></li><li><b>Order</b><span>Create → run → complete, with the session bound.</span></li><li><b>Observed warning</b><span>The timelog lifecycle stayed <code>pending</code>: the operation was not recorded in this timelog.</span></li></ul></article>
+          <article class="first-task-card"><p class="eyebrow">What you'll do</p><ul class="first-task-list"><li><b>Prepare</b><span>Create the <code>arqux-first</code> folder, activate the environment from the previous step and set <code>ARQUX_EXECUTION_KEY</code> for the whole session.</span></li><li><b>Declare</b><span><code>arqux init</code>, project <code>Demo</code>, cycle <code>CYCLE-01</code>, session context and the task to create.</span></li><li><b>Run and close</b><span>Run <code>T-001</code> and complete it with the file hash as evidence.</span></li><li><b>Check</b><span>Read <code>first-task.txt</code> and compare the result with the recorded evidence.</span></li></ul></article>
+          <article class="first-task-card"><p class="eyebrow">What you'll see</p><ul class="first-task-list"><li><b>Artifact</b><span><code>first-task.txt</code> contains <code>hello-from-arqux</code>.</span></li><li><b>Task</b><span><code>T-001</code> ends <code>done</code>; the PULSE event is <code>SES001-E0002</code>.</span></li><li><b>Warning</b><span>The timelog leaves a notice in <code>pending</code> state: it is detailed under evidence.</span></li></ul></article>
         </div>
-        <details class="first-task-cmds"><summary>Full command sequence</summary><pre><code>mkdir arqux-first &amp;&amp; cd arqux-first
+        <p class="note">What it does not prove: model reasoning, the behavior of a specific harness, or that every client reproduces the same timelog lifecycle. It is the pure CLI path.</p>
+        <div class="learning-sequence">
+          <article class="trust-card"><h3>The full sequence</h3><pre class="start-cmd"><code>mkdir arqux-first &amp;&amp; cd arqux-first
 export ARQUX_EXECUTION_KEY=first-task-demo
 arqux init
 arqux project init name=Demo
@@ -128,17 +131,26 @@ arqux call session.context_set project=Demo scope=CYCLE-01
 arqux call task.create content='$1:{obj:"Create a first governed artifact",proc:["Write first-task.txt [exec:write_file path=first-task.txt content=hello-from-arqux]"],ac:["first-task.txt contains hello-from-arqux"],complexity:"simple"}'
 arqux call task.run task_id=T-001
 arqux call task.complete task_id=T-001 evidence="first-task.txt sha256=$(sha256sum first-task.txt | cut -d' ' -f1)"
-cat first-task.txt</code></pre></details>
-        <p class="note">This proves the governed CLI path in a clean workspace. It does not test a model's reasoning or guarantee that every client reproduces the same timelog lifecycle.</p>
-        <p class="note">The artifact and evidence are complete. The warning concerns timelog coverage, not task status: inspect <code>.arqux/timelog/SES001_*.cortex</code> to review the record. This release does not claim a closing command.</p>
-        <p class="note">The verification is pinned to <code>3903339</code>. The repository HEAD may be newer; re-run the sequence after updating the pin.</p>
+cat first-task.txt</code></pre><div class="copy-row"><button type="button" class="copy-btn" hidden data-copy="mkdir arqux-first &amp;&amp; cd arqux-first&#10;export ARQUX_EXECUTION_KEY=first-task-demo&#10;arqux init&#10;arqux project init name=Demo&#10;arqux cycle create name=CYCLE-01 description=&quot;First governed task&quot;&#10;arqux call session.context_set project=Demo scope=CYCLE-01&#10;arqux call task.create content='$1:{obj:&quot;Create a first governed artifact&quot;,proc:[&quot;Write first-task.txt [exec:write_file path=first-task.txt content=hello-from-arqux]&quot;],ac:[&quot;first-task.txt contains hello-from-arqux&quot;],complexity:&quot;simple&quot;}'&#10;arqux call task.run task_id=T-001&#10;arqux call task.complete task_id=T-001 evidence=&quot;first-task.txt sha256=$(sha256sum first-task.txt | cut -d' ' -f1)&quot;&#10;cat first-task.txt" data-done="Copied" data-fail="Select the commands and copy them">Copy full sequence</button><span class="copy-status" role="status" aria-live="polite"></span></div><div class="copy-row"><button type="button" class="copy-btn" hidden data-copy="arqux call task.create content='$1:{obj:&quot;Create a first governed artifact&quot;,proc:[&quot;Write first-task.txt [exec:write_file path=first-task.txt content=hello-from-arqux]&quot;],ac:[&quot;first-task.txt contains hello-from-arqux&quot;],complexity:&quot;simple&quot;}'" data-done="Copied" data-fail="Select the command and copy it">Copy task.create only</button><span class="copy-status" role="status" aria-live="polite"></span></div><small class="note">Requires a POSIX shell (<code>export</code>, <code>sha256sum</code>, <code>$(...)</code>), ArqUX 1.0.0 installed and a writable directory. Run the commands exactly as shown, in order; the execution key must be the same across all of them.</small></article>
+        </div>
+        <div class="learning-sequence">
+          <div class="first-task-grid">
+            <article class="first-task-card"><p class="eyebrow">Recorded evidence</p><ul class="first-task-list"><li><b>Hash</b><span><code>sha256:4340d832667bc0d34c6f232e7858cdf0ae070ac942e6c53e755f224b8ee9c594</code> of <code>first-task.txt</code>.</span></li><li><b>Task and event</b><span><code>T-001</code> in <code>done</code>; PULSE event <code>SES001-E0002</code>; pin <code>390333913e0f071a89241187f36cc90289e7e043</code>.</span></li><li><b>To inspect</b><span>The timelog record lives at <code>.arqux/timelog/SES001_*.cortex</code>.</span></li></ul></article>
+            <article class="first-task-card"><p class="eyebrow">Warning and scope</p><ul class="first-task-list"><li><b>Real CLI output</b><span><code>operation 'task:T-001' is not recorded in this timelog</code> — <code>pending</code> state.</span></li><li><b>What it covers</b><span>The artifact and the evidence are complete; the warning concerns timelog coverage, not the task status.</span></li><li><b>Scope</b><span>Verified via CLI only, with no agent identity. Full limits at <a href="/trust/#limits">Trust → Limits</a>.</span></li></ul></article>
+          </div>
+          <p class="note">The verification is pinned to commit <code>3903339</code>; if the repository HEAD moves on, re-run the sequence after updating the pin.</p>
+        </div>
       </div>
     </section>
     <section class="section section-light" id="connect">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Connect your app</p><h2>Point your client at the workspace.</h2><p class="section-copy"><code>arqux serve</code> exposes the governance handlers over stdio. Launch it with the workspace as cwd; client configuration belongs to each app.</p></div>
+        <div class="section-head"><p class="eyebrow">Connect your agent</p><h2>Two adhesion routes: instruction files and MCP operations.</h2><p class="section-copy">ArqUX adheres to your environment in two complementary ways: instruction files the harness reads natively, and MCP operations when the client allows them. Neither replaces the other, and client behavior stays outside ArqUX.</p></div>
         <div class="connect-grid">
-          <article class="connect-card"><h3>Claude Desktop</h3><p>Add the server to <code>claude_desktop_config.json</code>:</p><pre class="connect-code">{
+          <article class="connect-card trust-card"><h3>Route 1 · Project instructions</h3><p>After <code>arqux init</code>, <code>arqux sync-harnesses</code> projects the kernel into files each harness reads natively: <code>AGENTS.md</code>, <code>CLAUDE.md</code>, <code>GEMINI.md</code> and <code>.opencode/instructions.md</code>.</p><pre class="start-cmd"><code>cd /path/to/workspace
+arqux init
+arqux sync-harnesses</code></pre><div class="copy-row"><button type="button" class="copy-btn" hidden data-copy="cd /path/to/workspace&#10;arqux init&#10;arqux sync-harnesses" data-done="Copied" data-fail="Select the commands and copy them">Copy commands</button><span class="copy-status" role="status" aria-live="polite"></span></div><small class="note">Run it inside the project root. Each harness reads its own native file (<code>AGENTS.md</code> is the generic one); ArqUX does not run the sync for you and the files' presence alone does not guarantee the agent obeys them.</small></article>
+          <article class="connect-card trust-card"><h3>Route 2 · MCP operations (stdio)</h3><p><code>arqux serve</code> exposes the governance handlers over stdio to MCP-capable clients. Configuration is external: each client defines its own.</p><pre class="start-cmd"><code>cd /path/to/workspace
+arqux serve</code></pre><div class="copy-row"><button type="button" class="copy-btn" hidden data-copy="cd /path/to/workspace&#10;arqux serve" data-done="Copied" data-fail="Select the command and copy it">Copy command</button><span class="copy-status" role="status" aria-live="polite"></span></div><small class="note">One workspace per process. After connecting, check access with a read-only call (e.g. <code>workspace.status</code>); ArqUX does not configure clients automatically. If your harness offers no MCP, route 1 file adhesion still applies.</small><small class="note">Claude Desktop example — adapt <code>cwd</code> to your workspace:</small><pre class="start-cmd"><code>{
   "mcpServers": {
     "arqux": {
       "command": "arqux",
@@ -146,12 +158,9 @@ cat first-task.txt</code></pre></details>
       "cwd": "/path/to/workspace"
     }
   }
-}</pre></article>
-          <article class="connect-card"><h3>Any stdio client</h3><p>Same server, launched from the workspace:</p><pre class="connect-code">cd arqux-first
-arqux serve</pre><p class="note">One workspace per process.</p></article>
-          <article class="connect-card"><h3>OpenCode</h3><p>Use the generated kernel as instructions:</p><pre class="connect-code">opencode --instructions "$(cat AGENTS.md)"</pre><p class="note">Example from the framework README; verify it in your client.</p></article>
+}</code></pre><div class="copy-row"><button type="button" class="copy-btn" hidden data-copy="{&#10;  &quot;mcpServers&quot;: {&#10;    &quot;arqux&quot;: {&#10;      &quot;command&quot;: &quot;arqux&quot;,&#10;      &quot;args&quot;: [&quot;serve&quot;],&#10;      &quot;cwd&quot;: &quot;/path/to/workspace&quot;&#10;    }&#10;  }&#10;}" data-done="Copied" data-fail="Select the config and copy it">Copy config</button><span class="copy-status" role="status" aria-live="polite"></span></div></article>
+          <article class="connect-card trust-card"><h3>Matrix and scope</h3><p>The <a href="/reference/#compatibility">compatibility matrix</a> details adhesion per environment: file projection, MCP where the client allows it, and the verification status of each one. Environments declared by the project: HermesAgent, OpenCode, Command Code, Codex, Devin, Antigravity, Claude Code, Qwen Coder and Kiro, among others; appearing there does not imply automatic MCP setup or an identical integration level.</p><small class="note">Harness behavior and client configuration are external to ArqUX. Sources at <code>3903339</code>: <a href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/adapters/harness.py" target="_blank" rel="noreferrer">harness.py · _TARGETS</a> · <a href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/docs/en/guias/despliegue.md" target="_blank" rel="noreferrer">deployment guide ↗</a>.</small></article>
         </div>
-        <p class="note">Client behavior is external; ArqUX does not configure clients automatically. Source: <a href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/docs/en/guias/despliegue.md" target="_blank" rel="noreferrer">MCP setup at 3903339 ↗</a>.</p>
       </div>
     </section>
   </main>
