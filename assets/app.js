@@ -11,7 +11,7 @@
   if (dataEl) { try { data = Object.assign(data, JSON.parse(dataEl.textContent)); } catch (e) { /* keep defaults */ } }
 
   /* progressive enhancement: controls that need the script become visible */
-  $$(".segmented[hidden], .copy-btn[hidden], .progress-rail[hidden], .route-choice[hidden], .route-note[hidden], .wf-switch[hidden]").forEach((el) => { el.hidden = false; });
+  $$(".segmented[hidden], .copy-btn[hidden], .progress-rail[hidden], .route-choice[hidden], .route-note[hidden], .wf-switch[hidden], .ev-filterbar[hidden]").forEach((el) => { el.hidden = false; });
 
   /* mobile menu */
   const menu = $(".menu-toggle");
@@ -431,6 +431,24 @@
     };
     idea.addEventListener("input", update);
     update();
+  }
+
+  /* ---------- evidence group filter (trust #evidence; all groups visible without JS) ---------- */
+  const evBar = $(".ev-filterbar");
+  if (evBar) {
+    const scope = evBar.closest("section") || document;
+    const groups = $$(".ev-group", scope);
+    $$(".ev-filter", evBar).forEach((btn) =>
+      btn.addEventListener("click", () => {
+        const f = btn.dataset.evFilter || "all";
+        $$(".ev-filter", evBar).forEach((b) => {
+          const on = b === btn;
+          b.classList.toggle("is-active", on);
+          b.setAttribute("aria-pressed", String(on));
+        });
+        groups.forEach((g) => { g.hidden = f !== "all" && g.dataset.evGroup !== f; });
+      })
+    );
   }
 
   /* ---------- I-04: evidence numbers live (one-shot count-up; static text is the no-JS state) ---------- */
