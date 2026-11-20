@@ -64,55 +64,52 @@
     const $l = (s) => lossScene.querySelector(s);
     const act = $l(".loss-act"), give = $l(".loss-give"), again = $l(".loss-again"),
       gotoRef = $l(".loss-goto"), question = $l(".loss-question"), brief = $l(".loss-brief"),
-      miss = $l(".loss-ref-miss"), restored = $l(".loss-restored"), reused = $l(".loss-reused"),
-      link = $l(".loss-link"), manual = $l(".loss-link-manual"), mtag = $l(".loss-link-tag"),
-      confirm = $l(".loss-confirm"), announce = $l(".loss-announce");
-    if (act && give && again) {
-      let state = "initial", busy = false;
+      ref = $l(".loss-session--next .loss-ref"), miss = $l(".loss-ref-miss"), restored = $l(".loss-restored"),
+      reused = $l(".loss-reused"), link = $l(".loss-link"), manual = $l(".loss-link-manual"),
+      mtag = $l(".loss-link-tag"), stakeNow = $l(".loss-stakes-now"), stakeDone = $l(".loss-stakes-done"),
+      announce = $l(".loss-announce");
+    if (act && give && again && ref) {
+      let state = "initial", fx = 0;
+      const linkLabel = link.getAttribute("aria-label");
       const say = (b) => { if (announce) announce.textContent = b.dataset.msg || ""; };
       const show = (e, on) => { if (e) e.hidden = !on; };
-      const T = (ms, fn) => { REDUCED ? fn() : setTimeout(fn, ms); };
-      const toInitial = (focus) => {
-        state = "initial"; busy = false;
-        [act].forEach((e) => show(e, true));
-        [question, brief, gotoRef, give, restored, reused, manual, mtag, confirm, again].forEach((e) => show(e, false));
-        show(miss, true);
-        link.classList.remove("is-restoring");
-        if (focus) act.focus({ preventScroll: true });
+      const render = (next) => {
+        state = next;
+        const blocked = next === "blocked", done = next === "manual-restored";
+        show(act, next === "initial"); show(question, blocked); show(brief, blocked);
+        show(gotoRef, blocked); show(give, blocked); show(miss, !done); show(restored, done);
+        show(reused, done); show(manual, done); show(mtag, done); show(again, done);
+        show(stakeNow, !done); show(stakeDone, done);
+        ref.classList.toggle("loss-ref--restored", done);
+        ref.classList.toggle("loss-ref--empty", !done);
+        link.setAttribute("aria-label", done ? link.dataset.altS2 : linkLabel);
       };
-      toInitial(false);
+      const focusIn = (el) => { if (el) { el.tabIndex = -1; el.focus(); } };
+      render("initial");
       act.addEventListener("click", () => {
-        if (state !== "initial" || busy) return;
-        state = "blocked"; busy = true;
-        show(act, false);
-        [question, brief, gotoRef, give].forEach((e) => show(e, true));
-        say(act);
-        if (!REDUCED) lossScene.classList.add("is-blocking");
-        give.focus({ preventScroll: true });
-        T(1000, () => { lossScene.classList.remove("is-blocking"); busy = false; });
+        if (state !== "initial") return;
+        render("blocked"); say(act);
+        question.tabIndex = -1; question.focus();
+        if (!REDUCED) {
+          lossScene.classList.add("is-blocking");
+          clearTimeout(fx); fx = setTimeout(() => lossScene.classList.remove("is-blocking"), 1000);
+        }
       });
       give.addEventListener("click", () => {
-        if (state !== "blocked" || busy) return;
-        state = "manual-restored"; busy = true;
-        [give, gotoRef, brief].forEach((e) => show(e, false));
-        show(manual, true);
+        if (state !== "blocked") return;
+        render("manual-restored"); say(give);
+        clearTimeout(fx); lossScene.classList.remove("is-blocking");
         if (!REDUCED) link.classList.add("is-restoring");
-        say(give);
-        T(600, () => {
-          show(miss, false);
-          [restored, reused, mtag, confirm, again].forEach((e) => show(e, true));
-          busy = false;
-          again.focus({ preventScroll: true });
-        });
+        focusIn(restored);
       });
       again.addEventListener("click", () => {
-        if (state !== "manual-restored" || busy) return;
-        say(again); toInitial(true);
+        if (state !== "manual-restored") return;
+        say(again); link.classList.remove("is-restoring"); render("initial");
+        act.focus({ preventScroll: true });
       });
       if (gotoRef) gotoRef.addEventListener("click", (e) => {
         e.preventDefault();
-        const t = document.getElementById("loss-ref-ayer");
-        if (t) { t.tabIndex = -1; t.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "nearest" }); t.focus({ preventScroll: true }); }
+        if (give) { give.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "nearest" }); give.focus({ preventScroll: true }); }
       });
     }
   }

@@ -117,7 +117,7 @@
             <p class="loss-reused" hidden>Reutilizada · aporte manual</p>
           </div>
           <p class="loss-foot">Registrada en el hilo</p>
-          <button class="loss-give" type="button" hidden data-msg="La nueva sesión vuelve a disponer del criterio.">Volver a aportar este criterio →</button>
+          <button class="loss-give" type="button" hidden data-msg="Criterio aportado manualmente a la nueva sesión.">Volver a aportar este criterio →</button>
         </article>
         <article class="loss-session loss-session--next">
           <p class="loss-kicker">Hoy · Sesión 2 — se preguntó</p>
@@ -130,16 +130,15 @@
             </div>
           </div>
           <div class="loss-next">
-            <button class="loss-act" type="button" hidden data-msg="La sesión necesita que recuperes el criterio anterior.">Intentar retomar el trabajo →</button>
+            <button class="loss-act" type="button" hidden data-msg="La nueva sesión no dispone de la decisión anterior.">Intentar retomar el trabajo →</button>
             <p class="loss-question">“¿Cuál era el criterio para los mensajes de error?”</p>
             <p class="loss-brief">Esta sesión no dispone de la decisión anterior.</p>
             <a class="loss-goto" href="#loss-ref-ayer" hidden>Ir al criterio de ayer</a>
           </div>
         </article>
-        <div class="loss-link" role="img" aria-label="El contexto no se traslada"><i class="loss-link-dot"></i><i class="loss-link-break"></i><i class="loss-link-manual" hidden></i><span class="loss-link-tag" hidden>Aporte manual</span></div>
+        <div class="loss-link" role="img" aria-label="La referencia no se trasladó a la siguiente sesión" data-alt-s2="La transferencia original se interrumpió; el criterio fue aportado manualmente"><i class="loss-link-dot"></i><i class="loss-link-break"></i><i class="loss-link-manual" hidden></i><span class="loss-link-tag" hidden>Aporte manual</span></div>
       </div>
-      <p class="loss-stakes"><span>Ayer avanzaste. Hoy tienes que volver a explicarlo.</span></p>
-      <p class="loss-confirm" hidden>La tarea puede continuar, pero tuviste que aportar otra vez la decisión.</p>
+      <p class="loss-stakes"><span class="loss-stakes-now">Ayer avanzaste. Hoy tienes que volver a explicarlo.</span><span class="loss-stakes-done" hidden>Ayer avanzaste. Hoy tuviste que volver a explicarlo.</span></p>
       <p class="loss-scope">Ejemplo ilustrativo. El comportamiento depende de la herramienta y de cómo se conserve el contexto.</p>
       <button class="loss-again" type="button" hidden data-msg="Experiencia restablecida.">Repetir experiencia</button>
       <p class="loss-announce visually-hidden" aria-live="polite"></p>
