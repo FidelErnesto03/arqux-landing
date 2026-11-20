@@ -102,16 +102,16 @@
     </div>
   </header>
 <main id="main-content">
-<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Reference</p><h1>One project, one governed context, reviewable work.</h1><p class="section-copy">The model, the artifacts and the format in one place. Start with the work, then inspect where information lives and how it is preserved.</p><nav class="ref-nav" aria-label="Reference sections"><a href="#workflow">Workflow</a><a href="#learning">Learning</a><a href="#dimensions">Task dimensions</a><a href="#artifacts">Artifacts</a><a href="#format">Format</a><a href="#compatibility">Compatibility</a></nav></div></section>
+<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Reference</p><h1>How ArqUX turns rules and decisions into reviewable work.</h1><p class="section-copy">Follow a task, see which artifacts it preserves and check which controls the code applies.</p><div class="hero-ctas"><a class="button button-primary" href="#workflow">See the workflow</a><a class="button button-dark" href="/start/#first-task">See a real task</a></div><nav class="ref-nav" aria-label="Reference sections"><a href="#intro">Introduction</a><span class="wf-view-label" aria-hidden="true">How it works</span><a href="#workflow">Workflow</a><a href="#dimensions">Task dimensions</a><span class="wf-view-label" aria-hidden="true">What it preserves</span><a href="#artifacts">Artifacts</a><a href="#learning">Learning</a><a href="#format">Format</a><span class="wf-view-label" aria-hidden="true">What it connects with</span><a href="#compatibility">Compatibility</a><a href="#continue">Next step</a></nav></div></section>
 <section class="section section-light" id="workflow">
       <div class="wrap workflow-grid">
-        <div class="section-head"><p class="eyebrow">Follow the work</p><h2>From policy to a result the team can review.</h2><p class="section-copy">Select a stage. See who participates, what changes and what can be inspected. Labels distinguish code controls from instructions and team practices.</p>
+        <div class="section-head"><p class="eyebrow">Follow the work</p><h2>From decision to reviewable task.</h2><p class="section-copy">The stages carry the work cycle: who participates, what changes and what can be inspected, with the labels that distinguish code controls from team practices. The second view is not another route: it shows how the environment is prepared — where the kernel comes from and how it is projected.</p>
           <p class="case-bridge">The home example — not exposing sensitive data in error messages — is one instance of this route.</p>
           <div class="wf-view-row">
             <span class="wf-view-label" aria-hidden="true">View</span>
             <div class="segmented wf-switch" role="group" aria-label="Choose a view" hidden>
               <button type="button" data-wf-view="stages" aria-pressed="true">Stages</button>
-              <button type="button" data-wf-view="map" aria-pressed="false">Map</button>
+              <button type="button" data-wf-view="map" aria-pressed="false">Environment setup</button>
             </div>
           </div>
         </div>
@@ -131,6 +131,8 @@
         </div>
       </div>
       <div class="wrap wf-map" hidden>
+        <p class="section-copy">This view is not another work route: it shows how the environment is prepared — what <code>arqux init</code> writes, how <code>sync-harnesses</code> projects the kernel into native files and what <code>drift-check</code> compares.</p>
+        <div class="hero-ctas"><a class="button button-dark" href="#artifacts">Inspect which files are involved</a></div>
         <div class="artifact-layout">
           <figure class="map-figure">
             <svg class="mech-map" viewBox="0 0 760 300" role="group" aria-label="Mechanism map: from arqux init to drift-check and evidence. Select a node to inspect its function, the control that applies it and its versioned source.">
@@ -167,35 +169,13 @@
             <p class="artifact-links"><a id="map-src" href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/AGENTS.md" target="_blank" rel="noreferrer">AGENTS.md ↗</a></p>
           </article>
         </div>
-      </div>
-    </section>
-<section class="section section-soft" id="learning">
-      <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Learning</p><h2>Learning is governed; its routes differ.</h2><p class="section-copy">Lessons are recorded in the project brain. Elevating a lesson to an identity is a separate, explicit step: the inspected path requires a dry-run proposal and hash confirmation. Other promotion routes can run under a configured policy; they do not follow the same path.</p></div>
-        <div class="learning-transform"><span>Lesson recorded</span><i aria-hidden="true">→</i><span>Proposal reviewed</span><i aria-hidden="true">→</i><span>Criterion available</span></div>
-        <ul class="flow">
-          <li><span>01</span><b>Record</b><small>A lesson is recorded in the project brain.</small></li>
-          <li><span>02</span><b>Review</b><small>A proposal is reviewed before any identity change.</small></li>
-          <li><span>03</span><b>Apply</b><small>On this route, applying requires the reviewed hash; policy may automate other routes.</small></li>
-        </ul>
-        <p class="case-bridge">In the home example, the error-message decision is the lesson recorded here; review decides whether it becomes a criterion.</p>
-        <div class="learning-sequence" id="criterion-flow">
-          <p class="eyebrow">From work to reusable criterion</p>
-          <ol class="flow flow-sequence">
-            <li><span>01</span><b>Work</b><small>The agent implements; the team agrees not to expose sensitive data in error messages.</small><p class="flow-meta">decision · work</p></li>
-            <li><span>02</span><b>Identify</b><small>The decision is recorded as a lesson or proposal, not as an active criterion.</small><p class="flow-meta">criterion · record</p></li>
-            <li><span>03</span><b>Review and incorporate</b><small>A person reviews it; if accepted, the available mechanism incorporates it into context.</small><p class="flow-meta">review · hash</p></li>
-            <li><span>04</span><b>Reuse and review</b><small>Another task may consult the criterion, and the result is reviewed.</small><p class="flow-meta">context · review</p></li>
-          </ol>
-          <p class="case-bridge">A recorded proposal is not yet an active criterion. Incorporation depends on review and on the mechanism available in the installed version. The verified first task shows the CLI path: <a href="/start/#first-task">See the first governed task →</a></p>
-        </div>
-
+        <p class="case-bridge">The map describes the preparation mechanism; the concrete files each stage uses are in the artifacts section.</p>
       </div>
     </section>
 <section class="section hex-section" id="dimensions">
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">Six task dimensions</p><h2>What “governed” means, one question at a time.</h2><p class="section-copy">The hexagon is a navigation aid, not a security claim — one governed task travels through these six questions. Select a node to inspect its function, the real control that applies it, and its versioned source.</p></div>
-        <p class="dimensions-scope">These six dimensions follow <strong>one task</strong>. They are not the six architecture pieces —identity, context, processes, session, evidence and learning— which describe <strong>what the base is made of</strong>. <a href="/#architecture">See the base pieces →</a></p>
+        <p class="dimensions-scope">These six dimensions follow <strong>one task</strong>: they answer "what must be resolved during the work". They are not the six architecture pieces —identity, context, processes, session, evidence and learning—, which answer a different question: "what the base is made of". Those pieces live in project files: <a href="#artifacts">See the artifacts →</a></p>
         <div class="hex-layout">
           <div class="hex-visual">
             <svg class="hex-map" viewBox="0 0 360 330" role="group" aria-label="Six selectable dimensions of ArqUX governance">
@@ -233,27 +213,21 @@
     </section>
 <section class="section section-light" id="artifacts">
       <div class="wrap">
-        <h2 class="visually-hidden">Artifacts and their roles</h2>
-        <p class="eyebrow artifact-vocab-label">Key terms</p>
-        <div class="artifact-vocab">
-          <div><b>Project</b><span>Objective, decisions and state that continue.</span></div>
-          <div><b>Workspace</b><span>Local container where <code>.arqux/</code> lives.</span></div>
-          <div><b>Governance</b><span>Rules, roles and review that bound the work.</span></div>
-          <div><b>Governance context</b><span>Governed context ArqUX returns to the agent.</span></div>
-          <div><b>Identity</b><span>Contract that scopes an agent's role.</span></div>
-          <div><b>Template</b><span>Base file that <code>arqux init</code> copies.</span></div>
-        </div>
+        <div class="section-head"><p class="eyebrow">Artifacts</p><h2>Where the project keeps what it needs to preserve.</h2><p class="section-copy">A conceptual tree of what ArqUX writes when a project adheres: the project root and, as its own directory, the workspace's <code>.arqux/</code> tree. Select a file to see its function, scope and versioned source.</p></div>
+        <p class="note">Conceptual view · not a scan of your files.</p>
         <div class="artifact-layout">
           <div class="artifact-tree" role="group" aria-label="Governed workspace artifacts">
             <span class="artifact-group">project /</span>
             <button class="artifact-node" type="button" data-artifact="0" aria-pressed="true"><span class="node-mark" aria-hidden="true"></span><code>AGENTS.md</code></button>
             <span class="artifact-group">.arqux /</span>
-            <button class="artifact-node" type="button" data-artifact="1" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>meta-brain.cortex</code></button>
-            <button class="artifact-node" type="button" data-artifact="2" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>learn-policies.cortex</code></button>
-            <button class="artifact-node" type="button" data-artifact="3" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>identities/</code></button>
-            <button class="artifact-node" type="button" data-artifact="4" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>skills/ · workflows/</code></button>
-            <button class="artifact-node" type="button" data-artifact="5" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>templates/</code></button>
-            <button class="artifact-node" type="button" data-artifact="6" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>packages/</code></button>
+            <div class="artifact-tree" role="group" aria-label="Contents of .arqux/">
+              <button class="artifact-node" type="button" data-artifact="1" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>meta-brain.cortex</code></button>
+              <button class="artifact-node" type="button" data-artifact="2" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>learn-policies.cortex</code></button>
+              <button class="artifact-node" type="button" data-artifact="3" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>identities/</code></button>
+              <button class="artifact-node" type="button" data-artifact="4" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>skills/ · workflows/</code></button>
+              <button class="artifact-node" type="button" data-artifact="5" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>templates/</code></button>
+              <button class="artifact-node" type="button" data-artifact="6" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>packages/</code></button>
+            </div>
           </div>
           <article class="artifact-inspector" aria-live="polite">
             <p class="eyebrow" id="art-kind">Project entry point</p>
@@ -268,12 +242,43 @@
             <p class="artifact-links"><a id="art-src" href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/AGENTS.md" target="_blank" rel="noreferrer">AGENTS.md ↗</a></p>
           </article>
         </div>
+        <details class="first-task-cmds"><summary>Key terms of the model</summary>
+          <div class="artifact-vocab">
+            <div><b>Project</b><span>Objective, decisions and state that continue.</span></div>
+            <div><b>Workspace</b><span>Local container where <code>.arqux/</code> lives.</span></div>
+            <div><b>Governance</b><span>Rules, roles and review that bound the work.</span></div>
+            <div><b>Governance context</b><span>Governed context ArqUX returns to the agent.</span></div>
+            <div><b>Identity</b><span>Contract that scopes an agent's role.</span></div>
+            <div><b>Template</b><span>Base file that <code>arqux init</code> copies.</span></div>
+          </div>
+        </details>
+      </div>
+    </section>
+<section class="section section-soft" id="learning">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Learning</p><h2>A recorded lesson is not yet an active rule.</h2><p class="section-copy">Lessons are recorded in the project brain, but recording is not approving and approving is not applying. Elevating a lesson to a criterion follows a defined route: the inspected path requires a dry-run proposal and hash confirmation; other routes can run under a configured policy. Mutations on protected elements may require explicit confirmation.</p></div>
+        <div class="learning-transform"><span>Lesson recorded</span><i aria-hidden="true">→</i><span>Review or policy</span><i aria-hidden="true">→</i><span>Criterion available</span></div>
+        <ul class="flow">
+          <li><span>01</span><b>Record</b><small>A lesson is recorded in the project brain; it stays a finding, not a rule.</small></li>
+          <li><span>02</span><b>Review or promote</b><small>One route requires a dry-run proposal and confirmed hash; another can run under configured policy.</small></li>
+          <li><span>03</span><b>Apply</b><small>Only when the route reaches an available criterion does the rule govern the next work.</small></li>
+        </ul>
+        <p class="case-bridge">In the home example, the error-message decision <strong>could</strong> be recorded as a lesson; its incorporation would depend on the applicable route and review. The home page shows the decision, not its promotion.</p>
+        <details class="first-task-cmds" id="criterion-flow"><summary>From work to a reusable criterion: the full example</summary>
+          <p class="eyebrow">From work to reusable criterion</p>
+          <ol class="flow flow-sequence">
+            <li><span>01</span><b>Work</b><small>The agent implements; the team agrees not to expose sensitive data in error messages.</small><p class="flow-meta">decision · work</p></li>
+            <li><span>02</span><b>Identify</b><small>The decision is recorded as a lesson or proposal — a finding, not yet an active criterion.</small><p class="flow-meta">criterion · record</p></li>
+            <li><span>03</span><b>Review and incorporate</b><small>The applicable route decides: hash review on one path, configured policy on another; if accepted, the available mechanism incorporates it into context.</small><p class="flow-meta">review · hash · policy</p></li>
+            <li><span>04</span><b>Reuse and review</b><small>Another task may consult the available criterion, and the result is reviewed.</small><p class="flow-meta">context · review</p></li>
+          </ol>
+          <p class="case-bridge">A recorded lesson is not yet an active criterion; incorporation depends on the route and on the mechanism available in the installed version. The verified first task shows the CLI path: <a href="/start/#first-task">See the first governed task →</a></p>
+        </details>
       </div>
     </section>
 <section class="section codec-section" id="format">
       <div class="wrap">
-        <h2 class="visually-hidden">CORTEX and HCORTEX</h2>
-        
+        <div class="section-head"><p class="eyebrow">CORTEX / HCORTEX</p><h2>One structured source; two ways to read it.</h2><p class="section-copy">CORTEX is the canonical representation of governed information; HCORTEX is its human reading. It is the same content with the same meaning: one source, two readings — not two stores.</p></div>
         <div class="codec-bar">
           <p class="codec-bar-label">Representation</p>
           <div class="segmented" role="group" hidden aria-label="Select a representation"><button type="button" aria-pressed="true" data-code-view="both">Compare</button><button type="button" aria-pressed="false" data-code-view="source">CORTEX</button><button type="button" aria-pressed="false" data-code-view="human">HCORTEX</button></div>
@@ -297,29 +302,51 @@ OBJ:gate{goal:<span class="code-amber">"Write documentation"</span>,status:plann
 <span class="code-muted">&lt;!-- /table:1 --&gt;</span></pre></article>
         </div>
         
-<p class="codec-certificate"><a href="https://github.com/FidelErnesto03/codec-cortex/blob/f64a8af95d5ae0868d822b645015e347e79b278a/bench/results/certificate.json" target="_blank" rel="noreferrer">Open codec certificate · codec_cortex 1.0.2-rc.1 →</a></p>
+<p class="codec-certificate"><a href="https://github.com/FidelErnesto03/codec-cortex/blob/f64a8af95d5ae0868d822b645015e347e79b278a/bench/results/certificate.json" target="_blank" rel="noreferrer">Open codec certificate · codec_cortex 1.0.2-rc.1 →</a> · <a href="/trust/#evidence">What the certificate proves →</a></p>
         <div class="architecture architecture--3 codec-cards">
           <article class="architecture-card"><p class="eyebrow">Signal, not filler</p><h3>One idea per line</h3><p>Norms live in typed ideas, not in prose. Density is a property of the format, not a promise about comprehension.</p></article>
-          <article class="architecture-card"><p class="eyebrow">Microtokens</p><h3>Repeats become aliases</h3><p>An atom repeated three times or more becomes a one-token alias. The canonical form, and its hash, do not change.</p></article>
-          <article class="architecture-card"><p class="eyebrow">Canonical and reversible</p><h3>Same bytes everywhere</h3><p>The same entry yields the same canonical bytes across runtimes. HCORTEX is a rendering, not a second source.</p></article>
+          <article class="architecture-card"><p class="eyebrow">Codec aliases</p><h3>Repeats become aliases</h3><p>An atom repeated three times or more is recorded as an alias inside the format. "Token" here is a codec unit, not a model token: that equivalence is not proven by the certificate.</p></article>
+          <article class="architecture-card"><p class="eyebrow">Certificate scope</p><h3>Same bytes everywhere</h3><p>Within the certified scope — encoding parity of the codec's own artifacts — the same entry yields the same canonical bytes across runtimes. HCORTEX is a rendering, not a second source.</p></article>
         </div>
-        
+        <p class="note">The byte and parity figures belong to the <code>codec_cortex 1.0.2-rc.1</code> certificate and cover the encoding of its own artifacts; they do not prove model comprehension or general security. <a href="/trust/#evidence">See the evidence →</a></p>
       </div>
     </section>
 <section class="section section-light" id="compatibility">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Compatibility scope</p><h2>Four native files for four harnesses; five apps on the board.</h2><p class="section-copy">The framework renders four native instruction files from one kernel. The board also names two MCP-compatible clients with no dedicated projection in 1.0.0. Client integration was not tested in this release.</p></div>
-        <div class="compat-wrap" tabindex="0" role="region" aria-label="Compatibility matrix"><table class="compat-table"><thead><tr><th>App</th><th>Native projection</th><th>MCP</th><th>Tested here</th></tr></thead><tbody>
-          <tr><td>Codex CLI</td><td><code>AGENTS.md</code> (shared kernel)</td><td>Manual client config</td><td>No</td></tr>
-          <tr><td>Claude Code</td><td><code>CLAUDE.md</code></td><td>Manual client config</td><td>No</td></tr>
-          <tr><td>OpenCode</td><td><code>.opencode/instructions.md</code></td><td>Manual client config</td><td>No</td></tr>
-          <tr><td>Cursor</td><td>No dedicated projection</td><td>MCP example</td><td>No</td></tr>
-          <tr><td>Antigravity</td><td>No dedicated projection</td><td>Not referenced by framework docs</td><td>No</td></tr>
+        <div class="section-head"><p class="eyebrow">Agnostic integration</p><h2>ArqUX governs projects; it does not impose an agent.</h2><p class="section-copy">Governance lives in project files and in handlers a client can expose over MCP. It does not depend on a model, a provider or a specific harness: an agent adheres by reading the context available in its environment, and the MCP connection depends on the client supporting and configuring it.</p></div>
+        <h3>How an environment adheres</h3>
+        <p class="section-copy">There are two complementary paths. By files: <code>arqux init</code> creates the governed workspace — the <code>.arqux/</code> tree and the <code>AGENTS.md</code> kernel at the root — and <code>arqux sync-harnesses</code> projects that kernel into the native instruction files; <code>arqux drift-check</code> reports manual edits. By MCP: <code>arqux serve</code> exposes the handlers over stdio and each client configures it on its own.</p>
+        <pre class="start-cmd"><code>arqux init
+arqux sync-harnesses</code></pre>
+        <h3>Projections during adhesion</h3>
+        <p class="section-copy">Four files, one per instruction convention each environment reads natively. They are implemented projection targets — not a closed list of admitted agents.</p>
+        <div class="compat-wrap" tabindex="0" role="region" aria-label="Kernel projection targets"><table class="compat-table"><thead><tr><th>File</th><th>Convention it follows</th></tr></thead><tbody>
+          <tr><td><code>AGENTS.md</code></td><td>Shared kernel at the project root; read by agents that adopt the AGENTS.md convention.</td></tr>
+          <tr><td><code>CLAUDE.md</code></td><td>Native instruction file of Claude Code.</td></tr>
+          <tr><td><code>GEMINI.md</code></td><td>Native instruction file of Gemini CLI.</td></tr>
+          <tr><td><code>.opencode/instructions.md</code></td><td>Instruction file of OpenCode.</td></tr>
         </tbody></table></div>
-        <p class="note">The framework also targets <code>GEMINI.md</code> for Gemini CLI. Source: <a href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/adapters/harness.py" target="_blank" rel="noreferrer">harness.py · _TARGETS</a> at <code>3903339</code>. MCP setup belongs to each client; the pinned deployment guide shows Cursor as an agent client over <code>arqux serve</code>, and Antigravity is not referenced in the pinned framework docs. ArqUX does not configure clients automatically.</p>
+        <p class="note">The four targets are declared in <code>_TARGETS</code>: <a href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/adapters/harness.py" target="_blank" rel="noreferrer">harness.py · _TARGETS ↗</a> at <code>3903339</code>. They describe projection formats, not the total of harnesses that can adhere.</p>
+        <h3>MCP per client</h3>
+        <p class="section-copy"><code>arqux serve</code> exposes the governance handlers over stdio; configuration is external and belongs to each client — the pinned guide shows Cursor as an example. A client without MCP support can still adhere through files. <a href="/start/#connect">See how to connect a client →</a></p>
+        <h3>Environments reported by the project</h3>
+        <p class="section-copy">Project leadership reports rehearsed adhesion in the environments below: an open collection of examples, not an exhaustive inventory nor nine generated native integrations.</p>
+        <div class="compat-wrap" tabindex="0" role="region" aria-label="Application environments with reported validation"><table class="compat-table"><thead><tr><th>Environment</th><th>How it adheres</th><th>Validation</th></tr></thead><tbody>
+          <tr><td>OpenCode</td><td><code>.opencode/instructions.md</code> projection; optional MCP per client</td><td>Reported by the project · test sheet pending</td></tr>
+          <tr><td>Claude Code</td><td><code>CLAUDE.md</code> projection; optional MCP per client</td><td>Reported by the project · test sheet pending</td></tr>
+          <tr><td>Codex</td><td><code>AGENTS.md</code> kernel; optional MCP per client</td><td>Reported by the project · test sheet pending</td></tr>
+          <tr><td>HermesAgent</td><td>Instructions its environment reads; optional MCP if the client supports it</td><td>Reported by the project · test sheet pending</td></tr>
+          <tr><td>Command Code</td><td>Instructions its environment reads; optional MCP if the client supports it</td><td>Reported by the project · test sheet pending</td></tr>
+          <tr><td>Devin</td><td>Instructions its environment reads; optional MCP if the client supports it</td><td>Reported by the project · test sheet pending</td></tr>
+          <tr><td>Antigravity</td><td>Instructions its environment reads; optional MCP if the client supports it</td><td>Reported by the project · test sheet pending</td></tr>
+          <tr><td>Qwen Coder</td><td>Instructions its environment reads; optional MCP if the client supports it</td><td>Reported by the project · test sheet pending</td></tr>
+          <tr><td>Kiro</td><td>Instructions its environment reads; optional MCP if the client supports it</td><td>Reported by the project · test sheet pending</td></tr>
+        </tbody></table></div>
+        <p class="note">"Validation reported by the project; technical test sheet pending": leadership declares the adhesion, but the per-environment sheet —version, platform, mechanism, result and limits— is not published yet. No dedicated native projection or automatic MCP is claimed for any of them, and client configuration always requires a user step.</p>
+        <div class="hero-ctas"><a class="button button-primary" href="/start/#connect">Set up my agent</a><a class="button button-dark" href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/adapters/harness.py" target="_blank" rel="noreferrer">See the kernel projections ↗</a></div>
       </div>
     </section>
-<section class="section section-soft" id="continue"><div class="wrap"><p class="eyebrow">Continue</p><p class="section-copy"><a href="/start/">Get started</a> · <a href="/trust/">Trust</a> · <a href="https://github.com/FidelErnesto03/arqux/issues">Issues</a></p></div></section>
+<section class="section section-soft" id="continue"><div class="wrap"><p class="eyebrow">Next step</p><p class="section-copy">You now know the pieces. Run a task and check what it records.</p><div class="hero-ctas"><a class="button button-primary" href="/start/#first-task">Run a verified task</a><a class="button button-dark" href="https://github.com/FidelErnesto03/arqux/tree/390333913e0f071a89241187f36cc90289e7e043" target="_blank" rel="noreferrer">Inspect the sources ↗</a></div><p class="section-copy"><a href="/trust/#limits">Check the limits</a> · <a href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/CONTRIBUTING.md">Contribute ↗</a> · <a href="https://github.com/FidelErnesto03/arqux/issues">Issues ↗</a></p></div></section>
 <script type="application/json" id="app-data">{"artifactLabel": "Example artifact · ", "steps": [{"kicker": "Stage 01 · Team practice", "title": "Define the work together.", "who": "A responsible person sets objective, scope and acceptance.", "input": "Policy, authorized knowledge and constraints.", "change": "The project and cycle gain an explicit goal and closure condition.", "evidence": "Written rules and scope in the governed workspace."}, {"kicker": "Stage 02 · Contract in code", "title": "Assign an identity and responsibility.", "who": "The team defines which agent identity owns the task.", "input": "Role, scope, allowed operations and local context.", "change": "The agent receives an explicit operating contract.", "evidence": "Identity definition and permission behavior for the selected release."}, {"kicker": "Stage 03 · Enforced in code — v1.0", "title": "Run a task — governed execution.", "who": "A bound session owns execution; unbound calls are rejected with UNBOUND_SESSION.", "input": "Task, policy files, skills and project state.", "change": "task.run executes each governed [exec:action] step and records outcome + evidence_ref — never arbitrary shell.", "evidence": "Steps marked executed carry evidence_ref; completed maps to exit code 0."}, {"kicker": "Stage 04 · Team practice", "title": "Review, accept and continue.", "who": "A person or authorized reviewer checks the result.", "input": "Diff, acceptance criteria, test output and open risks.", "change": "Work is accepted, returned or re-delegated.", "evidence": "A review decision and persisted state available to the next session."}], "dims": [{"name": "Identity", "fn": "Binds every operation to a declared agent role and behavioral contract loaded from the workspace.", "via": "identity.switch · arqux wake --identity — unbound execution rejects UNBOUND_SESSION.", "code": "$1:IDENTITY{role:\"executor\", scope:\"project:alpha\"}", "tag": "Illustrative", "src": "https://github.com/FidelErnesto03/arqux/tree/390333913e0f071a89241187f36cc90289e7e043/src/arqux/handlers/identity", "srcLabel": "src/arqux/handlers/identity/", "lim": "Declared, not authenticated — it scopes responsibility, not credentials."}, {"name": "Contract", "fn": "Defines what the acting identity may do: axioms, limits and operating rules read from local files.", "via": "AGENTS.md kernel + role contracts — consulted on every governed call.", "code": "$2:CONTRACT{allowed:[\"task.claim\",\"evidence.record\"]}", "tag": "Illustrative", "src": "https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/AGENTS.md", "srcLabel": "AGENTS.md", "lim": "Rules constrain the governed layer — an agent outside it is ungoverned by definition."}, {"name": "Context", "fn": "Decides what the agent reads: project brain, role files and harness projections, versioned with the repo.", "via": "cortex.read · sync-harnesses · drift-check reports manual edits.", "code": "$0:CONTEXT{source:\"workspace\", version:\"v1.4\"}", "tag": "Illustrative", "src": "https://github.com/FidelErnesto03/arqux/tree/390333913e0f071a89241187f36cc90289e7e043/src/arqux/handlers/cortex", "srcLabel": "src/arqux/handlers/cortex/", "lim": "What is not written is not remembered — context is files, not a hidden service."}, {"name": "Decision", "fn": "Turns intent into a recorded artifact: blueprint, cycle or rule with acceptance criteria.", "via": "blueprint.* · cycle.* — decisions are artifacts, not chat.", "code": "BLP-012 · acceptance: all checks pass", "tag": "Illustrative", "src": "https://github.com/FidelErnesto03/arqux/tree/390333913e0f071a89241187f36cc90289e7e043/src/arqux/handlers/blueprint", "srcLabel": "src/arqux/handlers/blueprint/", "lim": "Records the decision; judging its quality stays with the reviewer."}, {"name": "Execution", "fn": "Runs governed [exec:action] steps under a bound session — never arbitrary shell.", "via": "task.run + session binding — rejects with UNBOUND_SESSION otherwise.", "code": "task.claim → src/module.py · status: review", "tag": "Illustrative", "src": "https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/handlers/execution.py", "srcLabel": "src/arqux/handlers/execution.py", "lim": "Executes declared actions only; it is not a general shell."}, {"name": "Evidence", "fn": "Leaves a checkable record: pulse events, spans and a SHA-256 manifest in seal.cortex.", "via": "evidence export · cortex-verify · seal.cortex.", "code": "evidence: test-output · commit: <release-linked>", "tag": "Illustrative", "src": "https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/handlers/evidence.py", "srcLabel": "src/arqux/handlers/evidence.py", "lim": "Shows what happened — it does not certify the intent was correct."}]}</script>
 <script type="application/json" id="map-data">{"nodes":[
 {"kind":"Entry command","title":"arqux init","fn":"Creates the governed workspace: writes the root kernel and the .arqux/ tree with identities, skills, templates and memory files.","via":"arqux init — aborts without --force on a workspace that is already governed.","lim":"It writes files; it does not install agents or configure your harness.","src":"https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/cli.py","srcLabel":"src/arqux/cli.py"},

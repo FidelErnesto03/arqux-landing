@@ -102,16 +102,16 @@
     </div>
   </header>
 <main id="main-content">
-<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Referencia</p><h1>Un proyecto, un contexto gobernado, trabajo revisable.</h1><p class="section-copy">El modelo, los artefactos y el formato en un solo lugar. Empieza por el trabajo y después inspecciona dónde vive la información y cómo se conserva.</p><nav class="ref-nav" aria-label="Secciones de referencia"><a href="#workflow">Flujo</a><a href="#learning">Aprendizaje</a><a href="#dimensions">Dimensiones de tarea</a><a href="#artifacts">Artefactos</a><a href="#format">Formato</a><a href="#compatibility">Compatibilidad</a></nav></div></section>
+<section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Referencia</p><h1>Cómo ArqUX convierte reglas y decisiones en trabajo revisable.</h1><p class="section-copy">Sigue una tarea, identifica los artefactos que conserva y comprueba qué controles aplica el código.</p><div class="hero-ctas"><a class="button button-primary" href="#workflow">Ver el flujo de trabajo</a><a class="button button-dark" href="/es/empezar/#first-task">Ver una tarea real</a></div><nav class="ref-nav" aria-label="Secciones de referencia"><a href="#intro">Introducción</a><span class="wf-view-label" aria-hidden="true">Cómo funciona</span><a href="#workflow">Flujo de trabajo</a><a href="#dimensions">Dimensiones de tarea</a><span class="wf-view-label" aria-hidden="true">Qué conserva</span><a href="#artifacts">Artefactos</a><a href="#learning">Aprendizaje</a><a href="#format">Formato</a><span class="wf-view-label" aria-hidden="true">Con qué se integra</span><a href="#compatibility">Compatibilidad</a><a href="#continue">Siguiente paso</a></nav></div></section>
 <section class="section section-light" id="workflow">
       <div class="wrap workflow-grid">
-        <div class="section-head"><p class="eyebrow">Sigue el trabajo</p><h2>De la política a un resultado que el equipo puede revisar.</h2><p class="section-copy">Selecciona una etapa. Mira quién participa, qué cambia y qué se puede inspeccionar. Las etiquetas distinguen controles de código de instrucciones y prácticas de equipo.</p>
+        <div class="section-head"><p class="eyebrow">Sigue el trabajo</p><h2>De la decisión a la tarea revisable.</h2><p class="section-copy">Las etapas recogen el ciclo de trabajo: quién participa, qué cambia y qué se puede inspeccionar, con las etiquetas que distinguen controles de código de prácticas de equipo. La segunda vista no es otra ruta: muestra cómo se prepara el entorno — de dónde sale el kernel y cómo se proyecta.</p>
           <p class="case-bridge">El ejemplo de la portada —no exponer datos sensibles en los mensajes de error— es una instancia de esta ruta.</p>
           <div class="wf-view-row">
             <span class="wf-view-label" aria-hidden="true">Vista</span>
             <div class="segmented wf-switch" role="group" aria-label="Elegir una vista" hidden>
               <button type="button" data-wf-view="stages" aria-pressed="true">Etapas</button>
-              <button type="button" data-wf-view="map" aria-pressed="false">Mapa</button>
+              <button type="button" data-wf-view="map" aria-pressed="false">Preparación del entorno</button>
             </div>
           </div>
         </div>
@@ -131,6 +131,8 @@
         </div>
       </div>
       <div class="wrap wf-map" hidden>
+        <p class="section-copy">Esta vista no es otra ruta del trabajo: muestra cómo se prepara el entorno — qué escribe <code>arqux init</code>, cómo <code>sync-harnesses</code> proyecta el kernel en archivos nativos y qué compara <code>drift-check</code>.</p>
+        <div class="hero-ctas"><a class="button button-dark" href="#artifacts">Inspeccionar qué archivos intervienen</a></div>
         <div class="artifact-layout">
           <figure class="map-figure">
             <svg class="mech-map" viewBox="0 0 760 300" role="group" aria-label="Mapa del mecanismo: de arqux init a drift-check y evidencia. Selecciona un nodo para inspeccionar su función, el control que lo aplica y su fuente versionada.">
@@ -167,35 +169,13 @@
             <p class="artifact-links"><a id="map-src" href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/AGENTS.md" target="_blank" rel="noreferrer">AGENTS.md ↗</a></p>
           </article>
         </div>
-      </div>
-    </section>
-<section class="section section-soft" id="learning">
-      <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Aprendizaje</p><h2>El aprendizaje está gobernado; sus rutas difieren.</h2><p class="section-copy">Las lecciones se registran en el cerebro del proyecto. Elevar una lección a identidad es un paso explícito y separado: la ruta inspeccionada exige una propuesta en seco y la confirmación de su hash. Otras rutas de promoción pueden ejecutarse bajo una política configurada; no siguen el mismo camino.</p></div>
-        <div class="learning-transform"><span>Lección registrada</span><i aria-hidden="true">→</i><span>Propuesta revisada</span><i aria-hidden="true">→</i><span>Criterio disponible</span></div>
-        <ul class="flow">
-          <li><span>01</span><b>Registrar</b><small>Una lección se registra en el cerebro del proyecto.</small></li>
-          <li><span>02</span><b>Revisar</b><small>Una propuesta se revisa antes de cualquier cambio de identidad.</small></li>
-          <li><span>03</span><b>Aplicar</b><small>En esta ruta, aplicar exige el hash revisado; la política puede automatizar otras rutas.</small></li>
-        </ul>
-        <p class="case-bridge">En el ejemplo de la portada, la decisión sobre los mensajes de error es la lección registrada aquí; la revisión decide si se convierte en criterio.</p>
-        <div class="learning-sequence" id="criterion-flow">
-          <p class="eyebrow">Del trabajo al criterio reutilizable</p>
-          <ol class="flow flow-sequence">
-            <li><span>01</span><b>Trabajar</b><small>El agente implementa; se acuerda no exponer datos sensibles en los mensajes de error.</small><p class="flow-meta">decisión · trabajo</p></li>
-            <li><span>02</span><b>Identificar</b><small>La decisión se registra como lección o propuesta, no como criterio vigente.</small><p class="flow-meta">criterio · registro</p></li>
-            <li><span>03</span><b>Revisar e incorporar</b><small>Una persona la revisa; si procede, el mecanismo disponible la incorpora al contexto.</small><p class="flow-meta">revisión · hash</p></li>
-            <li><span>04</span><b>Reutilizar y revisar</b><small>Otra tarea puede consultar el criterio, y el resultado se revisa.</small><p class="flow-meta">contexto · revisión</p></li>
-          </ol>
-          <p class="case-bridge">Una propuesta registrada no es aún un criterio vigente. La incorporación depende de la revisión y del mecanismo disponible en la versión instalada. La primera tarea verificada muestra la ruta CLI: <a href="/es/empezar/#first-task">Ver la primera tarea gobernada →</a></p>
-        </div>
-
+        <p class="case-bridge">El mapa describe el mecanismo de preparación; los archivos concretos que intervienen en cada etapa están en la sección de artefactos.</p>
       </div>
     </section>
 <section class="section hex-section" id="dimensions">
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">Seis dimensiones de tarea</p><h2>Qué significa «gobernado», una pregunta a la vez.</h2><p class="section-copy">El hexágono es una ayuda de navegación, no una afirmación de seguridad: una tarea gobernada recorre estas seis preguntas. Selecciona un nodo para inspeccionar su función, el control real que lo aplica y su fuente versionada.</p></div>
-        <p class="dimensions-scope">Estas seis dimensiones siguen <strong>una tarea</strong>. No son las seis piezas de arquitectura —identidad, contexto, procesos, sesión, evidencia y aprendizaje— que describen <strong>de qué está hecha la base</strong>. <a href="/es/#architecture">Ver las piezas de la base →</a></p>
+        <p class="dimensions-scope">Estas seis dimensiones siguen <strong>una tarea</strong>: responden a «qué debe resolverse durante el trabajo». No son las seis piezas de arquitectura —identidad, contexto, procesos, sesión, evidencia y aprendizaje—, que responden a otra pregunta: «de qué está hecha la base». Esas piezas viven en archivos del proyecto: <a href="#artifacts">Ver los artefactos →</a></p>
         <div class="hex-layout">
           <div class="hex-visual">
             <svg class="hex-map" viewBox="0 0 360 330" role="group" aria-label="Seis dimensiones seleccionables del gobierno de ArqUX">
@@ -233,27 +213,21 @@
     </section>
 <section class="section section-light" id="artifacts">
       <div class="wrap">
-        <h2 class="visually-hidden">Artefactos y sus funciones</h2>
-        <p class="eyebrow artifact-vocab-label">Términos clave</p>
-        <div class="artifact-vocab">
-          <div><b>Proyecto</b><span>Objetivo, decisiones y estado que continúan.</span></div>
-          <div><b>Espacio de trabajo</b><span>Contenedor local donde vive <code>.arqux/</code>.</span></div>
-          <div><b>Gobierno</b><span>Reglas, roles y revisión que acotan el trabajo.</span></div>
-          <div><b>Contexto de gobierno</b><span>Contexto gobernado que ArqUX devuelve al agente.</span></div>
-          <div><b>Identidad</b><span>Contrato que acota el rol de un agente.</span></div>
-          <div><b>Plantilla</b><span>Archivo base que copia <code>arqux init</code>.</span></div>
-        </div>
+        <div class="section-head"><p class="eyebrow">Artefactos</p><h2>Dónde queda lo que el proyecto necesita conservar.</h2><p class="section-copy">Un árbol conceptual de lo que ArqUX escribe al adherir un proyecto: la raíz del proyecto y, como directorio propio, el árbol <code>.arqux/</code> del espacio de trabajo. Selecciona un archivo para ver su función, su alcance y su fuente versionada.</p></div>
+        <p class="note">Vista conceptual · no es un escaneo de tus archivos.</p>
         <div class="artifact-layout">
           <div class="artifact-tree" role="group" aria-label="Artefactos del espacio de trabajo gobernado">
             <span class="artifact-group">project /</span>
             <button class="artifact-node" type="button" data-artifact="0" aria-pressed="true"><span class="node-mark" aria-hidden="true"></span><code>AGENTS.md</code></button>
             <span class="artifact-group">.arqux /</span>
-            <button class="artifact-node" type="button" data-artifact="1" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>meta-brain.cortex</code></button>
-            <button class="artifact-node" type="button" data-artifact="2" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>learn-policies.cortex</code></button>
-            <button class="artifact-node" type="button" data-artifact="3" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>identities/</code></button>
-            <button class="artifact-node" type="button" data-artifact="4" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>skills/ · workflows/</code></button>
-            <button class="artifact-node" type="button" data-artifact="5" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>templates/</code></button>
-            <button class="artifact-node" type="button" data-artifact="6" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>packages/</code></button>
+            <div class="artifact-tree" role="group" aria-label="Contenido de .arqux/">
+              <button class="artifact-node" type="button" data-artifact="1" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>meta-brain.cortex</code></button>
+              <button class="artifact-node" type="button" data-artifact="2" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>learn-policies.cortex</code></button>
+              <button class="artifact-node" type="button" data-artifact="3" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>identities/</code></button>
+              <button class="artifact-node" type="button" data-artifact="4" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>skills/ · workflows/</code></button>
+              <button class="artifact-node" type="button" data-artifact="5" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>templates/</code></button>
+              <button class="artifact-node" type="button" data-artifact="6" aria-pressed="false"><span class="node-mark" aria-hidden="true"></span><code>packages/</code></button>
+            </div>
           </div>
           <article class="artifact-inspector" aria-live="polite">
             <p class="eyebrow" id="art-kind">Punto de entrada del proyecto</p>
@@ -268,12 +242,43 @@
             <p class="artifact-links"><a id="art-src" href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/AGENTS.md" target="_blank" rel="noreferrer">AGENTS.md ↗</a></p>
           </article>
         </div>
+        <details class="first-task-cmds"><summary>Términos clave del modelo</summary>
+          <div class="artifact-vocab">
+            <div><b>Proyecto</b><span>Objetivo, decisiones y estado que continúan.</span></div>
+            <div><b>Espacio de trabajo</b><span>Contenedor local donde vive <code>.arqux/</code>.</span></div>
+            <div><b>Gobierno</b><span>Reglas, roles y revisión que acotan el trabajo.</span></div>
+            <div><b>Contexto de gobierno</b><span>Contexto gobernado que ArqUX devuelve al agente.</span></div>
+            <div><b>Identidad</b><span>Contrato que acota el rol de un agente.</span></div>
+            <div><b>Plantilla</b><span>Archivo base que copia <code>arqux init</code>.</span></div>
+          </div>
+        </details>
+      </div>
+    </section>
+<section class="section section-soft" id="learning">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Aprendizaje</p><h2>Una lección registrada todavía no es una regla vigente.</h2><p class="section-copy">Las lecciones se registran en el cerebro del proyecto, pero registrar no es aprobar y aprobar no es aplicar. Elevar una lección a criterio sigue una ruta definida: la vía inspeccionada exige una propuesta en seco y la confirmación de su hash; otras rutas pueden ejecutarse bajo una política configurada. Las mutaciones sobre elementos protegidos pueden exigir confirmación explícita.</p></div>
+        <div class="learning-transform"><span>Lección registrada</span><i aria-hidden="true">→</i><span>Revisión o política</span><i aria-hidden="true">→</i><span>Criterio disponible</span></div>
+        <ul class="flow">
+          <li><span>01</span><b>Registrar</b><small>Una lección se registra en el cerebro del proyecto; queda como hallazgo, no como regla.</small></li>
+          <li><span>02</span><b>Revisar o promover</b><small>Una ruta exige propuesta en seco y hash confirmado; otra puede ejecutarse bajo política configurada.</small></li>
+          <li><span>03</span><b>Aplicar</b><small>Solo cuando la ruta llega a criterio disponible la regla rige el trabajo siguiente.</small></li>
+        </ul>
+        <p class="case-bridge">En el ejemplo de la portada, la decisión sobre los mensajes de error <strong>podría</strong> registrarse como lección; su incorporación dependería de la ruta y la revisión aplicables. La portada muestra la decisión, no su promoción.</p>
+        <details class="first-task-cmds" id="criterion-flow"><summary>Del trabajo al criterio reutilizable: el ejemplo completo</summary>
+          <p class="eyebrow">Del trabajo al criterio reutilizable</p>
+          <ol class="flow flow-sequence">
+            <li><span>01</span><b>Trabajar</b><small>El agente implementa; se acuerda no exponer datos sensibles en los mensajes de error.</small><p class="flow-meta">decisión · trabajo</p></li>
+            <li><span>02</span><b>Identificar</b><small>La decisión se registra como lección o propuesta — un hallazgo, todavía no un criterio vigente.</small><p class="flow-meta">criterio · registro</p></li>
+            <li><span>03</span><b>Revisar e incorporar</b><small>La ruta aplicable decide: revisión con hash en una vía, política configurada en otra; si procede, el mecanismo la incorpora al contexto.</small><p class="flow-meta">revisión · hash · política</p></li>
+            <li><span>04</span><b>Reutilizar y revisar</b><small>Otra tarea puede consultar el criterio disponible, y el resultado se revisa.</small><p class="flow-meta">contexto · revisión</p></li>
+          </ol>
+          <p class="case-bridge">Una lección registrada no es aún un criterio vigente; la incorporación depende de la ruta y del mecanismo disponible en la versión instalada. La primera tarea verificada muestra la ruta CLI: <a href="/es/empezar/#first-task">Ver la primera tarea gobernada →</a></p>
+        </details>
       </div>
     </section>
 <section class="section codec-section" id="format">
       <div class="wrap">
-        <h2 class="visually-hidden">CORTEX y HCORTEX</h2>
-        
+        <div class="section-head"><p class="eyebrow">CORTEX / HCORTEX</p><h2>Una fuente estructurada; dos maneras de leerla.</h2><p class="section-copy">CORTEX es la representación canónica de la información gobernada; HCORTEX es su lectura humana. Es el mismo contenido con el mismo significado: una fuente, dos lecturas — no dos almacenes.</p></div>
         <div class="codec-bar">
           <p class="codec-bar-label">Representación</p>
           <div class="segmented" role="group" hidden aria-label="Seleccionar una representación"><button type="button" aria-pressed="true" data-code-view="both">Comparar</button><button type="button" aria-pressed="false" data-code-view="source">CORTEX</button><button type="button" aria-pressed="false" data-code-view="human">HCORTEX</button></div>
@@ -297,29 +302,51 @@ OBJ:gate{goal:<span class="code-amber">"Write documentation"</span>,status:plann
 <span class="code-muted">&lt;!-- /table:1 --&gt;</span></pre></article>
         </div>
         
-<p class="codec-certificate"><a href="https://github.com/FidelErnesto03/codec-cortex/blob/f64a8af95d5ae0868d822b645015e347e79b278a/bench/results/certificate.json" target="_blank" rel="noreferrer">Abrir certificado codec · codec_cortex 1.0.2-rc.1 →</a></p>
+<p class="codec-certificate"><a href="https://github.com/FidelErnesto03/codec-cortex/blob/f64a8af95d5ae0868d822b645015e347e79b278a/bench/results/certificate.json" target="_blank" rel="noreferrer">Abrir certificado codec · codec_cortex 1.0.2-rc.1 →</a> · <a href="/es/confianza/#evidence">Qué demuestra el certificado →</a></p>
         <div class="architecture architecture--3 codec-cards">
           <article class="architecture-card"><p class="eyebrow">Señal, no relleno</p><h3>Una idea por línea</h3><p>Las normas viven en ideas tipadas, no en prosa. La densidad es una propiedad del formato, no una promesa sobre la comprensión.</p></article>
-          <article class="architecture-card"><p class="eyebrow">Microtokens</p><h3>Las repeticiones se vuelven alias</h3><p>Un átomo repetido tres veces o más se convierte en un alias de un token. La forma canónica, y su hash, no cambian.</p></article>
-          <article class="architecture-card"><p class="eyebrow">Canónico y reversible</p><h3>Los mismos bytes en todas partes</h3><p>La misma entrada produce los mismos bytes canónicos entre runtimes. HCORTEX es una representación, no una segunda fuente.</p></article>
+          <article class="architecture-card"><p class="eyebrow">Alias del codec</p><h3>Las repeticiones se vuelven alias</h3><p>Un átomo repetido tres veces o más se registra como alias dentro del formato. «Token» aquí es una unidad del codec, no un token de modelo de IA: esa equivalencia no está probada por el certificado.</p></article>
+          <article class="architecture-card"><p class="eyebrow">Alcance del certificado</p><h3>Los mismos bytes en todas partes</h3><p>Dentro del alcance certificado —paridad de codificación de los artefactos del codec— la misma entrada produce los mismos bytes canónicos entre runtimes. HCORTEX es una representación, no una segunda fuente.</p></article>
         </div>
-        
+        <p class="note">Las cifras de bytes y paridad pertenecen al certificado de <code>codec_cortex 1.0.2-rc.1</code> y cubren la codificación de sus propios artefactos; no prueban comprensión de un modelo ni seguridad general. <a href="/es/confianza/#evidence">Ver la evidencia →</a></p>
       </div>
     </section>
 <section class="section section-light" id="compatibility">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Alcance de compatibilidad</p><h2>Cuatro archivos nativos para cuatro harnesses; cinco apps en el tablero.</h2><p class="section-copy">El framework renderiza cuatro archivos de instrucciones nativos desde un kernel. El tablero también nombra dos clientes compatibles con MCP sin proyección dedicada en 1.0.0. La integración con clientes no se probó en esta versión.</p></div>
-        <div class="compat-wrap" tabindex="0" role="region" aria-label="Matriz de compatibilidad"><table class="compat-table"><thead><tr><th>App</th><th>Proyección nativa</th><th>MCP</th><th>Probado aquí</th></tr></thead><tbody>
-          <tr><td>Codex CLI</td><td><code>AGENTS.md</code> (kernel compartido)</td><td>Configuración manual del cliente</td><td>No</td></tr>
-          <tr><td>Claude Code</td><td><code>CLAUDE.md</code></td><td>Configuración manual del cliente</td><td>No</td></tr>
-          <tr><td>OpenCode</td><td><code>.opencode/instructions.md</code></td><td>Configuración manual del cliente</td><td>No</td></tr>
-          <tr><td>Cursor</td><td>Sin proyección dedicada</td><td>Ejemplo MCP</td><td>No</td></tr>
-          <tr><td>Antigravity</td><td>Sin proyección dedicada</td><td>No referenciado en la documentación del framework</td><td>No</td></tr>
+        <div class="section-head"><p class="eyebrow">Integración agnóstica</p><h2>ArqUX gobierna proyectos, no impone un agente.</h2><p class="section-copy">El gobierno vive en archivos del proyecto y en handlers que un cliente puede exponer por MCP. No depende de un modelo, un proveedor ni un harness concreto: un agente se adhiere leyendo el contexto disponible en su entorno, y la conexión MCP depende de que el cliente la soporte y la configure.</p></div>
+        <h3>Cómo se adhiere un entorno</h3>
+        <p class="section-copy">Hay dos vías complementarias. Por archivos: <code>arqux init</code> crea el espacio de trabajo gobernado — el árbol <code>.arqux/</code> y el kernel <code>AGENTS.md</code> en la raíz — y <code>arqux sync-harnesses</code> proyecta ese kernel en los archivos de instrucciones nativos; <code>arqux drift-check</code> reporta ediciones manuales. Por MCP: <code>arqux serve</code> expone los handlers por stdio y cada cliente lo configura por su cuenta.</p>
+        <pre class="start-cmd"><code>arqux init
+arqux sync-harnesses</code></pre>
+        <h3>Proyecciones durante la adhesión</h3>
+        <p class="section-copy">Cuatro archivos, uno por convención de instrucciones que cada entorno lee de forma nativa. Son destinos de proyección implementados — no una lista cerrada de agentes admitidos.</p>
+        <div class="compat-wrap" tabindex="0" role="region" aria-label="Destinos de proyección del kernel"><table class="compat-table"><thead><tr><th>Archivo</th><th>Convención que sigue</th></tr></thead><tbody>
+          <tr><td><code>AGENTS.md</code></td><td>Kernel compartido en la raíz del proyecto; lo leen los agentes que adoptan la convención AGENTS.md.</td></tr>
+          <tr><td><code>CLAUDE.md</code></td><td>Archivo de instrucciones nativo de Claude Code.</td></tr>
+          <tr><td><code>GEMINI.md</code></td><td>Archivo de instrucciones nativo de Gemini CLI.</td></tr>
+          <tr><td><code>.opencode/instructions.md</code></td><td>Archivo de instrucciones de OpenCode.</td></tr>
         </tbody></table></div>
-        <p class="note">El framework también apunta a <code>GEMINI.md</code> para Gemini CLI. Fuente: <a href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/adapters/harness.py" target="_blank" rel="noreferrer">harness.py · _TARGETS</a> en <code>3903339</code>. La configuración de MCP corresponde a cada cliente; la guía de despliegue fijada muestra Cursor como cliente de agente sobre <code>arqux serve</code>, y Antigravity no aparece en la documentación fijada del framework. ArqUX no configura clientes automáticamente.</p>
+        <p class="note">Los cuatro destinos están declarados en <code>_TARGETS</code>: <a href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/adapters/harness.py" target="_blank" rel="noreferrer">harness.py · _TARGETS ↗</a> en <code>3903339</code>. Describen formatos de proyección, no el total de harnesses que pueden adherirse.</p>
+        <h3>MCP según el cliente</h3>
+        <p class="section-copy"><code>arqux serve</code> expone los handlers de gobierno por stdio; la configuración es externa y pertenece a cada cliente — la guía fijada muestra Cursor como ejemplo. Un cliente sin soporte MCP puede adherirse igualmente por archivos. <a href="/es/empezar/#connect">Ver cómo conectar un cliente →</a></p>
+        <h3>Entornos reportados por el proyecto</h3>
+        <p class="section-copy">La dirección declara adhesión ensayada en los entornos de esta lista: una colección abierta de ejemplos, no un inventario exhaustivo ni nueve integraciones nativas generadas.</p>
+        <div class="compat-wrap" tabindex="0" role="region" aria-label="Entornos de aplicación con validación reportada"><table class="compat-table"><thead><tr><th>Entorno</th><th>Cómo se adhiere</th><th>Validación</th></tr></thead><tbody>
+          <tr><td>OpenCode</td><td>Proyección <code>.opencode/instructions.md</code>; MCP opcional según el cliente</td><td>Reportada por el proyecto · ficha pendiente</td></tr>
+          <tr><td>Claude Code</td><td>Proyección <code>CLAUDE.md</code>; MCP opcional según el cliente</td><td>Reportada por el proyecto · ficha pendiente</td></tr>
+          <tr><td>Codex</td><td>Kernel <code>AGENTS.md</code>; MCP opcional según el cliente</td><td>Reportada por el proyecto · ficha pendiente</td></tr>
+          <tr><td>HermesAgent</td><td>Instrucciones que lea su entorno; MCP opcional si el cliente lo soporta</td><td>Reportada por el proyecto · ficha pendiente</td></tr>
+          <tr><td>Command Code</td><td>Instrucciones que lea su entorno; MCP opcional si el cliente lo soporta</td><td>Reportada por el proyecto · ficha pendiente</td></tr>
+          <tr><td>Devin</td><td>Instrucciones que lea su entorno; MCP opcional si el cliente lo soporta</td><td>Reportada por el proyecto · ficha pendiente</td></tr>
+          <tr><td>Antigravity</td><td>Instrucciones que lea su entorno; MCP opcional si el cliente lo soporta</td><td>Reportada por el proyecto · ficha pendiente</td></tr>
+          <tr><td>Qwen Coder</td><td>Instrucciones que lea su entorno; MCP opcional si el cliente lo soporta</td><td>Reportada por el proyecto · ficha pendiente</td></tr>
+          <tr><td>Kiro</td><td>Instrucciones que lea su entorno; MCP opcional si el cliente lo soporta</td><td>Reportada por el proyecto · ficha pendiente</td></tr>
+        </tbody></table></div>
+        <p class="note">«Validación reportada por el proyecto; ficha técnica de prueba pendiente»: la dirección declara la adhesión, pero la ficha por entorno —versión, plataforma, mecanismo, resultado y límites— aún no está publicada. No se afirma proyección nativa dedicada ni MCP automático para ninguno de ellos, y la configuración del cliente siempre requiere un paso del usuario.</p>
+        <div class="hero-ctas"><a class="button button-primary" href="/es/empezar/#connect">Configurar mi agente</a><a class="button button-dark" href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/adapters/harness.py" target="_blank" rel="noreferrer">Ver las proyecciones del kernel ↗</a></div>
       </div>
     </section>
-<section class="section section-soft" id="continue"><div class="wrap"><p class="eyebrow">Continuar</p><p class="section-copy"><a href="/es/empezar/">Primeros pasos</a> · <a href="/es/confianza/">Confianza</a> · <a href="https://github.com/FidelErnesto03/arqux/issues">Issues</a></p></div></section>
+<section class="section section-soft" id="continue"><div class="wrap"><p class="eyebrow">Siguiente paso</p><p class="section-copy">Ya conoces las piezas. Prueba una tarea y comprueba qué deja registrado.</p><div class="hero-ctas"><a class="button button-primary" href="/es/empezar/#first-task">Probar una tarea verificada</a><a class="button button-dark" href="https://github.com/FidelErnesto03/arqux/tree/390333913e0f071a89241187f36cc90289e7e043" target="_blank" rel="noreferrer">Inspeccionar las fuentes ↗</a></div><p class="section-copy"><a href="/es/confianza/#limits">Comprobar los límites</a> · <a href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/CONTRIBUTING.md">Contribuir ↗</a> · <a href="https://github.com/FidelErnesto03/arqux/issues">Issues ↗</a></p></div></section>
 <script type="application/json" id="app-data">{"artifactLabel": "Artefacto de ejemplo · ", "steps": [{"kicker": "Etapa 01 · Práctica de equipo", "title": "Definir el trabajo en conjunto.", "who": "Una persona responsable fija el objetivo, el alcance y la aceptación.", "input": "Política, conocimiento autorizado y restricciones.", "change": "El proyecto y el ciclo ganan un objetivo explícito y una condición de cierre.", "evidence": "Reglas escritas y alcance en el espacio de trabajo gobernado."}, {"kicker": "Etapa 02 · Contrato en código", "title": "Asignar una identidad y una responsabilidad.", "who": "El equipo define qué identidad de agente es dueña de la tarea.", "input": "Rol, alcance, operaciones permitidas y contexto local.", "change": "El agente recibe un contrato de operación explícito.", "evidence": "Definición de identidad y comportamiento de permisos para la versión seleccionada."}, {"kicker": "Etapa 03 · Aplicado en código — v1.0", "title": "Ejecutar una tarea — ejecución gobernada.", "who": "Una sesión vinculada es dueña de la ejecución; las llamadas sin vínculo se rechazan con UNBOUND_SESSION.", "input": "Tarea, archivos de política, skills y estado del proyecto.", "change": "task.run ejecuta cada paso gobernado [exec:action] y registra resultado + evidence_ref — nunca shell arbitrario.", "evidence": "Los pasos marcados como ejecutados llevan evidence_ref; completed corresponde a código de salida 0."}, {"kicker": "Etapa 04 · Práctica de equipo", "title": "Revisar, aceptar y continuar.", "who": "Una persona o un revisor autorizado comprueba el resultado.", "input": "Diff, criterios de aceptación, salida de pruebas y riesgos abiertos.", "change": "El trabajo se acepta, se devuelve o se re-delega.", "evidence": "Una decisión de revisión y estado persistido disponible para la siguiente sesión."}], "dims": [{"name": "Identidad", "fn": "Vincula cada operación a un rol de agente declarado y a un contrato de comportamiento cargado desde el espacio de trabajo.", "via": "identity.switch · arqux wake --identity — la ejecución sin vínculo rechaza UNBOUND_SESSION.", "code": "$1:IDENTITY{role:\"executor\", scope:\"project:alpha\"}", "tag": "Ilustrativo", "src": "https://github.com/FidelErnesto03/arqux/tree/390333913e0f071a89241187f36cc90289e7e043/src/arqux/handlers/identity", "srcLabel": "src/arqux/handlers/identity/", "lim": "Declarado, no autenticado: acota la responsabilidad, no las credenciales."}, {"name": "Contrato", "fn": "Define qué puede hacer la identidad que actúa: axiomas, límites y reglas de operación leídos de archivos locales.", "via": "Kernel AGENTS.md + contratos de rol — consultados en cada llamada gobernada.", "code": "$2:CONTRACT{allowed:[\"task.claim\",\"evidence.record\"]}", "tag": "Ilustrativo", "src": "https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/AGENTS.md", "srcLabel": "AGENTS.md", "lim": "Las reglas acotan la capa gobernada — un agente fuera de ella está no gobernado por definición."}, {"name": "Contexto", "fn": "Decide qué lee el agente: cerebro del proyecto, archivos de rol y proyecciones del harness, versionados con el repositorio.", "via": "cortex.read · sync-harnesses · drift-check reporta ediciones manuales.", "code": "$0:CONTEXT{source:\"workspace\", version:\"v1.4\"}", "tag": "Ilustrativo", "src": "https://github.com/FidelErnesto03/arqux/tree/390333913e0f071a89241187f36cc90289e7e043/src/arqux/handlers/cortex", "srcLabel": "src/arqux/handlers/cortex/", "lim": "Lo que no está escrito no se recuerda: el contexto son archivos, no un servicio oculto."}, {"name": "Decisión", "fn": "Convierte la intención en un artefacto registrado: blueprint, ciclo o regla con criterios de aceptación.", "via": "blueprint.* · cycle.* — las decisiones son artefactos, no chat.", "code": "BLP-012 · acceptance: all checks pass", "tag": "Ilustrativo", "src": "https://github.com/FidelErnesto03/arqux/tree/390333913e0f071a89241187f36cc90289e7e043/src/arqux/handlers/blueprint", "srcLabel": "src/arqux/handlers/blueprint/", "lim": "Registra la decisión; juzgar su calidad queda en el revisor."}, {"name": "Ejecución", "fn": "Ejecuta pasos gobernados [exec:action] bajo una sesión vinculada — nunca shell arbitrario.", "via": "task.run + vínculo de sesión — en caso contrario rechaza con UNBOUND_SESSION.", "code": "task.claim → src/module.py · status: review", "tag": "Ilustrativo", "src": "https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/handlers/execution.py", "srcLabel": "src/arqux/handlers/execution.py", "lim": "Ejecuta solo acciones declaradas; no es un shell general."}, {"name": "Evidencia", "fn": "Deja un registro comprobable: eventos pulse, spans y un manifiesto SHA-256 en seal.cortex.", "via": "evidence export · cortex-verify · seal.cortex.", "code": "evidence: test-output · commit: <release-linked>", "tag": "Ilustrativo", "src": "https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/handlers/evidence.py", "srcLabel": "src/arqux/handlers/evidence.py", "lim": "Muestra qué ocurrió — no certifica que la intención fuera correcta."}]}</script>
 <script type="application/json" id="map-data">{"nodes": [{"kind": "Comando de entrada", "title": "arqux init", "fn": "Crea el espacio de trabajo gobernado: escribe el kernel raíz y el árbol .arqux/ con identidades, skills, plantillas y archivos de memoria.", "via": "arqux init — aborta sin --force en un espacio de trabajo ya gobernado.", "lim": "Escribe archivos; no instala agentes ni configura tu harness.", "src": "https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/cli.py", "srcLabel": "src/arqux/cli.py"}, {"kind": "Fuente única", "title": "AGENTS.md + .arqux/", "fn": "El kernel que lee todo agente compatible: identidad, axiomas no negociables, niveles de adopción y reglas de trabajo. El árbol .arqux/ contiene identidades, skills, plantillas y memoria.", "via": "Lo leen directamente los agentes compatibles; lo renderiza sync-harnesses.", "lim": "Las reglas acotan la capa gobernada — un agente fuera de ella está no gobernado por definición.", "src": "https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/AGENTS.md", "srcLabel": "AGENTS.md"}, {"kind": "Adaptadores de render", "title": "sync-harnesses", "fn": "Renderiza el kernel en el archivo de instrucciones nativo de cada harness y registra el hash de origen usado para comparar deriva.", "via": "arqux sync-harnesses — render_kernel y hash de origen en src/arqux/adapters/harness.py.", "lim": "Cómo lee cada aplicación su archivo depende de esa aplicación.", "src": "https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/adapters/harness.py", "srcLabel": "src/arqux/adapters/harness.py"}, {"kind": "Archivos nativos", "title": "CLAUDE.md · GEMINI.md · AGENTS.md · .opencode/&#8203;instructions.md", "fn": "Cuatro archivos, uno por harness, generados desde el mismo kernel y con el mismo hash de origen.", "via": "Escritos por sync-harnesses; destinos declarados en harness.py (_TARGETS).", "lim": "Las aplicaciones pueden seguir leyendo o escribiendo otros archivos locales por su cuenta.", "src": "https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/adapters/harness.py", "srcLabel": "src/arqux/adapters/harness.py"}, {"kind": "Chequeo de deriva", "title": "drift-check", "fn": "Compara los archivos en disco con el hash de origen registrado y reporta el diff exacto; las ediciones manuales aparecen como deriva.", "via": "arqux drift-check — drift_report en src/arqux/adapters/harness.py.", "lim": "Detecta ediciones; no es una firma ni una auditoría independiente.", "src": "https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/adapters/harness.py", "srcLabel": "src/arqux/adapters/harness.py"}, {"kind": "Evidencia", "title": "pulse + seal.cortex", "fn": "Las llamadas gobernadas dejan eventos pulse; la exportación de evidencia pasa por una compuerta de privacidad y puede sellar un manifiesto SHA-256 que cortex-verify comprueba.", "via": "arqux evidence · arqux cortex-verify.", "lim": "Muestra qué ocurrió — no certifica que la intención fuera correcta.", "src": "https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/handlers/evidence.py", "srcLabel": "src/arqux/handlers/evidence.py"}]}</script>
 <script type="application/json" id="artifacts-data">{"artifacts": [{"kind": "Punto de entrada del proyecto", "title": "AGENTS.md", "path": "/AGENTS.md", "desc": "El kernel que todo agente compatible lee primero: identidad, axiomas no negociables, niveles de adopción y reglas de trabajo. ArqUX renderiza esta fuente única en el archivo nativo de cada harness cuando ejecutas sync-harnesses.", "scope": "Raíz del proyecto", "verified": "v1.0.0 · escrito por arqux init", "src": "https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/AGENTS.md", "srcLabel": "AGENTS.md"}, {"kind": "Memoria del espacio de trabajo", "title": "meta-brain.cortex", "path": "/.arqux/meta-brain.cortex", "desc": "Memoria entre proyectos guardada en la raíz del espacio de trabajo: identidad del espacio, registro de proyectos gobernados, lecciones y conocimiento promovido desde proyectos individuales.", "scope": "Espacio de trabajo", "verified": "v1.0.0 · copia de plantilla", "src": "https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/templates/meta-brain.cortex", "srcLabel": "src/arqux/templates/meta-brain.cortex"}, {"kind": "Política de aprendizaje", "title": "learn-policies.cortex", "path": "/.arqux/learn-policies.cortex", "desc": "Las reglas que deciden qué puede promover una sesión a conocimiento: señales, umbrales y la política de revisión que aplica el motor de aprendizaje.", "scope": "Espacio de trabajo", "verified": "v1.0.0 · copia de plantilla", "src": "https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/templates/learn-policies.cortex", "srcLabel": "src/arqux/templates/learn-policies.cortex"}, {"kind": "Contratos de agente", "title": "identities/", "path": "/.arqux/identities/", "desc": "Siete contratos de comportamiento se incluyen con v1.0.0: alfred, auditor, executor, governor, heimdall, jarvis y seshat. Cada uno declara sus axiomas, límites duros y estilo de operación.", "scope": "Espacio de trabajo", "verified": "v1.0.0 · 7 contratos", "src": "https://github.com/FidelErnesto03/arqux/tree/390333913e0f071a89241187f36cc90289e7e043/src/arqux/identities", "srcLabel": "src/arqux/identities/"}, {"kind": "Skills y flujos", "title": "skills/ · workflows/", "path": "/.arqux/skills/", "desc": "Nueve skills, doce documentos de flujo y una carpeta de originales. Las skills son los procedimientos de operación que un agente carga bajo demanda en lugar de llevarlos en su prompt.", "scope": "Espacio de trabajo", "verified": "v1.0.0 · 9 skills · 12 flujos", "src": "https://github.com/FidelErnesto03/arqux/tree/390333913e0f071a89241187f36cc90289e7e043/src/arqux/skills", "srcLabel": "src/arqux/skills/"}, {"kind": "Plantillas", "title": "templates/", "path": "/.arqux/templates/", "desc": "Once plantillas copiadas al inicializar: kernels AGENTS por niveles (full y lite), plantillas de blueprint y de manifiesto de ciclo, y las variantes de cerebro usadas para sembrar artefactos nuevos.", "scope": "Espacio de trabajo", "verified": "v1.0.0 · 11 plantillas", "src": "https://github.com/FidelErnesto03/arqux/tree/390333913e0f071a89241187f36cc90289e7e043/src/arqux/templates", "srcLabel": "src/arqux/templates/"}, {"kind": "Packs de tenant", "title": "packages/", "path": "/.arqux/packages/", "desc": "Vacío por defecto. Un pack es un paquete versionado de contenido de gobierno — ArqUX es el primer pack; los packs adicionales se instalan aquí en lugar de entrar al kernel.", "scope": "Espacio de trabajo", "verified": "v1.0.0 · vacío hasta que se instala un pack", "src": "https://github.com/FidelErnesto03/arqux/tree/390333913e0f071a89241187f36cc90289e7e043", "srcLabel": "repository"}]}</script>
