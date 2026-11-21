@@ -13,7 +13,7 @@ with sync_playwright() as pw:
     # v4: exactly five main sections in contract order
     order=p.evaluate("[...document.querySelectorAll('main > section[id]')].map(s=>s.id).join(',')")
     ok("five sections order","workflow,dimensions,artifacts,format,compatibility"==order)
-    ok("section-nav hidden reference",p.locator(".section-nav").evaluate("e=>getComputedStyle(e).display")=="none")
+    ok("section-nav restored reference",p.locator(".section-nav").is_visible())
     ok("no ref-nav",p.locator(".ref-nav").count()==0)
     # workflow: four stages with meta info, equitably distributed, no map switch
     ok("workflow stages",p.locator("#workflow .step").count()==4)

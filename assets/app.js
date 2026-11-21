@@ -666,6 +666,26 @@
         ticking = true;
         requestAnimationFrame(() => { sync(); ticking = false; });
       }, { passive: true });
+      /* mobile: the bottom bar retracts while reading down and returns on
+         scroll-up / keyboard focus — it never covers content permanently */
+      const mobileNav = window.matchMedia && window.matchMedia("(max-width: 760px)");
+      if (mobileNav && mobileNav.matches) {
+        let lastY = window.scrollY, showNav = window.scrollY < 40, navTick = false;
+        const applyNav = () => sectionNav.classList.toggle("is-nav-show", showNav);
+        applyNav();
+        window.addEventListener("scroll", () => {
+          if (navTick) return;
+          navTick = true;
+          requestAnimationFrame(() => {
+            navTick = false;
+            const y = window.scrollY;
+            if (y < 40 || y < lastY - 6) showNav = true;
+            else if (y > lastY + 6) showNav = false;
+            lastY = y;
+            applyNav();
+          });
+        }, { passive: true });
+      }
       window.addEventListener("resize", sync, { passive: true });
       if (window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
         const near = (x, type) => {
