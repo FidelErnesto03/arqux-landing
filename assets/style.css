@@ -80,8 +80,9 @@ h3{font-size:1.1rem;font-weight:650;letter-spacing:-.02em;margin-bottom:8px}.lea
 @media (prefers-reduced-motion: reduce){.dim-logo image.pulse{animation:none}}
 .hex-visual .hex-map{visibility:visible;transition:opacity .45s ease,transform .55s cubic-bezier(.2,.8,.3,1),visibility 0s}
 .hex-visual.is-detail .hex-map{pointer-events:none}
-.artifact-preview{position:relative;display:none;margin-top:16px;width:100%;border-radius:14px;background:var(--ink-950);color:var(--paper-100);padding:16px 18px 14px;font:500 12px/1.6 var(--mono)}
-.hex-visual.is-detail .artifact-preview{display:block}
+@media(min-width:981px){.hex-visual.is-detail .hex-map{opacity:0;transform:translateY(38px) scale(.88) rotate(4deg);visibility:hidden;transition:opacity .38s ease,transform .5s cubic-bezier(.2,.8,.3,1),visibility 0s .45s}}
+.artifact-preview{position:absolute;top:0;left:0;right:0;height:auto;max-height:100%;z-index:6;margin-top:0;border-radius:14px;background:var(--ink-950);color:var(--paper-100);padding:16px 18px 14px;font:500 12px/1.6 var(--mono);overflow:auto;opacity:0;visibility:hidden;transform:translateY(10px) scale(.985);transition:opacity .28s ease,transform .34s cubic-bezier(.2,.8,.3,1),visibility .28s;pointer-events:none}
+.hex-visual.is-detail .artifact-preview{opacity:1;visibility:visible;transform:none;pointer-events:auto}
 .hex-visual>.artifact-preview{justify-self:stretch}
 .artifact-preview .artifact-label{padding-right:54px}
 .dim-benefit{margin:0 0 10px;font:600 15px/1.5 var(--sans);color:var(--paper-100)}
@@ -531,7 +532,8 @@ body.page-reference .section-nav{display:block}
   .dim-chip:hover{border-color:var(--amber-700)}
   .dim-chip[aria-pressed="true"]{border-color:var(--amber-700);background:#FFF6E8}
   .dim-chip:focus-visible{outline:3px solid var(--ink-950);outline-offset:2px;box-shadow:0 0 0 6px var(--amber-500)}
-  .hex-visual .artifact-preview{position:relative;max-height:none;overflow:visible;transform:none;justify-self:stretch;width:100%;margin-top:14px}
+  .hex-visual .artifact-preview{position:relative;display:none;max-height:none;overflow:visible;margin-top:14px;justify-self:stretch;width:100%}
+  .hex-visual.is-detail .artifact-preview{display:block}
   .compat-entry{grid-template-columns:1fr;gap:26px}
   .compat-routes{grid-template-columns:1fr}
 }
