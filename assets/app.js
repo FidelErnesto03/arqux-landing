@@ -236,8 +236,14 @@
   function scrollToSection(target) {
     const el = typeof target === "string" ? $(target) : target;
     if (!el) return;
-    if (!el.hasAttribute("tabindex")) el.setAttribute("tabindex", "-1");
-    el.focus({ preventScroll: true });
+    let focusEl = el;
+    if (el.classList && el.classList.contains("section-alias")) {
+      const sec = el.closest("section");
+      const heading = sec && sec.querySelector("h1, h2");
+      if (heading) focusEl = heading;
+    }
+    if (!focusEl.hasAttribute("tabindex")) focusEl.setAttribute("tabindex", "-1");
+    focusEl.focus({ preventScroll: true });
     const root = document.documentElement;
     root.classList.add("resolve-cv");
     void document.body.offsetHeight; // resolve placeholders before measuring the flight
@@ -328,6 +334,7 @@
   const dimLogo = $(".dim-logo image") || $(".dim-logo");
   const dimVisual = $("#dimensions .hex-visual");
   const dimPreview = $("#dimensions .artifact-preview");
+  let dimTrigger = null;
   if (dimVisual) {
     if ("IntersectionObserver" in window && !REDUCED) {
       const hexIO = new IntersectionObserver((entries) => {
@@ -351,8 +358,10 @@
     dimVisual.classList.remove("is-detail");
     if (dimLogo) dimLogo.classList.remove("pulse");
     setTimeout(() => dimVisual.classList.remove("replay"), 1500);
+    if (dimTrigger) { const t = dimTrigger; dimTrigger = null; setTimeout(() => t.focus({ preventScroll: true }), 120); }
   }
-  function selectDimension(i) {
+  function selectDimension(i, trigger) {
+    if (trigger) dimTrigger = trigger;
     const d = dims[i] || {};
     const arr = Array.isArray(d);
     const name = arr ? d[0] || "" : d.name || "";
@@ -373,8 +382,12 @@
       const a = $("#ficha-src");
       if (a && d.src) { a.href = d.src; a.textContent = (d.srcLabel || d.src) + " ↗"; }
     }
+    hexLabels.forEach((t) => t.classList.toggle("is-active", Number(t.dataset.dim) === i));
+    if (dimPreview) setTimeout(() => { if (dimVisual && dimVisual.classList.contains("is-detail")) dimPreview.focus({ preventScroll: true }); }, 300);
   }
-  const dimNodes = $$("[data-dimension]");
+  const dimNodes = $$("#dimensions .hex-node");
+  const dimChips = $$("#dimensions .dim-chip");
+  const hexLabels = $$("#dimensions .hex-labels text");
   const hexTips = $$("#dimensions .hex-tip");
   const showHexTip = (dim) => hexTips.forEach((t) => t.classList.toggle("is-on", Number(t.dataset.dim) === dim));
   const hideHexTips = () => hexTips.forEach((t) => t.classList.remove("is-on"));
@@ -388,7 +401,7 @@
   }
   dimNodes.forEach((el, idx) => {
     const dim = Number(el.dataset.dimension);
-    el.addEventListener("click", () => selectDimension(dim));
+    el.addEventListener("click", () => selectDimension(dim, el));
     el.addEventListener("mouseenter", () => showHexTip(dim));
     el.addEventListener("mouseleave", hideHexTips);
     el.addEventListener("focus", () => showHexTip(dim));
@@ -396,7 +409,7 @@
     el.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        selectDimension(Number(el.dataset.dimension));
+        selectDimension(dim, el);
         return;
       }
       if (["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp"].includes(e.key)) {
@@ -404,8 +417,17 @@
         const dir = (e.key === "ArrowRight" || e.key === "ArrowDown") ? 1 : -1;
         const next = dimNodes[(idx + dir + dimNodes.length) % dimNodes.length];
         next.focus();
-        selectDimension(Number(next.dataset.dimension));
+        selectDimension(Number(next.dataset.dimension), next);
       }
+    });
+  });
+  dimChips.forEach((chip, idx) => {
+    chip.addEventListener("click", () => selectDimension(Number(chip.dataset.dimension), chip));
+    chip.addEventListener("keydown", (e) => {
+      if (!["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp"].includes(e.key)) return;
+      e.preventDefault();
+      const dir = (e.key === "ArrowRight" || e.key === "ArrowDown") ? 1 : -1;
+      dimChips[(idx + dir + dimChips.length) % dimChips.length].focus();
     });
   });
 

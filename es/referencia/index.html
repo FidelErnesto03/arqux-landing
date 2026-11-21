@@ -103,7 +103,7 @@
       <span class="section-alias" id="intro" aria-hidden="true"></span>
       <div class="wrap workflow-grid" id="task-flow">
         <div class="rise-in">
-          <p class="eyebrow">Cómo funciona</p><h1>El criterio del proyecto no tiene por qué quedarse en una conversación.</h1><p class="section-copy">ArqUX organiza reglas, decisiones y evidencias en el proyecto. Sigue cómo un criterio acordado orienta una tarea y qué puedes revisar al terminar. Cada proyecto conserva su propio contexto gobernado; la metodología se mantiene coherente entre ellos.</p><p class="case-bridge">Ejemplo: no mostrar datos sensibles en los mensajes de error.</p>
+          <p class="eyebrow">Cómo funciona</p><h1>El criterio del proyecto no tiene por qué quedarse en una conversación.</h1><p class="section-copy">ArqUX organiza reglas, decisiones y evidencia en cada proyecto. Sigue cómo un criterio acordado orienta una tarea y qué puede revisarse al terminar.</p><p class="case-bridge">Ejemplo: no mostrar datos sensibles en los mensajes de error.</p>
         </div>
         <div>
           <p class="visually-hidden">Elige una etapa para ver quién participa, qué entra, qué cambia y qué se puede revisar.</p>
@@ -117,13 +117,13 @@
           </div>
         </div>
       </div>
-      <div class="wrap"><div class="hero-ctas"><a class="button button-dark" href="#dimensions">Ver qué gobierna cada tarea</a></div></div>
+      <div class="wrap"><div class="hero-ctas"><a class="button button-dark" href="#dimensions">Ver qué gobierna el trabajo</a></div></div>
     </section>
 <section class="section hex-section" id="dimensions">
       <div class="wrap">
         <div class="hex-layout">
           <div class="dim-head">
-            <div class="section-head"><p class="eyebrow">Qué se gobierna</p><h2>Seis dimensiones para que el trabajo de un proyecto sea gobernable.</h2><p class="section-copy">Identidad, contrato, contexto, decisión, ejecución y evidencia son las seis preguntas que mantienen gobernable el trabajo de un proyecto — entre agentes, sesiones y harnesses. Selecciona una dimensión para conocer su función y su límite.</p><p class="visually-hidden">Selecciona una de las seis dimensiones.</p></div>
+            <div class="section-head"><p class="eyebrow">Qué se gobierna</p><h2>Seis preguntas para gobernar el trabajo de un proyecto.</h2><p class="section-copy">¿Quién actúa, con qué límites, sobre qué contexto, qué decide, qué ejecuta y qué deja comprobable? Explora cada dimensión.</p><p class="visually-hidden">Selecciona una dimensión para ver su función y su límite.</p></div>
             <div class="hero-ctas"><a class="button button-dark" href="#artifacts">Explorar las referencias del proyecto</a></div>
           </div>
           <div class="hex-visual">
@@ -147,8 +147,25 @@
                 <g class="hex-tip" data-dim="5" transform="translate(75 102)"><g class="hex-tip-inner"><rect class="hex-tip-frame" x="-72" y="-21" width="144" height="46" rx="10"/><text class="hex-tip-title" x="-58" y="-5">Evidencia</text><text class="hex-tip-desc" x="-58" y="13">Qué puede comprobarse</text></g></g>
               </g>
               </g>
+              <g class="hex-labels" aria-hidden="true">
+                <text data-dim="0" x="180" y="99" text-anchor="middle">1 · Identidad</text>
+                <text data-dim="1" x="307" y="120" text-anchor="start">2 · Contrato</text>
+                <text data-dim="2" x="307" y="219" text-anchor="start">3 · Contexto</text>
+                <text data-dim="3" x="180" y="324" text-anchor="middle">4 · Decisión</text>
+                <text data-dim="4" x="52" y="219" text-anchor="end">5 · Ejecución</text>
+                <text data-dim="5" x="52" y="120" text-anchor="end">6 · Evidencia</text>
+              </g>
+            
             </svg>
-            <div class="artifact-preview" role="dialog" aria-label="Detalle de la dimensión" aria-live="polite" aria-atomic="true"><button class="dim-preview-close" type="button" aria-label="Cerrar detalle">×</button><div class="artifact-label"><span id="artifact-name">Artefacto de ejemplo · identidad</span><span id="artifact-status">Ilustrativo</span></div><code id="artifact-code">$1:IDENTITY{role:"executor", scope:"project:alpha"}</code>
+            <div class="dim-chips" role="group" aria-label="Selecciona una dimensión">
+              <button type="button" class="dim-chip" data-dimension="0" aria-pressed="true">1 · Identidad</button>
+              <button type="button" class="dim-chip" data-dimension="1" aria-pressed="false">2 · Contrato</button>
+              <button type="button" class="dim-chip" data-dimension="2" aria-pressed="false">3 · Contexto</button>
+              <button type="button" class="dim-chip" data-dimension="3" aria-pressed="false">4 · Decisión</button>
+              <button type="button" class="dim-chip" data-dimension="4" aria-pressed="false">5 · Ejecución</button>
+              <button type="button" class="dim-chip" data-dimension="5" aria-pressed="false">6 · Evidencia</button>
+            </div>
+            <div class="artifact-preview" role="region" aria-label="Detalle de la dimensión" tabindex="-1"><button class="dim-preview-close" type="button" aria-label="Cerrar detalle">×</button><div class="artifact-label"><span id="artifact-name">Artefacto de ejemplo · identidad</span><span id="artifact-status">Ilustrativo</span></div><code id="artifact-code">$1:IDENTITY{role:"executor", scope:"project:alpha"}</code>
               <dl class="ficha-rows">
                 <div><dt id="ficha-dt-fn">Para qué sirve</dt><dd id="ficha-fn">Vincula cada operación a un rol de agente declarado y a un contrato de comportamiento cargado desde el espacio de trabajo.</dd></div>
                 <div><dt id="ficha-dt-via">Cómo participa</dt><dd id="ficha-via"><code>identity.switch</code> · <code>arqux wake --identity</code> — la ejecución sin vínculo rechaza SESSION_UNBOUND.</dd></div>
@@ -162,9 +179,9 @@
     </section>
 <section class="section section-light" id="artifacts">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Qué permanece</p><h2>Las reglas y el contexto tienen un lugar fuera del chat.</h2><p class="section-copy">Explora qué guarda el proyecto y dónde encontrarlo. Una lección también puede conservarse, pero no se convierte en regla vigente solo por registrarla.</p></div>
+        <div class="section-head"><p class="eyebrow">Qué permanece</p><h2>Las reglas y el contexto tienen un lugar fuera del chat.</h2><p class="section-copy">Explora qué conserva el proyecto y dónde encontrarlo. Registrar una lección no la convierte automáticamente en regla vigente.</p></div>
         <h3>Explora los archivos del proyecto</h3>
-        <p class="section-copy">Selecciona un archivo para ver su función, ubicación y fuente.</p>
+        <p class="section-copy">Selecciona un archivo para ver qué conserva, su ámbito, dónde está y cómo comprobarlo.</p>
         <p class="note">Mapa ilustrativo; no lee tus archivos.</p>
         <div class="artifact-layout">
           <div class="artifact-tree" role="group" aria-label="Artefactos del espacio de trabajo gobernado">
@@ -185,7 +202,7 @@
             <h3 id="art-title">AGENTS.md</h3>
             <div class="artifact-meta">
               <div><small>Qué conserva</small><p class="artifact-desc" id="art-desc">La fuente base que un entorno compatible puede cargar primero: identidad, axiomas no negociables, niveles de adopción y reglas de trabajo. ArqUX renderiza esta fuente única en las convenciones de archivo de instrucciones implementadas cuando ejecutas sync-harnesses.</p></div>
-              <div><small>Quién lo utiliza</small><span id="art-scope">Raíz del proyecto</span></div>
+              <div><small>Ámbito</small><span id="art-scope">Raíz del proyecto</span></div>
               <div><small>Dónde está</small><p class="artifact-path" id="art-path">/AGENTS.md</p></div>
               <div><small>Cómo comprobarlo</small><span id="art-verified">v1.0.0 · escrito por arqux init</span></div>
             </div>
@@ -205,7 +222,7 @@
         </details>
         <div class="learning-sequence">
           <h3 id="learning" tabindex="-1">Aprender no equivale a imponer una regla.</h3>
-          <p class="section-copy">Una tarea puede dejar un hallazgo. Incorporarlo a criterios futuros requiere la revisión o la política que corresponda.</p>
+          <p class="section-copy">Una tarea puede dejar un hallazgo. Incorporarlo como criterio requiere la revisión o la política aplicable.</p>
           <div class="learning-transform"><span>Registrar</span><i aria-hidden="true">→</i><span>Evaluar</span><i aria-hidden="true">→</i><span>Incorporar</span></div>
           <details class="ev-detail"><summary>Cómo se incorpora un criterio</summary><div class="ev-detail-body"><p class="section-copy">En la ruta inspeccionada de identity.elevate, la propuesta puede revisarse en dry_run y aplicarse tras confirmar el hash de la propuesta (confirm_hash). Otras rutas dependen de políticas configuradas. Registrar una lección no garantiza su aplicación futura: la siguiente tarea debe disponer del contexto correspondiente.</p></div></details>
         </div>
@@ -245,10 +262,14 @@ OBJ:gate{goal:<span class="code-amber">"Write documentation"</span>,status:plann
     </section>
 <section class="section section-light" id="compatibility">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Libertad de entorno</p><h2>Tus proyectos conservan sus reglas aunque cambies de agente — y trasladan lo aprendido al siguiente.</h2><p class="section-copy">ArqUX sitúa el gobierno en el proyecto. Tus herramientas pueden recibir instrucciones compatibles y, si admiten MCP, acceder a operaciones configuradas por ti.</p></div>
-        <p class="section-copy"><b>Archivos de instrucciones</b> — El kernel se proyecta en convenciones que cada cliente puede leer.</p>
-        <p class="section-copy"><b>Operaciones MCP</b> — Un cliente compatible puede solicitar operaciones de gobierno cuando configuras la conexión.</p>
-        <p class="note">Hay cuatro convenciones de archivos implementadas; no son un límite de cuatro agentes. El proyecto reporta pruebas de adhesión con distintos entornos.</p>
+        <div class="compat-entry">
+          <div class="section-head"><p class="eyebrow">Libertad de entorno</p><h2>El gobierno pertenece al proyecto, no al agente.</h2><p class="section-copy">Cada proyecto conserva sus propias reglas y referencias. Los agentes pueden recibirlas mediante archivos compatibles o MCP, según su integración. Las lecciones se incorporan mediante la revisión o política correspondiente.</p></div>
+          <div class="compat-routes">
+            <div class="compat-route"><b>Archivos de instrucciones</b><p>ArqUX genera instrucciones adaptadas a convenciones que cada herramienta puede leer.</p></div>
+            <div class="compat-route"><b>Operaciones MCP</b><p>Los clientes compatibles pueden utilizar operaciones de gobierno cuando configuras la conexión.</p></div>
+          </div>
+        </div>
+        <p class="note">Cuatro convenciones de archivos implementadas. No son un límite de cuatro agentes.</p>
         <details class="ev-detail"><summary>Ver convenciones y agentes reportados</summary><div class="ev-detail-body">
           <p class="section-copy"><b>Convenciones implementadas</b> — cuatro convenciones de archivo generadas desde el mismo kernel:</p>
           <div class="compat-wrap" tabindex="0" role="region" aria-label="Destinos de proyección del kernel"><table class="compat-table"><thead><tr><th>Archivo</th><th>Convención que sigue</th></tr></thead><tbody>
@@ -283,7 +304,7 @@ arqux serve</code></pre>
         <div class="compat-cta" id="continue" tabindex="-1">
           <p class="eyebrow">Del modelo a la prueba</p>
           <h3>Comprueba una tarea real con ArqUX 1.0.0.</h3>
-          <p class="section-copy">Instala la versión fijada, ejecuta una tarea por CLI e inspecciona el resultado. Esta prueba no simula un traspaso entre agentes.</p>
+          <p class="section-copy">Instala la versión fijada, ejecuta una tarea por CLI y revisa sus resultados. Esta prueba no demuestra una transferencia entre agentes.</p>
           <div class="hero-ctas"><a class="button button-primary" href="/es/empezar/#first-task">Probar la primera tarea</a><a class="button button-dark" href="/es/confianza/#evidence">Revisar la evidencia</a></div>
         </div>
       </div>

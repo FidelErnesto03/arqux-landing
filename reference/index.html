@@ -103,7 +103,7 @@
       <span class="section-alias" id="intro" aria-hidden="true"></span>
       <div class="wrap workflow-grid" id="task-flow">
         <div class="rise-in">
-          <p class="eyebrow">How it works</p><h1>Project criteria do not have to remain trapped in a conversation.</h1><p class="section-copy">ArqUX organizes rules, decisions, and evidence inside the project. Follow how an agreed criterion guides a task and what you can review when it is done. Each project keeps its own governed context; the methodology stays coherent across them.</p><p class="case-bridge">Example: do not expose sensitive data in error messages.</p>
+          <p class="eyebrow">How it works</p><h1>Project criteria do not have to remain trapped in a conversation.</h1><p class="section-copy">ArqUX organizes rules, decisions, and evidence inside each project. Follow how an agreed criterion guides a task and what can be reviewed when it is done.</p><p class="case-bridge">Example: do not expose sensitive data in error messages.</p>
         </div>
         <div>
           <p class="visually-hidden">Choose a stage to see who takes part, what goes in, what changes and what can be reviewed.</p>
@@ -117,13 +117,13 @@
           </div>
         </div>
       </div>
-      <div class="wrap"><div class="hero-ctas"><a class="button button-dark" href="#dimensions">See what governs each task</a></div></div>
+      <div class="wrap"><div class="hero-ctas"><a class="button button-dark" href="#dimensions">See what governs the work</a></div></div>
     </section>
 <section class="section hex-section" id="dimensions">
       <div class="wrap">
         <div class="hex-layout">
           <div class="dim-head">
-            <div class="section-head"><p class="eyebrow">What is governed</p><h2>Six dimensions that make project work governable.</h2><p class="section-copy">Identity, contract, context, decision, execution, and evidence are the six questions that keep a project's work accountable — across agents, sessions and harnesses. Select a dimension to see its role and limit.</p><p class="visually-hidden">Choose one of the six dimensions.</p></div>
+            <div class="section-head"><p class="eyebrow">What is governed</p><h2>Six questions for governing a project's work.</h2><p class="section-copy">Who acts, under which limits, with what context, what is decided, what is executed, and what can be verified? Explore each dimension.</p><p class="visually-hidden">Select a dimension to see its purpose and limit.</p></div>
             <div class="hero-ctas"><a class="button button-dark" href="#artifacts">Explore project references</a></div>
           </div>
           <div class="hex-visual">
@@ -147,8 +147,25 @@
                 <g class="hex-tip" data-dim="5" transform="translate(75 102)"><g class="hex-tip-inner"><rect class="hex-tip-frame" x="-72" y="-21" width="144" height="46" rx="10"/><text class="hex-tip-title" x="-58" y="-5">Evidence</text><text class="hex-tip-desc" x="-58" y="13">What can be verified</text></g></g>
               </g>
               </g>
+              <g class="hex-labels" aria-hidden="true">
+                <text data-dim="0" x="180" y="99" text-anchor="middle">1 · Identity</text>
+                <text data-dim="1" x="307" y="120" text-anchor="start">2 · Contract</text>
+                <text data-dim="2" x="307" y="219" text-anchor="start">3 · Context</text>
+                <text data-dim="3" x="180" y="324" text-anchor="middle">4 · Decision</text>
+                <text data-dim="4" x="52" y="219" text-anchor="end">5 · Execution</text>
+                <text data-dim="5" x="52" y="120" text-anchor="end">6 · Evidence</text>
+              </g>
+            
             </svg>
-            <div class="artifact-preview" role="dialog" aria-label="Dimension detail" aria-live="polite" aria-atomic="true"><button class="dim-preview-close" type="button" aria-label="Close detail">×</button><div class="artifact-label"><span id="artifact-name">Example artifact · identity</span><span id="artifact-status">Illustrative</span></div><code id="artifact-code">$1:IDENTITY{role:"executor", scope:"project:alpha"}</code>
+            <div class="dim-chips" role="group" aria-label="Select a dimension">
+              <button type="button" class="dim-chip" data-dimension="0" aria-pressed="true">1 · Identity</button>
+              <button type="button" class="dim-chip" data-dimension="1" aria-pressed="false">2 · Contract</button>
+              <button type="button" class="dim-chip" data-dimension="2" aria-pressed="false">3 · Context</button>
+              <button type="button" class="dim-chip" data-dimension="3" aria-pressed="false">4 · Decision</button>
+              <button type="button" class="dim-chip" data-dimension="4" aria-pressed="false">5 · Execution</button>
+              <button type="button" class="dim-chip" data-dimension="5" aria-pressed="false">6 · Evidence</button>
+            </div>
+            <div class="artifact-preview" role="region" aria-label="Dimension detail" tabindex="-1"><button class="dim-preview-close" type="button" aria-label="Close detail">×</button><div class="artifact-label"><span id="artifact-name">Example artifact · identity</span><span id="artifact-status">Illustrative</span></div><code id="artifact-code">$1:IDENTITY{role:"executor", scope:"project:alpha"}</code>
               <dl class="ficha-rows">
                 <div><dt id="ficha-dt-fn">Purpose</dt><dd id="ficha-fn">Binds every operation to a declared agent role and behavioral contract loaded from the workspace.</dd></div>
                 <div><dt id="ficha-dt-via">How it works</dt><dd id="ficha-via"><code>identity.switch</code> · <code>arqux wake --identity</code> — unbound execution rejects SESSION_UNBOUND.</dd></div>
@@ -162,9 +179,9 @@
     </section>
 <section class="section section-light" id="artifacts">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">What remains</p><h2>Rules and context have a place outside the chat.</h2><p class="section-copy">Explore what the project keeps and where to find it. A lesson can also be retained, but recording it alone does not make it an active rule.</p></div>
+        <div class="section-head"><p class="eyebrow">What remains</p><h2>Rules and context have a place outside the chat.</h2><p class="section-copy">Explore what the project retains and where to find it. Recording a lesson does not automatically make it an active rule.</p></div>
         <h3>Explore project files</h3>
-        <p class="section-copy">Select a file to see its purpose, location, and source.</p>
+        <p class="section-copy">Select a file to see what it keeps, its scope, where it lives and how to verify it.</p>
         <p class="note">Illustrative map; it does not read your files.</p>
         <div class="artifact-layout">
           <div class="artifact-tree" role="group" aria-label="Governed workspace artifacts">
@@ -185,7 +202,7 @@
             <h3 id="art-title">AGENTS.md</h3>
             <div class="artifact-meta">
               <div><small>What it keeps</small><p class="artifact-desc" id="art-desc">The base source a compatible environment can load: identity, non-negotiable axioms, adoption tiers and working rules. ArqUX renders this single source into the implemented instruction-file conventions when you run sync-harnesses.</p></div>
-              <div><small>Who uses it</small><span id="art-scope">Project root</span></div>
+              <div><small>Scope</small><span id="art-scope">Project root</span></div>
               <div><small>Where it lives</small><p class="artifact-path" id="art-path">/AGENTS.md</p></div>
               <div><small>How to verify it</small><span id="art-verified">v1.0.0 · written by arqux init</span></div>
             </div>
@@ -205,7 +222,7 @@
         </details>
         <div class="learning-sequence">
           <h3 id="learning" tabindex="-1">Learning is not the same as enforcing a rule.</h3>
-          <p class="section-copy">A task may leave a finding. Making it available as a future criterion requires the applicable review or policy.</p>
+          <p class="section-copy">A task can leave a finding. Incorporating it as a criterion requires the applicable review or policy.</p>
           <div class="learning-transform"><span>Record</span><i aria-hidden="true">→</i><span>Evaluate</span><i aria-hidden="true">→</i><span>Incorporate</span></div>
           <details class="ev-detail"><summary>How a criterion is incorporated</summary><div class="ev-detail-body"><p class="section-copy">In the inspected identity.elevate path, a proposal can be reviewed in dry_run and applied after confirming the proposal hash (confirm_hash). Other paths depend on configured policies. Recording a lesson does not guarantee future application: the next task must have the relevant context available.</p></div></details>
         </div>
@@ -245,10 +262,14 @@ OBJ:gate{goal:<span class="code-amber">"Write documentation"</span>,status:plann
     </section>
 <section class="section section-light" id="compatibility">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Environment freedom</p><h2>Your projects keep their rules even when you change agents — and carry what they learn to the next one.</h2><p class="section-copy">ArqUX keeps governance in the project. Your tools can receive compatible instructions and, when they support MCP, access operations you configure.</p></div>
-        <p class="section-copy"><b>Instruction files</b> — The kernel is rendered into conventions each client may read.</p>
-        <p class="section-copy"><b>MCP operations</b> — A compatible client can request governance operations once you configure the connection.</p>
-        <p class="note">Four file conventions are implemented; this does not limit ArqUX to four agents. The project reports adhesion tests across different environments.</p>
+        <div class="compat-entry">
+          <div class="section-head"><p class="eyebrow">Environment freedom</p><h2>Governance belongs to the project, not the agent.</h2><p class="section-copy">Each project keeps its own rules and references. Agents can receive them through compatible files or MCP, depending on their integration. Lessons are incorporated through the applicable review or policy.</p></div>
+          <div class="compat-routes">
+            <div class="compat-route"><b>Instruction files</b><p>ArqUX generates instructions in conventions each tool may read.</p></div>
+            <div class="compat-route"><b>MCP operations</b><p>Compatible clients can use governance operations once you configure the connection.</p></div>
+          </div>
+        </div>
+        <p class="note">Four file conventions are implemented. This does not limit ArqUX to four agents.</p>
         <details class="ev-detail"><summary>View conventions and reported agents</summary><div class="ev-detail-body">
           <p class="section-copy"><b>Implemented conventions</b> — four file conventions generated from the same kernel:</p>
           <div class="compat-wrap" tabindex="0" role="region" aria-label="Kernel projection targets"><table class="compat-table"><thead><tr><th>File</th><th>Convention it follows</th></tr></thead><tbody>
@@ -283,7 +304,7 @@ arqux serve</code></pre>
         <div class="compat-cta" id="continue" tabindex="-1">
           <p class="eyebrow">From model to test</p>
           <h3>Verify a real task with ArqUX 1.0.0.</h3>
-          <p class="section-copy">Install the pinned version, run a CLI task, and inspect the result. This test does not simulate an agent-to-agent handoff.</p>
+          <p class="section-copy">Install the pinned version, run a CLI task, and review its results. This test does not demonstrate an agent-to-agent handoff.</p>
           <div class="hero-ctas"><a class="button button-primary" href="/start/#first-task">Try the first task</a><a class="button button-dark" href="/trust/#evidence">Review the evidence</a></div>
         </div>
       </div>

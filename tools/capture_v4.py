@@ -38,8 +38,9 @@ def run(size, vw):
         p.goto(f"{BASE}/reference/", wait_until="networkidle")
         p.wait_for_timeout(300)
 
-        # --- workflow section (element) ---
+        # --- workflow section (element + viewport) ---
         shot_el(p, "#workflow", "workflow", size)
+        shot_view(p, "workflow-vp", size, "#workflow")
         # step dialog open (element)
         p.locator('#workflow .step[data-step="2"]').click()
         p.wait_for_timeout(350)
@@ -53,18 +54,22 @@ def run(size, vw):
         p.wait_for_timeout(1600)
         shot_el(p, "#dimensions", "dimensions", size)
         shot_el(p, "#dimensions .hex-visual", "dim-explorer", size)
+        shot_view(p, "dimensions-vp", size, "#dimensions .hex-visual")
 
-        # detail card open over menu (element = the card itself)
+        # detail card open over menu (element + real viewport after scroll)
         p.locator('#dimensions .hex-node[data-dimension="2"]').click()
         p.wait_for_timeout(900)
         shot_el(p, "#dimensions .artifact-preview", "dim-overlay", size)
+        shot_view(p, "dim-detail-vp", size, "#dimensions .hex-visual")
         p.locator("#dimensions .dim-preview-close").click()
         p.wait_for_timeout(1700)  # let replay finish before next shots
+        shot_view(p, "dim-menu-back-vp", size, "#dimensions .hex-visual")
 
-        # disclosure opened (element)
+        # disclosure opened (element + viewport)
         p.locator("#dimensions details.ev-detail summary").click()
         p.wait_for_timeout(250)
         shot_el(p, "#dimensions details.ev-detail", "dim-disclosure", size)
+        shot_view(p, "dim-disclosure-vp", size, "#dimensions details.ev-detail")
 
         # --- artifacts section (viewport) ---
         shot_view(p, "artifacts", size, "#artifacts")
@@ -81,6 +86,11 @@ def run(size, vw):
 
         # --- format ---
         shot_view(p, "format", size, "#format")
+        p.locator("#format details.ev-detail summary").click()
+        p.wait_for_timeout(250)
+        shot_view(p, "format-open-vp", size, "#format details.ev-detail")
+        p.locator("#format details.ev-detail summary").click()
+        p.wait_for_timeout(150)
 
         # --- compatibility ---
         shot_view(p, "compatibility", size, "#compatibility")
