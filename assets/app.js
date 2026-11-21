@@ -377,7 +377,6 @@
     );
     if (hexPath) hexPath.style.strokeDashoffset = String(Math.max(0, 1 - (i + 1) / 6));
     if (dimLogo) { dimLogo.classList.remove("pulse"); void dimLogo.getBoundingClientRect(); dimLogo.classList.add("pulse"); }
-    hideHexTips();
     openDimDetail();
     if (dimPreview) {
       dimPreview.classList.remove("is-tech");
@@ -409,9 +408,6 @@
   const dimNodes = $$("#dimensions .hex-node");
   const dimChips = $$("#dimensions .dim-chip");
   const hexLabels = $$("#dimensions .hex-labels text");
-  const hexTips = $$("#dimensions .hex-tip");
-  const showHexTip = (dim) => hexTips.forEach((t) => t.classList.toggle("is-on", Number(t.dataset.dim) === dim));
-  const hideHexTips = () => hexTips.forEach((t) => t.classList.remove("is-on"));
   if (dimPreview) {
     const closeBtn = $(".dim-preview-close", dimPreview);
     if (closeBtn) closeBtn.addEventListener("click", closeDimDetail);
@@ -423,10 +419,6 @@
   dimNodes.forEach((el, idx) => {
     const dim = Number(el.dataset.dimension);
     el.addEventListener("click", () => selectDimension(dim, el));
-    el.addEventListener("mouseenter", () => showHexTip(dim));
-    el.addEventListener("mouseleave", hideHexTips);
-    el.addEventListener("focus", () => showHexTip(dim));
-    el.addEventListener("blur", hideHexTips);
     el.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();

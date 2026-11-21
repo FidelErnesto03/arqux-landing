@@ -65,11 +65,9 @@ def run(size, vw):
         p.wait_for_timeout(1700)  # let replay finish before next shots
         shot_view(p, "dim-menu-back-vp", size, "#dimensions .hex-visual")
 
-        # disclosure opened (element + viewport)
-        p.locator("#dimensions details.ev-detail summary").click()
-        p.wait_for_timeout(250)
-        shot_el(p, "#dimensions details.ev-detail", "dim-disclosure", size)
-        shot_view(p, "dim-disclosure-vp", size, "#dimensions details.ev-detail")
+        # scope note under section title (element + viewport)
+        shot_el(p, "#dimensions .dimensions-scope", "dim-scope-note", size)
+        shot_view(p, "dim-scope-note-vp", size, "#dimensions .section-head")
 
         # --- artifacts section (viewport) ---
         shot_view(p, "artifacts", size, "#artifacts")

@@ -66,13 +66,6 @@ h3{font-size:1.1rem;font-weight:650;letter-spacing:-.02em;margin-bottom:8px}.lea
 .hex-node[aria-pressed="true"] circle{fill:var(--amber-700);r:17}.hex-node[aria-pressed="true"] .hex-hit{r:25}
 .hex-node:hover .hex-hit{stroke:var(--amber-500)}.hex-node:hover circle:not(.hex-hit){stroke:var(--amber-500);r:16}.hex-node:focus-visible circle{stroke:var(--ink-950);stroke-width:4}
 .hex-node:focus-visible{outline:2px solid var(--amber-500);outline-offset:2px}
-.hex-tips{pointer-events:none}.hex-tip{opacity:0;visibility:hidden}.hex-tip.is-on{opacity:1;visibility:visible}
-.hex-tip-inner{transform-box:fill-box;transform-origin:center;transform:scale(.84) translateY(8px);opacity:0;transition:opacity .16s ease,transform .22s cubic-bezier(.2,.7,.2,1),visibility .16s}
-.hex-tip.is-on .hex-tip-inner{opacity:1;transform:scale(1) translateY(-4px)}
-.hex-tip-frame{fill:#0E2630;stroke:#FFC05B;stroke-width:1.4;filter:drop-shadow(0 10px 16px rgba(10,20,32,.4))}
-.hex-tip-title{fill:#FFE4A2;font-family:var(--sans);font-size:8.4px;font-weight:700}.hex-tip-desc{fill:#E8F2F3;font-family:var(--sans);font-size:8.712px;font-weight:500}
-.hex-visual.is-detail .hex-tip{opacity:0;visibility:hidden}
-@media(max-width:760px){.hex-tip{display:none}}
 .hex-visual .dim-logo{transform-box:fill-box;transform-origin:center;pointer-events:none}
 .hex-visual .dim-logo image{transform-box:fill-box;transform-origin:center}
 .hex-visual .dim-logo image.pulse{animation:dim-pulse .6s ease}
