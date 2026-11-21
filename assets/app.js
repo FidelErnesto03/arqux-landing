@@ -243,6 +243,8 @@
       if (heading) focusEl = heading;
     }
     if (!focusEl.hasAttribute("tabindex")) focusEl.setAttribute("tabindex", "-1");
+    const det = el.tagName === "DETAILS" ? el : el.closest("details");
+    if (det) det.open = true;
     focusEl.focus({ preventScroll: true });
     const root = document.documentElement;
     root.classList.add("resolve-cv");
@@ -335,6 +337,9 @@
   const dimVisual = $("#dimensions .hex-visual");
   const dimPreview = $("#dimensions .artifact-preview");
   let dimTrigger = null;
+  let dimFocusTimer = null;
+  const dimTechToggle = $("#dim-tech-toggle");
+  const dimTech = $("#dim-tech");
   if (dimVisual) {
     if ("IntersectionObserver" in window && !REDUCED) {
       const hexIO = new IntersectionObserver((entries) => {
@@ -354,6 +359,7 @@
   }
   function closeDimDetail() {
     if (!dimVisual || !dimVisual.classList.contains("is-detail")) return;
+    if (dimFocusTimer) { clearTimeout(dimFocusTimer); dimFocusTimer = null; }
     dimVisual.classList.add("replay");
     dimVisual.classList.remove("is-detail");
     if (dimLogo) dimLogo.classList.remove("pulse");
@@ -362,6 +368,7 @@
   }
   function selectDimension(i, trigger) {
     if (trigger) dimTrigger = trigger;
+    if (dimFocusTimer) { clearTimeout(dimFocusTimer); dimFocusTimer = null; }
     const d = dims[i] || {};
     const arr = Array.isArray(d);
     const name = arr ? d[0] || "" : d.name || "";
@@ -372,7 +379,14 @@
     if (dimLogo) { dimLogo.classList.remove("pulse"); void dimLogo.getBoundingClientRect(); dimLogo.classList.add("pulse"); }
     hideHexTips();
     openDimDetail();
+    if (dimPreview) {
+      dimPreview.classList.remove("is-tech");
+      const codeDet = $(".dim-code", dimPreview);
+      if (codeDet) codeDet.open = false;
+      if (dimTechToggle) dimTechToggle.setAttribute("aria-expanded", "false");
+    }
     setText("#artifact-name", (data.artifactLabel || "") + name.toLowerCase());
+    setText("#dim-benefit", arr ? "" : (d.sum || ""));
     setText("#artifact-code", arr ? d[2] : d.code);
     if (!arr) {
       setText("#ficha-fn", d.fn);
@@ -383,7 +397,14 @@
       if (a && d.src) { a.href = d.src; a.textContent = (d.srcLabel || d.src) + " ↗"; }
     }
     hexLabels.forEach((t) => t.classList.toggle("is-active", Number(t.dataset.dim) === i));
-    if (dimPreview) setTimeout(() => { if (dimVisual && dimVisual.classList.contains("is-detail")) dimPreview.focus({ preventScroll: true }); }, 300);
+    if (dimPreview) dimFocusTimer = setTimeout(() => { if (dimVisual && dimVisual.classList.contains("is-detail")) { dimPreview.focus(); dimPreview.scrollIntoView({ block: "nearest" }); } }, 60);
+  }
+  if (dimTechToggle && dimPreview) {
+    dimTechToggle.addEventListener("click", () => {
+      const open = dimPreview.classList.toggle("is-tech");
+      dimTechToggle.setAttribute("aria-expanded", String(open));
+      if (dimTech) dimTech.scrollIntoView({ block: "nearest" });
+    });
   }
   const dimNodes = $$("#dimensions .hex-node");
   const dimChips = $$("#dimensions .dim-chip");
