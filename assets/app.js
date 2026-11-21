@@ -338,8 +338,6 @@
   const dimPreview = $("#dimensions .artifact-preview");
   let dimTrigger = null;
   let dimFocusTimer = null;
-  const dimTechToggle = $("#dim-tech-toggle");
-  const dimTech = $("#dim-tech");
   if (dimVisual) {
     if ("IntersectionObserver" in window && !REDUCED) {
       const hexIO = new IntersectionObserver((entries) => {
@@ -378,12 +376,6 @@
     if (hexPath) hexPath.style.strokeDashoffset = String(Math.max(0, 1 - (i + 1) / 6));
     if (dimLogo) { dimLogo.classList.remove("pulse"); void dimLogo.getBoundingClientRect(); dimLogo.classList.add("pulse"); }
     openDimDetail();
-    if (dimPreview) {
-      dimPreview.classList.remove("is-tech");
-      const codeDet = $(".dim-code", dimPreview);
-      if (codeDet) codeDet.open = false;
-      if (dimTechToggle) dimTechToggle.setAttribute("aria-expanded", "false");
-    }
     setText("#artifact-name", (data.artifactLabel || "") + name.toLowerCase());
     setText("#dim-benefit", arr ? "" : (d.sum || ""));
     setText("#artifact-code", arr ? d[2] : d.code);
@@ -397,13 +389,6 @@
     }
     hexLabels.forEach((t) => t.classList.toggle("is-active", Number(t.dataset.dim) === i));
     if (dimPreview) dimFocusTimer = setTimeout(() => { if (dimVisual && dimVisual.classList.contains("is-detail")) { dimPreview.focus(); dimPreview.scrollIntoView({ block: "nearest" }); } }, 60);
-  }
-  if (dimTechToggle && dimPreview) {
-    dimTechToggle.addEventListener("click", () => {
-      const open = dimPreview.classList.toggle("is-tech");
-      dimTechToggle.setAttribute("aria-expanded", String(open));
-      if (dimTech) dimTech.scrollIntoView({ block: "nearest" });
-    });
   }
   const dimNodes = $$("#dimensions .hex-node");
   const dimChips = $$("#dimensions .dim-chip");

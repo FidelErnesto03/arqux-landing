@@ -77,7 +77,7 @@ with sync_playwright() as pw:
     ok("dim-head stays visible",p.locator("#dimensions .dim-head").is_visible())
     pv=p.evaluate("""()=>{const a=document.querySelector('#dimensions .artifact-preview').getBoundingClientRect(),v=document.querySelector('#dimensions .hex-visual').getBoundingClientRect();return {pos:getComputedStyle(document.querySelector('#dimensions .artifact-preview')).position,dx:Math.abs(a.x-v.x)+Math.abs(a.width-v.width),top:Math.abs(a.y-v.y),z:getComputedStyle(document.querySelector('#dimensions .artifact-preview')).zIndex}}""")
     ok("detail overlays visual full width",pv["pos"]=="absolute" and pv["dx"]<8 and pv["top"]<12 and int(pv["z"])>=6)
-    ok("benefit before tech",p.evaluate("document.querySelector('#dim-benefit').textContent.length>10") and not p.evaluate("document.querySelector('#dimensions .artifact-preview').classList.contains('is-tech')"))
+    ok("detail shows all info directly",p.evaluate("document.querySelector('#dim-benefit').textContent.length>10") and p.locator("#dimensions .dim-tech-toggle").count()==0 and p.locator("#dimensions .artifact-preview details").count()==0 and p.locator("#dimensions #ficha-fn").is_visible())
     ok("detail auto height no inner scroll",p.evaluate("(()=>{const a=document.querySelector('#dimensions .artifact-preview');return a.scrollHeight<=a.clientHeight+4})()"))
     ok("active label marked",p.locator("#dimensions .hex-labels text.is-active").count()==1)
     ok("scope note under title",p.evaluate("!!document.querySelector('#dimensions .section-head .dimensions-scope')") and p.locator("#dimensions .hex-visual details.ev-detail").count()==0)

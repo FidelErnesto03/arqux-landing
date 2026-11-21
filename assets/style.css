@@ -80,18 +80,8 @@ h3{font-size:1.1rem;font-weight:650;letter-spacing:-.02em;margin-bottom:8px}.lea
 .artifact-preview .artifact-label{padding-right:54px}
 .dim-benefit{margin:0 0 10px;font:600 15px/1.5 var(--sans);color:var(--paper-100)}
 .dim-footer{margin:0 0 12px;font:500 11.5px/1.5 var(--sans);color:var(--mist-500)}
-.dim-tech-toggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border:1px solid rgba(220,226,227,.3);border-radius:11px;background:transparent;color:var(--amber-500);font:600 13px/1.3 var(--sans);cursor:pointer;margin-bottom:12px}
-.dim-tech-toggle:hover{border-color:var(--amber-500)}
-.dim-tech-toggle:focus-visible{outline:2px solid var(--amber-500);outline-offset:2px}
-.dim-tech-toggle::after{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .18s ease}
-.is-tech .dim-tech-toggle::after{transform:rotate(225deg)}
-.dim-tech{display:none}
-.is-tech .dim-tech{display:block}
 .dim-code{margin-top:12px;border:1px solid rgba(220,226,227,.16);border-radius:10px;overflow:hidden}
-.dim-code>summary{cursor:pointer;list-style:none;padding:10px 14px;font:600 11px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mist-300)}
-.dim-code>summary::-webkit-details-marker{display:none}
-.dim-code>summary::before{content:"";display:inline-block;width:7px;height:7px;border-right:2px solid var(--amber-500);border-bottom:2px solid var(--amber-500);transform:rotate(-45deg);margin-right:8px;transition:transform .18s ease;vertical-align:1px}
-.dim-code[open]>summary::before{transform:rotate(45deg)}
+.dim-code-label{display:block;padding:10px 14px;border-bottom:1px solid rgba(220,226,227,.16);font:600 11px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mist-300)}
 .dim-code code{display:block;padding:12px 14px;font:500 12px/1.6 var(--mono);color:var(--mist-300);white-space:pre-wrap;overflow-wrap:anywhere}
 .dim-preview-close{position:absolute;right:10px;top:10px;width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(220,226,227,.3);border-radius:50%;background:transparent;color:var(--mist-300);font:400 20px/1 var(--sans);cursor:pointer}
 .dim-preview-close:hover{border-color:var(--amber-500);color:var(--amber-500)}
