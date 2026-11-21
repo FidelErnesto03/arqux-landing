@@ -11,7 +11,7 @@
   if (dataEl) { try { data = Object.assign(data, JSON.parse(dataEl.textContent)); } catch (e) { /* keep defaults */ } }
 
   /* progressive enhancement: controls that need the script become visible */
-  $$(".segmented[hidden], .copy-btn[hidden], .progress-rail[hidden], .route-choice[hidden], .route-note[hidden], .wf-switch[hidden], .ev-filterbar[hidden]").forEach((el) => { el.hidden = false; });
+  $$(".segmented[hidden], .copy-btn[hidden], .ev-filterbar[hidden]").forEach((el) => { el.hidden = false; });
 
   /* mobile menu */
   const menu = $(".menu-toggle");
@@ -294,55 +294,11 @@
     }
   }
 
-  /* ---------- T-021: workflow mechanism map (stages ↔ map, honest nodes) ---------- */
-  const wfViewBtns = $$("[data-wf-view]");
-  if (wfViewBtns.length) {
-    const stagesBox = $(".wf-stages");
-    const mapBox = $(".wf-map");
-    const setWfView = (view) => {
-      wfViewBtns.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.wfView === view)));
-      if (stagesBox) stagesBox.hidden = view !== "stages";
-      if (mapBox) {
-        mapBox.hidden = view !== "map";
-        if (view === "map" && !mapBox.classList.contains("is-drawn")) {
-          requestAnimationFrame(() => mapBox.classList.add("is-drawn"));
-        }
-      }
-    };
-    wfViewBtns.forEach((b) => b.addEventListener("click", () => setWfView(b.dataset.wfView)));
-    setWfView("stages");
-
-    const mapDataEl = $("#map-data");
-    let mapNodesData = [];
-    try { mapNodesData = mapDataEl ? (JSON.parse(mapDataEl.textContent).nodes || []) : []; } catch (e) { mapNodesData = []; }
-    const mapNodes = $$(".map-node[data-map-node]");
-    if (mapNodesData.length && mapNodes.length) {
-      const put = (sel, v) => { const el = $(sel); if (el && v != null) el.textContent = v; };
-      const selectMapNode = (i) => {
-        const n = mapNodesData[i];
-        if (!n) return;
-        mapNodes.forEach((g) => g.setAttribute("aria-pressed", String(Number(g.dataset.mapNode) === i)));
-        put("#map-kind", n.kind);
-        put("#map-title", n.title);
-        put("#map-desc", n.fn);
-        put("#map-via", n.via);
-        put("#map-note", n.lim);
-        const a = $("#map-src");
-        if (a && n.src) { a.href = n.src; a.textContent = (n.srcLabel || "Source") + " ↗"; }
-      };
-      mapNodes.forEach((g) => {
-        g.addEventListener("click", () => selectMapNode(Number(g.dataset.mapNode)));
-        g.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selectMapNode(Number(g.dataset.mapNode)); }
-        });
-      });
-      selectMapNode(1);
-    }
-  }
-
-  /* ---------- workflow stages ---------- */
+  /* ---------- workflow stages: detail opens as modal (home case-dialog pattern) ---------- */
   const steps = $$(".step");
+  const stepDialog = $("#step-dialog");
   const setText = (sel, v) => { const el = $(sel); if (el && v) el.textContent = v; };
+  let stepTrigger = null;
   steps.forEach((btn) =>
     btn.addEventListener("click", () => {
       const i = Number(btn.dataset.step);
@@ -355,12 +311,47 @@
       setText("#step-input", s.input);
       setText("#step-change", s.change);
       setText("#step-evidence", s.evidence);
+      if (stepDialog && typeof stepDialog.showModal === "function" && !stepDialog.open) {
+        stepTrigger = btn;
+        stepDialog.showModal();
+      }
     })
   );
+  if (stepDialog && typeof stepDialog.showModal === "function") {
+    stepDialog.addEventListener("click", (e) => { if (e.target === stepDialog) stepDialog.close(); });
+    stepDialog.addEventListener("close", () => { if (stepTrigger) stepTrigger.focus(); });
+  }
 
-  /* ---------- hexagon dimensions (+ I-07: the path travels to the selected node) ---------- */
+  /* ---------- dimensions selector (hexagon menu sinks, detail card replaces it) ---------- */
   const dims = data.dims || [];
   const hexPath = $(".hex-path");
+  const dimLogo = $(".dim-logo image") || $(".dim-logo");
+  const dimVisual = $("#dimensions .hex-visual");
+  const dimPreview = $("#dimensions .artifact-preview");
+  if (dimVisual) {
+    if ("IntersectionObserver" in window && !REDUCED) {
+      const hexIO = new IntersectionObserver((entries) => {
+        if (!entries[0].isIntersecting) return;
+        hexIO.disconnect();
+        dimVisual.classList.add("entered");
+      }, { threshold: 0.25 });
+      hexIO.observe(dimVisual);
+    } else {
+      dimVisual.classList.add("entered");
+    }
+  }
+  function openDimDetail() {
+    if (!dimVisual) return;
+    dimVisual.classList.remove("replay");
+    dimVisual.classList.add("is-detail");
+  }
+  function closeDimDetail() {
+    if (!dimVisual || !dimVisual.classList.contains("is-detail")) return;
+    dimVisual.classList.add("replay");
+    dimVisual.classList.remove("is-detail");
+    if (dimLogo) dimLogo.classList.remove("pulse");
+    setTimeout(() => dimVisual.classList.remove("replay"), 1500);
+  }
   function selectDimension(i) {
     const d = dims[i] || {};
     const arr = Array.isArray(d);
@@ -369,6 +360,9 @@
       el.setAttribute("aria-pressed", String(Number(el.dataset.dimension) === i))
     );
     if (hexPath) hexPath.style.strokeDashoffset = String(Math.max(0, 1 - (i + 1) / 6));
+    if (dimLogo) { dimLogo.classList.remove("pulse"); void dimLogo.getBoundingClientRect(); dimLogo.classList.add("pulse"); }
+    hideHexTips();
+    openDimDetail();
     setText("#artifact-name", (data.artifactLabel || "") + name.toLowerCase());
     setText("#artifact-code", arr ? d[2] : d.code);
     if (!arr) {
@@ -381,8 +375,24 @@
     }
   }
   const dimNodes = $$("[data-dimension]");
+  const hexTips = $$("#dimensions .hex-tip");
+  const showHexTip = (dim) => hexTips.forEach((t) => t.classList.toggle("is-on", Number(t.dataset.dim) === dim));
+  const hideHexTips = () => hexTips.forEach((t) => t.classList.remove("is-on"));
+  if (dimPreview) {
+    const closeBtn = $(".dim-preview-close", dimPreview);
+    if (closeBtn) closeBtn.addEventListener("click", closeDimDetail);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && dimVisual && dimVisual.classList.contains("is-detail") && !(stepDialog && stepDialog.open))
+        closeDimDetail();
+    });
+  }
   dimNodes.forEach((el, idx) => {
-    el.addEventListener("click", () => selectDimension(Number(el.dataset.dimension)));
+    const dim = Number(el.dataset.dimension);
+    el.addEventListener("click", () => selectDimension(dim));
+    el.addEventListener("mouseenter", () => showHexTip(dim));
+    el.addEventListener("mouseleave", hideHexTips);
+    el.addEventListener("focus", () => showHexTip(dim));
+    el.addEventListener("blur", hideHexTips);
     el.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
@@ -417,21 +427,6 @@
       });
     })
   );
-
-  /* ---------- codec round-trip playground (local transform, no backend) ---------- */
-  const idea = $("#idea-input");
-  if (idea) {
-    const outCortex = $("#play-cortex");
-    const outHuman = $("#play-human");
-    const esc = (v) => v.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
-    const update = () => {
-      const v = idea.value.trim().slice(0, 64) || "…";
-      if (outCortex) outCortex.textContent = 'KNW:idea{content:"' + esc(v) + '",status:current}';
-      if (outHuman) outHuman.textContent = v;
-    };
-    idea.addEventListener("input", update);
-    update();
-  }
 
   /* ---------- evidence group filter (trust #evidence; all groups visible without JS) ---------- */
   const evBar = $(".ev-filterbar");

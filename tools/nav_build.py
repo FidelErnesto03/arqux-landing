@@ -39,9 +39,10 @@ PAGES = {
 }
 
 # page_key -> [(section_id, es_label, en_label)] in editorial reading order.
-# IDs are the contract; the reference page uses the audit's proposed order
-# (intro, workflow, dimensions, artifacts, learning, format, compatibility,
-# continue). Keep in sync with the DOM of both language files.
+# IDs are the contract; the reference page uses the v4 consolidation order
+# (workflow, dimensions, artifacts, format, compatibility — learning and
+# continue live inside artifacts/compatibility as anchored subsections).
+# Keep in sync with the DOM of both language files.
 SECTIONS = {
     "home": [
         ("top", "Qué es ArqUX", "What ArqUX does"),
@@ -51,12 +52,10 @@ SECTIONS = {
     ],
     "reference": [
         ("workflow", "De la decisión al resultado", "From decision to result"),
-        ("dimensions", "Seis preguntas de gobierno", "Six governance questions"),
-        ("artifacts", "Archivos del proyecto", "Project files"),
-        ("learning", "Cómo aprende el proyecto", "How the project learns"),
+        ("dimensions", "Qué gobierna el trabajo de un proyecto", "What governs project work"),
+        ("artifacts", "Qué conserva el proyecto", "What the project retains"),
         ("format", "CORTEX y HCORTEX", "CORTEX and HCORTEX"),
         ("compatibility", "Integración con agentes", "Agent integration"),
-        ("continue", "Ponerlo a prueba", "Put it to the test"),
     ],
     "start": [
         ("intro", "Qué vas a conseguir", "What you will get"),

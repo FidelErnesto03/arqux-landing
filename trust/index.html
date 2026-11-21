@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0A1420">
-<meta name="description" content="What is enforced by code, what the agent interprets, and what your team owns: evidence, scope and limits.">
+<meta name="description" content="What the system enforces, what the agent interprets, and what your team owns: evidence, scope and limits.">
 <title>Trust and limits — ArqUX</title>
 <link rel="icon" href="/assets/brand/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
@@ -14,7 +14,7 @@
 <link rel="alternate" hreflang="es" href="https://arqux.ai/es/confianza/">
 <link rel="alternate" hreflang="x-default" href="https://arqux.ai/">
 <meta property="og:title" content="Trust and limits — ArqUX">
-<meta property="og:description" content="What is enforced by code, what the agent interprets, and what your team owns: evidence, scope and limits.">
+<meta property="og:description" content="What the system enforces, what the agent interprets, and what your team owns: evidence, scope and limits.">
 <meta property="og:url" content="https://arqux.ai/trust/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://arqux.ai/assets/brand/og-image.png">
@@ -35,7 +35,7 @@
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://arqux.ai/#org","name":"ArqUX","url":"https://arqux.ai/","logo":"https://arqux.ai/assets/brand/og-image.png"},
 {"@type":"WebSite","@id":"https://arqux.ai/#website","url":"https://arqux.ai/","name":"ArqUX","publisher":{"@id":"https://arqux.ai/#org"},"inLanguage":["en","es"]},
-{"@type":"SoftwareApplication","name":"ArqUX Framework","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"1.0.0","license":"https://www.apache.org/licenses/LICENSE-2.0","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://arqux.ai/","codeRepository":"https://github.com/FidelErnesto03/arqux","description":"Open-source framework for governed human-AI work: agent identities, project context, scoped work and reviewable evidence, local-first.","inLanguage":"en","publisher":{"@id":"https://arqux.ai/#org"}}
+{"@type":"SoftwareApplication","name":"ArqUX Framework","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"1.0.0","license":"https://www.apache.org/licenses/LICENSE-2.0","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://arqux.ai/","codeRepository":"https://github.com/FidelErnesto03/arqux","description":"Open-source framework for governed human-AI work: agent identities, project context, scoped work and auditable evidence, local-first.","inLanguage":"en","publisher":{"@id":"https://arqux.ai/#org"}}
 ]}
 </script>
 </head>
@@ -60,12 +60,10 @@
     <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="nav-sub-reference" aria-label="Reference sections"><svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <ul class="nav-sub" id="nav-sub-reference">
       <li><a href="/reference/#workflow">From decision to result</a></li>
-      <li><a href="/reference/#dimensions">Six governance questions</a></li>
-      <li><a href="/reference/#artifacts">Project files</a></li>
-      <li><a href="/reference/#learning">How the project learns</a></li>
+      <li><a href="/reference/#dimensions">What governs project work</a></li>
+      <li><a href="/reference/#artifacts">What the project retains</a></li>
       <li><a href="/reference/#format">CORTEX and HCORTEX</a></li>
       <li><a href="/reference/#compatibility">Agent integration</a></li>
-      <li><a href="/reference/#continue">Put it to the test</a></li>
     </ul>
   </div>
   <div class="nav-entry">
@@ -104,7 +102,7 @@
 <section class="section section-light page-intro" id="intro"><div class="wrap"><p class="eyebrow">Decide with evidence</p><h1>Know what ArqUX does—and what depends on you.</h1><p class="section-copy">Distinguish code-enforced controls, instructions interpreted by your agent, and decisions that remain with your team.</p><nav aria-label="Trust sections"><ul class="first-task-list"><li><b><a href="#trust">Responsibilities</a></b><span>What each layer applies.</span></li><li><b><a href="#evidence">Available evidence</a></b><span>What was verified and how.</span></li><li><b><a href="#limits">Limits</a></b><span>What to check before adopting.</span></li></ul></nav><div class="codec-cards"></div><div class="hero-ctas"><a class="button button-primary" href="#trust">See who controls what</a></div><p class="note"><a href="/">← Back to home</a></p></div></section>
 <section class="section trust-section" id="trust">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Three responsibilities</p><h2>Code enforces. Agents interpret. You decide.</h2><p class="section-copy">ArqUX governs what its code can verify. Instructions guide the agent. Your team retains approval and responsibility for the outcome.</p><div class="hero-ctas"><a class="button button-primary" href="#evidence">See what is verified</a></div></div>
+        <div class="section-head"><p class="eyebrow">Three responsibilities</p><h2>The system enforces. Agents interpret. You decide.</h2><p class="section-copy">ArqUX governs what its code can verify. Instructions guide the agent. Your team retains approval and responsibility for the outcome.</p><div class="hero-ctas"><a class="button button-primary" href="#evidence">See what is verified</a></div></div>
         <div class="trust-grid">
           <article class="trust-card"><span class="trust-mark" aria-hidden="true">01</span><h3>Code</h3><p>Validates inputs, roles, and certain operations on implemented paths.</p><p><b>Check:</b> the handler and its tests.</p><a class="ev-src" href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/handlers/task.py" target="_blank" rel="noreferrer">task.py ↗</a></article>
           <article class="trust-card"><span class="trust-mark" aria-hidden="true">02</span><h3>Agent</h3><p>May follow instruction files if its client loads them; compliance is not guaranteed.</p><p><b>Check:</b> which file it actually reads.</p><a class="ev-src" href="https://github.com/FidelErnesto03/arqux/blob/390333913e0f071a89241187f36cc90289e7e043/src/arqux/adapters/harness.py" target="_blank" rel="noreferrer">harness.py ↗</a></article>

@@ -1,7 +1,8 @@
 """Nav map integrity (audit §2.3/T05): DOM sections <-> menu spec parity, ES/EN.
 
 Verifies, without a browser:
-- every page exposes all 21 section ids reachable from its own submenu
+- every page exposes all 18 section ids reachable from its own submenu
+  (v4: reference consolidated to 5 — learning/continue are subsections)
 - the rendered <nav> in each HTML file matches tools/nav_build.py output
 - submenu order matches the editorial order in the spec
 - every submenu href resolves to a real section id in the target page file
@@ -64,13 +65,13 @@ for rel, (page_key, lang) in nav_build.FILES.items():
         if target:
             ok(f"anchor {href} -> {target}", anchor in section_ids(target))
 
-# 4) all 21 spec anchors exist in both languages of their page
+# 4) all 18 spec anchors exist in both languages of their page
 for page_key, secs in nav_build.SECTIONS.items():
     for lang, (base, _) in nav_build.PAGES[page_key].items():
         rel = next(r for r, (k, l) in nav_build.FILES.items() if k == page_key and l == lang)
         ids = section_ids(rel)
         for sid, *_ in secs:
-            ok(f"21-map {page_key}/{lang} #{sid}", sid in ids)
+            ok(f"18-map {page_key}/{lang} #{sid}", sid in ids)
 
 # 4b) floating section arrows present on every page (site-wide standard)
 for rel in nav_build.FILES:
