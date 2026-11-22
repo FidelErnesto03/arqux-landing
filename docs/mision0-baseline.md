@@ -66,6 +66,16 @@ Los seis beneficios (Continuidad, Consistencia, Control, Trazabilidad, Portabili
 **D-M0-06 · Distinción Framework/Platform (§2.3) — conforme, sin acción requerida.**
 Confianza ya declara Platform como dirección futura y no capacidad («Hosted multiuser Platform — product direction, not a released 1.0.0 feature»; «no hosted multi-tenant service in 1.0.0»). Ninguna página atribuye capacidades multiusuario ni usa su ausencia como argumento de insuficiencia. El ancla `id="platform"` en el footer de Inicio es markup oculto, no copy.
 
+**D-M0-07 · Prueba real de continuidad cross-harness — EXISTE (dogfooding verificado).**
+Afirmación del Arquitecto (2026-11-22, SES005): «tenemos pruebas REALES — el mismo agente trabajando en Devin, Codex, OpenCode, CommandCode». Verificación de Alfred sobre artefactos de gobernanza:
+
+- **5 sesiones registradas** (SES001→SES005, 2026-11-12→22) bajo **4 execution IDs distintos** — procesos/harnesses diferentes.
+- `agent=alfred` constante en todas; `project=Proyecto_X` y scope evolutivo (CYCLE-01 → landing); brain.cortex, ciclos, tareas (T-001…T-098), timelog append-only y PULSE continuaron sin pérdida a través de los cambios de proceso.
+- Los 4 harnesses nombrados están instalados y con logs activos en la máquina (devin CLI, ~/.codex, ~/.commandcode, opencode).
+- **Propiedad demostrada:** la gobernanza registra identidad de agente y contexto de proyecto; deliberadamente NO registra el harness — es la materialización de «el gobierno pertenece al proyecto, no al agente» y de `platform_agnostic`. La continuidad no depende del harness: depende de que el proyecto tenga sus referencias.
+
+**Implicación para Misión 1/2:** existe evidencia real de continuidad cross-harness — el mayor vacío que marcó sim-03 tiene respuesta documental. Candidata fuerte: una afirmación acotada tipo «ArqUX gobierna su propio desarrollo en este workspace a través de múltiples harnesses de agente; la identidad y el contexto del proyecto persisten en los artefactos de gobernanza» — redactable en M2 con alcance exacto y sin exagerar (los registros no nombran el harness por sesión; la atribución es del Arquitecto + diversidad de execution IDs + herramientas instaladas). NO prometer «probado en 9 harnesses» — la adhesión reportada sigue siendo reportada.
+
 ## 4. Fuentes técnicas comprobadas
 
 - `docs/analisis-discursivo-v8.md` — matriz + revisiones (base directa).
