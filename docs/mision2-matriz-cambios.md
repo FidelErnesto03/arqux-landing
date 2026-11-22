@@ -16,7 +16,7 @@
 | P-03 | H2 `#connect` → «referencias de gobierno» | 2 archivos (1 `<h2>` c/u) | No | Ninguno |
 | P-04 | Retirar «team/equipo» del rol decisor | 4 archivos (~15 puntos) | No | Ninguno (verificado) |
 | P-05 | Fila de evidencia dogfooding en Confianza | 2 archivos (1 `ev-group` + 1 botón filtro c/u) | **No** (filtro es genérico por data-attrs) | Ninguno (`ev-src >=6` se mantiene) |
-| P-06 | Vocabulario §IV | — | — | **Hallazgo: recomiendo reclasificar a CONSERVAR** (ver §P-06) |
+| P-06 | Vocabulario §IV | — | — | **DECIDIDO: CONSERVAR** — 0 ocurrencias de términos canónicos; la prosa ya comunica los beneficios (ver §P-06) |
 | P-07 | **H1 → lema rector + tagline → aforismo** (jerarquía B, D-M1-03) | 2 archivos (1 `<h1>` + 1 `<p class="hero-portable">` c/u) | No | **t16_home** (assert H1 — se actualiza en M4) |
 
 ---
@@ -28,12 +28,12 @@
 | | Texto |
 |---|---|
 | **Actual EN** | "ArqUX is a governance framework for the projects your AI agents work on. Each project keeps its own context, decisions and evidence — so work stays continuous, reviewable and auditable across agents, sessions and harnesses, and reviewed lessons can serve the rest of your workspace." |
-| **Propuesto EN** | "ArqUX is a framework for governing your projects, executed by AI agents. Each project keeps its own context, decisions and evidence — so work stays continuous, reviewable and auditable across agents, sessions and harnesses, and reviewed lessons can serve the rest of your workspace." |
+| **Propuesto EN** | "ArqUX is a framework for governing your projects, built by AI agents. Each project keeps its own context, decisions and evidence — so work stays continuous, reviewable and auditable across agents, sessions and harnesses, and reviewed lessons can serve the rest of your workspace." |
 | **Actual ES** | "ArqUX es un framework de gobernanza para los proyectos en los que trabajan tus agentes de IA. Cada proyecto conserva su propio contexto, decisiones y evidencia, para que el trabajo continúe, sea revisable y auditable entre agentes, sesiones y harnesses, y las lecciones revisadas sirvan al resto de tu espacio de trabajo." |
-| **Propuesto ES** | "ArqUX es un framework para gobernar tus proyectos, ejecutados por agentes de IA. Cada proyecto conserva su propio contexto, decisiones y evidencia, para que el trabajo continúe, sea revisable y auditable entre agentes, sesiones y harnesses, y las lecciones revisadas sirvan al resto de tu espacio de trabajo." |
+| **Propuesto ES** | "ArqUX es un framework para gobernar tus proyectos, desarrollados por agentes de IA. Cada proyecto conserva su propio contexto, decisiones y evidencia, para que el trabajo continúe, sea revisable y auditable entre agentes, sesiones y harnesses, y las lecciones revisadas sirvan al resto de tu espacio de trabajo." |
 
 - **Cambio efectivo:** solo la primera frase; la segunda (beneficios) queda intacta.
-- **Matiz abierto (decisión en esta compuerta):** «executed/executados» es tu formulación literal. Alternativa más idiomática: "built by AI agents" / «desarrollados por agentes de IA». Recomiendo «desarrollados/built» — «proyectos ejecutados» es comprensible pero «proyectos desarrollados» es la colocación natural. Tú decides.
+- **Decidido en compuerta M2:** «desarrollados/built» — colocación natural («desarrollar un proyecto»); la formulación literal «ejecutados/executed» quedó descartada.
 - **Riesgo comprensión:** bajo — la frase es más corta y concreta que la actual. **Riesgo regresión:** nulo (texto plano en `<p class="lead">`).
 - **Trazabilidad:** P-01, D-M1-01, D-M0-01/02.
 
@@ -44,11 +44,11 @@
 | | Texto |
 |---|---|
 | **Actual EN** (name + og:description, idénticos) | "ArqUX is a governance framework for projects worked by AI agents — each project keeps its own context, decisions and evidence." |
-| **Propuesto EN** | "ArqUX is a framework for governing your projects, executed by AI agents — each project keeps its own context, decisions and evidence." |
+| **Propuesto EN** | "ArqUX is a framework for governing your projects, built by AI agents — each project keeps its own context, decisions and evidence." |
 | **Actual ES** (name + og:description, idénticos) | "ArqUX es un framework de gobernanza para los proyectos en los que trabajan tus agentes de IA: cada proyecto conserva su propio contexto, decisiones y evidencia." |
-| **Propuesto ES** | "ArqUX es un framework para gobernar tus proyectos, ejecutados por agentes de IA: cada proyecto conserva su propio contexto, decisiones y evidencia." |
+| **Propuesto ES** | "ArqUX es un framework para gobernar tus proyectos, desarrollados por agentes de IA: cada proyecto conserva su propio contexto, decisiones y evidencia." |
 
-- Si P-01 elige «desarrollados/built», aquí va la misma variante.
+- Misma variante que P-01: «desarrollados/built» (decidido en compuerta M2).
 - **Riesgo:** nulo — meta no visible; longitud ~150 chars, dentro de rango.
 - **Trazabilidad:** P-02, D-M0-03.
 
@@ -167,14 +167,13 @@
 - **Riesgo comprensión:** bajo-medio — es la primera fila que no es ni test pineado ni código; el detalle declara el alcance exacto (identidad+contexto, no tarea conjunta, sin atribución por harness). **Riesgo regresión:** nulo — componentes existentes (`ev-group`, `evidence-row`, `pill`, `ev-detail`, `ev-filter`), filtro genérico, sin JS/CSS.
 - **Trazabilidad:** P-05, D-M0-07, §5.4 (evidencia precede a la confianza).
 
-## P-06 · Vocabulario de beneficios §IV — HALLAZGO
+## P-06 · Vocabulario de beneficios §IV — DECIDIDO: CONSERVAR
 
 **Análisis:** los términos canónicos «consistencia/consistencia», «trazabilidad», «portabilidad» tienen **0 ocurrencias** en las 8 páginas; «continuidad/continuity» solo aparece en la nota de limitación CLI de Primeros pasos (correctamente acotada). La prosa actual ya comunica los beneficios en lenguaje llano: «continuous, reviewable and auditable» / «continúe, revisable y auditable»; «retomarse, revisarse y evolucionar».
 
-**Recomendación: reclasificar P-06 a CONSERVAR.** Forzar los términos canónicos añadiría jerga sin ganancia de comprensión — violaría §5.5 (simplicidad) y «no modificar lo que ya comunica correctamente». Los beneficios §IV quedan **implícitos y correctos**; el vocabulario canónico sigue gobernando futuros textos (M5+).
+**Decisión del propietario (compuerta M2): reclasificar a CONSERVAR.** Forzar los términos canónicos añadiría jerga sin ganancia de comprensión — violaría §5.5 (simplicidad) y «no modificar lo que ya comunica correctamente». Los beneficios §IV quedan **implícitos y correctos**; el vocabulario canónico sigue gobernando futuros textos (M5+). **Sin cambios en el sitio por este ítem.**
 
-- **Riesgo si se implementara:** medio (densidad terminológica sin beneficio).
-- **Trazabilidad:** P-06, D-M0-05 — decisión del propietario en esta compuerta.
+- **Trazabilidad:** P-06, D-M0-05 — cerrado en compuerta M2.
 
 ## P-07 · Hero: H1 → lema rector, tagline → aforismo (jerarquía B — D-M1-03)
 
@@ -228,4 +227,4 @@ CTAs      See how it works / Get started
 
 ## Compuerta M2
 
-**Pendiente:** aprobación explícita de los textos propuestos — incluyendo las dos micro-decisiones marcadas: (a) P-01/P-02 «executed/executados» vs «built/desarrollados»; (b) P-06 reclasificar a CONSERVAR. La jerarquía B de P-07 (H1=tríada, tagline=aforismo) ya está aprobada por el propietario (D-M1-03). Con la aprobación → Misión 3 (revisión crítica independiente en contexto separado).
+**APROBADA por el propietario en SES005** — con «desarrollados/built» (P-01/P-02) y P-06→CONSERVAR; jerarquía B de P-07 (D-M1-03). → Misión 3: revisión crítica independiente en contexto separado.
