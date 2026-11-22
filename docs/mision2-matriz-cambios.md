@@ -14,7 +14,7 @@
 | P-01 | Hero lead → segunda persona + categoría verbal | 2 archivos (1 `<p class="lead">` c/u) | No | Ninguno (t16 no fija el lead) |
 | P-02 | Meta-descriptions acompañan hero | 2 archivos (name + og:description c/u) | No | Ninguno |
 | P-03 | H2 `#connect` → «referencias de gobierno» | 2 archivos (1 `<h2>` c/u) | No | Ninguno |
-| P-04 | Retirar «team/equipo» del rol decisor | 4 archivos (~15 puntos) | No | Ninguno (verificado) |
+| P-04 | Retirar «team/equipo» del rol decisor | 4 archivos (23 puntos-elemento: 7+7+5+4, verificado por auditoría M3) | No | Ninguno (verificado) |
 | P-05 | Fila de evidencia dogfooding en Confianza | 2 archivos (1 `ev-group` + 1 botón filtro c/u) | **No** (filtro es genérico por data-attrs) | Ninguno (`ev-src >=6` se mantiene) |
 | P-06 | Vocabulario §IV | — | — | **DECIDIDO: CONSERVAR** — 0 ocurrencias de términos canónicos; la prosa ya comunica los beneficios (ver §P-06) |
 | P-07 | **H1 → lema rector + tagline → aforismo** (jerarquía B, D-M1-03) | 2 archivos (1 `<h1>` + 1 `<p class="hero-portable">` c/u) | No | **t16_home** (assert H1 — se actualiza en M4) |
@@ -66,7 +66,7 @@
 - El párrafo bajo el H2 («Start with instruction files…» / «Empieza por archivos de instrucciones…») está limpio — no se toca.
 - **Riesgo:** nulo. **Trazabilidad:** P-03.
 
-## P-04 · Retirar «team/equipo» del rol decisor (4 archivos, ~15 puntos)
+## P-04 · Retirar «team/equipo» del rol decisor (4 archivos, 23 puntos-elemento)
 
 **Problema:** «equipo/team» como quién decide sugiere gobierno multi-persona; el contrato §2.2 establece una persona gobernante. «Tú decides / You decide» ya existe como H2 de Confianza — las tarjetas y textos deben ser coherentes.
 
@@ -98,7 +98,7 @@
 
 | # | Elemento | Actual | Propuesto |
 |---|---|---|---|
-| 1 | meta description + og:description | `…and what your team owns: evidence, scope and limits.` | `…and what you decide: evidence, scope and limits.` |
+| 1 | meta description + og:description | `…and what your team owns: evidence, scope and limits.` | `…and what is yours: evidence, scope and limits.` |
 | 2 | intro section-copy | `…and decisions that remain with your team.` | `…and decisions that remain with you.` |
 | 3 | section-head copy | `Your team retains approval and responsibility for the outcome.` | `You retain approval and responsibility for the outcome.` |
 | 4 | trust-card 03 | h3 `Team` + `Defines acceptance criteria, approves decisions, and reviews evidence.` | h3 `You` + `Define acceptance criteria, approve decisions, and review evidence.` |
@@ -137,10 +137,10 @@
 <div class="evidence-list" aria-label="Observations from ArqUX's own governed development">
 <div class="evidence-row"><div><b>Continuity across harnesses</b><small>Agent identity and project context persisted in governance artifacts across five sessions, four execution processes and several agent harnesses — ArqUX governing its own development.</small><details class="ev-detail"><summary>Technical record</summary><div class="ev-detail-body">
 <p><b>What was checked:</b> sessions SES001–SES005 (2026-11-12 → 2026-11-22) share <code>agent=alfred</code>, <code>project=Proyecto_X</code> and the same brain.cortex, cycles, tasks and append-only timelog across four distinct execution IDs; Devin CLI, Codex, CommandCode and OpenCode show active local state. Governance records identity and project context — deliberately not the hosting harness. Verified 2026-11-22.</p>
-<p><b>How to verify it:</b> inspect the session records, timelog and PULSE events under <code>.arqux/</code> in the governed development workspace — the same artifacts any governed project produces. The record is summarized in <a href="/docs?">…</a>.</p>
+<p><b>How to verify it:</b> inspect the session records, timelog and PULSE events under <code>.arqux/</code> in the governed development workspace — the same artifacts any governed project produces. The record is summarized in <a href="https://github.com/FidelErnesto03/arqux-landing/blob/5be691547be75a23bb6ee9abb9e2a33490a1f71a/docs/mision0-baseline.md" target="_blank" rel="noreferrer">the M0 baseline record ↗</a>.</p>
 <p><b>What it does not prove:</b> it does not show two agents executing one task jointly, and sessions are not attributed to a named harness — the evidence is persistence of identity and context, not per-tool testing.</p>
 <p><b>Source or test:</b></p>
-<a class="ev-src" href="https://github.com/FidelErnesto03/arqux-landing/blob/preliminar-b/docs/mision0-baseline.md" target="_blank" rel="noreferrer">mision0-baseline.md ↗</a>
+<a class="ev-src" href="https://github.com/FidelErnesto03/arqux-landing/blob/5be691547be75a23bb6ee9abb9e2a33490a1f71a/docs/mision0-baseline.md" target="_blank" rel="noreferrer">mision0-baseline.md ↗</a>
 </div></details></div><span class="pill">In practice</span></div>
 </div></div>
 ```
@@ -155,15 +155,16 @@
 <div class="evidence-list" aria-label="Observaciones del desarrollo gobernado propio de ArqUX">
 <div class="evidence-row"><div><b>Continuidad entre harnesses</b><small>La identidad del agente y el contexto del proyecto persistieron en los artefactos de gobernanza a través de cinco sesiones, cuatro procesos de ejecución y varios harnesses de agente — ArqUX gobernando su propio desarrollo.</small><details class="ev-detail"><summary>Registro técnico</summary><div class="ev-detail-body">
 <p><b>Qué se comprobó:</b> las sesiones SES001–SES005 (2026-11-12 → 2026-11-22) comparten <code>agent=alfred</code>, <code>project=Proyecto_X</code> y el mismo brain.cortex, ciclos, tareas y timelog append-only a través de cuatro execution IDs distintos; Devin CLI, Codex, CommandCode y OpenCode muestran estado local activo. La gobernanza registra identidad y contexto del proyecto — deliberadamente no el harness que hospeda la sesión. Verificado el 2026-11-22.</p>
-<p><b>Cómo comprobarlo:</b> inspecciona los registros de sesión, el timelog y los eventos PULSE bajo <code>.arqux/</code> en el espacio de trabajo gobernado del desarrollo — los mismos artefactos que produce cualquier proyecto gobernado. El registro está resumido en <a href="/es/docs?">…</a>.</p>
+<p><b>Cómo comprobarlo:</b> inspecciona los registros de sesión, el timelog y los eventos PULSE bajo <code>.arqux/</code> en el espacio de trabajo gobernado del desarrollo — los mismos artefactos que produce cualquier proyecto gobernado. El registro está resumido en <a href="https://github.com/FidelErnesto03/arqux-landing/blob/5be691547be75a23bb6ee9abb9e2a33490a1f71a/docs/mision0-baseline.md" target="_blank" rel="noreferrer">el registro del baseline M0 ↗</a>.</p>
 <p><b>Lo que no demuestra:</b> no muestra dos agentes ejecutando una tarea conjunta, y las sesiones no se atribuyen a un harness concreto — la evidencia es persistencia de identidad y contexto, no prueba por herramienta.</p>
 <p><b>Fuente o prueba:</b></p>
-<a class="ev-src" href="https://github.com/FidelErnesto03/arqux-landing/blob/preliminar-b/docs/mision0-baseline.md" target="_blank" rel="noreferrer">mision0-baseline.md ↗</a>
+<a class="ev-src" href="https://github.com/FidelErnesto03/arqux-landing/blob/5be691547be75a23bb6ee9abb9e2a33490a1f71a/docs/mision0-baseline.md" target="_blank" rel="noreferrer">mision0-baseline.md ↗</a>
 </div></details></div><span class="pill">En la práctica</span></div>
 </div></div>
 ```
 
-- **Puntos a resolver en M4 (menores):** (a) el enlace «How to verify» — propongo apuntar al archivo `docs/mision0-baseline.md` del repo (público, contiene el registro D-M0-07); el `<a href="…">` interno puede omitirse o apuntar a la sección Trust. (b) El pin del enlace `ev-src` debe fijarse al commit vigente en M4 (los demás usan `3903339` del repo del producto; este apunta al repo del landing — rama `preliminar-b`).
+- **Resuelto por auditoría M3:** (a) el enlace «How to verify» apunta al `docs/mision0-baseline.md` pineado en GitHub; (b) `ev-src` fijado a commit SHA `5be6915` (no rama). **Nota M4 — separadores:** los grupos de evidencia se separan con `<!-- separation between evidence blocks -->` + `<div class="codec-cards"></div>`; el nuevo grupo `practice` va entre `source` y `reported`, por lo que se necesitan **dos** separadores: `source → sep → practice → sep → reported` (insertar el segundo separador tras el grupo practice, antes del grupo reported).
+- **Nota de honestidad (declarada):** «How to verify it» remite a `.arqux/` del workspace de desarrollo — no reproducible por el público; el registro público es el propio `mision0-baseline.md`. Coherente con el nivel «in practice», más débil que otras filas.
 - **Riesgo comprensión:** bajo-medio — es la primera fila que no es ni test pineado ni código; el detalle declara el alcance exacto (identidad+contexto, no tarea conjunta, sin atribución por harness). **Riesgo regresión:** nulo — componentes existentes (`ev-group`, `evidence-row`, `pill`, `ev-detail`, `ev-filter`), filtro genérico, sin JS/CSS.
 - **Trazabilidad:** P-05, D-M0-07, §5.4 (evidencia precede a la confianza).
 
@@ -193,7 +194,7 @@ eyebrow   For people who run projects where AI agents do the work
 H1        Your agents change.          ← tríada (3 líneas, una por tiempo)
           Your projects evolve.
           Your judgment endures.
-lead      ArqUX is a framework for governing your projects, executed by AI agents…  (P-01)
+lead      ArqUX is a framework for governing your projects, built by AI agents…  (P-01)
 tagline   Every task leaves more than a result.   ← aforismo rector (apoyo)
 CTAs      See how it works / Get started
 ```
@@ -227,4 +228,16 @@ CTAs      See how it works / Get started
 
 ## Compuerta M2
 
-**APROBADA por el propietario en SES005** — con «desarrollados/built» (P-01/P-02) y P-06→CONSERVAR; jerarquía B de P-07 (D-M1-03). → Misión 3: revisión crítica independiente en contexto separado.
+**APROBADA por el propietario en SES005** — con «desarrollados/built» (P-01/P-02) y P-06→CONSERVAR; jerarquía B de P-07 (D-M1-03).
+
+## Misión 3 — Revisión crítica independiente (contexto separado)
+
+**Veredicto: OBSERVADO → corregido.** Auditoría adversarial en contexto aislado (sin acceso al razonamiento de autoría). Resultado por ítem: P-01, P-02, P-03, P-07 **APROBADO**; P-04, P-05 **OBSERVADO** con correcciones literales — todas aplicadas a este documento:
+
+1. **P-04:** meta EN de Confianza → `…and what is yours:…` (espejo de «qué es tuyo»; antes divergía con «what you decide»).
+2. **P-05:** enlace «How to verify» resuelto a `mision0-baseline.md` pineado; `ev-src` fijado a SHA `5be6915` (no rama); nota de doble separador `codec-cards` añadida.
+3. **Documento:** diagrama del hero corregido a «built by AI agents» (variante aprobada); recuento P-04 corregido a 23 puntos-elemento.
+
+**Verificado por el auditor:** cobertura completa de `team/equipo` (incl. tails del JSON de `app-data`), evidencia dogfooding dentro del alcance D-M0-07, cero cambios JS/CSS, solo `t16_home.py` requiere actualización en M4, repetición H1↔`#next` declarada coherente (tesis→desarrollo).
+
+**Pendientes declarados (no bloquean):** residual de vocabulario en `reference/index.html:106` («rules and decisions as references» — defendible, ciclo posterior); la suite de tests se ejecuta en M4.
