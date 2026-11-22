@@ -13,7 +13,7 @@
 - **Protagonista:** el proyecto del usuario. Los agentes, modelos y harnesses son participantes.
 - **Beneficio central:** continuidad del trabajo y conservación de los criterios del proyecto — beneficio, nunca garantía.
 - **Diferenciación:** no reemplaza agentes, no es orquestador, no es plataforma multiusuario (Platform = dirección futura, §2.3).
-- **Lema del hero (D-M1-02):** «Tus agentes cambian. Tus proyectos evolucionan. Tu criterio permanece.» / "Your agents change. Your projects evolve. Your judgment endures." — ocupa el slot `.hero-portable` (sustituye al tagline «Proyectos que conservan su rumbo, sus reglas y su memoria»); `#next` lo expande con «decisiones y evidencia» y las rutas (opción A aprobada por el propietario). Resuelve el cabo suelto D-01 de la auditoría v8: el lema no contiene «memoria», por lo que la tensión sobre garantía de memoria queda disuelta por sustitución.
+- **Lema del hero (D-M1-02, jerarquía B por D-M1-03):** «Tus agentes cambian. Tus proyectos evolucionan. Tu criterio permanece.» / "Your agents change. Your projects evolve. Your judgment endures." — el propietario evaluó tagline vs H1 y eligió **H1** por mayor impacto de primera impresión (tríada autorreconocible + arco problema→beneficio). El aforismo rector «Cada tarea deja algo más que un resultado» / "Every task leaves more than a result." se **reubica** al slot `.hero-portable` como tagline de apoyo — elemento rector preservado, no retirado. `#next` expande el motivo con «decisiones y evidencia» y las rutas. Resuelve el cabo suelto D-01 de la auditoría v8: ni el lema ni el tagline contienen «memoria» sin calificar.
 
 ## 2. Audiencias prioritarias
 
@@ -66,7 +66,7 @@ Audiencias secundarias cubiertas por las mismas páginas: juniors/maintainers (f
 
 | Elemento | Ubicación | Justificación |
 |---|---|---|
-| H1 «Cada tarea deja algo más que un resultado» / "Every task leaves more than a result" | Inicio | Frase rectora literal del manifiesto |
+| Aforismo «Cada tarea deja algo más que un resultado» / "Every task leaves more than a result" | Inicio → `.hero-portable` | Frase rectora del manifiesto, texto intacto, **reubicada** como tagline de apoyo al H1-tríada (D-M1-03) |
 | Sección `#failures` completa (5 modos de ruptura) | Inicio | Problema reconocible = mecanismo de identificación (22/24 valoran honestidad) |
 | Demo `#local` + ejemplo conductor | Inicio↔Referencia | Literalmente idéntico EN/ES; continuidad de ejemplo exigida |
 | `#next` «El trabajo cambia… criterios permanecen por proyecto, entre agentes» | Inicio | Expansión del lema del hero (D-M1-02, opción A): repite el motivo en forma desarrollada y añade «decisiones y evidencia» + rutas — motivo al inicio, desarrollo al cierre |
@@ -90,7 +90,7 @@ Audiencias secundarias cubiertas por las mismas páginas: juniors/maintainers (f
 | P-04 | «Team/Equipo» como rol decisor | **Retirar del rol decisor**: kicker «Team decision/review» → decisión/proyecto; `case`/`who` «The team…»/«El equipo…» → el usuario/proyecto; h3 Trust «Team»/«Equipo» → «You»/«Tú» (cierra con «You decide»/«Tú decides»); «several teams or machines» → «several projects or machines» | §2.2 gobierno personal: «equipo» sugiere multi-persona; «Tú decides» ya existe como H2 — el h3 debe ser coherente |
 | P-05 | Afirmación dogfooding | Añadir como **fila de evidencia en Confianza** (nivel «verificado»), con alcance exacto D-M0-07; NO en portada | Es evidencia real verificable; Trust es donde vive la evidencia; alcance honesto sin marketing |
 | P-06 | Vocabulario de beneficios §IV | Alinear la prosa existente a los términos canónicos (continuidad/consistencia/control/trazabilidad/portabilidad/aprendizaje gobernado) sin añadir listas ni secciones nuevas | D-M0-05: nombrarlos no requiere componente nuevo; forzar una lista violaría «no todo necesita explicarse» |
-| P-07 | Tagline `.hero-portable` Inicio EN/ES | Sustituir por el lema rector (D-M1-02): ES «Tus agentes cambian. Tus proyectos evolucionan. Tu criterio permanece.» / EN "Your agents change. Your projects evolve. Your judgment endures." | Nombra el dolor real (turnover de agentes/harnesses, sim-03); tres tiempos narrativos (volátil→crece→permanece); segunda persona coherente con D-M1-01; `#next` actúa como expansión, no duplicado |
+| P-07 | H1 + tagline hero Inicio EN/ES | **Jerarquía B aprobada (D-M1-03):** el H1 pasa a ser el lema rector — ES `Tus agentes cambian.<br>Tus proyectos evolucionan.<br>Tu criterio permanece.` / EN `Your agents change.<br>Your projects evolve.<br>Your judgment endures.` (3 líneas, una por tiempo); `.hero-portable` pasa a ser el aforismo — ES «Cada tarea deja algo más que un resultado.» / EN "Every task leaves more than a result." | La tríada es más autorreconocible y comunica problema→beneficio (impacto de primera impresión > aforismo abstracto); el aforismo se preserva como corona de apoyo; `t16_home` assert del H1 se actualiza en M4 |
 
 ### RETIRAR
 

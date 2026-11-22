@@ -17,7 +17,7 @@
 | P-04 | Retirar «team/equipo» del rol decisor | 4 archivos (~15 puntos) | No | Ninguno (verificado) |
 | P-05 | Fila de evidencia dogfooding en Confianza | 2 archivos (1 `ev-group` + 1 botón filtro c/u) | **No** (filtro es genérico por data-attrs) | Ninguno (`ev-src >=6` se mantiene) |
 | P-06 | Vocabulario §IV | — | — | **Hallazgo: recomiendo reclasificar a CONSERVAR** (ver §P-06) |
-| P-07 | Tagline hero → lema rector | 2 archivos (1 `<p class="hero-portable">` c/u) | No | Ninguno |
+| P-07 | **H1 → lema rector + tagline → aforismo** (jerarquía B, D-M1-03) | 2 archivos (1 `<h1>` + 1 `<p class="hero-portable">` c/u) | No | **t16_home** (assert H1 — se actualiza en M4) |
 
 ---
 
@@ -176,19 +176,33 @@
 - **Riesgo si se implementara:** medio (densidad terminológica sin beneficio).
 - **Trazabilidad:** P-06, D-M0-05 — decisión del propietario en esta compuerta.
 
-## P-07 · Tagline hero → lema rector
+## P-07 · Hero: H1 → lema rector, tagline → aforismo (jerarquía B — D-M1-03)
 
-**Problema:** el tagline actual («Projects that keep their course, their rules and their memory») es descriptivo, usa «memory» sin calificar (cabo suelto D-01 de la auditoría v8) y no nombra el dolor real.
+**Problema:** el propietario evaluó dos jerarquías posibles y eligió **B** por impacto de primera impresión: la tríada es más autorreconocible (nombra el escenario real: agentes que cambian) y comunica el arco problema→beneficio; el aforismo abstracto funciona mejor como línea de apoyo que como titular. **Nada se retira:** el aforismo rector se reubica intacto al tagline.
 
 | | Texto |
 |---|---|
-| **Actual EN** | "Projects that keep their course, their rules and their memory — across agents and harnesses." |
-| **Propuesto EN** | "Your agents change. Your projects evolve. Your judgment endures." |
-| **Actual ES** | "Proyectos que conservan su rumbo, sus reglas y su memoria — entre agentes y harnesses." |
-| **Propuesto ES** | "Tus agentes cambian. Tus proyectos evolucionan. Tu criterio permanece." |
+| **Actual EN** | `<h1>Every task leaves<br>more than a result.</h1>` + `<p class="hero-portable">Projects that keep their course, their rules and their memory — across agents and harnesses.</p>` |
+| **Propuesto EN** | `<h1>Your agents change.<br>Your projects evolve.<br>Your judgment endures.</h1>` + `<p class="hero-portable">Every task leaves more than a result.</p>` |
+| **Actual ES** | `<h1>Cada tarea deja<br>algo más que un resultado.</h1>` + `<p class="hero-portable">Proyectos que conservan su rumbo, sus reglas y su memoria — entre agentes y harnesses.</p>` |
+| **Propuesto ES** | `<h1>Tus agentes cambian.<br>Tus proyectos evolucionan.<br>Tu criterio permanece.</h1>` + `<p class="hero-portable">Cada tarea deja algo más que un resultado.</p>` |
 
-- `#next` actúa como expansión (opción A aprobada): repite el motivo con «decisiones y evidencia» + rutas.
-- **Riesgo:** nulo — `<p class="hero-portable">` texto plano. **Trazabilidad:** P-07, D-M1-02.
+Estructura resultante del hero:
+
+```
+eyebrow   For people who run projects where AI agents do the work
+H1        Your agents change.          ← tríada (3 líneas, una por tiempo)
+          Your projects evolve.
+          Your judgment endures.
+lead      ArqUX is a framework for governing your projects, executed by AI agents…  (P-01)
+tagline   Every task leaves more than a result.   ← aforismo rector (apoyo)
+CTAs      See how it works / Get started
+```
+
+- **Por qué B > A:** el H1 es el elemento más visto; merece la frase más concreta y autorreconocible. La tríada nombra el dolor documentado en sim-03 (turnover de agentes) y lo convierte en promesa. El aforismo, más poético que informativo, corona mejor como segunda línea.
+- **`#next`** sigue actuando como expansión del motivo (opción A): repite la tríada en forma desarrollada con «decisiones y evidencia» + rutas — tesis al inicio, desarrollo al cierre.
+- **Riesgo comprensión:** bajo — la tríada es más concreta que el aforismo. **Riesgo regresión:** visual bajo (H1 pasa de 2 a 3 líneas — verificar wrap móvil en M4); **funcional:** `t16_home.py` assert `h1` contiene «more than a result» → se actualiza en M4 al nuevo texto (permitido por manifiesto §VII.9).
+- **Trazabilidad:** P-07, D-M1-02 + D-M1-03.
 
 ---
 
@@ -196,7 +210,7 @@
 
 | Test | ¿Afectado? | Motivo |
 |---|---|---|
-| t16_home | No | Assert H1 («more than a result» — no cambia), mapa hero, CSS; no fija lead/tagline/meta |
+| t16_home | **SÍ** | Assert `h1` «more than a result» — tras P-07 el H1 es la tríada; se actualiza el assert en M4 (y puede añadirse assert del tagline con el aforismo) |
 | t18_reference | No | Assert `.step-meta` count==4 (elemento, no texto), fuentes, dims |
 | t20_routes | No | Solo rutas |
 | t21_start_trust | No | Orden de secciones y `ev-src[href*='3903339'] >=6` — el nuevo `ev-src` apunta a otro repo, no reduce el conteo |
@@ -214,4 +228,4 @@
 
 ## Compuerta M2
 
-**Pendiente:** aprobación explícita de los textos propuestos — incluyendo las dos micro-decisiones marcadas: (a) P-01/P-02 «executed/executados» vs «built/desarrollados»; (b) P-06 reclasificar a CONSERVAR. Con ella → Misión 3 (revisión crítica independiente en contexto separado).
+**Pendiente:** aprobación explícita de los textos propuestos — incluyendo las dos micro-decisiones marcadas: (a) P-01/P-02 «executed/executados» vs «built/desarrollados»; (b) P-06 reclasificar a CONSERVAR. La jerarquía B de P-07 (H1=tríada, tagline=aforismo) ya está aprobada por el propietario (D-M1-03). Con la aprobación → Misión 3 (revisión crítica independiente en contexto separado).
