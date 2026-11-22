@@ -9,7 +9,7 @@ with sync_playwright() as pw:
     p=b.new_page(viewport={"width":1440,"height":900}); errs=[]
     p.on("pageerror",lambda e: errs.append(str(e))); p.on("console",lambda m: errs.append(m.text) if m.type=="error" else None)
     r=p.goto(BASE+"/",wait_until="networkidle"); p.wait_for_timeout(300)
-    ok("home 200",r.status==200); ok("home H1","more than a result" in p.locator("h1").text_content())
+    ok("home 200",r.status==200); h1t=p.locator("h1").text_content(); ok("home H1","agents change" in h1t and "judgment endures" in h1t); ok("hero tagline","more than a result" in p.locator(".hero-portable").text_content())
     ok("hero governance map",p.locator("object.hero-map").count()==1)
     ok("hero shares menu surface",p.locator(".hero").evaluate("e=>getComputedStyle(e).backgroundColor")=="rgb(247, 242, 232)")
     ok("hero mesh layer","hero-mesh.svg" in p.locator(".hero").evaluate("e=>getComputedStyle(e,'::before').backgroundImage"))
