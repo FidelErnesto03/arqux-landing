@@ -319,6 +319,7 @@
       setText("#step-input", s.input);
       setText("#step-change", s.change);
       setText("#step-evidence", s.evidence);
+      setText("#step-case", s.case);
       if (stepDialog && typeof stepDialog.showModal === "function" && !stepDialog.open) {
         stepTrigger = btn;
         stepDialog.showModal();
@@ -431,20 +432,28 @@
 
   /* ---------- codec representation selector (+ I-08: one-shot panel transition) ---------- */
   const views = $$("[data-code-view]");
+  const codePanels = $$("[data-code-panel]");
+  const codeMq = window.matchMedia("(max-width:760px)");
+  let codeManual = false;
+  const applyCodeView = (view, animate) => {
+    views.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.codeView === view)));
+    codePanels.forEach((p) => {
+      const show = view === "both" || p.dataset.codePanel === view;
+      p.hidden = !show;
+      if (show && animate && !REDUCED) {
+        p.classList.remove("panel-in");
+        void p.offsetWidth;
+        p.classList.add("panel-in");
+        p.addEventListener("animationend", () => p.classList.remove("panel-in"), { once: true });
+      }
+    });
+  };
+  applyCodeView(codeMq.matches ? "human" : "both", false);
+  if (codeMq.addEventListener) codeMq.addEventListener("change", () => { if (!codeManual) applyCodeView(codeMq.matches ? "human" : "both", false); });
   views.forEach((btn) =>
     btn.addEventListener("click", () => {
-      const view = btn.dataset.codeView;
-      views.forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
-      $$("[data-code-panel]").forEach((p) => {
-        const show = view === "both" || p.dataset.codePanel === view;
-        p.hidden = !show;
-        if (show && !REDUCED) {
-          p.classList.remove("panel-in");
-          void p.offsetWidth;
-          p.classList.add("panel-in");
-          p.addEventListener("animationend", () => p.classList.remove("panel-in"), { once: true });
-        }
-      });
+      codeManual = true;
+      applyCodeView(btn.dataset.codeView, true);
     })
   );
 

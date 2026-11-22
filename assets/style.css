@@ -79,7 +79,6 @@ h3{font-size:1.1rem;font-weight:650;letter-spacing:-.02em;margin-bottom:8px}.lea
 .hex-visual>.artifact-preview{justify-self:stretch}
 .artifact-preview .artifact-label{padding-right:54px}
 .dim-benefit{margin:0;font:600 17.5px/1.5 var(--mono);color:var(--paper-100)}
-.dim-footer{margin:0;font:500 17.5px/1.5 var(--mono);color:var(--mist-500)}
 .dim-grid{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:16px 20px}
 .dim-q{min-width:0;align-self:stretch;height:100%;display:flex;flex-direction:column;gap:8px;padding:12px 14px;border:1px solid rgba(220,226,227,.14);border-radius:10px;box-sizing:border-box;overflow-wrap:anywhere}
 .dim-q-title{margin:0;font:600 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mist-300)}
@@ -395,8 +394,11 @@ p,li{text-wrap:pretty}html.resolve-cv .codec-section,html.resolve-cv .evidence-s
 .case-dialog-kicker{margin:0 0 8px;font:600 12px/1.3 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:#D08A22}.case-dialog-title{margin:0 0 12px;font:650 clamp(1.6rem,2.4vw,2.1rem)/1.15 var(--sans);letter-spacing:-.03em;color:var(--mist-300)}
 .case-dialog-desc{margin:0;font:500 18px/1.7 var(--sans);color:#E4EAEC}.case-dialog-why{margin-top:24px;padding-top:18px;border-top:1px solid rgba(220,226,227,.2)}
 .case-dialog-why>span{display:block;margin-bottom:7px;font:600 11px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--amber-500)}.case-dialog-why p{margin:0;font:500 17px/1.7 var(--sans);color:#E4EAEC}
-@media(max-width:760px){.case-dialog{padding:24px 20px}.case-dialog-title{font-size:1.4rem}}
+@media(max-width:760px){.case-dialog{padding:24px 20px}.case-dialog-title{font-size:1.4rem}.compat-paths{grid-template-columns:1fr}}
 .step-dialog .step-dialog-grid{margin-top:26px;gap:20px 26px}
+.step-case{margin:0 0 20px}
+.step-case-label{display:block;margin-bottom:6px;font:600 10px/1.4 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--mist-500)}
+.step-case-text{display:block;font:500 15.5px/1.55 var(--sans);color:var(--mist-300)}
 .step-dialog .detail-item b{font-size:11px;letter-spacing:.1em}
 .step-dialog .detail-item span{font-size:16px;line-height:1.65}
 @media(max-width:760px){.step-dialog .step-dialog-grid{grid-template-columns:1fr;gap:16px}}
@@ -464,6 +466,7 @@ p,li{text-wrap:pretty}html.resolve-cv .codec-section,html.resolve-cv .evidence-s
 
 /* ===== editorial v3 (discursive audit): disclosures + evidence filter ===== */
 details.ev-detail{margin-top:14px;border:1px solid var(--line-light);border-radius:13px;background:var(--paper-100);overflow:hidden}
+.dim-scope-detail{margin-top:26px}
 details.ev-detail>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;padding:13px 16px;font:600 13.5px/1.35 var(--sans);color:var(--slate-800);transition:background .15s ease}
 details.ev-detail>summary::-webkit-details-marker{display:none}
 details.ev-detail>summary::before{content:"";flex:none;width:8px;height:8px;border-right:2px solid var(--amber-700);border-bottom:2px solid var(--amber-700);transform:rotate(-45deg);transition:transform .18s ease}
@@ -496,6 +499,12 @@ details.ev-detail>summary:focus-visible{outline:2px solid var(--teal-600);outlin
 body.page-reference main > section[id]{min-height:auto;display:block;padding-block:72px}
 body.page-reference .section-copy,body.page-reference .note,body.page-reference .lead{max-width:68ch}
 .compat-cta{margin-top:44px;padding-top:30px;border-top:1px solid var(--line-light)}
+.compat-paths{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.compat-path{display:flex;flex-direction:column;gap:8px;padding:18px 18px 20px;border:1px solid var(--line-light);border-radius:14px;background:var(--paper-100)}
+.compat-path-title{margin:0;font:650 15.5px/1.35 var(--sans);color:var(--ink-950)}
+.compat-path-desc{margin:0;font:500 13.5px/1.55 var(--sans);color:var(--slate-700)}
+.compat-path-note{margin:2px 0 0;font:500 12px/1.5 var(--mono);color:#56636d}
+.compat-path .compat-path-cta{margin-top:auto;align-self:flex-start}
 body.page-reference #dimensions{min-height:calc(100svh - var(--header-height));display:flex;flex-direction:column}
 body.page-reference #dimensions>.wrap{flex:1;display:flex;flex-direction:column}
 body.page-reference #dimensions .hex-layout{flex:1}

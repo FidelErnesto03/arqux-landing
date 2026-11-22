@@ -32,7 +32,7 @@ with sync_playwright() as pw:
     # fused anchors: learning inside artifacts, continue inside compatibility, intro alias
     ok("learning subsection","does not make it an active rule" in p.locator("#artifacts #learning").text_content())
     ok("learning not a section",p.locator("section#learning").count()==0)
-    ok("continue cta","Verify a first task" in p.locator("#compatibility #continue").text_content())
+    ok("continue cta","Verify the first task" in p.locator("#compatibility #continue").text_content() and "See how to connect an agent" in p.locator("#compatibility #continue").text_content())
     ok("continue not a section",p.locator("section#continue").count()==0)
     ok("intro alias",p.locator("#intro").count()==1)
     anchors=p.evaluate("['intro','workflow','dimensions','artifacts','learning','format','compatibility','continue'].map(a=>!!document.getElementById(a))")
@@ -80,7 +80,7 @@ with sync_playwright() as pw:
     ok("detail shows all info directly",p.evaluate("document.querySelector('#dim-benefit').textContent.length>10") and p.locator("#dimensions .dim-tech-toggle").count()==0 and p.locator("#dimensions .artifact-preview details").count()==0 and p.locator("#dimensions #ficha-fn").is_visible())
     ok("detail auto height no inner scroll",p.evaluate("(()=>{const a=document.querySelector('#dimensions .artifact-preview');return a.scrollHeight<=a.clientHeight+4})()"))
     ok("active label marked",p.locator("#dimensions .hex-labels text.is-active").count()==1)
-    ok("scope note under title",p.evaluate("!!document.querySelector('#dimensions .section-head .dimensions-scope')") and p.locator("#dimensions .hex-visual details.ev-detail").count()==0)
+    ok("scope note in closed details",p.evaluate("!!document.querySelector('#dimensions details.dim-scope-detail')") and not p.locator("#dimensions details.dim-scope-detail").evaluate("el=>el.open") and p.evaluate("!document.querySelector('#dimensions .dimensions-scope')") and p.locator("#dimensions .dim-q-summary .dim-footer").count()==0)
     p.locator("#dimensions .dim-preview-close").click(); p.wait_for_timeout(250)
     ok("detail closes, menu replays",p.locator("#dimensions .hex-visual.is-detail").count()==0 and p.locator("#dimensions .hex-visual.replay").count()==1)
     ok("focus returns to node",p.evaluate("document.activeElement.dataset.dimension=='2'"))
