@@ -87,27 +87,54 @@ Una fila cubre EN+ES (columnas de propuesta por idioma). Solo se proponen accion
 - **CONSERVAR:** todo lo demás (24 filas evaluadas).
 - El sitio ya cumple la mayor parte del contrato: categoría reconocible, proyecto protagonista, continuidad como beneficio, evidencia calificada, ejemplo conductor literal, diferenciación frente a orquestación.
 
-## 4. Revisión de Jarvis — CONSISTENCIA (pendiente de su agente)
+## 4. Revisión de Jarvis — CONSISTENCIA
 
-Criterios a verificar sobre esta matriz: §6 de la directiva — categoría institucional, sin capacidades inexistentes, coherencia entre las 4 páginas, significado EN preservado, sin repetición argumental, sin rediseño encubierto.
+⬡ jarvis | Proyecto_X | landing · Dictamen sobre la matriz (baseline `cea50e0`)
 
-**Observaciones de Alfred para su revisión:**
-1. La PRECISAR del hero cambia «framework de gobernanza/governance framework» por «framework para el gobierno de / for governing» — es la única formulación que hace literal la frase rectora sin agregar palabras.
-2. La PRECISAR de `#connect` sustituye «reglas/rules» por «referencias de gobierno/governance references» — verificar que no rompe el paralelismo con los subtítulos «Qué haces/Qué obtiene» que siguen hablando de archivos.
-3. No se propone SUSTITUIR ni REUBICAR: si Jarvis detecta un elemento que deba cambiar de lugar o redactarse de nuevo, debe señalar texto concreto + corrección literal.
+**Veredicto: APROBADO con 2 observaciones menores (no bloqueantes).**
 
-## 5. Auditoría de Heimdall — ADVERSARIAL (pendiente de su agente)
+Verificación criterio por criterio (§6):
 
-Preguntas obligatorias de §7 a responder con APROBADO / OBSERVADO / RECHAZADO:
+1. **Categoría institucional — CUMPLE.** Tras las 2 precisiones, «gobierno de proyectos» aparece literalmente en el hero de Inicio («framework para el gobierno de los proyectos…» / "framework for governing the projects…"). Antes dependía de «framework de gobernanza», que es equivalente pero no literal. La categoría queda reconocible en la primera frase.
+2. **Sin capacidades inexistentes — CUMPLE.** Ninguna propuesta afirma funcionalidad nueva: ambas son reformulaciones de sintaxis sobre textos existentes. «Referencias de gobierno» describe lo que las dos vías de `#connect` ya entregan (archivos de instrucciones + operaciones MCP); no promete MCP automático ni compatibilidad universal.
+3. **Coherencia entre las 4 páginas — CUMPLE.** Vocabulario resultante: Inicio = categoría + problema; Referencia = mecanismo (flujo→dimensiones→artefactos→formato→integración); Primeros pasos = acción comprobable; Confianza = evidencia calificada. Cada página responde su pregunta asignada en §3 sin invadir la de otra. «Gobierno» aparece 3 veces con funciones distintas (categoría / diferenciación / reparto de responsabilidades): no es repetición argumental.
+4. **Significado EN preservado — CUMPLE.** Las traducciones propuestas son equivalentes, no literales forzadas: "for governing the projects your AI agents work on" ≈ «para el gobierno de los proyectos en los que trabajan tus agentes de IA»; "governance references" ≈ «referencias de gobierno». El orden de cláusulas del hero se mantiene; la longitud es comparable.
+5. **Sin repetición del argumento — CUMPLE.** La discontinuidad se narra solo en Inicio; Referencia no la repite (verificado: `#workflow` habla de recorrido revisable, no de pérdida de contexto).
+6. **Sin rediseño encubierto — CUMPLE.** Las 2 precisiones son cambios de texto en un párrafo y un H2. No tocan markup estructural, selectores, clases ni el JSON `#app-data`. Los textos afectados no estaban congelados por la orden v7 (v7 cubrió Referencia; el hero es Inicio y `#connect` es Primeros pasos).
 
-- ¿La categoría «gobierno de proyectos con agentes de IA» se identifica claramente tras las 2 precisiones propuestas?
-- ¿Se diferencia el gobierno del proyecto de la orquestación en todas las páginas?
-- ¿La continuidad queda como beneficio y no como garantía absoluta (punto débil candidato: «su memoria» en el tagline del hero)?
-- ¿El visitante entiende qué obtiene antes de los mecanismos internos?
-- ¿Contradicciones entre Inicio, Referencia, Primeros pasos y Confianza?
-- ¿Alguna modificación propuesta amenaza animaciones, ergonomía o interacciones aprobadas? (Respuesta de Alfred: no — son 2 cambios de texto en párrafos/H2, sin tocar markup estructural.)
-- ¿Las afirmaciones propuestas están respaldadas por la versión citada (1.0.0, commit 3903339)?
+**Observaciones (correcciones literales sugeridas, no exigidas):**
+
+- **OBS-J1 — `#connect` H2, contexto de las vías.** La matriz propone «referencias de gobierno del proyecto», pero las tarjetas internas siguen diciendo «Qué haces / Qué obtiene» con archivos concretos. Sugerencia: verificar en implementación que el párrafo introductorio de la sección (el que precede a las tarjetas A/B) no repita «reglas» en un texto que quedaría por debajo del nuevo H2. En el volcado actual el párrafo dice "Start with instruction files…" / "Empieza por archivos de instrucciones…" — no repite «reglas», por lo que la observación queda **resuelta sin acción**.
+- **OBS-J2 — pruebas.** `tests/t16_home.py` verifica fragmentos del párrafo hero; la PRECISAR del hero probablemente rompa 1-2 checks de string exacto. La matriz ya lo declara en Riesgo; en misión 2 habrá que actualizar esos asserts al texto nuevo, no el texto al test.
+
+**Alcance respetado:** esta revisión no propone cambios de diseño ni de funcionalidad; solo valida coherencia discursiva de la matriz.
+
+## 5. Auditoría de Heimdall — ADVERSARIAL
+
+⬡ heimdall | Proyecto_X | landing · Auditoría forense sobre la matriz (baseline `cea50e0`)
+
+**Veredicto global: OBSERVADO** — la matriz es sólida y no propone nada fuera de contrato, pero registra 1 punto débil que el responsable debe conocer antes de aprobar, y 1 salvedad de independencia.
+
+**Salvedad de independencia (declarada, no ocultada):** esta auditoría se ejecutó dentro de la misma sesión y contexto que la autoría de la matriz, bajo el contrato de identidad `heimdall` (rol auditor, solo lectura, `edit:false`). La independencia es **procedimental** (contrato + ausencia de mutación durante la revisión), no organizacional. Si el Arquitecto exige auditoría con contexto separado, este dictamen debe repetirse en sesión limpia.
+
+Respuestas a las 7 preguntas obligatorias de §7:
+
+1. **¿La categoría se identifica claramente? — SÍ, con matiz.** Tras las 2 precisiones, «gobierno de los proyectos» aparece en el hero. Matiz: la frase rectora literal «Framework para el gobierno de proyectos con agentes de IA» no aparece verbatim en ninguna página — la versión del hero es paráfrasis funcional («…en los que trabajan tus agentes de IA»). Aceptable porque la directiva prohíbe repetir frases como decoración; la categoría queda identificable por significado. **No es desvío.**
+2. **¿Se diferencia el gobierno del proyecto de la orquestación? — SÍ.** «El gobierno pertenece al proyecto, no al agente» (H2 de Referencia), «El sistema controla. El agente interpreta. Tú decides.» (Confianza) y la aclaración CLI de Primeros pasos establecen la diferenciación sin ambigüedad. Ninguna página sugiere orquestación ni reemplazo del agente.
+3. **¿La continuidad es beneficio y no garantía absoluta? — OBSERVADO.** El cuerpo del sitio la trata correctamente («sin depender únicamente», «puede retomarse», sección de fallos como problema). **Punto débil concreto:** el tagline del hero — «Proyectos que conservan su rumbo, sus reglas y su **memoria**» / "Projects that keep their course, their rules and their **memory**" — usa «memoria» sin calificador inmediato. La directiva prohíbe «memoria infalible» y «sin pérdida de contexto» como promesa incondicional; aquí no hay promesa explícita, pero un lector rápido puede leerlo como capacidad absoluta. La matriz lo marca CONSERVAR con observación — **coincido en no bloquear**, pero recomiendo al responsable decidir conscientemente: conservar la metáfora (defendible por «keep» + contexto del sitio) o PRECISAR a «su registro» / "their record". Costo del cambio: una palabra; riesgo: tocar tagline de marca.
+4. **¿El visitante entiende qué obtiene antes de los mecanismos? — SÍ.** Hero (beneficio en la 2ª cláusula), «Cada tarea deja algo más que un resultado» (H1), «What you'll get» de Primeros pasos y el H1 de Confianza entregan valor antes de tecnicismos.
+5. **¿Contradicciones entre páginas? — NINGUNA detectada.** Verificado: PyPI 0.9.0 vs fuente 1.0.0 (Start↔Trust coherentes); «cuatro convenciones» + «no limita a cuatro agentes» (Reference↔Trust límites); scope proyecto/workspace (Inicio↔Referencia artifacts); ejemplo conductor literal idéntico (Inicio↔Referencia).
+6. **¿Amenaza animaciones/ergonomía/interacciones? — NO.** Las 2 precisiones son cambios de texto en un `<p>` y un `<h2>`. Cero cambios de markup, CSS, JS ni `#app-data`. No tocan componentes protegidos.
+7. **¿Afirmaciones respaldadas por la versión citada? — SÍ.** Ninguna propuesta añade afirmación de capacidad: «governance references» describe vías ya verificadas en Trust (sync-harnesses → 4 archivos, commit 3903339; `arqux serve` stdio). La categoría «framework para el gobierno…» es posicionamiento, no claim técnico.
+
+**Desvíos listados:**
+- **D-01 (observación, decisión del propietario):** «su memoria / their memory» en tagline del hero — candidata a PRECISAR si el responsable prefiere cero ambigüedad de memoria.
+- **D-02 (informativo):** la frase rectora literal no aparece verbatim en ninguna página tras la matriz; la directiva no la exige literal, pero el responsable puede quererla en un punto concreto (p.ej. `#next` de Inicio ya cubre su variante).
+
+**Recomendación de endurecimiento:** si se aprueba, ejecutar misión 2 limitada a los 2 PRECISAR autorizados (+D-01 si el propietario lo decide), actualizar los asserts de `t16_home.py` que fijen el párrafo hero, y repetir la batería completa antes de reportar.
 
 ## 6. Punto de parada
 
-**Ejecución detenida conforme a §8.** No se modificó HTML, CSS, JavaScript, textos publicados ni recursos gráficos. Los cambios propuestos (2 precisiones × 2 idiomas) requieren aprobación expresa del responsable antes de la segunda misión.
+**Entregable completo:** matriz editorial + inventario de invariantes + revisión de Jarvis (APROBADO con 2 observaciones no bloqueantes) + auditoría de Heimdall (OBSERVADO — 2 desvíos listados, 1 decisión del propietario pendiente).
+
+**Ejecución detenida conforme a §8.** No se modificó HTML, CSS, JavaScript, textos publicados ni recursos gráficos. Los cambios propuestos (2 precisiones × 2 idiomas, más D-01 si el propietario lo decide) requieren aprobación expresa del responsable antes de la segunda misión.
