@@ -45,8 +45,20 @@ El vocabulario «team/equipo» aparece en roles del workflow de Referencia («St
 **D-M0-03 · Meta-descriptions desalineadas con la matriz v8.**
 `<meta name="description">` de Inicio conserva la formulación antigua («a governance framework for projects worked by AI agents» / «framework de gobernanza para los proyectos…») — es exactamente el texto que la matriz v8 propuso PRECISAR en el hero visible, pero las meta-etiquetas no estaban en su alcance. Si M2 aprueba la precisión del hero, las meta-descriptions deben acompañarla (Misión 4 las tocará; no son «texto publicado» visible pero sí superficie indexable). También aplica a los `og:`/`twitter:` si existen — verificar en M2.
 
-**D-M0-04 · `sim-03-report.md` citado como base no está en el repositorio.**
-El manifiesto declara base: matriz v8 + «evaluación sim-03-report.md». El archivo no existe en `docs/` ni en el repo. Si contiene la evaluación de primera impresión que fundamenta parte del ciclo, se necesita su contenido o una declaración de que es material externo del propietario. **No es discrepancia del sitio** — es discrepancia de insumos de la directriz.
+**D-M0-04 · `sim-03-report.md` — RESUELTA.**
+Localizado fuera del repo en `ARQUX-internal/ops/arqux-evaluation/sim-03-web-guided-product-utility/report/sim-03-report.md` y copiado al proyecto en `docs/evaluacion-sim03/` junto a `utility-map.md`. Contenido: 24 personas neutrales sobre la landing real (`preliminar-b`, ES), 96 evaluaciones de página + 24 finales, modelo deepseek-v4.1-flash, ejecutada 2026-11-22.
+
+**Hallazgos sim-03 que alimentan Misión 1 (evidencia, no opinión):**
+
+- **Categoría CONFIRMADA:** 24/24 describen ArqUX como framework/capa de gobernanza; **ninguna lo confunde con orquestador**. El posicionamiento actual ya funciona.
+- **Problema reconocido + honestidad valorada:** 22/24 elogian la separación probado/código/pendiente en Confianza — «No la suavice» (recomendación §7.8 del reporte, coincidente con manifiesto §VI-Confianza).
+- **Brecha central (24/24 mentions):** la página no prueba continuidad entre agentes/sesiones/harnesses — la prueba CLI es sin agente y así se declara. **Fuera del alcance del ciclo** (no es desarrollo funcional ni nueva demostración): se registra como oportunidad para ciclo posterior, conforme a §VII.10 del manifiesto. Lo que SÍ entra en alcance: que el discurso no prometa lo que la evidencia no muestra (ya lo hace) y evaluar si la formulación del beneficio necesita ajuste.
+- **D-M0-01/D-M0-02 CONFIRMADAS con evidencia:** «coordinación multiusuario/equipo» aparece en **23/24** evaluaciones; N01 (tech lead, equipo de 8) lo registra como bloqueo directo: «No hay plataforma multiusuario alojada en 1.0.0, y mi equipo es de ocho personas». Nadie infiere el ámbito **personal** porque el sitio nunca lo dice — fortaleza adicional para precisar §2.2.
+- **D-M0-03 ampliada:** la brecha versión 1.0.0-fuente vs 0.9.0-PyPI aparece en **24/24** evaluaciones como fricción de adopción; el sitio ya la declara honestamente (Start `#channels`, Trust `#limits`), pero el reporte sugiere evaluar si la declaración basta o necesita más visibilidad (M1 decide; no es hueco de honestidad).
+- **Evidencia/atribución/exportación (24/24):** varias personas no encontraron que `evidence export`, `seal.cortex` y firmas Ed25519 existen y están verificados en código — capacidad real enterrada en detalles de Confianza. **Candidata M2:** mejorar descubribilidad de lo ya verificado, sin agregar claims.
+- **«No es otro orquestador» (N03):** una persona pidió explícitamente diferenciación frente a orquestadores existentes; el sitio lo implica («governance belongs to the project») pero no lo enuncia. **Candidata M1:** ¿entra en vocabulario institucional?
+- **Mecánica de decisión (N11/N21):** «la página explica el modelo, no la mecánica» — no hay ejemplo paso a paso «registrar decisión → otro agente la consulta». Añadirlo sería contenido nuevo en sección existente; **candidata M2** con justificación, no nueva página.
+- **Fuera de alcance (registrar para ciclos posteriores):** prueba real de continuidad entre dos agentes/harnesses, imagen Docker/oficial, integración con tickets/ADRs/LangGraph/Airflow, RBAC/retención/PII/modelo de amenazas, especificación pública de contratos MCP, test humano de 15 segundos + piloto real (Misión 5 del ciclo).
 
 **D-M0-05 · Vocabulario de beneficios §IV no etiquetado.**
 Los seis beneficios (Continuidad, Consistencia, Control, Trazabilidad, Portabilidad, Aprendizaje gobernado) no aparecen nombrados como tal en ninguna página; el sitio expresa valor en prosa («continuous, reviewable and auditable»). No es error — M1 decide si el vocabulario institucional debe nombrarse explícitamente o seguir implícito.
@@ -57,6 +69,7 @@ Confianza ya declara Platform como dirección futura y no capacidad («Hosted mu
 ## 4. Fuentes técnicas comprobadas
 
 - `docs/analisis-discursivo-v8.md` — matriz + revisiones (base directa).
+- `docs/evaluacion-sim03/sim-03-report.md` + `utility-map.md` — evaluación de 24 personas neutrales (insumo rector del manifiesto, copiado desde `ARQUX-internal/ops/arqux-evaluation/`).
 - `tests/t16_home.py`, `t18_reference.py`, `t20_routes.py`, `t21_start_trust.py`, `t22_contract.py` — contratos editoriales verificados por suite.
 - `tools/capture_v4.py` + `docs/evidencia-v4/` — evidencia visual por viewport.
 - Texto completo extraído de las 8 páginas (volcado estructurado por sección) para este análisis.
