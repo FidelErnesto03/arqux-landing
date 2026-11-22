@@ -8,7 +8,8 @@
 
 ## 1. Posicionamiento rector (formalizado)
 
-- **Categoría:** «Framework para el gobierno (personal) de proyectos con agentes de IA» — literal ES/EN la define el manifiesto §2.1; «personal» la precisa §2.2.
+- **Categoría:** «Framework para el gobierno de proyectos con agentes de IA» — literal del manifiesto §2.1.
+- **Ámbito personal (§2.2):** el gobierno corresponde a **una persona**; los agentes, modelos y harnesses participan. Por decisión del propietario **D-M1-01** este ámbito se comunica en **segunda persona** («tus proyectos» / "your projects") — la fórmula «gobierno personal» / "personal governance" queda descartada por ambigüedad (roza «uso personal/hobby», que el manifiesto excluye explícitamente).
 - **Protagonista:** el proyecto del usuario. Los agentes, modelos y harnesses son participantes.
 - **Beneficio central:** continuidad del trabajo y conservación de los criterios del proyecto — beneficio, nunca garantía.
 - **Diferenciación:** no reemplaza agentes, no es orquestador, no es plataforma multiusuario (Platform = dirección futura, §2.3).
@@ -39,10 +40,10 @@ Audiencias secundarias cubiertas por las mismas páginas: juniors/maintainers (f
 
 | Concepto | ES | EN | Regla de uso |
 |---|---|---|---|
-| Categoría | framework para el gobierno (personal) de proyectos con agentes de IA | framework for the (personal) governance of projects with AI agents | Forma rectora; no reducir a «gestor de contexto/memoria» |
+| Categoría | framework para el gobierno de proyectos con agentes de IA | framework for governing projects with AI agents | Forma rectora; no reducir a «gestor de contexto/memoria»; el ámbito personal se expresa en segunda persona, no como adjetivo (D-M1-01) |
 | Lo que se conserva | referencias de gobierno | governance references | Reglas+contexto+decisiones+evidencia del proyecto |
 | Beneficio | continuidad del trabajo | work continuity | Beneficio, no garantía; siempre calificada |
-| Ámbito | gobierno personal | personal governance | Un humano gobierna; agentes participan; nunca insinuar multiusuario |
+| Ámbito | una persona gobierna — expresado en segunda persona («tus», "your") | one person governs — second person ("your") | El gobierno es de una persona; agentes participan; nunca insinuar multiusuario. Nunca «gobierno personal» ni «uso personal» |
 | Roles | proyecto · agente · modelo · harness · usuario | project · agent · model · harness · user | «equipo/team» retirado del rol decisor → ver §6 D-01 |
 | Productos | ArqUX Framework (actual) · ArqUX Platform (dirección futura) | ArqUX Framework · ArqUX Platform | Nunca atribuir capacidades de Platform al Framework |
 | Niveles de evidencia | ejecutado y reproducido · verificado en código · reportado · pendiente · fuera de alcance | execution-tested · verified in source · reported · pending · out of scope | Ya implementados en Confianza; usar siempre que se afirme capacidad |
@@ -81,7 +82,7 @@ Audiencias secundarias cubiertas por las mismas páginas: juniors/maintainers (f
 
 | # | Elemento | Decisión | Justificación |
 |---|---|---|---|
-| P-01 | Párrafo hero Inicio EN/ES | Adoptar formulación de gobierno **+ personal**: p.ej. ES «…framework para el gobierno personal de los proyectos en los que trabajan tus agentes de IA…» / EN "…framework for the personal governance of the projects your AI agents work on…" (texto final M2) | Categoría literal §2.1 + ámbito §2.2 en la primera frase; resuelve D-M0-01/02 con evidencia sim-03 (23/24 multiuser) |
+| P-01 | Párrafo hero Inicio EN/ES | Reformular en segunda persona conservando la categoría rectora: ES «ArqUX es un framework para gobernar los proyectos en los que trabajan tus agentes de IA.» / EN "ArqUX is a framework for governing the projects your AI agents work on." — resto del párrafo (beneficios) sin cambios; texto literal final en M2 | Categoría §2.1 en forma verbal + ámbito §2.2 vía «tus/your» (D-M1-01); resuelve D-M0-01/02 con evidencia sim-03 (23/24 multiuser) |
 | P-02 | `<meta name="description">` Inicio EN/ES (+ og:/twitter: si existen) | Acompañar la formulación del hero | D-M0-03: superficie indexable desalineada con la precisión aprobada |
 | P-03 | H2 `#connect` Primeros pasos | «…referencias de gobierno del proyecto…» / "…the project's governance references…" (propuesta v8 ya auditada) | Alinea vocabulario con Referencia y categoría |
 | P-04 | «Team/Equipo» como rol decisor | **Retirar del rol decisor**: kicker «Team decision/review» → decisión/proyecto; `case`/`who` «The team…»/«El equipo…» → el usuario/proyecto; h3 Trust «Team»/«Equipo» → «You»/«Tú» (cierra con «You decide»/«Tú decides»); «several teams or machines» → «several projects or machines» | §2.2 gobierno personal: «equipo» sugiere multi-persona; «Tú decides» ya existe como H2 — el h3 debe ser coherente |
