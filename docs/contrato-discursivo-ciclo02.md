@@ -13,6 +13,7 @@
 - **Protagonista:** el proyecto del usuario. Los agentes, modelos y harnesses son participantes.
 - **Beneficio central:** continuidad del trabajo y conservación de los criterios del proyecto — beneficio, nunca garantía.
 - **Diferenciación:** no reemplaza agentes, no es orquestador, no es plataforma multiusuario (Platform = dirección futura, §2.3).
+- **Lema del hero (D-M1-02):** «Tus agentes cambian. Tus proyectos evolucionan. Tu criterio permanece.» / "Your agents change. Your projects evolve. Your judgment endures." — ocupa el slot `.hero-portable` (sustituye al tagline «Proyectos que conservan su rumbo, sus reglas y su memoria»); `#next` lo expande con «decisiones y evidencia» y las rutas (opción A aprobada por el propietario). Resuelve el cabo suelto D-01 de la auditoría v8: el lema no contiene «memoria», por lo que la tensión sobre garantía de memoria queda disuelta por sustitución.
 
 ## 2. Audiencias prioritarias
 
@@ -88,6 +89,7 @@ Audiencias secundarias cubiertas por las mismas páginas: juniors/maintainers (f
 | P-04 | «Team/Equipo» como rol decisor | **Retirar del rol decisor**: kicker «Team decision/review» → decisión/proyecto; `case`/`who` «The team…»/«El equipo…» → el usuario/proyecto; h3 Trust «Team»/«Equipo» → «You»/«Tú» (cierra con «You decide»/«Tú decides»); «several teams or machines» → «several projects or machines» | §2.2 gobierno personal: «equipo» sugiere multi-persona; «Tú decides» ya existe como H2 — el h3 debe ser coherente |
 | P-05 | Afirmación dogfooding | Añadir como **fila de evidencia en Confianza** (nivel «verificado»), con alcance exacto D-M0-07; NO en portada | Es evidencia real verificable; Trust es donde vive la evidencia; alcance honesto sin marketing |
 | P-06 | Vocabulario de beneficios §IV | Alinear la prosa existente a los términos canónicos (continuidad/consistencia/control/trazabilidad/portabilidad/aprendizaje gobernado) sin añadir listas ni secciones nuevas | D-M0-05: nombrarlos no requiere componente nuevo; forzar una lista violaría «no todo necesita explicarse» |
+| P-07 | Tagline `.hero-portable` Inicio EN/ES | Sustituir por el lema rector (D-M1-02): ES «Tus agentes cambian. Tus proyectos evolucionan. Tu criterio permanece.» / EN "Your agents change. Your projects evolve. Your judgment endures." | Nombra el dolor real (turnover de agentes/harnesses, sim-03); tres tiempos narrativos (volátil→crece→permanece); segunda persona coherente con D-M1-01; `#next` actúa como expansión, no duplicado |
 
 ### RETIRAR
 
