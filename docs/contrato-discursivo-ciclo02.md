@@ -45,7 +45,7 @@ Audiencias secundarias cubiertas por las mismas páginas: juniors/maintainers (f
 | Lo que se conserva | referencias de gobierno | governance references | Reglas+contexto+decisiones+evidencia del proyecto |
 | Beneficio | continuidad del trabajo | work continuity | Beneficio, no garantía; siempre calificada |
 | Ámbito | una persona gobierna — expresado en segunda persona («tus», "your") | one person governs — second person ("your") | El gobierno es de una persona; agentes participan; nunca insinuar multiusuario. Nunca «gobierno personal» ni «uso personal» |
-| Roles | proyecto · agente · modelo · harness · usuario | project · agent · model · harness · user | «equipo/team» retirado del rol decisor → ver §6 D-01 |
+| Roles | proyecto · agente · modelo · harness · usuario | project · agent · model · harness · user | «equipo/team» retirado del rol decisor → ver §6 P-04 |
 | Productos | ArqUX Framework (actual) · ArqUX Platform (dirección futura) | ArqUX Framework · ArqUX Platform | Nunca atribuir capacidades de Platform al Framework |
 | Niveles de evidencia | ejecutado y reproducido · verificado en código · reportado · pendiente · fuera de alcance | execution-tested · verified in source · reported · pending · out of scope | Ya implementados en Confianza; usar siempre que se afirme capacidad |
 | Casos | prueba CLI (sin agente) · dogfooding de gobernanza | CLI test (no agent) · governance dogfooding | Distinguir estrictamente |
@@ -69,7 +69,8 @@ Audiencias secundarias cubiertas por las mismas páginas: juniors/maintainers (f
 | H1 «Cada tarea deja algo más que un resultado» / "Every task leaves more than a result" | Inicio | Frase rectora literal del manifiesto |
 | Sección `#failures` completa (5 modos de ruptura) | Inicio | Problema reconocible = mecanismo de identificación (22/24 valoran honestidad) |
 | Demo `#local` + ejemplo conductor | Inicio↔Referencia | Literalmente idéntico EN/ES; continuidad de ejemplo exigida |
-| `#next` «El trabajo cambia… criterios permanecen por proyecto, entre agentes» | Inicio | Variante válida de frase rectora; ya dice «por proyecto» |
+| `#next` «El trabajo cambia… criterios permanecen por proyecto, entre agentes» | Inicio | Expansión del lema del hero (D-M1-02, opción A): repite el motivo en forma desarrollada y añade «decisiones y evidencia» + rutas — motivo al inicio, desarrollo al cierre |
+| Eyebrow hero «For people who run projects…» / «Para quien gestiona proyectos…» | Inicio | Ya comunica el ámbito de una persona en registro personal; sostiene D-M1-01 sin cambios |
 | `#workflow` completo (etapas, metas, modal con case) | Referencia | Contrato v7 cumplido; ejemplo conductor coherente |
 | `#dimensions` (hexágono, 6 dims, scope en details) | Referencia | Representación conceptual honesta con límites por dimensión |
 | `#artifacts` (inspector, aviso ilustrativo, lección≠regla) | Referencia | Ámbitos proyecto/workspace correctos; advertencias esenciales |
@@ -83,8 +84,8 @@ Audiencias secundarias cubiertas por las mismas páginas: juniors/maintainers (f
 
 | # | Elemento | Decisión | Justificación |
 |---|---|---|---|
-| P-01 | Párrafo hero Inicio EN/ES | Reformular en segunda persona conservando la categoría rectora: ES «ArqUX es un framework para gobernar los proyectos en los que trabajan tus agentes de IA.» / EN "ArqUX is a framework for governing the projects your AI agents work on." — resto del párrafo (beneficios) sin cambios; texto literal final en M2 | Categoría §2.1 en forma verbal + ámbito §2.2 vía «tus/your» (D-M1-01); resuelve D-M0-01/02 con evidencia sim-03 (23/24 multiuser) |
-| P-02 | `<meta name="description">` Inicio EN/ES (+ og:/twitter: si existen) | Acompañar la formulación del hero | D-M0-03: superficie indexable desalineada con la precisión aprobada |
+| P-01 | Párrafo hero Inicio EN/ES | **Formulación del propietario:** ES «ArqUX es un framework para gobernar tus proyectos, ejecutados por agentes de IA.» / EN "ArqUX is a framework for governing your projects, executed by AI agents." — resto del párrafo (beneficios) sin cambios; el matiz léxico final (p.ej. ejecutados/desarrollados/built) se cierra en M2 | Categoría §2.1 en forma verbal + ámbito §2.2 vía «tus/your» (D-M1-01); resuelve D-M0-01/02 con evidencia sim-03 (23/24 multiuser) |
+| P-02 | `<meta name="description">` Inicio EN/ES (+ og:/twitter: si existen) | Derivar de las formulaciones P-01 + P-07: categoría en forma verbal + lema o su esencia | D-M0-03: superficie indexable desalineada con la precisión aprobada |
 | P-03 | H2 `#connect` Primeros pasos | «…referencias de gobierno del proyecto…» / "…the project's governance references…" (propuesta v8 ya auditada) | Alinea vocabulario con Referencia y categoría |
 | P-04 | «Team/Equipo» como rol decisor | **Retirar del rol decisor**: kicker «Team decision/review» → decisión/proyecto; `case`/`who` «The team…»/«El equipo…» → el usuario/proyecto; h3 Trust «Team»/«Equipo» → «You»/«Tú» (cierra con «You decide»/«Tú decides»); «several teams or machines» → «several projects or machines» | §2.2 gobierno personal: «equipo» sugiere multi-persona; «Tú decides» ya existe como H2 — el h3 debe ser coherente |
 | P-05 | Afirmación dogfooding | Añadir como **fila de evidencia en Confianza** (nivel «verificado»), con alcance exacto D-M0-07; NO en portada | Es evidencia real verificable; Trust es donde vive la evidencia; alcance honesto sin marketing |
@@ -93,7 +94,7 @@ Audiencias secundarias cubiertas por las mismas páginas: juniors/maintainers (f
 
 ### RETIRAR
 
-Ninguna afirmación actual requiere retirada — el escaneo §5.3 y la revisión página a página no encontraron violaciones ni claims sin respaldo.
+Ninguna **afirmación** actual requiere retirada — el escaneo §5.3 y la revisión página a página no encontraron violaciones ni claims sin respaldo. Matiz: P-04 retira el *término* «equipo/team» del rol decisor, pero como sustitución dentro de elementos conservados (PRECISAR), no como retiro de una afirmación.
 
 ### FUERA DE ALCANCE (registrado para ciclos posteriores — no proponer en este ciclo)
 
