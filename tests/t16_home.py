@@ -30,10 +30,33 @@ with sync_playwright() as pw:
         ok("links keyboard reachable",M.locator(".hf-link[role='link'][tabindex='0']").count()==7)
         ok("governed badges",M.locator(".badge-text").count()==2)
         ok("badge legible at render size",float(M.locator(".badge-text").first.evaluate("e=>getComputedStyle(e).fontSize").replace("px",""))>=18)
-        ok("projects output bus symmetric",M.locator(".hf-out").count()==3 and M.locator('line[x1="1096"]').count()==2)
+        ok("projects converge into one flow to lessons",all(t in p.content() for t in (
+            '<path d="M 1078 205 L 1098 205 L 1098 532 Q 1098 550 1084 550 L 1076 550" stroke="#116244" stroke-width="5"',
+            '<path d="M 1078 387 L 1098 387" stroke="#116244" stroke-width="5"',
+        )) and p.content().count('stroke="#116244" stroke-width="4.5"') >= 1)
+        ok("lessons return feeds agent spine",'M 334 550 L 14 550 Q -6 550 -6 530 L -6 443' in p.content())
         ok("no single-project arrow","translate(705, 448)" not in p.content())
         ok("workspace frame evident",M.locator(".hf-frame").count()==1 and M.locator(".hf-frame").get_attribute("fill")=="none" and "5 7" in M.locator(".hf-frame").get_attribute("stroke-dasharray"))
-        ok("reading bus feeds all agents",M.locator(".hf-branch").count()==4)
+        ok("agent exit flows end at workspace border",all(t in p.content() for t in (
+            '<line x1="277" y1="149" x2="314" y2="149" stroke="#D77A00" stroke-width="5.5"',
+            '<line x1="277" y1="247" x2="314" y2="247" stroke="#D77A00" stroke-width="5.5"',
+            '<line x1="277" y1="345" x2="314" y2="345" stroke="#D77A00" stroke-width="5.5"',
+            '<line x1="277" y1="443" x2="314" y2="443" stroke="#D77A00" stroke-width="5.5"',
+            '<path d="M 314 141 L 322 149 L 314 157" fill="none" stroke="#D77A00" stroke-width="5"',
+            '<path d="M 314 239 L 322 247 L 314 255" fill="none" stroke="#D77A00" stroke-width="5"',
+            '<path d="M 314 337 L 322 345 L 314 353" fill="none" stroke="#D77A00" stroke-width="5"',
+            '<path d="M 314 435 L 322 443 L 314 451" fill="none" stroke="#D77A00" stroke-width="5"',
+        )))
+        ok("reading bus feeds all agents final arrows",all(t in p.content() for t in (
+            '<line x1="-6" y1="443" x2="-6" y2="149" stroke="#116244" stroke-width="5"',
+            '<path d="M 31 142 L 39 149 L 31 156" fill="none" stroke="#116244" stroke-width="4"',
+            '<path d="M 31 240 L 39 247 L 31 254" fill="none" stroke="#116244" stroke-width="4"',
+            '<path d="M 31 338 L 39 345 L 31 352" fill="none" stroke="#116244" stroke-width="4"',
+            '<path d="M 31 436 L 39 443 L 31 450" fill="none" stroke="#116244" stroke-width="4"',
+        )))
+        ok("reading box removed","translate(44, 245)" not in p.content())
+        ok("agent icons shifted with cards",all(t in p.content() for t in ('<circle cx="79" cy="144"','<circle cx="79" cy="238"','<circle cx="79" cy="332"','<circle cx="79" cy="426"')) and p.content().count('transform="translate(0,')>=4)
+        ok("lockup shadow","hf-lockshadow" in p.content() and "feDropShadow" in p.content() and 'filter="url(#hf-lockshadow)"' in p.content())
         ok("no single-agent feed",M.locator('line[x1="137"]').count()==0)
         ok("brand amber only",M.locator("[fill='#D77A00'],[stroke='#D77A00']").count()>=18 and M.locator("[stroke='#FFB547']").count()>=2)
         M.locator(".hf-link").first.focus()
@@ -132,8 +155,19 @@ with sync_playwright() as pw:
     ok("ES hero flow present",q.locator("#hero-flow").count()==1)
     ok("ES hero flow routes",q.locator('.hf-link[data-target="/es/referencia/#compatibility"]').count()==4 and q.locator('.hf-link[data-target="/es/referencia/#dimensions"]').count()==2 and q.locator('.hf-link[data-target="/es/referencia/#artifacts"]').count()==1)
     ok("ES governed badge",q.locator(".badge-text").evaluate_all("els=>els.map(e=>e.textContent)")==["GOBERNADO","GOBERNADO"])
-    ok("ES output bus",q.locator(".hf-out").count()==3)
-    ok("ES workspace frame",q.locator(".hf-frame").count()==1 and q.locator(".hf-branch").count()==4)
+    ok("ES projects converge into one flow",all(t in q.content() for t in (
+        '<path d="M 1078 205 L 1098 205 L 1098 532 Q 1098 550 1084 550 L 1076 550" stroke="#116244" stroke-width="5"',
+        '<path d="M 1078 387 L 1098 387" stroke="#116244" stroke-width="5"',
+    )))
+    ok("ES lessons return feeds agent spine",'M 334 550 L 14 550 Q -6 550 -6 530 L -6 443' in q.content())
+    ok("ES reading bus feeds all agents final arrows",all(t in q.content() for t in (
+        '<line x1="-6" y1="443" x2="-6" y2="149" stroke="#116244" stroke-width="5"',
+        '<path d="M 31 142 L 39 149 L 31 156" fill="none" stroke="#116244" stroke-width="4"',
+        '<path d="M 31 240 L 39 247 L 31 254" fill="none" stroke="#116244" stroke-width="4"',
+        '<path d="M 31 338 L 39 345 L 31 352" fill="none" stroke="#116244" stroke-width="4"',
+        '<path d="M 31 436 L 39 443 L 31 450" fill="none" stroke="#116244" stroke-width="4"',
+    )))
+    ok("ES workspace frame",q.locator(".hf-frame").count()==1 and "5 7" in q.locator(".hf-frame").get_attribute("stroke-dasharray"))
     ok("ES failure is second section",q.locator("main > section").nth(1).get_attribute("id")=="failures")
     ok("ES failure five modes",q.locator("#failures .failure-case").count()==5)
     ok("ES failure H2","cinco formas" in q.locator("#failures h2").text_content())
