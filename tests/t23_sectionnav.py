@@ -16,8 +16,8 @@ with sync_playwright() as pw:
     except Exception: b=pw.chromium.launch()
 
     for lang,url,names in (
-        ("EN","/",["ArqUX","Five ways context breaks","The interrupted decision","Closure"]),
-        ("ES","/es/",["ArqUX","Cinco formas de romper el contexto","La decisión interrumpida","Cierre"]),
+        ("EN","/",["ArqUX","Five ways context breaks","The hidden cost of losing continuity","Closure"]),
+        ("ES","/es/",["ArqUX","Cinco formas de romper el contexto","El costo invisible de perder continuidad","Cierre"]),
     ):
         p=b.new_page(viewport={"width":1440,"height":900})
         p.goto(BASE+url,wait_until="networkidle"); p.wait_for_timeout(300)
@@ -63,6 +63,27 @@ with sync_playwright() as pw:
         ok(lang+" keyboard count",p.locator(".section-nav-count").text_content().strip()=="02 / 04")
         p.close()
 
+    # component parity: identical rendered geometry on every primary route
+    routes=["/","/reference/","/start/","/trust/","/es/","/es/referencia/","/es/empezar/","/es/confianza/"]
+    sig_desk=None; sig_mob=None
+    for r in routes:
+        p=b.new_page(viewport={"width":1440,"height":900})
+        p.goto(BASE+r,wait_until="networkidle"); p.wait_for_timeout(250)
+        sig=p.evaluate("""() => { const n=document.querySelector('.section-nav'), cs=getComputedStyle(n), nb=n.getBoundingClientRect(); const k=[...n.children].map(c=>{const b=c.getBoundingClientRect(); return [c.className.split(' ')[0],Math.round(b.width),Math.round(b.height),Math.round(b.top-nb.top)]}); return [cs.display,cs.gap,...k.flat()]; }""")
+        if sig_desk is None:
+            sig_desk=sig
+            ok("component baseline 1440",sig[0]=="grid" and sig[1]=="12px" and sig[2:]==["section-nav-btn",48,48,0,"section-nav-btn",48,48,60,"section-nav-count",62,27,120])
+        ok("component parity 1440 "+r,sig==sig_desk)
+        p.close()
+        p=b.new_page(viewport={"width":390,"height":844})
+        p.goto(BASE+r,wait_until="networkidle"); p.wait_for_timeout(200)
+        sig=p.evaluate("""() => { const n=document.querySelector('.section-nav'), cs=getComputedStyle(n), nb=n.getBoundingClientRect(); const k=[...n.children].map(c=>{const b=c.getBoundingClientRect(); return [c.className.split(' ')[0],Math.round(b.width),Math.round(b.height),Math.round(b.left-nb.left)]}); return [cs.display,...k.flat()]; }""")
+        if sig_mob is None:
+            sig_mob=sig
+            ok("component baseline 390",sig[0]=="flex" and sig[1:]==["section-nav-btn",44,44,108,"section-nav-btn",44,44,238,"section-nav-count",62,27,164])
+        ok("component parity 390 "+r,sig==sig_mob)
+        p.close()
+
     for w,h in ((1440,900),(1366,768),(1024,768),(390,844),(320,640)):
         p=b.new_page(viewport={"width":w,"height":h})
         p.goto(BASE+"/",wait_until="networkidle"); p.wait_for_timeout(250)
@@ -80,7 +101,7 @@ with sync_playwright() as pw:
     c=b.new_context(java_script_enabled=False,viewport={"width":1440,"height":900})
     p=c.new_page(); p.goto(BASE+"/",wait_until="load")
     ok("no-JS nav hidden",not p.locator(".section-nav").is_visible())
-    ok("no-JS content present",p.locator("#local .loss-stakes").is_visible())
+    ok("no-JS content present",p.locator("#local .cost-card").count()==4 and p.locator("#local .cost-question").is_visible())
     c.close()
     b.close()
 

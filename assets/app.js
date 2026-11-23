@@ -165,72 +165,40 @@
     failureObserver.observe(failureSection);
   }
 
-  /* ---------- problem scene: one-shot continuity break (no loops) ---------- */
-  const lossScene = $(".loss-scene");
-  if (lossScene && "IntersectionObserver" in window && !REDUCED) {
-    const lossObserver = new IntersectionObserver((entries) => {
-      if (!entries[0].isIntersecting) return;
-      lossScene.classList.add("is-live");
-      lossObserver.disconnect();
-    }, { threshold: 0.15, rootMargin: "0px 0px -25% 0px" });
-    lossObserver.observe(lossScene);
-  }
-
-  /* ---------- the cost scene: try-resume machine (initial → blocked → manual-restored) ---------- */
-  if (lossScene) {
-    const $l = (s) => lossScene.querySelector(s);
-    const act = $l(".loss-act"), give = $l(".loss-give"), again = $l(".loss-again"),
-      gotoRef = $l(".loss-goto"), question = $l(".loss-question"), brief = $l(".loss-brief"),
-      ref = $l(".loss-session--next .loss-ref"), miss = $l(".loss-ref-miss"), restored = $l(".loss-restored"),
-      reused = $l(".loss-reused"), link = $l(".loss-link"), manual = $l(".loss-link-manual"),
-      mtag = $l(".loss-link-tag"), stakeNow = $l(".loss-stakes-now"), stakeDone = $l(".loss-stakes-done"),
-      announce = $l(".loss-announce");
-    if (act && give && again && ref) {
-      let state = "initial", fx = 0;
-      const linkLabel = link.getAttribute("aria-label");
-      const say = (b) => { if (announce) announce.textContent = b.dataset.msg || ""; };
-      const show = (e, on) => { if (e) e.hidden = !on; };
-      const render = (next) => {
-        state = next;
-        const blocked = next === "blocked", done = next === "manual-restored";
-        show(act, next === "initial"); show(question, blocked); show(brief, blocked);
-        show(gotoRef, blocked); show(give, blocked); show(miss, !done); show(restored, done);
-        show(reused, done); show(manual, done); show(mtag, done); show(again, done);
-        show(stakeNow, !done); show(stakeDone, done);
-        ref.classList.toggle("loss-ref--restored", done);
-        ref.classList.toggle("loss-ref--empty", !done);
-        link.setAttribute("aria-label", done ? link.dataset.altS2 : linkLabel);
-      };
-      const focusIn = (el) => { if (el) { el.tabIndex = -1; el.focus(); } };
-      render("initial");
-      act.addEventListener("click", () => {
-        if (state !== "initial") return;
-        render("blocked"); say(act);
-        question.tabIndex = -1; question.focus();
-        if (!REDUCED) {
-          lossScene.classList.add("is-blocking");
-          clearTimeout(fx); fx = setTimeout(() => lossScene.classList.remove("is-blocking"), 1000);
+  /* ---------- cost map: one reflective detail at a time ---------- */
+  const costCards = $$(".cost-card[data-cost]");
+  const costDetails = $$(".cost-detail[data-cost-detail]");
+  if (costCards.length && costDetails.length) {
+    let activeCost = null;
+    const renderCost = (id) => {
+      activeCost = id;
+      costCards.forEach((card) => {
+        const on = card.dataset.cost === id;
+        card.classList.toggle("is-active", on);
+        card.setAttribute("aria-expanded", on ? "true" : "false");
+      });
+      costDetails.forEach((detail) => {
+        detail.classList.toggle("is-active", detail.dataset.costDetail === id);
+      });
+    };
+    costCards.forEach((card) => {
+      card.setAttribute("aria-expanded", "false");
+      card.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const id = activeCost === card.dataset.cost ? null : card.dataset.cost;
+        renderCost(id);
+        if (id) {
+          const panel = costDetails.find((d) => d.dataset.costDetail === id);
+          if (panel && panel.getBoundingClientRect().top > window.innerHeight - 120) {
+            panel.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "start" });
+          }
         }
       });
-      give.addEventListener("click", () => {
-        if (state !== "blocked") return;
-        render("manual-restored"); say(give);
-        clearTimeout(fx); lossScene.classList.remove("is-blocking");
-        if (!REDUCED) link.classList.add("is-restoring");
-        focusIn(restored);
-      });
-      again.addEventListener("click", () => {
-        if (state !== "manual-restored") return;
-        say(again); link.classList.remove("is-restoring"); render("initial");
-        act.focus({ preventScroll: true });
-      });
-      if (gotoRef) gotoRef.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (give) { give.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "nearest" }); give.focus({ preventScroll: true }); }
-      });
-    }
+    });
+    const hashCost = (location.hash.match(/^#cost-detail-([1-4])$/) || [])[1];
+    if (hashCost) renderCost(hashCost);
   }
-
 
   /* ---------- anchor jumps: render off-screen sections for the flight, then glide (exact target, native smooth) ---------- */
   function scrollToSection(target) {

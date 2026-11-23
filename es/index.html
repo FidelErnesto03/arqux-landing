@@ -51,7 +51,7 @@
     <ul class="nav-sub" id="nav-sub-home">
       <li><a href="/es/#top">Qué es ArqUX</a></li>
       <li><a href="/es/#failures">Dónde se pierde el contexto</a></li>
-      <li><a href="/es/#local">El costo de repetir decisiones</a></li>
+      <li><a href="/es/#local">El costo invisible de perder continuidad</a></li>
       <li><a href="/es/#next">Cómo seguir</a></li>
     </ul>
   </div>
@@ -98,7 +98,113 @@
       </div>
     </div>
   </header><main id="main-content">
-    <section class="hero" id="top" data-section-name="ArqUX"><div class="wrap hero-grid hero-wide"><div class="hero-copy"><p class="eyebrow">Para quien gestiona proyectos donde agentes de IA ejecutan el trabajo</p><h1>Tus agentes cambian.<br>Tus proyectos evolucionan.<br>Tu criterio permanece.</h1><p class="lead">ArqUX es un framework para gobernar tus proyectos, desarrollados por agentes de IA. Cada proyecto conserva su propio contexto, decisiones y evidencia, para que el trabajo continúe, sea revisable y auditable entre agentes, sesiones y harnesses, y las lecciones revisadas sirvan al resto de tu espacio de trabajo.</p><p class="hero-portable">Cada tarea deja algo más que un resultado.</p><div class="hero-ctas"><a class="button button-primary" href="/es/referencia/#workflow">Ver el modelo</a><a class="button button-secondary" href="/es/empezar/">Primeros pasos</a></div><p class="hero-facts"><span><i aria-hidden="true">✓</i><a href="https://github.com/FidelErnesto03/arqux/blob/master/LICENSE" target="_blank" rel="noreferrer">Apache-2.0</a></span><span><i aria-hidden="true">✓</i><a href="/es/confianza/">Primero local</a></span><span><i aria-hidden="true">✓</i><a href="/es/referencia/#compatibility">Instrucciones para distintos agentes</a></span></p><p class="hero-note">Una base de instrucciones; distintas convenciones de archivo.</p></div><div class="hero-visual"><object class="hero-map" data="/assets/arqux-governance-side.svg" type="image/svg+xml" aria-label="Mapa lateral ArqUX: Harness, seis dimensiones de tarea, proyecto"><p>Mapa de gobierno: <a href="/es/referencia/#dimensions">seis dimensiones de tarea</a>.</p></object></div><div class="hero-mobile-map" role="group" aria-label="Seis dimensiones de tarea"><a href="/es/referencia/#dimensions">Identidad <span>quién actúa</span></a><a href="/es/referencia/#dimensions">Contrato <span>qué puede hacer</span></a><a href="/es/referencia/#dimensions">Contexto <span>con qué trabaja</span></a><a href="/es/referencia/#dimensions">Decisión <span>qué se acuerda</span></a><a href="/es/referencia/#dimensions">Ejecución <span>cómo se realiza</span></a><a href="/es/referencia/#dimensions">Evidencia <span>qué se comprueba</span></a></div></div></section>
+    <section class="hero" id="top" data-section-name="ArqUX"><div class="wrap hero-grid hero-wide"><div class="hero-copy"><p class="eyebrow">Para quien gestiona proyectos donde agentes de IA ejecutan el trabajo</p><h1>Tus agentes cambian.<br>Tus proyectos evolucionan.<br>Tu criterio permanece.</h1><p class="lead">ArqUX es un framework para gobernar tus proyectos, desarrollados por agentes de IA. Cada proyecto conserva su propio contexto, decisiones y evidencia, para que el trabajo continúe, sea revisable y auditable entre agentes, sesiones y harnesses, y las lecciones revisadas sirvan al resto de tu espacio de trabajo.</p><p class="hero-portable">Cada tarea deja algo más que un resultado.</p><div class="hero-ctas"><a class="button button-primary" href="/es/referencia/#workflow">Ver el modelo</a><a class="button button-secondary" href="/es/empezar/">Primeros pasos</a></div><p class="hero-facts"><span><i aria-hidden="true">✓</i><a href="https://github.com/FidelErnesto03/arqux/blob/master/LICENSE" target="_blank" rel="noreferrer">Apache-2.0</a></span><span><i aria-hidden="true">✓</i><a href="/es/confianza/">Primero local</a></span><span><i aria-hidden="true">✓</i><a href="/es/referencia/#compatibility">Instrucciones para distintos agentes</a></span></p><p class="hero-note">Una base de instrucciones; distintas convenciones de archivo.</p></div><div class="hero-visual"><svg class="hero-map" id="arqx-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 618" width="1000" height="618" role="group" aria-labelledby="arqx-title arqx-desc">
+<title id="arqx-title">ArqUX: gobierno del trabajo entre agentes y proyectos</title>
+<desc id="arqx-desc">HARNESS, ArqUX y PROJECT en un mapa lateral. La órbita ámbar circula alrededor de la marca ArqUX, dibujando el anillo de aprendizaje en una vuelta y borrándolo en la siguiente; la marca pulsa cada vez que la órbita pasa por la parte superior. Las seis dimensiones de gobierno se detallan más abajo en la página.</desc>
+<defs>
+<pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0 H0 V48" fill="none" stroke="#0A1420" stroke-width=".8" opacity=".09"/></pattern>
+<filter id="glow" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="9"/></filter>
+<filter id="softglow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="17"/></filter>
+</defs>
+<style><![CDATA[#arqx-map @font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/ibm-plex-sans-400.woff2") format("woff2")}@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:500;font-display:swap;src:url("/assets/fonts/ibm-plex-sans-500.woff2") format("woff2")}@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url("/assets/fonts/ibm-plex-sans-600.woff2") format("woff2")}@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:700;font-display:swap;src:url("/assets/fonts/ibm-plex-sans-700.woff2") format("woff2")}#arqx-map text{font-family:'IBM Plex Sans','Segoe UI',Arial,sans-serif;fill:#0A1420}#arqx-map .muted{fill:#596772}#arqx-map .mono{font-family:'IBM Plex Mono',Consolas,monospace}#arqx-map .orbit-dash{transform-origin:500px 266px}#arqx-map #arqx-core{transform-box:fill-box;transform-origin:center}#arqx-map #arqx-core.is-beat{animation:core-beat .8s ease-out}@keyframes core-beat{0%{transform:scale(1)}18%{transform:scale(1.08)}38%{transform:scale(1.02)}58%{transform:scale(1.07)}100%{transform:scale(1)}}#arqx-map .rail-title{font-size:23px;font-weight:780;fill:#0A1420}#arqx-map .rail-icon{pointer-events:none}#arqx-map .rail-sub{font-size:16px;fill:#596772}#arqx-map .rail-arrow{font-size:22px;fill:#D77A00;font-weight:700}#arqx-map .triad-node{cursor:pointer;outline:none}#arqx-map .triad-hit{fill:transparent;pointer-events:all}#arqx-map .triad-node:hover .rail-title,#arqx-map .triad-node:focus .rail-title{fill:#8A4B00}#arqx-map .triad-node:hover .rail-icon,#arqx-map .triad-node:focus .rail-icon{filter:url(#glow)}#arqx-map .triad-node:focus-visible .triad-hit{stroke:#D77A00;stroke-width:2}#arqx-map .triad-detail{opacity:0;visibility:hidden;pointer-events:none}#arqx-map #triad-lift-layer{pointer-events:none}#arqx-map .triad-inner{transform-box:fill-box;transform-origin:center;transform:scale(.88) translateY(10px);opacity:0;transition:opacity .16s ease,transform .22s cubic-bezier(.2,.7,.2,1),visibility .16s}#arqx-map .triad-detail.is-on{opacity:1;visibility:visible}#arqx-map .triad-detail.is-on .triad-inner{opacity:1;transform:scale(1) translateY(-6px)}#arqx-map .triad-frame{fill:rgba(247,242,232,.95);stroke:#D77A00;stroke-width:2;filter:drop-shadow(0 18px 24px rgba(10,20,32,.14))}#arqx-map .triad-title{font-size:21px;font-weight:780;fill:#8A4B00}#arqx-map .triad-desc{font-size:19px;font-weight:500;fill:#22394A}#arqx-map .triad-detail .rail-icon{fill:none;stroke:#167A55;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){#arqx-map .orbit-dash{display:none!important}#arqx-map .build-ring{opacity:1!important}#arqx-map .triad-inner{transition:none!important}}}]]></style>
+<rect width="1000" height="618" fill="url(#grid)"/>
+
+<g id="ecosystem-rail" aria-label="HARNESS to ArqUX to PROYECTO">
+<line x1="40" y1="520" x2="960" y2="520" stroke="rgba(10,20,32,.22)" stroke-width="1.5"/>
+<g class="triad-node" data-triad="harness" data-target="/es/referencia/#workflow" role="link" tabindex="0" aria-label="Harness: continuidad. Abrir el flujo de trabajo." aria-describedby="triad-desc-harness">
+<desc id="triad-desc-harness">Agentes de IA que ejecutan, orquestan y extienden el trabajo. El contexto sobrevive: no empiezas de cero.</desc>
+<rect class="triad-hit" x="20" y="468" width="300" height="132" rx="18" fill="transparent"/>
+<g class="rail-icon" aria-hidden="true" transform="translate(64 488) scale(.5)" fill="none" stroke="#167A55" stroke-width="3"><rect x="-35" y="-21" width="70" height="57" rx="23" fill="#EAF2EF"/><path d="M0 -33 V-21 M-48 0 H-36 M36 0 H48"/><circle cx="-13" cy="3" r="5" fill="#167A55" stroke="none"/><circle cx="13" cy="3" r="5" fill="#167A55" stroke="none"/><path d="M-12 19 Q0 26 12 19"/></g>
+<text class="rail-title" x="40" y="552">HARNESS</text><text class="rail-sub" x="40" y="574">Agentes de IA · continuidad</text>
+</g>
+<text class="rail-arrow" x="330" y="555">→</text>
+<g class="triad-node" data-triad="arqx" data-target="/es/referencia/#dimensions" role="link" tabindex="0" aria-label="ArqUX: gobierno y trazabilidad. Abrir las dimensiones." aria-describedby="triad-desc-arqx">
+<desc id="triad-desc-arqx">Seis dimensiones de gobierno: identidad, contrato, contexto, decisión, ejecución y evidencia. El aprendizaje se revisa.</desc>
+<rect class="triad-hit" x="340" y="468" width="300" height="132" rx="18" fill="transparent"/>
+<path d="M500 476 L511 482.5 V495.5 L500 502 L489 495.5 V482.5 Z" fill="none" stroke="#D77A00" stroke-width="2" aria-hidden="true"/>
+<text class="rail-title" x="500" y="552" text-anchor="middle">ArqUX</text><text class="rail-sub" x="500" y="574" text-anchor="middle">Gobierno · trazabilidad</text>
+</g>
+<text class="rail-arrow" x="670" y="555">→</text>
+<g class="triad-node" data-triad="project" data-target="/es/referencia/#artifacts" role="link" tabindex="0" aria-label="Proyecto: portabilidad. Abrir los artefactos." aria-describedby="triad-desc-project">
+<desc id="triad-desc-project">Tu entorno real: código, datos y resultados. El contexto puede viajar entre apps compatibles.</desc>
+<rect class="triad-hit" x="680" y="468" width="300" height="132" rx="18" fill="transparent"/>
+<g class="rail-icon" aria-hidden="true" transform="translate(936 488) scale(.5)" fill="none" stroke="#167A55" stroke-width="3"><path d="M0 -22 L29 -8 V18 L0 34 L-29 18 V-8 Z M0 -22 V6 M-29 -8 L0 6 L29 -8 M0 6 V34"/></g>
+<text class="rail-title" x="960" y="552" text-anchor="end">PROYECTO</text><text class="rail-sub" x="960" y="574" text-anchor="end">Entorno · portabilidad</text>
+</g>
+</g>
+<circle cx="500" cy="266" r="192" fill="none" stroke="#D77A00" stroke-width="16" opacity=".16"/>
+<circle id="arqx-build-ring" class="build-ring" cx="500" cy="266" r="192" fill="none" stroke="#D77A00" stroke-width="3.5" pathLength="100" transform="rotate(-90 500 266)"/>
+<circle cx="500" cy="266" r="178.8" fill="none" stroke="#D77A00" stroke-width="1" stroke-dasharray="3 7" opacity=".55"/>
+<g class="orbit-dash" id="arqx-learning-orbit" aria-hidden="true"><circle cx="692" cy="266" r="7" fill="#D77A00" filter="url(#glow)"/><circle cx="500" cy="266" r="192" fill="none" stroke="#D77A00" stroke-width="10" stroke-linecap="round" stroke-dasharray="43.2 1206.37" opacity=".82" filter="url(#glow)"/><circle cx="500" cy="266" r="192" fill="none" stroke="#FFB547" stroke-width="3" stroke-linecap="round" stroke-dasharray="43.2 1206.37"/></g>
+<g id="arqx-core">
+
+<g transform="translate(500 266) scale(0.38544) translate(-768 -496)">
+<path d="M 425,279 C 398,287 381,309 381,339 L 381,670 Q 381,711 416,733 L 728,921 Q 768,946 808,921 L 1121,734 Q 1156,713 1156,671 L 1156,332 Q 1156,308 1138,295 Q 1130,290 1124,306 L 1063,355 L 1063,649 Q 1063,676 1040,690 L 790,839 Q 768,852 746,839 L 495,690 Q 472,676 472,650 L 472,326 Z" fill="#091926"/>
+<path d="M 541,352 L 738,234 Q 768,216 794,233 L 918,309 Q 923,313 914,319 L 857,357 Q 849,363 841,357 L 783,319 Q 768,309 752,319 L 627,394 Q 612,403 612,420 L 612,567 Q 612,582 627,591 L 751,663 Q 768,673 784,663 L 907,591 Q 922,582 922,566 L 922,458 Q 922,449 931,443 L 990,405 Q 999,399 999,410 L 999,592 Q 999,622 974,637 L 794,749 Q 768,765 742,749 L 559,638 Q 535,622 535,592 L 535,380 Q 535,362 541,352 Z" fill="#091926"/>
+<path d="M 430,252 L 676,100 Q 767,47 858,99 L 1070,228 Q 1101,246 1100,278 Q 1099,302 1074,319 L 875,446 Q 861,454 861,469 L 861,534 Q 861,547 849,555 L 784,594 Q 768,603 752,594 L 687,555 Q 673,547 673,531 L 673,449 Q 673,438 685,430 L 749,390 Q 766,380 781,389 L 811,406 Q 820,412 829,406 L 990,303 Q 1003,293 991,280 L 847,191 Q 768,139 689,190 L 485,317 Q 476,323 472,333 Q 451,315 432,310 Q 399,293 430,252 Z" fill="#D77A00"/>
+</g>
+</g>
+<g id="triad-lift-layer" aria-hidden="true" pointer-events="none">
+<g class="triad-detail" data-triad="harness" transform="translate(250,360)" aria-hidden="true">
+<g class="triad-inner">
+<rect class="triad-frame" x="-215" y="-75" width="430" height="150" rx="24"/>
+<g class="rail-icon" transform="translate(-183 0) scale(.5)" fill="none" stroke="#167A55" stroke-width="3"><rect x="-35" y="-21" width="70" height="57" rx="23" fill="#EAF2EF"/><path d="M0 -33 V-21 M-48 0 H-36 M36 0 H48"/><circle cx="-13" cy="3" r="5" fill="#167A55" stroke="none"/><circle cx="13" cy="3" r="5" fill="#167A55" stroke="none"/><path d="M-12 19 Q0 26 12 19"/></g>
+<text class="triad-title" x="-146" y="-42">HARNESS · Continuidad</text>
+<text class="triad-desc" x="-146" y="-16"><tspan x="-146" dy="0">Agentes de IA que ejecutan, orquestan</tspan><tspan x="-146" dy="28.5">y extienden el trabajo. El contexto</tspan><tspan x="-146" dy="28.5">sobrevive: no empiezas de cero.</tspan></text>
+</g>
+</g>
+<g class="triad-detail" data-triad="arqx" transform="translate(500,350)" aria-hidden="true">
+<g class="triad-inner">
+<rect class="triad-frame" x="-215" y="-75" width="430" height="150" rx="24"/>
+<path d="M-183 -12 L-172 -6 V6 L-183 12 L-194 6 V-6 Z" fill="none" stroke="#D77A00" stroke-width="2"/>
+<text class="triad-title" x="-146" y="-42">ArqUX · Trazabilidad y evolución</text>
+<text class="triad-desc" x="-146" y="-16"><tspan x="-146" dy="0">Seis dimensiones de gobierno: identidad,</tspan><tspan x="-146" dy="28.5">contrato, contexto, decisión, ejecución</tspan><tspan x="-146" dy="28.5">y evidencia. El aprendizaje se revisa.</tspan></text>
+</g>
+</g>
+<g class="triad-detail" data-triad="project" transform="translate(750,360)" aria-hidden="true">
+<g class="triad-inner">
+<rect class="triad-frame" x="-215" y="-75" width="430" height="150" rx="24"/>
+<g class="rail-icon" transform="translate(-183 0) scale(.5)" fill="none" stroke="#167A55" stroke-width="3"><path d="M0 -22 L29 -8 V18 L0 34 L-29 18 V-8 Z M0 -22 V6 M-29 -8 L0 6 L29 -8 M0 6 V34"/></g>
+<text class="triad-title" x="-146" y="-42">PROYECTO · Portabilidad</text>
+<text class="triad-desc" x="-146" y="-16"><tspan x="-146" dy="0">Tu entorno real: código, datos y</tspan><tspan x="-146" dy="28.5">resultados. El contexto puede viajar</tspan><tspan x="-146" dy="28.5">entre apps compatibles.</tspan></text>
+</g>
+</g>
+</g>
+<script><![CDATA[(function(){
+  var base='/es/referencia/#dimensions';
+  var R=document.currentScript?document.currentScript.closest('svg'):document.getElementById('arqx-map');
+  var triadCards=Array.prototype.slice.call(R.querySelectorAll('.triad-detail'));
+  function hideAll(){triadCards.forEach(function(c){c.classList.remove('is-on');});}
+  function showTriad(g){hideAll();var k=g.getAttribute('data-triad');var c=R.querySelector('.triad-detail[data-triad="'+k+'"]');if(c)c.classList.add('is-on');}
+  function go(t){if(!t)return;try{window.top.location.href=t;}catch(e){window.location.href=t;}}
+  R.querySelectorAll('.triad-node').forEach(function(g){
+    g.addEventListener('mouseenter',function(){showTriad(g);});g.addEventListener('mouseleave',hideAll);
+    g.addEventListener('focus',function(){showTriad(g);});g.addEventListener('blur',hideAll);
+    g.addEventListener('click',function(){go(g.getAttribute('data-target'));});
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go(g.getAttribute('data-target'));}});
+  });
+
+  var ring=R.querySelector('#arqx-learning-orbit');
+  var build=R.querySelector('#arqx-build-ring');
+  var core=R.querySelector('#arqx-core');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(ring&&build&&core&&!reduce){
+    var LAP=2000,start=performance.now(),lastLap=null;
+    var tick=function(now){
+      var lap=Math.floor((now-start)/LAP);
+      var ang=((now-start)%LAP)/LAP*360;
+      ring.setAttribute('transform','rotate('+(ang-90).toFixed(2)+' 500 266)');
+      if(lap%2===0){build.setAttribute('stroke-dasharray',(ang/3.6).toFixed(2)+' 100');build.setAttribute('stroke-dashoffset','0');}
+      else{build.setAttribute('stroke-dasharray',((360-ang)/3.6).toFixed(2)+' 100');build.setAttribute('stroke-dashoffset',(-ang/3.6).toFixed(2));}
+      if(lap!==lastLap){lastLap=lap;core.classList.remove('is-beat');void core.getBoundingClientRect();core.classList.add('is-beat');}
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+})();]]></script>
+</svg></div><div class="hero-mobile-map" role="group" aria-label="Seis dimensiones de tarea"><a href="/es/referencia/#dimensions">Identidad <span>quién actúa</span></a><a href="/es/referencia/#dimensions">Contrato <span>qué puede hacer</span></a><a href="/es/referencia/#dimensions">Contexto <span>con qué trabaja</span></a><a href="/es/referencia/#dimensions">Decisión <span>qué se acuerda</span></a><a href="/es/referencia/#dimensions">Ejecución <span>cómo se realiza</span></a><a href="/es/referencia/#dimensions">Evidencia <span>qué se comprueba</span></a></div></div></section>
 <section class="section failure-section" id="failures" aria-labelledby="failures-title" data-section-name="Cinco formas de romper el contexto">
   <div class="wrap failures-grid">
     <div class="failures-message">
@@ -142,49 +248,98 @@
     </ol>
   </div>
 </section>
-<section class="section loss-section" id="local" aria-labelledby="loss-title" data-section-name="La decisión interrumpida">
+<section class="section cost-section" id="local" aria-labelledby="loss-title" data-section-name="El costo invisible de perder continuidad">
   <div class="wrap">
-    <div class="loss-head">
-      <p class="eyebrow">El costo de trabajar sin contexto compartido</p>
-      <h2 id="loss-title">La decisión se tomó. El siguiente agente no la conocía.</h2>
-      <p class="loss-lead">Dos sesiones. Una decisión. Sin contexto compartido.</p>
+    <div class="cost-head">
+      <p class="eyebrow">EL COSTO INVISIBLE DE PERDER CONTINUIDAD</p>
+      <h2 id="loss-title">No pierdes solo el contexto. Pierdes parte del trabajo que ya hiciste.</h2>
+      <p class="cost-lead">Cada vez que cambias de agente, herramienta o sesión sin conservar las referencias necesarias, puedes tener que reconstruir decisiones que tu proyecto ya había resuelto.</p>
     </div>
-    <div class="loss-scene" role="group" aria-label="Ejemplo ilustrativo: una decisión tomada en una sesión no está disponible para la siguiente">
-      <div class="loss-track">
-        <article class="loss-session loss-session--decided">
-          <p class="loss-kicker">Ayer · Sesión 1 — se decidió</p>
-          <div class="loss-ref" id="loss-ref-ayer">
-            <p class="loss-ref-label">Criterio del proyecto</p>
-            <p class="loss-quote">“No exponer datos sensibles en los mensajes de error.”</p>
-            <p class="loss-status">Decisión establecida</p>
-            <p class="loss-reused" hidden>Reutilizada · aporte manual</p>
-          </div>
-          <p class="loss-foot">Registrada en el hilo</p>
-          <button class="loss-give" type="button" hidden data-msg="Criterio aportado manualmente a la nueva sesión.">Volver a aportar este criterio →</button>
-        </article>
-        <article class="loss-session loss-session--next">
-          <p class="loss-kicker">Hoy · Sesión 2 — se preguntó</p>
-          <div class="loss-ref loss-ref--empty">
-            <p class="loss-ref-label">Criterio del proyecto</p>
-            <p class="loss-ref-miss"><svg class="loss-ref-plug" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M4.3 6.3 A5.4 5.4 0 1 1 4.3 11.7"/><path d="M1 9h2.6"/></svg>Referencia no disponible</p>
-            <div class="loss-restored" hidden>
-              <p class="loss-quote">“No exponer datos sensibles en los mensajes de error.”</p>
-              <p class="loss-status">Criterio aportado manualmente</p>
-            </div>
-          </div>
-          <div class="loss-next">
-            <button class="loss-act" type="button" hidden data-msg="La nueva sesión no dispone de la decisión anterior.">Intentar retomar el trabajo →</button>
-            <p class="loss-question">“¿Cuál era el criterio para los mensajes de error?”</p>
-            <p class="loss-brief">Esta sesión no dispone de la decisión anterior.</p>
-            <a class="loss-goto" href="#loss-ref-ayer" hidden>Ir al criterio de ayer</a>
-          </div>
-        </article>
-        <div class="loss-link" role="img" aria-label="La referencia no se trasladó a la siguiente sesión" data-alt-s2="La transferencia original se interrumpió; el criterio fue aportado manualmente"><i class="loss-link-dot"></i><i class="loss-link-break"></i><i class="loss-link-manual" hidden></i><span class="loss-link-tag" hidden>Aporte manual</span></div>
-      </div>
-      <p class="loss-stakes"><span class="loss-stakes-now">Ayer avanzaste. Hoy tienes que volver a explicarlo.</span><span class="loss-stakes-done" hidden>Ayer avanzaste. Hoy tuviste que volver a explicarlo.</span></p>
-      <p class="loss-scope">Ejemplo ilustrativo. El comportamiento depende de la herramienta y de cómo se conserve el contexto.</p>
-      <button class="loss-again" type="button" hidden data-msg="Experiencia restablecida.">Repetir experiencia</button>
-      <p class="loss-announce visually-hidden" aria-live="polite"></p>
+    <div class="cost-grid">
+      <a class="cost-card" href="#cost-detail-1" data-cost="1" aria-controls="cost-detail-1">
+        <span class="cost-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/><path d="M12 7.6V12l3.2 1.9"/></svg></span>
+        <span class="cost-copy">
+          <span class="cost-num">Costo 01</span>
+          <span class="cost-title">Tiempo humano</span>
+          <span class="cost-desc">Volver a explicar requisitos, decisiones, restricciones y antecedentes.</span>
+        </span>
+        <span class="cost-chevron" aria-hidden="true"></span>
+      </a>
+      <a class="cost-card" href="#cost-detail-2" data-cost="2" aria-controls="cost-detail-2">
+        <span class="cost-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="9.5" height="12.5" rx="1.6"/><path d="M8 7h3.5M8 10h3.5M8 13h2"/><path d="M17.5 18.2A5.4 5.4 0 0 1 8.6 19"/><path d="M17.5 21v-3h-3"/></svg></span>
+        <span class="cost-copy">
+          <span class="cost-num">Costo 02</span>
+          <span class="cost-title">Tokens y procesamiento</span>
+          <span class="cost-desc">Releer documentos, reconstruir razonamientos y volver a procesar información conocida.</span>
+        </span>
+        <span class="cost-chevron" aria-hidden="true"></span>
+      </a>
+      <a class="cost-card cost-card--criteria" href="#cost-detail-3" data-cost="3" aria-controls="cost-detail-3">
+        <span class="cost-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h5.5"/><path d="M9.5 12 15 6.8h5"/><path d="M9.5 12 15 17.2h5"/><path d="M18.2 4.9 20 6.8l-1.8 1.9M18.2 15.3 20 17.2l-1.8 1.9"/><circle cx="4" cy="12" r="1.3"/></svg></span>
+        <span class="cost-copy">
+          <span class="cost-num">Costo 03</span>
+          <span class="cost-title">Desviación de criterios</span>
+          <span class="cost-desc">Decisiones establecidas se reinterpretan. Debes detectar las diferencias, corregirlas y reafirmarlas.</span>
+        </span>
+        <span class="cost-chevron" aria-hidden="true"></span>
+      </a>
+      <a class="cost-card" href="#cost-detail-4" data-cost="4" aria-controls="cost-detail-4">
+        <span class="cost-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.5 9.5A7.5 7.5 0 0 1 16 5.1"/><path d="M16 2.6v3.2h-3.2"/><path d="M19.5 14.5A7.5 7.5 0 0 1 8 18.9"/><path d="M8 21.4v-3.2h3.2"/></svg></span>
+        <span class="cost-copy">
+          <span class="cost-num">Costo 04</span>
+          <span class="cost-title">Retrabajo</span>
+          <span class="cost-desc">Cambios innecesarios, soluciones repetidas y nuevas verificaciones de resultados anteriormente aceptados.</span>
+        </span>
+        <span class="cost-chevron" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="cost-details">
+      <article class="cost-detail" id="cost-detail-1" data-cost-detail="1" aria-labelledby="cost-detail-1-title">
+        <h3 class="cost-detail-title" id="cost-detail-1-title">Costo 01 · Tiempo humano</h3>
+        <p>Cuando el contexto no está disponible, debes intervenir nuevamente para reconstruir el estado de trabajo. Esto puede incluir explicar decisiones anteriores, localizar información, recordar restricciones, aclarar prioridades y comprobar que el agente entendió correctamente.</p>
+        <p class="cost-consequence"><b>Consecuencia</b><span>Tiempo que podrías dedicar al siguiente objetivo se emplea en recuperar el anterior.</span></p>
+      </article>
+      <article class="cost-detail" id="cost-detail-2" data-cost-detail="2" aria-labelledby="cost-detail-2-title">
+        <h3 class="cost-detail-title" id="cost-detail-2-title">Costo 02 · Tokens y procesamiento</h3>
+        <p>Un nuevo agente puede necesitar inspeccionar archivos, conversaciones, código y documentos ya analizados. Esta reconstrucción puede generar nuevas llamadas al modelo, consumir tokens de entrada y salida, ocupar capacidad de contexto y requerir procesamiento adicional.</p>
+        <p class="cost-consequence"><b>Consecuencia</b><span>Parte de los recursos computacionales se destina a reconstruir información previamente disponible.</span></p>
+      </article>
+      <article class="cost-detail" id="cost-detail-3" data-cost-detail="3" aria-labelledby="cost-detail-3-title">
+        <h3 class="cost-detail-title" id="cost-detail-3-title">Costo 03 · Desviación de criterios</h3>
+        <p>Un agente que no recibe las referencias de gobierno pertinentes puede tomar decisiones incompatibles con restricciones previamente aprobadas. El usuario debe identificar la divergencia, recuperar el fundamento original, restablecer el criterio y revisar las consecuencias de la desviación.</p>
+        <p class="cost-consequence"><b>Consecuencia</b><span>El proyecto no solamente pierde tiempo: puede avanzar en una dirección que contradice sus propias decisiones.</span></p>
+        <div class="cost-example">
+          <p class="cost-example-label">Ejemplo ilustrativo</p>
+          <p class="cost-example-quote">“No exponer datos sensibles en los mensajes de error.”</p>
+          <p><b>Nueva interpretación:</b> otro agente implementa un mecanismo de depuración que registra información sensible en determinados errores.</p>
+          <p><b>Desviación:</b> la nueva solución contradice el criterio previamente aprobado.</p>
+          <p><b>Costo de recuperación:</b> detectar la contradicción, localizar el criterio original, corregir la implementación y repetir las verificaciones afectadas.</p>
+          <p class="cost-example-message">No solo repites una explicación. También puedes tener que deshacer trabajo que nunca debió desviarse.</p>
+        </div>
+        <p class="cost-example-note">Ejemplo ilustrativo, no una ejecución real del framework.</p>
+      </article>
+      <article class="cost-detail" id="cost-detail-4" data-cost-detail="4" aria-labelledby="cost-detail-4-title">
+        <h3 class="cost-detail-title" id="cost-detail-4-title">Costo 04 · Retrabajo</h3>
+        <p>La falta de referencias puede provocar que un agente investigue nuevamente un problema resuelto, reabra una decisión cerrada o modifique una solución que ya cumplía los criterios establecidos. La corrección puede requerir más trabajo y nuevas pruebas.</p>
+        <p class="cost-consequence"><b>Consecuencia</b><span>El proyecto vuelve a consumir esfuerzo para recuperar un estado que ya había alcanzado.</span></p>
+      </article>
+    </div>
+    <div class="cost-flow">
+      <p class="cost-flow-label">Cómo se acumulan los costos</p>
+      <ol class="cost-flow-list">
+        <li>Cambio de contexto</li>
+        <li>Reconstrucción</li>
+        <li>Posible desviación</li>
+        <li>Corrección y revisión</li>
+        <li>Nuevo avance</li>
+      </ol>
+      <p class="cost-flow-note">Los costos pueden combinarse, pero no ocurren necesariamente en cada cambio de sesión o herramienta.</p>
+      <p class="cost-flow-trace"><b>Consecuencia transversal</b><span>Cuando se pierde el fundamento de una decisión, también puede ser necesario reconstruir por qué se tomó, quién intervino y qué evidencia la respaldaba. Conservar la información y conservar su justificación son problemas relacionados, pero diferentes.</span></p>
+    </div>
+    <div class="cost-close">
+      <p class="cost-question">¿Cuánto de tu esfuerzo se dedica a crear algo nuevo y cuánto a reconstruir lo que ya habías resuelto?</p>
+      <p class="cost-principle">El gobierno del proyecto no debería depender de la memoria de una conversación.</p>
+      <a class="button button-primary" href="/es/referencia/#workflow">Comprender cómo ArqUX conserva las referencias del proyecto</a>
     </div>
   </div>
 </section>

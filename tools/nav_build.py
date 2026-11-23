@@ -47,7 +47,7 @@ SECTIONS = {
     "home": [
         ("top", "Qué es ArqUX", "What ArqUX does"),
         ("failures", "Dónde se pierde el contexto", "Where context breaks"),
-        ("local", "El costo de repetir decisiones", "The cost of repeating decisions"),
+        ("local", "El costo invisible de perder continuidad", "The hidden cost of losing continuity"),
         ("next", "Cómo seguir", "Where to go next"),
     ],
     "reference": [
