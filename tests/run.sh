@@ -24,8 +24,8 @@ usage: ./tests/run.sh [group]
   home     t16                     ~6s     home page only
   pages    t18 t21                 ~17s    reference, start, trust
   layout   t16 t22 t25             ~25s    copy or layout changes
-  ui       t24 t23 t20             ~70s    flip deck, section nav, routes
-  full     all                     ~108s   pre-push gate (default)
+  ui       t24 t23 t20             ~61s    flip deck, section nav, routes
+  full     all                     ~98s    pre-push gate (default)
 EOF
     exit 0 ;;
 esac

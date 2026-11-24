@@ -21,8 +21,8 @@ Pick the smallest group that covers what you touched. `full` is the pre-push gat
 | `home` | t16 | ~6s | you changed the home page only |
 | `pages` | t18 t21 | ~17s | you changed reference, start or trust |
 | `layout` | t16 t22 t25 | ~25s | you changed shared CSS, copy or the closure |
-| `ui` | t24 t23 t20 | ~70s | you touched the flip deck, section nav or routing |
-| `full` | all nine | ~108s | before commit/push (default when no group is given) |
+| `ui` | t24 t23 t20 | ~61s | you touched the flip deck, section nav or routing |
+| `full` | all nine | ~98s | before commit/push (default when no group is given) |
 
 ## Files
 

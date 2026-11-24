@@ -629,8 +629,6 @@
         const nt = current < navSections.length - 1 ? labels.next + name(current + 1) : labels.next + name(current);
         prevBtn.setAttribute("aria-label", pt);
         nextBtn.setAttribute("aria-label", nt);
-        prevBtn.title = name(Math.max(0, current - 1));
-        nextBtn.title = name(Math.min(navSections.length - 1, current + 1));
         prevBtn.dataset.tip = current > 0 ? name(current - 1) : "";
         nextBtn.dataset.tip = current < navSections.length - 1 ? name(current + 1) : "";
         counter.textContent = String(current + 1).padStart(2, "0") + " / " + String(navSections.length).padStart(2, "0");
