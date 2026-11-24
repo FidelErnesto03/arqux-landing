@@ -506,31 +506,89 @@
     })
   );
 
-  /* ---------- case detail modal: click anywhere on the item ---------- */
-  const caseDialog = $("#case-dialog");
-  if (caseDialog && typeof caseDialog.showModal === "function") {
+  /* ---------- case deck: the list flips to the detail of the chosen item ---------- */
+  const caseDeck = $(".failure-deck");
+  if (caseDeck) {
+    const inner = $(".failure-deck-inner", caseDeck);
+    const front = $(".failure-face--front", caseDeck);
+    const back = $(".failure-face--back", caseDeck);
+    const backInner = $(".case-back-inner", caseDeck);
+    const backClose = $(".case-back-close", caseDeck);
     let lastTrigger = null;
-    const setText = (sel, v) => { const el = $(sel, caseDialog); if (el) el.textContent = v || ""; };
-    $$(".failure-case").forEach((item, idx) => {
-      const btn = $(".case-open", item);
-      if (!btn) return;
+
+    const fill = (item, idx) => {
       const title = $(".case-title b", item);
       const mech = $(".case-mech", item);
       const desc = $(".case-desc", item);
+      const set = (sel, v) => { const el = $(sel, caseDeck); if (el) el.textContent = v || ""; };
+      set(".case-back-num", String(idx + 1).padStart(2, "0") + " / " + String($$(".failure-case").length).padStart(2, "0"));
+      set(".case-back-mech", mech ? mech.textContent.trim() : "");
+      set(".case-back-title", title ? title.textContent : "");
+      set(".case-back-desc", desc ? desc.textContent : "");
+      set(".case-back-ask", item.dataset.ask || "");
+      set(".case-back-extra", item.dataset.extra || "");
+      if (backClose) backClose.setAttribute("aria-label", (item.dataset.back || "Back to the list"));
+    };
+
+    const openCase = (item, idx) => {
+      fill(item, idx);
+      caseDeck.classList.add("is-flipped");
+      caseDeck.setAttribute("data-open", "1");
+      front.setAttribute("aria-hidden", "true");
+      front.setAttribute("inert", "");
+      back.removeAttribute("aria-hidden");
+      back.removeAttribute("inert");
+      $$(".failure-case").forEach((li) => {
+        const b = $(".case-open", li);
+        if (b) b.setAttribute("aria-expanded", li === item ? "true" : "false");
+      });
+      if (caseDeck.dataset.scroll !== "off") {
+        const top = caseDeck.getBoundingClientRect().top;
+        if (top < 0) caseDeck.scrollIntoView({ block: "center", behavior: "smooth" });
+      }
+      if (backClose) backClose.focus();
+    };
+
+    const closeCase = () => {
+      caseDeck.classList.remove("is-flipped");
+      caseDeck.removeAttribute("data-open");
+      back.setAttribute("aria-hidden", "true");
+      back.setAttribute("inert", "");
+      front.removeAttribute("aria-hidden");
+      front.removeAttribute("inert");
+      $$(".failure-case").forEach((li) => {
+        const b = $(".case-open", li);
+        if (b) b.setAttribute("aria-expanded", "false");
+      });
+      if (lastTrigger) lastTrigger.focus();
+    };
+
+    back.setAttribute("aria-hidden", "true");
+    back.setAttribute("inert", "");
+
+    const items = $$(".failure-case", caseDeck);
+    items.forEach((item, idx) => {
+      const btn = $(".case-open", item);
+      if (!btn) return;
+      const title = $(".case-title b", item);
+      btn.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-controls", "case-deck-inner");
       btn.setAttribute("aria-label", (item.dataset.more || "Details") + ": " + (title ? title.textContent : ""));
       btn.addEventListener("click", () => {
-        if (caseDialog.open) return;
+        if (caseDeck.classList.contains("is-flipped")) return;
         lastTrigger = btn;
-        setText("#case-dialog-kicker", String(idx + 1).padStart(2, "0") + " · " + (mech ? mech.textContent.trim() : (item.dataset.ask || "")));
-        setText("#case-dialog-title", title ? title.textContent : "");
-        setText("#case-dialog-desc", desc ? desc.textContent : "");
-        setText("#case-dialog-ask", item.dataset.ask || "");
-        setText("#case-dialog-extra", item.dataset.extra || "");
-        caseDialog.showModal();
+        openCase(item, idx);
       });
     });
-    caseDialog.addEventListener("click", (e) => { if (e.target === caseDialog) caseDialog.close(); });
-    caseDialog.addEventListener("close", () => { if (lastTrigger) lastTrigger.focus(); });
+
+    if (backClose) backClose.addEventListener("click", closeCase);
+    if (backInner) backInner.addEventListener("click", (e) => {
+      if (e.target.closest(".case-back-close")) return;
+      closeCase();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && caseDeck.classList.contains("is-flipped")) closeCase();
+    });
   }
 
   /* ---------- section navigation: floating arrows, passive scroll, no hijack ---------- */

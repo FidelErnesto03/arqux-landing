@@ -401,7 +401,9 @@
       <p class="failure-close">El resultado puede sobrevivir. <em>El criterio que lo sostiene</em>, no siempre.</p>
       <div class="coherence-line" aria-hidden="true"><span></span></div>
     </div>
-    <ol class="failure-cases">
+    <div class="failure-deck"><div class="failure-deck-inner" id="case-deck-inner">
+<div class="failure-face failure-face--front">
+<ol class="failure-cases">
       <li class="failure-case" data-case-i="0" data-extra="El traspaso en prosa es reescrito por quien lo recibe. El criterio sobrevive como palabras, no como una regla que el agente pueda verificar." data-ask="Por qué importa" data-more="Ver el detalle">
         <span class="case-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="7" height="10" rx="2"/><rect x="14" y="7" width="7" height="10" rx="2"/><path d="M12 9v6"/></svg></span>
         <div class="case-title"><b>Entre agentes especializados</b><span class="case-mech">Interpretación</span></div>
@@ -433,6 +435,17 @@
         <button class="case-open" type="button" aria-label=""></button>
       </li>
     </ol>
+      </div>
+      <div class="failure-face failure-face--back" data-face="back" aria-hidden="true">
+        <div class="case-back-inner">
+          <p class="case-back-kicker"><span class="case-back-num"></span><span class="case-back-mech"></span></p>
+          <h3 class="case-back-title"></h3>
+          <p class="case-back-desc"></p>
+          <div class="case-back-why"><span class="case-back-ask"></span><p class="case-back-extra"></p></div>
+          <button class="case-back-close" type="button" aria-label="Back to the list"><span aria-hidden="true">×</span></button>
+        </div>
+      </div>
+    </div></div>
   </div>
 </section>
 <section class="section cost-section" id="local" aria-labelledby="loss-title" data-section-name="El costo invisible de perder continuidad">
@@ -598,12 +611,5 @@
   </button>
   <button class="section-nav-count" type="button" aria-live="polite">01 / 04</button>
 </nav>
-<dialog class="case-dialog" id="case-dialog" aria-labelledby="case-dialog-title">
-  <form method="dialog"><button class="case-dialog-close" type="submit" aria-label="Cerrar detalle">×</button></form>
-  <p class="case-dialog-kicker" id="case-dialog-kicker"></p>
-  <h3 class="case-dialog-title" id="case-dialog-title"></h3>
-  <p class="case-dialog-desc" id="case-dialog-desc"></p>
-  <div class="case-dialog-why"><span id="case-dialog-ask"></span><p id="case-dialog-extra"></p></div>
-</dialog>
 </body>
 </html>
