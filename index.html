@@ -98,7 +98,7 @@
       </div>
     </div>
   </header><main id="main-content">
-    <section class="hero" id="top" data-section-name="ArqUX"><div class="wrap hero-grid hero-wide"><div class="hero-copy"><p class="eyebrow">For people who run projects where AI agents do the work</p><h1>Your agents change.<br>Your projects evolve.<br>Your judgment endures.</h1><p class="lead">ArqUX is a framework for governing your projects, built by AI agents. Each project keeps its own context, decisions and evidence — so work stays continuous, reviewable and auditable across agents, sessions and harnesses, and reviewed lessons can serve the rest of your workspace.</p><p class="hero-portable">Every task leaves more than a result.</p><div class="hero-ctas"><a class="button button-primary" href="/reference/#workflow">See how it works</a><a class="button button-secondary" href="/start/">Get started</a></div><p class="hero-facts"><span><i aria-hidden="true">✓</i><a href="https://github.com/FidelErnesto03/arqux/blob/master/LICENSE" target="_blank" rel="noreferrer">Apache-2.0</a></span><span><i aria-hidden="true">✓</i><a href="/trust/">Local-first</a></span><span><i aria-hidden="true">✓</i><a href="/reference/#compatibility">Instructions for different agents</a></span></p><p class="hero-note">One instruction source; different native file conventions.</p></div><div class="hero-visual"><svg class="hero-map" id="hero-flow" xmlns="http://www.w3.org/2000/svg" viewBox="-24 -8 1144 656" role="group" aria-labelledby="hf-title hf-desc">
+    <section class="hero" id="top" data-section-name="ArqUX"><div class="wrap hero-grid hero-wide"><div class="hero-copy"><p class="eyebrow">For people who run projects where AI agents do the work</p><h1>Your agents change.<br>Your projects evolve.<br>Your judgment endures.</h1><p class="lead">ArqUX is a framework for governing your projects, built by AI agents. Each project keeps its own context, decisions and evidence — so work stays continuous, reviewable and auditable across agents, sessions and harnesses, and reviewed lessons can serve the rest of your workspace.</p><p class="hero-portable">Every task leaves more than a result.</p><div class="hero-ctas"><a class="button button-primary" href="/reference/#workflow">See how it works</a><a class="button button-secondary" href="/start/">Get started</a></div><p class="hero-facts"><span><i aria-hidden="true">✓</i><a href="https://github.com/FidelErnesto03/arqux/blob/master/LICENSE" target="_blank" rel="noreferrer">Apache-2.0</a></span><span><i aria-hidden="true">✓</i><a href="/trust/">Local-first</a></span><span><i aria-hidden="true">✓</i><a href="/reference/#compatibility">Instructions for different agents</a></span></p><p class="hero-note">One instruction source; different native file conventions.</p></div><div class="hero-visual"><svg id="hero-flow" class="hero-map hf-intro" viewBox="-24 -8 1144 656" role="group" aria-labelledby="hf-title hf-desc">
 <title id="hf-title">ArqUX: governed work from agents to reviewed lessons</title>
 <desc id="hf-desc">Agents A, B and C feed two governed projects. Each project retains criterion, context, decisions and evidence, and runs a define, implement and verify cycle. Reviewed lessons accumulate as knowledge and flow back to the agents as standard reading.</desc>
 <defs>
@@ -122,11 +122,45 @@
 #hero-flow .flow-loop{stroke-dasharray:8 16;animation:hf-flow 1.8s linear infinite}
 #hero-flow .status-dot{transform-box:fill-box;transform-origin:center;animation:hf-pulse 2.2s ease-in-out infinite}
 #hero-flow .spark{animation:hf-spark 2s ease-in-out infinite}#hero-flow .hf-agent-card{animation:hf-active 8s linear infinite}#hero-flow .hf-d1{animation-delay:-2s}#hero-flow .hf-d2{animation-delay:-4s}#hero-flow .hf-d3{animation-delay:-6s}@keyframes hf-active{0%,18%{stroke:#D77A00;stroke-width:3.5}26%,92%{stroke:rgba(10,20,32,.14);stroke-width:2}100%{stroke:#D77A00;stroke-width:3.5}}
+@keyframes hf-in-rise{from{opacity:0}to{opacity:1}}
+@keyframes hf-tint{from{filter:grayscale(1)}to{filter:grayscale(0)}}
+@keyframes hf-in-frame{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:scale(1)}}
+@keyframes hf-in-lock{0%{opacity:0;transform:scale(.94)}70%{opacity:1;transform:scale(1.01)}100%{opacity:1;transform:scale(1)}}
+@keyframes hf-in-fade{from{opacity:0}to{opacity:1}}
+@keyframes hf-in-stamp{0%{opacity:0;transform:scale(.92)}60%{opacity:1;transform:scale(1.015)}100%{opacity:1;transform:scale(1)}}
+#hero-flow.hf-intro .hf-exits{opacity:0;animation:hf-in-fade .4s .70s ease-out forwards}
+#hero-flow.hf-intro .hf-project-a{opacity:0;animation:hf-in-fade .45s .84s ease-out forwards}
+#hero-flow.hf-intro .hf-project-b{opacity:0;animation:hf-in-fade .45s .96s ease-out forwards}
+#hero-flow.hf-intro .hf-lock-in{opacity:0;animation:hf-in-lock .5s 2.10s ease-out forwards}
+#hero-flow.hf-intro .hf-frame{opacity:0;transform-box:fill-box;transform-origin:center;animation:hf-in-frame .5s 2.26s ease-out forwards}
+#hero-flow.hf-intro .hf-project-a .hf-gov{opacity:0;animation:hf-in-fade .45s 2.42s ease-out forwards}
+#hero-flow.hf-intro .hf-project-b .hf-gov{opacity:0;animation:hf-in-fade .45s 2.62s ease-out forwards}
+#hero-flow.hf-intro .hf-tint{filter:grayscale(1)}
+#hero-flow.hf-intro .hf-project-a .hf-step-1{opacity:0;animation:hf-in-fade .4s 2.62s ease-out forwards}
+#hero-flow.hf-intro .hf-project-a .hf-step-2{opacity:0;animation:hf-in-fade .4s 2.62s ease-out forwards}
+#hero-flow.hf-intro .hf-project-a .hf-step-3{opacity:0;animation:hf-in-fade .4s 2.62s ease-out forwards}
+#hero-flow.hf-intro .hf-project-a .hf-tint{animation:hf-tint .35s 2.80s ease-out forwards}
+#hero-flow.hf-intro .hf-project-b .hf-step-1{opacity:0;animation:hf-in-fade .4s 2.86s ease-out forwards}
+#hero-flow.hf-intro .hf-project-b .hf-step-2{opacity:0;animation:hf-in-fade .4s 2.86s ease-out forwards}
+#hero-flow.hf-intro .hf-project-b .hf-step-3{opacity:0;animation:hf-in-fade .4s 2.86s ease-out forwards}
+#hero-flow.hf-intro .hf-project-b .hf-tint{animation:hf-tint .35s 3.04s ease-out forwards}
+#hero-flow.hf-intro .hf-lessons{opacity:0;animation:hf-in-fade .45s 3.26s ease-out forwards}
+#hero-flow.hf-intro .hf-proj-out{opacity:0;animation:hf-in-fade .4s 3.26s ease-out forwards}
+#hero-flow.hf-intro .hf-return{opacity:0;animation:hf-in-fade .45s 3.46s ease-out forwards}
+#hero-flow.hf-intro .hf-bus{opacity:0;animation:hf-in-fade .45s 3.66s ease-out forwards}
+#hero-flow.hf-intro .hf-agents .card-hover{opacity:0;animation:hf-in-fade .4s ease-out forwards}
+#hero-flow.hf-intro .hf-agents>.hf-link:nth-of-type(2) .card-hover{animation-delay:.09s}
+#hero-flow.hf-intro .hf-agents>.hf-link:nth-of-type(3) .card-hover{animation-delay:.18s}
+#hero-flow.hf-intro .hf-agents>.hf-link:nth-of-type(4) .card-hover{animation-delay:.27s}
+#hero-flow.hf-intro .hf-agents .hf-agent-card{animation-delay:4.11s}
+#hero-flow.hf-intro .hf-agents>.hf-link:nth-of-type(2) .hf-agent-card{animation-delay:6.11s}
+#hero-flow.hf-intro .hf-agents>.hf-link:nth-of-type(3) .hf-agent-card{animation-delay:8.11s}
+#hero-flow.hf-intro .hf-agents>.hf-link:nth-of-type(4) .hf-agent-card{animation-delay:10.11s}
 #hero-flow .card-hover{transition:transform .25s ease}
 #hero-flow .card-hover:hover,#hero-flow .hf-link:focus-visible .card-hover{transform:translateY(-2px)}
 #hero-flow .hf-link{cursor:pointer;outline:none}
 #hero-flow .hf-link:focus-visible{outline:3px solid #D77A00;outline-offset:6px;border-radius:18px}
-@media(prefers-reduced-motion:reduce){#hero-flow .flow-orange,#hero-flow .flow-green,#hero-flow .flow-loop,#hero-flow .status-dot,#hero-flow .spark{animation:none!important}#hero-flow .card-hover{transition:none!important}#hero-flow .hf-agent-card{animation:none!important}#hero-flow .hf-d0{stroke:#D77A00;stroke-width:3.5}}
+@media(prefers-reduced-motion:reduce){#hero-flow .flow-orange,#hero-flow .flow-green,#hero-flow .flow-loop,#hero-flow .status-dot,#hero-flow .spark{animation:none!important}#hero-flow .card-hover{transition:none!important}#hero-flow .hf-agent-card{animation:none!important}#hero-flow .hf-d0{stroke:#D77A00;stroke-width:3.5}#hero-flow.hf-intro .hf-project-a,#hero-flow.hf-intro .hf-project-b,#hero-flow.hf-intro .hf-lock-in,#hero-flow.hf-intro .hf-frame,#hero-flow.hf-intro .hf-exits,#hero-flow.hf-intro .hf-bus,#hero-flow.hf-intro .hf-step-1,#hero-flow.hf-intro .hf-step-2,#hero-flow.hf-intro .hf-step-3,#hero-flow.hf-intro .hf-gov,#hero-flow.hf-intro .hf-lessons,#hero-flow.hf-intro .hf-proj-out,#hero-flow.hf-intro .hf-return,#hero-flow.hf-intro .hf-agents .card-hover{animation:none!important;opacity:1!important}#hero-flow.hf-intro .hf-tint{animation:none!important;filter:grayscale(0)!important}}
 ]]></style>
 <filter id="hf-shadow" x="-12%" y="-12%" width="124%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0A1420" flood-opacity="0.14"/></filter>
 <linearGradient id="hf-card" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFFFFF" stop-opacity=".82"/><stop offset="1" stop-color="#FAF9F5" stop-opacity=".92"/></linearGradient>
@@ -139,6 +173,7 @@
 
 <g id="hf-scene">
 <rect class="hf-frame" x="322" y="98" width="790" height="530" rx="30" fill="none" stroke="rgba(10,20,32,.34)" stroke-width="3" stroke-dasharray="5 7" stroke-linecap="round"/>
+<g class="hf-agents">
 <g class="hf-link" role="link" tabindex="0" data-target="/reference/#compatibility" aria-label="Codex CLI: open agent integration" transform="translate(0,5)">
 <g class="card-hover">
 <rect class="hf-agent-card hf-d0" x="39" y="102" width="238" height="84" rx="26" fill="url(#hf-card)" stroke="rgba(10,20,32,.14)" stroke-width="2"/>
@@ -169,10 +204,9 @@
 <circle cx="79" cy="426" r="24" fill="#FFF3DC"/>
 <path d="M 79 416 C 80 422 82 424 88 426 C 82 428 80 430 79 436 C 78 430 76 428 70 426 C 76 424 78 422 79 416 Z" fill="#D77A00"/>
 <text x="117" y="435" class="agent-title">Gemini CLI</text>
-</g>
-</g>
+</g></g></g>
 <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<g class="hf-exits" fill="none" stroke-linecap="round" stroke-linejoin="round">
 <line x1="277" y1="149" x2="314" y2="149" stroke="#D77A00" stroke-width="5.5"/>
 <line x1="277" y1="149" x2="314" y2="149" stroke="#FFB547" stroke-width="3.5" class="flow-orange"/>
 <path d="M 314 141 L 322 149 L 314 157" fill="none" stroke="#D77A00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -189,23 +223,25 @@
 </g>
 
 
-<g transform="translate(596, 30)" filter="url(#hf-lockshadow)">
+<g class="hf-lock" transform="translate(596, 30)">
+<g class="hf-lock-in" filter="url(#hf-lockshadow)">
 <g transform="translate(0 15) scale(0.078) translate(-768 -496)"><path d="M 425,279 C 398,287 381,309 381,339 L 381,670 Q 381,711 416,733 L 728,921 Q 768,946 808,921 L 1121,734 Q 1156,713 1156,671 L 1156,332 Q 1156,308 1138,295 Q 1130,290 1124,306 L 1063,355 L 1063,649 Q 1063,676 1040,690 L 790,839 Q 768,852 746,839 L 495,690 Q 472,676 472,650 L 472,326 Z" fill="#091926"/><path d="M 541,352 L 738,234 Q 768,216 794,233 L 918,309 Q 923,313 914,319 L 857,357 Q 849,363 841,357 L 783,319 Q 768,309 752,319 L 627,394 Q 612,403 612,420 L 612,567 Q 612,582 627,591 L 751,663 Q 768,673 784,663 L 907,591 Q 922,582 922,566 L 922,458 Q 922,449 931,443 L 990,405 Q 999,399 999,410 L 999,592 Q 999,622 974,637 L 794,749 Q 768,765 742,749 L 559,638 Q 535,622 535,592 L 535,380 Q 535,362 541,352 Z" fill="#091926"/><path d="M 430,252 L 676,100 Q 767,47 858,99 L 1070,228 Q 1101,246 1100,278 Q 1099,302 1074,319 L 875,446 Q 861,454 861,469 L 861,534 Q 861,547 849,555 L 784,594 Q 768,603 752,594 L 687,555 Q 673,547 673,531 L 673,449 Q 673,438 685,430 L 749,390 Q 766,380 781,389 L 811,406 Q 820,412 829,406 L 990,303 Q 1003,293 991,280 L 847,191 Q 768,139 689,190 L 485,317 Q 476,323 472,333 Q 451,315 432,310 Q 399,293 430,252 Z" fill="#D77A00"/></g>
 <text x="62" y="35" class="title-logo">Ar<tspan fill="#D77A00">q</tspan>UX</text>
 </g>
+</g>
 
 <g transform="translate(334, 124)">
-<g class="hf-link" role="link" tabindex="0" data-target="/reference/#dimensions" aria-label="Project A: what governs project work">
+<g class="hf-project-a hf-link" role="link" tabindex="0" data-target="/reference/#dimensions" aria-label="Project A: what governs project work">
 <g class="card-hover" filter="url(#hf-shadow)">
 <rect x="0" y="0" width="742" height="162" rx="22" fill="url(#hf-card)" stroke="rgba(10,20,32,.14)" stroke-width="1.8"/>
 <path d="M 32 22 L 44 22 L 48 26 L 62 26 C 64 26 66 28 66 30 L 66 44 C 66 46 64 48 62 48 L 32 48 C 30 48 28 46 28 44 L 28 26 C 28 24 30 22 32 22 Z" fill="#D8EAE1" stroke="#116244" stroke-width="2.5" stroke-linejoin="round"/>
 <text x="84" y="44" class="project-title">Project A</text>
-<g transform="translate(552, 18)">
+<g class="hf-gov" transform="translate(552, 18)">
 <rect x="0" y="0" width="180" height="34" rx="17" fill="#D8EAE1"/>
 <circle cx="20" cy="17" r="6" fill="#116244" class="status-dot"/>
 <text x="34" y="24" class="badge-text">GOVERNED</text>
 </g>
-<g transform="translate(40, 62)">
+<g class="hf-gov" transform="translate(40, 62)">
 <g transform="translate(0,0)"><circle cx="12" cy="12" r="11" fill="none" stroke="#D77A00" stroke-width="2"/><circle cx="12" cy="12" r="6" fill="none" stroke="#D77A00" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="#D77A00"/><line x1="12" y1="12" x2="23" y2="1" stroke="#D77A00" stroke-width="2" stroke-linecap="round"/><text x="34" y="19" class="meta-text">Criterion</text></g>
 <line x1="150" y1="2" x2="150" y2="24" stroke="rgba(10,20,32,.18)" stroke-width="1.5"/>
 <g transform="translate(168, 0)"><polygon points="14,2 26,8 14,14 2,8" fill="#D8EAE1" stroke="#116244" stroke-width="1.8" stroke-linejoin="round"/><polyline points="2,13 14,19 26,13" fill="none" stroke="#116244" stroke-width="1.8" stroke-linejoin="round"/><polyline points="2,18 14,24 26,18" fill="none" stroke="#116244" stroke-width="1.8" stroke-linejoin="round"/><text x="36" y="19" class="meta-text">Context</text></g>
@@ -214,40 +250,41 @@
 <line x1="492" y1="2" x2="492" y2="24" stroke="rgba(10,20,32,.18)" stroke-width="1.5"/>
 <g transform="translate(510, 0)"><rect x="4" y="2" width="18" height="21" rx="2" fill="#E9F3EE" stroke="#116244" stroke-width="1.8"/><line x1="8" y1="8" x2="18" y2="8" stroke="#116244" stroke-width="1.8"/><line x1="8" y1="13" x2="18" y2="13" stroke="#116244" stroke-width="1.8"/><line x1="8" y1="18" x2="14" y2="18" stroke="#116244" stroke-width="1.8"/><text x="34" y="19" class="meta-text">Evidence</text></g>
 </g>
-<g transform="translate(50, 98)">
+<g class="hf-step hf-step-1" transform="translate(50, 98)"><g class="hf-tint">
 <rect x="0" y="0" width="166" height="42" rx="21" fill="url(#hf-pill-orange)" stroke="#D77A00" stroke-width="2.2"/>
 <rect x="30" y="9" width="18" height="23" rx="2.5" fill="#FFF3DC" stroke="#D77A00" stroke-width="2"/>
 <line x1="34" y1="15" x2="44" y2="15" stroke="#D77A00" stroke-width="1.8"/><line x1="34" y1="20" x2="44" y2="20" stroke="#D77A00" stroke-width="1.8"/><line x1="34" y1="25" x2="41" y2="25" stroke="#D77A00" stroke-width="1.8"/>
 <text x="62" y="29" class="pill-text">Define</text>
 <path d="M 180 21 L 198 21 M 192 15 L 199 21 L 192 27" fill="none" stroke="#D77A00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="210" y="0" width="216" height="42" rx="21" fill="url(#hf-pill-gray)" stroke="rgba(10,20,32,.16)" stroke-width="1.8"/>
+</g></g>
+<g class="hf-step hf-step-2" transform="translate(50, 98)"><g class="hf-tint"><rect x="210" y="0" width="216" height="42" rx="21" fill="url(#hf-pill-gray)" stroke="rgba(10,20,32,.16)" stroke-width="1.8"/>
 <path d="M 238 16 L 232 21 L 238 26 M 252 16 L 258 21 L 252 26 M 247 13 L 243 29" fill="none" stroke="#D77A00" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="272" y="29" class="pill-text">Implement</text>
 <path d="M 438 21 L 456 21 M 450 15 L 457 21 L 450 27" fill="none" stroke="#D77A00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="466" y="0" width="176" height="42" rx="21" fill="url(#hf-pill-green)" stroke="#167A55" stroke-width="2.2"/>
+</g></g>
+<g class="hf-step hf-step-3" transform="translate(50, 98)"><g class="hf-tint"><rect x="466" y="0" width="176" height="42" rx="21" fill="url(#hf-pill-green)" stroke="#167A55" stroke-width="2.2"/>
 <circle cx="502" cy="21" r="12" fill="#FFFFFF" stroke="#167A55" stroke-width="2.2"/>
 <path d="M 497 21 L 501 25 L 508 17" fill="none" stroke="#167A55" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="524" y="29" class="pill-text">Verify</text>
 <path d="M 642 21 C 660 21 660 54 640 54 L 315 54 M 298 54 L -4 54 C -26 54 -26 21 -4 21" fill="none" stroke="#D77A00" stroke-width="2.5" stroke-linecap="round"/>
 <path d="M 642 21 C 660 21 660 54 640 54 L -4 54 C -26 54 -26 21 -4 21" fill="none" stroke="#FFD98F" stroke-width="2" class="flow-loop"/>
-<path d="M 96 48 L 89 54 L 96 60" fill="none" stroke="#D77A00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
+<path d="M 96 48 L 89 54 L 96 60" fill="none" stroke="#D77A00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g></g>
 </g>
 </g>
 </g>
 
 <g transform="translate(334, 306)">
-<g class="hf-link" role="link" tabindex="0" data-target="/reference/#dimensions" aria-label="Project B: what governs project work">
+<g class="hf-project-b hf-link" role="link" tabindex="0" data-target="/reference/#dimensions" aria-label="Project B: what governs project work">
 <g class="card-hover" filter="url(#hf-shadow)">
 <rect x="0" y="0" width="742" height="162" rx="22" fill="url(#hf-card)" stroke="rgba(10,20,32,.14)" stroke-width="1.8"/>
 <path d="M 32 22 L 44 22 L 48 26 L 62 26 C 64 26 66 28 66 30 L 66 44 C 66 46 64 48 62 48 L 32 48 C 30 48 28 46 28 44 L 28 26 C 28 24 30 22 32 22 Z" fill="#D8EAE1" stroke="#116244" stroke-width="2.5" stroke-linejoin="round"/>
 <text x="84" y="44" class="project-title">Project B</text>
-<g transform="translate(552, 18)">
+<g class="hf-gov" transform="translate(552, 18)">
 <rect x="0" y="0" width="180" height="34" rx="17" fill="#D8EAE1"/>
 <circle cx="20" cy="17" r="6" fill="#116244" class="status-dot"/>
 <text x="34" y="24" class="badge-text">GOVERNED</text>
 </g>
-<g transform="translate(40, 62)">
+<g class="hf-gov" transform="translate(40, 62)">
 <g transform="translate(0,0)"><circle cx="12" cy="12" r="11" fill="none" stroke="#D77A00" stroke-width="2"/><circle cx="12" cy="12" r="6" fill="none" stroke="#D77A00" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="#D77A00"/><line x1="12" y1="12" x2="23" y2="1" stroke="#D77A00" stroke-width="2" stroke-linecap="round"/><text x="34" y="19" class="meta-text">Criterion</text></g>
 <line x1="150" y1="2" x2="150" y2="24" stroke="rgba(10,20,32,.18)" stroke-width="1.5"/>
 <g transform="translate(168, 0)"><polygon points="14,2 26,8 14,14 2,8" fill="#D8EAE1" stroke="#116244" stroke-width="1.8" stroke-linejoin="round"/><polyline points="2,13 14,19 26,13" fill="none" stroke="#116244" stroke-width="1.8" stroke-linejoin="round"/><polyline points="2,18 14,24 26,18" fill="none" stroke="#116244" stroke-width="1.8" stroke-linejoin="round"/><text x="36" y="19" class="meta-text">Context</text></g>
@@ -256,30 +293,31 @@
 <line x1="492" y1="2" x2="492" y2="24" stroke="rgba(10,20,32,.18)" stroke-width="1.5"/>
 <g transform="translate(510, 0)"><rect x="4" y="2" width="18" height="21" rx="2" fill="#E9F3EE" stroke="#116244" stroke-width="1.8"/><line x1="8" y1="8" x2="18" y2="8" stroke="#116244" stroke-width="1.8"/><line x1="8" y1="13" x2="18" y2="13" stroke="#116244" stroke-width="1.8"/><line x1="8" y1="18" x2="14" y2="18" stroke="#116244" stroke-width="1.8"/><text x="34" y="19" class="meta-text">Evidence</text></g>
 </g>
-<g transform="translate(50, 98)">
+<g class="hf-step hf-step-1" transform="translate(50, 98)"><g class="hf-tint">
 <rect x="0" y="0" width="166" height="42" rx="21" fill="url(#hf-pill-orange)" stroke="#D77A00" stroke-width="2.2"/>
 <rect x="30" y="9" width="18" height="23" rx="2.5" fill="#FFF3DC" stroke="#D77A00" stroke-width="2"/>
 <line x1="34" y1="15" x2="44" y2="15" stroke="#D77A00" stroke-width="1.8"/><line x1="34" y1="20" x2="44" y2="20" stroke="#D77A00" stroke-width="1.8"/><line x1="34" y1="25" x2="41" y2="25" stroke="#D77A00" stroke-width="1.8"/>
 <text x="62" y="29" class="pill-text">Define</text>
 <path d="M 180 21 L 198 21 M 192 15 L 199 21 L 192 27" fill="none" stroke="#D77A00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="210" y="0" width="216" height="42" rx="21" fill="url(#hf-pill-gray)" stroke="rgba(10,20,32,.16)" stroke-width="1.8"/>
+</g></g>
+<g class="hf-step hf-step-2" transform="translate(50, 98)"><g class="hf-tint"><rect x="210" y="0" width="216" height="42" rx="21" fill="url(#hf-pill-gray)" stroke="rgba(10,20,32,.16)" stroke-width="1.8"/>
 <path d="M 238 16 L 232 21 L 238 26 M 252 16 L 258 21 L 252 26 M 247 13 L 243 29" fill="none" stroke="#D77A00" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="272" y="29" class="pill-text">Implement</text>
 <path d="M 438 21 L 456 21 M 450 15 L 457 21 L 450 27" fill="none" stroke="#D77A00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="466" y="0" width="176" height="42" rx="21" fill="url(#hf-pill-green)" stroke="#167A55" stroke-width="2.2"/>
+</g></g>
+<g class="hf-step hf-step-3" transform="translate(50, 98)"><g class="hf-tint"><rect x="466" y="0" width="176" height="42" rx="21" fill="url(#hf-pill-green)" stroke="#167A55" stroke-width="2.2"/>
 <circle cx="502" cy="21" r="12" fill="#FFFFFF" stroke="#167A55" stroke-width="2.2"/>
 <path d="M 497 21 L 501 25 L 508 17" fill="none" stroke="#167A55" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="524" y="29" class="pill-text">Verify</text>
 <path d="M 642 21 C 660 21 660 54 640 54 L 315 54 M 298 54 L -4 54 C -26 54 -26 21 -4 21" fill="none" stroke="#D77A00" stroke-width="2.5" stroke-linecap="round"/>
 <path d="M 642 21 C 660 21 660 54 640 54 L -4 54 C -26 54 -26 21 -4 21" fill="none" stroke="#FFD98F" stroke-width="2" class="flow-loop"/>
-<path d="M 96 48 L 89 54 L 96 60" fill="none" stroke="#D77A00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
+<path d="M 96 48 L 89 54 L 96 60" fill="none" stroke="#D77A00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g></g>
 </g>
 </g>
 </g>
 
 
-<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<g class="hf-proj-out" fill="none" stroke-linecap="round" stroke-linejoin="round">
 <path d="M 1078 205 L 1098 205 L 1098 532 Q 1098 550 1084 550 L 1076 550" stroke="#116244" stroke-width="5"/>
 <path d="M 1078 205 L 1098 205 L 1098 532 Q 1098 550 1084 550 L 1076 550" stroke="#BFE3D4" stroke-width="2.5" class="flow-green"/>
 <path d="M 1084 543 L 1076 550 L 1084 557" stroke="#116244" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -287,7 +325,7 @@
 <path d="M 1078 387 L 1098 387" stroke="#BFE3D4" stroke-width="2.5" class="flow-green"/>
 </g>
 <g transform="translate(334, 498)">
-<g class="hf-link" role="link" tabindex="0" data-target="/reference/#artifacts" aria-label="Reviewed lessons: what the project retains">
+<g class="hf-lessons hf-link" role="link" tabindex="0" data-target="/reference/#artifacts" aria-label="Reviewed lessons: what the project retains">
 <g class="card-hover" filter="url(#hf-shadow)">
 <rect x="0" y="0" width="742" height="104" rx="52" fill="url(#hf-card)" stroke="rgba(10,20,32,.14)" stroke-width="1.8"/>
 <circle cx="54" cy="52" r="42" fill="#167A55"/>
@@ -318,14 +356,14 @@
 </g>
 </g>
 
-<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<g class="hf-return" fill="none" stroke-linecap="round" stroke-linejoin="round">
 <path d="M 334 550 L 14 550 Q -6 550 -6 530 L -6 443" stroke="url(#hf-return)" stroke-width="7.5"/>
 <path d="M 334 550 L 14 550 Q -6 550 -6 530 L -6 443" stroke="#BFE3D4" stroke-width="3.5" class="flow-green"/>
 </g>
 
 
 
-<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<g class="hf-bus" fill="none" stroke-linecap="round" stroke-linejoin="round">
 <line x1="-6" y1="443" x2="-6" y2="149" stroke="#116244" stroke-width="5"/>
 <line x1="-6" y1="443" x2="-6" y2="149" stroke="#BFE3D4" stroke-width="2.5" class="flow-green"/>
 <line x1="-6" y1="149" x2="31" y2="149" stroke="#116244" stroke-width="4"/>
