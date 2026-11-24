@@ -534,6 +534,7 @@
       fill(item, idx);
       caseDeck.classList.add("is-flipped");
       caseDeck.setAttribute("data-open", "1");
+      caseDeck.setAttribute("data-fig", String(idx));
       front.setAttribute("aria-hidden", "true");
       front.setAttribute("inert", "");
       back.removeAttribute("aria-hidden");
