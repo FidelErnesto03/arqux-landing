@@ -165,11 +165,21 @@
     failureObserver.observe(failureSection);
   }
 
-  /* ---------- cost map: one reflective detail at a time ---------- */
+  /* ---------- cost cube: the left rail turns the right face ---------- */
   const costCards = $$(".cost-card[data-cost]");
-  const costDetails = $$(".cost-detail[data-cost-detail]");
-  if (costCards.length && costDetails.length) {
+  const costCube = $(".cost-cube");
+  if (costCards.length && costCube) {
+    const faces = $$(".cost-face", costCube);
+    const cubeInner = $(".cost-cube-inner", costCube);
     let activeCost = null;
+    const setFace = (n) => {
+      costCube.dataset.costCube = String(n);
+      faces.forEach((f) => {
+        const on = f.dataset.costFace === String(n);
+        f.classList.toggle("is-active", on);
+        f.setAttribute("aria-hidden", on ? "false" : "true");
+      });
+    };
     const renderCost = (id) => {
       activeCost = id;
       costCards.forEach((card) => {
@@ -177,25 +187,24 @@
         card.classList.toggle("is-active", on);
         card.setAttribute("aria-expanded", on ? "true" : "false");
       });
-      costDetails.forEach((detail) => {
-        detail.classList.toggle("is-active", detail.dataset.costDetail === id);
-      });
+      setFace(id === null ? 0 : id);
+      if (costCube.dataset.scroll !== "off" && id !== null) {
+        const top = costCube.getBoundingClientRect().top;
+        if (top < 60 || top > window.innerHeight * 0.6) {
+          costCube.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "nearest" });
+        }
+      }
     };
     costCards.forEach((card) => {
       card.setAttribute("aria-expanded", "false");
+      card.setAttribute("aria-controls", "cost-cube-inner");
       card.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
-        const id = activeCost === card.dataset.cost ? null : card.dataset.cost;
-        renderCost(id);
-        if (id) {
-          const panel = costDetails.find((d) => d.dataset.costDetail === id);
-          if (panel && panel.getBoundingClientRect().top > window.innerHeight - 120) {
-            panel.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "start" });
-          }
-        }
+        renderCost(activeCost === card.dataset.cost ? null : card.dataset.cost);
       });
     });
+    setFace(0);
     const hashCost = (location.hash.match(/^#cost-detail-([1-4])$/) || [])[1];
     if (hashCost) renderCost(hashCost);
   }
