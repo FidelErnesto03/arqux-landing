@@ -38,6 +38,13 @@ with sync_playwright() as pw:
         ok("lessons return feeds agent spine",'M 334 626 L 14 626 Q -6 626 -6 606 L -6 443' in p.content())
         ok("no single-project arrow","translate(705, 448)" not in p.content())
         ok("workspace frame evident",M.locator(".hf-frame").count()==1 and M.locator(".hf-frame").get_attribute("fill")=="none" and "5 7" in M.locator(".hf-frame").get_attribute("stroke-dasharray"))
+        ok("rows reflow at the height the frame declares",M.locator(".hf-frame").get_attribute("height")=="606" and M.locator('.hf-project-a rect[x="0"][y="0"]').first.get_attribute("height")=="200" and M.locator('.hf-project-b rect[x="0"][y="0"]').first.get_attribute("height")=="200")
+        ok("row divider sits inside the cards",M.locator('line[x1="40"][y1="112"][x2="702"]').count()==2 and M.locator('line[x1="40"][y1="112"][x2="702"]').first.get_attribute("stroke-width")=="2")
+        ok("loop drawn apart from its rows",all(t in p.content() for t in (
+            '<path d="M 642 21 C 660 21 660 58 640 58 L 315 58 M 298 58 L -4 58 C -26 58 -26 21 -4 21"',
+            '<path d="M 642 21 C 660 21 660 58 640 58 L -4 58 C -26 58 -26 21 -4 21"',
+        )))
+        ok("shadow is per object not a blur",M.locator(".hf-project-a .card-hover").evaluate("e=>getComputedStyle(e).filter").startswith("drop-shadow") and M.locator(".hf-gov").first.evaluate("e=>getComputedStyle(e).filter").startswith("drop-shadow") and "blur" not in M.locator(".hf-project-a .card-hover").evaluate("e=>getComputedStyle(e).filter"))
         ok("agent exit flows end at workspace border",all(t in p.content() for t in (
             '<line x1="277" y1="149" x2="314" y2="149" stroke="#D77A00" stroke-width="5.5"',
             '<line x1="277" y1="247" x2="314" y2="247" stroke="#D77A00" stroke-width="5.5"',
@@ -192,6 +199,13 @@ with sync_playwright() as pw:
         '<path d="M 31 436 L 39 443 L 31 450" fill="none" stroke="#116244" stroke-width="4"',
     )))
     ok("ES workspace frame",q.locator(".hf-frame").count()==1 and "5 7" in q.locator(".hf-frame").get_attribute("stroke-dasharray"))
+    ok("ES rows reflow at the height the frame declares",q.locator(".hf-frame").get_attribute("height")=="606" and q.locator('.hf-project-a rect[x="0"][y="0"]').first.get_attribute("height")=="200" and q.locator('.hf-project-b rect[x="0"][y="0"]').first.get_attribute("height")=="200")
+    ok("ES row divider sits inside the cards",q.locator('line[x1="40"][y1="112"][x2="702"]').count()==2 and q.locator('line[x1="40"][y1="112"][x2="702"]').first.get_attribute("stroke-width")=="2")
+    ok("ES loop drawn apart from its rows",all(t in q.content() for t in (
+        '<path d="M 642 21 C 660 21 660 58 640 58 L 315 58 M 298 58 L -4 58 C -26 58 -26 21 -4 21"',
+        '<path d="M 642 21 C 660 21 660 58 640 58 L -4 58 C -26 58 -26 21 -4 21"',
+    )))
+    ok("ES shadow is per object not a blur",q.locator(".hf-project-a .card-hover").evaluate("e=>getComputedStyle(e).filter").startswith("drop-shadow") and q.locator(".hf-gov").first.evaluate("e=>getComputedStyle(e).filter").startswith("drop-shadow") and "blur" not in q.locator(".hf-project-a .card-hover").evaluate("e=>getComputedStyle(e).filter"))
     ok("ES failure is second section",q.locator("main > section").nth(1).get_attribute("id")=="failures")
     ok("ES failure five modes",q.locator("#failures .failure-case").count()==5)
     ok("ES failure H2","cinco formas" in q.locator("#failures h2").text_content())
