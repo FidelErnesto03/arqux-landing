@@ -570,10 +570,13 @@ details.ev-detail>summary:focus-visible{outline:2px solid var(--teal-600);outlin
 .ev-group[hidden]{display:none}
 @media(max-width:640px){.ev-filterbar{gap:6px}.ev-filter{padding:8px 12px;font-size:12px}}
 
-/* ===== reference v4: content-driven depth, bounded measure ===== */
-body.page-reference main > section[id]{min-height:auto;display:block;padding-block:72px}
+/* ===== reference v4: content-driven depth, bounded measure =====
+   BLP-009 (SES008): the viewport floor is restored below on purpose — v4 sized
+   sections to content, which left #workflow at 742 against siblings at 950+.
+   The Architect chose a shared floor; it lives on the page-reference rule. */
+body.page-reference main > section[id]{display:block;padding-block:72px}
 body.page-reference .section-copy,body.page-reference .note,body.page-reference .lead{max-width:68ch}
-.compat-cta{margin-top:44px;padding-top:30px;border-top:1px solid var(--line-light)}
+.compat-cta{margin-top:44px;padding-block:32px;border-top:1px solid var(--line-light);background:var(--paper-200)}
 .compat-paths{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
 .compat-path{display:flex;flex-direction:column;gap:8px;padding:18px 18px 20px;border:1px solid var(--line-light);border-radius:14px;background:var(--paper-100)}
 .compat-path-title{margin:0;font:650 15.5px/1.35 var(--sans);color:var(--ink-950)}

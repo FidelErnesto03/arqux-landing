@@ -37,6 +37,7 @@ with sync_playwright() as pw:
     ok("learning not a section",p.locator("section#learning").count()==0)
     ok("continue cta","Verify the first task" in p.locator("#compatibility #continue").text_content() and "See how to connect an agent" in p.locator("#compatibility #continue").text_content())
     ok("continue not a section",p.locator("section#continue").count()==0)
+    ok("closing band has its own surface",p.locator("#compatibility .compat-cta").evaluate("e=>{const s=getComputedStyle(e);return s.backgroundColor!=='rgba(0, 0, 0, 0)'&&parseFloat(s.borderTopWidth)>=1}") and p.locator("#compatibility .compat-cta").evaluate("e=>getComputedStyle(e).backgroundColor")!=p.locator("#compatibility").evaluate("e=>getComputedStyle(e).backgroundColor"))
     ok("intro alias",p.locator("#intro").count()==1)
     anchors=p.evaluate("['intro','workflow','dimensions','artifacts','learning','format','compatibility','continue'].map(a=>!!document.getElementById(a))")
     ok("all anchors resolve",all(anchors))
