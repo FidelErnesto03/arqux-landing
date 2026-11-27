@@ -389,12 +389,14 @@ html.no-js .cost-rail .cost-card{flex:0 0 auto}
 @keyframes cost-pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
 @keyframes cost-grow{from{transform:scaleY(0)}to{transform:none}}
 @keyframes cost-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes cost-settle{from{opacity:.82;transform:translateY(9px);filter:blur(2.5px)}to{opacity:1;transform:none;filter:blur(0)}}
 @media(prefers-reduced-motion:no-preference){
+html:not(.no-js) .cost-section.is-live .cost-intro{animation:cost-settle .5s cubic-bezier(.22,.7,.3,1) both}
 html:not(.no-js) .cost-face.is-active .cd{stroke-dasharray:1;stroke-dashoffset:1;animation:cost-draw .9s ease forwards;animation-delay:calc(var(--d,0s) + .25s)}
 html:not(.no-js) .cost-face.is-active .cp{transform-box:fill-box;transform-origin:center;animation:cost-pop .42s ease both;animation-delay:calc(var(--d,0s) + .25s)}
 html:not(.no-js) .cost-face.is-active .cf{animation:cost-in .42s ease both;animation-delay:calc(var(--d,0s) + .25s)}
 html:not(.no-js) .cost-face.is-active .cg{transform-box:fill-box;transform-origin:bottom;animation:cost-grow .8s ease both;animation-delay:calc(var(--d,0s) + .25s)}
-html:not(.no-js) .cost-face.is-active .cost-flow-list li{animation:cost-in .42s ease both;animation-delay:calc(var(--d,0s) + .25s)}
+html:not(.no-js) .cost-section.is-live .cost-flow-list li{animation:cost-in .42s ease both;animation-delay:calc(var(--d,0s) + .16s)}
 }
 @media(prefers-reduced-motion:reduce){.cost-cube-inner{transition:none}.cost-rail .cost-card{transition:border-color .18s ease,background .18s ease}.cost-rail .cost-card.is-active{transform:none}.cost-face{transform:none!important}}
 .failure-section{position:relative;overflow:hidden;background:#12171A;color:var(--mist-300);border-top:1px solid rgba(220,226,227,.2)}

@@ -154,16 +154,17 @@
     }
   }
 
-  /* ---------- problem section: only the reference motif moves, text never hides ---------- */
-  const failureSection = $("#failures");
-  if (failureSection && "IntersectionObserver" in window && !REDUCED) {
-    const failureObserver = new IntersectionObserver((entries) => {
-      if (!entries[0].isIntersecting) return;
-      failureSection.classList.add("is-live");
-      failureObserver.disconnect();
+  /* ---------- scene sections: the settled motif plays once the section is on screen ---------- */
+  const liveOnce = (el) => {
+    if (!el || !("IntersectionObserver" in window) || REDUCED) return;
+    const o = new IntersectionObserver((e) => {
+      if (!e[0].isIntersecting) return;
+      el.classList.add("is-live"); o.disconnect();
     }, { threshold: 0.15, rootMargin: "0px 0px -25% 0px" });
-    failureObserver.observe(failureSection);
-  }
+    o.observe(el);
+  };
+  liveOnce($("#failures"));
+  liveOnce($("#local"));
 
   /* ---------- cost cube: the left rail turns the right face ---------- */
   const costCards = $$(".cost-card[data-cost]");
