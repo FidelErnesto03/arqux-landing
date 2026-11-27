@@ -288,7 +288,13 @@
   const closeStepDetail = () => {
     if (!stepDetail || !stepDetail.classList.contains("is-open")) return;
     stepDetail.classList.remove("is-open");
+    stepDetail.classList.add("closing");
     stepList.classList.remove("is-detail");
+    stepList.classList.add("returning");
+    setTimeout(() => {
+      stepDetail.classList.remove("closing");
+      stepList.classList.remove("returning");
+    }, 700);
     if (stepTrigger) stepTrigger.focus();
   };
   steps.forEach((btn) =>
@@ -306,6 +312,8 @@
       setText("#step-case", s.case);
       if (stepDetail) {
         stepTrigger = btn;
+        stepDetail.classList.remove("closing");
+        stepList.classList.remove("returning");
         stepDetail.classList.add("is-open");
         stepList.classList.add("is-detail");
         setTimeout(() => { const c = $(".step-detail-close", stepDetail); if (c) c.focus(); }, 60);
