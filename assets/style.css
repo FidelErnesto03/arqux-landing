@@ -392,7 +392,7 @@ html.no-js .cost-rail .cost-card{flex:0 0 auto}
 @keyframes cost-settle{from{opacity:.82;transform:translateY(10px);filter:blur(2.5px)}to{opacity:1;transform:none;filter:blur(0)}}
 @keyframes settle{from{opacity:.86;transform:translateY(10px)}}
 @media(prefers-reduced-motion:no-preference){
-html:not(.no-js) #artifacts.is-live .artifact-node{animation:settle .45s ease-out both}.step-list:not(.is-detail) .step{animation:settle .45s ease-out both}
+html:not(.no-js) #artifacts.is-live .artifact-node{animation:settle .45s ease-out both}
 html:not(.no-js) #artifacts.is-live .artifact-node[data-artifact="1"]{animation-delay:.05s}html:not(.no-js) #artifacts.is-live .artifact-node[data-artifact="2"]{animation-delay:.1s}html:not(.no-js) #artifacts.is-live .artifact-node[data-artifact="3"]{animation-delay:.15s}html:not(.no-js) #artifacts.is-live .artifact-node[data-artifact="4"]{animation-delay:.2s}html:not(.no-js) #artifacts.is-live .artifact-node[data-artifact="5"]{animation-delay:.25s}html:not(.no-js) #artifacts.is-live .artifact-node[data-artifact="6"]{animation-delay:.3s}
 html:not(.no-js) .cost-section.is-live .cost-intro{animation:cost-settle .5s cubic-bezier(.22,.7,.3,1) both}
 html:not(.no-js) .cost-face.is-active .cd{stroke-dasharray:1;stroke-dashoffset:1;animation:cost-draw .9s ease forwards;animation-delay:calc(var(--d,0s) + .25s)}
@@ -477,15 +477,15 @@ html:not(.no-js) .cost-section.is-live .cost-flow-list li{animation:cost-in .42s
 
 .wf-stages{position:relative}
 @keyframes drop-in{to{opacity:1;transform:none}}.step-detail{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:24px 26px;border:1px solid rgba(220,226,227,.2);border-radius:16px;background:var(--ink-950);color:var(--mist-300);opacity:0;visibility:hidden}
-.step-detail.is-open{visibility:visible;animation:drop-in .4s cubic-bezier(.22,.8,.3,1) .3s both}
-@keyframes drop-out{from{opacity:1}to{opacity:0;transform:translateY(-24px)}}.step-detail.closing{animation:drop-out .26s ease-in both}
+.step-detail.is-open{visibility:visible;animation:drop-in .52s cubic-bezier(.22,.8,.3,1) .42s both}
+@keyframes drop-out{from{opacity:1}to{opacity:0;transform:translateY(-24px)}}.step-detail.closing{animation:drop-out .34s ease-in both}
 .step-detail .step-dialog-grid{margin-top:20px;padding-top:16px;border-top:1px solid rgba(220,226,227,.16)}
 
 
 
-@keyframes fall{to{opacity:0;transform:translateY(34px)}}html:not(.no-js) .step-list.is-detail .step{visibility:hidden;animation:fall .28s ease-in var(--d,0s) both}
+@keyframes fall{to{opacity:0;transform:translateY(34px)}}html:not(.no-js) .step-list.is-detail .step{visibility:hidden;animation:fall .4s ease-in var(--d,0s) both}
 
-@keyframes rise{from{opacity:0;transform:translateY(-16px)}}html:not(.no-js) .step-list.returning .step{animation:rise .34s cubic-bezier(.22,.8,.3,1) var(--d,0s) both}
+@keyframes step-rise{from{opacity:0;transform:translateY(-16px)}}html:not(.no-js) .step-list.returning .step{animation:step-rise .46s cubic-bezier(.22,.8,.3,1) var(--d,0s) both}
 @media(prefers-reduced-motion:reduce){.step-detail,.step-list .step{animation:none!important;transform:none}.step-detail.is-open{opacity:1!important;visibility:visible}}
 .step-case-label{display:block;margin-bottom:6px;font:600 10px/1.4 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--mist-500)}
 .step-case-text{display:block;font:500 15.5px/1.55 var(--sans);color:var(--mist-300)}

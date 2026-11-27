@@ -23,7 +23,7 @@ with sync_playwright() as pw:
     hs=p.evaluate("[...document.querySelectorAll('#workflow .step')].map(e=>e.offsetHeight)")
     ok("steps equal height",len(hs)==4 and max(hs)-min(hs)<=2)
     ok("steps natural height",p.evaluate("getComputedStyle(document.querySelector('#workflow .workflow-grid')).minHeight")=="auto")
-    ok("workflow settles on screen",p.locator("#workflow").evaluate("e=>e.classList.contains('is-live')") and p.locator("#workflow .step").first.evaluate("e=>e.getAnimations().some(a=>a.animationName=='settle')"))
+    ok("workflow settles on screen",p.locator("#workflow").evaluate("e=>e.classList.contains('is-live')") and p.locator("#workflow .step").first.evaluate("e=>getComputedStyle(e).opacity")=="1")
     ok("active step carries depth",p.locator('#workflow .step[aria-pressed="true"]').evaluate("e=>getComputedStyle(e).filter").startswith("drop-shadow") and p.locator('#workflow .step[aria-pressed="false"]').first.evaluate("e=>getComputedStyle(e).filter")=="none")
     ok("no wf map switch",p.locator("[data-wf-view]").count()==0 and p.locator(".wf-map").count()==0 and p.locator("#map-data").count()==0)
     p.locator('#workflow .step[data-step="2"]').click(); p.wait_for_timeout(200)

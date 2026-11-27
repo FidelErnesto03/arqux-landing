@@ -294,7 +294,7 @@
     setTimeout(() => {
       stepDetail.classList.remove("closing");
       stepList.classList.remove("returning");
-    }, 700);
+    }, 1100);
     if (stepTrigger) stepTrigger.focus();
   };
   steps.forEach((btn) =>
