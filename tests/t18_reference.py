@@ -98,6 +98,12 @@ with sync_playwright() as pw:
     # dimensions: single-viewport composition
     ok("dimensions viewport height",p.evaluate("document.querySelector('#dimensions').getBoundingClientRect().height")>=p.evaluate("window.innerHeight-72-5"))
     ok("seven artifacts",p.locator("#artifacts .artifact-node").count()==7)
+    ok("artifacts wait for the viewport",p.locator("#artifacts .artifact-node").first.evaluate("e=>e.getAnimations().length")==0 and not p.locator("#artifacts").evaluate("e=>e.classList.contains('is-live')"))
+    p.locator("#artifacts").scroll_into_view_if_needed(); p.wait_for_timeout(200)
+    ok("artifacts staggered on entry",p.locator("#artifacts .artifact-node").evaluate_all("els=>els.map(e=>getComputedStyle(e).animationDelay)")==["0s","0.05s","0.1s","0.15s","0.2s","0.25s","0.3s"])
+    p.wait_for_timeout(700)
+    ok("artifacts lift on hover",p.locator("#artifacts .artifact-node").first.evaluate("e=>getComputedStyle(e).transition").find("transform")>=0)
+    ok("selected artifact carries depth",p.locator('#artifacts .artifact-node[aria-pressed="true"]').evaluate("e=>getComputedStyle(e).filter").startswith("drop-shadow"))
     p.locator('#artifacts .artifact-node[data-artifact="1"]').click(); p.wait_for_timeout(200)
     ok("artifact selection",p.locator("#art-title").text_content()=="meta-brain.cortex")
     # format: one comparator, editable demo and benefit cards removed
@@ -143,5 +149,9 @@ with sync_playwright() as pw:
     m.close()
     m=b.new_page(viewport={"width":320,"height":640}); m.goto(BASE+"/reference/",wait_until="networkidle")
     ok("mobile 320 no overflow",m.evaluate("document.documentElement.scrollWidth-window.innerWidth")==0); m.close()
+    m=b.new_page(viewport={"width":1440,"height":950}); m.emulate_media(reduced_motion="reduce")
+    m.goto(BASE+"/reference/",wait_until="networkidle")
+    ok("reference static with reduced motion",m.locator("#workflow .step, #artifacts .artifact-node").evaluate_all("els=>els.every(e=>getComputedStyle(e).animationName=='none')") and not m.locator("#artifacts").evaluate("e=>e.classList.contains('is-live')"))
+    m.close()
     b.close()
 print("\n".join(results)); print("----"); print("TOTAL",len(results),"FAILURES",len(failures)); sys.exit(1 if failures else 0)

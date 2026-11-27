@@ -209,8 +209,8 @@ p,li{text-wrap:pretty}html.resolve-cv .codec-section,html.resolve-cv .evidence-s
 }
 .artifact-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:24px;align-items:stretch}
 .artifact-tree{background:#fff;border:1px solid var(--line-light);border-radius:12px;padding:14px;display:grid;gap:2px;align-content:start}.artifact-group{font:700 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--slate-600);padding:10px 9px 6px}
-.artifact-node{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:transparent;border:1px solid transparent;border-radius:8px;padding:10px;cursor:pointer;color:#34414a;transition:background .16s ease,border-color .16s ease,color .16s ease}.artifact-node code{font:500 12.5px/1.3 var(--mono)}
-.artifact-node:hover{background:var(--paper-200)}.artifact-node[aria-pressed="true"]{background:#e8f4f1;border-color:rgba(22,122,85,.35);color:#0d514d}
+.artifact-node{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:transparent;border:1px solid transparent;border-radius:8px;padding:10px;cursor:pointer;color:#34414a;transition:background .16s ease,border-color .16s ease,color .16s ease,transform .16s ease}.artifact-node code{font:500 12.5px/1.3 var(--mono)}
+.artifact-node:hover{background:var(--paper-200);transform:translateY(-2px)}.artifact-node[aria-pressed="true"]{background:#e8f4f1;border-color:rgba(22,122,85,.35);color:#0d514d;filter:drop-shadow(0 3px 5px rgba(10,20,32,.16))}
 .artifact-node:focus-visible{outline:2px solid #0d514d;outline-offset:2px}.node-mark{width:8px;height:8px;border:1.5px solid #83939a;border-radius:2px;flex:none}
 .artifact-node[aria-pressed="true"] .node-mark{background:#0e958a;border-color:#0e958a}.artifact-inspector{background:#fff;border:1px solid var(--line-light);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:10px;min-height:340px}
 .artifact-inspector h3{font-size:clamp(24px,2.6vw,30px);letter-spacing:-.03em;margin:0}.artifact-inspector .eyebrow{margin:0}
@@ -392,7 +392,8 @@ html.no-js .cost-rail .cost-card{flex:0 0 auto}
 @keyframes cost-settle{from{opacity:.82;transform:translateY(10px);filter:blur(2.5px)}to{opacity:1;transform:none;filter:blur(0)}}
 @keyframes settle{from{opacity:.86;transform:translateY(10px)}}
 @media(prefers-reduced-motion:no-preference){
-html:not(.no-js) #workflow.is-live .step{animation:settle .45s ease-out both}
+html:not(.no-js) #workflow.is-live .step,html:not(.no-js) #artifacts.is-live .artifact-node{animation:settle .45s ease-out both}
+html:not(.no-js) #artifacts.is-live .artifact-node[data-artifact="1"]{animation-delay:.05s}html:not(.no-js) #artifacts.is-live .artifact-node[data-artifact="2"]{animation-delay:.1s}html:not(.no-js) #artifacts.is-live .artifact-node[data-artifact="3"]{animation-delay:.15s}html:not(.no-js) #artifacts.is-live .artifact-node[data-artifact="4"]{animation-delay:.2s}html:not(.no-js) #artifacts.is-live .artifact-node[data-artifact="5"]{animation-delay:.25s}html:not(.no-js) #artifacts.is-live .artifact-node[data-artifact="6"]{animation-delay:.3s}
 html:not(.no-js) .cost-section.is-live .cost-intro{animation:cost-settle .5s cubic-bezier(.22,.7,.3,1) both}
 html:not(.no-js) .cost-face.is-active .cd{stroke-dasharray:1;stroke-dashoffset:1;animation:cost-draw .9s ease forwards;animation-delay:calc(var(--d,0s) + .25s)}
 html:not(.no-js) .cost-face.is-active .cp{transform-box:fill-box;transform-origin:center;animation:cost-pop .42s ease both;animation-delay:calc(var(--d,0s) + .25s)}
