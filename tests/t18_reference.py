@@ -66,6 +66,7 @@ with sync_playwright() as pw:
     ok("hex node selects","context" in p.locator("#artifact-name").text_content().lower())
     ok("aria pressed on node",p.locator('#dimensions .hex-node[data-dimension="2"]').get_attribute("aria-pressed")=="true")
     ok("bullseye kept on select",p.evaluate("""()=>{const n=document.querySelector('#dimensions .hex-node[data-dimension="2"]');const r=[...n.querySelectorAll('circle')].map(c=>parseFloat(getComputedStyle(c).r));return r[0]>r[1]&&r[1]>=16}"""))
+    ok("selected node carries depth",p.locator('#dimensions .hex-node[aria-pressed="true"] circle:not(.hex-hit)').first.evaluate("e=>getComputedStyle(e).filter").startswith("drop-shadow") and p.locator('#dimensions .hex-node[aria-pressed="false"] circle:not(.hex-hit)').first.evaluate("e=>getComputedStyle(e).filter")=="none")
     ok("detail fonts +40%",float(p.evaluate("getComputedStyle(document.querySelector('#dimensions .ficha-rows dd')).fontSize").rstrip('px'))>=17.4)
     ok("logo pulse on select",p.locator("#dimensions .dim-logo image.pulse").count()==1)
     ok("single outer hexagon",p.locator("#dimensions .hex-edge").count()==1)

@@ -63,7 +63,7 @@ h3{font-size:1.1rem;font-weight:650;letter-spacing:-.02em;margin-bottom:8px}.lea
 .hex-visual{display:grid;place-items:start center;min-height:460px;position:relative}.hex-map{width:85%;height:auto;overflow:visible}
 .hex-edge{stroke:#176f62;stroke-opacity:.4;stroke-width:2;fill:none}.hex-node{cursor:pointer;outline:none;transform-box:fill-box;transform-origin:center}
 .hex-node circle{fill:#176f62;stroke:#f3f1ea;stroke-width:3;transition:fill .2s ease,r .2s ease,stroke .2s ease}.hex-node text{fill:#fff;font:700 11px var(--mono);text-anchor:middle;dominant-baseline:central;pointer-events:none}
-.hex-node[aria-pressed="true"] circle{fill:var(--amber-700);r:17}.hex-node[aria-pressed="true"] .hex-hit{r:25}
+.hex-node[aria-pressed="true"] circle{fill:var(--amber-700);r:17;filter:drop-shadow(0 3px 5px rgba(10,20,32,.3))}.hex-node[aria-pressed="true"] .hex-hit{r:25}
 .hex-node:hover .hex-hit{stroke:var(--amber-500)}.hex-node:hover circle:not(.hex-hit){stroke:var(--amber-500);r:16}.hex-node:focus-visible circle{stroke:var(--ink-950);stroke-width:4}
 .hex-node:focus-visible{outline:2px solid var(--amber-500);outline-offset:2px}
 .hex-visual .dim-logo{transform-box:fill-box;transform-origin:center;pointer-events:none}
