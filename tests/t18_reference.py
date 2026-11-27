@@ -121,6 +121,7 @@ with sync_playwright() as pw:
     # compatibility: two disclosures hold the long tables
     ok("compat disclosures",p.locator("#compatibility details.ev-detail").count()==2)
     ok("compat route modules",p.locator("#compatibility .compat-route").count()==2)
+    ok("compat route lifts",p.locator("#compatibility .compat-route").first.evaluate("e=>getComputedStyle(e).transition").find("transform")>=0)
     ok("compat h2 project not agent","Governance belongs to the project" in p.locator("#compatibility .section-head h2").text_content())
     ok("scope label not consumer","Scope" in [s.text_content().strip() for s in p.locator("#artifacts .artifact-meta small").all()][2])
     ok("compatibility tables hidden",p.locator("#compatibility .compat-table:visible").count()==0)
