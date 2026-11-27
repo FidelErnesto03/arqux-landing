@@ -477,15 +477,15 @@ html:not(.no-js) .cost-section.is-live .cost-flow-list li{animation:cost-in .42s
 
 .wf-stages{position:relative}
 @keyframes drop-in{to{opacity:1;transform:none}}.step-detail{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:24px 26px;border:1px solid rgba(220,226,227,.2);border-radius:16px;background:var(--ink-950);color:var(--mist-300);opacity:0;visibility:hidden}
-.step-detail.is-open{visibility:visible;animation:drop-in .52s cubic-bezier(.22,.8,.3,1) .42s both}
-@keyframes drop-out{from{opacity:1}to{opacity:0;transform:translateY(-24px)}}.step-detail.closing{animation:drop-out .34s ease-in both}
+.step-detail.is-open{visibility:visible;animation:drop-in .6s cubic-bezier(.22,.8,.3,1) .4s both}
+@keyframes drop-out{to{opacity:0;transform:translateY(-24px)}}.step-detail.closing{opacity:1;animation:drop-out .34s ease-in both;transition:visibility 0s .34s}
 .step-detail .step-dialog-grid{margin-top:20px;padding-top:16px;border-top:1px solid rgba(220,226,227,.16)}
 
 
 
-@keyframes fall{to{opacity:0;transform:translateY(34px)}}html:not(.no-js) .step-list.is-detail .step{visibility:hidden;animation:fall .4s ease-in var(--d,0s) both}
+@keyframes fall{to{opacity:0;transform:translateY(34px)}}html:not(.no-js) .step-list.is-detail .step{visibility:hidden;transition:visibility 0s calc(var(--d) + .4s);animation:fall .4s ease-in var(--d) both}
 
-@keyframes step-rise{from{opacity:0;transform:translateY(-16px)}}html:not(.no-js) .step-list.returning .step{animation:step-rise .46s cubic-bezier(.22,.8,.3,1) var(--d,0s) both}
+@keyframes step-rise{from{opacity:0;transform:translateY(-16px)}}html:not(.no-js) .step-list.returning .step{animation:step-rise .46s cubic-bezier(.22,.8,.3,1) var(--d) both}
 @media(prefers-reduced-motion:reduce){.step-detail,.step-list .step{animation:none!important;transform:none}.step-detail.is-open{opacity:1!important;visibility:visible}}
 .step-case-label{display:block;margin-bottom:6px;font:600 10px/1.4 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--mist-500)}
 .step-case-text{display:block;font:500 15.5px/1.55 var(--sans);color:var(--mist-300)}

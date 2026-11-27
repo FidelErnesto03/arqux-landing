@@ -29,7 +29,7 @@ with sync_playwright() as pw:
     p.locator('#workflow .step[data-step="2"]').click(); p.wait_for_timeout(200)
     ok("workflow step select","Carry out the work" in p.locator("#step-heading").text_content())
     ok("step detail is in page",p.locator("#step-detail").evaluate("e=>getComputedStyle(e).visibility")=="visible" and p.locator("#step-dialog").count()==0 and p.locator("dialog[open]").count()==0)
-    ok("stage list drops away",p.locator(".step-list").evaluate("e=>e.classList.contains('is-detail')") and p.locator("#workflow .step").first.evaluate("e=>getComputedStyle(e).visibility")=="hidden")
+    ok("stage list drops away",p.locator(".step-list").evaluate("e=>e.classList.contains('is-detail')") and float(p.locator("#workflow .step").first.evaluate("e=>getComputedStyle(e).opacity"))<0.6 and p.locator("#workflow .step").first.evaluate("e=>getComputedStyle(e).visibility")=="visible")
     ok("step detail legible",float(p.evaluate("parseFloat(getComputedStyle(document.querySelector('#step-detail .detail-item span')).fontSize)"))>=16)
     p.locator(".step-detail-close").click(); p.wait_for_timeout(500)
     ok("step dialog closes",p.locator("#step-detail").evaluate("e=>getComputedStyle(e).visibility")=="hidden" and p.locator("#workflow .step").first.evaluate("e=>getComputedStyle(e).visibility")=="visible")
