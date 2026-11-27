@@ -108,6 +108,13 @@
         <div>
           <p class="visually-hidden">Choose a stage to see who takes part, what goes in, what changes and what can be reviewed.</p>
           <div class="wf-stages">
+          <div class="step-detail" id="step-detail" role="region" aria-labelledby="step-heading">
+  <button class="step-detail-close" type="button" aria-label="Close detail">×</button>
+  <p class="case-dialog-kicker" id="step-kicker">Stage 01 · Project decision</p>
+  <h3 class="case-dialog-title" id="step-heading">Define the criterion that must be respected.</h3>
+  <p class="step-case"><span class="step-case-label">In this example</span><span class="step-case-text" id="step-case"></span></p>
+  <div class="detail-grid step-dialog-grid"><div class="detail-item"><b>Who participates</b><span id="step-who">A responsible person sets objective, scope and acceptance — in the example, that errors show no sensitive data.</span></div><div class="detail-item"><b>Input</b><span id="step-input">Policy, authorized knowledge and constraints.</span></div><div class="detail-item"><b>What changes</b><span id="step-change">The project and cycle gain an explicit goal and closure condition.</span></div><div class="detail-item"><b>What can be reviewed</b><span id="step-evidence">Written rules and scope in the governed workspace.</span></div></div>
+</div>
           <div class="step-list" role="group" aria-label="Select a stage of the governed workflow">
             <button class="step" type="button" aria-pressed="true" aria-haspopup="dialog" data-step="0"><span class="step-number">01</span><span class="step-title">Agree<small class="step-desc" style="display:block;margin-top:3px;font-size:15.5px;font-weight:400;line-height:1.45;color:var(--slate-600)">Define the criterion that must be respected.</small><small class="step-meta">See how it is recorded</small></span><span class="step-tag">Project decision</span></button>
             <button class="step" type="button" aria-pressed="false" aria-haspopup="dialog" data-step="1"><span class="step-number">02</span><span class="step-title">Assign<small class="step-desc" style="display:block;margin-top:3px;font-size:15.5px;font-weight:400;line-height:1.45;color:var(--slate-600)">Indicate who acts and under which limits.</small><small class="step-meta">See how it is assigned</small></span><span class="step-tag code">Contract and available controls</span></button>
@@ -345,12 +352,6 @@ arqux serve</code></pre>
   </button>
   <button class="section-nav-count" type="button" aria-live="polite">01 / 08</button>
 </nav>
-<dialog class="case-dialog step-dialog" id="step-dialog" aria-labelledby="step-heading">
-  <form method="dialog"><button class="case-dialog-close" type="submit" aria-label="Close detail">×</button></form>
-  <p class="case-dialog-kicker" id="step-kicker">Stage 01 · Project decision</p>
-  <h3 class="case-dialog-title" id="step-heading">Define the criterion that must be respected.</h3>
-  <p class="step-case"><span class="step-case-label">In this example</span><span class="step-case-text" id="step-case"></span></p>
-  <div class="detail-grid step-dialog-grid"><div class="detail-item"><b>Who participates</b><span id="step-who">A responsible person sets objective, scope and acceptance — in the example, that errors show no sensitive data.</span></div><div class="detail-item"><b>Input</b><span id="step-input">Policy, authorized knowledge and constraints.</span></div><div class="detail-item"><b>What changes</b><span id="step-change">The project and cycle gain an explicit goal and closure condition.</span></div><div class="detail-item"><b>What can be reviewed</b><span id="step-evidence">Written rules and scope in the governed workspace.</span></div></div>
-</dialog>
+
 </body>
 </html>

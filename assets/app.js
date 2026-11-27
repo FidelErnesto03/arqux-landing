@@ -279,11 +279,18 @@
     }
   }
 
-  /* ---------- workflow stages: detail opens as modal (home case-dialog pattern) ---------- */
+  /* ---------- workflow stages: detail drops in place, stages drop away (dimensions pattern) ---------- */
   const steps = $$(".step");
-  const stepDialog = $("#step-dialog");
+  const stepList = $(".step-list");
+  const stepDetail = $("#step-detail");
   const setText = (sel, v) => { const el = $(sel); if (el && v) el.textContent = v; };
   let stepTrigger = null;
+  const closeStepDetail = () => {
+    if (!stepDetail || !stepDetail.classList.contains("is-open")) return;
+    stepDetail.classList.remove("is-open");
+    stepList.classList.remove("is-detail");
+    if (stepTrigger) stepTrigger.focus();
+  };
   steps.forEach((btn) =>
     btn.addEventListener("click", () => {
       const i = Number(btn.dataset.step);
@@ -297,15 +304,18 @@
       setText("#step-change", s.change);
       setText("#step-evidence", s.evidence);
       setText("#step-case", s.case);
-      if (stepDialog && typeof stepDialog.showModal === "function" && !stepDialog.open) {
+      if (stepDetail) {
         stepTrigger = btn;
-        stepDialog.showModal();
+        stepDetail.classList.add("is-open");
+        stepList.classList.add("is-detail");
+        setTimeout(() => { const c = $(".step-detail-close", stepDetail); if (c) c.focus(); }, 60);
       }
     })
   );
-  if (stepDialog && typeof stepDialog.showModal === "function") {
-    stepDialog.addEventListener("click", (e) => { if (e.target === stepDialog) stepDialog.close(); });
-    stepDialog.addEventListener("close", () => { if (stepTrigger) stepTrigger.focus(); });
+  if (stepDetail) {
+    const closeBtn = $(".step-detail-close", stepDetail);
+    if (closeBtn) closeBtn.addEventListener("click", closeStepDetail);
+    stepDetail.addEventListener("keydown", (e) => { if (e.key === "Escape") closeStepDetail(); });
   }
 
   /* ---------- dimensions selector (hexagon menu sinks, detail card replaces it) ---------- */
@@ -375,7 +385,7 @@
     const closeBtn = $(".dim-preview-close", dimPreview);
     if (closeBtn) closeBtn.addEventListener("click", closeDimDetail);
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && dimVisual && dimVisual.classList.contains("is-detail") && !(stepDialog && stepDialog.open))
+      if (e.key === "Escape" && dimVisual && dimVisual.classList.contains("is-detail"))
         closeDimDetail();
     });
   }

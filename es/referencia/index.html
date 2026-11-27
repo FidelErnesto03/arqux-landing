@@ -108,6 +108,13 @@
         <div>
           <p class="visually-hidden">Elige una etapa para ver quién participa, qué entra, qué cambia y qué se puede revisar.</p>
           <div class="wf-stages">
+          <div class="step-detail" id="step-detail" role="region" aria-labelledby="step-heading">
+  <button class="step-detail-close" type="button" aria-label="Cerrar detalle">×</button>
+  <p class="case-dialog-kicker" id="step-kicker">Etapa 01 · Decisión del proyecto</p>
+  <h3 class="case-dialog-title" id="step-heading">Definir el criterio que debe respetarse.</h3>
+  <p class="step-case"><span class="step-case-label">En este ejemplo</span><span class="step-case-text" id="step-case"></span></p>
+  <div class="detail-grid step-dialog-grid"><div class="detail-item"><b>Quién participa</b><span id="step-who">Una persona responsable fija objetivo, alcance y aceptación — en el ejemplo, que los errores no muestren datos sensibles.</span></div><div class="detail-item"><b>Entrada</b><span id="step-input">Política, conocimiento autorizado y restricciones.</span></div><div class="detail-item"><b>Qué cambia</b><span id="step-change">El proyecto y el ciclo ganan un objetivo explícito y una condición de cierre.</span></div><div class="detail-item"><b>Qué se puede revisar</b><span id="step-evidence">Reglas escritas y alcance en el espacio de trabajo gobernado.</span></div></div>
+</div>
           <div class="step-list" role="group" aria-label="Selecciona una etapa del flujo gobernado">
             <button class="step" type="button" aria-pressed="true" aria-haspopup="dialog" data-step="0"><span class="step-number">01</span><span class="step-title">Acordar<small class="step-desc" style="display:block;margin-top:3px;font-size:15.5px;font-weight:400;line-height:1.45;color:var(--slate-600)">Definir el criterio que debe respetarse.</small><small class="step-meta">Ver cómo se registra</small></span><span class="step-tag">Decisión del proyecto</span></button>
             <button class="step" type="button" aria-pressed="false" aria-haspopup="dialog" data-step="1"><span class="step-number">02</span><span class="step-title">Asignar<small class="step-desc" style="display:block;margin-top:3px;font-size:15.5px;font-weight:400;line-height:1.45;color:var(--slate-600)">Indicar quién actúa y bajo qué límites.</small><small class="step-meta">Ver cómo se asigna</small></span><span class="step-tag code">Contrato y controles disponibles</span></button>
@@ -337,12 +344,6 @@ arqux serve</code></pre>
   </button>
   <button class="section-nav-count" type="button" aria-live="polite">01 / 08</button>
 </nav>
-<dialog class="case-dialog step-dialog" id="step-dialog" aria-labelledby="step-heading">
-  <form method="dialog"><button class="case-dialog-close" type="submit" aria-label="Cerrar detalle">×</button></form>
-  <p class="case-dialog-kicker" id="step-kicker">Etapa 01 · Decisión del proyecto</p>
-  <h3 class="case-dialog-title" id="step-heading">Definir el criterio que debe respetarse.</h3>
-  <p class="step-case"><span class="step-case-label">En este ejemplo</span><span class="step-case-text" id="step-case"></span></p>
-  <div class="detail-grid step-dialog-grid"><div class="detail-item"><b>Quién participa</b><span id="step-who">Una persona responsable fija objetivo, alcance y aceptación — en el ejemplo, que los errores no muestren datos sensibles.</span></div><div class="detail-item"><b>Entrada</b><span id="step-input">Política, conocimiento autorizado y restricciones.</span></div><div class="detail-item"><b>Qué cambia</b><span id="step-change">El proyecto y el ciclo ganan un objetivo explícito y una condición de cierre.</span></div><div class="detail-item"><b>Qué se puede revisar</b><span id="step-evidence">Reglas escritas y alcance en el espacio de trabajo gobernado.</span></div></div>
-</dialog>
+
 </body>
 </html>
