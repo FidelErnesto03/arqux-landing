@@ -114,6 +114,7 @@ with sync_playwright() as pw:
     ok("codec demo removed",p.locator("#idea-input").count()==0 and p.locator(".codec-play").count()==0 and p.locator("#format .codec-cards").count()==0)
     ok("codec certificate",p.locator("#format .codec-certificate a").count()==2)
     ok("format disclosures",p.locator("#format details.ev-detail").count()==1)
+    ok("format shares the problem band tone",p.evaluate("getComputedStyle(document.querySelector('#format')).backgroundColor")=="rgb(18, 23, 26)")
     ok("format detail dark surface",p.evaluate("getComputedStyle(document.querySelector('#format details.ev-detail')).backgroundColor")=="rgb(16, 31, 44)" and p.evaluate("getComputedStyle(document.querySelector('#format details.ev-detail > summary')).color")=="rgb(250, 249, 245)")
     p.locator('#format details.ev-detail summary').click(); p.wait_for_timeout(150)
     ok("format disclosure opens","alias" in p.locator("#format details.ev-detail").text_content())
