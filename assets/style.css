@@ -580,6 +580,7 @@ body.page-reference .section-copy,body.page-reference .note,body.page-reference 
 .compat-path-desc{margin:0;font:500 13.5px/1.55 var(--sans);color:var(--slate-700)}
 .compat-path-note{margin:2px 0 0;font:500 12px/1.5 var(--mono);color:#56636d}
 .compat-path .compat-path-cta{margin-top:auto;align-self:flex-start}
+body.page-reference main > section[id]{min-height:calc(100svh - var(--header-height));display:flex;flex-direction:column;justify-content:center}
 body.page-reference #dimensions{min-height:calc(100svh - var(--header-height));display:flex;flex-direction:column}
 body.page-reference #dimensions>.wrap{flex:1;display:flex;flex-direction:column}
 body.page-reference #dimensions .hex-layout{flex:1}
