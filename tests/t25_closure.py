@@ -30,7 +30,7 @@ with sync_playwright() as pw:
         ok(lang+" no stray English labels","Bookmarks" not in p.locator("main").text_content())
         if lang=="ES":
             ok("ES no untranslated Continue","Continue" not in p.locator("main").text_content())
-        ok(lang+" three-line thesis",p.locator("#home-closure-title").evaluate("el=>el.innerHTML.split('<br>').length")==3)
+        ok(lang+" single-line thesis",p.locator("#home-closure-title").evaluate("el=>el.innerHTML.split('<br>').length")==1)
         ok(lang+" governed context",("governed context" if lang=="EN" else "contexto gobernado") in p.locator("#next .home-closure__lead").text_content().lower())
         ok(lang+" no console errors",len(errs)==0)
 

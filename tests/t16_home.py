@@ -10,6 +10,7 @@ with sync_playwright() as pw:
     p.on("pageerror",lambda e: errs.append(str(e))); p.on("console",lambda m: errs.append(m.text) if m.type=="error" else None)
     r=p.goto(BASE+"/",wait_until="networkidle"); p.wait_for_timeout(300)
     ok("home 200",r.status==200); h1t=p.locator("h1").text_content(); ok("home H1","agents change" in h1t and "judgment endures" in h1t); ok("hero tagline","more than a result" in p.locator(".hero-portable").text_content())
+    ok("hero CTA continues in page",p.locator(".hero-ctas a.button-primary").get_attribute("href")=="#failures" and p.locator(".hero-ctas a.button-secondary").get_attribute("href")=="/start/")
     ok("hero governance map",p.locator("svg.hero-map").count()==1)
     ok("hero shares menu surface",p.locator(".hero").evaluate("e=>getComputedStyle(e).backgroundColor")=="rgb(247, 242, 232)")
     ok("hero mesh layer","hero-mesh.svg" in p.locator(".hero").evaluate("e=>getComputedStyle(e,'::before').backgroundImage"))
@@ -17,7 +18,7 @@ with sync_playwright() as pw:
     ok("hero map inline no object",p.locator("object.hero-map").count()==0 and p.locator("#hero-flow").count()==1)
     ok("hero map unmasked","none" in p.locator(".hero-visual").evaluate("e=>getComputedStyle(e).maskImage") or p.locator(".hero-visual").evaluate("e=>getComputedStyle(e).maskImage")=="none")
     ok("hero map transparent",p.locator(".hero-map").evaluate("e=>getComputedStyle(e).backgroundColor")=="rgba(0, 0, 0, 0)")
-    ok("hero map panoramic",p.locator(".hero-map").evaluate("e=>getComputedStyle(e).aspectRatio")=="1144 / 656")
+    ok("hero map panoramic",p.locator(".hero-map").evaluate("e=>getComputedStyle(e).aspectRatio")=="1144 / 732")
     ok("mobile governance map",p.locator(".hero-mobile-map a").count()==6)
     M=p.locator("#hero-flow")
     ok("svg map loaded",p.locator("#hero-flow").count()==1)
@@ -31,10 +32,10 @@ with sync_playwright() as pw:
         ok("governed badges",M.locator(".badge-text").count()==2)
         ok("badge legible at render size",float(M.locator(".badge-text").first.evaluate("e=>getComputedStyle(e).fontSize").replace("px",""))>=18)
         ok("projects converge into one flow to lessons",all(t in p.content() for t in (
-            '<path d="M 1078 205 L 1098 205 L 1098 532 Q 1098 550 1084 550 L 1076 550" stroke="#116244" stroke-width="5"',
-            '<path d="M 1078 387 L 1098 387" stroke="#116244" stroke-width="5"',
+            '<path d="M 1078 224 L 1098 224 L 1098 608 Q 1098 626 1084 626 L 1076 626" stroke="#116244" stroke-width="5"',
+            '<path d="M 1078 444 L 1098 444" stroke="#116244" stroke-width="5"',
         )) and p.content().count('stroke="#116244" stroke-width="4.5"') >= 1)
-        ok("lessons return feeds agent spine",'M 334 550 L 14 550 Q -6 550 -6 530 L -6 443' in p.content())
+        ok("lessons return feeds agent spine",'M 334 626 L 14 626 Q -6 626 -6 606 L -6 443' in p.content())
         ok("no single-project arrow","translate(705, 448)" not in p.content())
         ok("workspace frame evident",M.locator(".hf-frame").count()==1 and M.locator(".hf-frame").get_attribute("fill")=="none" and "5 7" in M.locator(".hf-frame").get_attribute("stroke-dasharray"))
         ok("agent exit flows end at workspace border",all(t in p.content() for t in (
@@ -77,7 +78,7 @@ with sync_playwright() as pw:
     ok("local section",p.locator("#local").count()==1 and p.locator("#local").get_attribute("aria-labelledby")=="loss-title")
     ok("eyebrow sits above the cube",p.evaluate("""()=>{const e=document.querySelector("#local .eyebrow").getBoundingClientRect();const c=document.querySelector("#local .cost-cube").getBoundingClientRect();return e.bottom<=c.top+1}"""))
     ok("eyebrow outside the turning faces",p.locator('#local .cost-face .eyebrow').count()==0)
-    ok("local eyebrow","hidden cost of losing continuity" in p.locator("#local .eyebrow").text_content().lower())
+    ok("local eyebrow","hidden cost" in p.locator("#local .eyebrow").text_content().lower())
     h2l=p.locator("#local h2").text_content().lower()
     ok("local H2","lose context" in h2l and "already done" in h2l)
     ok("local lead","reconstruct decisions" in p.locator("#local .cost-lead").text_content().lower())
@@ -107,7 +108,7 @@ with sync_playwright() as pw:
     ok("closing question","how much of your effort" in p.locator("#local .cost-question").text_content().lower())
     ok("closing principle","shouldn’t depend" in p.locator("#local .cost-principle").text_content() or "shouldn't depend" in p.locator("#local .cost-principle").text_content())
     ok("closing question prominent",float(p.locator("#local .cost-question").evaluate("e=>parseFloat(getComputedStyle(e).fontSize)"))>22)
-    ok("local one CTA",p.locator("#local .cost-close-band a").count()==1 and p.locator("#local .cost-close-band a").first.get_attribute("href")=="/reference/#workflow")
+    ok("local one CTA",p.locator("#local .cost-close-band a").count()==1 and p.locator("#local .cost-close-band a").first.get_attribute("href")=="#next")
     ok("closing band outside the cube",p.locator("#local .cost-close-band").count()==1 and p.locator("#local .cost-cube .cost-close-band").count()==0)
     ok("closing band always visible",p.locator("#local .cost-close-band .cost-question").is_visible() and p.locator("#local .cost-close-band a").is_visible())
     ok("section height matches peers",abs(p.locator("#local").evaluate("e=>e.getBoundingClientRect().height")-p.locator("#failures").evaluate("e=>e.getBoundingClientRect().height"))<=60)
@@ -151,7 +152,7 @@ with sync_playwright() as pw:
     ok("failure close","The output can survive" in p.locator("#failures .failure-close").text_content() and "not always" in p.locator("#failures .failure-close").text_content())
     ok("failure mechanisms",p.locator("#failures .case-mech").evaluate_all("els=>els.map(e=>e.textContent.trim())")==["Interpretation","Reconstruction","Compression","Transfer","Recovery"])
     ok("failure mechanism legible",p.locator("#failures .case-mech").first.evaluate("el=>parseFloat(getComputedStyle(el).fontSize)")>=12)
-    ok("failure no links",p.locator("#failures a").count()==0 and p.locator("#failures .case-open").count()==5)
+    ok("failure CTA continues in page",p.locator("#failures a").count()==1 and p.locator("#failures a").first.get_attribute("href")=="#local" and p.locator("#failures .case-open").count()==5)
     ok("closure is last",p.locator("main > section").last.get_attribute("id")=="next")
     ok("closure single",p.locator("main > section").count()==4)
     ok("closure three routes",p.locator("#next .home-closure__route").count()==3)
@@ -165,10 +166,10 @@ with sync_playwright() as pw:
     ok("ES mobile no mesh download","hero-mesh.svg" not in q.locator(".hero").evaluate("e=>getComputedStyle(e,'::before').backgroundImage"))
     ok("ES local section",q.locator("#local").count()==1 and q.locator("#local").get_attribute("aria-labelledby")=="loss-title")
     ok("ES local H2","No pierdes solo el contexto" in q.locator("#local h2").text_content() and "ya hiciste" in q.locator("#local h2").text_content())
-    ok("ES local eyebrow","costo invisible de perder continuidad" in q.locator("#local .eyebrow").text_content().lower())
+    ok("ES local eyebrow","costo invisible" in q.locator("#local .eyebrow").text_content().lower())
     ok("ES cost titles",q.locator("#local .cost-title").evaluate_all("els=>els.map(e=>e.textContent.trim())")==["Tiempo humano","Tokens y procesamiento","Desviación de criterios","Retrabajo"])
     ok("ES cost one column",len(q.locator("#local .cost-grid").evaluate("e=>getComputedStyle(e).gridTemplateColumns").split())==1)
-    ok("ES local CTA",q.locator("#local .cost-close-band a").count()==1 and q.locator("#local .cost-close-band a").first.get_attribute("href")=="/es/referencia/#workflow")
+    ok("ES local CTA",q.locator("#local .cost-close-band a").count()==1 and q.locator("#local .cost-close-band a").first.get_attribute("href")=="#next")
     ok("ES local no old scene",q.locator("#local .loss-scene,#local .loss-session,#local .loss-link,#local .loss-stakes").count()==0)
     ok("ES no absolute memory claim","memoria perfecta" not in q.locator("#local").text_content().lower())
     hES=q.locator("#local .cost-card").evaluate_all("els=>els.map(e=>Math.round(e.getBoundingClientRect().height))")
@@ -179,10 +180,10 @@ with sync_playwright() as pw:
     ok("ES hero flow routes",q.locator('.hf-link[data-target="/es/referencia/#compatibility"]').count()==4 and q.locator('.hf-link[data-target="/es/referencia/#dimensions"]').count()==2 and q.locator('.hf-link[data-target="/es/referencia/#artifacts"]').count()==1)
     ok("ES governed badge",q.locator(".badge-text").evaluate_all("els=>els.map(e=>e.textContent)")==["GOBERNADO","GOBERNADO"])
     ok("ES projects converge into one flow",all(t in q.content() for t in (
-        '<path d="M 1078 205 L 1098 205 L 1098 532 Q 1098 550 1084 550 L 1076 550" stroke="#116244" stroke-width="5"',
-        '<path d="M 1078 387 L 1098 387" stroke="#116244" stroke-width="5"',
+        '<path d="M 1078 224 L 1098 224 L 1098 608 Q 1098 626 1084 626 L 1076 626" stroke="#116244" stroke-width="5"',
+        '<path d="M 1078 444 L 1098 444" stroke="#116244" stroke-width="5"',
     )))
-    ok("ES lessons return feeds agent spine",'M 334 550 L 14 550 Q -6 550 -6 530 L -6 443' in q.content())
+    ok("ES lessons return feeds agent spine",'M 334 626 L 14 626 Q -6 626 -6 606 L -6 443' in q.content())
     ok("ES reading bus feeds all agents final arrows",all(t in q.content() for t in (
         '<line x1="-6" y1="443" x2="-6" y2="149" stroke="#116244" stroke-width="5"',
         '<path d="M 31 142 L 39 149 L 31 156" fill="none" stroke="#116244" stroke-width="4"',
@@ -197,9 +198,10 @@ with sync_playwright() as pw:
     ok("ES failure lead","recuperar el criterio" in q.locator("#failures .failure-lead").text_content().lower())
     ok("ES failure close","El resultado puede sobrevivir" in q.locator("#failures .failure-close").text_content() and "no siempre" in q.locator("#failures .failure-close").text_content())
     ok("ES failure mechanisms",q.locator("#failures .case-mech").evaluate_all("els=>els.map(e=>e.textContent.trim())")==["Interpretación","Reconstrucción","Compresión","Transferencia","Recuperación"])
+    ok("ES failure CTA",q.locator("#failures .failure-cta a").get_attribute("href")=="#local")
     ctx.close()
     ctx=b.new_context(viewport={"width":1200,"height":900},java_script_enabled=False); q=ctx.new_page(); q.goto(BASE+"/",wait_until="load")
-    ok("no-JS closure readable","per project, across agents" in q.locator("#next").text_content())
+    ok("no-JS closure readable","keeps the criteria" in q.locator("#next").text_content())
     ok("no-JS cost map",q.locator("#local .cost-card").count()==4 and q.locator("#local .cost-detail").count()==4)
     ok("no-JS detail readable",q.locator("#local .cost-detail").first.is_visible() and q.locator("#local .cost-card").first.get_attribute("href")=="#cost-detail-1")
     ok("no-JS criteria readable",q.locator('#local .cost-face[data-cost-face="3"] .cost-figure svg').count()==1 and q.locator('#local .cost-face[data-cost-face="3"] .cost-detail-copy').is_visible())

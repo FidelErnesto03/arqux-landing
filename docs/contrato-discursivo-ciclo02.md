@@ -69,8 +69,8 @@ Audiencias secundarias cubiertas por las mismas páginas: juniors/maintainers (f
 | Aforismo «Cada tarea deja algo más que un resultado» / "Every task leaves more than a result" | Inicio → `.hero-portable` | Frase rectora del manifiesto, texto intacto, **reubicada** como tagline de apoyo al H1-tríada (D-M1-03) |
 | Sección `#failures` completa (5 modos de ruptura) | Inicio | Problema reconocible = mecanismo de identificación (22/24 valoran honestidad) |
 | Demo `#local` + ejemplo conductor | Inicio↔Referencia | Literalmente idéntico EN/ES; continuidad de ejemplo exigida |
-| `#next` «El trabajo cambia… criterios permanecen por proyecto, entre agentes» | Inicio | Expansión del lema del hero (D-M1-02, opción A): repite el motivo en forma desarrollada y añade «decisiones y evidencia» + rutas — motivo al inicio, desarrollo al cierre |
-| Eyebrow hero «For people who run projects…» / «Para quien gestiona proyectos…» | Inicio | Ya comunica el ámbito de una persona en registro personal; sostiene D-M1-01 sin cambios |
+| `#next` «El proyecto conserva el criterio» | Inicio | **Actualizado por el Arquitecto (SES007, 2026-11-26)**: el título anterior («El trabajo cambia… por proyecto, entre agentes») resultaba extenso y complejo; se sustituye por una sola frase que preserva la tesis — el criterio permanece en el proyecto. Rutas y párrafo conservan el desarrollo de D-M1-02 |
+| Eyebrow hero «For agent-run projects» / «Para proyectos con agentes» | Inicio | **Actualizado (SES007, 2026-11-26)** por la homologación de eyebrows a ≤4 palabras; sigue comunicando el ámbito personal de D-M1-01 |
 | `#workflow` completo (etapas, metas, modal con case) | Referencia | Contrato v7 cumplido; ejemplo conductor coherente |
 | `#dimensions` (hexágono, 6 dims, scope en details) | Referencia | Representación conceptual honesta con límites por dimensión |
 | `#artifacts` (inspector, aviso ilustrativo, lección≠regla) | Referencia | Ámbitos proyecto/workspace correctos; advertencias esenciales |
