@@ -25,7 +25,7 @@ ok("ES reference canonical",'https://arqux.ai/es/referencia/' in es_ref)
 ok("ES reference no English copy",all(x not in es_ref for x in ("From policy to a result","Lessons are recorded","The kernel every compatible agent","Artifacts and their roles")))
 ok("ES reference nav",'href="/es/empezar/"' in es_ref and 'href="/es/confianza/"' in es_ref and 'href="/reference/"' in es_ref)
 size=os.path.getsize("assets/style.css")+os.path.getsize("assets/app.js")
-ok("css+js budget",size<=112000)  # raised for audit-v5 (dim labels/chips, focus mgmt, compat modules, dark format detail), audit-v6 + hex labels/overlay detail, and BLP-009 (Reference materiality: rhythm, depth, entrance) — approved by the Architect in SES008
+ok("css+js budget",size<=115000)  # raised for audit-v5 (dim labels/chips, focus mgmt, compat modules, dark format detail), audit-v6 + hex labels/overlay detail, and BLP-009/SES008 (Reference materiality: rhythm, depth, entrance, hand-off timing) — approved by the Architect in SES008
 ok("sitemap 8",len(re.findall(r"<loc>",open("sitemap.xml").read()))==8)
 ok("community footer ES",'id="community"' in open("es/index.html").read())
 print("\n".join(results)); print("----"); print("TOTAL",len(results),"FAILURES",len(failures)); sys.exit(1 if failures else 0)

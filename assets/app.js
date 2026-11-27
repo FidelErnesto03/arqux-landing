@@ -358,7 +358,7 @@
     dimVisual.classList.remove("is-detail");
     if (dimLogo) dimLogo.classList.remove("pulse");
     setTimeout(() => dimVisual.classList.remove("replay"), 1500);
-    if (dimTrigger) { const t = dimTrigger; dimTrigger = null; setTimeout(() => t.focus({ preventScroll: true }), 120); }
+    if (dimTrigger) { const t = dimTrigger; dimTrigger = null; setTimeout(() => t.focus({ preventScroll: true }), 320); }
   }
   function selectDimension(i, trigger) {
     if (trigger) dimTrigger = trigger;
