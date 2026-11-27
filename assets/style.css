@@ -53,7 +53,7 @@ h3{font-size:1.1rem;font-weight:650;letter-spacing:-.02em;margin-bottom:8px}.lea
 .architecture-card .eyebrow{font-size:9px;margin-bottom:11px;letter-spacing:.12em}.architecture-card h3{font-size:16px;letter-spacing:-.02em}
 .architecture-card p{font-size:14px;color:#b6c0c5;line-height:1.5;margin:0}.workflow-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:44px}
 .wf-stages{height:100%;display:flex;flex-direction:column}.step-list{flex:1;display:grid;grid-template-rows:repeat(4,minmax(0,1fr));gap:14px}.step-meta{display:block;margin-top:9px;padding-top:9px;border-top:1px solid rgba(10,20,32,.09);font:600 10px/1.5 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--slate-600)}.step{width:100%;text-align:left;border:1px solid var(--line-light);border-radius:14px;background:#fff;padding:15px 17px;display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:10px;cursor:pointer;color:var(--ink-950);transition:border-color .16s ease,transform .16s ease}
-.step:hover{border-color:rgba(215,122,0,.5);transform:translateY(-1px)}.step[aria-pressed="true"]{border-color:var(--amber-700);box-shadow:0 0 0 1px rgba(215,122,0,.12)}
+.step:hover{border-color:rgba(215,122,0,.5);transform:translateY(-1px)}.step[aria-pressed="true"]{border-color:var(--amber-700);box-shadow:0 0 0 1px rgba(215,122,0,.12);filter:drop-shadow(0 3px 5px rgba(10,20,32,.16))}
 .step-number{font:600 11px/1 var(--mono);color:#A35F00}.step-title{font-size:15px;font-weight:650}
 .step-tag{color:#52616a;background:#e5f0ec;border-radius:999px;padding:5px 8px;font:600 9px/1.25 var(--mono)}.step-tag.code{background:#e2eee9;color:#176448}
 .step .step-number{font-size:14.5px}.step .step-title{font-size:17.5px}.step .step-meta{font-size:12px}.step .step-tag{font-size:14.5px}
@@ -389,8 +389,10 @@ html.no-js .cost-rail .cost-card{flex:0 0 auto}
 @keyframes cost-pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
 @keyframes cost-grow{from{transform:scaleY(0)}to{transform:none}}
 @keyframes cost-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-@keyframes cost-settle{from{opacity:.82;transform:translateY(9px);filter:blur(2.5px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes cost-settle{from{opacity:.82;transform:translateY(10px);filter:blur(2.5px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes settle{from{opacity:.86;transform:translateY(10px)}}
 @media(prefers-reduced-motion:no-preference){
+html:not(.no-js) #workflow.is-live .step{animation:settle .45s ease-out both}
 html:not(.no-js) .cost-section.is-live .cost-intro{animation:cost-settle .5s cubic-bezier(.22,.7,.3,1) both}
 html:not(.no-js) .cost-face.is-active .cd{stroke-dasharray:1;stroke-dashoffset:1;animation:cost-draw .9s ease forwards;animation-delay:calc(var(--d,0s) + .25s)}
 html:not(.no-js) .cost-face.is-active .cp{transform-box:fill-box;transform-origin:center;animation:cost-pop .42s ease both;animation-delay:calc(var(--d,0s) + .25s)}

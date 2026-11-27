@@ -154,17 +154,16 @@
     }
   }
 
-  /* ---------- scene sections: the settled motif plays once the section is on screen ---------- */
-  const liveOnce = (el) => {
+  /* ---------- scene sections: motif plays once on screen ---------- */
+  const liveOnce = (...els) => els.forEach((el) => {
     if (!el || !("IntersectionObserver" in window) || REDUCED) return;
     const o = new IntersectionObserver((e) => {
       if (!e[0].isIntersecting) return;
       el.classList.add("is-live"); o.disconnect();
     }, { threshold: 0.15, rootMargin: "0px 0px -25% 0px" });
     o.observe(el);
-  };
-  liveOnce($("#failures"));
-  liveOnce($("#local"));
+  });
+  liveOnce($("#failures"), $("#local"), $("#workflow"), $("#artifacts"));
 
   /* ---------- cost cube: the left rail turns the right face ---------- */
   const costCards = $$(".cost-card[data-cost]");
